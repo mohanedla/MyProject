@@ -6,7 +6,7 @@
 <head>
   <!-- =====  BASIC PAGE NEEDS  ===== -->
   <meta charset="utf-8">
-  <title>Dark look E-commerce Bootstrap Template</title>
+  <title>{{__('Online Shop')}}</title>
   <!-- =====  SEO MATE  ===== -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="description" content="">
@@ -80,7 +80,7 @@
                         @endforeach
                   </ul>
                 </li>
-                <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">Currency <span class="caret"></span> </span>
+                <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">{{__('Currency')}} <span class="caret"></span> </span>
                   <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
                     <li><a href="#">€ Euro</a></li>
                     <li><a href="#">£ Pound Sterling</a></li>
@@ -102,7 +102,7 @@
               <button type="button" class="btn btn-default btn-lg"><i class="fa fa-search"></i></button>
               </span> </div>
             </div>
-            <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="index.html"> <img alt="themini" src="{{asset('images/logo.png')}}"> </a> </div>
+            <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="home"> <img alt="themini" src="{{asset('images/logo.png')}}"> </a> </div>
             <div class="col-xs-6 col-sm-4 shopcart">
               <div id="cart" class="btn-group btn-block mtb_40">
                 <button type="button" class="btn" data-target="#cart-dropdown" data-toggle="collapse" aria-expanded="true"><span id="shippingcart">Shopping cart</span><span id="cart-total">items (0)</span> </button>
@@ -787,16 +787,17 @@
           <div class="row">
             <div class="col-sm-12">
               <div class="brand owl-carousel ptb_20">
-                <div class="item text-center"> <a href="#"><img src="{{asset('images/brand/brand1.png')}}" alt="Disney" class="img-responsive" /></a> </div>
-                <div class="item text-center"> <a href="#"><img src="{{asset('images/brand/brand2.png')}}" alt="Dell" class="img-responsive" /></a> </div>
-                <div class="item text-center"> <a href="#"><img src="{{asset('images/brand/brand3.png')}}" alt="Harley" class="img-responsive" /></a> </div>
-                <div class="item text-center"> <a href="#"><img src="{{asset('images/brand/brand4.png')}}" alt="Canon" class="img-responsive" /></a> </div>
-                <div class="item text-center"> <a href="#"><img src="{{asset('images/brand/brand5.png')}}" alt="Canon" class="img-responsive" /></a> </div>
-                <div class="item text-center"> <a href="#"><img src="{{asset('images/brand/brand6.png')}}" alt="Canon" class="img-responsive" /></a> </div>
-                <div class="item text-center"> <a href="#"><img src="{{asset('images/brand/brand7.png')}}" alt="Canon" class="img-responsive" /></a> </div>
-                <div class="item text-center"> <a href="#"><img src="{{asset('images/brand/brand8.png')}}" alt="Canon" class="img-responsive" /></a> </div>
-                <div class="item text-center"> <a href="#"><img src="{{asset('images/brand/brand9.png')}}" alt="Canon" class="img-responsive" /></a> </div>
-              </div>
+                <div class="item text-center"> <a href="#"><img src="{{asset('images/brand/1.jpg')}}" alt="Disney" class="img-responsive" /></a> </div>
+                <div class="item text-center"> <a href="#"><img src="{{asset('images/brand/2.jpg')}}" alt="Dell" class="img-responsive" /></a> </div>
+                <div class="item text-center"> <a href="#"><img src="{{asset('images/brand/3.jpg')}}" alt="Harley" class="img-responsive" /></a> </div>
+                <div class="item text-center"> <a href="#"><img src="{{asset('images/brand/4.jpg')}}" alt="Canon" class="img-responsive" /></a> </div>
+                <div class="item text-center"> <a href="#"><img src="{{asset('images/brand/5.jpg')}}" alt="Canon" class="img-responsive" /></a> </div>
+                <div class="item text-center"> <a href="#"><img src="{{asset('images/brand/6.jpg')}}" alt="Canon" class="img-responsive" /></a> </div>
+                <div class="item text-center"> <a href="#"><img src="{{asset('images/brand/7.jpg')}}" alt="Canon" class="img-responsive" /></a> </div>
+                <div class="item text-center"> <a href="#"><img src="{{asset('images/brand/8.jpg')}}" alt="Canon" class="img-responsive" /></a> </div>
+                <div class="item text-center"> <a href="#"><img src="{{asset('images/brand/9.jpg')}}" alt="Canon" class="img-responsive" /></a> </div>
+                <div class="item text-center"> <a href="#"><img src="{{asset('images/brand/10.jpg')}}" alt="Canon" class="img-responsive" /></a> </div>
+            </div>
             </div>
           </div>
         </div>

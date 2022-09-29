@@ -19,16 +19,22 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 	Route::get('home',function(){
 		return View::make('index');
 	});
+    Route::get('shop',function(){
+        return View::make('category_page');
+    });
 });
 // Route::group(['prefix' => '{languages}'], function ()
 // {
-// 	/** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
-
-//     Route::get('home', function () {
-//         return view('index');
-//     });
-
-// });
+    // 	/** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
+    
+    //     Route::get('home', function () {
+        //         return view('index');
+        //     });
+        
+        // });
+        Route::get('foot',function(){
+            return View::make('footer');
+        });
 
 Route::get('/', function () {
     return view('welcome');

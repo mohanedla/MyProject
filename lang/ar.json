@@ -22,6 +22,7 @@
   "Free Shipping":"الشحن مجانا",
   "Free delivery worldwide":"التوصيل المجاني في جميع أنحاء العالم",
   "Featured Products":"منتجات مميزة",
+  "Products":"منتجات",
   "New Arrivals":"القادمون الجدد",
   "Bestsellers":"الأكثر مبيعًا",
   "Featured":"متميز",
@@ -30,5 +31,19 @@
   "Language":"اللغة",
   "My Account":"حسابي",
   "Currency":"عملة",
-  "Online Shop":"سوق الكتروني"
+  "Online Shop":"سوق الكتروني",
+  "Mans":"رجال",
+  "trouser":"بنطلون",
+  "T-Shirts":"تيشرتات",
+  "Shirt":"قميص",
+  "Suits":"بدلة",
+  "shoes":"أحذية",
+  "Jackets":"جاكيت",
+  "watches":"ساعات",
+  "Womens":"نساء",
+  "dress":"فستان",
+  "Jumpsuit":"جمبسوت",
+  "blouse":"بلوزة",
+  "Childrens":"اطفال"
+
 }

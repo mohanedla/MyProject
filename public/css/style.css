@@ -13,27 +13,27 @@ Created by: 	Armen
 @import url("ionicons.min.css");
 /* -----  font awesome Font  -----*/
 @import url("font-awesome.min.css");
-/* =====  INDEX OF STYLES ===== 
+/* =====  INDEX OF STYLES =====
 01 ===== BASIC  =====
   1.1 General
-  1.2 Typography  
-  1.3 Spacing    
+  1.2 Typography
+  1.3 Spacing
   1.4 Button
   1.5 Elements
   1.6 Accordions
   1.7 Tabs
   1.8 Progress Bars
   1.9 Inputs
-  1.10 Newslatter popup 
-  
-02 ===== HEADER ===== 
+  1.10 Newslatter popup
+
+02 ===== HEADER =====
   2.1 Header
   2.2 Navbar
   2.3 Megamenu
   2.4 Search
   2.5 Cart
   2.6 Header bottom
-  
+
 03 ===== CONTANT =====
   3.1 Left column
   3.2 Right column
@@ -43,7 +43,7 @@ Created by: 	Armen
   	3.2.4 Breadcrumb
   	3.2.5 Blog
   	3.2.6 Single Blog
-  	3.2.7 Product + Category Page 
+  	3.2.7 Product + Category Page
   	3.2.8 Client
   	3.2.9 Owl nav
   	3.2.10 About
@@ -53,14 +53,14 @@ Created by: 	Armen
   	3.2.14 Login & register
   	3.2.15 Map
   	3.2.16 Brand
-  
+
 04 ===== FOOTER =====
 	4.1 Footer General
 	4.2 Scrollup
 
 ----------------------------------------------
 	BASIC
-	1.1 General  
+	1.1 General
 ----------------------------------------------- */
 body, html {
     height: 100%;
@@ -165,7 +165,7 @@ ul {
 }
 
 /* ----------------------------------------------
-	1.2 Typography 
+	1.2 Typography
 ----------------------------------------------- */
 
 a {
@@ -237,7 +237,7 @@ h6 {
 }
 
 /* ----------------------------------------------
-	1.3 Spacing 
+	1.3 Spacing
 ----------------------------------------------- */
 
 .box {
@@ -488,7 +488,7 @@ h6 {
 }
 
 /* ----------------------------------------------
-	1.4 Button 
+	1.4 Button
 ----------------------------------------------- */
 
 .btn {
@@ -534,7 +534,7 @@ h6 {
 }
 
 /* ----------------------------------------------
-	1.5 Elements 
+	1.5 Elements
 ----------------------------------------------- */
 
 .alert {
@@ -583,7 +583,7 @@ i.right {
 }
 
 /* ----------------------------------------------
-	1.6 Accordian 
+	1.6 Accordian
 ----------------------------------------------- */
 
 .panel-default {
@@ -601,7 +601,7 @@ i.right {
 }
 
 /* ----------------------------------------------
-	1.7 Tabs 
+	1.7 Tabs
 ----------------------------------------------- */
 
 .nav>li>a {
@@ -1085,6 +1085,7 @@ label.checkme {
     clear: both;
     font-weight: 500;
     white-space: normal;
+    font-size: larger;
 }
 .mega-dropdown-menu>li ul>li>a:hover, .mega-dropdown-menu>li ul>li>a:focus {
     text-decoration: none;
@@ -1118,6 +1119,7 @@ label.checkme {
     overflow: hidden;
     color: #fff;
     text-transform: uppercase;
+    font-size: larger;
 }
 #menu>li>a:hover, #menu>li>a:focus {
     background-color: #fa4251;
@@ -1712,7 +1714,7 @@ input#amount {
     font-size: 16px;
     letter-spacing: 1px;
 }
-#Blog .post-info h6 a:hover {    
+#Blog .post-info h6 a:hover {
     color: #fa4251;
 }
 #Blog .post-img:hover>a {
@@ -1774,7 +1776,7 @@ blockquote {
 }
 
 /* ----------------------------------------------
-	3.2.7 Product + Category Page 
+	3.2.7 Product + Category Page
 ----------------------------------------------- */
 
 #product-tab .product-thumb, .latest .product-thumb {
@@ -2487,7 +2489,7 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
 /*-----------------------------------*/
 
 @media (max-width: 767px) {
-    
+
     .header-top-left, .header-top-right {
         text-align: center;
     }
@@ -2598,7 +2600,7 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
         background:transparent;
     }
     .view-blog{
-        border-color: #ccc; 
+        border-color: #ccc;
     }
     .newsletter-popup-top {
         width: 50%;
@@ -2735,7 +2737,7 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
         padding: 0 10px;
     }
     .product-layout.product-grid, .related-pro .product-thumb  {
-        margin:0; 
+        margin:0;
         padding: 0 5px;
     }
     .nav>li>a {

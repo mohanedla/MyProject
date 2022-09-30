@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <!--[if (gte IE 9)|!(IE)]><!-->
     <html lang="en">
-        <!--<![endif]-->        
+        <!--<![endif]-->
 <head>
     <!-- =====  BASIC PAGE NEEDS  ===== -->
     <meta charset="utf-8">
@@ -27,7 +27,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/magnific-popup.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/owl.carousel.css') }}">
-    
+
  <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}">
  <link rel="apple-touch-icon" href="{{ asset('images/apple-touch-icon.png') }}">
     <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('images/apple-touch-icon-72x72.png') }}">
@@ -203,29 +203,23 @@
                                         </li>
                                         <li class="col-md-3">
                                             <ul>
-                                                <li class="dropdown-header">{{__('Baby Girl')}}</li>
-                                                <li><a href="#">Unique Features</a></li>
-                                                <li><a href="#">Four columns</a></li>
-                                                <li><a href="#">Image Responsive</a></li>
-                                                <li><a href="#">Auto Carousel</a></li>
-                                                <li><a href="#">Newsletter Form</a></li>
-                                                <li><a href="#">Four columns</a></li>
-                                                <li><a href="#">Good Typography</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="col-md-3">
-                                            <ul>
-                                                <li class="dropdown-header">{{__('Baby Boy')}}</li>
-                                                <li><a href="#">{{__('trouser')}}</a></li>
-                                                <li><a href="#">{{__('T-Shirts')}}</a></li>
-                                                <li><a href="#">{{__('Shirt')}}</a></li>
-                                                <li><a href="#">{{__('Suits')}}</a></li>
-                                                <li><a href="#">{{__('shoes')}}</a></li>
-                                                <li><a href="#">{{__('Jackets')}}</a></li>
-                                                <li><a href="#">{{__('watches')}}</a></li>
+                                                <li class="dropdown-header">{{__('Children')}}<i class='bx bxs-down-arrow-alt bx-flashing' style='color:#afacac'  ></i></li>
+                                                <select name="dropdown" class="dropdown"><span class="caret"></span>
+                                                    <option>Settings...</option>
+                                                    <option>Your profile</option>
+                                                    <option>Your account</option>
+                                                    <option>Notifications</option>
+                                                    <option>Sign Out</option>
+                                                </select>
                                             </ul>
                                         </li>
 
+                                        <style>
+                                            .dropdown {
+                                                background: #424242;
+                                                border: 0;
+                                            }
+                                        </style>
                                         <li class="col-md-3">
                                         </li>
                                     </ul>
@@ -1511,13 +1505,13 @@
                 <!-- =====  FOOTER START  ===== -->
 @extends('layout.footer')
 @section('footer')
-    
+
 @endsection
             <!-- =====  FOOTER END  ===== -->
         </div>
         @extends('layout.js')
         @section('js')
-            
+
         @endsection
 </body>
 

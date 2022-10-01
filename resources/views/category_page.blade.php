@@ -50,7 +50,7 @@
                         </div>
                         <div class="col-xs-12 col-sm-8">
                             <ul class="header-top-right text-right">
-                                <li class="account"><a href="login.html">My Account</a></li>
+                                <li class="account"><a href="login">My Account</a></li>
                                 <li class="language dropdown"> <span class="dropdown-toggle" id="dropdownMenu1"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                         role="button">{{ __('Language') }} <span class="caret"></span> </span>
@@ -92,7 +92,7 @@
                             </div>
                         </div>
                         <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="index.html"> <img
-                                    alt="themini" src="{{ asset('images/logo.png') }}"> </a> </div>
+                                    alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
                         <div class="col-xs-6 col-sm-4 shopcart">
                             <div id="cart" class="btn-group btn-block mtb_40">
                                 <button type="button" class="btn" data-target="#cart-dropdown"
@@ -204,7 +204,7 @@
                                         <li class="col-md-3">
 
                                             <ul>
-                                                <li class="dropdown-header">{{ __('Children') }}</li>
+                                                <li class="dropdown-header">{{ __('Childrens') }}</li>
                                                         <li><select name="dropdown" class="dropdown"></li>
                                                     <option>Settings<i class='bx bx-down-arrow-alt bx-flashing' style='color:#ffffff'  ></i></option>
                                                     <option>Your profile</option>
@@ -245,16 +245,6 @@
                                     </ul>
                                 </li>
                                 <li> <a href="shop">{{ __('shop') }}</a></li>
-                                <li> <a href="blog_page.html">{{ __('Blog') }}</a></li>
-                                <li class="dropdown"> <a href="#" class="dropdown-toggle"
-                                        data-toggle="dropdown">Pages </a>
-                                    <ul class="dropdown-menu">
-                                        <li> <a href="cart_page.html">Cart</a></li>
-                                        <li> <a href="checkout_page.html">Checkout</a></li>
-                                        <li> <a href="product_detail_page.html">Product Detail Page</a></li>
-                                        <li> <a href="single_blog.html">Single Post</a></li>
-                                    </ul>
-                                </li>
                                 <li> <a href="about.html">{{ __('About us') }}</a></li>
                                 <li> <a href="contact_us.html">{{ __('Contact us') }}</a></li>
                             </ul>

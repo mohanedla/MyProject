@@ -49,7 +49,7 @@
                     </div>
                     <div class="col-xs-12 col-sm-8">
                         <ul class="header-top-right text-right">
-                            <li class="account"><a href="login.html">{{ __('My Account') }}</a></li>
+                            <li class="account"><a href="login">{{ __('My Account') }}</a></li>
                             <li class="language dropdown"> <span class="dropdown-toggle" id="dropdownMenu1"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                     role="button">{{ __('Language') }} <span class="caret"></span> </span>
@@ -202,63 +202,119 @@
                                     </li>
 
                                     <li class="col-md-3">
-
                                         <ul>
-                                            <li class="dropdown-header">{{ __('Children') }}</li>
-                                                    <li><select name="dropdown" class="dropdown"></li>
-                                                <option>Settings<i class='bx bx-down-arrow-alt bx-flashing' style='color:#ffffff'  ></i></option>
-                                                <option>Your profile</option>
-                                                <option>Your account</option>
-                                                <option>Notifications</option>
-                                                <option>Sign Out</option>
-                                            </select>
-                                        </ul>
-                                    </li>
-
-                                    <li class="col-md-3">
-                                        <ul>
-                                            <li id="myCarousel" class="carousel slide" data-ride="carousel">
-                                                <div class="carousel-inner">
-                                                    <div class="item active"> <a href="#"><img
-                                                                src="{{ asset('images/menu-banner1.jpg') }}"
-                                                                class="img-responsive" alt="Banner1"></a></div>
-                                                    <!-- End Item -->
-                                                    <div class="item"> <a href="#"><img
-                                                                src="{{ asset('images/menu-banner2.jpg') }}"
-                                                                class="img-responsive" alt="Banner1"></a></div>
-                                                    <!-- End Item -->
-                                                    <div class="item"> <a href="#"><img
-                                                                src="{{ asset('images/menu-banner3.jpg') }}"
-                                                                class="img-responsive" alt="Banner1"></a></div>
-                                                    <!-- End Item -->
-                                                </div>
-                                                <!-- End Carousel Inner -->
+                                            <li class="dropdown-header">{{ __('Childrens') }}</li>
+                                            <li><a href="#"><select name="dropdown" class="dropdown_ch"></a>
+                                            <li>
+                                                <option class="option_ch"><a href="#">{{ __('Born') }}</a>
+                                                </option>
                                             </li>
-                                            <!-- /.carousel -->
-                                        </ul>
-                                    <style>
-                                        .dropdown {
-                                            background: #424242;
-                                            border: 0;
-                                        }
-                                    </style>
-                                    <li class="col-md-3">
+                                            <li>
+                                                <option class="option_ch"><a href="#">{{ __('Boy') }}</a>
+                                                </option>
+                                            </li>
+                                            <li>
+                                                <option class="option_ch"><a href="#">{{ __('Girl') }}</a>
+                                                </option>
+                                            </li>
+                                            </select>
                                     </li>
-                                </ul>
+                                    <li><a href="#"><select name="dropdown" class="dropdown_ch"></a>
+                                    <li>
+                                        <option><a href="#">{{ __('Born') }}</a></option>
+                                    </li>
+                                    <li>
+                                        <option><a href="#">{{ __('Boy') }}</a></option>
+                                    </li>
+                                    <li>
+                                        <option><a href="#">{{ __('Girl') }}</a></option>
+                                    </li>
+                                    </select>
                             </li>
-                            <li> <a href="shop">{{ __('shop') }}</a></li>
-                            <li> <a href="blog_page.html">{{ __('Blog') }}</a></li>
-                            <li class="dropdown"> <a href="#" class="dropdown-toggle"
-                                    data-toggle="dropdown">Pages </a>
-                                <ul class="dropdown-menu">
-                                    <li> <a href="cart_page.html">Cart</a></li>
-                                    <li> <a href="checkout_page.html">Checkout</a></li>
-                                    <li> <a href="product_detail_page.html">Product Detail Page</a></li>
-                                    <li> <a href="single_blog.html">Single Post</a></li>
-                                </ul>
+                            <li><a href="#"><select name="dropdown" class="dropdown_ch"></a>
+                            <li>
+                                <option><a href="#">{{ __('Born') }}</a></option>
                             </li>
-                            <li> <a href="about.html">{{ __('About us') }}</a></li>
-                            <li> <a href="contact_us.html">{{ __('Contact us') }}</a></li>
+                            <li>
+                                <option><a href="#">{{ __('Boy') }}</a></option>
+                            </li>
+                            <li>
+                                <option><a href="#">{{ __('Girl') }}</a></option>
+                            </li>
+                            </select></li>
+                        </ul>
+                        </li>
+                        <li class="col-md-3">
+                            <ul>
+                                <li id="myCarousel" class="carousel slide" data-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <div class="item active"> <a href="#"><img
+                                                    src="{{ asset('images/menu-banner1.jpg') }}"
+                                                    class="img-responsive" alt="Banner1"></a></div>
+                                        <!-- End Item -->
+                                        <div class="item"> <a href="#"><img
+                                                    src="{{ asset('images/menu-banner2.jpg') }}"
+                                                    class="img-responsive" alt="Banner1"></a></div>
+                                        <!-- End Item -->
+                                        <div class="item"> <a href="#"><img
+                                                    src="{{ asset('images/menu-banner3.jpg') }}"
+                                                    class="img-responsive" alt="Banner1"></a></div>
+                                        <!-- End Item -->
+                                    </div>
+                                    <!-- End Carousel Inner -->
+                                </li>
+                                <!-- /.carousel -->
+                            </ul>
+                            <style>
+                                .dropdown_ch {
+                                    background: #424242;
+                                    border: 0;
+                                    background: none;
+                                    color: white;
+                                    width: 200px;
+                                }
+
+                                .option_ch {
+                                    color: rgb(184, 183, 183);
+                                    width: 200px;
+                                    background: #565454;
+                                }
+
+                                /* .option_ch {
+    text-decoration: none;
+    color: #f2f2f2;
+    text-align: center;
+    font-family: 'poppins', sans-serif;
+    font-size: large;
+    position: relative;
+    letter-spacing: 2px;
+}
+
+.option_ch:after {
+    content: "";
+    position: absolute;
+    background-color: #bb0d8d;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
+}
+.option_ch:hover {
+    color: white;
+}
+
+.option_ch:hover:after {
+    width: 100%;
+} */
+                            </style>
+                        <li class="col-md-3">
+                        </li>
+                        </ul>
+                        </li>
+                        <li> <a href="shop">{{ __('shop') }}</a></li>
+                        <li> <a href="about.html">{{ __('About us') }}</a></li>
+                        <li> <a href="contact_us.html">{{ __('Contact us') }}</a></li>
                         </ul>
                     </div>
                     <!-- /.nav-collapse -->
@@ -964,7 +1020,8 @@
                                                         src="images/product/product8-1.jpg" alt="iPod Classic"
                                                         title="iPod Classic" class="img-responsive"> </a>
                                                 <div class="button-group text-center">
-                                                    <div class="wishlist"><a href="#"><span>wishlist</span></a>
+                                                    <div class="wishlist"><a
+                                                            href="#"><span>wishlist</span></a>
                                                     </div>
                                                     <div class="quickview"><a href="#"><span>Quick
                                                                 View</span></a></div>
@@ -978,11 +1035,14 @@
                                                 <div class="rating"> <span class="fa fa-stack"><i
                                                             class="fa fa-star-o fa-stack-1x"></i><i
                                                             class="fa fa-star fa-stack-1x"></i></span> <span
-                                                        class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
+                                                        class="fa fa-stack"><i
+                                                            class="fa fa-star-o fa-stack-1x"></i><i
                                                             class="fa fa-star fa-stack-1x"></i></span> <span
-                                                        class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
+                                                        class="fa fa-stack"><i
+                                                            class="fa fa-star-o fa-stack-1x"></i><i
                                                             class="fa fa-star fa-stack-1x"></i></span> <span
-                                                        class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
+                                                        class="fa fa-stack"><i
+                                                            class="fa fa-star-o fa-stack-1x"></i><i
                                                             class="fa fa-star fa-stack-1x"></i></span> <span
                                                         class="fa fa-stack"><i
                                                             class="fa fa-star-o fa-stack-1x"></i><i

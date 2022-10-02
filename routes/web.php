@@ -22,18 +22,15 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('shop',function(){
         return View::make('category_page');
     });
-    Route::get('login',function(){
-        return View::make('login');
-    });
 });
 // Route::group(['prefix' => '{languages}'], function ()
 // {
     // 	/** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
-
+    
     //     Route::get('home', function () {
         //         return view('index');
         //     });
-
+        
         // });
         Route::get('foot',function(){
             return View::make('footer');

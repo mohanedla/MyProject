@@ -221,7 +221,7 @@
                                     </li>
                                     <li><a href="#"><select name="dropdown" class="dropdown_ch"></a>
                                     <li>
-                                        <option><a href="#">{{ __('Born') }}</a></option>
+                                        <option><a href="#">{{ __('Children') }}</a></option>
                                     </li>
                                     <li>
                                         <option><a href="#">{{ __('Boy') }}</a></option>
@@ -233,7 +233,7 @@
                             </li>
                             <li><a href="#"><select name="dropdown" class="dropdown_ch"></a>
                             <li>
-                                <option><a href="#">{{ __('Born') }}</a></option>
+                                <option><a href="#">{{ __('Confusing') }}</a></option>
                             </li>
                             <li>
                                 <option><a href="#">{{ __('Boy') }}</a></option>

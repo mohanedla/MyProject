@@ -25,6 +25,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('login',function(){
         return View::make('login');
     });
+    Route::get('empty',function(){
+        return View::make('layout.empty');
+    });
 });
 // Route::group(['prefix' => '{languages}'], function ()
 // {

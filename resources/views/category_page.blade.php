@@ -177,44 +177,81 @@
                                         data-toggle="dropdown">{{ __('Collection') }} </a>
                                     <ul class="dropdown-menu mega-dropdown-menu row">
                                         <li class="col-md-3">
-                                            <ul>
-                                                <li class="dropdown-header">{{ __('Womens') }}</li>
-                                                <li><a href="#">{{ __('trouser') }}</a></li>
-                                                <li><a href="#">{{ __('T-Shirts') }}</a></li>
-                                                <li><a href="#">{{ __('dress') }}</a></li>
-                                                <li><a href="#">{{ __('Jumpsuit') }}</a></li>
-                                                <li><a href="#">{{ __('shoes') }}</a></li>
-                                                <li><a href="#">{{ __('blouse') }}</a></li>
-                                                <li><a href="#">{{ __('watches') }}</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="col-md-3">
-                                            <ul>
-                                                <li class="dropdown-header">{{ __('Mans') }}</li>
-                                                <li><a href="#">{{ __('trouser') }}</a></li>
-                                                <li><a href="#">{{ __('T-Shirts') }}</a></li>
-                                                <li><a href="#">{{ __('Shirt') }}</a></li>
-                                                <li><a href="#">{{ __('Suits') }}</a></li>
-                                                <li><a href="#">{{ __('shoes') }}</a></li>
-                                                <li><a href="#">{{ __('Jackets') }}</a></li>
-                                                <li><a href="#">{{ __('watches') }}</a></li>
-                                            </ul>
-                                        </li>
+                                                <ul>
+                                                    <li class="dropdown-header">{{ __('Womens') }}</li>
+                                                    <li><a href="#">{{ __('trouser') }}</a></li>
+                                                    <li><a href="#">{{ __('T-Shirts') }}</a></li>
+                                                    <li><a href="#">{{ __('dress') }}</a></li>
+                                                    <li><a href="#">{{ __('Jumpsuit') }}</a></li>
+                                                    <li><a href="#">{{ __('shoes') }}</a></li>
+                                                    <li><a href="#">{{ __('blouse') }}</a></li>
+                                                    <li><a href="#">{{ __('watches') }}</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="col-md-3">
+                                                <ul>
+                                                    <li class="dropdown-header">{{ __('Mans') }}</li>
+                                                    <li><a href="#">{{ __('trouser') }}</a></li>
+                                                    <li><a href="#">{{ __('T-Shirts') }}</a></li>
+                                                    <li><a href="#">{{ __('Shirt') }}</a></li>
+                                                    <li><a href="#">{{ __('Suits') }}</a></li>
+                                                    <li><a href="#">{{ __('shoes') }}</a></li>
+                                                    <li><a href="#">{{ __('Jackets') }}</a></li>
+                                                    <li><a href="#">{{ __('watches') }}</a></li>
+                                                </ul>
+                                            </li>
 
-                                        <li class="col-md-3">
+                                            <li class="col-md-3">
+                                                <ul>
+                                                    <li class="dropdown-header">{{ __('Childrens') }}</li>
+                                                    <li><a href="#"><select name="dropdown" class="dropdown_ch"></a>
+                                                    <li>
+                                                        <option class="option_ch"><a href="#">{{ __('Born') }}</a>
+                                                        </option>
+                                                    </li>
+                                                    <li>
+                                                        <option class="option_ch"><a href="#">{{ __('Boys') }}</a>
+                                                        </option>
+                                                    </li>
+                                                    <li>
+                                                        <option class="option_ch"><a href="#">{{ __('Girls') }}</a>
+                                                        </option>
+                                                    </li>
+                                                    </select>
+                                            </li>
+                                                    <li><a href="#"><select name="dropdown" class="dropdown_ch"></a>
+                                                    <li>
+                                                        <option class="option_ch"><a href="#">{{ __('Childrens') }}</a>
+                                                        </option>
+                                                    </li>
+                                                    <li>
+                                                        <option class="option_ch"><a href="#">{{ __('Boys') }}</a>
+                                                        </option>
+                                                    </li>
+                                                    <li>
+                                                        <option class="option_ch"><a href="#">{{ __('Girls') }}</a>
+                                                        </option>
+                                                    </li>
+                                                    </select>
+                                            </li>
+                                                    <li><a href="#"><select name="dropdown" class="dropdown_ch"></a>
+                                                    <li>
+                                                        <option class="option_ch"><a href="#">{{ __('puzzling') }}</a>
+                                                        </option>
+                                                    </li>
+                                                    <li>
+                                                        <option class="option_ch"><a href="#">{{ __('Boys') }}</a>
+                                                        </option>
+                                                    </li>
+                                                    <li>
+                                                        <option class="option_ch"><a href="#">{{ __('Girls') }}</a>
+                                                        </option>
+                                                    </li>
+                                                    </select>
+                                            </li>
 
-                                            <ul>
-                                                <li class="dropdown-header">{{ __('Childrens') }}</li>
-                                                        <li><select name="dropdown" class="dropdown"></li>
-                                                    <option>Settings<i class='bx bx-down-arrow-alt bx-flashing' style='color:#ffffff'  ></i></option>
-                                                    <option>Your profile</option>
-                                                    <option>Your account</option>
-                                                    <option>Notifications</option>
-                                                    <option>Sign Out</option>
-                                                </select>
-                                            </ul>
-                                        </li>
-
+                                </ul>
+                                </li>
                                         <li class="col-md-3">
                                             <ul>
                                                 <li id="myCarousel" class="carousel slide" data-ride="carousel">

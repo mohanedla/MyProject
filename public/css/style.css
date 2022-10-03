@@ -2749,3 +2749,16 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
 }
     /* =====  END RESPONSIVE CSS  =====*/
 
+    .dropdown_ch {
+        background: #424242;
+        border: 0;
+        background: none;
+        color: white;
+        width: 200px;
+    }
+
+    .option_ch {
+        color: rgb(184, 183, 183);
+        width: 200px;
+        background: #565454;
+    }

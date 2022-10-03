@@ -210,38 +210,46 @@
                                                 </option>
                                             </li>
                                             <li>
-                                                <option class="option_ch"><a href="#">{{ __('Boy') }}</a>
+                                                <option class="option_ch"><a href="#">{{ __('Boys') }}</a>
                                                 </option>
                                             </li>
                                             <li>
-                                                <option class="option_ch"><a href="#">{{ __('Girl') }}</a>
+                                                <option class="option_ch"><a href="#">{{ __('Girls') }}</a>
                                                 </option>
                                             </li>
                                             </select>
                                     </li>
-                                    <li><a href="#"><select name="dropdown" class="dropdown_ch"></a>
-                                    <li>
-                                        <option><a href="#">{{ __('Born') }}</a></option>
+                                            <li><a href="#"><select name="dropdown" class="dropdown_ch"></a>
+                                            <li>
+                                                <option class="option_ch"><a href="#">{{ __('Childrens') }}</a>
+                                                </option>
+                                            </li>
+                                            <li>
+                                                <option class="option_ch"><a href="#">{{ __('Boys') }}</a>
+                                                </option>
+                                            </li>
+                                            <li>
+                                                <option class="option_ch"><a href="#">{{ __('Girls') }}</a>
+                                                </option>
+                                            </li>
+                                            </select>
                                     </li>
-                                    <li>
-                                        <option><a href="#">{{ __('Boy') }}</a></option>
+                                            <li><a href="#"><select name="dropdown" class="dropdown_ch"></a>
+                                            <li>
+                                                <option class="option_ch"><a href="#">{{ __('puzzling') }}</a>
+                                                </option>
+                                            </li>
+                                            <li>
+                                                <option class="option_ch"><a href="#">{{ __('Boys') }}</a>
+                                                </option>
+                                            </li>
+                                            <li>
+                                                <option class="option_ch"><a href="#">{{ __('Girls') }}</a>
+                                                </option>
+                                            </li>
+                                            </select>
                                     </li>
-                                    <li>
-                                        <option><a href="#">{{ __('Girl') }}</a></option>
-                                    </li>
-                                    </select>
-                            </li>
-                            <li><a href="#"><select name="dropdown" class="dropdown_ch"></a>
-                            <li>
-                                <option><a href="#">{{ __('Born') }}</a></option>
-                            </li>
-                            <li>
-                                <option><a href="#">{{ __('Boy') }}</a></option>
-                            </li>
-                            <li>
-                                <option><a href="#">{{ __('Girl') }}</a></option>
-                            </li>
-                            </select></li>
+
                         </ul>
                         </li>
                         <li class="col-md-3">
@@ -265,49 +273,6 @@
                                 </li>
                                 <!-- /.carousel -->
                             </ul>
-                            <style>
-                                .dropdown_ch {
-                                    background: #424242;
-                                    border: 0;
-                                    background: none;
-                                    color: white;
-                                    width: 200px;
-                                }
-
-                                .option_ch {
-                                    color: rgb(184, 183, 183);
-                                    width: 200px;
-                                    background: #565454;
-                                }
-
-                                /* .option_ch {
-    text-decoration: none;
-    color: #f2f2f2;
-    text-align: center;
-    font-family: 'poppins', sans-serif;
-    font-size: large;
-    position: relative;
-    letter-spacing: 2px;
-}
-
-.option_ch:after {
-    content: "";
-    position: absolute;
-    background-color: #bb0d8d;
-    height: 3px;
-    width: 0;
-    left: 0;
-    bottom: -10px;
-    transition: 0.3s;
-}
-.option_ch:hover {
-    color: white;
-}
-
-.option_ch:hover:after {
-    width: 100%;
-} */
-                            </style>
                         <li class="col-md-3">
                         </li>
                         </ul>

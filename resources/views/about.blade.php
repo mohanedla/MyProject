@@ -21,15 +21,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="viewport" content="width=device-width">
   <!-- =====  CSS  ===== -->
-  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <link rel="stylesheet" type="text/css" href="css/magnific-popup.css">
-  <link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
-  <link rel="shortcut icon" href="images/favicon.png">
-  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  <link rel="stylesheet" type="text/css" href="{{asset('css/font-awesome.min.css')}}" />
+  <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.css')}}" />
+  <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('css/magnific-popup.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('css/owl.carousel.css')}}">
+  <link rel="shortcut icon" href="{{asset('images/favicon.png')}}">
+  <link rel="apple-touch-icon" href="{{asset('images/apple-touch-icon.png')}}">
+  <link rel="apple-touch-icon" sizes="72x72" href="{{asset('images/apple-touch-icon-72x72.png')}}">
+  <link rel="apple-touch-icon" sizes="114x114" href="{{asset('images/apple-touch-icon-114x114.png')}}">
 </head>
 
 <body>
@@ -509,11 +509,9 @@
     </div>
   <!-- =====  FOOTER END  ===== -->
   <a id="scrollup"></a>
-  <script src="js/jQuery_v3.1.1.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.magnific-popup.js"></script>
-  <script src="js/custom.js"></script>
+  @extends('layout.js')
+  @section('js')
+  @endsection
 </body>
 
 </html>

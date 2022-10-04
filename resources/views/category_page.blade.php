@@ -50,7 +50,7 @@
                         </div>
                         <div class="col-xs-12 col-sm-8">
                             <ul class="header-top-right text-right">
-                                <li class="account"><a href="login">My Account</a></li>
+                                <li class="account"><a href="login">{{ __('My Account')}}</a></li>
                                 <li class="language dropdown"> <span class="dropdown-toggle" id="dropdownMenu1"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                         role="button">{{ __('Language') }} <span class="caret"></span> </span>
@@ -67,7 +67,7 @@
                                 </li>
                                 <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                        role="button">Currency <span class="caret"></span> </span>
+                                        role="button">{{ __('Currency')}} <span class="caret"></span> </span>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
 
                                         <li><a href="#">$ US Dollar</a></li>
@@ -273,12 +273,6 @@
                                                 </li>
                                                 <!-- /.carousel -->
                                             </ul>
-                                        <style>
-                                            .dropdown {
-                                                background: #424242;
-                                                border: 0;
-                                            }
-                                        </style>
                                     </ul>
                                 </li>
                                 <li> <a href="shop">{{ __('shop') }}</a></li>

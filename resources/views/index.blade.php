@@ -68,11 +68,21 @@
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                     role="button">{{ __('Currency') }} <span class="caret"></span> </span>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
-                                    <li><a href="#">€ Euro</a></li>
-                                    <li><a href="#">£ Pound Sterling</a></li>
+
                                     <li><a href="#">$ US Dollar</a></li>
                                 </ul>
                             </li>
+                            <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                role="button">{{__('Properties')}} <span class="caret"></span> </span>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
+
+                                <li><a href="add_admin">{{__ ('add admin')}}</a></li>
+                                <li><a href="add_brand">{{__ ('add brand')}}</a></li>
+                                <li><a href="add_product">{{__ ('add product')}}</a></li>
+                                <li><a href="reports">{{__ ('Reports')}}</a></li>
+                            </ul>
+                        </li>
                         </ul>
                     </div>
                 </div>
@@ -278,8 +288,8 @@
                         </ul>
                         </li>
                         <li> <a href="shop">{{ __('shop') }}</a></li>
-                        <li> <a href="about.html">{{ __('About us') }}</a></li>
-                        <li> <a href="contact_us.html">{{ __('Contact us') }}</a></li>
+                        <li> <a href="about">{{ __('About us') }}</a></li>
+                        <li> <a href="contact_us">{{ __('Contact us') }}</a></li>
                         </ul>
                     </div>
                     <!-- /.nav-collapse -->

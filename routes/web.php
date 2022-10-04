@@ -28,6 +28,24 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('empty',function(){
         return View::make('layout.empty');
     });
+    Route::get('add_admin',function(){
+        return View::make('add_admin');
+    });
+    Route::get('add_brand',function(){
+        return View::make('add_brand');
+    });
+    Route::get('add_product',function(){
+        return View::make('add_product');
+    });
+    Route::get('reports',function(){
+        return View::make('reports');
+    });
+    Route::get('contact_us',function(){
+        return View::make('contact_us');
+    });
+    Route::get('about',function(){
+        return View::make('about');
+    });
 });
 // Route::group(['prefix' => '{languages}'], function ()
 // {

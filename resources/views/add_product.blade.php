@@ -220,10 +220,10 @@
                 <!-- =====  BANNER STRAT  ===== -->
                 <div class="col-sm-12">
                     <div class="breadcrumb ptb_20">
-                        <h1>{{ __('Products') }}</h1>
+                        <h1>{{ __('Add Product') }}</h1>
                         <ul>
                             <li><a href="home">{{ __('Home') }}</a></li>
-                            <li class="active">{{ __('Products') }}</li>
+                            <li class="active">{{ __('Add Product') }}</li>
                         </ul>
                     </div>
                 </div>

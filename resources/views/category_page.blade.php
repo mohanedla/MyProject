@@ -89,7 +89,7 @@
                         <div class="col-xs-6 col-sm-4 shopcart">
                             <div id="cart" class="btn-group btn-block mtb_40">
                                 <button type="button" class="btn" data-target="#cart-dropdown"
-                                    data-toggle="collapse" aria-expanded="true"><span id="shippingcart">{{__ ('Shopping cart')}}</span><span id="cart-total">{{__ ('items')}} (0)</span> </button>
+                                    data-toggle="collapse" aria-expanded="true"><span id="shippingcart">{{__ ('Shopping cart')}}</span><span id="cart-total">(0) {{__ ('items')}}</span> </button>
                             </div>
                             <div id="cart-dropdown" class="cart-menu collapse">
                                 <ul>

@@ -75,7 +75,7 @@
                     <div class="row">
                         <div class="col-xs-12 col-sm-4">
                         </div>
-                        <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="index.html"> <img
+                        <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="index"> <img
                                     alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
                         <div class="col-xs-6 col-sm-4 shopcart">
 
@@ -196,8 +196,8 @@
                                 </ul>
                             </li>
                             <li> <a href="shop">{{ __('shop') }}</a></li>
-                            <li> <a href="about.html">{{ __('About us') }}</a></li>
-                            <li> <a href="contact_us.html">{{ __('Contact us') }}</a></li>
+                            <li> <a href="about">{{ __('About us') }}</a></li>
+                            <li> <a href="contact_us">{{ __('Contact us') }}</a></li>
                             </ul>
                         </div>
                         <!-- /.nav-collapse -->

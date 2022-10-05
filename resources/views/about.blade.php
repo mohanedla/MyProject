@@ -64,6 +64,7 @@
                                     @endforeach
                                 </ul>
                             </li>
+                            
                             <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                 role="button">{{__('Properties')}} <span class="caret"></span> </span>
@@ -84,12 +85,76 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 col-sm-4">
-                      
+
                     </div>
                     <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="home"> <img
                                 alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
                     <div class="col-xs-6 col-sm-4 shopcart">
-                    
+
+                        <div id="cart-dropdown" class="cart-menu collapse">
+                            <ul>
+                                <li>
+                                    <table class="table table-striped">
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-center"><a href="#"><img
+                                                            src="{{ asset('images/product/70x84.jpg') }}"
+                                                            alt="iPod Classic" title="iPod Classic"></a></td>
+                                                <td class="text-left product-name"><a href="#">MacBook
+                                                        Pro</a> <span class="text-left price">$20.00</span>
+                                                    <input class="cart-qty" name="product_quantity" min="1"
+                                                        value="1" type="number">
+                                                </td>
+                                                <td class="text-center"><a class="close-cart"><i
+                                                            class="fa fa-times-circle"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"><a href="#"><img
+                                                            src="{{ asset('images/product/70x84.jpg') }}"
+                                                            alt="iPod Classic" title="iPod Classic"></a></td>
+                                                <td class="text-left product-name"><a href="#">MacBook
+                                                        Pro</a> <span class="text-left price">$20.00</span>
+                                                    <input class="cart-qty" name="product_quantity" min="1"
+                                                        value="1" type="number">
+                                                </td>
+                                                <td class="text-center"><a class="close-cart"><i
+                                                            class="fa fa-times-circle"></i></a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </li>
+                                <li>
+                                    <table class="table">
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-right"><strong>Sub-Total</strong></td>
+                                                <td class="text-right">$2,100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-right"><strong>Eco Tax (-2.00)</strong></td>
+                                                <td class="text-right">$2.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-right"><strong>VAT (20%)</strong></td>
+                                                <td class="text-right">$20.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-right"><strong>Total</strong></td>
+                                                <td class="text-right">$2,122.00</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </li>
+                                <li>
+                                    <form action="cart_page">
+                                        <input class="btn pull-left mt_10" value="View cart" type="submit">
+                                    </form>
+                                    <form action="checkout_page">
+                                        <input class="btn pull-right mt_10" value="Checkout" type="submit">
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <nav class="navbar">
@@ -227,12 +292,11 @@
                   <h2 class="about-heading mb_20 mt_40 ptb_10">themini Design is Best Part of <span>my Life </span></h2>
                 </div>
                 <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
-                <button type="button" class="btn mt_30">HIRE ME</button>
               </div>
             </div>
           </div>
           <!-- =====  product ===== -->
-          
+
               <div class="item team-detail">
                 <div class="team-item-img"> <img src="{{ asset('images\brand\13.jpg')}}" alt="" /> </div>
                 <div class="team-designation mt_20">php Developer</div>
@@ -248,23 +312,23 @@
               </div>
               </div>
               <br>
-            
-  <!-- =====  FOOTER END  ===== -->
-  <a id="scrollup"></a>
-  @extends('layout.js')
-  @section('js')
-  @endsection
+
+              @extends('layout.footer')
+              <!-- =====  CONTAINER END  ===== -->
+              <!-- =====  FOOTER START  ===== -->
+              @section('footer')
+
+              @endsection
+              <!-- =====  FOOTER END  ===== -->
+          </div>
+          @extends('layout.js')
+          @section('js')
+
+          </body>
+
+          </html>
+
 </body>
 
 </html>
 
-@extends('layout.footer')
-<!-- =====  CONTAINER END  ===== -->
-<!-- =====  FOOTER START  ===== -->
-@section('footer')
-
-@endsection
-<!-- =====  FOOTER END  ===== -->
-</div>
-@extends('layout.js')
-@section('js')

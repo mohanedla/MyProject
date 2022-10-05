@@ -47,15 +47,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
         return View::make('about');
     });
 });
-// Route::group(['prefix' => '{languages}'], function ()
-// {
-    // 	/** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
 
-    //     Route::get('home', function () {
-        //         return view('index');
-        //     });
-
-        // });
         Route::get('foot',function(){
             return View::make('footer');
         });

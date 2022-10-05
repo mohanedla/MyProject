@@ -64,14 +64,7 @@
                                     @endforeach
                                 </ul>
                             </li>
-                            <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                    role="button">{{ __('Currency') }} <span class="caret"></span> </span>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
 
-                                    <li><a href="#">$ US Dollar</a></li>
-                                </ul>
-                            </li>
                             <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                 role="button">{{__('Properties')}} <span class="caret"></span> </span>
@@ -93,7 +86,7 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-4">
                         <div class="main-search mt_40">
-                            <input id="search-input" name="search" value="" placeholder="Search"
+                            <input id="search-input" name="search" value="" placeholder="{{__('Search')}}"
                                 class="form-control input-lg" autocomplete="off" type="text">
                             <span class="input-group-btn">
                                 <button type="button" class="btn btn-default btn-lg"><i
@@ -106,8 +99,7 @@
                     <div class="col-xs-6 col-sm-4 shopcart">
                         <div id="cart" class="btn-group btn-block mtb_40">
                             <button type="button" class="btn" data-target="#cart-dropdown"
-                                data-toggle="collapse" aria-expanded="true"><span id="shippingcart">Shopping
-                                    cart</span><span id="cart-total">items (0)</span> </button>
+                                data-toggle="collapse" aria-expanded="true"><span id="shippingcart">{{__ ('Shopping cart')}}</span><span id="cart-total">{{__ ('items')}} (0)</span> </button>
                         </div>
                         <div id="cart-dropdown" class="cart-menu collapse">
                             <ul>
@@ -164,10 +156,10 @@
                                     </table>
                                 </li>
                                 <li>
-                                    <form action="cart_page.html">
+                                    <form action="cart_page">
                                         <input class="btn pull-left mt_10" value="View cart" type="submit">
                                     </form>
-                                    <form action="checkout_page.html">
+                                    <form action="checkout_page">
                                         <input class="btn pull-right mt_10" value="Checkout" type="submit">
                                     </form>
                                 </li>
@@ -328,7 +320,7 @@
                                 <div class="product-grid">
                                     <div class="item">
                                         <div class="product-thumb">
-                                            <div class="image product-imageblock"> <a href="product_detail_page.html">
+                                            <div class="image product-imageblock"> <a href="product_detail_page">
                                                     <img data-name="product_image"
                                                         src="{{ asset('images/product/product9.jpg') }}"
                                                         alt="iPod Classic" title="iPod Classic"
@@ -372,7 +364,7 @@
                                 <div class="product-grid">
                                     <div class="item">
                                         <div class="product-thumb">
-                                            <div class="image product-imageblock"> <a href="product_detail_page.html">
+                                            <div class="image product-imageblock"> <a href="product_detail_page">
                                                     <img data-name="product_image"
                                                         src="{{ asset('images/product/product1.jpg') }}"
                                                         alt="iPod Classic" title="iPod Classic"
@@ -416,7 +408,7 @@
                                 <div class="product-grid">
                                     <div class="item">
                                         <div class="product-thumb">
-                                            <div class="image product-imageblock"> <a href="product_detail_page.html">
+                                            <div class="image product-imageblock"> <a href="product_detail_page">
                                                     <img data-name="product_image"
                                                         src="{{ asset('images/product/product3.jpg') }}"
                                                         alt="iPod Classic" title="iPod Classic"
@@ -460,7 +452,7 @@
                                 <div class="product-grid">
                                     <div class="item">
                                         <div class="product-thumb">
-                                            <div class="image product-imageblock"> <a href="product_detail_page.html">
+                                            <div class="image product-imageblock"> <a href="product_detail_page">
                                                     <img data-name="product_image"
                                                         src="{{ asset('images/product/product5.jpg') }}"
                                                         alt="iPod Classic" title="iPod Classic"
@@ -504,7 +496,7 @@
                                 <div class="product-grid">
                                     <div class="item">
                                         <div class="product-thumb  mb_30">
-                                            <div class="image product-imageblock"> <a href="product_detail_page.html">
+                                            <div class="image product-imageblock"> <a href="product_detail_page. ">
                                                     <img data-name="product_image"
                                                         src="{{ asset('images/product/product7.jpg') }}"
                                                         alt="iPod Classic" title="iPod Classic"
@@ -548,7 +540,7 @@
                                 <div class="product-grid">
                                     <div class="item">
                                         <div class="product-thumb  mb_30">
-                                            <div class="image product-imageblock"> <a href="product_detail_page.html">
+                                            <div class="image product-imageblock"> <a href="product_detail_page. ">
                                                     <img data-name="product_image"
                                                         src="{{ asset('images/product/product9.jpg') }}"
                                                         alt="iPod Classic" title="iPod Classic"
@@ -596,7 +588,7 @@
                                 <div class="product-grid">
                                     <div class="item">
                                         <div class="product-thumb  mb_30">
-                                            <div class="image product-imageblock"> <a href="product_detail_page.html">
+                                            <div class="image product-imageblock"> <a href="product_detail_page">
                                                     <img data-name="product_image"
                                                         src="{{ asset('images/product/product1.jpg') }}"
                                                         alt="iPod Classic" title="iPod Classic"
@@ -640,7 +632,7 @@
                                 <div class="product-grid">
                                     <div class="item">
                                         <div class="product-thumb  mb_30">
-                                            <div class="image product-imageblock"> <a href="product_detail_page.html">
+                                            <div class="image product-imageblock"> <a href="product_detail_page">
                                                     <img data-name="product_image"
                                                         src="{{ asset('images/product/product3.jpg') }}"
                                                         alt="iPod Classic" title="iPod Classic"
@@ -684,7 +676,7 @@
                                 <div class="product-grid">
                                     <div class="item">
                                         <div class="product-thumb  mb_30">
-                                            <div class="image product-imageblock"> <a href="product_detail_page.html">
+                                            <div class="image product-imageblock"> <a href="product_detail_page">
                                                     <img data-name="product_image"
                                                         src="{{ asset('images/product/product5.jpg') }}"
                                                         alt="iPod Classic" title="iPod Classic"
@@ -728,7 +720,7 @@
                                 <div class="product-grid">
                                     <div class="item">
                                         <div class="product-thumb  mb_30">
-                                            <div class="image product-imageblock"> <a href="product_detail_page.html">
+                                            <div class="image product-imageblock"> <a href="product_detail_page.">
                                                     <img data-name="product_image"
                                                         src="{{ asset('images/product/product6.jpg') }}"
                                                         alt="iPod Classic" title="iPod Classic"
@@ -772,7 +764,7 @@
                                 <div class="product-grid">
                                     <div class="item">
                                         <div class="product-thumb  mb_30">
-                                            <div class="image product-imageblock"> <a href="product_detail_page.html">
+                                            <div class="image product-imageblock"> <a href="product_detail_page">
                                                     <img data-name="product_image" src="images/product/product8.jpg"
                                                         alt="iPod Classic" title="iPod Classic"
                                                         class="img-responsive"> <img
@@ -814,7 +806,7 @@
                                 <div class="product-grid">
                                     <div class="item">
                                         <div class="product-thumb  mb_30">
-                                            <div class="image product-imageblock"> <a href="product_detail_page.html">
+                                            <div class="image product-imageblock"> <a href="product_detail_page">
                                                     <img data-name="product_image"
                                                         src="{{ asset('images/product/product10.jpg') }}"
                                                         alt="iPod Classic" title="iPod Classic"
@@ -862,7 +854,7 @@
                                 <div class="product-grid">
                                     <div class="item">
                                         <div class="product-thumb  mb_30">
-                                            <div class="image product-imageblock"> <a href="product_detail_page.html">
+                                            <div class="image product-imageblock"> <a href="product_detail_page">
                                                     <img data-name="product_image" src="images/product/product2.jpg"
                                                         alt="iPod Classic" title="iPod Classic"
                                                         class="img-responsive"> <img
@@ -904,7 +896,7 @@
                                 <div class="product-grid">
                                     <div class="item">
                                         <div class="product-thumb  mb_30">
-                                            <div class="image product-imageblock"> <a href="product_detail_page.html">
+                                            <div class="image product-imageblock"> <a href="product_detail_page">
                                                     <img data-name="product_image" src="images/product/product4.jpg"
                                                         alt="iPod Classic" title="iPod Classic"
                                                         class="img-responsive"> <img
@@ -946,7 +938,7 @@
                                 <div class="product-grid">
                                     <div class="item">
                                         <div class="product-thumb  mb_30">
-                                            <div class="image product-imageblock"> <a href="product_detail_page.html">
+                                            <div class="image product-imageblock"> <a href="product_detail_page">
                                                     <img data-name="product_image" src="images/product/product6.jpg"
                                                         alt="iPod Classic" title="iPod Classic"
                                                         class="img-responsive"> <img
@@ -988,7 +980,7 @@
                                 <div class="product-grid">
                                     <div class="item">
                                         <div class="product-thumb  mb_30">
-                                            <div class="image product-imageblock"> <a href="product_detail_page.html">
+                                            <div class="image product-imageblock"> <a href="product_detail_page">
                                                     <img data-name="product_image" src="images/product/product8.jpg"
                                                         alt="iPod Classic" title="iPod Classic"
                                                         class="img-responsive"> <img
@@ -1036,7 +1028,7 @@
                                     <div class="item">
                                         <div class="product-thumb  mb_30">
                                             <div class="image product-imageblock"> <a
-                                                    href="product_detail_page.html"> <img data-name="product_image"
+                                                    href="product_detail_page"> <img data-name="product_image"
                                                         src="images/product/product10.jpg" alt="iPod Classic"
                                                         title="iPod Classic" class="img-responsive"> <img
                                                         src="images/product/product10-1.jpg" alt="iPod Classic"
@@ -1082,7 +1074,7 @@
                                     <div class="item">
                                         <div class="product-thumb  mb_30">
                                             <div class="image product-imageblock"> <a
-                                                    href="product_detail_page.html"> <img data-name="product_image"
+                                                    href="product_detail_page"> <img data-name="product_image"
                                                         src="images/product/product2.jpg" alt="iPod Classic"
                                                         title="iPod Classic" class="img-responsive"> <img
                                                         src="images/product/product2-1.jpg" alt="iPod Classic"
@@ -1143,7 +1135,7 @@
                             <div class="product-grid">
                                 <div class="item">
                                     <div class="product-thumb">
-                                        <div class="image product-imageblock"> <a href="product_detail_page.html">
+                                        <div class="image product-imageblock"> <a href="product_detail_page">
                                                 <img data-name="product_image"
                                                     src="{{ asset('images/product/product2.jpg') }}"
                                                     alt="iPod Classic" title="iPod Classic"
@@ -1187,7 +1179,7 @@
                             <div class="product-grid">
                                 <div class="item">
                                     <div class="product-thumb">
-                                        <div class="image product-imageblock"> <a href="product_detail_page.html">
+                                        <div class="image product-imageblock"> <a href="product_detail_page">
                                                 <img data-name="product_image"
                                                     src="{{ asset('images/product/product4.jpg') }}"
                                                     alt="iPod Classic" title="iPod Classic"
@@ -1231,7 +1223,7 @@
                             <div class="product-grid">
                                 <div class="item">
                                     <div class="product-thumb">
-                                        <div class="image product-imageblock"> <a href="product_detail_page.html">
+                                        <div class="image product-imageblock"> <a href="product_detail_page">
                                                 <img data-name="product_image"
                                                     src="{{ asset('images/product/product6.jpg') }}"
                                                     alt="iPod Classic" title="iPod Classic"
@@ -1275,7 +1267,7 @@
                             <div class="product-grid">
                                 <div class="item">
                                     <div class="product-thumb">
-                                        <div class="image product-imageblock"> <a href="product_detail_page.html">
+                                        <div class="image product-imageblock"> <a href="product_detail_page">
                                                 <img data-name="product_image"
                                                     src="{{ asset('images/product/product8.jpg') }}"
                                                     alt="iPod Classic" title="iPod Classic"
@@ -1319,7 +1311,7 @@
                             <div class="product-grid">
                                 <div class="item">
                                     <div class="product-thumb">
-                                        <div class="image product-imageblock"> <a href="product_detail_page.html">
+                                        <div class="image product-imageblock"> <a href="product_detail_page">
                                                 <img data-name="product_image"
                                                     src="{{ asset('images/product/product10.jpg') }}"
                                                     alt="iPod Classic" title="iPod Classic"
@@ -1363,7 +1355,7 @@
                             <div class="product-grid">
                                 <div class="item">
                                     <div class="product-thumb">
-                                        <div class="image product-imageblock"> <a href="product_detail_page.html">
+                                        <div class="image product-imageblock"> <a href="product_detail_page">
                                                 <img data-name="product_image"
                                                     src="{{ asset('images/product/product2.jpg') }}"
                                                     alt="iPod Classic" title="iPod Classic"

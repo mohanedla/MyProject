@@ -84,9 +84,77 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 col-sm-4">
-                      
+
                     </div>
-    
+                    <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="home"> <img
+                        alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
+            <div class="col-xs-6 col-sm-4 shopcart">
+
+                <div id="cart-dropdown" class="cart-menu collapse">
+                    <ul>
+                        <li>
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center"><a href="#"><img
+                                                    src="{{ asset('images/product/70x84.jpg') }}"
+                                                    alt="iPod Classic" title="iPod Classic"></a></td>
+                                        <td class="text-left product-name"><a href="#">MacBook
+                                                Pro</a> <span class="text-left price">$20.00</span>
+                                            <input class="cart-qty" name="product_quantity" min="1"
+                                                value="1" type="number">
+                                        </td>
+                                        <td class="text-center"><a class="close-cart"><i
+                                                    class="fa fa-times-circle"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center"><a href="#"><img
+                                                    src="{{ asset('images/product/70x84.jpg') }}"
+                                                    alt="iPod Classic" title="iPod Classic"></a></td>
+                                        <td class="text-left product-name"><a href="#">MacBook
+                                                Pro</a> <span class="text-left price">$20.00</span>
+                                            <input class="cart-qty" name="product_quantity" min="1"
+                                                value="1" type="number">
+                                        </td>
+                                        <td class="text-center"><a class="close-cart"><i
+                                                    class="fa fa-times-circle"></i></a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </li>
+                        <li>
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td class="text-right"><strong>Sub-Total</strong></td>
+                                        <td class="text-right">$2,100.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-right"><strong>Eco Tax (-2.00)</strong></td>
+                                        <td class="text-right">$2.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-right"><strong>VAT (20%)</strong></td>
+                                        <td class="text-right">$20.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-right"><strong>Total</strong></td>
+                                        <td class="text-right">$2,122.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </li>
+                        <li>
+                            <form action="cart_page">
+                                <input class="btn pull-left mt_10" value="View cart" type="submit">
+                            </form>
+                            <form action="checkout_page">
+                                <input class="btn pull-right mt_10" value="Checkout" type="submit">
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div>
                 </div>
                 <nav class="navbar">
                     <p>menu</p>
@@ -223,12 +291,6 @@
       <div class="row ">
         <div id="column-left" class="col-sm-4 col-lg-3 hidden-xs">
           <div id="category-menu" class="navbar collapse in mb_40" aria-expanded="true" style="" role="button">
-            <div class="nav-responsive">
-               <div class="heading-part">
-               <h2 class="main_title"></h2>
-              </div>
-    
-            </div> 
           </div>
         </div>
         <div class="col-sm-8 col-lg-9 mtb_20">
@@ -236,12 +298,12 @@
           <div class="row">
             <div class="col-md-4 col-xs-12 contact">
               <div class="location mb_50">
-                <h5 class="capitalize mb_20"><strong>Our Location</strong></h5>
-                <div class="address">Office address
-                  <br> Triboli</div>
+                <h5 class="capitalize mb_20"><strong>{{ __('Our Location')}}</strong></h5>
+                <div class="address">{{ __('Office address')}}
+                  <br> {{__ ('Tripoli')}}</div>
                 <div class="call mt_10"><i class="fa fa-phone" aria-hidden="true"></i>+218-91-820-63-70</div>
               </div>
-             
+
               <div class="Hello mb_50">
                 <div class="email mt_10"><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:aymenbenghali@gmail.com" target="_top">info@yourdomailname.com</a></div>
               </div>
@@ -252,55 +314,44 @@
                 <form id="contact_body" method="post" action="contact_me.php">
                   <!--                                <label class="full-with-form" ><span>Name</span></label>
 -->
-                  <input class="full-with-form " type="text" name="name" placeholder="Name" data-required="true" />
+                  <input class="full-with-form " type="text" name="name" placeholder="{{__ ('Name')}}" data-required="true" />
                   <!--                <label class="full-with-form" ><span>Email Address</span></label>
 -->
-                  <input class="full-with-form  mt_30" type="email" name="email" placeholder="Email Address" data-required="true" />
+                  <input class="full-with-form  mt_30" type="email" name="email" placeholder="{{__('Email Address')}}" data-required="true" />
                   <!--                <label class="full-with-form" ><span>Phone Number</span></label>
 -->
-                  <input class="full-with-form  mt_30" type="text" name="phone1" placeholder="Phone Number" maxlength="15" data-required="true" />
+                  <input class="full-with-form  mt_30" type="text" name="phone1" placeholder="{{__ ('Phone Number')}}" maxlength="15" data-required="true" />
                   <!--                <label class="full-with-form" ><span>Subject</span></label>
 -->
-                  <input class="full-with-form  mt_30" type="text" name="subject" placeholder="Subject" data-required="true">
+                  <input class="full-with-form  mt_30" type="text" name="subject" placeholder="{{__('Subject')}}" data-required="true">
                   <!--                                <label class="full-with-form" ><span>Attachment</span></label>
 -->
                   <!--                                <label class="full-with-form" ><span>Message</span></label>
 -->
                   {{-- <textarea class="full-with-form  mt_30" name="message" placeholder="Message" data-required="true"></textarea> --}}
-                  <button class="btn mt_30" type="submit">Send Message</button>
+                  <button class="btn mt_30" type="submit">{{__ ('Send Message')}}</button>
                 </form>
                 <div id="contact_results"></div>
               </div>
               <!-- END Contact FORM -->
             </div>
           </div>
-        
+
         </div>
       </div>
     </div>
   </div>
-  <!-- Single Blog  -->
-  <!-- End Blog   -->
+  @extends('layout.footer')
   <!-- =====  CONTAINER END  ===== -->
-  {{-- <!-- =====  FOOTER START  ===== -->
-  
-      
-<!-- =====  FOOTER END  ===== --> --}}
-<a id="scrollup"></a>
-@extends('layout.js')
-@section('js')
-@endsection
-</body>
+  <!-- =====  FOOTER START  ===== -->
+  @section('footer')
 
-</html>
-
-@extends('layout.footer')
-<!-- =====  CONTAINER END  ===== -->
-<!-- =====  FOOTER START  ===== -->
-@section('footer')
-
-@endsection
-<!-- =====  FOOTER END  ===== -->
+  @endsection
+  <!-- =====  FOOTER END  ===== -->
 </div>
 @extends('layout.js')
 @section('js')
+
+</body>
+
+</html>

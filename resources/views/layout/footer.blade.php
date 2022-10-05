@@ -11,7 +11,7 @@
             </div>
         </div>
         <div class="col-sm-4">
-            <div class="copyright-part text-center">Make By: Aymen Ben Ghali</div>
+            <div class="copyright-part text-center">{{__('Make By: Aymen Ben Ghali')}}</div>
         </div>
 
     </div>

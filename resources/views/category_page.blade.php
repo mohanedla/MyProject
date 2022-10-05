@@ -65,14 +65,7 @@
                                         @endforeach
                                     </ul>
                                 </li>
-                                <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                        role="button">{{ __('Currency')}} <span class="caret"></span> </span>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
 
-                                        <li><a href="#">$ US Dollar</a></li>
-                                    </ul>
-                                </li>
                             </ul>
                         </div>
                     </div>
@@ -83,7 +76,7 @@
                     <div class="row">
                         <div class="col-xs-12 col-sm-4">
                             <div class="main-search mt_40">
-                                <input id="search-input" name="search" value="" placeholder="Search"
+                                <input id="search-input" name="search" value="" placeholder="{{__('Search')}}"
                                     class="form-control input-lg" autocomplete="off" type="text">
                                 <span class="input-group-btn">
                                     <button type="button" class="btn btn-default btn-lg"><i
@@ -91,13 +84,12 @@
                                 </span>
                             </div>
                         </div>
-                        <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="index.html"> <img
+                        <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="home"> <img
                                     alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
                         <div class="col-xs-6 col-sm-4 shopcart">
                             <div id="cart" class="btn-group btn-block mtb_40">
                                 <button type="button" class="btn" data-target="#cart-dropdown"
-                                    data-toggle="collapse" aria-expanded="true"><span id="shippingcart">Shopping
-                                        cart</span><span id="cart-total">items (0)</span> </button>
+                                    data-toggle="collapse" aria-expanded="true"><span id="shippingcart">{{__ ('Shopping cart')}}</span><span id="cart-total">{{__ ('items')}} (0)</span> </button>
                             </div>
                             <div id="cart-dropdown" class="cart-menu collapse">
                                 <ul>
@@ -154,10 +146,10 @@
                                         </table>
                                     </li>
                                     <li>
-                                        <form action="cart_page.html">
+                                        <form action="cart_page">
                                             <input class="btn pull-left mt_10" value="View cart" type="submit">
                                         </form>
-                                        <form action="checkout_page.html">
+                                        <form action="checkout_page">
                                             <input class="btn pull-right mt_10" value="Checkout" type="submit">
                                         </form>
                                     </li>
@@ -276,8 +268,8 @@
                                     </ul>
                                 </li>
                                 <li> <a href="shop">{{ __('shop') }}</a></li>
-                                <li> <a href="about.html">{{ __('About us') }}</a></li>
-                                <li> <a href="contact_us.html">{{ __('Contact us') }}</a></li>
+                                <li> <a href="about">{{ __('About us') }}</a></li>
+                                <li> <a href="contact_us">{{ __('Contact us') }}</a></li>
                             </ul>
                         </div>
                         <!-- /.nav-collapse -->
@@ -310,29 +302,29 @@
                     </div>
                     <div class="filter left-sidebar-widget mb_50">
                         <div class="heading-part mtb_20 ">
-                            <h2 class="main_title">Refinr Search</h2>
+                            <h2 class="main_title">{{__ ('Refine Search')}}</h2>
                         </div>
                         <div class="filter-block">
                             <p>
-                                <label for="amount">Price range:</label>
+                                <label for="amount">{{__('Price range')}}:</label>
                                 <input type="text" id="amount" readonly>
                             </p>
                             <div id="slider-range" class="mtb_20"></div>
                             <div class="list-group">
                                 <div class="list-group-item mb_10">
-                                    <label>Color</label>
+                                    <label>{{__('Color')}}</label>
                                     <div id="filter-group1">
                                         <div class="checkbox">
                                             <label>
-                                                <input value="" type="checkbox"> Red (10)</label>
+                                                <input value="" type="checkbox"> {{__('Red')}} (10)</label>
                                         </div>
                                         <div class="checkbox">
                                             <label>
-                                                <input value="" type="checkbox"> Green (06)</label>
+                                                <input value="" type="checkbox"> {{__('Green')}} (06)</label>
                                         </div>
                                         <div class="checkbox ">
                                             <label>
-                                                <input value="" type="checkbox"> Blue(09)
+                                                <input value="" type="checkbox"> {{__('Blue')}}(09)
                                             </label>
                                         </div>
                                     </div>
@@ -342,19 +334,19 @@
                                     <div id="filter-group3">
                                         <div class="checkbox">
                                             <label>
-                                                <input value="" type="checkbox"> Big (3)</label>
+                                                <input value="" type="checkbox"> {{__('Big')}} (3)</label>
                                         </div>
                                         <div class="checkbox">
                                             <label>
-                                                <input value="" type="checkbox"> Medium (2)</label>
+                                                <input value="" type="checkbox"> {{__('Medium')}} (2)</label>
                                         </div>
                                         <div class="checkbox">
                                             <label>
-                                                <input value="" type="checkbox"> Small (1)</label>
+                                                <input value="" type="checkbox"> {{__('Small')}} (1)</label>
                                         </div>
                                     </div>
                                 </div>
-                                <button type="button" class="btn">Refine Search</button>
+                                <button type="button" class="btn">{{__('Search')}}</button>
                             </div>
                         </div>
                     </div>
@@ -370,7 +362,7 @@
                             </div>
                         </div>
                         <div class="page-wrapper pull-right">
-                            <label class="control-label" for="input-limit">Show :</label>
+                            <label class="control-label" for="input-limit">{{__('Show')}} :</label>
                             <div class="limit">
                                 <select id="input-limit" class="form-control">
                                     <option value="8" selected="selected">08</option>
@@ -383,18 +375,18 @@
                             <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
                         </div>
                         <div class="sort-wrapper pull-right">
-                            <label class="control-label" for="input-sort">Sort By :</label>
+                            <label class="control-label" for="input-sort">{{__('Sort By')}} :</label>
                             <div class="sort-inner">
                                 <select id="input-sort" class="form-control">
-                                    <option value="ASC" selected="selected">Default</option>
-                                    <option value="ASC">Name (A - Z)</option>
-                                    <option value="DESC">Name (Z - A)</option>
-                                    <option value="ASC">Price (Low &gt; High)</option>
-                                    <option value="DESC">Price (High &gt; Low)</option>
-                                    <option value="DESC">Rating (Highest)</option>
-                                    <option value="ASC">Rating (Lowest)</option>
-                                    <option value="ASC">Model (A - Z)</option>
-                                    <option value="DESC">Model (Z - A)</option>
+                                    <option value="ASC" selected="selected">{{__('Default')}}</option>
+                                    <option value="ASC">{{__ ('Name')}} (A - Z)</option>
+                                    <option value="DESC">{{__ ('Name')}} (Z - A)</option>
+                                    <option value="ASC"> {{__('Price')}}(Low &gt; High)</option>
+                                    <option value="DESC">{{__('Price')}}(High &gt; Low)</option>
+                                    <option value="DESC">{{__('Rating')}} (Highest)</option>
+                                    <option value="ASC"> {{__('Rating')}} (Lowest)</option>
+                                    <option value="ASC"> {{__('Model')}}(A - Z)</option>
+                                    <option value="DESC">{{__('Model')}}(Z - A)</option>
                                 </select>
                             </div>
                             <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
@@ -404,7 +396,7 @@
                         <div class="product-layout product-grid col-md-4 col-xs-6 ">
                             <div class="item">
                                 <div class="product-thumb clearfix mb_30">
-                                    <div class="image product-imageblock"> <a href="product_detail_page.html"> <img
+                                    <div class="image product-imageblock"> <a href="product_detail_page"> <img
                                                 data-name="product_image"
                                                 src="{{ asset('images/product/product3.jpg') }}" alt="iPod Classic"
                                                 title="iPod Classic" class="img-responsive" /> <img
@@ -448,7 +440,7 @@
                         <div class="product-layout product-grid col-md-4 col-xs-6 ">
                             <div class="item">
                                 <div class="product-thumb clearfix mb_30">
-                                    <div class="image product-imageblock"> <a href="product_detail_page.html"> <img
+                                    <div class="image product-imageblock"> <a href="product_detail_page"> <img
                                                 data-name="product_image"
                                                 src="{{ asset('images/product/product4.jpg') }}" alt="iPod Classic"
                                                 title="iPod Classic" class="img-responsive" /> <img
@@ -492,7 +484,7 @@
                         <div class="product-layout product-grid col-md-4 col-xs-6 ">
                             <div class="item">
                                 <div class="product-thumb clearfix mb_30">
-                                    <div class="image product-imageblock"> <a href="product_detail_page.html"> <img
+                                    <div class="image product-imageblock"> <a href="product_detail_page"> <img
                                                 data-name="product_image"
                                                 src="{{ asset('images/product/product5.jpg') }}" alt="iPod Classic"
                                                 title="iPod Classic" class="img-responsive" /> <img
@@ -537,7 +529,7 @@
                         <div class="product-layout product-grid col-md-4 col-xs-6 ">
                             <div class="item">
                                 <div class="product-thumb clearfix mb_30">
-                                    <div class="image product-imageblock"> <a href="product_detail_page.html"> <img
+                                    <div class="image product-imageblock"> <a href="product_detail_page"> <img
                                                 data-name="product_image" src="{{asset ('images/product/product6.jpg')}}"
                                                 alt="iPod Classic" title="iPod Classic" class="img-responsive" />
                                             <img src="{{ asset('images/product/product6-1.jpg') }}"
@@ -581,7 +573,7 @@
                         <div class="product-layout product-grid col-md-4 col-xs-6 ">
                             <div class="item">
                                 <div class="product-thumb clearfix mb_30">
-                                    <div class="image product-imageblock"> <a href="product_detail_page.html"> <img
+                                    <div class="image product-imageblock"> <a href="product_detail_page"> <img
                                                 data-name="product_image" src="{{asset ('images/product/product7.jpg')}}"
                                                 alt="iPod Classic" title="iPod Classic" class="img-responsive" />
                                             <img src="{{ asset('images/product/product7-1.jpg') }}"
@@ -626,7 +618,7 @@
                         <div class="product-layout product-grid col-md-4 col-xs-6 ">
                             <div class="item">
                                 <div class="product-thumb  mb_30">
-                                    <div class="image product-imageblock"> <a href="product_detail_page.html"> <img
+                                    <div class="image product-imageblock"> <a href="product_detail_page"> <img
                                                 data-name="product_image"
                                                 src="{{ asset('images/product/product8.jpg') }}"
                                                 alt="iPod Classic" title="iPod Classic" class="img-responsive" />
@@ -672,7 +664,7 @@
                         <div class="product-layout product-grid col-md-4 col-xs-6 ">
                             <div class="item">
                                 <div class="product-thumb  mb_30">
-                                    <div class="image product-imageblock"> <a href="product_detail_page.html"> <img
+                                    <div class="image product-imageblock"> <a href="product_detail_page"> <img
                                                 data-name="product_image" src="{{asset ('images/product/product9.jpg')}}"
                                                 alt="iPod Classic" title="iPod Classic" class="img-responsive" />
                                             <img src="{{ asset('images/product/product9-1.jpg') }}"
@@ -717,7 +709,7 @@
                         <div class="product-layout product-grid col-md-4 col-xs-6 ">
                             <div class="item">
                                 <div class="product-thumb  mb_30">
-                                    <div class="image product-imageblock"> <a href="product_detail_page.html"> <img
+                                    <div class="image product-imageblock"> <a href="product_detail_page"> <img
                                                 data-name="product_image" src="{{asset ('images/product/product10.jpg')}}"
                                                 alt="iPod Classic" title="iPod Classic" class="img-responsive" />
                                             <img src="{{ asset('images/product/product10-1.jpg') }}"
@@ -762,7 +754,7 @@
                         <div class="product-layout product-grid col-md-4 col-xs-6 ">
                             <div class="item">
                                 <div class="product-thumb  mb_30">
-                                    <div class="image product-imageblock"> <a href="product_detail_page.html"> <img
+                                    <div class="image product-imageblock"> <a href="product_detail_page"> <img
                                                 data-name="product_image" src="{{asset ('images/product/product1.jpg')}}"
                                                 alt="iPod Classic" title="iPod Classic" class="img-responsive" />
                                             <img src="{{ asset('images/product/product1-1.jpg') }}"
@@ -807,7 +799,7 @@
                         <div class="product-layout product-grid col-md-4 col-xs-6 ">
                             <div class="item">
                                 <div class="product-thumb  mb_30">
-                                    <div class="image product-imageblock"> <a href="product_detail_page.html"> <img
+                                    <div class="image product-imageblock"> <a href="product_detail_page"> <img
                                                 data-name="product_image" src="{{asset ('images/product/product2.jpg')}}"
                                                 alt="iPod Classic" title="iPod Classic" class="img-responsive" />
                                             <img src="{{ asset('images/product/product2-1.jpg') }}"
@@ -852,7 +844,7 @@
                         <div class="product-layout product-grid col-md-4 col-xs-6 ">
                             <div class="item">
                                 <div class="product-thumb  mb_30">
-                                    <div class="image product-imageblock"> <a href="product_detail_page.html"> <img
+                                    <div class="image product-imageblock"> <a href="product_detail_page"> <img
                                                 data-name="product_image" src="{{asset ('images/product/product3.jpg')}}"
                                                 alt="iPod Classic" title="iPod Classic" class="img-responsive" />
                                             <img src="{{ asset('images/product/product3-1.jpg') }}"
@@ -897,7 +889,7 @@
                         <div class="product-layout product-grid col-md-4 col-xs-6 ">
                             <div class="item">
                                 <div class="product-thumb  mb_30">
-                                    <div class="image product-imageblock"> <a href="product_detail_page.html"> <img
+                                    <div class="image product-imageblock"> <a href="product_detail_page"> <img
                                                 data-name="product_image" src="{{asset ('images/product/product4.jpg')}}"
                                                 alt="iPod Classic" title="iPod Classic" class="img-responsive" />
                                             <img src="{{ asset('images/product/product4-1.jpg') }}"

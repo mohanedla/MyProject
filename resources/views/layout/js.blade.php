@@ -8,6 +8,7 @@
   <script src="{{ asset('js/jquery-ui.js')}}"></script>
   <script src="{{ asset('js/jquery.firstVisitPopup.js') }}"></script>
   <script src="{{ asset('js/custom.js') }}"></script>
+  <script src="{{ asset('js/table.js') }}"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
   <script>
   $(function() {

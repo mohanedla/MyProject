@@ -6,7 +6,7 @@
 <head>
     <!-- =====  BASIC PAGE NEEDS  ===== -->
     <meta charset="utf-8">
-    <title>{{ __('shop') }}</title>
+    <title>{{ __('Brands') }}</title>
     <!-- =====  SEO MATE  ===== -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="">
@@ -70,10 +70,11 @@
                                         role="button">{{__('Properties')}} <span class="caret"></span> </span>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
 
-                                        <li><a href="#">{{__ ('add admin')}}</a></li>
-                                        <li><a href="#">{{__ ('add brand')}}</a></li>
-                                        <li><a href="#">{{__ ('add product')}}</a></li>
-                                        <li><a href="#">{{__ ('Reports')}}</a></li>
+                                        <li><a href="admin">{{__ ('admin management')}}</a></li>
+                                        <li><a href="user">{{__ ('user management')}}</a></li>
+                                        <li><a href="product">{{__ ('Product Management')}}</a></li>
+                                        <li><a href="brand">{{__ ('Brands')}}</a></li>
+                                        <li><a href="reports">{{__ ('Reports')}}</a></li>
                                     </ul>
                                 </li>
 
@@ -204,8 +205,8 @@
                                     </ul>
                                 </li>
                                 <li> <a href="shop">{{ __('shop') }}</a></li>
-                                <li> <a href="about.html">{{ __('About us') }}</a></li>
-                                <li> <a href="contact_us.html">{{ __('Contact us') }}</a></li>
+                                <li> <a href="about">{{ __('About us') }}</a></li>
+                                <li> <a href="contact_us">{{ __('Contact us') }}</a></li>
                             </ul>
                         </div>
                         <!-- /.nav-collapse -->
@@ -220,10 +221,10 @@
                 <!-- =====  BANNER STRAT  ===== -->
                 <div class="col-sm-12">
                     <div class="breadcrumb ptb_20">
-                        <h1>{{ __('Add Brand') }}</h1>
+                        <h1>{{ __('Brands') }}</h1>
                         <ul>
                             <li><a href="home">{{ __('Home') }}</a></li>
-                            <li class="active">{{ __('Add Brand') }}</li>
+                            <li class="active">{{ __('Brands') }}</li>
                         </ul>
                     </div>
                 </div>

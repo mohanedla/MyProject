@@ -54,9 +54,10 @@
   "Properties":"خصائص",
   "add admin":"إضافة مشرف",
   "add brand":"إضافة ماركة",
-  "add product":"إضافة منتج",
+  "add Product":"إضافة منتج",
   "Reports":"تقارير",
   "Add Admin":"إضافة مشرف",
+  "Add User":"إضافة مستخدم",
   "Add Brand":"إضافة ماركة",
   "Add Product":"إضافة منتج",
   "Triboloi":"طرابلس",
@@ -85,5 +86,8 @@
   "Big":"كبير",
   "Medium":"متوسط",
   "Small":"صغير",
-  "kids":"الاطفال"
+  "kids":"الاطفال",
+  "admin management":"إدارة المشرفين",
+  "user management":"إدارة المستخدمين",
+  "Product Management":"إدارة المنتجات"
 }

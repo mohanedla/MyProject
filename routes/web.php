@@ -28,17 +28,35 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('empty',function(){
         return View::make('layout.empty');
     });
+    Route::get('admin',function(){
+        return View::make('admin.admin');
+    });
     Route::get('add_admin',function(){
-        return View::make('add_admin');
+        return View::make('admin.add_admin');
+    });
+    Route::get('brand',function(){
+        return View::make('brand.brand');
     });
     Route::get('add_brand',function(){
-        return View::make('add_brand');
+        return View::make('brand.add_brand');
+    });
+    Route::get('product',function(){
+        return View::make('product.product');
     });
     Route::get('add_product',function(){
-        return View::make('add_product');
+        return View::make('product.add_product');
     });
     Route::get('reports',function(){
-        return View::make('reports');
+        return View::make('report.reports');
+    });
+    Route::get('add_report',function(){
+        return View::make('report.add_report');
+    });
+    Route::get('user',function(){
+        return View::make('user.user');
+    });
+    Route::get('add_user',function(){
+        return View::make('user.add_user');
     });
     Route::get('contact_us',function(){
         return View::make('contact_us');

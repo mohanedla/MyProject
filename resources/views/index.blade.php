@@ -70,9 +70,10 @@
                                 role="button">{{__('Properties')}} <span class="caret"></span> </span>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
 
-                                <li><a href="add_admin">{{__ ('add admin')}}</a></li>
-                                <li><a href="add_brand">{{__ ('add brand')}}</a></li>
-                                <li><a href="add_product">{{__ ('add product')}}</a></li>
+                                <li><a href="admin">{{__ ('admin management')}}</a></li>
+                                <li><a href="user">{{__ ('user management')}}</a></li>
+                                <li><a href="product">{{__ ('Product Management')}}</a></li>
+                                <li><a href="brand">{{__ ('Brands')}}</a></li>
                                 <li><a href="reports">{{__ ('Reports')}}</a></li>
                             </ul>
                         </li>

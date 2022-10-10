@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <!--[if (gte IE 9)|!(IE)]><!-->
 <html lang="en">
@@ -6,7 +7,8 @@
 <head>
     <!-- =====  BASIC PAGE NEEDS  ===== -->
     <meta charset="utf-8">
-    <title>{{ __('Product Management') }}</title>
+    <title>{{__ ('Product Management')}}</title>
+
     <!-- =====  SEO MATE  ===== -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="">
@@ -32,7 +34,70 @@
     <link rel="apple-touch-icon" href="{{ asset('images/apple-touch-icon.png') }}">
     <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('images/apple-touch-icon-72x72.png') }}">
     <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('images/apple-touch-icon-114x114.png') }}">
-</head>
+
+    <script src="{{asset('js/jquery-3.5.1.js')}}"></script>
+    <script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
+    <link href="{{asset('css/jquery.dataTables.min.css')}}" rel="stylesheet" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://use.fontawesome.com/releases/v5.0.1/css/all.css"
+      rel="stylesheet"
+    />
+
+    <link href="{{asset('css/design4.css')}}" rel="stylesheet" />
+
+    <style>
+        .dataTables_filter input,.dataTables_length select {
+            /* background: rgb(34, 34, 34); */
+            /* border: 0px; */
+            height: 40px;
+    line-height: 20px;
+    padding: 0 40px 0 10px;
+    border: none;
+    border-radius: 0;
+    border: 1px solid #424242;
+    background-color: #000;
+        }
+        .dataTables_filter label,.dataTables_length label, .dataTables_length option,#tblCustomer_previous {
+            color: white;
+        }
+        .dataTables_wrapper .dataTables_paginate .paginate_button.disabled, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
+            color:white;
+        }
+        .button {
+            border-radius: 3px;
+    background-color: #555555;
+    color: white;
+    border: 2px solid #555555;
+    padding: 7px 45px;
+    text-align: center;
+    float: right;
+    border: none;
+    color: #FFFFFF;
+    -webkit-transition-duration: 0.4s;
+    margin: 16px 0 !important;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: #0f0f0f;
+  color: white;
+}
+.address {
+    padding: 6px;
+    font-size: xx-large;
+}
+.btn_add {
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+    </style>
 
 <body>
     <!-- =====  LODER  ===== -->
@@ -88,7 +153,7 @@
                     <div class="row">
                         <div class="col-xs-12 col-sm-4">
                         </div>
-                        <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="index"> <img
+                        <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="index.html"> <img
                                     alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
                         <div class="col-xs-6 col-sm-4 shopcart">
                         </div>
@@ -225,24 +290,108 @@
                         <ul>
                             <li><a href="home">{{ __('Home') }}</a></li>
                             <li class="active">{{ __('Product Management') }}</li>
+
                         </ul>
                     </div>
                 </div>
                   </div>
             </div>
+            <div id="formContent">
+                <div class="btn_add">
+                                    <label class="address">Customer Info</label><button class="button">{{ __('Add')}}</button>
+                
+                                </div>
+                                <hr />
+                                <table id="tblCustomer" class="display" style="width: 100%;">
+                                  <thead>
+                                    <tr>
+                                      <th scope="col">{{ __('Name')}}</th>
+                                      <th scope="col">{{ __('id')}}</th>
+                                      <th scope="col">{{ __('a model')}}</th>
+                                      <th scope="col">{{ __('brand')}}</th>
+                                      <th scope="col">{{ __('Specifications')}}</th>
+                                      <th scope="col">{{ __('Quantity')}}</th>
+                                      <th scope="col">{{ __('admin')}}</th>
+                                      <th scope="col">{{ __('photo')}}</th>
+                                      <th scope="col">{{ __('price')}}</th>
+                                      <th scope="col">{{ __('')}}</th>
 
-        </div>
-        @extends('layout.footer')
-        <!-- =====  CONTAINER END  ===== -->
-        <!-- =====  FOOTER START  ===== -->
-        @section('footer')
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>Sven Ottlieb</td>
+                                      <td>Sven Ottlieb</td>
+                                      <td>Sven Ottlieb</td>
+                                      <td>Sven Ottlieb</td>
+                                      <td>Sven Ottlieb</td>
+                                      <td>Drachenblut Delikatessen</td>
+                                      <td>Customers</td>
+                                      <td>Aachen</td>
+                                      <td>Aachen</td>
+                                      <td>
+                                        <a href=""><img src="{{ asset('images/icone/edit-solid-24.png') }}"></a>
+                                        <a href=""><img src="{{ asset('images/icone/x-square-solid-24.png') }}"></a>
+                                    </td>
+                                    </tr>
+                                    <tr>
+                                      <td>Sven Ottlieb</td>
+                                      <td>Sven Ottlieb</td>
+                                      <td>Sven Ottlieb</td>
+                                      <td>Sven Ottlieb</td>
+                                      <td>Sven Ottlieb</td>
 
-        @endsection
-        <!-- =====  FOOTER END  ===== -->
-    </div>
-    @extends('layout.js')
-    @section('js')
-
-    </body>
-
-    </html>
+                                      <td>Drachenblut Delikatessen</td>
+                                      <td>Customers</td>
+                                      <td>Aachen</td>
+                                      <td>Aachen</td>
+                                      <td>
+                                        <a href=""><img src="{{ asset('images/icone/edit-solid-24.png') }}"></a>
+                                        <a href=""><img src="{{ asset('images/icone/x-square-solid-24.png') }}"></a>
+                                    </td>
+                                    </tr>
+                                    <tr>
+                                      <td>Sven Ottlieb</td>
+                                      <td>Sven Ottlieb</td>
+                                      <td>Sven Ottlieb</td>
+                                      <td>Sven Ottlieb</td>
+                                      <td>Sven Ottlieb</td>
+                                      <td>Drachenblut Delikatessen</td>
+                                      <td>Customers</td>
+                                      <td>Aachen</td>
+                                      <td>Aachen</td>
+                                      <td>
+                                        <a href=""><img src="{{ asset('images/icone/edit-solid-24.png') }}"></a>
+                                        <a href=""><img src="{{ asset('images/icone/x-square-solid-24.png') }}"></a>
+                                    </td>
+                                    </tr>
+                
+                                  </tbody>
+                                </table>
+                              </div>
+                
+                              <script>
+                                $(document).ready(function () {
+                                  $("#tblCustomer").DataTable();
+                                });
+                              </script>
+                
+                        </div>
+                        <br>
+                        <br>
+                        @extends('layout.footer')
+                        <!-- =====  CONTAINER END  ===== -->
+                        <!-- =====  FOOTER START  ===== -->
+                        @section('footer')
+                
+                        @endsection
+                        <!-- =====  FOOTER END  ===== -->
+                    </div>
+                    @extends('layout.js1')
+                    @section('js1')
+                
+                    </body>
+                
+                    </html>
+                
+       

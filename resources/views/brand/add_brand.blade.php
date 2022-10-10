@@ -232,6 +232,7 @@
             </div>
 
         </div>
+        
         @extends('layout.footer')
         <!-- =====  CONTAINER END  ===== -->
         <!-- =====  FOOTER START  ===== -->

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <!--[if (gte IE 9)|!(IE)]><!-->
 <html lang="en">
@@ -7,6 +8,7 @@
     <!-- =====  BASIC PAGE NEEDS  ===== -->
     <meta charset="utf-8">
     <title>{{__ ('user management')}}</title>
+
     <!-- =====  SEO MATE  ===== -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="">
@@ -32,7 +34,70 @@
     <link rel="apple-touch-icon" href="{{ asset('images/apple-touch-icon.png') }}">
     <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('images/apple-touch-icon-72x72.png') }}">
     <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('images/apple-touch-icon-114x114.png') }}">
-</head>
+
+    <script src="{{asset('js/jquery-3.5.1.js')}}"></script>
+    <script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
+    <link href="{{asset('css/jquery.dataTables.min.css')}}" rel="stylesheet" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://use.fontawesome.com/releases/v5.0.1/css/all.css"
+      rel="stylesheet"
+    />
+
+    <link href="{{asset('css/design4.css')}}" rel="stylesheet" />
+
+    <style>
+        .dataTables_filter input,.dataTables_length select {
+            /* background: rgb(34, 34, 34); */
+            /* border: 0px; */
+            height: 40px;
+    line-height: 20px;
+    padding: 0 40px 0 10px;
+    border: none;
+    border-radius: 0;
+    border: 1px solid #424242;
+    background-color: #000;
+        }
+        .dataTables_filter label,.dataTables_length label, .dataTables_length option,#tblCustomer_previous {
+            color: white;
+        }
+        .dataTables_wrapper .dataTables_paginate .paginate_button.disabled, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
+            color:white;
+        }
+        .button {
+            border-radius: 3px;
+    background-color: #555555;
+    color: white;
+    border: 2px solid #555555;
+    padding: 7px 45px;
+    text-align: center;
+    float: right;
+    border: none;
+    color: #FFFFFF;
+    -webkit-transition-duration: 0.4s;
+    margin: 16px 0 !important;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: #0f0f0f;
+  color: white;
+}
+.address {
+    padding: 6px;
+    font-size: xx-large;
+}
+.btn_add {
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+    </style>
 
 <body>
     <!-- =====  LODER  ===== -->
@@ -75,7 +140,6 @@
                                         <li><a href="product">{{__ ('Product Management')}}</a></li>
                                         <li><a href="brand">{{__ ('Brands')}}</a></li>
                                         <li><a href="reports">{{__ ('Reports')}}</a></li>
-
                                     </ul>
                                 </li>
 
@@ -89,7 +153,7 @@
                     <div class="row">
                         <div class="col-xs-12 col-sm-4">
                         </div>
-                        <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="index"> <img
+                        <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="index.html"> <img
                                     alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
                         <div class="col-xs-6 col-sm-4 shopcart">
                         </div>
@@ -222,123 +286,106 @@
                 <!-- =====  BANNER STRAT  ===== -->
                 <div class="col-sm-12">
                     <div class="breadcrumb ptb_20">
-                        <h1>{{__ ('user management')}}</h1>
+                        <h1>{{ __('user management') }}</h1>
                         <ul>
                             <li><a href="home">{{ __('Home') }}</a></li>
-                            <li class="active">{{__ ('user management')}}</li>
+                            <li class="active">{{ __('user management') }}</li>
+
                         </ul>
                     </div>
+                </div>
                   </div>
-                </div>
             </div>
-            <div class="col-sm-8 col-lg-9 mtb_20">
-                <!-- contact  -->
-                <div class="row">
-                    <div class="col-md-6 col-md-offset-3">
-                        <div class="panel-login panel">
-                            <div class="panel-heading">
-                                <div class="row mb_20">
-                                    <div class="col-xs-6">
-                                        <a href="#" class="active"
-                                            id="login-form-link">{{ __('Login') }}</a>
-                                    </div>
-                                    <div class="col-xs-6">
-                                        <a href="#" id="register-form-link">{{ __('Register') }}</a>
-                                    </div>
+            <div id="formContent">
+                <div class="btn_add">
+                                    <label class="address">Customer Info</label><button class="button">{{ __('Add')}}</button>
+                
                                 </div>
-                                <hr>
-                            </div>
-                            <div class="panel-body">
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <form id="login-form" action="#" method="post">
-                                            <div class="form-group">
-                                                <input type="text" name="username" id="username1"
-                                                    tabindex="1" class="form-control"
-                                                    placeholder="{{ __('Username') }}" value="">
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="password" name="password" id="password"
-                                                    tabindex="2" class="form-control"
-                                                    placeholder="{{ __('Password') }}">
-                                            </div>
-                                            <div class="form-group text-center">
-                                                <input type="checkbox" tabindex="3" class=""
-                                                    name="remember" id="remember">
-                                                <label for="remember"> {{ __('Remember Me') }}</label>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="row">
-                                                    <div class="col-sm-6 col-sm-offset-3">
-                                                        <input type="submit" name="login-submit"
-                                                            id="login-submit" tabindex="4"
-                                                            class="form-control btn btn-login"
-                                                            value="{{ __('Login') }}">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="row">
-                                                    <div class="col-lg-12">
-                                                        <div class="text-center">
-                                                            <a href="#" tabindex="5"
-                                                                class="forgot-password">{{ __('Forgot Password?') }}</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                        <form id="register-form" action="#" method="post">
-                                            <div class="form-group">
-                                                <input type="text" name="username" id="username"
-                                                    tabindex="1" class="form-control"
-                                                    placeholder="{{ __('Username') }}" value="">
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="email" name="email" id="email"
-                                                    tabindex="1" class="form-control"
-                                                    placeholder="{{ __('Email Address') }}" value="">
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="password" name="password" id="password2"
-                                                    tabindex="2" class="form-control"
-                                                    placeholder="{{ __('Password') }}">
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="password" name="confirm-password"
-                                                    id="confirm-password" tabindex="2" class="form-control"
-                                                    placeholder="{{ __('Confirm Password') }}">
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="row">
-                                                    <div class="col-sm-6 col-sm-offset-3">
-                                                        <input type="submit" name="register-submit"
-                                                            id="register-submit" tabindex="4"
-                                                            class="form-control btn btn-register"
-                                                            value="{{ __('Register Now') }}">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
+                                <hr />
+                                <table id="tblCustomer" class="display" style="width: 100%;">
+                                  <thead>
+                                    <tr>
+                                        <th scope="col">{{ __('Username')}}</th>
+                                        <th scope="col">{{ __('id')}}</th>
+                                        <th scope="col">{{ __('E-mail')}}</th>
+                                        <th scope="col">{{ __('User password')}}</th>
+                                        <th scope="col">{{ __('photo')}}</th>
+                                        <th scope="col">{{ __('Address')}}</th>
+                                        <th scope="col">{{ __('Phone Number')}}</th>
+                                        <th scope="col">{{ __('powers')}}</th>
+                                        <th scope="col">{{ __('')}}</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>Sven Ottlieb</td>
+                                      <td>Sven Ottlieb</td>
+                                      <td>Sven Ottlieb</td>
+                                      <td>Sven Ottlieb</td>
+                                      <td>Drachenblut Delikatessen</td>
+                                      <td>Customers</td>
+                                      <td>Aachen</td>
+                                      <td>Aachen</td>
+                                      <td>
+                                        <a href=""><img src="{{ asset('images/icone/edit-solid-24.png') }}"></a>
+                                        <a href=""><img src="{{ asset('images/icone/x-square-solid-24.png') }}"></a>
+                                    </td>
+                                    </tr>
+                                    <tr>
+                                      <td>Sven Ottlieb</td>
+                                      <td>Sven Ottlieb</td>
+                                      <td>Sven Ottlieb</td>
+                                      <td>Sven Ottlieb</td>
+                                      <td>Drachenblut Delikatessen</td>
+                                      <td>Customers</td>
+                                      <td>Aachen</td>
+                                      <td>Aachen</td>
+                                      <td>
+                                        <a href=""><img src="{{ asset('images/icone/edit-solid-24.png') }}"></a>
+                                        <a href=""><img src="{{ asset('images/icone/x-square-solid-24.png') }}"></a>
+                                    </td>
+                                    </tr>
+                                    <tr>
+                                      <td>Sven Ottlieb</td>
+                                      <td>Sven Ottlieb</td>
+                                      <td>Sven Ottlieb</td>
+                                      <td>Sven Ottlieb</td>
+                                      <td>Drachenblut Delikatessen</td>
+                                      <td>Customers</td>
+                                      <td>Aachen</td>
+                                      <td>Aachen</td>
+                                      <td>
+                                        <a href=""><img src="{{ asset('images/icone/edit-solid-24.png') }}"></a>
+                                        <a href=""><img src="{{ asset('images/icone/x-square-solid-24.png') }}"></a>
+                                    </td>
+                                    </tr>
+                
+                                  </tbody>
+                                </table>
+                              </div>
+                
+                              <script>
+                                $(document).ready(function () {
+                                  $("#tblCustomer").DataTable();
+                                });
+                              </script>
+                
                         </div>
+                        <br>
+                        <br>
+                        @extends('layout.footer')
+                        <!-- =====  CONTAINER END  ===== -->
+                        <!-- =====  FOOTER START  ===== -->
+                        @section('footer')
+                
+                        @endsection
+                        <!-- =====  FOOTER END  ===== -->
                     </div>
-                </div>
-            </div>
-        </div>
-        @extends('layout.footer')
-        <!-- =====  CONTAINER END  ===== -->
-        <!-- =====  FOOTER START  ===== -->
-        @section('footer')
-
-        @endsection
-        <!-- =====  FOOTER END  ===== -->
-    </div>
-    @extends('layout.js')
-    @section('js')
-
-    </body>
-
-    </html>
+                    @extends('layout.js1')
+                    @section('js1')
+                
+                    </body>
+                
+                    </html>
+                
+       

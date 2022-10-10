@@ -32,6 +32,70 @@
     <link rel="apple-touch-icon" href="{{ asset('images/apple-touch-icon.png') }}">
     <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('images/apple-touch-icon-72x72.png') }}">
     <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('images/apple-touch-icon-114x114.png') }}">
+
+    <script src="{{asset('js/jquery-3.5.1.js')}}"></script>
+    <script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
+    <link href="{{asset('css/jquery.dataTables.min.css')}}" rel="stylesheet" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://use.fontawesome.com/releases/v5.0.1/css/all.css"
+      rel="stylesheet"
+    />
+
+    <link href="{{asset('css/design4.css')}}" rel="stylesheet" />
+
+    <style>
+        .dataTables_filter input,.dataTables_length select {
+            /* background: rgb(34, 34, 34); */
+            /* border: 0px; */
+            height: 40px;
+    line-height: 20px;
+    padding: 0 40px 0 10px;
+    border: none;
+    border-radius: 0;
+    border: 1px solid #424242;
+    background-color: #000;
+        }
+        .dataTables_filter label,.dataTables_length label, .dataTables_length option,#tblCustomer_previous {
+            color: white;
+        }
+        .dataTables_wrapper .dataTables_paginate .paginate_button.disabled, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
+            color:white;
+        }
+        .button {
+            border-radius: 3px;
+    background-color: #555555;
+    color: white;
+    border: 2px solid #555555;
+    padding: 7px 45px;
+    text-align: center;
+    float: right;
+    border: none;
+    color: #FFFFFF;
+    -webkit-transition-duration: 0.4s;
+    margin: 16px 0 !important;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: #0f0f0f;
+  color: white;
+}
+.address {
+    padding: 6px;
+    font-size: xx-large;
+}
+.btn_add {
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+    </style>
 </head>
 
 <body>
@@ -230,8 +294,71 @@
                 </div>
                   </div>
             </div>
+            <div id="formContent">
+<div class="btn_add">
+                    <label class="address">Customer Info</label><button class="button">{{ __('Add')}}</button>
+
+                </div>
+                <hr />
+                <table id="tblCustomer" class="display" style="width: 100%;">
+                  <thead>
+                    <tr>
+                      <th scope="col">{{ __('Name')}}</th>
+                      <th scope="col">{{ __('Company')}}</th>
+                      <th scope="col">{{ __('Relationship')}}</th>
+                      <th scope="col">{{ __('City')}}</th>
+                      <th scope="col">{{ __('City')}}</th>
+                      <th scope="col">{{ __('City')}}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Sven Ottlieb</td>
+                      <td>Drachenblut Delikatessen</td>
+                      <td>Customers</td>
+                      <td>Aachen</td>
+                      <td>Aachen</td>
+                      <td>
+                        <a href=""><img src="{{ asset('images/icone/edit-solid-24.png') }}"></a>
+                        <a href=""><img src="{{ asset('images/icone/x-square-solid-24.png') }}"></a>
+                    </td>
+                    </tr>
+                    <tr>
+                      <td>Sven Ottlieb</td>
+                      <td>Drachenblut Delikatessen</td>
+                      <td>Customers</td>
+                      <td>Aachen</td>
+                      <td>Aachen</td>
+                      <td>
+                        <a href=""><img src="{{ asset('images/icone/edit-solid-24.png') }}"></a>
+                        <a href=""><img src="{{ asset('images/icone/x-square-solid-24.png') }}"></a>
+                    </td>
+                    </tr>
+                    <tr>
+                      <td>Sven Ottlieb</td>
+                      <td>Drachenblut Delikatessen</td>
+                      <td>Customers</td>
+                      <td>Aachen</td>
+                      <td>Aachen</td>
+                      <td>
+                        <a href=""><img src="{{ asset('images/icone/edit-solid-24.png') }}"></a>
+                        <a href=""><img src="{{ asset('images/icone/x-square-solid-24.png') }}"></a>
+                    </td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+
+              <script>
+                $(document).ready(function () {
+                  $("#tblCustomer").DataTable();
+                });
+              </script>
 
         </div>
+        <br>
+        <br>
         @extends('layout.footer')
         <!-- =====  CONTAINER END  ===== -->
         <!-- =====  FOOTER START  ===== -->
@@ -240,8 +367,8 @@
         @endsection
         <!-- =====  FOOTER END  ===== -->
     </div>
-    @extends('layout.js')
-    @section('js')
+    @extends('layout.js1')
+    @section('js1')
 
     </body>
 

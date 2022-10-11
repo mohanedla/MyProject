@@ -2762,3 +2762,73 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
         width: 200px;
         background: #565454;
     }
+/* ///////////////////////////////////////// */
+.dataTables_filter input,.dataTables_length select {
+    /* background: rgb(34, 34, 34); */
+    /* border: 0px; */
+    height: 40px;
+line-height: 20px;
+padding: 0 40px 0 10px;
+border: none;
+border-radius: 0;
+border: 1px solid #424242;
+background-color: #000;
+}
+.dataTables_filter label,.dataTables_length label, .dataTables_length option,#tblCustomer_previous {
+    color: white;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
+    color:white;
+}
+#button {
+    /* border-radius: 3px; */
+/* background-color: #555555; */
+/* color: white; */
+/* border: 2px solid #555555; */
+/* padding: 7px 45px; */
+text-align: center;
+float: right;
+margin-right: 8px;
+border-color: #808080;
+text-transform: capitalize;
+/* border: none; */
+/* color: #FFFFFF; */
+/* -webkit-transition-duration: 0.4s; */
+/* margin: 16px 0 !important; */
+text-decoration: none;
+/* font-size: 16px; */
+/* cursor: pointer; */
+transition-duration: 0.4s;
+}
+
+.button:hover {
+background-color: #0f0f0f;
+color: white;
+}
+.address {
+padding: 6px;
+font-size: xx-large;
+}
+.btn_add {
+margin-bottom: 10px;
+margin-top: 15px;
+}
+
+.modal.modal-fullscreen .modal-dialog {
+width: 100vw;
+height: 100vh;
+margin: 0;
+padding: 0;
+max-width: none;
+}
+
+.modal.modal-fullscreen .modal-content {
+height: auto;
+height: 100vh;
+border-radius: 0;
+border: none;
+}
+
+.modal.modal-fullscreen .modal-body {
+overflow-y: auto;
+}

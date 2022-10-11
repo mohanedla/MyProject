@@ -6,7 +6,7 @@
 <head>
     <!-- =====  BASIC PAGE NEEDS  ===== -->
     <meta charset="utf-8">
-    <title>{{__ ('Add Admin')}}</title>
+    <title>{{ __('Add Admin') }}</title>
     <!-- =====  SEO MATE  ===== -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="">
@@ -24,6 +24,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.min.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/style1.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/magnific-popup.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/owl.carousel.css') }}">
     <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
@@ -50,7 +51,7 @@
                         </div>
                         <div class="col-xs-12 col-sm-8">
                             <ul class="header-top-right text-right">
-                                <li class="account"><a href="login">{{ __('My Account')}}</a></li>
+                                <li class="account"><a href="login">{{ __('My Account') }}</a></li>
                                 <li class="language dropdown"> <span class="dropdown-toggle" id="dropdownMenu1"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                         role="button">{{ __('Language') }} <span class="caret"></span> </span>
@@ -67,14 +68,14 @@
                                 </li>
                                 <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                        role="button">{{__('Properties')}} <span class="caret"></span> </span>
+                                        role="button">{{ __('Properties') }} <span class="caret"></span> </span>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
 
-                                        <li><a href="admin">{{__ ('admin management')}}</a></li>
-                                        <li><a href="user">{{__ ('user management')}}</a></li>
-                                        <li><a href="product">{{__ ('Product Management')}}</a></li>
-                                        <li><a href="brand">{{__ ('Brands')}}</a></li>
-                                        <li><a href="reports">{{__ ('Reports')}}</a></li>
+                                        <li><a href="admin">{{ __('admin management') }}</a></li>
+                                        <li><a href="user">{{ __('user management') }}</a></li>
+                                        <li><a href="product">{{ __('Product Management') }}</a></li>
+                                        <li><a href="brand">{{ __('Brands') }}</a></li>
+                                        <li><a href="reports">{{ __('Reports') }}</a></li>
                                     </ul>
                                 </li>
 
@@ -105,108 +106,112 @@
                                         data-toggle="dropdown">{{ __('Collection') }} </a>
                                     <ul class="dropdown-menu mega-dropdown-menu row">
                                         <li class="col-md-3">
-                                                <ul>
-                                                    <li class="dropdown-header">{{ __('Womens') }}</li>
-                                                    <li><a href="#">{{ __('trouser') }}</a></li>
-                                                    <li><a href="#">{{ __('T-Shirts') }}</a></li>
-                                                    <li><a href="#">{{ __('dress') }}</a></li>
-                                                    <li><a href="#">{{ __('Jumpsuit') }}</a></li>
-                                                    <li><a href="#">{{ __('shoes') }}</a></li>
-                                                    <li><a href="#">{{ __('blouse') }}</a></li>
-                                                    <li><a href="#">{{ __('watches') }}</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="col-md-3">
-                                                <ul>
-                                                    <li class="dropdown-header">{{ __('Mans') }}</li>
-                                                    <li><a href="#">{{ __('trouser') }}</a></li>
-                                                    <li><a href="#">{{ __('T-Shirts') }}</a></li>
-                                                    <li><a href="#">{{ __('Shirt') }}</a></li>
-                                                    <li><a href="#">{{ __('Suits') }}</a></li>
-                                                    <li><a href="#">{{ __('shoes') }}</a></li>
-                                                    <li><a href="#">{{ __('Jackets') }}</a></li>
-                                                    <li><a href="#">{{ __('watches') }}</a></li>
-                                                </ul>
-                                            </li>
-
-                                            <li class="col-md-3">
-                                                <ul>
-                                                    <li class="dropdown-header">{{ __('Childrens') }}</li>
-                                                    <li><a href="#"><select name="dropdown" class="dropdown_ch"></a>
-                                                    <li>
-                                                        <option class="option_ch"><a href="#">{{ __('Born') }}</a>
-                                                        </option>
-                                                    </li>
-                                                    <li>
-                                                        <option class="option_ch"><a href="#">{{ __('Boys') }}</a>
-                                                        </option>
-                                                    </li>
-                                                    <li>
-                                                        <option class="option_ch"><a href="#">{{ __('Girls') }}</a>
-                                                        </option>
-                                                    </li>
-                                                    </select>
-                                            </li>
-                                                    <li><a href="#"><select name="dropdown" class="dropdown_ch"></a>
-                                                    <li>
-                                                        <option class="option_ch"><a href="#">{{ __('Childrens') }}</a>
-                                                        </option>
-                                                    </li>
-                                                    <li>
-                                                        <option class="option_ch"><a href="#">{{ __('Boys') }}</a>
-                                                        </option>
-                                                    </li>
-                                                    <li>
-                                                        <option class="option_ch"><a href="#">{{ __('Girls') }}</a>
-                                                        </option>
-                                                    </li>
-                                                    </select>
-                                            </li>
-                                                    <li><a href="#"><select name="dropdown" class="dropdown_ch"></a>
-                                                    <li>
-                                                        <option class="option_ch"><a href="#">{{ __('puzzling') }}</a>
-                                                        </option>
-                                                    </li>
-                                                    <li>
-                                                        <option class="option_ch"><a href="#">{{ __('Boys') }}</a>
-                                                        </option>
-                                                    </li>
-                                                    <li>
-                                                        <option class="option_ch"><a href="#">{{ __('Girls') }}</a>
-                                                        </option>
-                                                    </li>
-                                                    </select>
-                                            </li>
-
-                                </ul>
-                                </li>
+                                            <ul>
+                                                <li class="dropdown-header">{{ __('Womens') }}</li>
+                                                <li><a href="#">{{ __('trouser') }}</a></li>
+                                                <li><a href="#">{{ __('T-Shirts') }}</a></li>
+                                                <li><a href="#">{{ __('dress') }}</a></li>
+                                                <li><a href="#">{{ __('Jumpsuit') }}</a></li>
+                                                <li><a href="#">{{ __('shoes') }}</a></li>
+                                                <li><a href="#">{{ __('blouse') }}</a></li>
+                                                <li><a href="#">{{ __('watches') }}</a></li>
+                                            </ul>
+                                        </li>
                                         <li class="col-md-3">
                                             <ul>
-                                                <li id="myCarousel" class="carousel slide" data-ride="carousel">
-                                                    <div class="carousel-inner">
-                                                        <div class="item active"> <a href="#"><img
-                                                                    src="{{ asset('images/menu-banner1.jpg') }}"
-                                                                    class="img-responsive" alt="Banner1"></a></div>
-                                                        <!-- End Item -->
-                                                        <div class="item"> <a href="#"><img
-                                                                    src="{{ asset('images/menu-banner2.jpg') }}"
-                                                                    class="img-responsive" alt="Banner1"></a></div>
-                                                        <!-- End Item -->
-                                                        <div class="item"> <a href="#"><img
-                                                                    src="{{ asset('images/menu-banner3.jpg') }}"
-                                                                    class="img-responsive" alt="Banner1"></a></div>
-                                                        <!-- End Item -->
-                                                    </div>
-                                                    <!-- End Carousel Inner -->
-                                                </li>
-                                                <!-- /.carousel -->
+                                                <li class="dropdown-header">{{ __('Mans') }}</li>
+                                                <li><a href="#">{{ __('trouser') }}</a></li>
+                                                <li><a href="#">{{ __('T-Shirts') }}</a></li>
+                                                <li><a href="#">{{ __('Shirt') }}</a></li>
+                                                <li><a href="#">{{ __('Suits') }}</a></li>
+                                                <li><a href="#">{{ __('shoes') }}</a></li>
+                                                <li><a href="#">{{ __('Jackets') }}</a></li>
+                                                <li><a href="#">{{ __('watches') }}</a></li>
                                             </ul>
+                                        </li>
 
-                                    </ul>
+                                        <li class="col-md-3">
+                                            <ul>
+                                                <li class="dropdown-header">{{ __('Childrens') }}</li>
+                                                <li><a href="#"><select name="dropdown"
+                                                            class="dropdown_ch"></a>
+                                                <li>
+                                                    <option class="option_ch"><a
+                                                            href="#">{{ __('Born') }}</a>
+                                                    </option>
+                                                </li>
+                                                <li>
+                                                    <option class="option_ch"><a
+                                                            href="#">{{ __('Boys') }}</a>
+                                                    </option>
+                                                </li>
+                                                <li>
+                                                    <option class="option_ch"><a
+                                                            href="#">{{ __('Girls') }}</a>
+                                                    </option>
+                                                </li>
+                                                </select>
+                                        </li>
+                                        <li><a href="#"><select name="dropdown" class="dropdown_ch"></a>
+                                        <li>
+                                            <option class="option_ch"><a href="#">{{ __('Childrens') }}</a>
+                                            </option>
+                                        </li>
+                                        <li>
+                                            <option class="option_ch"><a href="#">{{ __('Boys') }}</a>
+                                            </option>
+                                        </li>
+                                        <li>
+                                            <option class="option_ch"><a href="#">{{ __('Girls') }}</a>
+                                            </option>
+                                        </li>
+                                        </select>
                                 </li>
-                                <li> <a href="shop">{{ __('shop') }}</a></li>
-                                <li> <a href="about">{{ __('About us') }}</a></li>
-                                <li> <a href="contact_us">{{ __('Contact us') }}</a></li>
+                                <li><a href="#"><select name="dropdown" class="dropdown_ch"></a>
+                                <li>
+                                    <option class="option_ch"><a href="#">{{ __('puzzling') }}</a>
+                                    </option>
+                                </li>
+                                <li>
+                                    <option class="option_ch"><a href="#">{{ __('Boys') }}</a>
+                                    </option>
+                                </li>
+                                <li>
+                                    <option class="option_ch"><a href="#">{{ __('Girls') }}</a>
+                                    </option>
+                                </li>
+                                </select>
+                                </li>
+
+                            </ul>
+                            </li>
+                            <li class="col-md-3">
+                                <ul>
+                                    <li id="myCarousel" class="carousel slide" data-ride="carousel">
+                                        <div class="carousel-inner">
+                                            <div class="item active"> <a href="#"><img
+                                                        src="{{ asset('images/menu-banner1.jpg') }}"
+                                                        class="img-responsive" alt="Banner1"></a></div>
+                                            <!-- End Item -->
+                                            <div class="item"> <a href="#"><img
+                                                        src="{{ asset('images/menu-banner2.jpg') }}"
+                                                        class="img-responsive" alt="Banner1"></a></div>
+                                            <!-- End Item -->
+                                            <div class="item"> <a href="#"><img
+                                                        src="{{ asset('images/menu-banner3.jpg') }}"
+                                                        class="img-responsive" alt="Banner1"></a></div>
+                                            <!-- End Item -->
+                                        </div>
+                                        <!-- End Carousel Inner -->
+                                    </li>
+                                    <!-- /.carousel -->
+                                </ul>
+
+                                </ul>
+                            </li>
+                            <li> <a href="shop">{{ __('shop') }}</a></li>
+                            <li> <a href="about">{{ __('About us') }}</a></li>
+                            <li> <a href="contact_us">{{ __('Contact us') }}</a></li>
                             </ul>
                         </div>
                         <!-- /.nav-collapse -->
@@ -228,112 +233,138 @@
                         </ul>
                     </div>
                 </div>
-                  </div>
             </div>
-            <div class="col-sm-8 col-lg-9 mtb_20">
-                <!-- contact  -->
-                <div class="row">
-                    <div class="col-md-6 col-md-offset-3">
-                        <div class="panel-login panel">
-                            <div class="panel-heading">
-                                <div class="row mb_20">
-                                    <div class="col-xs-6">
-                                        <a href="#" class="active"
-                                            id="login-form-link">{{ __('Login') }}</a>
-                                    </div>
-                                    <div class="col-xs-6">
-                                        <a href="#" id="register-form-link">{{ __('Register') }}</a>
-                                    </div>
-                                </div>
-                                <hr>
-                            </div>
-                            <div class="panel-body">
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <form id="login-form" action="#" method="post">
-                                            <div class="form-group">
-                                                <input type="text" name="username" id="username1"
-                                                    tabindex="1" class="form-control"
-                                                    placeholder="{{ __('Username') }}" value="">
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="password" name="password" id="password"
-                                                    tabindex="2" class="form-control"
-                                                    placeholder="{{ __('Password') }}">
-                                            </div>
-                                            <div class="form-group text-center">
-                                                <input type="checkbox" tabindex="3" class=""
-                                                    name="remember" id="remember">
-                                                <label for="remember"> {{ __('Remember Me') }}</label>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="row">
-                                                    <div class="col-sm-6 col-sm-offset-3">
-                                                        <input type="submit" name="login-submit"
-                                                            id="login-submit" tabindex="4"
-                                                            class="form-control btn btn-login"
-                                                            value="{{ __('Login') }}">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="row">
-                                                    <div class="col-lg-12">
-                                                        <div class="text-center">
-                                                            <a href="#" tabindex="5"
-                                                                class="forgot-password">{{ __('Forgot Password?') }}</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                        <form id="register-form" action="#" method="post">
-                                            <div class="form-group">
-                                                <input type="text" name="username" id="username"
-                                                    tabindex="1" class="form-control"
-                                                    placeholder="{{ __('Username') }}" value="">
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="email" name="email" id="email"
-                                                    tabindex="1" class="form-control"
-                                                    placeholder="{{ __('Email Address') }}" value="">
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="password" name="password" id="password2"
-                                                    tabindex="2" class="form-control"
-                                                    placeholder="{{ __('Password') }}">
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="password" name="confirm-password"
-                                                    id="confirm-password" tabindex="2" class="form-control"
-                                                    placeholder="{{ __('Confirm Password') }}">
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="row">
-                                                    <div class="col-sm-6 col-sm-offset-3">
-                                                        <input type="submit" name="register-submit"
-                                                            id="register-submit" tabindex="4"
-                                                            class="form-control btn btn-register"
-                                                            value="{{ __('Register Now') }}">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
+        </div>
+        <form class="signup-form" action="/register" method="post">
+
+            <!-- form header -->
+            <div class="form-header">
+                <h1>Create Account</h1>
+            </div>
+
+            <!-- form body -->
+            <div class="form-body">
+
+                <!-- Firstname and Lastname -->
+                <div class="horizontal-group">
+                    <div class="form-group left">
+                        <label for="firstname" class="label-title">First name *</label>
+                        <input type="text" id="firstname" class="form-input" placeholder="enter your first name"
+                            required="required" />
+                    </div>
+                    <div class="form-group right">
+                        <label for="lastname" class="label-title">Last name</label>
+                        <input type="text" id="lastname" class="form-input"
+                            placeholder="enter your last name" />
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email" class="label-title">Email*</label>
+                    <input type="email" id="email" class="form-input" placeholder="enter your email"
+                        required="required">
+                </div>
+
+                <!-- Passwrod and confirm password -->
+                <div class="horizontal-group">
+                    <div class="form-group left">
+                        <label for="password" class="label-title">Password *</label>
+                        <input type="password" id="password" class="form-input" placeholder="enter your password"
+                            required="required">
+                    </div>
+                    <div class="form-group right">
+                        <label for="confirm-password" class="label-title">Confirm Password *</label>
+                        <input type="password" class="form-input" id="confirm-password"
+                            placeholder="enter your password again" required="required">
+                    </div>
+                </div>
+
+                <!-- Gender and Hobbies -->
+                <div class="horizontal-group">
+                    <div class="form-group left">
+                        <label class="label-title">Gender:</label>
+                        <div class="input-group">
+                            <label for="male"><input type="radio" name="gender" value="male"
+                                    id="male"> Male</label>
+                            <label for="female"><input type="radio" name="gender" value="female"
+                                    id="female"> Female</label>
+                        </div>
+                    </div>
+                    <div class="form-group right">
+                        <label class="label-title">Hobbies</label>
+                        <div>
+                            <label><input type="checkbox" value="Web">Music</label>
+                            <label><input type="checkbox" value="iOS">Sports</label>
+                            <label><input type="checkbox" value="Andriod">Travel</label>
+                            <label><input type="checkbox" value="Game">Movies</label>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        @extends('layout.footer')
-        <!-- =====  CONTAINER END  ===== -->
-        <!-- =====  FOOTER START  ===== -->
-        @section('footer')
 
-        @endsection
-        <!-- =====  FOOTER END  ===== -->
+                <!-- Source of Income and Income -->
+                <div class="horizontal-group">
+                    <div class="form-group left">
+                        <label class="label-title">Source of Income</label>
+                        <select class="form-input" id="level">
+                            <option value="B">Employed</option>
+                            <option value="I">Self-employed</option>
+                            <option value="A">Unemployed</option>
+                        </select>
+                    </div>
+                    <div class="form-group right">
+                        <label for="experience" class="label-title">Income</label>
+                        <input type="range" min="20" max="100" step="5" value="0"
+                            id="experience" class="form-input" onChange="change();"
+                            style="height:28px;width:78%;padding:0;">
+                        <span id="range-label">20K</span>
+                    </div>
+                </div>
+
+                <!-- Profile picture and Age -->
+                <div class="horizontal-group">
+                    <div class="form-group left">
+                        <label for="choose-file" class="label-title">Upload Profile Picture</label>
+                        <input type="file" id="choose-file" size="80">
+                    </div>
+                    <div class="form-group right">
+                        <label for="experience" class="label-title">Age</label>
+                        <input type="number" min="18" max="80" value="18" class="form-input">
+                    </div>
+                </div>
+
+                <!-- Bio -->
+                <div class="form-group">
+                    <label for="choose-file" class="label-title">Bio</label>
+                    <textarea class="form-input" rows="4" cols="50" style="height:auto"></textarea>
+                </div>
+            </div>
+
+            <!-- form-footer -->
+            <div class="form-footer">
+                <span>* required</span>
+                <button type="submit" class="btn">Create</button>
+            </div>
+
+        </form>
+
+        <!-- Script for range input label -->
+        <script>
+            var rangeLabel = document.getElementById("range-label");
+            var experience = document.getElementById("experience");
+
+            function change() {
+                rangeLabel.innerText = experience.value + "K";
+            }
+        </script>
+    </div>
+    @extends('layout.footer')
+    <!-- =====  CONTAINER END  ===== -->
+    <!-- =====  FOOTER START  ===== -->
+    @section('footer')
+
+    @endsection
+    <!-- =====  FOOTER END  ===== -->
     </div>
     @extends('layout.js')
     @section('js')

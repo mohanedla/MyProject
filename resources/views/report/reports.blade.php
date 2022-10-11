@@ -294,67 +294,6 @@
                 </div>
                   </div>
             </div>
-            <div id="formContent">
-<div class="btn_add">
-                    <label class="address">Customer Info</label><button class="button">{{ __('Add')}}</button>
-
-                </div>
-                <hr />
-                <table id="tblCustomer" class="display" style="width: 100%;">
-                  <thead>
-                    <tr>
-                      <th scope="col">{{ __('Name')}}</th>
-                      <th scope="col">{{ __('Company')}}</th>
-                      <th scope="col">{{ __('Relationship')}}</th>
-                      <th scope="col">{{ __('City')}}</th>
-                      <th scope="col">{{ __('City')}}</th>
-                      <th scope="col">{{ __('City')}}</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Sven Ottlieb</td>
-                      <td>Drachenblut Delikatessen</td>
-                      <td>Customers</td>
-                      <td>Aachen</td>
-                      <td>Aachen</td>
-                      <td>
-                        <a href=""><img src="{{ asset('images/icone/edit-solid-24.png') }}"></a>
-                        <a href=""><img src="{{ asset('images/icone/x-square-solid-24.png') }}"></a>
-                    </td>
-                    </tr>
-                    <tr>
-                      <td>Sven Ottlieb</td>
-                      <td>Drachenblut Delikatessen</td>
-                      <td>Customers</td>
-                      <td>Aachen</td>
-                      <td>Aachen</td>
-                      <td>
-                        <a href=""><img src="{{ asset('images/icone/edit-solid-24.png') }}"></a>
-                        <a href=""><img src="{{ asset('images/icone/x-square-solid-24.png') }}"></a>
-                    </td>
-                    </tr>
-                    <tr>
-                      <td>Sven Ottlieb</td>
-                      <td>Drachenblut Delikatessen</td>
-                      <td>Customers</td>
-                      <td>Aachen</td>
-                      <td>Aachen</td>
-                      <td>
-                        <a href=""><img src="{{ asset('images/icone/edit-solid-24.png') }}"></a>
-                        <a href=""><img src="{{ asset('images/icone/x-square-solid-24.png') }}"></a>
-                    </td>
-                    </tr>
-
-                  </tbody>
-                </table>
-              </div>
-
-              <script>
-                $(document).ready(function () {
-                  $("#tblCustomer").DataTable();
-                });
-              </script>
 
         </div>
         <br>
@@ -367,8 +306,8 @@
         @endsection
         <!-- =====  FOOTER END  ===== -->
     </div>
-    @extends('layout.js1')
-    @section('js1')
+    @extends('layout.js')
+    @section('js')
 
     </body>
 

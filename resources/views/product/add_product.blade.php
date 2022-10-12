@@ -235,7 +235,7 @@
 
                 <!-- form header -->
                 <div class="form-header">
-                    <h1>{{ __('Add Admin') }}</h1>
+                    <h1>{{ __('Add Product') }}</h1>
                 </div>
 
                 <!-- form body -->
@@ -244,38 +244,42 @@
                     <!-- Firstname and Lastname -->
                     <div class="horizontal-group">
                         <div class="form-group left">
-                            <label for="firstname" class="label-title">{{ __('First name') }} *</label>
-                            <input type="text" id="firstname" class="form-input" placeholder="{{ __('enter your first name') }}"
+                            <label for="firstname" class="label-title">{{ __('Product Name') }}</label>
+                            <input type="text" id="firstname" class="form-input" placeholder="{{ __('enter Product Name') }}"
                                 required="required" />
                         </div>
                         <div class="form-group right">
-                            <label for="lastname" class="label-title">{{ __('Last name') }}</label>
-                            <input type="text" id="lastname" class="form-input"
-                                placeholder="{{ __('enter your last name') }}" />
+                            <label style="float:left" for="experience" class="label-title">{{ __('Job No.') }}</label>
+                            <input type="text"  maxlength="12" class="form-input">
                         </div>
+                      
                     </div>
                     <div class="horizontal-group">
-                        <div class="form-group left">
-                            <label for="email" class="label-title">{{ __('Email') }}*</label>
-                            <input type="email" id="email" class="form-input" placeholder="{{ __('enter your email') }}"
-                                required="required">
-                        </div>
-                        <div class="form-group right">
-                            <label for="phone" class="label-title">{{ __('Phone Number') }}*</label>
-                            <input type="tel" id="phone" name="phone" class="form-input" placeholder="{{ __('Enter your phone number') }}" required="required">
-                    </div>
+                            <div class="form-group left" id="adj">
+                                <label class="label-title">{{ __('Brand') }}</label>
+                                <select class="form-input" id="level">
+                                    <option value="B">{{ __('ZARA') }}</option>
+                                    <option value="I">{{ __('H&M') }}</option>
+                                    <option value="B">{{ __('MANGO') }}</option>
 
-                    <!-- Passwrod and confirm password -->
+                                </select>
+                            </div>
+                        <div class="form-group right">
+                                <label for="firstname" class="label-title">{{ __('model') }} </label>
+                                <input type="text" id="firstname" class="form-input" placeholder="{{ __('enter model') }}"
+                                    required="required" />
+                        </div>
+                    </div>                   
                     <div class="horizontal-group">
                         <div class="form-group left">
-                            <label for="password" class="label-title">{{ __('Password') }} *</label>
-                            <input type="password" id="password" class="form-input" placeholder="{{ __('enter your password') }}"
-                                required="required">
+                            <label for="firstname" class="label-title">{{ __('Quantity') }} </label>
+                            <input type="text" id="firstname" class="form-input" placeholder="{{ __('enter Quantity') }}"
+                                required="required" />
                         </div>
                         <div class="form-group right">
-                            <label for="confirm-password" class="label-title">{{ __('Confirm Password') }} *</label>
-                            <input type="password" class="form-input" id="confirm-password"
-                                placeholder="{{ __('enter your password again') }}" required="required">
+                            <label for="lastname" class="label-title">{{ __('Specifications') }}</label>
+                            <input type="text" id="lastname" class="form-input"
+                                placeholder="{{ __('enter  Specifications') }}" />
                         </div>
                     </div>
 
@@ -283,38 +287,19 @@
 
                         <div class="horizontal-group">
                             <div class="form-group left">
-                                <label for="firstname" class="label-title">{{ __('Address') }} *</label>
-                                <input type="text" id="firstname" class="form-input" placeholder="{{ __('enter your address') }}"
+                                <label for="firstname" class="label-title">{{ __('Admin') }} </label>
+                                <input type="text" id="firstname" class="form-input" placeholder="{{ __('enter admin name') }}"
                                     required="required" />
                             </div>
-                    </div>
-
-                    <!-- Source of Income and Income -->
-                    <div class="horizontal-group">
-                        <div class="form-group left" id="adj">
-                            <label class="label-title">{{ __('Adjective') }}</label>
-                            <select class="form-input" id="level">
-                                <option value="B">{{ __('Manger') }}</option>
-                                <option value="I">{{ __('Admin') }}</option>
-                            </select>
+                            <div class="form-group right">
+                                <label for="firstname" class="label-title">{{ __('price') }} </label>
+                            <input type="number" id="firstname" class="form-input" placeholder="{{ __('enter price') }}"
+                                required="required" />
                         </div>
 
                     </div>
 
-                    <!-- Profile picture and Age -->
-                        <div class="radio-wrapper">
-                        <div class="form-group left">
-                            <div class="radio-container">
-                                <input checked="checked" type="radio" name="gender" value="1" id="male" />
-                                <label for="male">{{ __('Male') }}</label>
-                                <input type="radio" name="gender" value="0" id="female" />
-                                <label for="female">{{ __('Female') }}</label>
-                            </div>
-                            </div>
-                    <div class="form-group right">
-                        <label style="float:left" for="experience" class="label-title">{{ __('Age') }}</label>
-                        <input type="number" min="18" max="80" value="18" class="form-input">
-                    </div>
+                
                     <div class="horizontal-group">
                         <div class="form-group left">
                             <div class="file-input">
@@ -326,20 +311,13 @@
                               </div>
                         </div>
                 </div>
-                <div class="form-group right">
-                    <label style="float:left" for="experience" class="label-title">{{ __('Job No.') }}</label>
-                    <input type="text"  maxlength="12" class="form-input">
-                </div>
-                    <!-- Bio -->
-
-                </div>
+         </div>
 
                 <!-- form-footer -->
                 <div class="form-footer">
                     <span></span>
                     <button type="submit" class="btn">{{ __('Save') }}</button>
                 </div>
-
             </form>
         </div>
         @extends('layout.footer')

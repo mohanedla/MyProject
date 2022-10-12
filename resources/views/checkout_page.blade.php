@@ -21,7 +21,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="viewport" content="width=device-width">
   <!-- =====  CSS  ===== -->
-  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.min.css') }}" />
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/magnific-popup.css">
@@ -1435,11 +1435,14 @@
     <!-- =====  FOOTER END  ===== -->
   </div>
   <a id="scrollup"></a>
-  <script src="js/jQuery_v3.1.1.min.js"></script>
+  {{-- <script src="js/jQuery_v3.1.1.min.js"></script>
   <script src="js/owl.carousel.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/jquery.magnific-popup.js"></script>
   <script src="js/custom.js"></script>
+   --}}
+  @extends('layout.js')
+  @section('js')
   <script type="text/javascript">
   $('input[name=\'payment_address\']').on('change', function() {
     if (this.value == 'new') {

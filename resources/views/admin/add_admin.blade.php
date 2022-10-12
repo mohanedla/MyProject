@@ -235,11 +235,11 @@
                 </div>
             </div>
         </div>
-        <form class="signup-form" action="/register" method="post">
+        <form class="signup-form" action="admin" method="post">
 
             <!-- form header -->
             <div class="form-header">
-                <h1>Create Account</h1>
+                <h1>{{ __('Add Admin') }}</h1>
             </div>
 
             <!-- form body -->
@@ -248,102 +248,100 @@
                 <!-- Firstname and Lastname -->
                 <div class="horizontal-group">
                     <div class="form-group left">
-                        <label for="firstname" class="label-title">First name *</label>
-                        <input type="text" id="firstname" class="form-input" placeholder="enter your first name"
+                        <label for="firstname" class="label-title">{{ __('First name') }} *</label>
+                        <input type="text" id="firstname" class="form-input" placeholder="{{ __('enter your first name') }}"
                             required="required" />
                     </div>
                     <div class="form-group right">
-                        <label for="lastname" class="label-title">Last name</label>
+                        <label for="lastname" class="label-title">{{ __('Last name') }}</label>
                         <input type="text" id="lastname" class="form-input"
-                            placeholder="enter your last name" />
+                            placeholder="{{ __('enter your last name') }}" />
                     </div>
                 </div>
-
-                <!-- Email -->
-                <div class="form-group">
-                    <label for="email" class="label-title">Email*</label>
-                    <input type="email" id="email" class="form-input" placeholder="enter your email"
-                        required="required">
+                <div class="horizontal-group">
+                    <div class="form-group left">
+                        <label for="email" class="label-title">{{ __('Email') }}*</label>
+                        <input type="email" id="email" class="form-input" placeholder="{{ __('enter your email') }}"
+                            required="required">
+                    </div>
+                    <div class="form-group right">
+                        <label for="phone" class="label-title">{{ __('Phone Number') }}*</label>
+                        <input type="tel" id="phone" name="phone" class="form-input" placeholder="{{ __('Enter your phone number') }}" required="required">
                 </div>
 
                 <!-- Passwrod and confirm password -->
                 <div class="horizontal-group">
                     <div class="form-group left">
-                        <label for="password" class="label-title">Password *</label>
-                        <input type="password" id="password" class="form-input" placeholder="enter your password"
+                        <label for="password" class="label-title">{{ __('Password') }} *</label>
+                        <input type="password" id="password" class="form-input" placeholder="{{ __('enter your password') }}"
                             required="required">
                     </div>
                     <div class="form-group right">
-                        <label for="confirm-password" class="label-title">Confirm Password *</label>
+                        <label for="confirm-password" class="label-title">{{ __('Confirm Password') }} *</label>
                         <input type="password" class="form-input" id="confirm-password"
-                            placeholder="enter your password again" required="required">
+                            placeholder="{{ __('enter your password again') }}" required="required">
                     </div>
                 </div>
 
                 <!-- Gender and Hobbies -->
-                <div class="horizontal-group">
-                    <div class="form-group left">
-                        <label class="label-title">Gender:</label>
-                        <div class="input-group">
-                            <label for="male"><input type="radio" name="gender" value="male"
-                                    id="male"> Male</label>
-                            <label for="female"><input type="radio" name="gender" value="female"
-                                    id="female"> Female</label>
+
+                    <div class="horizontal-group">
+                        <div class="form-group left">
+                            <label for="firstname" class="label-title">{{ __('Address') }} *</label>
+                            <input type="text" id="firstname" class="form-input" placeholder="{{ __('enter your address') }}"
+                                required="required" />
                         </div>
-                    </div>
-                    <div class="form-group right">
-                        <label class="label-title">Hobbies</label>
-                        <div>
-                            <label><input type="checkbox" value="Web">Music</label>
-                            <label><input type="checkbox" value="iOS">Sports</label>
-                            <label><input type="checkbox" value="Andriod">Travel</label>
-                            <label><input type="checkbox" value="Game">Movies</label>
-                        </div>
-                    </div>
                 </div>
 
                 <!-- Source of Income and Income -->
                 <div class="horizontal-group">
-                    <div class="form-group left">
-                        <label class="label-title">Source of Income</label>
+                    <div class="form-group left" id="adj">
+                        <label class="label-title">{{ __('Adjective') }}</label>
                         <select class="form-input" id="level">
-                            <option value="B">Employed</option>
-                            <option value="I">Self-employed</option>
-                            <option value="A">Unemployed</option>
+                            <option value="B">{{ __('Manger') }}</option>
+                            <option value="I">{{ __('Admin') }}</option>
                         </select>
                     </div>
-                    <div class="form-group right">
-                        <label for="experience" class="label-title">Income</label>
-                        <input type="range" min="20" max="100" step="5" value="0"
-                            id="experience" class="form-input" onChange="change();"
-                            style="height:28px;width:78%;padding:0;">
-                        <span id="range-label">20K</span>
-                    </div>
+
                 </div>
 
                 <!-- Profile picture and Age -->
+                    <div class="radio-wrapper">
+                    <div class="form-group left">
+                        <div class="radio-container">
+                            <input checked="checked" type="radio" name="gender" value="1" id="male" />
+                            <label for="male">{{ __('Male') }}</label>
+                            <input type="radio" name="gender" value="0" id="female" />
+                            <label for="female">{{ __('Female') }}</label>
+                        </div>
+                        </div>
+                <div class="form-group right">
+                    <label style="float:left" for="experience" class="label-title">{{ __('Age') }}</label>
+                    <input type="number" min="18" max="80" value="18" class="form-input">
+                </div>
                 <div class="horizontal-group">
                     <div class="form-group left">
-                        <label for="choose-file" class="label-title">Upload Profile Picture</label>
-                        <input type="file" id="choose-file" size="80">
+                        <div class="file-input">
+                            <input type="file" id="file" class="file">
+                            <label for="file">
+                                {{ __('Upload Profile Picture') }}
+                              <p class="file-name"></p>
+                            </label>
+                          </div>
                     </div>
-                    <div class="form-group right">
-                        <label for="experience" class="label-title">Age</label>
-                        <input type="number" min="18" max="80" value="18" class="form-input">
-                    </div>
-                </div>
-
+            </div>
+            <div class="form-group right">
+                <label style="float:left" for="experience" class="label-title">{{ __('Job No.') }}</label>
+                <input type="text"  maxlength="12" class="form-input">
+            </div>
                 <!-- Bio -->
-                <div class="form-group">
-                    <label for="choose-file" class="label-title">Bio</label>
-                    <textarea class="form-input" rows="4" cols="50" style="height:auto"></textarea>
-                </div>
+
             </div>
 
             <!-- form-footer -->
             <div class="form-footer">
-                <span>* required</span>
-                <button type="submit" class="btn">Create</button>
+                <span></span>
+                <button type="submit" class="btn">{{ __('Save') }}</button>
             </div>
 
         </form>
@@ -368,7 +366,7 @@
     </div>
     @extends('layout.js')
     @section('js')
-
+    
     </body>
 
     </html>

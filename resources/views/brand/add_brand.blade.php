@@ -24,6 +24,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.min.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/style1.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/magnific-popup.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/owl.carousel.css') }}">
     <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
@@ -230,9 +231,118 @@
                 </div>
                   </div>
             </div>
+            <form class="signup-form" action="admin" method="post">
 
+                <!-- form header -->
+                <div class="form-header">
+                    <h1>{{ __('Add Admin') }}</h1>
+                </div>
+
+                <!-- form body -->
+                <div class="form-body">
+
+                    <!-- Firstname and Lastname -->
+                    <div class="horizontal-group">
+                        <div class="form-group left">
+                            <label for="firstname" class="label-title">{{ __('First name') }} *</label>
+                            <input type="text" id="firstname" class="form-input" placeholder="{{ __('enter your first name') }}"
+                                required="required" />
+                        </div>
+                        <div class="form-group right">
+                            <label for="lastname" class="label-title">{{ __('Last name') }}</label>
+                            <input type="text" id="lastname" class="form-input"
+                                placeholder="{{ __('enter your last name') }}" />
+                        </div>
+                    </div>
+                    <div class="horizontal-group">
+                        <div class="form-group left">
+                            <label for="email" class="label-title">{{ __('Email') }}*</label>
+                            <input type="email" id="email" class="form-input" placeholder="{{ __('enter your email') }}"
+                                required="required">
+                        </div>
+                        <div class="form-group right">
+                            <label for="phone" class="label-title">{{ __('Phone Number') }}*</label>
+                            <input type="tel" id="phone" name="phone" class="form-input" placeholder="{{ __('Enter your phone number') }}" required="required">
+                    </div>
+
+                    <!-- Passwrod and confirm password -->
+                    <div class="horizontal-group">
+                        <div class="form-group left">
+                            <label for="password" class="label-title">{{ __('Password') }} *</label>
+                            <input type="password" id="password" class="form-input" placeholder="{{ __('enter your password') }}"
+                                required="required">
+                        </div>
+                        <div class="form-group right">
+                            <label for="confirm-password" class="label-title">{{ __('Confirm Password') }} *</label>
+                            <input type="password" class="form-input" id="confirm-password"
+                                placeholder="{{ __('enter your password again') }}" required="required">
+                        </div>
+                    </div>
+
+                    <!-- Gender and Hobbies -->
+
+                        <div class="horizontal-group">
+                            <div class="form-group left">
+                                <label for="firstname" class="label-title">{{ __('Address') }} *</label>
+                                <input type="text" id="firstname" class="form-input" placeholder="{{ __('enter your address') }}"
+                                    required="required" />
+                            </div>
+                    </div>
+
+                    <!-- Source of Income and Income -->
+                    <div class="horizontal-group">
+                        <div class="form-group left" id="adj">
+                            <label class="label-title">{{ __('Adjective') }}</label>
+                            <select class="form-input" id="level">
+                                <option value="B">{{ __('Manger') }}</option>
+                                <option value="I">{{ __('Admin') }}</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <!-- Profile picture and Age -->
+                        <div class="radio-wrapper">
+                        <div class="form-group left">
+                            <div class="radio-container">
+                                <input checked="checked" type="radio" name="gender" value="1" id="male" />
+                                <label for="male">{{ __('Male') }}</label>
+                                <input type="radio" name="gender" value="0" id="female" />
+                                <label for="female">{{ __('Female') }}</label>
+                            </div>
+                            </div>
+                    <div class="form-group right">
+                        <label style="float:left" for="experience" class="label-title">{{ __('Age') }}</label>
+                        <input type="number" min="18" max="80" value="18" class="form-input">
+                    </div>
+                    <div class="horizontal-group">
+                        <div class="form-group left">
+                            <div class="file-input">
+                                <input type="file" id="file" class="file">
+                                <label for="file">
+                                    {{ __('Upload Profile Picture') }}
+                                  <p class="file-name"></p>
+                                </label>
+                              </div>
+                        </div>
+                </div>
+                <div class="form-group right">
+                    <label style="float:left" for="experience" class="label-title">{{ __('Job No.') }}</label>
+                    <input type="text"  maxlength="12" class="form-input">
+                </div>
+                    <!-- Bio -->
+
+                </div>
+
+                <!-- form-footer -->
+                <div class="form-footer">
+                    <span></span>
+                    <button type="submit" class="btn">{{ __('Save') }}</button>
+                </div>
+
+            </form>
         </div>
-        
+
         @extends('layout.footer')
         <!-- =====  CONTAINER END  ===== -->
         <!-- =====  FOOTER START  ===== -->

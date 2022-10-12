@@ -64,6 +64,15 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('about',function(){
         return View::make('about');
     });
+    Route::get('cart',function(){
+        return View::make('cart_page');
+    });
+    Route::get('checkoute',function(){
+        return View::make('checkout_page');
+    });
+    Route::get('product_detail',function(){
+        return View::make('product_detail_page');
+    });
 });
 
         Route::get('foot',function(){

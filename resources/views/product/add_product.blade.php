@@ -220,18 +220,20 @@
         <div class="container">
             <div class="row ">
                 <!-- =====  BANNER STRAT  ===== -->
+
                 <div class="col-sm-12">
                     <div class="breadcrumb ptb_20">
                         <h1>{{ __('add Product') }}</h1>
                         <ul>
                             <li><a href="home">{{ __('Home') }}</a></li>
-                            <li class="active">{{ __('add Product') }}</li>
+                            <li class="active"><a href="product">{{ __('Product Management') }}</a></li>
+                            <li class="active"><a href="add_product">{{ __('add Product') }}</a></li>
                         </ul>
                     </div>
                 </div>
                   </div>
             </div>
-            <form class="signup-form" action="admin" method="post">
+            <form class="signup-form" action="product" method="post">
 
                 <!-- form header -->
                 <div class="form-header">
@@ -244,81 +246,72 @@
                     <!-- Firstname and Lastname -->
                     <div class="horizontal-group">
                         <div class="form-group left">
-                            <label for="firstname" class="label-title">{{ __('Product Name') }}</label>
-                            <input type="text" id="firstname" class="form-input" placeholder="{{ __('enter Product Name') }}"
+                            <label for="firstname" class="label-title">{{ __('Product Name') }} </label>
+                            <input type="text" id="product_name" name="product_name" class="form-input" placeholder="{{ __('enter Product Name') }}"
                                 required="required" />
                         </div>
                         <div class="form-group right">
-                            <label style="float:left" for="experience" class="label-title">{{ __('Job No.') }}</label>
-                            <input type="text"  maxlength="12" class="form-input">
+                            <label for="lastname" class="label-title">{{ __('Serial Number') }}</label>
+                            <input type="number" id="lastname" class="form-input"
+                                placeholder="{{ __('enter serial number') }}" />
                         </div>
-                      
-                    </div>
-                    <div class="horizontal-group">
-                            <div class="form-group left" id="adj">
-                                <label class="label-title">{{ __('Brand') }}</label>
-                                <select class="form-input" id="level">
-                                    <option value="B">{{ __('ZARA') }}</option>
-                                    <option value="I">{{ __('H&M') }}</option>
-                                    <option value="B">{{ __('MANGO') }}</option>
 
-                                </select>
-                            </div>
-                        <div class="form-group right">
-                                <label for="firstname" class="label-title">{{ __('model') }} </label>
-                                <input type="text" id="firstname" class="form-input" placeholder="{{ __('enter model') }}"
-                                    required="required" />
-                        </div>
-                    </div>                   
-                    <div class="horizontal-group">
-                        <div class="form-group left">
-                            <label for="firstname" class="label-title">{{ __('Quantity') }} </label>
-                            <input type="text" id="firstname" class="form-input" placeholder="{{ __('enter Quantity') }}"
-                                required="required" />
-                        </div>
-                        <div class="form-group right">
-                            <label for="lastname" class="label-title">{{ __('Specifications') }}</label>
-                            <input type="text" id="lastname" class="form-input"
-                                placeholder="{{ __('enter  Specifications') }}" />
-                        </div>
                     </div>
+
 
                     <!-- Gender and Hobbies -->
 
                         <div class="horizontal-group">
                             <div class="form-group left">
-                                <label for="firstname" class="label-title">{{ __('Admin') }} </label>
-                                <input type="text" id="firstname" class="form-input" placeholder="{{ __('enter admin name') }}"
+                                <label for="firstname" class="label-title">{{ __('model') }} </label>
+                                <input type="text" id="firstname" class="form-input" placeholder="{{ __('enter model') }}"
                                     required="required" />
                             </div>
-                            <div class="form-group right">
-                                <label for="firstname" class="label-title">{{ __('price') }} </label>
-                            <input type="number" id="firstname" class="form-input" placeholder="{{ __('enter price') }}"
-                                required="required" />
+                    </div>
+
+                    <!-- Source of Income and Income -->
+                    <div class="horizontal-group">
+                        <div class="form-group left" id="adj">
+                            <label class="label-title">{{ __('Brand') }}</label>
+                            <select class="form-input" id="level">
+                                <option value="B">{{ __('ZARA') }}</option>
+                                <option value="I">{{ __('H&M') }}</option>
+                                <option value="B">{{ __('MANGO') }}</option>
+
+                            </select>
                         </div>
 
                     </div>
 
-                
+
                     <div class="horizontal-group">
                         <div class="form-group left">
                             <div class="file-input">
                                 <input type="file" id="file" class="file">
                                 <label for="file">
-                                    {{ __('Upload Profile Picture') }}
+                                    {{ __('Upload Product Picture') }}
                                   <p class="file-name"></p>
                                 </label>
                               </div>
+                            </div>
+                              <div class="form-group right">
+                                  <label for="firstname" class="label-title">{{ __('price') }} </label>
+                                  <input type="number" id="firstname" class="form-input" placeholder="{{ __('enter price') }}"
+                                  required="required" />
+                                </div>
                         </div>
+                    <!-- Bio -->
+
                 </div>
-         </div>
 
                 <!-- form-footer -->
                 <div class="form-footer">
                     <span></span>
                     <button type="submit" class="btn">{{ __('Save') }}</button>
                 </div>
+
             </form>
+
         </div>
         @extends('layout.footer')
         <!-- =====  CONTAINER END  ===== -->

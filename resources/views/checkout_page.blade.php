@@ -235,10 +235,10 @@
         <!-- =====  BANNER STRAT  ===== -->
         <div class="col-sm-12">
           <div class="breadcrumb ptb_20">
-            <h1>{{__('Shopping Cart')}}</h1>
+            <h1>{{ __('Shopping Cart') }}</h1>
             <ul>
-              <li><a href="index">{{__('Home')}}</a></li>
-              <li class="active">{{__('Shopping Cart')}}</li>
+              <li><a href="index">{{ __('Home') }}</a></li>
+              <li class="active">{{ __('Shopping Cart') }}</li>
             </ul>
           </div>
         </div>
@@ -462,7 +462,7 @@
               </ul>
             </div>
           </div>--}}
-        </div> 
+        </div>
         <div class="col-sm-8 col-lg-9 mtb_20">
           <div class="panel-group" id="accordion">
             <div class="panel panel-default  ">

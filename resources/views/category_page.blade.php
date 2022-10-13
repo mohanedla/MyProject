@@ -147,10 +147,10 @@
                                     </li>
                                     <li>
                                         <form action="cart_page">
-                                            <input class="btn pull-left mt_10" value="View cart" type="submit">
+                                            <input class="btn pull-left mt_10" value="{{ __('View cart') }}" type="submit">
                                         </form>
                                         <form action="checkout_page">
-                                            <input class="btn pull-right mt_10" value="Checkout" type="submit">
+                                            <input class="btn pull-right mt_10" value="{{ __('Checkout') }}" type="submit">
                                         </form>
                                     </li>
                                 </ul>

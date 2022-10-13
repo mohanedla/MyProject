@@ -235,11 +235,11 @@
         <!-- =====  BANNER STRAT  ===== -->
         <div class="col-sm-12">
           <div class="breadcrumb ptb_20">
-            <h1>New LCDScreen...</h1>
+            <h1> {{ __('product_detail_page') }} </h1>
             <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="category_page.html">Products</a></li>
-              <li class="active">New LCDS...</li>
+              <li><a href="home">{{ __('Home') }}</a></li>
+              <li class="active"><a href="category_page">{{ __('shop') }}</a></li>
+              <li class="active"><a href="product_detail_page">{{ __('product_detail') }}</a></li>
             </ul>
           </div>
         </div>
@@ -290,7 +290,7 @@
               </div>
             </div>
             <div class="col-md-6 prodetail caption product-thumb">
-              <h4 data-name="product_name" class="product-name"><a href="#" title="Casual Shirt With Ruffle Hem">New LCDScreen and HD Video Recording</a></h4>
+              <h4 data-name="product_name" class="product-name"><a href="#" title="Casual Shirt With Ruffle Hem">{{ __('product_detail') }}</a></h4>
               <div class="rating">
                 <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
                 <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
@@ -303,13 +303,13 @@
               <hr>
               <ul class="list-unstyled product_info mtb_20">
                 <li>
-                  <label>Brand:</label>
+                  <label>{{ __('Brand') }}:</label>
                   <span> <a href="#">Apple</a></span></li>
                 <li>
-                  <label>Product Code:</label>
+                  <label>{{ __('Serial Number') }}:</label>
                   <span> product 20</span></li>
                 <li>
-                  <label>Availability:</label>
+                  <label>{{ __('Availability') }}:</label>
                   <span> In Stock</span></li>
               </ul>
               <hr>
@@ -318,7 +318,7 @@
                 <div class="form-group">
                   <div class="row">
                     <div class="Sort-by col-md-6">
-                      <label>Sort by</label>
+                      <label>{{ __('Sort by') }}</label>
                       <select name="product_size" id="select-by-size" class="selectpicker form-control">
                         <option>Small</option>
                         <option>Medium</option>
@@ -326,7 +326,7 @@
                       </select>
                     </div>
                     <div class="Color col-md-6">
-                      <label>Color</label>
+                      <label>{{ __('Color') }}</label>
                       <select name="product_color" id="select-by-color" class="selectpicker form-control">
                         <option>Blue</option>
                         <option>Green</option>
@@ -337,7 +337,7 @@
                   </div>
                 </div>
                 <div class="qty mt_30 form-group2">
-                  <label>Qty</label>
+                  <label>{{ __('Quantity') }}</label>
                   <input name="product_quantity" min="1" value="1" type="number">
                 </div>
                 <div class="button-group mt_30">
@@ -352,8 +352,8 @@
             <div class="col-md-12">
               <div id="exTab5" class="mtb_30">
                 <ul class="nav nav-tabs">
-                  <li class="active"> <a href="#1c" data-toggle="tab"> {{__(' Overview')}}</a> </li>
-                  <li><a href="#2c" data-toggle="tab"> {{__(' Reviews')}} (1)</a> </li>
+                  <li class="active"> <a href="#1c" data-toggle="tab"> {{__('Overview')}}</a> </li>
+                  <li><a href="#2c" data-toggle="tab"> {{__('Reviews')}} (1)</a> </li>
                 </ul>
                 <div class="tab-content ">
                   <div class="tab-pane active pt_20" id="1c">

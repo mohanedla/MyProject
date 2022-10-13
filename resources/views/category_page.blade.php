@@ -50,7 +50,7 @@
                         </div>
                         <div class="col-xs-12 col-sm-8">
                             <ul class="header-top-right text-right">
-                                <li class="account"><a href="login">{{ __('My Account')}}</a></li>
+                                <li class="account"><a href="login">{{ __('My Account') }}</a></li>
                                 <li class="language dropdown"> <span class="dropdown-toggle" id="dropdownMenu1"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                         role="button">{{ __('Language') }} <span class="caret"></span> </span>
@@ -76,8 +76,9 @@
                     <div class="row">
                         <div class="col-xs-12 col-sm-4">
                             <div class="main-search mt_40">
-                                <input id="search-input" name="search" value="" placeholder="{{__('Search')}}"
-                                    class="form-control input-lg" autocomplete="off" type="text">
+                                <input id="search-input" name="search" value=""
+                                    placeholder="{{ __('Search') }}" class="form-control input-lg" autocomplete="off"
+                                    type="text">
                                 <span class="input-group-btn">
                                     <button type="button" class="btn btn-default btn-lg"><i
                                             class="fa fa-search"></i></button>
@@ -89,7 +90,9 @@
                         <div class="col-xs-6 col-sm-4 shopcart">
                             <div id="cart" class="btn-group btn-block mtb_40">
                                 <button type="button" class="btn" data-target="#cart-dropdown"
-                                    data-toggle="collapse" aria-expanded="true"><span id="shippingcart">{{__ ('Shopping Cart')}}</span><span id="cart-total">(0) {{__ ('items')}}</span> </button>
+                                    data-toggle="collapse" aria-expanded="true"><span
+                                        id="shippingcart">{{ __('Shopping Cart') }}</span><span id="cart-total">(0)
+                                        {{ __('items') }}</span> </button>
                             </div>
                             <div id="cart-dropdown" class="cart-menu collapse">
                                 <ul>
@@ -127,19 +130,17 @@
                                         <table class="table">
                                             <tbody>
                                                 <tr>
-                                                    <td class="text-right"><strong>Sub-Total</strong></td>
+                                                    <td class="text-right"><strong>{{ __('Sub-Total') }} </strong>
+                                                    </td>
                                                     <td class="text-right">$2,100.00</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="text-right"><strong>Eco Tax (-2.00)</strong></td>
-                                                    <td class="text-right">$2.00</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-right"><strong>VAT (20%)</strong></td>
+                                                    <td class="text-right"><strong>{{ __('VAT') }} (20%)</strong>
+                                                    </td>
                                                     <td class="text-right">$20.00</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="text-right"><strong>Total</strong></td>
+                                                    <td class="text-right"><strong>"{{ __('Total') }}"</strong></td>
                                                     <td class="text-right">$2,122.00</td>
                                                 </tr>
                                             </tbody>
@@ -147,10 +148,12 @@
                                     </li>
                                     <li>
                                         <form action="cart_page">
-                                            <input class="btn pull-left mt_10" value="{{ __('View cart') }}" type="submit">
+                                            <input class="btn pull-left mt_10" value="{{ __('View cart') }}"
+                                                type="submit">
                                         </form>
                                         <form action="checkout_page">
-                                            <input class="btn pull-right mt_10" value="{{ __('Checkout') }}" type="submit">
+                                            <input class="btn pull-right mt_10" value="{{ __('Checkout') }}"
+                                                type="submit">
                                         </form>
                                     </li>
                                 </ul>
@@ -169,106 +172,110 @@
                                         data-toggle="dropdown">{{ __('Collection') }} </a>
                                     <ul class="dropdown-menu mega-dropdown-menu row">
                                         <li class="col-md-3">
-                                                <ul>
-                                                    <li class="dropdown-header">{{ __('Womens') }}</li>
-                                                    <li><a href="#">{{ __('trouser') }}</a></li>
-                                                    <li><a href="#">{{ __('T-Shirts') }}</a></li>
-                                                    <li><a href="#">{{ __('dress') }}</a></li>
-                                                    <li><a href="#">{{ __('Jumpsuit') }}</a></li>
-                                                    <li><a href="#">{{ __('shoes') }}</a></li>
-                                                    <li><a href="#">{{ __('blouse') }}</a></li>
-                                                    <li><a href="#">{{ __('watches') }}</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="col-md-3">
-                                                <ul>
-                                                    <li class="dropdown-header">{{ __('Mans') }}</li>
-                                                    <li><a href="#">{{ __('trouser') }}</a></li>
-                                                    <li><a href="#">{{ __('T-Shirts') }}</a></li>
-                                                    <li><a href="#">{{ __('Shirt') }}</a></li>
-                                                    <li><a href="#">{{ __('Suits') }}</a></li>
-                                                    <li><a href="#">{{ __('shoes') }}</a></li>
-                                                    <li><a href="#">{{ __('Jackets') }}</a></li>
-                                                    <li><a href="#">{{ __('watches') }}</a></li>
-                                                </ul>
-                                            </li>
-
-                                            <li class="col-md-3">
-                                                <ul>
-                                                    <li class="dropdown-header">{{ __('Childrens') }}</li>
-                                                    <li><a href="#"><select name="dropdown" class="dropdown_ch"></a>
-                                                    <li>
-                                                        <option class="option_ch"><a href="#">{{ __('Born') }}</a>
-                                                        </option>
-                                                    </li>
-                                                    <li>
-                                                        <option class="option_ch"><a href="#">{{ __('Boys') }}</a>
-                                                        </option>
-                                                    </li>
-                                                    <li>
-                                                        <option class="option_ch"><a href="#">{{ __('Girls') }}</a>
-                                                        </option>
-                                                    </li>
-                                                    </select>
-                                            </li>
-                                                    <li><a href="#"><select name="dropdown" class="dropdown_ch"></a>
-                                                    <li>
-                                                        <option class="option_ch"><a href="#">{{ __('Childrens') }}</a>
-                                                        </option>
-                                                    </li>
-                                                    <li>
-                                                        <option class="option_ch"><a href="#">{{ __('Boys') }}</a>
-                                                        </option>
-                                                    </li>
-                                                    <li>
-                                                        <option class="option_ch"><a href="#">{{ __('Girls') }}</a>
-                                                        </option>
-                                                    </li>
-                                                    </select>
-                                            </li>
-                                                    <li><a href="#"><select name="dropdown" class="dropdown_ch"></a>
-                                                    <li>
-                                                        <option class="option_ch"><a href="#">{{ __('puzzling') }}</a>
-                                                        </option>
-                                                    </li>
-                                                    <li>
-                                                        <option class="option_ch"><a href="#">{{ __('Boys') }}</a>
-                                                        </option>
-                                                    </li>
-                                                    <li>
-                                                        <option class="option_ch"><a href="#">{{ __('Girls') }}</a>
-                                                        </option>
-                                                    </li>
-                                                    </select>
-                                            </li>
-                                </ul>
-                                </li>
+                                            <ul>
+                                                <li class="dropdown-header">{{ __('Womens') }}</li>
+                                                <li><a href="#">{{ __('trouser') }}</a></li>
+                                                <li><a href="#">{{ __('T-Shirts') }}</a></li>
+                                                <li><a href="#">{{ __('dress') }}</a></li>
+                                                <li><a href="#">{{ __('Jumpsuit') }}</a></li>
+                                                <li><a href="#">{{ __('shoes') }}</a></li>
+                                                <li><a href="#">{{ __('blouse') }}</a></li>
+                                                <li><a href="#">{{ __('watches') }}</a></li>
+                                            </ul>
+                                        </li>
                                         <li class="col-md-3">
                                             <ul>
-                                                <li id="myCarousel" class="carousel slide" data-ride="carousel">
-                                                    <div class="carousel-inner">
-                                                        <div class="item active"> <a href="#"><img
-                                                                    src="{{ asset('images/menu-banner1.jpg') }}"
-                                                                    class="img-responsive" alt="Banner1"></a></div>
-                                                        <!-- End Item -->
-                                                        <div class="item"> <a href="#"><img
-                                                                    src="{{ asset('images/menu-banner2.jpg') }}"
-                                                                    class="img-responsive" alt="Banner1"></a></div>
-                                                        <!-- End Item -->
-                                                        <div class="item"> <a href="#"><img
-                                                                    src="{{ asset('images/menu-banner3.jpg') }}"
-                                                                    class="img-responsive" alt="Banner1"></a></div>
-                                                        <!-- End Item -->
-                                                    </div>
-                                                    <!-- End Carousel Inner -->
-                                                </li>
-                                                <!-- /.carousel -->
+                                                <li class="dropdown-header">{{ __('Mans') }}</li>
+                                                <li><a href="#">{{ __('trouser') }}</a></li>
+                                                <li><a href="#">{{ __('T-Shirts') }}</a></li>
+                                                <li><a href="#">{{ __('Shirt') }}</a></li>
+                                                <li><a href="#">{{ __('Suits') }}</a></li>
+                                                <li><a href="#">{{ __('shoes') }}</a></li>
+                                                <li><a href="#">{{ __('Jackets') }}</a></li>
+                                                <li><a href="#">{{ __('watches') }}</a></li>
                                             </ul>
-                                    </ul>
+                                        </li>
+
+                                        <li class="col-md-3">
+                                            <ul>
+                                                <li class="dropdown-header">{{ __('Childrens') }}</li>
+                                                <li><a href="#"><select name="dropdown"
+                                                            class="dropdown_ch"></a>
+                                                <li>
+                                                    <option class="option_ch"><a
+                                                            href="#">{{ __('Born') }}</a>
+                                                    </option>
+                                                </li>
+                                                <li>
+                                                    <option class="option_ch"><a
+                                                            href="#">{{ __('Boys') }}</a>
+                                                    </option>
+                                                </li>
+                                                <li>
+                                                    <option class="option_ch"><a
+                                                            href="#">{{ __('Girls') }}</a>
+                                                    </option>
+                                                </li>
+                                                </select>
+                                        </li>
+                                        <li><a href="#"><select name="dropdown" class="dropdown_ch"></a>
+                                        <li>
+                                            <option class="option_ch"><a href="#">{{ __('Childrens') }}</a>
+                                            </option>
+                                        </li>
+                                        <li>
+                                            <option class="option_ch"><a href="#">{{ __('Boys') }}</a>
+                                            </option>
+                                        </li>
+                                        <li>
+                                            <option class="option_ch"><a href="#">{{ __('Girls') }}</a>
+                                            </option>
+                                        </li>
+                                        </select>
                                 </li>
-                                <li> <a href="shop">{{ __('shop') }}</a></li>
-                                <li> <a href="about">{{ __('About us') }}</a></li>
-                                <li> <a href="contact_us">{{ __('Contact us') }}</a></li>
+                                <li><a href="#"><select name="dropdown" class="dropdown_ch"></a>
+                                <li>
+                                    <option class="option_ch"><a href="#">{{ __('puzzling') }}</a>
+                                    </option>
+                                </li>
+                                <li>
+                                    <option class="option_ch"><a href="#">{{ __('Boys') }}</a>
+                                    </option>
+                                </li>
+                                <li>
+                                    <option class="option_ch"><a href="#">{{ __('Girls') }}</a>
+                                    </option>
+                                </li>
+                                </select>
+                                </li>
+                            </ul>
+                            </li>
+                            <li class="col-md-3">
+                                <ul>
+                                    <li id="myCarousel" class="carousel slide" data-ride="carousel">
+                                        <div class="carousel-inner">
+                                            <div class="item active"> <a href="#"><img
+                                                        src="{{ asset('images/menu-banner1.jpg') }}"
+                                                        class="img-responsive" alt="Banner1"></a></div>
+                                            <!-- End Item -->
+                                            <div class="item"> <a href="#"><img
+                                                        src="{{ asset('images/menu-banner2.jpg') }}"
+                                                        class="img-responsive" alt="Banner1"></a></div>
+                                            <!-- End Item -->
+                                            <div class="item"> <a href="#"><img
+                                                        src="{{ asset('images/menu-banner3.jpg') }}"
+                                                        class="img-responsive" alt="Banner1"></a></div>
+                                            <!-- End Item -->
+                                        </div>
+                                        <!-- End Carousel Inner -->
+                                    </li>
+                                    <!-- /.carousel -->
+                                </ul>
+                                </ul>
+                            </li>
+                            <li> <a href="shop">{{ __('shop') }}</a></li>
+                            <li> <a href="about">{{ __('About us') }}</a></li>
+                            <li> <a href="contact_us">{{ __('Contact us') }}</a></li>
                             </ul>
                         </div>
                         <!-- /.nav-collapse -->
@@ -283,10 +290,10 @@
                 <!-- =====  BANNER STRAT  ===== -->
                 <div class="col-sm-12">
                     <div class="breadcrumb ptb_20">
-                        <h1>{{ __('Products') }}</h1>
+                        <h1>{{ __('shop') }}</h1>
                         <ul>
                             <li><a href="home">{{ __('Home') }}</a></li>
-                            <li class="active">{{ __('Products') }}</li>
+                            <li class="active">{{ __('shop') }}</li>
                         </ul>
                     </div>
                 </div>
@@ -301,29 +308,31 @@
                     </div>
                     <div class="filter left-sidebar-widget mb_50">
                         <div class="heading-part mtb_20 ">
-                            <h2 class="main_title">{{__ ('Refine Search')}}</h2>
+                            <h2 class="main_title">{{ __('Refine Search') }}</h2>
                         </div>
                         <div class="filter-block">
                             <p>
-                                <label for="amount">{{__('Price range')}}:</label>
+                                <label for="amount">{{ __('Price range') }}:</label>
                                 <input type="text" id="amount" readonly>
                             </p>
                             <div id="slider-range" class="mtb_20"></div>
                             <div class="list-group">
                                 <div class="list-group-item mb_10">
-                                    <label>{{__('Color')}}</label>
+                                    <label>{{ __('Color') }}</label>
                                     <div id="filter-group1">
                                         <div class="checkbox">
                                             <label>
-                                                <input value="" type="checkbox"> {{__('Red')}} (10)</label>
+                                                <input value="" type="checkbox"> {{ __('Red') }}
+                                                (10)</label>
                                         </div>
                                         <div class="checkbox">
                                             <label>
-                                                <input value="" type="checkbox"> {{__('Green')}} (06)</label>
+                                                <input value="" type="checkbox"> {{ __('Green') }}
+                                                (06)</label>
                                         </div>
                                         <div class="checkbox ">
                                             <label>
-                                                <input value="" type="checkbox"> {{__('Blue')}}(09)
+                                                <input value="" type="checkbox"> {{ __('Blue') }}(09)
                                             </label>
                                         </div>
                                     </div>
@@ -333,19 +342,22 @@
                                     <div id="filter-group3">
                                         <div class="checkbox">
                                             <label>
-                                                <input value="" type="checkbox"> {{__('Big')}} (3)</label>
+                                                <input value="" type="checkbox"> {{ __('Big') }}
+                                                (3)</label>
                                         </div>
                                         <div class="checkbox">
                                             <label>
-                                                <input value="" type="checkbox"> {{__('Medium')}} (2)</label>
+                                                <input value="" type="checkbox"> {{ __('Medium') }}
+                                                (2)</label>
                                         </div>
                                         <div class="checkbox">
                                             <label>
-                                                <input value="" type="checkbox"> {{__('Small')}} (1)</label>
+                                                <input value="" type="checkbox"> {{ __('Small') }}
+                                                (1)</label>
                                         </div>
                                     </div>
                                 </div>
-                                <button type="button" class="btn">{{__('Search')}}</button>
+                                <button type="button" class="btn">{{ __('Search') }}</button>
                             </div>
                         </div>
                     </div>
@@ -361,7 +373,7 @@
                             </div>
                         </div>
                         <div class="page-wrapper pull-right">
-                            <label class="control-label" for="input-limit">{{__('Show')}} :</label>
+                            <label class="control-label" for="input-limit">{{ __('Show') }} :</label>
                             <div class="limit">
                                 <select id="input-limit" class="form-control">
                                     <option value="8" selected="selected">08</option>
@@ -374,18 +386,18 @@
                             <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
                         </div>
                         <div class="sort-wrapper pull-right">
-                            <label class="control-label" for="input-sort">{{__('Sort By')}} :</label>
+                            <label class="control-label" for="input-sort">{{ __('Sort By') }} :</label>
                             <div class="sort-inner">
                                 <select id="input-sort" class="form-control">
-                                    <option value="ASC" selected="selected">{{__('Default')}}</option>
-                                    <option value="ASC">{{__ ('Name')}} (A - Z)</option>
-                                    <option value="DESC">{{__ ('Name')}} (Z - A)</option>
-                                    <option value="ASC"> {{__('Price')}}(Low &gt; High)</option>
-                                    <option value="DESC">{{__('Price')}}(High &gt; Low)</option>
-                                    <option value="DESC">{{__('Rating')}} (Highest)</option>
-                                    <option value="ASC"> {{__('Rating')}} (Lowest)</option>
-                                    <option value="ASC"> {{__('Model')}}(A - Z)</option>
-                                    <option value="DESC">{{__('Model')}}(Z - A)</option>
+                                    <option value="ASC" selected="selected">{{ __('Default') }}</option>
+                                    <option value="ASC">{{ __('Name') }} (A - Z)</option>
+                                    <option value="DESC">{{ __('Name') }} (Z - A)</option>
+                                    <option value="ASC"> {{ __('Price') }}(Low &gt; High)</option>
+                                    <option value="DESC">{{ __('Price') }}(High &gt; Low)</option>
+                                    <option value="DESC">{{ __('Rating') }} (Highest)</option>
+                                    <option value="ASC"> {{ __('Rating') }} (Lowest)</option>
+                                    <option value="ASC"> {{ __('Model') }}(A - Z)</option>
+                                    <option value="DESC">{{ __('Model') }}(Z - A)</option>
                                 </select>
                             </div>
                             <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
@@ -487,8 +499,8 @@
                                                 data-name="product_image"
                                                 src="{{ asset('images/product/product5.jpg') }}" alt="iPod Classic"
                                                 title="iPod Classic" class="img-responsive" /> <img
-                                                src="{{ asset('images/product/product5-1.jpg') }}"
-                                                alt="iPod Classic" title="iPod Classic" class="img-responsive" />
+                                                src="{{ asset('images/product/product5-1.jpg') }}" alt="iPod Classic"
+                                                title="iPod Classic" class="img-responsive" />
                                         </a>
                                         <div class="button-group text-center">
                                             <div class="wishlist"><a href="#"><span>wishlist</span></a></div>
@@ -529,8 +541,9 @@
                             <div class="item">
                                 <div class="product-thumb clearfix mb_30">
                                     <div class="image product-imageblock"> <a href="product_detail_page"> <img
-                                                data-name="product_image" src="{{asset ('images/product/product6.jpg')}}"
-                                                alt="iPod Classic" title="iPod Classic" class="img-responsive" />
+                                                data-name="product_image"
+                                                src="{{ asset('images/product/product6.jpg') }}" alt="iPod Classic"
+                                                title="iPod Classic" class="img-responsive" />
                                             <img src="{{ asset('images/product/product6-1.jpg') }}"
                                                 alt="iPod Classic" title="iPod Classic" class="img-responsive" />
                                         </a>
@@ -573,8 +586,9 @@
                             <div class="item">
                                 <div class="product-thumb clearfix mb_30">
                                     <div class="image product-imageblock"> <a href="product_detail_page"> <img
-                                                data-name="product_image" src="{{asset ('images/product/product7.jpg')}}"
-                                                alt="iPod Classic" title="iPod Classic" class="img-responsive" />
+                                                data-name="product_image"
+                                                src="{{ asset('images/product/product7.jpg') }}" alt="iPod Classic"
+                                                title="iPod Classic" class="img-responsive" />
                                             <img src="{{ asset('images/product/product7-1.jpg') }}"
                                                 alt="iPod Classic" title="iPod Classic" class="img-responsive" />
                                         </a>
@@ -619,8 +633,8 @@
                                 <div class="product-thumb  mb_30">
                                     <div class="image product-imageblock"> <a href="product_detail_page"> <img
                                                 data-name="product_image"
-                                                src="{{ asset('images/product/product8.jpg') }}"
-                                                alt="iPod Classic" title="iPod Classic" class="img-responsive" />
+                                                src="{{ asset('images/product/product8.jpg') }}" alt="iPod Classic"
+                                                title="iPod Classic" class="img-responsive" />
                                             <img src="{{ asset('images/product/product8-1.jpg') }}"
                                                 alt="iPod Classic" title="iPod Classic" class="img-responsive" />
                                         </a>
@@ -664,8 +678,9 @@
                             <div class="item">
                                 <div class="product-thumb  mb_30">
                                     <div class="image product-imageblock"> <a href="product_detail_page"> <img
-                                                data-name="product_image" src="{{asset ('images/product/product9.jpg')}}"
-                                                alt="iPod Classic" title="iPod Classic" class="img-responsive" />
+                                                data-name="product_image"
+                                                src="{{ asset('images/product/product9.jpg') }}" alt="iPod Classic"
+                                                title="iPod Classic" class="img-responsive" />
                                             <img src="{{ asset('images/product/product9-1.jpg') }}"
                                                 alt="iPod Classic" title="iPod Classic" class="img-responsive" />
                                         </a>
@@ -709,8 +724,9 @@
                             <div class="item">
                                 <div class="product-thumb  mb_30">
                                     <div class="image product-imageblock"> <a href="product_detail_page"> <img
-                                                data-name="product_image" src="{{asset ('images/product/product10.jpg')}}"
-                                                alt="iPod Classic" title="iPod Classic" class="img-responsive" />
+                                                data-name="product_image"
+                                                src="{{ asset('images/product/product10.jpg') }}" alt="iPod Classic"
+                                                title="iPod Classic" class="img-responsive" />
                                             <img src="{{ asset('images/product/product10-1.jpg') }}"
                                                 alt="iPod Classic" title="iPod Classic" class="img-responsive" />
                                         </a>
@@ -754,8 +770,9 @@
                             <div class="item">
                                 <div class="product-thumb  mb_30">
                                     <div class="image product-imageblock"> <a href="product_detail_page"> <img
-                                                data-name="product_image" src="{{asset ('images/product/product1.jpg')}}"
-                                                alt="iPod Classic" title="iPod Classic" class="img-responsive" />
+                                                data-name="product_image"
+                                                src="{{ asset('images/product/product1.jpg') }}" alt="iPod Classic"
+                                                title="iPod Classic" class="img-responsive" />
                                             <img src="{{ asset('images/product/product1-1.jpg') }}"
                                                 alt="iPod Classic" title="iPod Classic" class="img-responsive" />
                                         </a>
@@ -799,8 +816,9 @@
                             <div class="item">
                                 <div class="product-thumb  mb_30">
                                     <div class="image product-imageblock"> <a href="product_detail_page"> <img
-                                                data-name="product_image" src="{{asset ('images/product/product2.jpg')}}"
-                                                alt="iPod Classic" title="iPod Classic" class="img-responsive" />
+                                                data-name="product_image"
+                                                src="{{ asset('images/product/product2.jpg') }}" alt="iPod Classic"
+                                                title="iPod Classic" class="img-responsive" />
                                             <img src="{{ asset('images/product/product2-1.jpg') }}"
                                                 alt="iPod Classic" title="iPod Classic" class="img-responsive" />
                                         </a>
@@ -844,8 +862,9 @@
                             <div class="item">
                                 <div class="product-thumb  mb_30">
                                     <div class="image product-imageblock"> <a href="product_detail_page"> <img
-                                                data-name="product_image" src="{{asset ('images/product/product3.jpg')}}"
-                                                alt="iPod Classic" title="iPod Classic" class="img-responsive" />
+                                                data-name="product_image"
+                                                src="{{ asset('images/product/product3.jpg') }}" alt="iPod Classic"
+                                                title="iPod Classic" class="img-responsive" />
                                             <img src="{{ asset('images/product/product3-1.jpg') }}"
                                                 alt="iPod Classic" title="iPod Classic" class="img-responsive" />
                                         </a>
@@ -889,8 +908,9 @@
                             <div class="item">
                                 <div class="product-thumb  mb_30">
                                     <div class="image product-imageblock"> <a href="product_detail_page"> <img
-                                                data-name="product_image" src="{{asset ('images/product/product4.jpg')}}"
-                                                alt="iPod Classic" title="iPod Classic" class="img-responsive" />
+                                                data-name="product_image"
+                                                src="{{ asset('images/product/product4.jpg') }}" alt="iPod Classic"
+                                                title="iPod Classic" class="img-responsive" />
                                             <img src="{{ asset('images/product/product4-1.jpg') }}"
                                                 alt="iPod Classic" title="iPod Classic" class="img-responsive" />
                                         </a>

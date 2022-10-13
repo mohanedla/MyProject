@@ -92,6 +92,7 @@
   "Phone Number":"رقم الهاتف",
   "Make By: Aymen Ben Ghali":"بواسطة :أيمن بن غالي",
   "Shopping Cart":"سلة التسوق",
+  "Shopping cart":"سلة التسوق",
   "Product Name":"إسم المنتج",
   "Image":"صورة",
   "Unit Price":"سعر الوحدة",
@@ -100,6 +101,8 @@
   "Checkout":"الدفع",
   "items":"عناصر",
   "Search":"بحث",
+  "product_detail_page":"صفحة تفاصيل المنتج",
+  "product_detail":"تفاصيل المنتج",
   "Refine Search":"خيارات البحث",
   "Show":"عرض",
   "Sort By":"ترتيب على حسب",
@@ -127,6 +130,10 @@
   "powers":"الصلاحيات",
   "User password":"رمز المستخدم",
   "admin":"المشرف",
+  "Brand List":"قائمة الماركات",
+  "Admins List":"قائمة المشرفين ",
+  "Products List":"قائمة المنتجات",
+  "Users List":"قائمة المستخدمين",
   "Admin":"مشرف",
   "Manger":"مدير",
   "price":"السعر",
@@ -146,7 +153,11 @@
   "enter price":"أدخل السعر",
   "enter Brand Name":"أدخل اسم الماركة",
   "enter  Specifications":"أدخل المواصفات",
+  "enter admin name":"أدخل إسم المشرف",
+  "Sub-Total":"المجموع الفرعي",
+  "VAT":"ضريبة القيمة المضافة ",
   "View cart":"عرض عربة التسوق",
-  "enter admin name":"أدخل إسم المشرف"
+  "Sort by":"صنف حسب",
+  "Availability":"التوفر"
 
 }

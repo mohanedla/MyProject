@@ -16,72 +16,32 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 {
 	/** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
 
-	Route::get('home',function(){
-		return View::make('index');
-	});
-    Route::get('shop',function(){
-        return View::make('category_page');
-    });
-    Route::get('login',function(){
-        return View::make('login');
-    });
-    Route::get('empty',function(){
-        return View::make('layout.empty');
-    });
-    Route::get('admin',function(){
-        return View::make('admin.admin');
-    });
-    Route::get('add_admin',function(){
-        return View::make('admin.add_admin');
-    });
-    Route::get('brand',function(){
-        return View::make('brand.brand');
-    });
-    Route::get('add_brand',function(){
-        return View::make('brand.add_brand');
-    });
-    Route::get('product',function(){
-        return View::make('product.product');
-    });
-    Route::get('add_product',function(){
-        return View::make('product.add_product');
-    });
-    Route::get('reports',function(){
-        return View::make('report.reports');
-    });
-    Route::get('add_report',function(){
-        return View::make('report.add_report');
-    });
-    Route::get('user',function(){
-        return View::make('user.user');
-    });
-    Route::get('add_user',function(){
-        return View::make('user.add_user');
-    });
-    Route::get('contact_us',function(){
-        return View::make('contact_us');
-    });
-    Route::get('about',function(){
-        return View::make('about');
-    });
-    Route::get('cart_page',function(){
-        return View::make('cart_page');
-    });
-    Route::get('checkout_page',function(){
-        return View::make('checkout_page');
-    });
-    Route::get('product_detail_page',function(){
-        return View::make('product_detail_page');
-    });
-});
+    Route::get('home',[App\Http\Controllers\home::class,'index']);
+    Route::get('shop',[App\Http\Controllers\home::class,'category_page']);
+    Route::get('login',[App\Http\Controllers\home::class,'login']);
+    Route::get('empty',[App\Http\Controllers\home::class,'layout.empty']);
+    Route::get('contact_us',[App\Http\Controllers\home::class,'contact_us']);
+    Route::get('about',[App\Http\Controllers\home::class,'about']);
+    Route::get('cart_page',[App\Http\Controllers\home::class,'cart_page']);
+    Route::get('checkout_page',[App\Http\Controllers\home::class,'checkout_page']);
+    Route::get('foot',[App\Http\Controllers\home::class,'footer']);
+    Route::get('/',[App\Http\Controllers\home::class,'welcome']);
+    Route::get('/',[App\Http\Controllers\home ::class,'getlocale']);
+    
+    
+    Route::get('admin',[App\Http\Controllers\admin::class,'admin.admin']);
+    Route::get('add_admin',[App\Http\Controllers\admin::class,'admin.add_admin']);
 
-        Route::get('foot',function(){
-            return View::make('footer');
-        });
+    Route::get('brand',[App\Http\Controllers\brand::class,'brand.brand']);
+    Route::get('add_brand',[App\Http\Controllers\brand::class,'brand.add_brand ']);
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/', function () {
-    return app()->getlocale();
+    Route::get('user',[App\Http\Controllers\user::class,'user.user']);
+    Route::get('add_user',[App\Http\Controllers\user::class,'user']);
+
+    Route::get('product',[App\Http\Controllers\product::class,'product.product']);
+    Route::get('add_product',[App\Http\Controllers\product::class,'product.add_product']); 
+    Route::get('product_detail_page',[App\Http\Controllers\product::class,'product_detail_page']);
+    
+    Route::get('reports',[App\Http\Controllers\reports::class,'report.reports']);
+    Route::get('add_report',[App\Http\Controllers\reports::class,'report.add_report']);
 });

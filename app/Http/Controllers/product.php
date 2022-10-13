@@ -6,26 +6,20 @@ use Illuminate\Http\Request;
 
 class product extends Controller
 {
-    public function product.product()
-    {   
-        return View::make('product.product');
+    public function product_product()
+    {
+        return View('product.product');
 
     }
-}
-class product extends Controller
-{
-    public function product.product()
-    {   
-        return View::make('product.add_product');
 
+    public function product_add_product()
+    {
+        return View('product.add_product');
     }
-}
 
-class product extends Controller
-{
     public function product_detail_page()
-    {   
-        return View::make('product_detail_page');
+    {
+        return View('product_detail_page');
 
     }
 }

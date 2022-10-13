@@ -282,8 +282,32 @@
                         </div>
 
                     </div>
+                    <div class="horizontal-group">
+                        <div class="form-group left">
+                            <label for="firstname" class="label-title">{{ __('Specifications') }} </label>
+                            <input type="text" id="Specification" name="Specification" class="form-input" placeholder="{{ __('enter Product Name') }}"
+                                required="required" />
+                        </div>
+                        <div class="form-group right">
+                            <label for="lastname" class="label-title">{{ __('Serial Number') }}</label>
+                            <input type="number" id="lastname" class="form-input"
+                                placeholder="{{ __('enter serial number') }}" />
+                        </div>
 
+                    </div>
+                    <div class="horizontal-group">
+                        <div class="form-group left">
+                            <label for="firstname" class="label-title">{{ __('Product Name') }} </label>
+                            <input type="text" id="product_name" name="product_name" class="form-input" placeholder="{{ __('enter Product Name') }}"
+                                required="required" />
+                        </div>
+                        <div class="form-group right">
+                            <label for="lastname" class="label-title">{{ __('Serial Number') }}</label>
+                            <input type="number" id="lastname" class="form-input"
+                                placeholder="{{ __('enter serial number') }}" />
+                        </div>
 
+                    </div>
                     <div class="horizontal-group">
                         <div class="form-group left">
                             <div class="file-input">

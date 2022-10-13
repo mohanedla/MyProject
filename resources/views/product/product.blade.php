@@ -259,11 +259,13 @@
                                   <thead>
                                     <tr>
                                       <th scope="col">{{ __('Name')}}</th>
-                                      <th scope="col">{{ __('id')}}</th>
+                                      <th scope="col">{{ __('Serial Number')}}</th>
                                       <th scope="col">{{ __('a model')}}</th>
                                       <th scope="col">{{ __('brand')}}</th>
                                       <th scope="col">{{ __('Specifications')}}</th>
                                       <th scope="col">{{ __('Quantity')}}</th>
+                                      <th scope="col">{{ __('Size')}}</th>
+                                      <th scope="col">{{ __('Color')}}</th>
                                       <th scope="col">{{ __('admin')}}</th>
                                       <th scope="col">{{ __('photo')}}</th>
                                       <th scope="col">{{ __('price')}}</th>
@@ -278,8 +280,10 @@
                                       <td>Sven Ottlieb</td>
                                       <td>Sven Ottlieb</td>
                                       <td>Sven Ottlieb</td>
-                                      <td>Drachenblut Delikatessen</td>
+                                      <td>Drache</td>
                                       <td>Customers</td>
+                                      <td>Aachen</td>
+                                      <td>Aachen</td>
                                       <td>Aachen</td>
                                       <td>Aachen</td>
                                       <td>
@@ -293,31 +297,35 @@
                                       <td>Sven Ottlieb</td>
                                       <td>Sven Ottlieb</td>
                                       <td>Sven Ottlieb</td>
+                                      <td>Drache</td>
+                                      <td>Customers</td>
+                                      <td>Aachen</td>
+                                      <td>Aachen</td>
+                                      <td>Aachen</td>
+                                      <td>Aachen</td>
+                                      <td>
+                                        <a href=""><img src="{{ asset('images/icone/edit-solid-24.png') }}"></a>
+                                        <a href=""><img src="{{ asset('images/icone/x-square-solid-24.png') }}"></a>
+                                    </td>
+                                    </tr>
+                                    <tr>
+                                      <td>Sven Ottlieb</td>
+                                      <td>Sven Ottlieb</td>
+                                      <td>Sven Ottlieb</td>
+                                      <td>Sven Ottlieb</td>
+                                      <td>Sven Ottlieb</td>
+                                      <td>Drache</td>
+                                      <td>Customers</td>
+                                      <td>Aachen</td>
+                                      <td>Aachen</td>
+                                      <td>Aachen</td>
+                                      <td>Aachen</td>
+                                      <td>
+                                        <a href=""><img src="{{ asset('images/icone/edit-solid-24.png') }}"></a>
+                                        <a href=""><img src="{{ asset('images/icone/x-square-solid-24.png') }}"></a>
+                                    </td>
+                                    </tr>
 
-                                      <td>Drachenblut Delikatessen</td>
-                                      <td>Customers</td>
-                                      <td>Aachen</td>
-                                      <td>Aachen</td>
-                                      <td>
-                                        <a href=""><img src="{{ asset('images/icone/edit-solid-24.png') }}"></a>
-                                        <a href=""><img src="{{ asset('images/icone/x-square-solid-24.png') }}"></a>
-                                    </td>
-                                    </tr>
-                                    <tr>
-                                      <td>Sven Ottlieb</td>
-                                      <td>Sven Ottlieb</td>
-                                      <td>Sven Ottlieb</td>
-                                      <td>Sven Ottlieb</td>
-                                      <td>Sven Ottlieb</td>
-                                      <td>Drachenblut Delikatessen</td>
-                                      <td>Customers</td>
-                                      <td>Aachen</td>
-                                      <td>Aachen</td>
-                                      <td>
-                                        <a href=""><img src="{{ asset('images/icone/edit-solid-24.png') }}"></a>
-                                        <a href=""><img src="{{ asset('images/icone/x-square-solid-24.png') }}"></a>
-                                    </td>
-                                    </tr>
 
                                   </tbody>
                                 </table>

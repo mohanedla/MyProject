@@ -8,90 +8,60 @@ class home extends Controller
 {
     public function index()
         {
-            return View::make('index');
+            return View('index');
         }
-}
 
-class home extends Controller
-{
     public function category_page()
         {
-            return View::make('category_page');
+            return View('category_page');
         }
-}
 
-class home extends Controller
-{
     public function login()
         {
-            return View::make('login');
+            return View('login');
         }
-}
 
-class home extends Controller
-{
-    public function layout.empty()
+    public function layout_empty()
+    {
+        return View('layout.empty');
+    }
+
+    public function report_reports()
         {
-            return View::make('layout.empty');
+            return View('report.reports');
         }
-}
 
-class home extends Controller
-{
-    public function report.reports()
+    public function report_add_report()
         {
-            return View::make('report.reports');
+            return View('report.add_report');
         }
-}
 
-class home extends Controller
-{
-    public function report.add_report()
-        {
-            return View::make('report.add_report');
-        }
-}
 
-class home extends Controller
-{
     public function about()
         {
-            return View::make('about');
+            return View('about');
         }
-}
 
-class home extends Controller
-{
     public function cart_page()
         {
-            return View::make('cart_page');
+            return View('cart_page');
         }
-}
 
-class home extends Controller
-{
     public function checkout_page()
         {
-            return View::make('checkout_page');
+            return View('checkout_page');
         }
-}
-class home extends Controller
-{
+
     public function footer()
         {
-            return View::make('footer');
+            return View('footer');
         }
-}
 
-class home extends Controller
-{
     public function welcome()
         {
             return view('welcome');
         }
-}
-class home extends Controller
-{
+
     public function getlocale()
         {
             return app()->getlocale();

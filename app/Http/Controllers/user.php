@@ -6,17 +6,15 @@ use Illuminate\Http\Request;
 
 class user extends Controller
 {
-    public function user.user()
-    {   
-        return View::make('user.user');
+    public function user()
+    {
+        return View('user.user');
 
     }
-}
-class user extends Controller
-{
-    public function user.add_user ()
-    {   
-        return View::make('user.add_user');
+
+    public function user_add_user ()
+    {
+        return View('user.add_user');
 
     }
 }

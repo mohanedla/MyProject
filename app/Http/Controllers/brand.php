@@ -6,18 +6,18 @@ use Illuminate\Http\Request;
 
 class brand extends Controller
 {
-    public function brand.brand()
-    {   
-        return View::make('brand.brand');
+    public function brand_brand()
+    {
+        return View('brand.brand');
+
+    }
+
+    public function brand_add_brand()
+    {
+        return View('brand.add_brand');
 
     }
 }
-class brand extends Controller
-{
-    public function brand.brand()
-    {   
-        return View::make('brand.add_brand');
 
-    }
-}
 
+?>

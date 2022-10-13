@@ -248,7 +248,7 @@
             </div>
             <div id="formContent">
                 <div class="btn_add">
-                                    <label class="address">Customer Info</label>
+                                    <label class="address">{{ __('Products List') }} </label>
                                     <a href="add_product"><button id="button" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                         {{ __('Add Product') }}
                                       </button></a>

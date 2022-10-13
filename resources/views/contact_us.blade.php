@@ -126,19 +126,15 @@
                             <table class="table">
                                 <tbody>
                                     <tr>
-                                        <td class="text-right"><strong>Sub-Total</strong></td>
+                                        <td class="text-right"><strong>{{__ ('Sub-Total')}} </strong></td>
                                         <td class="text-right">$2,100.00</td>
                                     </tr>
                                     <tr>
-                                        <td class="text-right"><strong>Eco Tax (-2.00)</strong></td>
-                                        <td class="text-right">$2.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-right"><strong>VAT (20%)</strong></td>
+                                        <td class="text-right"><strong>{{__ ('VAT')}} (20%)</strong></td>
                                         <td class="text-right">$20.00</td>
                                     </tr>
                                     <tr>
-                                        <td class="text-right"><strong>Total</strong></td>
+                                        <td class="text-right"><strong>"{{__ ('Total')}}"</strong></td>
                                         <td class="text-right">$2,122.00</td>
                                     </tr>
                                 </tbody>
@@ -146,10 +142,10 @@
                         </li>
                         <li>
                             <form action="cart_page">
-                                <input class="btn pull-left mt_10" value="View cart" type="submit">
+                                <input class="btn pull-left mt_10" value="{{__ ('View cart')}}" type="submit">
                             </form>
                             <form action="checkout_page">
-                                <input class="btn pull-right mt_10" value="Checkout" type="submit">
+                                <input class="btn pull-right mt_10" value="{{__ ('Checkout')}}" type="submit">
                             </form>
                         </li>
                     </ul>
@@ -300,7 +296,9 @@
               <div class="location mb_50">
                 <h5 class="capitalize mb_20"><strong>{{ __('Our Location')}}</strong></h5>
                 <div class="address">{{ __('Office address')}}
-                  <br> {{__ ('Tripoli')}}</div>
+                  <br>
+                  <br>
+                   {{__ ('Tripoli')}}</div>
                 <div class="call mt_10"><i class="fa fa-phone" aria-hidden="true"></i>+218-91-820-63-70</div>
               </div>
 

@@ -127,19 +127,15 @@
                                         <table class="table">
                                             <tbody>
                                                 <tr>
-                                                    <td class="text-right"><strong>Sub-Total</strong></td>
+                                                    <td class="text-right"><strong>{{__ ('Sub-Total')}} </strong></td>
                                                     <td class="text-right">$2,100.00</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="text-right"><strong>Eco Tax (-2.00)</strong></td>
-                                                    <td class="text-right">$2.00</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-right"><strong>VAT (20%)</strong></td>
+                                                    <td class="text-right"><strong>{{__ ('VAT')}} (20%)</strong></td>
                                                     <td class="text-right">$20.00</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="text-right"><strong>Total</strong></td>
+                                                    <td class="text-right"><strong>"{{__ ('Total')}}"</strong></td>
                                                     <td class="text-right">$2,122.00</td>
                                                 </tr>
                                             </tbody>
@@ -147,10 +143,10 @@
                                     </li>
                                     <li>
                                         <form action="cart_page">
-                                            <input class="btn pull-left mt_10" value="View cart" type="submit">
+                                            <input class="btn pull-left mt_10" value="{{__ ('View cart')}}" type="submit">
                                         </form>
                                         <form action="checkout_page">
-                                            <input class="btn pull-right mt_10" value="Checkout" type="submit">
+                                            <input class="btn pull-right mt_10" value="{{__ ('Checkout')}}" type="submit">
                                         </form>
                                     </li>
                                 </ul>
@@ -283,10 +279,10 @@
                 <!-- =====  BANNER STRAT  ===== -->
                 <div class="col-sm-12">
                     <div class="breadcrumb ptb_20">
-                        <h1>{{ __('Products') }}</h1>
+                        <h1>{{ __('shop') }}</h1>
                         <ul>
                             <li><a href="home">{{ __('Home') }}</a></li>
-                            <li class="active">{{ __('Products') }}</li>
+                            <li class="active">{{ __('shop') }}</li>
                         </ul>
                     </div>
                 </div>

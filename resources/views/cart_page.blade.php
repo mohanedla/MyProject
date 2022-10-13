@@ -287,11 +287,11 @@
           <div class="panel-group mt_20" id="accordion">
             <div class="panel panel-default pull-left">
               <div class="panel-heading">
-                <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Use Coupon Code <i class="fa fa-caret-down"></i></a></h4>
+                <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">{{ __('Use Coupon Code') }} <i class="fa fa-caret-down"></i></a></h4>
               </div>
               <div id="collapseOne" class="panel-collapse collapse in">
                 <div class="panel-body">
-                  <label for="input-coupon" class="col-sm-4 control-label">Enter your coupon here</label>
+                  <label for="input-coupon" class="col-sm-4 control-label">{{ __('Enter coupon here') }}</label>
                   <div class="input-group">
                     <input type="text" class="form-control" id="input-coupon" placeholder="Enter your coupon here" value="" name="coupon">
                     <span class="input-group-btn">
@@ -302,32 +302,33 @@
             </div>
             <div class="panel panel-default pull-left">
               <div class="panel-heading">
-                <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Use Gift Voucher <i class="fa fa-caret-down"></i></a> </h4>
+                <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">{{ __('Use Gift Voucher') }} <i class="fa fa-caret-down"></i></a> </h4>
               </div>
               <div id="collapseTwo" class="panel-collapse collapse">
                 <div class="panel-body">
-                  <label for="input-voucher" class="col-sm-4 control-label">Enter your gift voucher code here</label>
+                  <label for="input-voucher" class="col-sm-4 control-label">{{ __('Enter gift voucher code here') }}</label>
                   <div class="input-group">
                     <input type="text" class="form-control" id="input-voucher" placeholder="Enter your gift voucher code here" value="" name="voucher">
                     <span class="input-group-btn">
                   <input type="button" class="btn" data-loading-text="Loading..." id="button-voucher" value="Apply Voucher">
-                  </span> </div>
+                  </span>
+                 </div>
                 </div>
               </div>
             </div>
             <div class="panel panel-default pull-left">
               <div class="panel-heading">
-                <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Estimate Shipping &amp; Taxes <i class="fa fa-caret-down"></i></a> </h4>
+                <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">{{ __('Estimate Shipping &amp; Taxes') }} <i class="fa fa-caret-down"></i></a> </h4>
               </div>
               <div id="collapseThree" class="panel-collapse collapse">
                 <div class="panel-body">
-                  <p>Enter your destination to get a shipping estimate.</p>
+                  <p>        {{ __('Enter destination to get a shipping estimate') }}.</p>
                   <form class="form-horizontal">
                     <div class="form-group required">
-                      <label for="input-country" class="col-sm-2 control-label">Country</label>
+                      <label for="input-country" class="col-sm-2 control-label">{{ __('Country') }}</label>
                       <div class="col-sm-10">
                         <select class="form-control" id="input-country" name="country_id">
-                          <option value=""> --- Please Select --- </option>
+                          <option value="">{{ __('--- Please Select ---') }} </option>
                           <option value="244">Aaland Islands</option>
                           <option value="1">Afghanistan</option>
                           <option value="2">Albania</option>
@@ -585,7 +586,7 @@
                       </div>
                     </div>
                     <div class="form-group required">
-                      <label for="input-zone" class="col-sm-2 control-label">Region / State</label>
+                      <label for="input-zone" class="col-sm-2 control-label">{{ __('Region') }}/ State</label>
                       <div class="col-sm-10">
                         <select class="form-control" id="input-zone" name="zone_id">
                           <option value=""> --- Please Select --- </option>
@@ -700,9 +701,9 @@
                       </div>
                     </div>
                     <div class="form-group required">
-                      <label for="input-postcode" class="col-sm-2 control-label">Post Code</label>
+                      <label for="input-postcode" class="col-sm-2 control-label">{{ __('Post Code') }}</label>
                       <div class="col-sm-10">
-                        <input type="text" class="form-control" id="input-postcode" placeholder="Post Code" value="" name="postcode">
+                        <input type="text" class="form-control" id="input-postcode" placeholder="{{ __('Post Code') }}" value="" name="postcode">
                       </div>
                     </div>
                     <input type="button" class="btn pull-right" data-loading-text="Loading..." id="button-quote" value="Get Quotes">

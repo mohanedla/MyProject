@@ -10,7 +10,7 @@ class home extends Controller
         {
             return View('index');
         }
-
+// aymen
     public function category_page()
         {
             return View('category_page');
@@ -62,8 +62,4 @@ class home extends Controller
             return view('welcome');
         }
 
-    public function getlocale()
-        {
-            return app()->getlocale();
-        }
 }

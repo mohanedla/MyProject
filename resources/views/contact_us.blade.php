@@ -41,6 +41,7 @@
         <div class="header-top">
             <div class="container">
                 <div class="row">
+
                     <div class="col-xs-12 col-sm-4">
                         <div class="header-top-left">
                             <div class="contact"><span class="hidden-xs hidden-sm hidden-md">
@@ -83,6 +84,7 @@
         <div class="header">
             <div class="container">
                 <div class="row">
+
                     <div class="col-xs-12 col-sm-4">
 
                     </div>
@@ -274,6 +276,21 @@
             </div>
         </div>
     </header>
+    <div class="container">
+        <div class="row ">
+            <!-- =====  BANNER STRAT  ===== -->
+            <div class="col-sm-12">
+                <div class="breadcrumb ptb_20">
+                    <h1>{{ __('Add Brand') }}</h1>
+                    <ul>
+                        <li><a href="home">{{ __('Home') }}</a></li>
+                        <li><a href="brand">{{ __('Brands') }}</a></li>
+                        <li class="active">{{ __('Add Brand') }}</li>
+                    </ul>
+                </div>
+            </div>
+              </div>
+        </div>
     <div class="col-sm-8 col-lg-9 mtb_20">
       <!-- about  -->
       <div class="row">
@@ -285,6 +302,7 @@
     <!-- =====  CONTAINER START  ===== -->
     <div class="container mt_30">
       <div class="row ">
+
         <div id="column-left" class="col-sm-4 col-lg-3 hidden-xs">
           <div id="category-menu" class="navbar collapse in mb_40" aria-expanded="true" style="" role="button">
           </div>

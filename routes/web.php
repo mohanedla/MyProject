@@ -19,7 +19,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('home',[App\Http\Controllers\home::class,'index']);
     Route::get('shop',[App\Http\Controllers\home::class,'category_page']);
     Route::get('login',[App\Http\Controllers\home::class,'login']);
-    Route::get('empty',[App\Http\Controllers\home::class,'layout.empty']);
+    Route::get('empty',[App\Http\Controllers\home::class,'layout_empty']);
     Route::get('contact_us',[App\Http\Controllers\home::class,'contact_us']);
     Route::get('about',[App\Http\Controllers\home::class,'about']);
     Route::get('cart_page',[App\Http\Controllers\home::class,'cart_page']);
@@ -27,13 +27,15 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('foot',[App\Http\Controllers\home::class,'footer']);
     Route::get('/',[App\Http\Controllers\home::class,'welcome']);
     Route::get('/',[App\Http\Controllers\home ::class,'getlocale']);
+    Route::get('reports',[App\Http\Controllers\home::class,'report_reports']);
+    Route::get('add_report',[App\Http\Controllers\home::class,'report_add_report']);
 
 
     Route::get('admin',[App\Http\Controllers\admin::class,'admin_admin']);
     Route::get('add_admin',[App\Http\Controllers\admin::class,'admin_add_admin']);
 
     Route::get('brand',[App\Http\Controllers\brand::class,'brand_brand']);
-    Route::get('add_brand',[App\Http\Controllers\brand::class,'brand_add_brand ']);
+    Route::get('add_brand',[App\Http\Controllers\brand::class,'brand_add_brand']);
 
     Route::get('user',[App\Http\Controllers\user::class,'user']);
     Route::get('add_user',[App\Http\Controllers\user::class,'user_add_user']);
@@ -42,6 +44,4 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('add_product',[App\Http\Controllers\product::class,'product_add_product']);
     Route::get('product_detail_page',[App\Http\Controllers\product::class,'product_detail_page']);
 
-    Route::get('reports',[App\Http\Controllers\reports::class,'report_reports']);
-    Route::get('add_report',[App\Http\Controllers\reports::class,'report_add_report']);
 });

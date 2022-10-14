@@ -31,15 +31,19 @@ class home extends Controller
             return View('report.reports');
         }
 
-    public function report_add_report()
-        {
-            return View('report.add_report');
-        }
+    // public function report_add_report()
+    //     {
+    //         return View('report.add_report');
+    //     }
 
 
     public function about()
         {
             return View('about');
+        }
+    public function contact_us()
+        {
+            return View('contact_us');
         }
 
     public function cart_page()

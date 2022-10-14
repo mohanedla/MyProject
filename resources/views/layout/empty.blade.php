@@ -67,7 +67,12 @@
                         </div>
                         <div class="col-xs-12 col-sm-8">
                             <ul class="header-top-right text-right">
-                                <li class="account"><a href="login">{{ __('My Account')}}</a></li>
+                                <li class="account">
+
+                                    <a href="login">{{ __('My Account')}}<img src="{{ asset('images/icone/user-circle-regular-24.png') }}" alt="Profile" class="rounded-circle"></a>
+                                </li>
+
+
                                 <li class="language dropdown"> <span class="dropdown-toggle" id="dropdownMenu1"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                         role="button">{{ __('Language') }} <span class="caret"></span> </span>

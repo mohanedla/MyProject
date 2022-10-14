@@ -64,7 +64,7 @@
                                     @endforeach
                                 </ul>
                             </li>
-                            
+
                             <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                 role="button">{{__('Properties')}} <span class="caret"></span> </span>
@@ -279,7 +279,21 @@
             </div>
         </div>
     </header>
-
+    <div class="container">
+        <div class="row ">
+            <!-- =====  BANNER STRAT  ===== -->
+            <div class="col-sm-12">
+                <div class="breadcrumb ptb_20">
+                    <h1>{{ __('Add Brand') }}</h1>
+                    <ul>
+                        <li><a href="home">{{ __('Home') }}</a></li>
+                        <li><a href="brand">{{ __('Brands') }}</a></li>
+                        <li class="active">{{ __('Add Brand') }}</li>
+                    </ul>
+                </div>
+            </div>
+              </div>
+        </div>
         <div class="col-sm-8 col-lg-9 mtb_20">
           <!-- about  -->
           <div class="row">

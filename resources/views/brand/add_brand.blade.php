@@ -226,7 +226,7 @@
                         <ul>
                             <li><a href="home">{{ __('Home') }}</a></li>
                             <li><a href="brand">{{ __('Brands') }}</a></li>
-                            <li><a href="add_brand">{{ __('Add Brand') }}</a></li>
+                            <li class="active">{{ __('Add Brand') }}</li>
                         </ul>
                     </div>
                 </div>

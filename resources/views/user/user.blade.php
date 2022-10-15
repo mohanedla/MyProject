@@ -248,9 +248,9 @@
             <div id="formContent">
                 <div class="btn_add">
                                     <label class="address">{{ __('Users List') }}</label>
-                                    <a href="add_user"><button id="button" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        {{ __('Add User') }}
-                                      </button></a>
+                                    {{-- <a href="add_user"><button id="button" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"> --}}
+                                        {{-- {{ __('Add User') }} --}}
+                                      {{-- </button></a> --}}
 
                                 </div>
                                 <hr />

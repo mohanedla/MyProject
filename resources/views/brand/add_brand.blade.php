@@ -264,8 +264,8 @@
 
                         <div class="horizontal-group">
                             <div class="form-group left">
-                                <label for="firstname" class="label-title">{{ __('model') }} </label>
-                                <input type="text" id="firstname" class="form-input" placeholder="{{ __('enter model') }}"
+                                <label for="firstname" class="label-title">{{ __('Product type') }} </label>
+                                <input type="text" id="firstname" class="form-input" placeholder="{{ __('enter Product type') }}"
                                     required="required" />
                             </div>
                     </div>

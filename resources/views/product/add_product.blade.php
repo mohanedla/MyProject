@@ -285,26 +285,26 @@
                     <div class="horizontal-group">
                         <div class="form-group left">
                             <label for="firstname" class="label-title">{{ __('Specifications') }} </label>
-                            <input type="text" id="Specification" name="Specification" class="form-input" placeholder="{{ __('enter Product Name') }}"
+                            <input type="text" id="Specification" name="Specification" class="form-input" placeholder="{{ __('enter Specifications') }}"
                                 required="required" />
                         </div>
                         <div class="form-group right">
-                            <label for="lastname" class="label-title">{{ __('Serial Number') }}</label>
+                            <label for="lastname" class="label-title">{{ __('Quantity') }}</label>
                             <input type="number" id="lastname" class="form-input"
-                                placeholder="{{ __('enter serial number') }}" />
+                                placeholder="{{ __('enter Quantity') }}" />
                         </div>
 
                     </div>
                     <div class="horizontal-group">
                         <div class="form-group left">
-                            <label for="firstname" class="label-title">{{ __('Product Name') }} </label>
-                            <input type="text" id="product_name" name="product_name" class="form-input" placeholder="{{ __('enter Product Name') }}"
+                            <label for="firstname" class="label-title">{{ __('Color') }} </label>
+                            <input type="text" id="product_name" name="product_name" class="form-input" placeholder="{{ __('enter Color') }}"
                                 required="required" />
                         </div>
                         <div class="form-group right">
-                            <label for="lastname" class="label-title">{{ __('Serial Number') }}</label>
+                            <label for="lastname" class="label-title">{{ __('Size') }}</label>
                             <input type="number" id="lastname" class="form-input"
-                                placeholder="{{ __('enter serial number') }}" />
+                                placeholder="{{ __('enter Size') }}" />
                         </div>
 
                     </div>

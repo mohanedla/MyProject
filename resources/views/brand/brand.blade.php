@@ -257,10 +257,10 @@
                                   <thead>
                                     <tr>
                                       <th scope="col">{{ __('Name')}}</th>
-                                      <th scope="col">{{ __('id')}}</th>
+                                      <th scope="col">{{ __('Serial Number')}}</th>
                                       <th scope="col">{{ __('Country')}}</th>
                                       <th scope="col">{{ __('photo')}}</th>
-                                      <th scope="col">{{ __('Products type')}}</th>
+                                      <th scope="col">{{ __('Product type')}}</th>
                                       <th scope="col">{{ __('Address')}}</th>
                                       <th scope="col">{{ __('E-mail')}}</th>
                                       <th scope="col">{{ __('Phone Number')}}</th>

@@ -281,11 +281,11 @@
             <!-- =====  BANNER STRAT  ===== -->
             <div class="col-sm-12">
                 <div class="breadcrumb ptb_20">
-                    <h1>{{ __('Add Brand') }}</h1>
+                    <h1>{{ __('Contact us') }}</h1>
                     <ul>
                         <li><a href="home">{{ __('Home') }}</a></li>
-                        <li><a href="brand">{{ __('Brands') }}</a></li>
-                        <li class="active">{{ __('Add Brand') }}</li>
+                        {{-- <li><a href="brand">{{ __('Brands') }}</a></li> --}}
+                        <li class="active">{{ __('Contact us') }}</li>
                     </ul>
                 </div>
             </div>
@@ -321,7 +321,7 @@
               </div>
 
               <div class="Hello mb_50">
-                <div class="email mt_10"><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:aymenbenghali@gmail.com" target="_top">info@yourdomailname.com</a></div>
+                <div class="email mt_10"><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:aymenbenghali@gmail.com" target="_top">aymenbenghali@gmail.com</a></div>
               </div>
             </div>
             <div class="col-md-8 col-xs-12 contact-form mb_50">

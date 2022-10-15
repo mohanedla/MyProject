@@ -303,13 +303,14 @@
                 <div class="col-md-12">
                 <div class="about-text">
                     <div class="about-heading-wrap">
-                    <h2 class="about-heading mb_20 mt_40 ptb_10"><span>{{ __('website design') }}</span>Online shop<span>{{ __('The best part of') }}</span>{{ __('my Life') }}</h2>
-                    <h2 class="about-heading mb_20 mt_40 ptb_10"><span>{{ __('The best part of') }}</span>{{ __('my Life') }}</span>Online shop<span>{{ __('website design') }}</h2>
-
+                        <p><h1 style=" text-align: center">Online shop</h1></p>
+                        <p><h3 style=" text-align: center"><span>{{ __('Designing this website is the best part of my life') }}</h3></p>
                     </div>
                 </div>
                 </div>
             </div>
+            <br>
+            <br>
             <!-- =====  product ===== -->
                     <p><h3 style=" text-align: center">{{ __('We offer you the pleasure of shopping with international brands at competitive prices. At the time you enter the site, the exchange value and product prices are stored in US dollars and the equivalent in Libyan dinars') }}</h3></p>
               <br>

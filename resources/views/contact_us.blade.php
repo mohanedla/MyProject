@@ -317,7 +317,7 @@
                 <div class="address">{{ __('Office address')}}
                   <br>
                   <br>
-                   {{__ ('Tripoli')}}</div>
+                   {{__ ('Tripoli/')}}</div>
                 <div class="call mt_10"><i class="fa fa-phone" aria-hidden="true"></i>+218-91-820-63-70</div>
               </div>
 

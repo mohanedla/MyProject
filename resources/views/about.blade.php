@@ -329,18 +329,19 @@
                 </div>
                 </div>
                 <br>
-
-                @extends('layout.footer')
+                <br>
+                {{-- @extends('layout.footer')
                 <!-- =====  CONTAINER END  ===== -->
                 <!-- =====  FOOTER START  ===== -->
                 @section('footer')
-
+ 
                 @endsection
-                <!-- =====  FOOTER END  ===== -->
+                <!-- =====  FOOTER END  ===== --> --}}
+                <br>
             </div>
             @extends('layout.js')
             @section('js')
-
+            <br>
             </body>
 
             </html>

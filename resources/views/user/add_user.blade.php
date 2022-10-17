@@ -251,7 +251,8 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <form id="login-form" action="#" method="post">
+                                    <form id="login-form" action="{route('AddUser')}" method="post" enctype="multipart/form-data">
+                                        @csrf
                                         <div class="form-group">
                                             <input type="text" name="username" id="username1" tabindex="1"
                                                 class="form-control" placeholder="{{ __('Username') }}" value="">

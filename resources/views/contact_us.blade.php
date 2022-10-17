@@ -68,13 +68,14 @@
                             <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                 role="button">{{__('Properties')}} <span class="caret"></span> </span>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
 
-                                <li><a href="add_admin">{{__ ('add admin')}}</a></li>
-                                <li><a href="add_brand">{{__ ('add brand')}}</a></li>
-                                <li><a href="add_product">{{__ ('add product')}}</a></li>
-                                <li><a href="reports">{{__ ('Reports')}}</a></li>
-                            </ul>
+                                    <li><a href="admin">{{__ ('admin management')}}</a></li>
+                                    <li><a href="user">{{__ ('user management')}}</a></li>
+                                    <li><a href="product">{{__ ('Product Management')}}</a></li>
+                                    <li><a href="brand">{{__ ('Brands')}}</a></li>
+                                    <li><a href="reports">{{__ ('Reports')}}</a></li>
+                                </ul>
                         </li>
                         </ul>
                     </div>
@@ -281,11 +282,11 @@
             <!-- =====  BANNER STRAT  ===== -->
             <div class="col-sm-12">
                 <div class="breadcrumb ptb_20">
-                    <h1>{{ __('Add Brand') }}</h1>
+                    <h1>{{ __('Contact us') }}</h1>
                     <ul>
                         <li><a href="home">{{ __('Home') }}</a></li>
-                        <li><a href="brand">{{ __('Brands') }}</a></li>
-                        <li class="active">{{ __('Add Brand') }}</li>
+                        {{-- <li><a href="brand">{{ __('Brands') }}</a></li> --}}
+                        <li class="active">{{ __('Contact us') }}</li>
                     </ul>
                 </div>
             </div>
@@ -316,12 +317,12 @@
                 <div class="address">{{ __('Office address')}}
                   <br>
                   <br>
-                   {{__ ('Tripoli')}}</div>
+                   {{__ ('Tripoli/')}}</div>
                 <div class="call mt_10"><i class="fa fa-phone" aria-hidden="true"></i>+218-91-820-63-70</div>
               </div>
 
               <div class="Hello mb_50">
-                <div class="email mt_10"><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:aymenbenghali@gmail.com" target="_top">info@yourdomailname.com</a></div>
+                <div class="email mt_10"><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:aymenbenghali@gmail.com" target="_top">aymenbenghali@gmail.com</a></div>
               </div>
             </div>
             <div class="col-md-8 col-xs-12 contact-form mb_50">

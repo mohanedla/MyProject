@@ -275,58 +275,22 @@
                                   </thead>
                                   <tbody>
                                     <tr>
-                                      <td>Sven Ottlieb</td>
-                                      <td>Sven Ottlieb</td>
-                                      <td>Sven Ottlieb</td>
-                                      <td>Sven Ottlieb</td>
-                                      <td>Sven Ottlieb</td>
-                                      <td>Drache</td>
-                                      <td>Customers</td>
-                                      <td>Aachen</td>
-                                      <td>Aachen</td>
-                                      <td>Aachen</td>
-                                      <td>Aachen</td>
+                                      <td>{{ __('Shirt')}}</td>
+                                      <td>123</td>
+                                      <td>سادة</td>
+                                      <td>ZARA</td>
+                                      <td>بأكمام طويللة</td>
+                                      <td>30</td>
+                                      <td>S_3XL</td>
+                                      <td>{{ __('Red')}}</td>
+                                      <td>Aymen</td>
+                                      <td>A</td>
+                                      <td>25$</td>
                                       <td>
                                         <a href=""><img src="{{ asset('images/icone/edit-solid-24.png') }}"></a>
                                         <a href=""><img src="{{ asset('images/icone/x-square-solid-24.png') }}"></a>
                                     </td>
                                     </tr>
-                                    <tr>
-                                      <td>Sven Ottlieb</td>
-                                      <td>Sven Ottlieb</td>
-                                      <td>Sven Ottlieb</td>
-                                      <td>Sven Ottlieb</td>
-                                      <td>Sven Ottlieb</td>
-                                      <td>Drache</td>
-                                      <td>Customers</td>
-                                      <td>Aachen</td>
-                                      <td>Aachen</td>
-                                      <td>Aachen</td>
-                                      <td>Aachen</td>
-                                      <td>
-                                        <a href=""><img src="{{ asset('images/icone/edit-solid-24.png') }}"></a>
-                                        <a href=""><img src="{{ asset('images/icone/x-square-solid-24.png') }}"></a>
-                                    </td>
-                                    </tr>
-                                    <tr>
-                                      <td>Sven Ottlieb</td>
-                                      <td>Sven Ottlieb</td>
-                                      <td>Sven Ottlieb</td>
-                                      <td>Sven Ottlieb</td>
-                                      <td>Sven Ottlieb</td>
-                                      <td>Drache</td>
-                                      <td>Customers</td>
-                                      <td>Aachen</td>
-                                      <td>Aachen</td>
-                                      <td>Aachen</td>
-                                      <td>Aachen</td>
-                                      <td>
-                                        <a href=""><img src="{{ asset('images/icone/edit-solid-24.png') }}"></a>
-                                        <a href=""><img src="{{ asset('images/icone/x-square-solid-24.png') }}"></a>
-                                    </td>
-                                    </tr>
-
-
                                   </tbody>
                                 </table>
                               </div>

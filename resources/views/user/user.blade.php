@@ -248,9 +248,6 @@
             <div id="formContent">
                 <div class="btn_add">
                                     <label class="address">{{ __('Users List') }}</label>
-                                    <a href="add_user"><button id="button" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        {{ __('Add User') }}
-                                      </button></a>
 
                                 </div>
                                 <hr />
@@ -270,48 +267,19 @@
                                   </thead>
                                   <tbody>
                                     <tr>
-                                      <td>Sven Ottlieb</td>
-                                      <td>Sven Ottlieb</td>
-                                      <td>Sven Ottlieb</td>
-                                      <td>Sven Ottlieb</td>
-                                      <td>Drachenblut Delikatessen</td>
-                                      <td>Customers</td>
-                                      <td>Aachen</td>
-                                      <td>Aachen</td>
+                                      <td>mohamed</td>
+                                      <td>1</td>
+                                      <td>mohamed@gamil.com</td>
+                                      <td>1234</td>
+                                      <td>photo</td>
+                                      <td>بن عاشور</td>
+                                      <td>091820630</td>
+                                      <td>{{__('user')}}</td>
                                       <td>
                                         <a href=""><img src="{{ asset('images/icone/edit-solid-24.png') }}"></a>
                                         <a href=""><img src="{{ asset('images/icone/x-square-solid-24.png') }}"></a>
                                     </td>
                                     </tr>
-                                    <tr>
-                                      <td>Sven Ottlieb</td>
-                                      <td>Sven Ottlieb</td>
-                                      <td>Sven Ottlieb</td>
-                                      <td>Sven Ottlieb</td>
-                                      <td>Drachenblut Delikatessen</td>
-                                      <td>Customers</td>
-                                      <td>Aachen</td>
-                                      <td>Aachen</td>
-                                      <td>
-                                        <a href=""><img src="{{ asset('images/icone/edit-solid-24.png') }}"></a>
-                                        <a href=""><img src="{{ asset('images/icone/x-square-solid-24.png') }}"></a>
-                                    </td>
-                                    </tr>
-                                    <tr>
-                                      <td>Sven Ottlieb</td>
-                                      <td>Sven Ottlieb</td>
-                                      <td>Sven Ottlieb</td>
-                                      <td>Sven Ottlieb</td>
-                                      <td>Drachenblut Delikatessen</td>
-                                      <td>Customers</td>
-                                      <td>Aachen</td>
-                                      <td>Aachen</td>
-                                      <td>
-                                        <a href=""><img src="{{ asset('images/icone/edit-solid-24.png') }}"></a>
-                                        <a href=""><img src="{{ asset('images/icone/x-square-solid-24.png') }}"></a>
-                                    </td>
-                                    </tr>
-
                                   </tbody>
                                 </table>
                               </div>

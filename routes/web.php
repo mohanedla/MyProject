@@ -41,12 +41,17 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('user',[App\Http\Controllers\user::class,'user']);
     Route::get('add_user',[App\Http\Controllers\user::class,'user_add_user']);
 
-    Route::get('product',[App\Http\Controllers\product::class,'product_product']);
-    Route::get('add_product',[App\Http\Controllers\product::class,'product_add_product']);
-    Route::get('product_detail_page',[App\Http\Controllers\product::class,'product_detail_page']);
+    Route::get('/product',[App\Http\Controllers\products::class,'product_product']);
+    Route::get('add_product',[App\Http\Controllers\products::class,'product_add_product']);
+    Route::get('/product_detail_page',[App\Http\Controllers\products::class,'product_detail_page']);
+    Route::get('/edit_product/{id}',[App\Http\Controllers\products::class,'edit_product']);
 
 
     Route::post('/edit_brand/{id}',[App\Http\Controllers\brands::class,'update_brand']);
     Route::get('/delete_brand/{id}',[App\Http\Controllers\brands::class,'delete_brand']);
-    Route::post('add_brand',[App\Http\Controllers\brands::class,'add_brand'])->name('AddBrand');
+    Route::post('/add_brand',[App\Http\Controllers\brands::class,'add_brand'])->name('AddBrand');
+
+    Route::post('/edit_product/{id}',[App\Http\Controllers\products::class,'update_product']);
+    Route::get('/delete_product/{id}',[App\Http\Controllers\products::class,'delete_product']);
+    Route::post('/add_product',[App\Http\Controllers\products::class,'add_product'])->name('AddProduct');
 });

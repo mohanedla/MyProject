@@ -256,6 +256,7 @@
                                 <table id="tblCustomer" class="display" style="width: 100%;">
                                   <thead>
                                     <tr>
+                                      <th scope="col">{{ __('#')}}</th>
                                       <th scope="col">{{ __('Name')}}</th>
                                       <th scope="col">{{ __('Serial Number')}}</th>
                                       <th scope="col">{{ __('Country')}}</th>
@@ -268,14 +269,14 @@
                                     </tr>
                                   </thead>
                                   <tbody>
+                                    {{$i=1;}}
                                     @foreach($brand as $x)
                                     <tr>
+                                      <td>{{$i++}}</td>
                                       <td>{{$x->name}}</td>
                                       <td>{{$x->id}}</td>
                                       <td>{{$x->country}}</td>
-                                      {{-- <td><img style="width: 30%; height:30%;" src="{{ asset( $x->profile_image )}}" alt=""></td> --}}
-
-                                      <td><img style="width: 30%; height:30%;" src="{{asset(Storage::url($x->image_profile))}}" alt=""></td>
+                                      <td><img style="width: 30%; height:30%;" src="{{asset(Storage::url($x->profile_image))}}" alt=""></td>
                                       <td>{{$x->address}}</td>
                                       <td>{{$x->email}}</td>
                                       <td>{{$x->phone_number}}</td>

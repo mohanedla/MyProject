@@ -237,7 +237,8 @@
                 </div>
             </div>
         </div>
-        <form class="signup-form" action="{{ route('AddProduct') }}" method="post" enctype="multipart/form-data">
+        <form class="signup-form" action="{{url('/edit_product/'.$product->id)}}" method="post" enctype="multipart/form-data">
+
             @csrf
             <!-- form header -->
             <div class="form-header">
@@ -251,12 +252,12 @@
                 <div class="horizontal-group">
                     <div class="form-group left">
                         <label for="firstname" class="label-title">{{ __('Product Name') }} </label>
-                        <input type="text" id="product_name" name="product_name" class="form-input"
+                        <input type="text" id="product_name" name="product_name" value="{{$product->name}}" class="form-input"
                             placeholder="{{ __('enter Product Name') }}" required="required" />
                     </div>
                     <div class="form-group right">
                         <label for="lastname" class="label-title">{{ __('Serial Number') }}</label>
-                        <input type="number" name="product_serial" id="lastname" class="form-input"
+                        <input type="number" name="product_serial" value="{{$product->id}}" id="lastname" class="form-input"
                             placeholder="{{ __('enter serial number') }}" />
                     </div>
 
@@ -268,7 +269,7 @@
                 <div class="horizontal-group">
                     <div class="form-group left">
                         <label for="firstname" class="label-title">{{ __('model') }} </label>
-                        <input type="text" id="firstname" name="product_model" class="form-input"
+                        <input type="text" id="firstname" name="product_model" value="{{$product->model}}" class="form-input"
                             placeholder="{{ __('enter model') }}" required="required" />
                     </div>
                 </div>
@@ -277,7 +278,7 @@
                 <div class="horizontal-group">
                     <div class="form-group left" id="adj">
                         <label class="label-title">{{ __('Brand') }}</label>
-                        <select name="product_brand" class="form-input" id="level">
+                        <select name="product_brand" value="{{$product->brand}}" class="form-input" id="level">
                             <option value="B">{{ __('ZARA') }}</option>
                             <option value="I">{{ __('H&M') }}</option>
                             <option value="B">{{ __('MANGO') }}</option>
@@ -289,12 +290,12 @@
                 <div class="horizontal-group">
                     <div class="form-group left">
                         <label for="firstname" class="label-title">{{ __('Specifications') }} </label>
-                        <input type="text" id="Specification" name="product_specification" class="form-input"
+                        <input type="text" id="Specification" name="product_specification" value="{{$product->specification}}" class="form-input"
                             placeholder="{{ __('enter Specifications') }}" required="required" />
                     </div>
                     <div class="form-group right">
                         <label for="lastname" class="label-title">{{ __('Quantity') }}</label>
-                        <input type="number" name="product_quantity" id="lastname" class="form-input"
+                        <input type="number" name="product_quantity" value="{{$product->quantity}}" id="lastname" class="form-input"
                             placeholder="{{ __('enter Quantity') }}" />
                     </div>
 
@@ -302,12 +303,12 @@
                 <div class="horizontal-group">
                     <div class="form-group left">
                         <label for="firstname" class="label-title">{{ __('Color') }} </label>
-                        <input type="text" id="product_name" name="product_color" class="form-input"
+                        <input type="text" id="product_name" name="product_color" value="{{$product->color}}" class="form-input"
                             placeholder="{{ __('enter Color') }}" required="required" />
                     </div>
                     <div class="form-group right">
                         <label for="lastname" class="label-title">{{ __('Size') }}</label>
-                        <input type="text" name="product_size" id="lastname" class="form-input"
+                        <input type="text" name="product_size" value="{{$product->size}}" id="lastname" class="form-input"
                             placeholder="{{ __('enter Size') }}" />
                     </div>
 
@@ -315,7 +316,7 @@
                 <div class="horizontal-group">
                     <div class="form-group left">
                         <div class="file-input">
-                            <input type="file" name="product_image" id="file" class="file">
+                            <input type="file" name="product_image" value="{{$product->profile_image}}" id="file" class="file">
                             <label for="file">
                                 {{ __('Upload Product Picture') }}
                                 <p class="file-name"></p>
@@ -324,7 +325,7 @@
                     </div>
                     <div class="form-group right">
                         <label for="firstname" class="label-title">{{ __('price') }} </label>
-                        <input type="number" id="firstname" name="product_price" class="form-input"
+                        <input type="number" id="firstname" name="product_price" value="{{$product->price}}" class="form-input"
                             placeholder="{{ __('enter price') }}" required="required" />
                     </div>
                 </div>
@@ -335,7 +336,7 @@
             <!-- form-footer -->
             <div class="form-footer">
                 <span></span>
-                <button type="submit" class="btn">{{ __('Save') }}</button>
+                <button type="submit" class="btn">{{ __('Edit') }}</button>
             </div>
 
         </form>

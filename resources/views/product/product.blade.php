@@ -258,6 +258,7 @@
                                 <table id="tblCustomer" class="display" style="width: 100%;">
                                   <thead>
                                     <tr>
+                                      <th scope="col">{{ __('#')}}</th>
                                       <th scope="col">{{ __('Name')}}</th>
                                       <th scope="col">{{ __('Serial Number')}}</th>
                                       <th scope="col">{{ __('a model')}}</th>
@@ -274,23 +275,27 @@
                                     </tr>
                                   </thead>
                                   <tbody>
+                                    {{$i=1;}}
+                                    @foreach ($product as $x)
                                     <tr>
-                                      <td>{{ __('Shirt')}}</td>
-                                      <td>123</td>
-                                      <td>سادة</td>
-                                      <td>ZARA</td>
-                                      <td>بأكمام طويللة</td>
-                                      <td>30</td>
-                                      <td>S_3XL</td>
-                                      <td>{{ __('Red')}}</td>
+                                      <td>{{$i++}}</td>
+                                      <td>{{$x->name}}</td>
+                                      <td>{{$x->id}}</td>
+                                      <td>{{$x->model}}</td>
+                                      <td>{{$x->brand}}</td>
+                                      <td>{{$x->specification}}</td>
+                                      <td>{{$x->quantity}}</td>
+                                      <td>{{$x->size}}</td>
+                                      <td>{{$x->color}}</td>
                                       <td>Aymen</td>
-                                      <td>A</td>
-                                      <td>25$</td>
+                                      <td><img style="width: 30%; height:30%;" src="{{asset(Storage::url($x->profile_image))}}" alt=""></td>
+                                      <td>{{$x->price}}$</td>
                                       <td>
-                                        <a href=""><img src="{{ asset('images/icone/edit-solid-24.png') }}"></a>
-                                        <a href=""><img src="{{ asset('images/icone/x-square-solid-24.png') }}"></a>
+                                        <a href="/edit_product/{{$x->id}}"><img src="{{ asset('images/icone/edit-solid-24.png') }}"></a>
+                                        <a href="/delete_product/{{$x->id}}"><img src="{{ asset('images/icone/x-square-solid-24.png') }}"></a>
                                     </td>
                                     </tr>
+                                    @endforeach
                                   </tbody>
                                 </table>
                               </div>

@@ -25,7 +25,7 @@ class brands extends Controller
         return View('brand.edit_brand',compact('brand'));
 
     }
-    //هذا للداتا بيز}
+    //هذا للداتا بيز
     public function add_brand () {
 
         $brand= new brand;
@@ -36,7 +36,6 @@ class brands extends Controller
         $brand->email=request('brand_email');
         $brand->country=request('brand_country');
         $brand->address=request('brand_address');
-        // $brand->profile_image=request()->file("profile_image")->store("/images/brand");
         $brand->profile_image=request()->file('profile_image') ? request()->file('profile_image')->store('public') : null;
 
         $brand->save();
@@ -53,7 +52,7 @@ class brands extends Controller
         $edit->address=request('brand_address');
         if(request()->file('profile_image'))
         {
-            $edit->profile_image=request()->file('profile_image')->store('images/brand');
+            $edit->profile_image=request()->file('profile_image')->store('public');
         }
         $edit->save();
         return redirect('/brand')->with('message', 'edited succussfuly');

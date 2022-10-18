@@ -45,7 +45,7 @@ return [
         ],
         // 'uploads' => [
         //     'driver' => 'local',
-        //     'root' => base_path('') . 'public/images/uploads/',
+        //     'root' => base_path('') . 'public/images/brand/',
         //     'url' => env('APP_URL').'/public',
         //     'visibility' => 'public',
         //     'throw' => false,

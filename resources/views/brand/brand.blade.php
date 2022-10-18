@@ -260,7 +260,6 @@
                                       <th scope="col">{{ __('Serial Number')}}</th>
                                       <th scope="col">{{ __('Country')}}</th>
                                       <th scope="col">{{ __('photo')}}</th>
-                                      <th scope="col">{{ __('Product type')}}</th>
                                       <th scope="col">{{ __('Address')}}</th>
                                       <th scope="col">{{ __('E-mail')}}</th>
                                       <th scope="col">{{ __('Phone Number')}}</th>
@@ -269,20 +268,23 @@
                                     </tr>
                                   </thead>
                                   <tbody>
+                                    @foreach($brand as $x)
                                     <tr>
-                                      <td>ZARA</td>
-                                      <td>1</td>
-                                      <td>إسبانيا</td>
-                                      <td>ZARA</td>
-                                      <td>ملابس</td>
-                                      <td>النوفليين</td>
-                                      <td>ZARA@Gmail.com</td>
-                                      <td>091820630</td>
+                                      <td>{{$x->name}}</td>
+                                      <td>{{$x->id}}</td>
+                                      <td>{{$x->country}}</td>
+                                      {{-- <td><img style="width: 30%; height:30%;" src="{{ asset( $x->profile_image )}}" alt=""></td> --}}
+
+                                      <td><img style="width: 30%; height:30%;" src="{{asset(Storage::url($x->image_profile))}}" alt=""></td>
+                                      <td>{{$x->address}}</td>
+                                      <td>{{$x->email}}</td>
+                                      <td>{{$x->phone_number}}</td>
                                       <td>
-                                        <a href=""><img src="{{ asset('images/icone/edit-solid-24.png') }}"></a>
-                                        <a href=""><img src="{{ asset('images/icone/x-square-solid-24.png') }}"></a>
+                                        <a href="/edit_brand/{{$x->id}}"><img src="{{ asset('images/icone/edit-solid-24.png') }}"></a>
+                                        <a href="/delete_brand/{{$x->id}}"><img src="{{ asset('images/icone/x-square-solid-24.png') }}"></a>
                                     </td>
                                     </tr>
+                                    @endforeach
                                   </tbody>
                                 </table>
                               </div>

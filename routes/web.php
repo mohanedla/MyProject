@@ -36,6 +36,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     Route::get('brand',[App\Http\Controllers\brands::class,'brand_brand']);
     Route::get('add_brand',[App\Http\Controllers\brands::class,'brand_add_brand']);
+    Route::get('/edit_brand/{id}',[App\Http\Controllers\brands::class,'edit_brand']);
 
     Route::get('user',[App\Http\Controllers\user::class,'user']);
     Route::get('add_user',[App\Http\Controllers\user::class,'user_add_user']);
@@ -45,6 +46,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('product_detail_page',[App\Http\Controllers\product::class,'product_detail_page']);
 
 
-    // Route::post('add_user',[App\Http\Controllers\user::class,'add_user'])->name('AddUser');
+    Route::post('/edit_brand/{id}',[App\Http\Controllers\brands::class,'update_brand']);
+    Route::get('/delete_brand/{id}',[App\Http\Controllers\brands::class,'delete_brand']);
     Route::post('add_brand',[App\Http\Controllers\brands::class,'add_brand'])->name('AddBrand');
 });

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!--[if (gte IE 9)|!(IE)]><!-->
 <html lang="en">
@@ -7,8 +6,7 @@
 <head>
     <!-- =====  BASIC PAGE NEEDS  ===== -->
     <meta charset="utf-8">
-    <title>{{__ ('admin management')}}</title>
-
+    <title>{{ __('Add admin') }}</title>
     <!-- =====  SEO MATE  ===== -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="">
@@ -26,6 +24,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.min.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/style1.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/magnific-popup.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/owl.carousel.css') }}">
     <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
@@ -34,20 +33,7 @@
     <link rel="apple-touch-icon" href="{{ asset('images/apple-touch-icon.png') }}">
     <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('images/apple-touch-icon-72x72.png') }}">
     <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('images/apple-touch-icon-114x114.png') }}">
-
-    <script src="{{asset('js/jquery-3.5.1.js')}}"></script>
-    <script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
-    <link href="{{asset('css/jquery.dataTables.min.css')}}" rel="stylesheet" type="text/css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://use.fontawesome.com/releases/v5.0.1/css/all.css"
-      rel="stylesheet"
-    />
-
-    <link href="{{asset('css/design4.css')}}" rel="stylesheet" />
+</head>
 
 <body>
     <!-- =====  LODER  ===== -->
@@ -236,84 +222,147 @@
                 <!-- =====  BANNER STRAT  ===== -->
                 <div class="col-sm-12">
                     <div class="breadcrumb ptb_20">
-                        <h1>{{ __('admin management') }}</h1>
+                        <h1>{{ __('Edit admin') }}</h1>
                         <ul>
                             <li><a href="home">{{ __('Home') }}</a></li>
-                            <li class="active">{{ __('admin management') }}</li>
+                            <li><a href="admin">{{ __('admin') }}</a></li>
+                            <li><a href="edit_admin">{{ __('Edit admin') }}</a></li>
                         </ul>
                     </div>
                 </div>
                   </div>
             </div>
-            <div id="formContent">
-                <div class="btn_add">
-                                    <label class="address"> {{ __('Admins List') }}</label>
-                                    <a href="add_admin"><button id="button" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        {{ __('Add Admin') }}
-                                      </button></a>
 
-                                </div>
-                                <hr />
-                                <table id="tblCustomer" class="display" style="width: 100%;">
-                                  <thead>
-                                    <tr>
-                                      <th scope="col">{{ __('#')}}</th>
-                                      <th scope="col">{{ __('Name')}}</th>
-                                      <th scope="col">{{ __('id')}}</th>
-                                      <th scope="col">{{ __('E-mail')}}</th>
-                                      <th scope="col">{{ __('Password')}}</th>
-                                      <th scope="col">{{ __('Address')}}</th>
-                                      <th scope="col">{{ __('Phone Number')}}</th>
-                                      <th scope="col">{{ __('powers')}}</th>
-                                      <th scope="col">{{ __('photo')}}</th>
-                                      <th scope="col">{{ __('')}}</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                    {{$i=1;}}
-                                    @foreach($admin as $x)
-                                    <tr>
-                                        <td>{{$i++}}</td>
-                                        <td>{{$x->name}}</td>
-                                        <td>{{$x->id}}</td>
-                                        <td>{{$x->email}}</td>
-                                        <td>{{$x->Password}}</td>
-                                        <td>{{$x->address}}</td>
-                                        <td>{{$x->powers}}</td>
-                                        <td>{{$x->phone_number}}</td>
-                                        <td><img style="width: 30%; height:30%;" src="{{asset(Storage::url($x->profile_image))}}" alt=""></td>
-                                        <td>
-                                          <a href="/edit_admin/{{$x->id}}"><img src="{{ asset('images/icone/edit-solid-24.png') }}"></a>
-                                          <a href="/delete_admin/{{$x->id}}"><img src="{{ asset('images/icone/x-square-solid-24.png') }}"></a>
-                                      </td>
-                                      </tr>
-                                      @endforeach
-                                  </tbody>
-                                </table>
-                              </div>
+            <form class="signup-form"  action="{{url('/edit_admin/'.$admin->id)}}" method="post" enctype="multipart/form-data">
+                @csrf
+                <!-- form header -->
+                <div class="form-header">
+                    <h1>{{ __('Edit admin') }}</h1>
+                </div>
 
-                              <script>
-                                $(document).ready(function () {
-                                  $("#tblCustomer").DataTable();
-                                });
-                              </script>
+                <!-- form body -->
+                <div class="form-body">
 
+                    <!-- Firstname and Lastname -->
+                    <div class="horizontal-group">
+                        <div class="form-group left">
+                                <label for="firstname" class="label-title">{{ __('First name') }} </label>
+                                <input type="text" id="firstname" name="admin_fname" value="{{$admin->fname}}" class="form-input" placeholder="{{ __('enter your first name') }}"
+                                    required="required" />
                         </div>
-                        <br>
-                        <br>
-                        @extends('layout.footer')
-                        <!-- =====  CONTAINER END  ===== -->
-                        <!-- =====  FOOTER START  ===== -->
-                        @section('footer')
+                        <div class="form-group right" >
+                                <label for="lastname" class="label-title">{{ __('Last name') }}</label>
+                                <input type="text" id="lastname" name="admin_lname" value="{{$admin->lname}}" class="form-input"
+                                    placeholder="{{ __('enter your last name') }}" 
 
-                        @endsection
-                        <!-- =====  FOOTER END  ===== -->
+                       </div>
+
                     </div>
-                    @extends('layout.js1')
-                    @section('js1')
 
-                    </body>
 
-                    </html>
+                    <!-- Gender and Hobbies -->
+
+                        <div class="horizontal-group">
+                            <div class="form-group left">
+                                    <label for="email" class="label-title">{{ __('Email') }}</label>
+                                    <input type="email" id="email" name="admin_email" value="{{$admin->email}}" class="form-input" placeholder="{{ __('enter your email') }}"
+                                        required="required">
+                            </div>
+                    </div>
+
+                    <!-- Source of Income and Income -->
+                    <div class="horizontal-group">
+                        <div class="form-group left" id="adj">
+                            <label for="phone" class="label-title">{{ __('Phone Number') }}</label>
+                        <input type="tel" id="phone" name="admin_phone" value="{{$admin->phone_number}}" class="form-input" placeholder="{{ __('Enter your phone number') }}" required="required">
+                </div>
+
+
+                    </div>
+
+                    <div class="horizontal-group">
+                        <div class="form-group left">
+                            <label for="password" class="label-title">{{ __('Password') }} </label>
+                        <input type="password" id="password" name="admin_password" value="{{$admin->password}}" class="form-input" placeholder="{{ __('enter your password') }}"
+                            required="required">
+                        </div>
+                        <div class="form-group right">
+                            <label for="confirm-password" class="label-title">{{ __('Confirm Password') }} </label>
+                            <input type="password" class="form-input" id="confirm-password" name="admin_confirm_password" value="{{$admin->confirm_password}}"
+                                placeholder="{{ __('enter your password again') }}" required="required">
+                        </div>
+                    </div>
+                    <div class="horizontal-group">
+                        <div class="form-group left">
+                            <label for="firstname" class="label-title">{{ __('Address') }} </label>
+                            <input type="text" id="firstname" name="admin_address" value="{{$admin->address}}" class="form-input" placeholder="{{ __('enter your address') }}"
+                                required="required" />
+                        </div>
+                        <div class="form-group right">
+                            <label class="label-title">{{ __('Adjective') }}</label>
+                        <select name="admin_adjective" value="{{$admin->adjective}}" class="form-input" id="level">
+                            <option value="B">{{ __('Manger') }}</option>
+                            <option value="I">{{ __('Admin') }}</option>
+
+                        </select>
+                        </div>
+                    </div>
+                    <div class="horizontal-group">
+                        <div class="form-group left">
+                            <div class="radio-container">
+                                <input checked="checked" type="radio" name="gender" value="{{$admin->gender}}" id="male" />
+                                <label for="male">{{ __('Male') }}</label>
+                                <input type="radio" name="gender" value="{{$admin->gender}}" id="female" />
+                                <label for="female">{{ __('Female') }}</label>
+                            </div>
+                        </div>
+                        <div class="form-group right">
+                            <label style="float:left" for="experience" class="label-title">{{ __('Age') }}</label>
+                            <input type="number" min="18" max="60" value="{{$admin->age}}" name="admin_age" class="form-input">
+                        </div>
+                    </div>
+
+                    <div class="horizontal-group">
+                        <div class="form-group left">
+                            <div class="file-input">
+                                <input type="file" name="profile_image" value="{{$admin->profile_image}}" id="file" class="file">
+                                <label for="file">
+                                    {{ __('Upload Product Picture') }}
+                                  <p class="file-name"></p>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="form-group right">
+                                <label style="float:left" for="experience" class="label-title">{{ __('Job No.') }}</label>
+                                <input type="text"  maxlength="12" name="admin_serial" value="{{$admin->id}}" class="form-input">
+                        </div>
+                        </div>
+                    <!-- Bio -->
+
+                </div>
+
+                <!-- form-footer -->
+                <div class="form-footer">
+                    <span></span>
+                    <button type="submit" name="admin_save" class="btn">{{ __('Edit') }}</button>
+                </div>
+
+            </form>
+
+
+        @extends('layout.footer')
+        <!-- =====  CONTAINER END  ===== -->
+        <!-- =====  FOOTER START  ===== -->
+        @section('footer')
+
+        @endsection
+        <!-- =====  FOOTER END  ===== -->
+    </div>
+    @extends('layout.js')
+    @section('js')
+
+    </body>
+
+    </html>
 
 

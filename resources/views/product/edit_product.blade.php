@@ -227,11 +227,11 @@
 
                 <div class="col-sm-12">
                     <div class="breadcrumb ptb_20">
-                        <h1>{{ __('add Product') }}</h1>
+                        <h1>{{ __('edit Product') }}</h1>
                         <ul>
                             <li><a href="home">{{ __('Home') }}</a></li>
                             <li class="active"><a href="product">{{ __('Product Management') }}</a></li>
-                            <li class="active"><a href="add_product">{{ __('add Product') }}</a></li>
+                            <li class="active"><a href="edit_product">{{ __('edit Product') }}</a></li>
                         </ul>
                     </div>
                 </div>

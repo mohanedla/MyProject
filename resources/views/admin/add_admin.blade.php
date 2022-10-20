@@ -258,8 +258,8 @@
                 </div>
             </div>
         </div>
-        <form class="signup-form" action="admin" method="post">
-
+            <form class="signup-form"  action="{{ route('Addadmin') }}" method="post" enctype="multipart/form-data">
+                @csrf
             <!-- form header -->
             <div class="form-header">
                 <h1>{{ __('Add Admin') }}</h1>
@@ -271,37 +271,37 @@
                 <!-- Firstname and Lastname -->
                 <div class="horizontal-group">
                     <div class="form-group left">
-                        <label for="firstname" class="label-title">{{ __('First name') }} *</label>
-                        <input type="text" id="firstname" class="form-input" placeholder="{{ __('enter your first name') }}"
+                        <label for="firstname" class="label-title">{{ __('First name') }} </label>
+                        <input type="text" id="firstname" name="admin_fname" class="form-input" placeholder="{{ __('enter your first name') }}"
                             required="required" />
                     </div>
                     <div class="form-group right">
                         <label for="lastname" class="label-title">{{ __('Last name') }}</label>
-                        <input type="text" id="lastname" class="form-input"
+                        <input type="text" id="lastname"  name="admin_lname" class="form-input"
                             placeholder="{{ __('enter your last name') }}" />
                     </div>
                 </div>
                 <div class="horizontal-group">
                     <div class="form-group left">
-                        <label for="email" class="label-title">{{ __('Email') }}*</label>
-                        <input type="email" id="email" class="form-input" placeholder="{{ __('enter your email') }}"
+                        <label for="email" class="label-title">{{ __('Email') }}</label>
+                        <input type="email" id="email" name="admin_email"  class="form-input" placeholder="{{ __('enter your email') }}"
                             required="required">
                     </div>
                     <div class="form-group right">
-                        <label for="phone" class="label-title">{{ __('Phone Number') }}*</label>
-                        <input type="tel" id="phone" name="phone" class="form-input" placeholder="{{ __('Enter your phone number') }}" required="required">
+                        <label for="phone" class="label-title">{{ __('Phone Number') }}</label>
+                        <input type="tel" id="phone" name="admin_phone" class="form-input" placeholder="{{ __('Enter your phone number') }}" required="required">
                 </div>
 
                 <!-- Passwrod and confirm password -->
                 <div class="horizontal-group">
                     <div class="form-group left">
-                        <label for="password" class="label-title">{{ __('Password') }} *</label>
-                        <input type="password" id="password" class="form-input" placeholder="{{ __('enter your password') }}"
+                        <label for="password" class="label-title">{{ __('Password') }} </label>
+                        <input type="password" id="password" name="admin_password"  class="form-input" placeholder="{{ __('enter your password') }}"
                             required="required">
                     </div>
                     <div class="form-group right">
-                        <label for="confirm-password" class="label-title">{{ __('Confirm Password') }} *</label>
-                        <input type="password" class="form-input" id="confirm-password"
+                        <label for="confirm-password" class="label-title">{{ __('Confirm Password') }} </label>
+                        <input type="password" class="form-input" name="admin_confirm_password" id="confirm-password"
                             placeholder="{{ __('enter your password again') }}" required="required">
                     </div>
                 </div>
@@ -310,8 +310,8 @@
 
                     <div class="horizontal-group">
                         <div class="form-group left">
-                            <label for="firstname" class="label-title">{{ __('Address') }} *</label>
-                            <input type="text" id="firstname" class="form-input" placeholder="{{ __('enter your address') }}"
+                            <label for="firstname" class="label-title">{{ __('Address') }} </label>
+                            <input type="text" id="firstname" name="admin_address" class="form-input" placeholder="{{ __('enter your address') }}"
                                 required="required" />
                         </div>
                 </div>
@@ -320,7 +320,7 @@
                 <div class="horizontal-group">
                     <div class="form-group left" id="adj">
                         <label class="label-title">{{ __('Adjective') }}</label>
-                        <select class="form-input" id="level">
+                        <select class="form-input" id="level" name="admin_adjective">
                             <option value="B">{{ __('Manger') }}</option>
                             <option value="I">{{ __('Admin') }}</option>
                         </select>
@@ -332,7 +332,7 @@
                     <div class="radio-wrapper">
                     <div class="form-group left">
                         <div class="radio-container">
-                            <input checked="checked" type="radio" name="gender" value="1" id="male" />
+                            <input checked="checked" type="radio" name="admin_gender" value="1" id="male" />
                             <label for="male">{{ __('Male') }}</label>
                             <input type="radio" name="gender" value="0" id="female" />
                             <label for="female">{{ __('Female') }}</label>
@@ -340,12 +340,12 @@
                         </div>
                 <div class="form-group right">
                     <label style="float:left" for="experience" class="label-title">{{ __('Age') }}</label>
-                    <input type="number" min="18" max="80" value="18" class="form-input">
+                    <input type="number" min="18" max="80" value="18" name="admin_age" class="form-input">
                 </div>
                 <div class="horizontal-group">
                     <div class="form-group left">
                         <div class="file-input">
-                            <input type="file" id="file" class="file">
+                            <input type="file" id="file" name="admin_image" class="file">
                             <label for="file">
                                 {{ __('Upload Profile Picture') }}
                               <p class="file-name"></p>
@@ -355,7 +355,7 @@
             </div>
             <div class="form-group right">
                 <label style="float:left" for="experience" class="label-title">{{ __('Job No.') }}</label>
-                <input type="text"  maxlength="12" class="form-input">
+                <input type="text"  maxlength="12" name="admin_serial" class="form-input">
             </div>
                 <!-- Bio -->
 
@@ -364,7 +364,7 @@
             <!-- form-footer -->
             <div class="form-footer">
                 <span></span>
-                <button type="submit" class="btn">{{ __('Save') }}</button>
+                <button type="submit" name="admin_save" class="btn">{{ __('Save') }}</button>
             </div>
 
         </form>

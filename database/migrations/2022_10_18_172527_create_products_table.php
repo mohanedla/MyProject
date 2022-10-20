@@ -24,7 +24,6 @@ return new class extends Migration
             $table->string('color');
             $table->float('price');
             $table->string('profile_image')->nullable();
-
             $table->timestamps();
         });
     }

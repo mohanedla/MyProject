@@ -64,8 +64,31 @@
                         </div>
                         <div class="col-xs-12 col-sm-8">
                             <ul class="header-top-right text-right">
-                                <li class="account"><a href="login">{{ __('My Account')}}</a></li>
-                                <li class="language dropdown"> <span class="dropdown-toggle" id="dropdownMenu1"
+                                @guest
+                                @if (Route::has('login'))
+                                    <li class="nav-item">
+                                        <a class="account" href="/login_register">{{ __('My Account') }}</a>
+                                    </li>
+                                @endif
+
+
+                            @else
+                            <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                role="button">{{ Auth::user()->name }} <span class="caret"></span> </span>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
+
+                                <li><a class="dropdown-item" href="/home"
+                                    onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                                     {{ __('Logout') }}</a>
+                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                            @endguest                                <li class="language dropdown"> <span class="dropdown-toggle" id="dropdownMenu1"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                         role="button">{{ __('Language') }} <span class="caret"></span> </span>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -246,8 +269,8 @@
          <div id="column-left" class="col-sm-4 col-lg-3 hidden-xs">
           <div id="category-menu" class="navbar collapse in mb_40" aria-expanded="true" style="" role="button">
           </div>
-         
-        </div> 
+
+        </div>
         <div class="col-sm-8 col-lg-9 mtb_20">
           <form enctype="multipart/form-data" method="post" action="#">
             <div class="table-responsive">
@@ -370,7 +393,7 @@
               </div>
             </div>
           </div>
-      
+
           <form action="index">
             <input class="btn pull-left mt_30" type="submit" value="{{__('Continue Shopping')}}" />
           </form>
@@ -423,12 +446,12 @@
             </div>
         </div>
     </div>
-      
+
     </div>
     <!-- =====  FOOTER END  ===== -->
   </div>
   <a id="scrollup"></a>
- 
+
    @extends('layout.footer')
    @section('footer')
    @endsection
@@ -454,7 +477,7 @@
     }
   });
   </script>
-     
+
 </body>
 
 </html>

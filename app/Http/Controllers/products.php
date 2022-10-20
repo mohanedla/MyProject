@@ -63,9 +63,9 @@ class products extends Controller
         $product->price=request('product_price');
         if(request()->file('product_image'))
         {
-            $edit->profile_image=request()->file('product_image')->store('public');
+            $product->profile_image=request()->file('product_image')->store('public');
         }
-        $edit->save();
+        $product->save();
         return redirect('product')->with('message', 'edited succussfuly');
 
     }

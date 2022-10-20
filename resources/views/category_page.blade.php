@@ -50,7 +50,31 @@
                         </div>
                         <div class="col-xs-12 col-sm-8">
                             <ul class="header-top-right text-right">
-                                <li class="account"><a href="login">{{ __('My Account') }}</a></li>
+                                @guest
+                                    @if (Route::has('login'))
+                                        <li class="nav-item">
+                                            <a class="account" href="/login_register">{{ __('My Account') }}</a>
+                                        </li>
+                                    @endif
+
+
+                                @else
+                                <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                    role="button">{{ Auth::user()->name }} <span class="caret"></span> </span>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
+
+                                    <li><a class="dropdown-item" href="/home"
+                                        onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                         {{ __('Logout') }}</a>
+                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            @csrf
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                                @endguest
                                 <li class="language dropdown"> <span class="dropdown-toggle" id="dropdownMenu1"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                         role="button">{{ __('Language') }} <span class="caret"></span> </span>
@@ -970,36 +994,12 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="brand owl-carousel ptb_20">
+                                @foreach ($brand as $x)
                                 <div class="item text-center"> <a href="#"><img
-                                            src="{{ asset('images/brand/1.jpg') }}" alt="Disney"
+                                    src="{{asset(Storage::url($x->profile_image))}}" alt=""
                                             class="img-responsive" /></a> </div>
-                                <div class="item text-center"> <a href="#"><img
-                                            src="{{ asset('images/brand/2.jpg') }}" alt="Dell"
-                                            class="img-responsive" /></a> </div>
-                                <div class="item text-center"> <a href="#"><img
-                                            src="{{ asset('images/brand/3.jpg') }}" alt="Harley"
-                                            class="img-responsive" /></a> </div>
-                                <div class="item text-center"> <a href="#"><img
-                                            src="{{ asset('images/brand/4.jpg') }}" alt="Canon"
-                                            class="img-responsive" /></a> </div>
-                                <div class="item text-center"> <a href="#"><img
-                                            src="{{ asset('images/brand/5.jpg') }}" alt="Canon"
-                                            class="img-responsive" /></a> </div>
-                                <div class="item text-center"> <a href="#"><img
-                                            src="{{ asset('images/brand/6.jpg') }}" alt="Canon"
-                                            class="img-responsive" /></a> </div>
-                                <div class="item text-center"> <a href="#"><img
-                                            src="{{ asset('images/brand/7.jpg') }}" alt="Canon"
-                                            class="img-responsive" /></a> </div>
-                                <div class="item text-center"> <a href="#"><img
-                                            src="{{ asset('images/brand/8.jpg') }}" alt="Canon"
-                                            class="img-responsive" /></a> </div>
-                                <div class="item text-center"> <a href="#"><img
-                                            src="{{ asset('images/brand/9.jpg') }}" alt="Canon"
-                                            class="img-responsive" /></a> </div>
-                                <div class="item text-center"> <a href="#"><img
-                                            src="{{ asset('images/brand/10.jpg') }}" alt="Canon"
-                                            class="img-responsive" /></a> </div>
+                                @endforeach
+
                             </div>
                         </div>
                     </div>

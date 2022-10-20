@@ -64,8 +64,31 @@
                         </div>
                         <div class="col-xs-12 col-sm-8">
                             <ul class="header-top-right text-right">
-                                <li class="account"><a href="login">{{ __('My Account')}}</a></li>
-                                <li class="language dropdown"> <span class="dropdown-toggle" id="dropdownMenu1"
+                                @guest
+                                @if (Route::has('login'))
+                                    <li class="nav-item">
+                                        <a class="account" href="/login_register">{{ __('My Account') }}</a>
+                                    </li>
+                                @endif
+
+
+                            @else
+                            <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                role="button">{{ Auth::user()->name }} <span class="caret"></span> </span>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
+
+                                <li><a class="dropdown-item" href="/home"
+                                    onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                                     {{ __('Logout') }}</a>
+                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                            @endguest                                <li class="language dropdown"> <span class="dropdown-toggle" id="dropdownMenu1"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                         role="button">{{ __('Language') }} <span class="caret"></span> </span>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -254,32 +277,27 @@
                                 <table id="tblCustomer" class="display" style="width: 100%;">
                                   <thead>
                                     <tr>
+                                        <th scope="col">#</th>
                                         <th scope="col">{{ __('Username')}}</th>
-                                        <th scope="col">{{ __('id')}}</th>
                                         <th scope="col">{{ __('E-mail')}}</th>
-                                        <th scope="col">{{ __('User password')}}</th>
-                                        <th scope="col">{{ __('photo')}}</th>
-                                        <th scope="col">{{ __('Address')}}</th>
-                                        <th scope="col">{{ __('Phone Number')}}</th>
-                                        <th scope="col">{{ __('powers')}}</th>
+                                        <th scope="col">{{ __('Password')}}</th>
                                         <th scope="col">{{ __('')}}</th>
                                     </tr>
                                   </thead>
                                   <tbody>
+                                    {{$i=1;}}
+                                    @foreach ($users as $user)
                                     <tr>
-                                      <td>mohamed</td>
-                                      <td>1</td>
-                                      <td>mohamed@gamil.com</td>
-                                      <td>1234</td>
-                                      <td>photo</td>
-                                      <td>بن عاشور</td>
-                                      <td>091820630</td>
-                                      <td>{{__('user')}}</td>
+                                      <td>{{$i++}}</td>
+                                      <td>{{$user->name}}</td>
+                                      <td>{{$user->email}}</td>
+                                      <td>{{$user->password}}</td>
                                       <td>
                                         <a href=""><img src="{{ asset('images/icone/edit-solid-24.png') }}"></a>
                                         <a href=""><img src="{{ asset('images/icone/x-square-solid-24.png') }}"></a>
                                     </td>
                                     </tr>
+                                    @endforeach
                                   </tbody>
                                 </table>
                               </div>

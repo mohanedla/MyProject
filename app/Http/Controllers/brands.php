@@ -12,7 +12,7 @@ class brands extends Controller
         $brand=brand::all();
         return View('brand.brand',compact('brand'));
 
-    }
+    } 
 
     public function brand_add_brand()
     {

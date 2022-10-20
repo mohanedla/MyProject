@@ -3,22 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\brand;
 class home extends Controller
 {
     public function index()
         {
-            return View('index');
+            $brand=brand::all();
+            return View('index',compact('brand'));
         }
-// aymen
     public function category_page()
         {
-            return View('category_page');
+            $brand=brand::all();
+            return View('category_page',compact('brand'));
         }
 
-    public function login()
+    public function login_register()
         {
-            return View('login');
+            return View('/login');
         }
 
     public function layout_empty()

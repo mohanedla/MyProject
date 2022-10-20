@@ -26,7 +26,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/magnific-popup.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/owl.carousel.css') }}">
-    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/jquery-ui.css')}}">
 
     <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}">
     <link rel="apple-touch-icon" href="{{ asset('images/apple-touch-icon.png') }}">
@@ -50,8 +50,31 @@
                         </div>
                         <div class="col-xs-12 col-sm-8">
                             <ul class="header-top-right text-right">
-                                <li class="account"><a href="login">{{ __('My Account') }}</a></li>
-                                <li class="language dropdown"> <span class="dropdown-toggle" id="dropdownMenu1"
+                                @guest
+                                @if (Route::has('login'))
+                                    <li class="nav-item">
+                                        <a class="account" href="/login_register">{{ __('My Account') }}</a>
+                                    </li>
+                                @endif
+
+
+                            @else
+                            <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                role="button">{{ Auth::user()->name }} <span class="caret"></span> </span>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
+
+                                <li><a class="dropdown-item" href="/home"
+                                    onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                                     {{ __('Logout') }}</a>
+                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                            @endguest                                <li class="language dropdown"> <span class="dropdown-toggle" id="dropdownMenu1"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                         role="button">{{ __('Language') }} <span class="caret"></span> </span>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -213,7 +236,7 @@
                 <div class="col-sm-12">
                     <div class="breadcrumb ptb_20">
                         <ul>
-                            <li><a href="home">{{ __('Home') }}</a></li>
+                            <li><a href="/home">{{ __('Home') }}</a></li>
                             <li class="active">{{ __('Login') }}</li>
                         </ul>
                     </div>
@@ -238,20 +261,39 @@
                                 <div class="panel-body">
                                     <div class="row">
                                         <div class="col-lg-12">
-                                            <form id="login-form" action="#" method="post">
+
+                                            {{-- Form For Login --}}
+                                            <form id="login-form" method="POST" action="{{ route('login') }}">
+                                                @csrf
                                                 <div class="form-group">
-                                                    <input type="text" name="username" id="username1"
-                                                        tabindex="1" class="form-control"
-                                                        placeholder="{{ __('Username') }}" value="">
+                                                    <input id="username" type="text"
+                                                        class="form-control @error('email') is-invalid @enderror"
+                                                        name="email" placeholder="{{ __('Username') }}"
+                                                        value="{{ old('email') }}" required autocomplete="email"
+                                                        autofocus>
+
+                                                    @error('email')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                    @enderror
                                                 </div>
                                                 <div class="form-group">
                                                     <input type="password" name="password" id="password"
                                                         tabindex="2" class="form-control"
-                                                        placeholder="{{ __('Password') }}">
+                                                        class="form-control @error('password') is-invalid @enderror"
+                                                        placeholder="{{ __('Password') }}" required
+                                                        autocomplete="current-password">
+                                                    @error('password')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                    @enderror
                                                 </div>
                                                 <div class="form-group text-center">
                                                     <input type="checkbox" tabindex="3" class=""
-                                                        name="remember" id="remember">
+                                                        name="remember" id="remember"
+                                                        {{ old('remember') ? 'checked' : '' }}>
                                                     <label for="remember"> {{ __('Remember Me') }}</label>
                                                 </div>
                                                 <div class="form-group">
@@ -261,6 +303,12 @@
                                                                 id="login-submit" tabindex="4"
                                                                 class="form-control btn btn-login"
                                                                 value="{{ __('Login') }}">
+                                                            @if (Route::has('password.request'))
+                                                                <a
+                                                                    href="{{ route('password.request') }}">
+                                                                    {{ __('Forgot Your Password?') }}
+                                                                </a>
+                                                            @endif
                                                         </div>
                                                     </div>
                                                 </div>
@@ -275,26 +323,59 @@
                                                     </div>
                                                 </div>
                                             </form>
-                                            <form id="register-form" action="#" method="post">
+                                            {{-- Form For Registerion --}}
+                                            <form id="register-form" method="POST"
+                                                action="{{ route('register') }}">
+                                                @csrf
                                                 <div class="form-group">
-                                                    <input type="text" name="username" id="username"
+
+                                                    <input id="username" type="text"
+                                                        class="form-control @error('name') is-invalid @enderror"
+                                                        name="name" placeholder="{{ __('Username') }}"
+                                                        value="{{ old('name') }}" required autocomplete="name"
+                                                        autofocus>
+
+                                                    @error('name')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+                                                <div class="form-group">
+                                                    <input id="email" type="email"
+                                                        class="form-control @error('email') is-invalid @enderror"
+                                                        name="email" placeholder="{{ __('Email Address') }}"
                                                         tabindex="1" class="form-control"
-                                                        placeholder="{{ __('Username') }}" value="">
+                                                        value="{{ old('email') }}" required autocomplete="email">
+
+                                                    @error('email')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                    @enderror
                                                 </div>
                                                 <div class="form-group">
-                                                    <input type="email" name="email" id="email"
-                                                        tabindex="1" class="form-control"
-                                                        placeholder="{{ __('Email Address') }}" value="">
+
+                                                    <input id="password2" type="password"
+                                                        class="form-control @error('password') is-invalid @enderror"
+                                                        name="password" tabindex="2" class="form-control"
+                                                        placeholder="{{ __('Password') }}" required
+                                                        autocomplete="new-password">
+
+                                                    @error('password')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                    @enderror
                                                 </div>
                                                 <div class="form-group">
-                                                    <input type="password" name="password" id="password2"
-                                                        tabindex="2" class="form-control"
-                                                        placeholder="{{ __('Password') }}">
-                                                </div>
-                                                <div class="form-group">
-                                                    <input type="password" name="confirm-password"
-                                                        id="confirm-password" tabindex="2" class="form-control"
-                                                        placeholder="{{ __('Confirm Password') }}">
+
+                                                    <input id="confirm-password" type="password" class="form-control"
+                                                        name="password_confirmation" tabindex="2"
+                                                        class="form-control"
+                                                        placeholder="{{ __('Confirm Password') }}" required
+                                                    autocomplete="new-password">
+
                                                 </div>
                                                 <div class="form-group">
                                                     <div class="row">
@@ -307,6 +388,7 @@
                                                     </div>
                                                 </div>
                                             </form>
+
                                         </div>
                                     </div>
                                 </div>

@@ -3,18 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-class user extends Controller
+use App\Models\User;
+class users extends Controller
 {
     public function user()
     {
-        return View('user.user');
-
-    }
-
-    public function user_add_user ()
-    {
-        return View('user.add_user');
+        $users=User::all();
+        return View('user.user',compact('users'));
 
     }
 

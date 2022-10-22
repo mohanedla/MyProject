@@ -36,14 +36,18 @@
 </head>
 
 <body>
+    @if (!Auth::check())
+        <script>
+            window.location.href = 'home';
+        </script>
+    @endif
     @if (Auth::user())
-    @if (Auth::user()->role != "admin" && Auth::user()->role != "supervisor")
-<script>
-    window.location.href ='home';
-</script>
-
-@endif
-@endif
+        @if (Auth::user()->role != 'admin' && Auth::user()->role != 'supervisor')
+            <script>
+                window.location.href = 'home';
+            </script>
+        @endif
+    @endif
     <!-- =====  LODER  ===== -->
     <div class="loder"></div>
     <div class="wrapper">
@@ -60,32 +64,32 @@
                         <div class="col-xs-12 col-sm-8">
                             <ul class="header-top-right text-right">
                                 @guest
-                                @if (Route::has('login'))
-                                    <li class="nav-item">
-                                        <a class="account" href="/login_register">{{ __('My Account') }}</a>
-                                    </li>
-                                @endif
+                                    @if (Route::has('login'))
+                                        <li class="nav-item">
+                                            <a class="account" href="/login_register">{{ __('My Account') }}</a>
+                                        </li>
+                                    @endif
+                                @else
+                                    <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                            role="button">{{ Auth::user()->name }} <span class="caret"></span> </span>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
 
-
-                            @else
-                            <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                role="button">{{ Auth::user()->name }} <span class="caret"></span> </span>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
-
-                                <li><a class="dropdown-item" href="/home"
-                                    onclick="event.preventDefault();
+                                            <li><a class="dropdown-item" href="/home"
+                                                    onclick="event.preventDefault();
                                          document.getElementById('logout-form').submit();">
-                                     {{ __('Logout') }}</a>
-                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </li>
-                            </ul>
-                        </li>
-                            @endguest                                <li class="language dropdown"> <span class="dropdown-toggle" id="dropdownMenu1"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                        role="button">{{ __('Language') }} <span class="caret"></span> </span>
+                                                    {{ __('Logout') }}</a>
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                    class="d-none">
+                                                    @csrf
+                                                </form>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                @endguest <li class="language dropdown"> <span class="dropdown-toggle"
+                                        id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false" role="button">{{ __('Language') }} <span
+                                            class="caret"></span> </span>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                         @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                                             <li>
@@ -309,9 +313,9 @@
                     <div class="form-group left" id="adj">
                         <label class="label-title">{{ __('Brand') }}</label>
                         <select name="product_brand" class="form-input" id="level">
-                            <option value="ZARA">{{ __('ZARA') }}</option>
-                            <option value="H&M">{{ __('H&M') }}</option>
-                            <option value="MANGO">{{ __('MANGO') }}</option>
+                            @foreach ($brands as $brand)
+                                <option value="{{ $brand->id }}">{{ __($brand->name) }}</option>
+                            @endforeach
 
                         </select>
                     </div>

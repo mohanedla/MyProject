@@ -4,24 +4,30 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\product;
-use app\Models\admin;
-use app\Models\User;
+use App\Models\brand;
+
 use Auth;
 class products extends Controller
 {
     public function product_product()
     {
         $admin=product::with('admins')->get();
-        // where('admin_id','=',admin::id())->get();
-        //  dd($admin);
-       // $product=product::all();
-        return View('product.product',compact('admin'));
+        $brand=product::with('brands')->get();
+        return View('product.product',compact('admin','brand'));
+
+    }
+    public function item_brand()
+    {
+        $products=product::with('brands')->get();
+        $brand=brand::all();
+        return View('item.item_brand',compact('products','brand'));
 
     }
 
     public function product_add_product()
     {
-        return View('product.add_product');
+        $brands=brand::all();
+        return View('product.add_product',compact('brands'));
     }
 
     public function product_detail_page()
@@ -32,7 +38,9 @@ class products extends Controller
     public function edit_product($id)
     {
         $product=product::find($id);
-        return View('product.edit_product',compact('product'));
+        $brands=brand::all();
+        $get=product::with('brands')->get()->find($id);
+        return View('product.edit_product',compact('product','brands','get'));
 
     }
 
@@ -41,7 +49,7 @@ class products extends Controller
         $product= new product;
         $product->serial=request('product_serial');
         $product->name=request('product_name');
-        $product->brand=request('product_brand');
+        $product->brand_id=request('product_brand');
         $product->model=request('product_model');
         $product->specification=request('product_specification');
         $product->color=request('product_color');
@@ -60,7 +68,7 @@ class products extends Controller
         $product= product::find($id);
         $product->serial=request('product_serial');
         $product->name=request('product_name');
-        $product->brand=request('product_brand');
+        $product->brand_id=request('product_brand');
         $product->model=request('product_model');
         $product->specification=request('product_specification');
         $product->color=request('product_color');

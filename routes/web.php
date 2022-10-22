@@ -60,6 +60,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::post('/add_admin',[App\Http\Controllers\admins::class,'add_admin'])->name('Addadmin');
 
     Route::get('/delete_user/{id}',[App\Http\Controllers\users::class,'delete_user']);
+    Route::get('/item_brand/{id}',[App\Http\Controllers\products::class,'item_brand']);
 });
 Auth::routes();
 

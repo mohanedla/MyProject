@@ -18,9 +18,10 @@ return new class extends Migration
             $table->integer('serial');
             $table->string('name');
             $table->string('model');
-            $table->string('brand')->nullable();
+            // $table->string('brand')->nullable();
             $table->string('specification');
             $table->integer('admin_id')->references('id')->on('users');
+            $table->integer('brand_id')->references('id')->on('brands');
             $table->integer('quantity');
             $table->string('size');
             $table->string('color');

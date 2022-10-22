@@ -1443,7 +1443,7 @@
                         <div class="col-sm-12">
                             <div class="brand owl-carousel ptb_20">
                                 @foreach ($brand as $x)
-                                <div class="item text-center"> <a href="#"><img
+                                <div class="item text-center"> <a href="item_brand/{{$x->id}}"><img
                                     src="{{asset(Storage::url($x->profile_image))}}" alt=""
                                             class="img-responsive" /></a> </div>
                                 @endforeach

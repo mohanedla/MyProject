@@ -36,6 +36,11 @@
 </head>
 
 <body>
+    @if(!Auth::check())
+    <script>
+       window.location.href ='home';
+   </script>
+@endif
     @if (Auth::user())
     @if (Auth::user()->role != "admin" && Auth::user()->role != "supervisor")
 <script>
@@ -83,7 +88,8 @@
                                 </li>
                             </ul>
                         </li>
-                            @endguest                                <li class="language dropdown"> <span class="dropdown-toggle" id="dropdownMenu1"
+                            @endguest
+                            <li class="language dropdown"> <span class="dropdown-toggle" id="dropdownMenu1"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                         role="button">{{ __('Language') }} <span class="caret"></span> </span>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -273,7 +279,7 @@
             @csrf
             <!-- form header -->
             <div class="form-header">
-                <h1>{{ __('Add Product') }}</h1>
+                <h1>{{ __('edit Product') }}</h1>
             </div>
 
             <!-- form body -->
@@ -309,10 +315,13 @@
                 <div class="horizontal-group">
                     <div class="form-group left" id="adj">
                         <label class="label-title">{{ __('Brand') }}</label>
-                        <select name="product_brand" value="{{$product->brand}}" class="form-input" id="level">
-                            <option value="ZARA">{{ __('ZARA') }}</option>
-                            <option value="H&M">{{ __('H&M') }}</option>
-                            <option value="MANGO">{{ __('MANGO') }}</option>
+                        <select name="product_brand" class="form-input" id="level">
+                            <option value="">Please Select</option>
+
+                            @foreach ($brands as $brand)
+                                <option value="{{ $brand->id }}"
+                                    {{$get->brands->id == $brand->id  ? 'selected' : ''}}>{{$brand->name}}</option>
+                            @endforeach
 
                         </select>
                     </div>

@@ -50,6 +50,11 @@
     <link href="{{asset('css/design4.css')}}" rel="stylesheet" />
 
 <body>
+    @if(!Auth::check())
+    <script>
+       window.location.href ='home';
+   </script>
+@endif
     @if (Auth::user())
     @if (Auth::user()->role != "admin" && Auth::user()->role != "supervisor")
 <script>
@@ -307,13 +312,14 @@
                                   </thead>
                                   <tbody>
                                     {{$i=1;}}
+                                    {{$j=0;}}
                                     @foreach ($admin as $x)
                                     <tr>
                                       <td>{{$i++}}</td>
                                       <td>{{$x->name}}</td>
                                       <td>{{$x->serial}}</td>
                                       <td>{{$x->model}}</td>
-                                      <td>{{$x->brand}}</td>
+                                      <td>{{$brand[$j++]->brands->name}}</td>
                                       <td>{{$x->specification}}</td>
                                       <td>{{$x->quantity}}</td>
                                       <td>{{$x->size}}</td>

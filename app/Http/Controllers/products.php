@@ -4,13 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\product;
-
+use app\Models\admin;
+use app\Models\User;
+use Auth;
 class products extends Controller
 {
     public function product_product()
     {
-        $product=product::all();
-        return View('product.product',compact('product'));
+        $admin=product::with('admins')->get();
+        // where('admin_id','=',admin::id())->get();
+        //  dd($admin);
+       // $product=product::all();
+        return View('product.product',compact('admin'));
 
     }
 
@@ -34,7 +39,7 @@ class products extends Controller
     public function add_product()
     {
         $product= new product;
-        $product->id=request('product_serial');
+        $product->serial=request('product_serial');
         $product->name=request('product_name');
         $product->brand=request('product_brand');
         $product->model=request('product_model');
@@ -43,6 +48,7 @@ class products extends Controller
         $product->quantity=request('product_quantity');
         $product->size=request('product_size');
         $product->price=request('product_price');
+        $product->admin_id=Auth::id();
         $product->profile_image=request()->file('product_image') ? request()->file('product_image')->store('public') : null;
 
         $product->save();
@@ -52,7 +58,7 @@ class products extends Controller
     public function update_product($id)
     {
         $product= product::find($id);
-        $product->id=request('product_serial');
+        $product->serial=request('product_serial');
         $product->name=request('product_name');
         $product->brand=request('product_brand');
         $product->model=request('product_model');

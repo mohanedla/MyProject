@@ -36,6 +36,14 @@
 </head>
 
 <body>
+    @if (Auth::user())
+    @if (Auth::user()->role != "admin" && Auth::user()->role != "supervisor")
+<script>
+    window.location.href ='home';
+</script>
+
+@endif
+@endif
     <!-- =====  LODER  ===== -->
     <div class="loder"></div>
     <div class="wrapper">
@@ -75,7 +83,8 @@
                                 </li>
                             </ul>
                         </li>
-                            @endguest                                <li class="language dropdown"> <span class="dropdown-toggle" id="dropdownMenu1"
+                            @endguest
+                            <li class="language dropdown"> <span class="dropdown-toggle" id="dropdownMenu1"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                         role="button">{{ __('Language') }} <span class="caret"></span> </span>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -88,7 +97,7 @@
                                             </li>
                                         @endforeach
                                     </ul>
-                                </li>
+                            </li>
                                 <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                         role="button">{{ __('Properties') }} <span class="caret"></span> </span>
@@ -258,7 +267,7 @@
                 </div>
             </div>
         </div>
-            <form class="signup-form"  action="{{ route('Addadmin') }}" method="post" enctype="multipart/form-data">
+            <form class="signup-form" method="POST" action="{{ route('Addadmin') }}" enctype="multipart/form-data">
                 @csrf
             <!-- form header -->
             <div class="form-header">
@@ -269,7 +278,7 @@
             <div class="form-body">
 
                 <!-- Firstname and Lastname -->
-                <div class="horizontal-group">
+                {{-- <div class="horizontal-group">
                     <div class="form-group left">
                         <label for="firstname" class="label-title">{{ __('First name') }} </label>
                         <input type="text" id="firstname" name="admin_fname" class="form-input" placeholder="{{ __('enter your first name') }}"
@@ -356,15 +365,83 @@
             <div class="form-group right">
                 <label style="float:left" for="experience" class="label-title">{{ __('Job No.') }}</label>
                 <input type="text"  maxlength="12" name="admin_serial" class="form-input">
-            </div>
+            </div> --}}
                 <!-- Bio -->
+                <div class="form-group">
 
-            </div>
+                    <input id="username" type="text"
+                        class="form-control @error('name') is-invalid @enderror"
+                        name="name" placeholder="{{ __('Username') }}"
+                        value="{{ old('name') }}" required autocomplete="name"
+                        autofocus>
+
+                    @error('name')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <input id="email" type="email"
+                        class="form-control @error('email') is-invalid @enderror"
+                        name="email" placeholder="{{ __('Email Address') }}"
+                        tabindex="1" class="form-control"
+                        value="{{ old('email') }}" required autocomplete="email">
+
+                    @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+                <div class="form-group">
+
+                    <input id="password2" type="password"
+                        class="form-control @error('password') is-invalid @enderror"
+                        name="password" tabindex="2" class="form-control"
+                        placeholder="{{ __('Password') }}" required
+                        autocomplete="new-password">
+
+                    @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+                <div class="form-group">
+
+                    <input id="confirm-password" type="password" class="form-control"
+                        name="password_confirmation" tabindex="2"
+                        class="form-control"
+                        placeholder="{{ __('Confirm Password') }}" required
+                    autocomplete="new-password">
+
+                </div>
+                <div class="form-group">
+                        <select class="form-input" id="level" name="role">
+                            <option value="admin">{{ __('Admin') }}</option>
+                            <option value="supervisor">{{ __('supervisor') }}</option>
+                        </select>
+                    </div>
+
+                </div>
+                {{-- <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3">
+                            <input type="submit" name="register-submit"
+                                id="register-submit" tabindex="4"
+                                class="form-control btn btn-register"
+                                value="{{ __('Register Now') }}">
+                        </div>
+                    </div>
+                </div>
+            </div> --}}
 
             <!-- form-footer -->
             <div class="form-footer">
                 <span></span>
-                <button type="submit" name="admin_save" class="btn">{{ __('Save') }}</button>
+
+                <button type="submit" name="admin_save" class="btn">{{ __('Create') }}</button>
             </div>
 
         </form>
@@ -389,7 +466,7 @@
     </div>
     @extends('layout.js')
     @section('js')
-    
+
     </body>
 
     </html>

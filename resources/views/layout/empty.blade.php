@@ -6,7 +6,7 @@
 <head>
     <!-- =====  BASIC PAGE NEEDS  ===== -->
     <meta charset="utf-8">
-    <title>{{__ ('Reports')}}</title>
+    <title>{{ __('Add admin') }}</title>
     <!-- =====  SEO MATE  ===== -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="">
@@ -24,6 +24,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.min.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/style1.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/magnific-popup.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/owl.carousel.css') }}">
     <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
@@ -32,28 +33,11 @@
     <link rel="apple-touch-icon" href="{{ asset('images/apple-touch-icon.png') }}">
     <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('images/apple-touch-icon-72x72.png') }}">
     <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('images/apple-touch-icon-114x114.png') }}">
-
-    <script src="{{asset('js/jquery-3.5.1.js')}}"></script>
-    <script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
-    <link href="{{asset('css/jquery.dataTables.min.css')}}" rel="stylesheet" type="text/css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://use.fontawesome.com/releases/v5.0.1/css/all.css"
-      rel="stylesheet"
-    />
-
-    <link href="{{asset('css/design4.css')}}" rel="stylesheet" />
-
-    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> --}}
-
 </head>
 
 <body>
     <!-- =====  LODER  ===== -->
-    {{-- <div class="loder"></div> --}}
+    <div class="loder"></div>
     <div class="wrapper">
         <!-- =====  HEADER START  ===== -->
         <header id="header">
@@ -67,13 +51,31 @@
                         </div>
                         <div class="col-xs-12 col-sm-8">
                             <ul class="header-top-right text-right">
-                                <li class="account">
+                                @guest
+                                @if (Route::has('login'))
+                                    <li class="nav-item">
+                                        <a class="account" href="/login_register">{{ __('My Account') }}</a>
+                                    </li>
+                                @endif
 
-                                    <a href="login">{{ __('My Account')}}<img src="{{ asset('images/icone/user-circle-regular-24.png') }}" alt="Profile" class="rounded-circle"></a>
+
+                            @else
+                            <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                role="button">{{ Auth::user()->name }} <span class="caret"></span> </span>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
+
+                                <li><a class="dropdown-item" href="/home"
+                                    onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                                     {{ __('Logout') }}</a>
+                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
                                 </li>
-
-
-                                <li class="language dropdown"> <span class="dropdown-toggle" id="dropdownMenu1"
+                            </ul>
+                        </li>
+                            @endguest                                 <li class="language dropdown"> <span class="dropdown-toggle" id="dropdownMenu1"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                         role="button">{{ __('Language') }} <span class="caret"></span> </span>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -243,102 +245,134 @@
                 <!-- =====  BANNER STRAT  ===== -->
                 <div class="col-sm-12">
                     <div class="breadcrumb ptb_20">
-                        <h1>{{ __('Reports') }}</h1>
+                        <h1>{{ __('Edit admin') }}</h1>
                         <ul>
                             <li><a href="home">{{ __('Home') }}</a></li>
-                            <li class="active">{{ __('Reports') }}</li>
+                            <li><a href="admin">{{ __('admin') }}</a></li>
+                            <li><a href="edit_admin">{{ __('Edit admin') }}</a></li>
                         </ul>
                     </div>
                 </div>
                   </div>
             </div>
-            <div id="formContent">
-<div class="btn_add">
-                    <label class="address">Customer Info</label>
-                    <button id="button" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        {{__('Add admin')}}
-                      </button>
+
+            <form class="signup-form"  action="{{url('/edit_admin/'.$admin->id)}}" method="post" enctype="multipart/form-data">
+                @csrf
+                <!-- form header -->
+                <div class="form-header">
+                    <h1>{{ __('Edit admin') }}</h1>
                 </div>
-                <hr />
-                <table id="tblCustomer" class="display" style="width: 100%;">
-                  <thead>
-                    <tr>
-                      <th scope="col">{{ __('Name')}}</th>
-                      <th scope="col">{{ __('Company')}}</th>
-                      <th scope="col">{{ __('Relationship')}}</th>
-                      <th scope="col">{{ __('City')}}</th>
-                      <th scope="col">{{ __('City')}}</th>
-                      <th scope="col">{{ __('City')}}</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Sven Ottlieb</td>
-                      <td>Drachenblut Delikatessen</td>
-                      <td>Customers</td>
-                      <td>Aachen</td>
-                      <td>Aachen</td>
-                      <td>
-                        <a href=""><img src="{{ asset('images/icone/edit-solid-24.png') }}"></a>
-                        <a href=""><img src="{{ asset('images/icone/x-square-solid-24.png') }}"></a>
-                    </td>
-                    </tr>
-                    <tr>
-                      <td>Sven Ottlieb</td>
-                      <td>Drachenblut Delikatessen</td>
-                      <td>Customers</td>
-                      <td>Aachen</td>
-                      <td>Aachen</td>
-                      <td>
-                        <a href=""><img src="{{ asset('images/icone/edit-solid-24.png') }}"></a>
-                        <a href=""><img src="{{ asset('images/icone/x-square-solid-24.png') }}"></a>
-                    </td>
-                    </tr>
-                    <tr>
-                      <td>Sven Ottlieb</td>
-                      <td>Drachenblut Delikatessen</td>
-                      <td>Customers</td>
-                      <td>Aachen</td>
-                      <td>Aachen</td>
-                      <td>
-                        <a href=""><img src="{{ asset('images/icone/edit-solid-24.png') }}"></a>
-                        <a href=""><img src="{{ asset('images/icone/x-square-solid-24.png') }}"></a>
-                    </td>
-                    </tr>
 
-                  </tbody>
-                </table>
-              </div>
+                <!-- form body -->
+                <div class="form-body">
 
-              <script>
-                $(document).ready(function () {
-                  $("#tblCustomer").DataTable();
-                });
-              </script>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Launch demo modal
-  </button>
+                    <!-- Firstname and Lastname -->
+                    <div class="horizontal-group">
+                        <div class="form-group left">
+                                <label for="firstname" class="label-title">{{ __('First name') }} </label>
+                                <input type="text" id="firstname" name="admin_fname" value="{{$admin->fname}}" class="form-input" placeholder="{{ __('enter your first name') }}"
+                                    required="required" />
+                        </div>
+                        <div class="form-group right" >
+                                <label for="lastname" class="label-title">{{ __('Last name') }}</label>
+                                <input type="text" id="lastname" name="admin_lname" value="{{$admin->lname}}" class="form-input"
+                                    placeholder="{{ __('enter your last name') }}"
 
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
-              </div>
-        </div>
+                       </div>
+
+                    </div>
+
+
+                    <!-- Gender and Hobbies -->
+
+                        <div class="horizontal-group">
+                            <div class="form-group left">
+                                    <label for="email" class="label-title">{{ __('Email') }}</label>
+                                    <input type="email" id="email" name="admin_email" value="{{$admin->email}}" class="form-input" placeholder="{{ __('enter your email') }}"
+                                        required="required">
+                            </div>
+                    </div>
+
+                    <!-- Source of Income and Income -->
+                    <div class="horizontal-group">
+                        <div class="form-group left" id="adj">
+                            <label for="phone" class="label-title">{{ __('Phone Number') }}</label>
+                        <input type="tel" id="phone" name="admin_phone" value="{{$admin->phone_number}}" class="form-input" placeholder="{{ __('Enter your phone number') }}" required="required">
+                </div>
+
+
+                    </div>
+
+                    <div class="horizontal-group">
+                        <div class="form-group left">
+                            <label for="password" class="label-title">{{ __('Password') }} </label>
+                        <input type="password" id="password" name="admin_password" value="{{$admin->password}}" class="form-input" placeholder="{{ __('enter your password') }}"
+                            required="required">
+                        </div>
+                        <div class="form-group right">
+                            <label for="confirm-password" class="label-title">{{ __('Confirm Password') }} </label>
+                            <input type="password" class="form-input" id="confirm-password" name="admin_confirm_password" value="{{$admin->confirm_password}}"
+                                placeholder="{{ __('enter your password again') }}" required="required">
+                        </div>
+                    </div>
+                    <div class="horizontal-group">
+                        <div class="form-group left">
+                            <label for="firstname" class="label-title">{{ __('Address') }} </label>
+                            <input type="text" id="firstname" name="admin_address" value="{{$admin->address}}" class="form-input" placeholder="{{ __('enter your address') }}"
+                                required="required" />
+                        </div>
+                        <div class="form-group right">
+                            <label class="label-title">{{ __('Adjective') }}</label>
+                        <select name="admin_adjective" value="{{$admin->adjective}}" class="form-input" id="level">
+                            <option value="B">{{ __('Manger') }}</option>
+                            <option value="I">{{ __('Admin') }}</option>
+
+                        </select>
+                        </div>
+                    </div>
+                    <div class="horizontal-group">
+                        <div class="form-group left">
+                            <div class="radio-container">
+                                <input checked="checked" type="radio" name="gender" value="{{$admin->gender}}" id="male" />
+                                <label for="male">{{ __('Male') }}</label>
+                                <input type="radio" name="gender" value="{{$admin->gender}}" id="female" />
+                                <label for="female">{{ __('Female') }}</label>
+                            </div>
+                        </div>
+                        <div class="form-group right">
+                            <label style="float:left" for="experience" class="label-title">{{ __('Age') }}</label>
+                            <input type="number" min="18" max="60" value="{{$admin->age}}" name="admin_age" class="form-input">
+                        </div>
+                    </div>
+
+                    <div class="horizontal-group">
+                        <div class="form-group left">
+                            <div class="file-input">
+                                <input type="file" name="profile_image" value="{{$admin->profile_image}}" id="file" class="file">
+                                <label for="file">
+                                    {{ __('Upload Product Picture') }}
+                                  <p class="file-name"></p>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="form-group right">
+                                <label style="float:left" for="experience" class="label-title">{{ __('Job No.') }}</label>
+                                <input type="text"  maxlength="12" name="admin_serial" value="{{$admin->id}}" class="form-input">
+                        </div>
+                        </div>
+                    <!-- Bio -->
+
+                </div>
+
+                <!-- form-footer -->
+                <div class="form-footer">
+                    <span></span>
+                    <button type="submit" name="admin_save" class="btn">{{ __('Edit') }}</button>
+                </div>
+
+            </form>
+
+
         @extends('layout.footer')
         <!-- =====  CONTAINER END  ===== -->
         <!-- =====  FOOTER START  ===== -->
@@ -347,10 +381,11 @@
         @endsection
         <!-- =====  FOOTER END  ===== -->
     </div>
-    {{-- @extends('layout.js1')
-    @section('js1') --}}
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    @extends('layout.js')
+    @section('js')
 
     </body>
 
     </html>
+
+

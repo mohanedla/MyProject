@@ -89,7 +89,10 @@
                                     @endforeach
                                 </ul>
                             </li>
+                            @if(Auth::user())
+                            @if( Auth::user()->role == "admin" || Auth::user()->role == "supervisor" )
 
+                            {{-- @if(Auth::User()->role="admin" or Auth::User()->role="supervisor") --}}
                             <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                 role="button">{{__('Properties')}} <span class="caret"></span> </span>
@@ -102,7 +105,9 @@
                                 <li><a href="reports">{{__ ('Reports')}}</a></li>
                             </ul>
                         </li>
-
+                        @endif
+                        {{-- @endif --}}
+                        @endif
                         </ul>
                     </div>
                 </div>

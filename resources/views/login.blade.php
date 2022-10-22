@@ -74,7 +74,8 @@
                                 </li>
                             </ul>
                         </li>
-                            @endguest                                <li class="language dropdown"> <span class="dropdown-toggle" id="dropdownMenu1"
+                            @endguest
+                                <li class="language dropdown"> <span class="dropdown-toggle" id="dropdownMenu1"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                         role="button">{{ __('Language') }} <span class="caret"></span> </span>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -324,6 +325,7 @@
                                                 </div>
                                             </form>
                                             {{-- Form For Registerion --}}
+                                            {{-- @if(Auth::User()->role="admin") --}}
                                             <form id="register-form" method="POST"
                                                 action="{{ route('register') }}">
                                                 @csrf

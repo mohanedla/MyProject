@@ -18,6 +18,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     Route::get('/home',[App\Http\Controllers\home::class,'index']);
     Route::get('/',[App\Http\Controllers\home::class,'index']);
+    Route::get('/',[App\Http\Controllers\home::class,'index'])->name('home');
     Route::get('/shop',[App\Http\Controllers\home::class,'category_page']);
     Route::get('/login_register',[App\Http\Controllers\home::class,'login_register']);
     Route::get('/empty',[App\Http\Controllers\home::class,'layout_empty']);
@@ -30,8 +31,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/add_report',[App\Http\Controllers\home::class,'report_add_report']);
 
 
-    Route::get('admin',[App\Http\Controllers\admin::class,'admin_admin']);
-    Route::get('add_admin',[App\Http\Controllers\admin::class,'admin_add_admin']);
+    Route::get('/admin',[App\Http\Controllers\admins::class,'admin_admin']);
+    Route::get('/add_admin',[App\Http\Controllers\admins::class,'admin_add_admin']);
+    Route::get('/edit_admin/{id}',[App\Http\Controllers\admins::class,'edit_admin']);
 
     Route::get('/brand',[App\Http\Controllers\brands::class,'brand_brand']);
     Route::get('/add_brand',[App\Http\Controllers\brands::class,'brand_add_brand']);
@@ -56,6 +58,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::post('/edit_admin/{id}',[App\Http\Controllers\admins::class,'update_admin']);
     Route::get('/delete_admin/{id}',[App\Http\Controllers\admins::class,'delete_admin']);
     Route::post('/add_admin',[App\Http\Controllers\admins::class,'add_admin'])->name('Addadmin');
+
+    Route::get('/delete_user/{id}',[App\Http\Controllers\users::class,'delete_user']);
 });
 Auth::routes();
 

@@ -49,6 +49,14 @@
     <link href="{{asset('css/design4.css')}}" rel="stylesheet" />
 
 <body>
+    @if (Auth::user())
+    @if (Auth::user()->role != "admin" && Auth::user()->role != "supervisor")
+<script>
+    window.location.href ='home';
+</script>
+
+@endif
+@endif
     <!-- =====  LODER  ===== -->
     <div class="loder"></div>
     <div class="wrapper">

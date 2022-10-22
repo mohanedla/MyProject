@@ -50,6 +50,14 @@
     <link href="{{asset('css/design4.css')}}" rel="stylesheet" />
 
 <body>
+    @if (Auth::user())
+    @if (Auth::user()->role != "admin" && Auth::user()->role != "supervisor")
+<script>
+    window.location.href ='home';
+</script>
+
+@endif
+@endif
     <!-- =====  LODER  ===== -->
     <div class="loder"></div>
     <div class="wrapper">
@@ -121,6 +129,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="header">
                 <div class="container">
                     <div class="row">
@@ -254,6 +263,7 @@
         </header>
         <!-- =====  HEADER END  ===== -->
         <!-- =====  CONTAINER START  ===== -->
+
         <div class="container">
             <div class="row ">
                 <!-- =====  BANNER STRAT  ===== -->
@@ -271,10 +281,13 @@
             <div id="formContent">
                 <div class="btn_add">
                                     <label class="address"> {{ __('Admins List') }}</label>
+                                    @if (Auth::user())
+                                    @if (Auth::user()->role == "admin")
                                     <a href="add_admin"><button id="button" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                         {{ __('Add Admin') }}
                                       </button></a>
-
+                                      @endif
+                                      @endif
                                 </div>
                                 <hr />
                                 <table id="tblCustomer" class="display" style="width: 100%;">
@@ -282,14 +295,20 @@
                                     <tr>
                                       <th scope="col">{{ __('#')}}</th>
                                       <th scope="col">{{ __('Name')}}</th>
-                                      <th scope="col">{{ __('id')}}</th>
+                                      {{-- <th scope="col">{{ __('id')}}</th> --}}
                                       <th scope="col">{{ __('E-mail')}}</th>
-                                      <th scope="col">{{ __('Password')}}</th>
+                                      {{-- <th scope="col">{{ __('Password')}}</th>
                                       <th scope="col">{{ __('Address')}}</th>
                                       <th scope="col">{{ __('Phone Number')}}</th>
                                       <th scope="col">{{ __('powers')}}</th>
-                                      <th scope="col">{{ __('photo')}}</th>
+                                      <th scope="col">{{ __('photo')}}</th> --}}
+
+                                      @if (Auth::user())
+                                      @if (Auth::user()->role == "admin")
+
                                       <th scope="col">{{ __('')}}</th>
+                                      @endif
+                                      @endif
                                     </tr>
                                   </thead>
                                   <tbody>
@@ -298,17 +317,21 @@
                                     <tr>
                                         <td>{{$i++}}</td>
                                         <td>{{$x->name}}</td>
-                                        <td>{{$x->id}}</td>
+                                        {{-- <td>{{$x->id}}</td> --}}
                                         <td>{{$x->email}}</td>
-                                        <td>{{$x->Password}}</td>
+                                        {{-- <td>{{$x->Password}}</td>
                                         <td>{{$x->address}}</td>
                                         <td>{{$x->powers}}</td>
                                         <td>{{$x->phone_number}}</td>
-                                        <td><img style="width: 30%; height:30%;" src="{{asset(Storage::url($x->profile_image))}}" alt=""></td>
+                                        <td><img style="width: 30%; height:30%;" src="{{asset(Storage::url($x->profile_image))}}" alt=""></td> --}}
+                                        @if (Auth::user())
+                                        @if (Auth::user()->role == "admin")
                                         <td>
                                           <a href="/edit_admin/{{$x->id}}"><img src="{{ asset('images/icone/edit-solid-24.png') }}"></a>
                                           <a href="/delete_admin/{{$x->id}}"><img src="{{ asset('images/icone/x-square-solid-24.png') }}"></a>
                                       </td>
+                                      @endif
+                                      @endif
                                       </tr>
                                       @endforeach
                                   </tbody>

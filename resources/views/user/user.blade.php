@@ -49,6 +49,19 @@
 
     <link href="{{asset('css/design4.css')}}" rel="stylesheet" />
 <body>
+@if (Auth::user())
+    @if (Auth::user()->role != "admin" && Auth::user()->role != "supervisor")
+<script>
+    window.location.href ='home';
+</script>
+
+@endif
+@endif
+{{-- Or --}}
+{{-- @php
+        header("Location: " . URL::to('/'), true, 302);
+        exit();
+    @endphp --}}
     <!-- =====  LODER  ===== -->
     <div class="loder"></div>
     <div class="wrapper">
@@ -294,7 +307,7 @@
                                       <td>{{$user->password}}</td>
                                       <td>
                                         <a href=""><img src="{{ asset('images/icone/edit-solid-24.png') }}"></a>
-                                        <a href=""><img src="{{ asset('images/icone/x-square-solid-24.png') }}"></a>
+                                        <a href="/delete_user/{{$user->id}}"><img src="{{ asset('images/icone/x-square-solid-24.png') }}"></a>
                                     </td>
                                     </tr>
                                     @endforeach

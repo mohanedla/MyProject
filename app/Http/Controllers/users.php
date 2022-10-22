@@ -12,7 +12,27 @@ class users extends Controller
         return View('user.user',compact('users'));
 
     }
+    // public function update_brand($id)
+    // {
+    //     $edit= User::find($id);
+    //     $edit->name=request('brand_name');
+    //     $edit->email=request('brand_email');
+    //     $edit->password=request('brand_country');
+    //     $edit->address=request('brand_address');
+    //     if(request()->file('profile_image'))
+    //     {
+    //         $edit->profile_image=request()->file('profile_image')->store('public');
+    //     }
+    //     $edit->save();
+    //     return redirect('/brand')->with('message', 'edited succussfuly');
 
+    // }
+    public function delete_user($id)
+    {
+        $del=User::find($id);
+        $del->delete();
+        return redirect('/user');
+    }
     // public function add_user () {
     //      Request $request
     //     $user= new brand;

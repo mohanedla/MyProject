@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\brand;
+use App\Models\User;
+use auth;
 class home extends Controller
 {
     public function index()

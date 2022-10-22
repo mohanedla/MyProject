@@ -144,7 +144,6 @@
   "Admins List":"قائمة المشرفين ",
   "Products List":"قائمة المنتجات",
   "Users List":"قائمة المستخدمين",
-  "Admin":"مشرف",
   "Manger":"مدير",
   "price":"السعر",
   "brand":"الماركة",
@@ -217,5 +216,6 @@
   "Edit":"تعديل",
   "Edit admin":"تعديل المشرف",
   "edit Product":"تعديل المنتج",
-  "":""
+  "supervisor":"مشرف",
+  "Admin":"مدير"
 }

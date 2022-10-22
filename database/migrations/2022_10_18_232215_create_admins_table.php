@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        
+
         Schema::create('admins', function (Blueprint $table) {
             $table->id();
             $table->string('fname');
@@ -28,7 +28,7 @@ return new class extends Migration
             $table->string('gender');
             $table->string('profile_image')->nullable();
 
-         
+
             $table->timestamps();
         });
     }

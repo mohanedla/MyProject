@@ -36,6 +36,14 @@
 </head>
 
 <body>
+    @if (Auth::user())
+    @if (Auth::user()->role != "admin" && Auth::user()->role != "supervisor")
+<script>
+    window.location.href ='home';
+</script>
+
+@endif
+@endif
     <!-- =====  LODER  ===== -->
     <div class="loder"></div>
     <div class="wrapper">
@@ -51,8 +59,31 @@
                         </div>
                         <div class="col-xs-12 col-sm-8">
                             <ul class="header-top-right text-right">
-                                <li class="account"><a href="login">{{ __('My Account')}}</a></li>
-                                <li class="language dropdown"> <span class="dropdown-toggle" id="dropdownMenu1"
+                                @guest
+                                @if (Route::has('login'))
+                                    <li class="nav-item">
+                                        <a class="account" href="/login_register">{{ __('My Account') }}</a>
+                                    </li>
+                                @endif
+
+
+                            @else
+                            <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                role="button">{{ Auth::user()->name }} <span class="caret"></span> </span>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
+
+                                <li><a class="dropdown-item" href="/home"
+                                    onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                                     {{ __('Logout') }}</a>
+                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                            @endguest                                 <li class="language dropdown"> <span class="dropdown-toggle" id="dropdownMenu1"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                         role="button">{{ __('Language') }} <span class="caret"></span> </span>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -253,7 +284,7 @@
                         <div class="form-group right" >
                                 <label for="lastname" class="label-title">{{ __('Last name') }}</label>
                                 <input type="text" id="lastname" name="admin_lname" value="{{$admin->lname}}" class="form-input"
-                                    placeholder="{{ __('enter your last name') }}" 
+                                    placeholder="{{ __('enter your last name') }}"
 
                        </div>
 

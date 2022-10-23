@@ -16,11 +16,13 @@ class products extends Controller
         return View('product.product',compact('admin','brand'));
 
     }
-    public function item_brand()
+    public function item_brand($id)
     {
-        $products=product::with('brands')->get();
+        $products = product::where('brand_id','=',$id)->get();
         $brand=brand::all();
-        return View('item.item_brand',compact('products','brand'));
+        $title=product::with('brands')->where('brand_id','=',$id)->get();
+        // dd($title);
+        return View('item.item_brand',compact('products','brand','title'));
 
     }
 

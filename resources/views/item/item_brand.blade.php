@@ -426,7 +426,7 @@
                                                             src="{{ asset(Storage::url($item->profile_image)) }}"
                                                             alt="iPod Classic" title="iPod Classic"
                                                             class="img-responsive"> <img
-                                                            src="{{ asset('images/product/product9-1.jpg') }}"
+                                                            src="{{ asset(Storage::url($item->profile_image)) }}"
                                                             alt="iPod Classic" title="iPod Classic"
                                                             class="img-responsive"> </a>
                                                     <div class="button-group text-center">

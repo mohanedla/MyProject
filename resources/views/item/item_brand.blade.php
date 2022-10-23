@@ -209,7 +209,7 @@
                                 class="fa fa-bars"></i></span></button>
                     <div class="collapse navbar-collapse js-navbar-collapse">
                         <ul id="menu" class="nav navbar-nav">
-                            <li> <a href="home">{{ __('Home') }}</a></li>
+                            <li> <a href="/home">{{ __('Home') }}</a></li>
                             <li class="dropdown mega-dropdown"> <a href="#" class="dropdown-toggle"
                                     data-toggle="dropdown">{{ __('Collection') }} </a>
                                 <ul class="dropdown-menu mega-dropdown-menu row">
@@ -314,9 +314,9 @@
                         </li>
                         </ul>
                         </li>
-                        <li> <a href="shop">{{ __('shop') }}</a></li>
-                        <li> <a href="about">{{ __('About us') }}</a></li>
-                        <li> <a href="contact_us">{{ __('Contact us') }}</a></li>
+                        <li> <a href="/shop">{{ __('shop') }}</a></li>
+                        <li> <a href="/about">{{ __('About us') }}</a></li>
+                        <li> <a href="/contact_us">{{ __('Contact us') }}</a></li>
                         </ul>
                     </div>
                     <!-- /.nav-collapse -->

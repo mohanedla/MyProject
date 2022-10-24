@@ -20,7 +20,8 @@ class products extends Controller
     {
         $products = product::where('brand_id','=',$id)->get();
         $brand=brand::all();
-        $title=product::with('brands')->where('brand_id','=',$id)->get();
+        // $title=product::with('brands')->where('brand_id','=',$id)->get();
+        $title=brand::where('id','=',$id)->get('name');
         // dd($title);
         return View('item.item_brand',compact('products','brand','title'));
 
@@ -53,6 +54,7 @@ class products extends Controller
         $product->name=request('product_name');
         $product->brand_id=request('product_brand');
         $product->model=request('product_model');
+        $product->collection=request('product_collection');
         $product->specification=request('product_specification');
         $product->color=request('product_color');
         $product->quantity=request('product_quantity');

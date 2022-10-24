@@ -7,7 +7,7 @@
     <!-- =====  BASIC PAGE NEEDS  ===== -->
     <meta charset="utf-8">
 
-    <title>{{ __('Products').' '. $title[0]->brands->name }}</title>
+    <title>{{ __('Products').' '. $title[0]->name }}</title>
     <!-- =====  SEO MATE  ===== -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="">
@@ -96,11 +96,11 @@
                                             role="button">{{ __('Properties') }} <span class="caret"></span> </span>
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
 
-                                            <li><a href="admin">{{ __('admin management') }}</a></li>
-                                            <li><a href="user">{{ __('user management') }}</a></li>
-                                            <li><a href="product">{{ __('Product Management') }}</a></li>
-                                            <li><a href="brand">{{ __('Brands') }}</a></li>
-                                            <li><a href="reports">{{ __('Reports') }}</a></li>
+                                            <li><a href="/admin">{{ __('admin management') }}</a></li>
+                                            <li><a href="/user">{{ __('user management') }}</a></li>
+                                            <li><a href="/product">{{ __('Product Management') }}</a></li>
+                                            <li><a href="/brand">{{ __('Brands') }}</a></li>
+                                            <li><a href="/reports">{{ __('Reports') }}</a></li>
                                         </ul>
                                     </li>
                                 @endif
@@ -352,7 +352,7 @@
 
                         <div class="tab-content clearfix box">
                             <div class="tab-pane active" id="nArrivals">
-                                <div class="nArrivals owl-carousel">
+                                <div class="latest owl-carousel">
                                     @foreach ($products as $item)
                                     <div class="product-grid">
                                         <div class="item">
@@ -362,7 +362,7 @@
                                                             src="{{ asset(Storage::url($item->profile_image)) }}"
                                                             alt="iPod Classic" title="iPod Classic"
                                                             class="img-responsive"> <img
-                                                            src="{{ asset('images/product/product9-1.jpg') }}"
+                                                            src="{{ asset(Storage::url($item->profile_image)) }}"
                                                             alt="iPod Classic" title="iPod Classic"
                                                             class="img-responsive"> </a>
                                                     <div class="button-group text-center">

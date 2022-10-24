@@ -327,7 +327,7 @@
                                             {{-- Form For Registerion --}}
                                             {{-- @if(Auth::User()->role="admin") --}}
                                             <form id="register-form" method="POST"
-                                                action="{{ route('register') }}">
+                                                action="{{ route('admin_register') }}">
                                                 @csrf
                                                 <div class="form-group">
 
@@ -377,6 +377,12 @@
                                                         class="form-control"
                                                         placeholder="{{ __('Confirm Password') }}" required
                                                     autocomplete="new-password">
+
+                                                </div>
+                                                <div class="form-group">
+
+                                                    <input id="role" type="hidden" class="form-control"
+                                                        name="role" value="admin" >
 
                                                 </div>
                                                 <div class="form-group">

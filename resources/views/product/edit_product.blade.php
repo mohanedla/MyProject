@@ -6,7 +6,7 @@
 <head>
     <!-- =====  BASIC PAGE NEEDS  ===== -->
     <meta charset="utf-8">
-    <title>{{ __('add Product') }}</title>
+    <title>{{ __('edit Product') }}</title>
     <!-- =====  SEO MATE  ===== -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="">
@@ -354,19 +354,33 @@
 
                 </div>
                 <div class="horizontal-group">
-                    <div class="form-group left">
-                        <div class="file-input">
-                            <input type="file" name="product_image" value="{{$product->profile_image}}" id="file" class="file">
-                            <label for="file">
-                                {{ __('Upload Product Picture') }}
-                                <p class="file-name"></p>
-                            </label>
-                        </div>
+                    <div class="form-group right" id="adj">
+                        <label class="label-title">{{ __('Collection') }}</label>
+                        <select name="product_collection" class="form-input" id="level">
+                            <option value="">{{ __('Select') }}</option>
+                            <option value="{{ __('Mans') }}">{{ __('Mans') }}</option>
+                            <option value="{{ __('Womens') }}">{{ __('Womens') }}</option>
+                            <option value="{{ __('Childrens') }}">{{ __('Childrens') }}</option>
+
+                    </select>
                     </div>
-                    <div class="form-group right">
+
+                </div>
+                <div class="horizontal-group">
+
+                    <div class="form-group left">
                         <label for="firstname" class="label-title">{{ __('price') }} </label>
                         <input type="number" id="firstname" name="product_price" value="{{$product->price}}" class="form-input"
                             placeholder="{{ __('enter price') }}" required="required" />
+                    </div>
+                </div>
+                <div class="form-group right">
+                    <div class="file-input">
+                        <input type="file" name="product_image" value="{{$product->profile_image}}" id="file" class="file">
+                        <label for="file">
+                            {{ __('Upload Product Picture') }}
+                            <p class="file-name"></p>
+                        </label>
                     </div>
                 </div>
                 <!-- Bio -->

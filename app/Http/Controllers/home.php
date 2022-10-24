@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\brand;
+use App\Models\product;
 use App\Models\User;
 use auth;
 class home extends Controller
@@ -11,7 +12,8 @@ class home extends Controller
     public function index()
         {
             $brand=brand::all();
-            return View('index',compact('brand'));
+            $products=product::all();
+            return View('index',compact('brand','products'));
         }
     public function category_page()
         {

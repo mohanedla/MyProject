@@ -299,6 +299,7 @@
                                       <th scope="col">{{ __('Serial Number')}}</th>
                                       <th scope="col">{{ __('a model')}}</th>
                                       <th scope="col">{{ __('brand')}}</th>
+                                      <th scope="col">{{ __('Collection')}}</th>
                                       <th scope="col">{{ __('Specifications')}}</th>
                                       <th scope="col">{{ __('Quantity')}}</th>
                                       <th scope="col">{{ __('Size')}}</th>
@@ -320,6 +321,7 @@
                                       <td>{{$x->serial}}</td>
                                       <td>{{$x->model}}</td>
                                       <td>{{$brand[$j++]->brands->name}}</td>
+                                      <td>{{$x->collection}}</td>
                                       <td>{{$x->specification}}</td>
                                       <td>{{$x->quantity}}</td>
                                       <td>{{$x->size}}</td>

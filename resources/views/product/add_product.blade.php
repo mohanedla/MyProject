@@ -319,8 +319,9 @@
 
                         </select>
                     </div>
+                    </div>
 
-                </div>
+                     <!-- Source of Income and Income -->
                 <div class="horizontal-group">
                     <div class="form-group left">
                         <label for="firstname" class="label-title">{{ __('Specifications') }} </label>
@@ -334,6 +335,7 @@
                     </div>
 
                 </div>
+
                 <div class="horizontal-group">
                     <div class="form-group left">
                         <label for="firstname" class="label-title">{{ __('Color') }} </label>
@@ -347,24 +349,39 @@
                     </div>
 
                 </div>
+
                 <div class="horizontal-group">
-                    <div class="form-group left">
-                        <div class="file-input">
-                            <input type="file" name="product_image" id="file" class="file">
-                            <label for="file">
-                                {{ __('Upload Product Picture') }}
-                                <p class="file-name"></p>
-                            </label>
-                        </div>
+                    <div class="form-group right" id="adj">
+                        <label class="label-title">{{ __('Collection') }}</label>
+                        <select name="product_collection" class="form-input" id="level">
+                            <option value="">{{ __('Select') }}</option>
+                            <option value="{{ __('Mans') }}">{{ __('Mans') }}</option>
+                            <option value="{{ __('Womens') }}">{{ __('Womens') }}</option>
+                            <option value="{{ __('Childrens') }}">{{ __('Childrens') }}</option>
+
+                    </select>
                     </div>
+
+                </div>
+
+                <!-- Bio -->
+                <div class="horizontal-group">
                     <div class="form-group right">
                         <label for="firstname" class="label-title">{{ __('price') }} </label>
                         <input type="number" id="firstname" name="product_price" class="form-input"
                             placeholder="{{ __('enter price') }}" required="required" />
                     </div>
+                    </div>
+            <div class="horizontal-group">
+                <div class="form-group left">
+                    <div class="file-input">
+                        <input type="file" name="product_image" id="file" class="file">
+                        <label for="file">
+                            {{ __('Upload Product Picture') }}
+                            <p class="file-name"></p>
+                        </label>
+                    </div>
                 </div>
-                <!-- Bio -->
-
             </div>
 
             <!-- form-footer -->

@@ -58,6 +58,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::post('/edit_admin/{id}',[App\Http\Controllers\admins::class,'update_admin']);
     Route::get('/delete_admin/{id}',[App\Http\Controllers\admins::class,'delete_admin']);
     Route::post('/add_admin',[App\Http\Controllers\admins::class,'add_admin'])->name('Addadmin');
+    Route::get('/admin_login',[App\Http\Controllers\admins::class,'admin_login']);
+    Route::post('/admin_login',[App\Http\Controllers\admins::class,'create'])->name('admin_register');
 
     Route::get('/delete_user/{id}',[App\Http\Controllers\users::class,'delete_user']);
     Route::get('/item_brand/{id}',[App\Http\Controllers\products::class,'item_brand']);

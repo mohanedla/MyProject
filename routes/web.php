@@ -54,6 +54,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::post('/edit_product/{id}',[App\Http\Controllers\products::class,'update_product']);
     Route::get('/delete_product/{id}',[App\Http\Controllers\products::class,'delete_product']);
     Route::post('/add_product',[App\Http\Controllers\products::class,'add_product'])->name('AddProduct');
+    Route::post('/add_category',[App\Http\Controllers\products::class,'add_category'])->name('AddCategory');
 
     Route::post('/edit_admin/{id}',[App\Http\Controllers\admins::class,'update_admin']);
     Route::get('/delete_admin/{id}',[App\Http\Controllers\admins::class,'delete_admin']);

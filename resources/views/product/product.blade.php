@@ -294,20 +294,20 @@
                                 <table id="tblCustomer" class="display" style="width: 100%;">
                                   <thead>
                                     <tr>
-                                      <th scope="col">{{ __('#')}}</th>
-                                      <th scope="col">{{ __('Name')}}</th>
-                                      <th scope="col">{{ __('Serial Number')}}</th>
-                                      <th scope="col">{{ __('a model')}}</th>
-                                      <th scope="col">{{ __('brand')}}</th>
-                                      <th scope="col">{{ __('Collection')}}</th>
-                                      <th scope="col">{{ __('Specifications')}}</th>
-                                      <th scope="col">{{ __('Quantity')}}</th>
-                                      <th scope="col">{{ __('Size')}}</th>
-                                      <th scope="col">{{ __('Color')}}</th>
-                                      <th scope="col">{{ __('admin')}}</th>
-                                      <th scope="col">{{ __('photo')}}</th>
-                                      <th scope="col">{{ __('price')}}</th>
-                                      <th scope="col">{{ __('')}}</th>
+                                      <th style="width: 50px;" scope="col">{{ __('#')}}</th>
+                                      <th style="width: 50px;" scope="col">{{ __('Name')}}</th>
+                                      <th style="width: 50px;" scope="col">{{ __('Serial Number')}}</th>
+                                      <th style="width: 50px;" scope="col">{{ __('a model')}}</th>
+                                      <th style="width: 50px;" scope="col">{{ __('brand')}}</th>
+                                      <th style="width: 50px;" scope="col">{{ __('Collection')}}</th>
+                                      <th style="width: 50px;" scope="col">{{ __('Specifications')}}</th>
+                                      <th style="width: 50px;" scope="col">{{ __('Quantity')}}</th>
+                                      <th style="width: 50px;" scope="col">{{ __('Size')}}</th>
+                                      <th style="width: 50px;" scope="col">{{ __('Color')}}</th>
+                                      <th style="width: 50px;" scope="col">{{ __('admin')}}</th>
+                                      <th style="width: 50px;" scope="col">{{ __('price')}}</th>
+                                      <th style="width: 50px;" scope="col">{{ __('photo')}}</th>
+                                      <th style="width: 50px;" scope="col"></th>
 
                                     </tr>
                                   </thead>
@@ -316,19 +316,19 @@
                                     {{$j=0;}}
                                     @foreach ($admin as $x)
                                     <tr>
-                                      <td>{{$i++}}</td>
-                                      <td>{{$x->name}}</td>
-                                      <td>{{$x->serial}}</td>
-                                      <td>{{$x->model}}</td>
-                                      <td>{{$brand[$j++]->brands->name}}</td>
-                                      <td>{{$x->collection}}</td>
-                                      <td>{{$x->specification}}</td>
-                                      <td>{{$x->quantity}}</td>
-                                      <td>{{$x->size}}</td>
-                                      <td>{{$x->color}}</td>
-                                      <td>{{$x->admins->name}}</td>
-                                      <td><img style="width: 30%; height:30%;" src="{{asset(Storage::url($x->profile_image))}}" alt=""></td>
-                                      <td>{{$x->price}}$</td>
+                                        <td>{{$i++}}</td>
+                                        <td>{{$x->name}}</td>
+                                        <td>{{$x->serial}}</td>
+                                        <td>{{$x->model}}</td>
+                                        <td>{{$brand[$j++]->brands->name}}</td>
+                                        <td>{{$x->collection}}</td>
+                                        <td>{{$x->specification}}</td>
+                                        <td>{{$x->quantity}}</td>
+                                        <td>{{$x->size}}</td>
+                                        <td>{{$x->color}}</td>
+                                        <td>{{$x->admins->name}}</td>
+                                        <td>{{$x->price}}$</td>
+                                        <td><img style="width: 50%;" src="{{asset(Storage::url($x->profile_image))}}" alt=""></td>
                                       <td>
                                         <a href="/edit_product/{{$x->id}}"><img src="{{ asset('images/icone/edit-solid-24.png') }}"></a>
                                         <a href="/delete_product/{{$x->id}}"><img src="{{ asset('images/icone/x-square-solid-24.png') }}"></a>

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->id();
             $table->string('fname');
             $table->string('lname');
-            $table->string('email')->uniqid();
+            $table->string('email')->unique();
             $table->string('password');
             $table->string('confirm_password');
             $table->string('address')->nullable();

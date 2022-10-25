@@ -283,17 +283,29 @@
             <div class="form-body">
 
                 <!-- Firstname and Lastname -->
+
                 <div class="horizontal-group">
+
                     <div class="form-group left">
-                        <label for="firstname" class="label-title">{{ __('Product Name') }} </label>
-                        <input type="text" id="product_name" name="product_name" class="form-input"
-                            placeholder="{{ __('enter Product Name') }}" required="required" />
-                    </div>
-                    <div class="form-group right">
                         <label for="lastname" class="label-title">{{ __('Serial Number') }}</label>
                         <input type="number" name="product_serial" id="lastname" class="form-input"
-                            placeholder="{{ __('enter serial number') }}" />
+                        placeholder="{{ __('enter serial number') }}" />
                     </div>
+
+                    <div class="form-group right" >
+                        <label class="label-title">{{ __('Product Name') }}  <span style="margin-left:310px"><button type="button" class="btn_icone" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">
+                            <i class="fa fa-plus-square"></i>
+                        </button></span></label>
+                        {{-- <i class="fa fa-plus-circle"></i> --}}
+                        <select name="product_name" class="form-input" id="level">
+
+                            @foreach ($categories as $category)
+                                <option value="{{ $category->id }}">{{ __($category->name) }}</option>
+                            @endforeach
+
+                        </select>
+                    </div>
+
 
                 </div>
 
@@ -382,6 +394,11 @@
                         </label>
                     </div>
                 </div>
+                <div class="form-group right">
+
+
+                </div>
+            </form>
             </div>
 
             <!-- form-footer -->
@@ -391,6 +408,35 @@
             </div>
 
         </form>
+
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">{{ __('Add Category')}}</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <form  action="{{ route('AddCategory') }}" method="post" enctype="multipart/form-data">
+                        @csrf
+                    <div class="form-group">
+                      <label for="firstname" class="col-form-label">{{ __('Category Name') }} </label>
+                        <input form-control type="text" id="recipient-name" name="category_name" class="form-input"
+                            placeholder="{{ __('Enter Category Name') }}" required="required" />
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('Close')}}</button>
+                  <button type="submit" class="btn">{{ __('Save') }}</button>
+                </form>
+                </div>
+              </div>
+            </div>
+          </div>
 
     </div>
     @extends('layout.footer')
@@ -404,6 +450,11 @@
     @extends('layout.js')
     @section('js')
 
+    <script>
+        $('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})
+    </script>
     </body>
 
     </html>

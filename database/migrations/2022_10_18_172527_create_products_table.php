@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('collection');
             $table->integer('admin_id')->references('id')->on('users');
             $table->integer('brand_id')->references('id')->on('brands');
+            $table->integer('category_id')->references('id')->on('categories');
             $table->integer('quantity');
             $table->string('size');
             $table->string('color');

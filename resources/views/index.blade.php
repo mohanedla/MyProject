@@ -398,7 +398,7 @@
                                                             href="#" title="Casual Shirt With Ruffle Hem">New
                                                             LCDScreen and HD Vide..</a></h6>
                                                     <span class="price"><span class="amount"><span
-                                                                class="currencySymbol">$</span>70.00</span>
+                                                                class="currencySymbol">$</span>{{$item->price}}.00</span>
                                                     </span>
                                                 </div>
                                             </div>
@@ -407,120 +407,6 @@
                                 @endforeach
                             </div>
                         </div>
-                        <div class="tab-pane" id="Bestsellers">
-                            <div class="Bestsellers owl-carousel">
-                                @foreach ($products as $item)
-                                    <div class="product-grid">
-                                        <div class="item">
-                                            <div class="product-thumb">
-                                                <div class="image product-imageblock"> <a href="product_detail_page">
-                                                        <img data-name="product_image"
-                                                            src="{{ asset(Storage::url($item->profile_image)) }}"
-                                                            alt="iPod Classic" title="iPod Classic"
-                                                            class="img-responsive"> <img
-                                                            src="{{ asset(Storage::url($item->profile_image)) }}"
-                                                            alt="iPod Classic" title="iPod Classic"
-                                                            class="img-responsive"> </a>
-                                                    <div class="button-group text-center">
-                                                        <div class="wishlist"><a
-                                                                href="#"><span>wishlist</span></a>
-                                                        </div>
-                                                        <div class="quickview"><a href="#"><span>Quick
-                                                                    View</span></a></div>
-                                                        <div class="compare"><a
-                                                                href="#"><span>Compare</span></a>
-                                                        </div>
-                                                        <div class="add-to-cart"><a href="#"><span>Add to
-                                                                    cart</span></a></div>
-                                                    </div>
-                                                </div>
-                                                <div class="caption product-detail text-center">
-                                                    <div class="rating"> <span class="fa fa-stack"><i
-                                                                class="fa fa-star-o fa-stack-1x"></i><i
-                                                                class="fa fa-star fa-stack-1x"></i></span> <span
-                                                            class="fa fa-stack"><i
-                                                                class="fa fa-star-o fa-stack-1x"></i><i
-                                                                class="fa fa-star fa-stack-1x"></i></span> <span
-                                                            class="fa fa-stack"><i
-                                                                class="fa fa-star-o fa-stack-1x"></i><i
-                                                                class="fa fa-star fa-stack-1x"></i></span> <span
-                                                            class="fa fa-stack"><i
-                                                                class="fa fa-star-o fa-stack-1x"></i><i
-                                                                class="fa fa-star fa-stack-1x"></i></span> <span
-                                                            class="fa fa-stack"><i
-                                                                class="fa fa-star-o fa-stack-1x"></i><i
-                                                                class="fa fa-star fa-stack-x"></i></span> </div>
-                                                    <h6 data-name="product_name" class="product-name"><a
-                                                            href="#" title="Casual Shirt With Ruffle Hem">New
-                                                            LCDScreen and HD Vide..</a></h6>
-                                                    <span class="price"><span class="amount"><span
-                                                                class="currencySymbol">$</span>70.00</span>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div>
-                        </div>
-                        <div class="tab-pane" id="Featured">
-                            <div class="Featured owl-carousel">
-                                @foreach ($products as $item)
-                                    <div class="product-grid">
-                                        <div class="item">
-                                            <div class="product-thumb">
-                                                <div class="image product-imageblock"> <a href="product_detail_page">
-                                                        <img data-name="product_image"
-                                                            src="{{ asset(Storage::url($item->profile_image)) }}"
-                                                            alt="iPod Classic" title="iPod Classic"
-                                                            class="img-responsive"> <img
-                                                            src="{{ asset(Storage::url($item->profile_image)) }}"
-                                                            alt="iPod Classic" title="iPod Classic"
-                                                            class="img-responsive"> </a>
-                                                    <div class="button-group text-center">
-                                                        <div class="wishlist"><a
-                                                                href="#"><span>wishlist</span></a>
-                                                        </div>
-                                                        <div class="quickview"><a href="#"><span>Quick
-                                                                    View</span></a></div>
-                                                        <div class="compare"><a
-                                                                href="#"><span>Compare</span></a>
-                                                        </div>
-                                                        <div class="add-to-cart"><a href="#"><span>Add to
-                                                                    cart</span></a></div>
-                                                    </div>
-                                                </div>
-                                                <div class="caption product-detail text-center">
-                                                    <div class="rating"> <span class="fa fa-stack"><i
-                                                                class="fa fa-star-o fa-stack-1x"></i><i
-                                                                class="fa fa-star fa-stack-1x"></i></span> <span
-                                                            class="fa fa-stack"><i
-                                                                class="fa fa-star-o fa-stack-1x"></i><i
-                                                                class="fa fa-star fa-stack-1x"></i></span> <span
-                                                            class="fa fa-stack"><i
-                                                                class="fa fa-star-o fa-stack-1x"></i><i
-                                                                class="fa fa-star fa-stack-1x"></i></span> <span
-                                                            class="fa fa-stack"><i
-                                                                class="fa fa-star-o fa-stack-1x"></i><i
-                                                                class="fa fa-star fa-stack-1x"></i></span> <span
-                                                            class="fa fa-stack"><i
-                                                                class="fa fa-star-o fa-stack-1x"></i><i
-                                                                class="fa fa-star fa-stack-x"></i></span> </div>
-                                                    <h6 data-name="product_name" class="product-name"><a
-                                                            href="#" title="Casual Shirt With Ruffle Hem">New
-                                                            LCDScreen and HD Vide..</a></h6>
-                                                    <span class="price"><span class="amount"><span
-                                                                class="currencySymbol">$</span>70.00</span>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <!-- =====  PRODUCT TAB  END ===== -->
             </div>
         </div>
@@ -572,7 +458,66 @@
                                                         title="Casual Shirt With Ruffle Hem">New
                                                         LCDScreen and HD Vide..</a></h6>
                                                 <span class="price"><span class="amount"><span
-                                                            class="currencySymbol">$</span>70.00</span>
+                                                            class="currencySymbol">$</span>{{$item->price}}.00</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="row">
+            <div class="col-sm-12 mtb_10">
+                <!-- =====  PRODUCT TAB  ===== -->
+                <div class="mt_60">
+                    <div class="heading-part mb_10 ">
+                        <h2 class="main_title">{{ __('Deals of the Week') }}</h2>
+                    </div>
+                    <div class="latest_pro box">
+                        <div class="latest owl-carousel">
+                            @foreach ($products as $item)
+                                <div class="product-grid">
+                                    <div class="item">
+                                        <div class="product-thumb">
+                                            <div class="image product-imageblock"> <a href="product_detail_page">
+                                                    <img data-name="product_image"
+                                                        src="{{ asset(Storage::url($item->profile_image)) }}"
+                                                        alt="iPod Classic" title="iPod Classic"
+                                                        class="img-responsive"> <img
+                                                        src="{{ asset(Storage::url($item->profile_image)) }}"
+                                                        alt="iPod Classic" title="iPod Classic"
+                                                        class="img-responsive"> </a>
+                                                <div class="button-group text-center">
+                                                    <div class="wishlist"><a href="#"><span>wishlist</span></a>
+                                                    </div>
+                                                    <div class="quickview"><a href="#"><span>Quick
+                                                                View</span></a></div>
+                                                    <div class="compare"><a href="#"><span>Compare</span></a>
+                                                    </div>
+                                                    <div class="add-to-cart"><a href="#"><span>Add to
+                                                                cart</span></a></div>
+                                                </div>
+                                            </div>
+                                            <div class="caption product-detail text-center">
+                                                <div class="rating"> <span class="fa fa-stack"><i
+                                                            class="fa fa-star-o fa-stack-1x"></i><i
+                                                            class="fa fa-star fa-stack-1x"></i></span> <span
+                                                        class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
+                                                            class="fa fa-star fa-stack-1x"></i></span> <span
+                                                        class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
+                                                            class="fa fa-star fa-stack-1x"></i></span> <span
+                                                        class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
+                                                            class="fa fa-star fa-stack-1x"></i></span> <span
+                                                        class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
+                                                            class="fa fa-star fa-stack-x"></i></span> </div>
+                                                <h6 data-name="product_name" class="product-name"><a href="#"
+                                                        title="Casual Shirt With Ruffle Hem">New
+                                                        LCDScreen and HD Vide..</a></h6>
+                                                <span class="price"><span class="amount"><span
+                                                            class="currencySymbol">$</span>{{$item->price}}.00</span>
                                                 </span>
                                             </div>
                                         </div>

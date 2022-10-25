@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\product;
 use App\Models\brand;
-
+use App\Models\Category;
 use Auth;
 class products extends Controller
 {
@@ -30,12 +30,21 @@ class products extends Controller
     public function product_add_product()
     {
         $brands=brand::all();
-        return View('product.add_product',compact('brands'));
+        $categories=Category::all();
+        return View('product.add_product',compact('brands','categories'));
     }
 
     public function product_detail_page()
     {
         return View('product_detail_page');
+
+    }
+    public function add_category()
+    {
+        $category= new Category;
+        $category->name=request('category_name');
+        $category->save();
+        return redirect('/add_product')->with('success','Thank You!');
 
     }
     public function edit_product($id)
@@ -46,12 +55,11 @@ class products extends Controller
         return View('product.edit_product',compact('product','brands','get'));
 
     }
-
     public function add_product()
     {
         $product= new product;
         $product->serial=request('product_serial');
-        $product->name=request('product_name');
+        $product->category_id=request('product_name');
         $product->brand_id=request('product_brand');
         $product->model=request('product_model');
         $product->collection=request('product_collection');

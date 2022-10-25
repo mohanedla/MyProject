@@ -293,15 +293,15 @@
                                 <table id="tblCustomer" class="display" style="width: 100%;">
                                   <thead>
                                     <tr>
-                                      <th scope="col">{{ __('#')}}</th>
-                                      <th scope="col">{{ __('Name')}}</th>
-                                      <th scope="col">{{ __('Serial Number')}}</th>
-                                      <th scope="col">{{ __('Country')}}</th>
-                                      <th scope="col">{{ __('photo')}}</th>
-                                      <th scope="col">{{ __('Address')}}</th>
-                                      <th scope="col">{{ __('E-mail')}}</th>
-                                      <th scope="col">{{ __('Phone Number')}}</th>
-                                      <th scope="col">{{ __('')}}</th>
+                                      <th style="width: 50px;" scope="col">{{ __('#')}}</th>
+                                      <th style="width: 50px;" scope="col">{{ __('Name')}}</th>
+                                      <th style="width: 50px;" scope="col">{{ __('Serial Number')}}</th>
+                                      <th style="width: 50px;" scope="col">{{ __('Country')}}</th>
+                                      <th style="width: 50px;" scope="col">{{ __('Address')}}</th>
+                                      <th style="width: 50px;" scope="col">{{ __('E-mail')}}</th>
+                                      <th style="width: 50px;" scope="col">{{ __('Phone Number')}}</th>
+                                      <th style="width: 50px;" scope="col">{{ __('photo')}}</th>
+                                      <th style="width: 50px;" scope="col">{{ __('')}}</th>
 
                                     </tr>
                                   </thead>
@@ -313,10 +313,10 @@
                                       <td>{{$x->name}}</td>
                                       <td>{{$x->id}}</td>
                                       <td>{{$x->country}}</td>
-                                      <td><img style="width: 30%; height:30%;" src="{{asset(Storage::url($x->profile_image))}}" alt=""></td>
                                       <td>{{$x->address}}</td>
                                       <td>{{$x->email}}</td>
                                       <td>{{$x->phone_number}}</td>
+                                      <td><img style="width: 50%; height:50%;" src="{{asset(Storage::url($x->profile_image))}}" alt=""></td>
                                       <td>
                                         <a href="/edit_brand/{{$x->id}}"><img src="{{ asset('images/icone/edit-solid-24.png') }}"></a>
                                         <a href="/delete_brand/{{$x->id}}"><img src="{{ asset('images/icone/x-square-solid-24.png') }}"></a>

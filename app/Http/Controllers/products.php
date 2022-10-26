@@ -13,27 +13,28 @@ class products extends Controller
     {
         $admin=product::with('admins')->get();
         $brand=product::with('brands')->get();
-        return View('product.product',compact('admin','brand'));
+        $category=product::with('categories')->get();
+        //  dd($brand);yy
+        return View('product.product',compact('admin','category','brand'));
 
     }
     public function item_brand($id)
     {
+        $collect = array('M'=>'Men','W'=>'Women','C'=>'Children' );
         $products = product::where('brand_id','=',$id)->get();
         $brand=brand::all();
-        // $title=product::with('brands')->where('brand_id','=',$id)->get();
         $title=brand::where('id','=',$id)->get('name');
-        // dd($title);
-        return View('item.item_brand',compact('products','brand','title'));
+        return View('item.item_brand',compact('products','brand','title','collect'));
 
     }
 
     public function product_add_product()
     {
+        $collect = array('Men','Women','Children' );
         $brands=brand::all();
         $categories=Category::all();
-        return View('product.add_product',compact('brands','categories'));
+        return View('product.add_product',compact('brands','categories','collect'));
     }
-
     public function product_detail_page()
     {
         return View('product_detail_page');
@@ -49,10 +50,13 @@ class products extends Controller
     }
     public function edit_product($id)
     {
+        $collect = array('Men','Women','Children' );
         $product=product::find($id);
         $brands=brand::all();
+        $categories=Category::all();
         $get=product::with('brands')->get()->find($id);
-        return View('product.edit_product',compact('product','brands','get'));
+        $get_category=product::with('categories')->get()->find($id);
+        return View('product.edit_product',compact('product','brands','get','categories','get_category','collect'));
 
     }
     public function add_product()
@@ -79,7 +83,7 @@ class products extends Controller
     {
         $product= product::find($id);
         $product->serial=request('product_serial');
-        $product->name=request('product_name');
+        $product->category_id=request('product_name');
         $product->brand_id=request('product_brand');
         $product->model=request('product_model');
         $product->specification=request('product_specification');

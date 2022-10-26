@@ -317,10 +317,10 @@
                                     @foreach ($admin as $x)
                                     <tr>
                                         <td>{{$i++}}</td>
-                                        <td>{{$x->name}}</td>
+                                        <td>{{$category[$j]->categories->name}}</td>
                                         <td>{{$x->serial}}</td>
                                         <td>{{$x->model}}</td>
-                                        <td>{{$brand[$j++]->brands->name}}</td>
+                                        <td>{{$brand[$j]->brands->name}}</td>
                                         <td>{{$x->collection}}</td>
                                         <td>{{$x->specification}}</td>
                                         <td>{{$x->quantity}}</td>
@@ -334,6 +334,7 @@
                                         <a href="/delete_product/{{$x->id}}"><img src="{{ asset('images/icone/x-square-solid-24.png') }}"></a>
                                     </td>
                                     </tr>
+                                    {{$j++}}
                                     @endforeach
                                   </tbody>
                                 </table>

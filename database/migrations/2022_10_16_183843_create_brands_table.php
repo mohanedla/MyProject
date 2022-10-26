@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('model');
             $table->integer('phone_number');
-            $table->string('email')->uniqid();
+            $table->string('email')->unique();
             $table->string('country')->nullable();
             $table->string('address')->nullable();
             $table->string('profile_image')->nullable();

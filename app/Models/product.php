@@ -9,16 +9,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class product extends Model
 {
-    protected $fillable = [
-        'name',
-        'model',
-        'specification',
-        'quantity',
-        'size',
-        'color',
-        'price',
-        'profile_image',
-    ];
+    // protected $fillable = [
+    //     'model',
+    //     'specification',
+    //     'quantity',
+    //     'size',
+    //     'color',
+    //     'price',
+    //     'profile_image',
+    // ];
     // public function admins(){
     //     return $this->belongsToMany('App\User','admin_id')->withTimestamps();
     // }

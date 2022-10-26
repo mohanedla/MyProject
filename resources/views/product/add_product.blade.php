@@ -299,6 +299,7 @@
                         {{-- <i class="fa fa-plus-circle"></i> --}}
                         <select name="product_name" class="form-input" id="level">
 
+                            <option value="">{{ __('Select') }}</option>
                             @foreach ($categories as $category)
                                 <option value="{{ $category->id }}">{{ __($category->name) }}</option>
                             @endforeach
@@ -325,6 +326,7 @@
                     <div class="form-group left" id="adj">
                         <label class="label-title">{{ __('Brand') }}</label>
                         <select name="product_brand" class="form-input" id="level">
+                            <option value="">{{ __('Select') }}</option>
                             @foreach ($brands as $brand)
                                 <option value="{{ $brand->id }}">{{ __($brand->name) }}</option>
                             @endforeach
@@ -367,9 +369,9 @@
                         <label class="label-title">{{ __('Collection') }}</label>
                         <select name="product_collection" class="form-input" id="level">
                             <option value="">{{ __('Select') }}</option>
-                            <option value="{{ __('Mans') }}">{{ __('Mans') }}</option>
-                            <option value="{{ __('Womens') }}">{{ __('Womens') }}</option>
-                            <option value="{{ __('Childrens') }}">{{ __('Childrens') }}</option>
+                            @for ($i=0;$i<count($collect);$i++)
+                            <option value="{{ $collect[$i] }}">{{ __($collect[$i])}} </option>
+                            @endfor
 
                     </select>
                     </div>
@@ -450,11 +452,7 @@
     @extends('layout.js')
     @section('js')
 
-    <script>
-        $('#myModal').on('shown.bs.modal', function () {
-  $('#myInput').trigger('focus')
-})
-    </script>
+
     </body>
 
     </html>

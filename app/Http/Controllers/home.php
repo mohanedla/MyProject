@@ -6,14 +6,17 @@ use Illuminate\Http\Request;
 use App\Models\brand;
 use App\Models\product;
 use App\Models\User;
+use App\Models\Category;
 use auth;
 class home extends Controller
 {
     public function index()
         {
+            $categories=Category::all();
+            $collect = array('M'=>'Men','W'=>'Women','C'=>'Children' );
             $brand=brand::all();
             $products=product::all();
-            return View('index',compact('brand','products'));
+            return View('index',compact('brand','products','collect','categories'));
         }
     public function category_page()
         {

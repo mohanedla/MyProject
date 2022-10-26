@@ -303,7 +303,9 @@
                                     </tr>
                                   </thead>
                                   <tbody>
-                                    {{$i=1;}}
+                                    @php
+                                    $i=1;
+                                @endphp
                                     @foreach ($users as $user)
                                     <tr>
                                       <td>{{$i++}}</td>

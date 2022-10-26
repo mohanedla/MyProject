@@ -306,7 +306,9 @@
                                     </tr>
                                   </thead>
                                   <tbody>
-                                    {{$i=1;}}
+                                    @php
+                                        $i=1;
+                                    @endphp
                                     @foreach($brand as $x)
                                     <tr>
                                       <td>{{$i++}}</td>

@@ -218,7 +218,7 @@
                                         <ul>
                                             <li class="dropdown-header">{{ __('Women') }}</li>
                                             @foreach ($categories as $category)
-                                            <li><a href="#">{{ __($category->name) }}</a></li>
+                                                <li><a href="#">{{ __($category->name) }}</a></li>
                                             @endforeach
                                         </ul>
                                     </li>
@@ -226,7 +226,7 @@
                                         <ul>
                                             <li class="dropdown-header">{{ __('Men') }}</li>
                                             @foreach ($categories as $category)
-                                            <li><a href="#">{{ __($category->name) }}</a></li>
+                                                <li><a href="#">{{ __($category->name) }}</a></li>
                                             @endforeach
 
                                         </ul>
@@ -326,6 +326,7 @@
                         class="img-responsive" /></a></div>
         </div>
     </div>
+
     <!-- =====  BANNER END  ===== -->
     <!-- =====  CONTAINER START  ===== -->
     <div class="container">
@@ -341,27 +342,118 @@
                             <div class="heading-part mb_10 ">
                                 <h2 class="main_title">{{ __('Men') }}</h2>
                             </div>
+                            @php
+                            $i=0;
+                        @endphp
                             <div class="latest_pro box">
                                 <div class="latest owl-carousel">
                                     @foreach ($products as $item)
-                                    @if ($item->collection==$collect['M'])
+                                        @if ($item->collection == $collect['M'])
+                                            <div class="product-grid">
+                                                <div class="item">
+                                                    <div class="product-thumb">
+                                                        <div class="image product-imageblock" style="height: 418px;"> <a
+                                                                href="product_detail_page"  style="height: -webkit-fill-available;">
+                                                                <img data-name="product_image"
+                                                                    style="height: -webkit-fill-available;"
+                                                                    src="{{ asset(Storage::url($item->profile_image)) }}"
+                                                                    alt="iPod Classic" title="iPod Classic"
+                                                                    class="img-responsive"> <img
+                                                                    style="height: -webkit-fill-available;"
+                                                                    src="{{ asset(Storage::url($item->profile_image)) }}"
+                                                                    alt="iPod Classic" title="iPod Classic"
+                                                                    class="img-responsive"> </a>
+                                                            <div class="button-group text-center">
+                                                                <div class="wishlist"><a
+                                                                        href="#"><span>wishlist</span></a>
+                                                                </div>
+                                                                <div class="quickview"><a href="#"><span>Quick
+                                                                            View</span></a></div>
+                                                                <div class="compare"><a
+                                                                        href="#"><span>Compare</span></a>
+                                                                </div>
+                                                                <div class="add-to-cart"><a href="#"><span>Add
+                                                                            to
+                                                                            cart</span></a></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="caption product-detail text-center">
+                                                            <div class="rating"> <span class="fa fa-stack"><i
+                                                                        class="fa fa-star-o fa-stack-1x"></i><i
+                                                                        class="fa fa-star fa-stack-1x"></i></span>
+                                                                <span class="fa fa-stack"><i
+                                                                        class="fa fa-star-o fa-stack-1x"></i><i
+                                                                        class="fa fa-star fa-stack-1x"></i></span>
+                                                                <span class="fa fa-stack"><i
+                                                                        class="fa fa-star-o fa-stack-1x"></i><i
+                                                                        class="fa fa-star fa-stack-1x"></i></span>
+                                                                <span class="fa fa-stack"><i
+                                                                        class="fa fa-star-o fa-stack-1x"></i><i
+                                                                        class="fa fa-star fa-stack-1x"></i></span>
+                                                                <span class="fa fa-stack"><i
+                                                                        class="fa fa-star-o fa-stack-1x"></i><i
+                                                                        class="fa fa-star fa-stack-x"></i></span>
+                                                            </div>
+                                                            <h6 data-name="product_name" class="product-name"><a
+                                                                    href="#"
+                                                                    title="Casual Shirt With Ruffle Hem">
+                                                                    {{$product_name_men[$i]->categories->name;}}..</a></h6>
+                                                            <span class="price"><span class="amount"><span
+                                                                        class="currencySymbol">$</span>{{ $item->price }}.00</span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            @php
+                                                $i++;
+                                            @endphp
+
+                                        @endif
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- =====  PRODUCT TAB  END ===== -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 mtb_10">
+                    <!-- =====  PRODUCT TAB  ===== -->
+                    <div class="mt_60">
+                        <div class="heading-part mb_10 ">
+                            <h2 class="main_title">{{ __('Women') }}</h2>
+                        </div>
+                        @php
+                        $i=0;
+                    @endphp
+                        <div class="latest_pro box">
+                            <div class="latest owl-carousel">
+                                @foreach ($products as $item)
+                                    @if ($item->collection == $collect['W'])
                                         <div class="product-grid">
                                             <div class="item">
                                                 <div class="product-thumb">
-                                                    <div class="image product-imageblock"> <a href="product_detail_page">
+                                                    <div class="image product-imageblock" style="height: 418px;"> <a
+                                                            href="product_detail_page" style="height: -webkit-fill-available;">
                                                             <img data-name="product_image"
+                                                                style="height: -webkit-fill-available;"
                                                                 src="{{ asset(Storage::url($item->profile_image)) }}"
                                                                 alt="iPod Classic" title="iPod Classic"
                                                                 class="img-responsive"> <img
+                                                                style="height: -webkit-fill-available;"
                                                                 src="{{ asset(Storage::url($item->profile_image)) }}"
                                                                 alt="iPod Classic" title="iPod Classic"
                                                                 class="img-responsive"> </a>
                                                         <div class="button-group text-center">
-                                                            <div class="wishlist"><a href="#"><span>wishlist</span></a>
+                                                            <div class="wishlist"><a
+                                                                    href="#"><span>wishlist</span></a>
                                                             </div>
                                                             <div class="quickview"><a href="#"><span>Quick
                                                                         View</span></a></div>
-                                                            <div class="compare"><a href="#"><span>Compare</span></a>
+                                                            <div class="compare"><a
+                                                                    href="#"><span>Compare</span></a>
                                                             </div>
                                                             <div class="add-to-cart"><a href="#"><span>Add to
                                                                         cart</span></a></div>
@@ -371,186 +463,150 @@
                                                         <div class="rating"> <span class="fa fa-stack"><i
                                                                     class="fa fa-star-o fa-stack-1x"></i><i
                                                                     class="fa fa-star fa-stack-1x"></i></span> <span
-                                                                class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
+                                                                class="fa fa-stack"><i
+                                                                    class="fa fa-star-o fa-stack-1x"></i><i
                                                                     class="fa fa-star fa-stack-1x"></i></span> <span
-                                                                class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
+                                                                class="fa fa-stack"><i
+                                                                    class="fa fa-star-o fa-stack-1x"></i><i
                                                                     class="fa fa-star fa-stack-1x"></i></span> <span
-                                                                class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
+                                                                class="fa fa-stack"><i
+                                                                    class="fa fa-star-o fa-stack-1x"></i><i
                                                                     class="fa fa-star fa-stack-1x"></i></span> <span
-                                                                class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
+                                                                class="fa fa-stack"><i
+                                                                    class="fa fa-star-o fa-stack-1x"></i><i
                                                                     class="fa fa-star fa-stack-x"></i></span> </div>
-                                                        <h6 data-name="product_name" class="product-name"><a href="#"
-                                                                title="Casual Shirt With Ruffle Hem">New
-                                                                LCDScreen and HD Vide..</a></h6>
+                                                        <h6 data-name="product_name" class="product-name"><a
+                                                                href="#"
+                                                                title="Casual Shirt With Ruffle Hem">
+                                                                {{$product_name_women[$i]->categories->name;}}..</a></h6>
                                                         <span class="price"><span class="amount"><span
-                                                                    class="currencySymbol">$</span>{{$item->price}}.00</span>
+                                                                    class="currencySymbol">$</span>{{ $item->price }}.00</span>
                                                         </span>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+                                        @php
+                                            $i++;
+                                        @endphp
+                                    @endif
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 mtb_10">
+                        <!-- =====  PRODUCT TAB  ===== -->
+                        <div class="mt_60">
+                            <div class="heading-part mb_10 ">
+                                <h2 class="main_title">{{ __('Children') }}</h2>
+                            </div>
+                            @php
+                            $i=0;
+                        @endphp
+                            <div class="latest_pro box">
+                                <div class="latest owl-carousel">
+                                    @foreach ($products as $item)
+                                        @if ($item->collection == $collect['C'])
+                                            <div class="product-grid">
+                                                <div class="item">
+                                                    <div class="product-thumb">
+                                                        <div class="image product-imageblock" style="height: 418px;">
+                                                            <a href="product_detail_page" style="height: -webkit-fill-available;"
+                                                                sstyle="height: -webkit-fill-available;">
+                                                                <img data-name="product_image"
+                                                                    style="height: -webkit-fill-available;"
+                                                                    src="{{ asset(Storage::url($item->profile_image)) }}"
+                                                                    alt="iPod Classic" title="iPod Classic"
+                                                                    class="img-responsive"> <img
+                                                                    style="height: -webkit-fill-available;"
+                                                                    src="{{ asset(Storage::url($item->profile_image)) }}"
+                                                                    alt="iPod Classic" title="iPod Classic"
+                                                                    class="img-responsive"> </a>
+                                                            <div class="button-group text-center">
+                                                                <div class="wishlist"><a
+                                                                        href="#"><span>wishlist</span></a>
+                                                                </div>
+                                                                <div class="quickview"><a href="#"><span>Quick
+                                                                            View</span></a></div>
+                                                                <div class="compare"><a
+                                                                        href="#"><span>Compare</span></a>
+                                                                </div>
+                                                                <div class="add-to-cart"><a href="#"><span>Add
+                                                                            to
+                                                                            cart</span></a></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="caption product-detail text-center">
+                                                            <div class="rating"> <span class="fa fa-stack"><i
+                                                                        class="fa fa-star-o fa-stack-1x"></i><i
+                                                                        class="fa fa-star fa-stack-1x"></i></span>
+                                                                <span class="fa fa-stack"><i
+                                                                        class="fa fa-star-o fa-stack-1x"></i><i
+                                                                        class="fa fa-star fa-stack-1x"></i></span>
+                                                                <span class="fa fa-stack"><i
+                                                                        class="fa fa-star-o fa-stack-1x"></i><i
+                                                                        class="fa fa-star fa-stack-1x"></i></span>
+                                                                <span class="fa fa-stack"><i
+                                                                        class="fa fa-star-o fa-stack-1x"></i><i
+                                                                        class="fa fa-star fa-stack-1x"></i></span>
+                                                                <span class="fa fa-stack"><i
+                                                                        class="fa fa-star-o fa-stack-1x"></i><i
+                                                                        class="fa fa-star fa-stack-x"></i></span>
+                                                            </div>
+                                                            <h6 data-name="product_name" class="product-name"><a
+                                                                    href="#"
+                                                                    title="Casual Shirt With Ruffle Hem">
+                                                                    {{$product_name_children[$i]->categories->name;}}..</a></h6>
+                                                            <span class="price"><span class="amount"><span
+                                                                        class="currencySymbol">$</span>{{ $item->price }}.00</span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            @php
+                                                $i++;
+                                            @endphp
                                         @endif
                                     @endforeach
                                 </div>
                             </div>
                         </div>
                     </div>
-                <!-- =====  PRODUCT TAB  END ===== -->
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 mtb_10">
-                <!-- =====  PRODUCT TAB  ===== -->
-                <div class="mt_60">
-                    <div class="heading-part mb_10 ">
-                        <h2 class="main_title">{{ __('Women') }}</h2>
-                    </div>
-                    <div class="latest_pro box">
-                        <div class="latest owl-carousel">
-                            @foreach ($products as $item)
-                            @if ($item->collection==$collect['W'])
-                                <div class="product-grid">
-                                    <div class="item">
-                                        <div class="product-thumb">
-                                            <div class="image product-imageblock"> <a href="product_detail_page">
-                                                    <img data-name="product_image"
-                                                        src="{{ asset(Storage::url($item->profile_image)) }}"
-                                                        alt="iPod Classic" title="iPod Classic"
-                                                        class="img-responsive"> <img
-                                                        src="{{ asset(Storage::url($item->profile_image)) }}"
-                                                        alt="iPod Classic" title="iPod Classic"
-                                                        class="img-responsive"> </a>
-                                                <div class="button-group text-center">
-                                                    <div class="wishlist"><a href="#"><span>wishlist</span></a>
-                                                    </div>
-                                                    <div class="quickview"><a href="#"><span>Quick
-                                                                View</span></a></div>
-                                                    <div class="compare"><a href="#"><span>Compare</span></a>
-                                                    </div>
-                                                    <div class="add-to-cart"><a href="#"><span>Add to
-                                                                cart</span></a></div>
-                                                </div>
-                                            </div>
-                                            <div class="caption product-detail text-center">
-                                                <div class="rating"> <span class="fa fa-stack"><i
-                                                            class="fa fa-star-o fa-stack-1x"></i><i
-                                                            class="fa fa-star fa-stack-1x"></i></span> <span
-                                                        class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
-                                                            class="fa fa-star fa-stack-1x"></i></span> <span
-                                                        class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
-                                                            class="fa fa-star fa-stack-1x"></i></span> <span
-                                                        class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
-                                                            class="fa fa-star fa-stack-1x"></i></span> <span
-                                                        class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
-                                                            class="fa fa-star fa-stack-x"></i></span> </div>
-                                                <h6 data-name="product_name" class="product-name"><a href="#"
-                                                        title="Casual Shirt With Ruffle Hem">New
-                                                        LCDScreen and HD Vide..</a></h6>
-                                                <span class="price"><span class="amount"><span
-                                                            class="currencySymbol">$</span>{{$item->price}}.00</span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                @endif
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-            </div>
-        <div class="row">
-            <div class="col-sm-12 mtb_10">
-                <!-- =====  PRODUCT TAB  ===== -->
-                <div class="mt_60">
-                    <div class="heading-part mb_10 ">
-                        <h2 class="main_title">{{ __('Children') }}</h2>
-                    </div>
-                    <div class="latest_pro box">
-                        <div class="latest owl-carousel">
-                            @foreach ($products as $item)
-                            @if ($item->collection==$collect['C'])
-                                <div class="product-grid">
-                                    <div class="item">
-                                        <div class="product-thumb">
-                                            <div class="image product-imageblock"> <a href="product_detail_page">
-                                                    <img data-name="product_image"
-                                                        src="{{ asset(Storage::url($item->profile_image)) }}"
-                                                        alt="iPod Classic" title="iPod Classic"
-                                                        class="img-responsive"> <img
-                                                        src="{{ asset(Storage::url($item->profile_image)) }}"
-                                                        alt="iPod Classic" title="iPod Classic"
-                                                        class="img-responsive"> </a>
-                                                <div class="button-group text-center">
-                                                    <div class="wishlist"><a href="#"><span>wishlist</span></a>
-                                                    </div>
-                                                    <div class="quickview"><a href="#"><span>Quick
-                                                                View</span></a></div>
-                                                    <div class="compare"><a href="#"><span>Compare</span></a>
-                                                    </div>
-                                                    <div class="add-to-cart"><a href="#"><span>Add to
-                                                                cart</span></a></div>
-                                                </div>
-                                            </div>
-                                            <div class="caption product-detail text-center">
-                                                <div class="rating"> <span class="fa fa-stack"><i
-                                                            class="fa fa-star-o fa-stack-1x"></i><i
-                                                            class="fa fa-star fa-stack-1x"></i></span> <span
-                                                        class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
-                                                            class="fa fa-star fa-stack-1x"></i></span> <span
-                                                        class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
-                                                            class="fa fa-star fa-stack-1x"></i></span> <span
-                                                        class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
-                                                            class="fa fa-star fa-stack-1x"></i></span> <span
-                                                        class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
-                                                            class="fa fa-star fa-stack-x"></i></span> </div>
-                                                <h6 data-name="product_name" class="product-name"><a href="#"
-                                                        title="Casual Shirt With Ruffle Hem">New
-                                                        LCDScreen and HD Vide..</a></h6>
-                                                <span class="price"><span class="amount"><span
-                                                            class="currencySymbol">$</span>{{$item->price}}.00</span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                @endif
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- =====  SUB BANNER END  ===== -->
-            <div id="brand_carouse" class="ptb_60 text-center">
-                <div class="type-01">
-                    <div class="heading-part mb_10 ">
-                        <h2 class="main_title">{{ __('Brands') }}</h2>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="brand owl-carousel ptb_20">
-                                @foreach ($brand as $x)
-                                    <div class="item text-center"> <a href="item_brand/{{ $x->id }}"><img
-                                                src="{{ asset(Storage::url($x->profile_image)) }}" alt=""
-                                                class="img-responsive" /></a> </div>
-                                @endforeach
+                    <!-- =====  SUB BANNER END  ===== -->
+                    <div id="brand_carouse" class="ptb_60 text-center">
+                        <div class="type-01">
+                            <div class="heading-part mb_10 ">
+                                <h2 class="main_title">{{ __('Brands') }}</h2>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="brand owl-carousel ptb_20">
+                                        @foreach ($brand as $x)
+                                            <div class="item text-center"> <a
+                                                    href="item_brand/{{ $x->id }}"><img
+                                                        src="{{ asset(Storage::url($x->profile_image)) }}"
+                                                        alt="" class="img-responsive" /></a> </div>
+                                        @endforeach
 
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- =====  CONTAINER END  ===== -->
+                <!-- =====  FOOTER START  ===== -->
+                @extends('layout.footer')
+                @section('footer')
+                @endsection
+                <!-- =====  FOOTER END  ===== -->
             </div>
-        </div>
-        <!-- =====  CONTAINER END  ===== -->
-        <!-- =====  FOOTER START  ===== -->
-        @extends('layout.footer')
-        @section('footer')
-        @endsection
-        <!-- =====  FOOTER END  ===== -->
-    </div>
-    @extends('layout.js')
-    @section('js')
-    @endsection
+            @extends('layout.js')
+            @section('js')
+            @endsection
 </body>
 
 </html>

@@ -16,7 +16,10 @@ class home extends Controller
             $collect = array('M'=>'Men','W'=>'Women','C'=>'Children' );
             $brand=brand::all();
             $products=product::all();
-            return View('index',compact('brand','products','collect','categories'));
+            $product_name_men=product::with('categories')->where('collection','=','Men')->get();
+            $product_name_women=product::with('categories')->where('collection','=','Women')->get();
+            $product_name_children=product::with('categories')->where('collection','=','Children')->get();
+            return View('index',compact('brand','products','collect','categories','product_name_men','product_name_women','product_name_children'));
         }
     public function category_page()
         {

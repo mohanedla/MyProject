@@ -312,8 +312,11 @@
                                     </tr>
                                   </thead>
                                   <tbody>
-                                    {{$i=1;}}
-                                    {{$j=0;}}
+                                    @php
+                                    $i=1;
+                                    $j=0;
+                                @endphp
+
                                     @foreach ($admin as $x)
                                     <tr>
                                         <td>{{$i++}}</td>
@@ -334,7 +337,10 @@
                                         <a href="/delete_product/{{$x->id}}"><img src="{{ asset('images/icone/x-square-solid-24.png') }}"></a>
                                     </td>
                                     </tr>
-                                    {{$j++}}
+                                    @php
+                                        $j++;
+                                    @endphp
+
                                     @endforeach
                                   </tbody>
                                 </table>

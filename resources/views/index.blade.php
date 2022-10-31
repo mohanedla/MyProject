@@ -531,7 +531,7 @@
                                                                 <div class="quickview"><a href="#"><span>Quick
                                                                             View</span></a></div>
                                                                 <div class="compare"><a
-                                                                        href="#"><span>Compare</span></a>
+                                                                        href="#"><span>{{ __('Compare')}}</span></a>
                                                                 </div>
                                                                 <div class="add-to-cart"><a href="#"><span>Add
                                                                             to

@@ -342,6 +342,8 @@
                         <input type="text" id="Specification" name="product_specification" class="form-input"
                             placeholder="{{ __('enter Specifications') }}" required="required" />
                     </div>
+                    </div>
+                    <div class="horizontal-group">
                     <div class="form-group right">
                         <label for="lastname" class="label-title">{{ __('Quantity') }}</label>
                         <input type="number" name="product_quantity" id="lastname" class="form-input"
@@ -356,6 +358,8 @@
                         <input type="text" id="product_name" name="product_color" class="form-input"
                             placeholder="{{ __('enter Color') }}" required="required" />
                     </div>
+                    </div>
+                    <div class="horizontal-group">
                     <div class="form-group right">
                         <label for="lastname" class="label-title">{{ __('Size') }}</label>
                         <input type="text" name="product_size" id="lastname" class="form-input"
@@ -364,6 +368,13 @@
 
                 </div>
 
+                <div class="horizontal-group">
+                    <div class="form-group left">
+                        <label for="firstname" class="label-title">{{ __('price') }} </label>
+                        <input type="number" id="firstname" name="product_price" class="form-input"
+                            placeholder="{{ __('enter price') }}" required="required" />
+                    </div>
+                    </div>
                 <div class="horizontal-group">
                     <div class="form-group right" id="adj">
                         <label class="label-title">{{ __('Collection') }}</label>
@@ -379,13 +390,6 @@
                 </div>
 
                 <!-- Bio -->
-                <div class="horizontal-group">
-                    <div class="form-group right">
-                        <label for="firstname" class="label-title">{{ __('price') }} </label>
-                        <input type="number" id="firstname" name="product_price" class="form-input"
-                            placeholder="{{ __('enter price') }}" required="required" />
-                    </div>
-                    </div>
             <div class="horizontal-group">
                 <div class="form-group left">
                     <div class="file-input">

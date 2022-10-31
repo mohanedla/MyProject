@@ -111,11 +111,11 @@
                 </div>
             </div>
         </div>
-        @if (session('status'))
+        {{-- @if (session('status'))
             <div class="alert alert-success" role="alert">
                 {{ session('status') }}
             </div>
-        @endif
+        @endif --}}
         <div class="header">
             <div class="container">
                 <div class="row">
@@ -265,21 +265,7 @@
                                     </li>
                                     </select>
                             </li>
-                            <li><a href="#"><select name="dropdown" class="dropdown_ch"></a>
-                            <li>
-                                <option class="option_ch"><a href="#">{{ __('puzzling') }}</a>
-                                </option>
-                            </li>
-                            <li>
-                                <option class="option_ch"><a href="#">{{ __('Boys') }}</a>
-                                </option>
-                            </li>
-                            <li>
-                                <option class="option_ch"><a href="#">{{ __('Girls') }}</a>
-                                </option>
-                            </li>
-                            </select>
-                            </li>
+
 
                         </ul>
                         </li>
@@ -287,18 +273,18 @@
                             <ul>
                                 <li id="myCarousel" class="carousel slide" data-ride="carousel">
                                     <div class="carousel-inner">
-                                        <div class="item active"> <a href="#"><img
+                                        <div class="item active"><a href=""> <img
                                                     src="{{asset('images/menu-banner1.jpg')}}"
                                                     class="img-responsive" alt="Banner1"></a></div>
-                                        <!-- End Item -->
-                                        <div class="item"> <a href="#"><img
+                                    {{--
+                                        <div class="item"> <img
                                                     src="{{asset('images/menu-banner2.jpg')}}"
-                                                    class="img-responsive" alt="Banner1"></a></div>
-                                        <!-- End Item -->
-                                        <div class="item"> <a href="#"><img
+                                                    class="img-responsive" alt="Banner1"></div>
+
+                                        <div class="item"> <img
                                                     src="{{asset('images/menu-banner3.jpg')}}"
-                                                    class="img-responsive" alt="Banner1"></a></div>
-                                        <!-- End Item -->
+                                                    class="img-responsive" alt="Banner1"></div> --}}
+
                                     </div>
                                     <!-- End Carousel Inner -->
                                 </li>

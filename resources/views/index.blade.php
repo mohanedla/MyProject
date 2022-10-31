@@ -288,15 +288,15 @@
                                 <li id="myCarousel" class="carousel slide" data-ride="carousel">
                                     <div class="carousel-inner">
                                         <div class="item active"> <a href="#"><img
-                                                    src="{{ asset('images/menu-banner1.jpg') }}"
+                                                    src="{{asset('images/menu-banner1.jpg')}}"
                                                     class="img-responsive" alt="Banner1"></a></div>
                                         <!-- End Item -->
                                         <div class="item"> <a href="#"><img
-                                                    src="{{ asset('images/menu-banner2.jpg') }}"
+                                                    src="{{asset('images/menu-banner2.jpg')}}"
                                                     class="img-responsive" alt="Banner1"></a></div>
                                         <!-- End Item -->
                                         <div class="item"> <a href="#"><img
-                                                    src="{{ asset('images/menu-banner3.jpg') }}"
+                                                    src="{{asset('images/menu-banner3.jpg')}}"
                                                     class="img-responsive" alt="Banner1"></a></div>
                                         <!-- End Item -->
                                     </div>

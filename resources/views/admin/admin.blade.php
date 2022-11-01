@@ -150,55 +150,48 @@
                         <button class="navbar-toggle" type="button" data-toggle="collapse"
                             data-target=".js-navbar-collapse"> <span class="i-bar"><i
                                     class="fa fa-bars"></i></span></button>
-                        <div class="collapse navbar-collapse js-navbar-collapse">
-                            <ul id="menu" class="nav navbar-nav">
-                                <li> <a href="home">{{ __('Home') }}</a></li>
-                                <li class="dropdown mega-dropdown"> <a href="#" class="dropdown-toggle"
-                                        data-toggle="dropdown">{{ __('Collection') }} </a>
-                                    <ul class="dropdown-menu mega-dropdown-menu row">
-                                        <li class="col-md-3">
-                                                <ul>
-                                                    <li class="dropdown-header">{{ __('Womens') }}</li>
-                                                    <li><a href="#">{{ __('trouser') }}</a></li>
-                                                    <li><a href="#">{{ __('T-Shirts') }}</a></li>
-                                                    <li><a href="#">{{ __('dress') }}</a></li>
-                                                    <li><a href="#">{{ __('Jumpsuit') }}</a></li>
-                                                    <li><a href="#">{{ __('shoes') }}</a></li>
-                                                    <li><a href="#">{{ __('blouse') }}</a></li>
-                                                    <li><a href="#">{{ __('watches') }}</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="col-md-3">
-                                                <ul>
-                                                    <li class="dropdown-header">{{ __('Mans') }}</li>
-                                                    <li><a href="#">{{ __('trouser') }}</a></li>
-                                                    <li><a href="#">{{ __('T-Shirts') }}</a></li>
-                                                    <li><a href="#">{{ __('Shirt') }}</a></li>
-                                                    <li><a href="#">{{ __('Suits') }}</a></li>
-                                                    <li><a href="#">{{ __('shoes') }}</a></li>
-                                                    <li><a href="#">{{ __('Jackets') }}</a></li>
-                                                    <li><a href="#">{{ __('watches') }}</a></li>
-                                                </ul>
-                                            </li>
+                                    <div class="collapse navbar-collapse js-navbar-collapse">
+                                        <ul id="menu" class="nav navbar-nav">
+                                            <li> <a href="home">{{ __('Home') }}</a></li>
+                                            <li class="dropdown mega-dropdown"> <a href="#" class="dropdown-toggle"
+                                                    data-toggle="dropdown">{{ __('Collection') }} </a>
+                                                <ul class="dropdown-menu mega-dropdown-menu row">
+                                                    <li class="col-md-3">
+                                                        <ul>
+                                                            <li class="dropdown-header">{{ __('Women') }}</li>
+                                                            @foreach ($categories as $category)
+                                                                <li><a href="#">{{ __($category->name) }}</a></li>
+                                                            @endforeach
+                                                        </ul>
+                                                    </li>
+                                                    <li class="col-md-3">
+                                                        <ul>
+                                                            <li class="dropdown-header">{{ __('Men') }}</li>
+                                                            @foreach ($categories as $category)
+                                                                <li><a href="#">{{ __($category->name) }}</a></li>
+                                                            @endforeach
 
-                                            <li class="col-md-3">
-                                                <ul>
-                                                    <li class="dropdown-header">{{ __('Childrens') }}</li>
-                                                    <li><a href="#"><select name="dropdown" class="dropdown_ch"></a>
-                                                    <li>
-                                                        <option class="option_ch"><a href="#">{{ __('Born') }}</a>
-                                                        </option>
+                                                        </ul>
                                                     </li>
-                                                    <li>
-                                                        <option class="option_ch"><a href="#">{{ __('Boys') }}</a>
-                                                        </option>
+
+                                                    <li class="col-md-3">
+                                                        <ul>
+                                                            <li class="dropdown-header">{{ __('Children') }}</li>
+                                                            <li><a href="#"><select name="dropdown" class="dropdown_ch"></a>
+                                                            <li>
+                                                                <option class="option_ch"><a href="#">{{ __('Born') }}</a>
+                                                                </option>
+                                                            </li>
+                                                            <li>
+                                                                <option class="option_ch"><a href="#">{{ __('Boys') }}</a>
+                                                                </option>
+                                                            </li>
+                                                            <li>
+                                                                <option class="option_ch"><a href="#">{{ __('Girls') }}</a>
+                                                                </option>
+                                                            </li>
+                                                            </select>
                                                     </li>
-                                                    <li>
-                                                        <option class="option_ch"><a href="#">{{ __('Girls') }}</a>
-                                                        </option>
-                                                    </li>
-                                                    </select>
-                                            </li>
                                                     <li><a href="#"><select name="dropdown" class="dropdown_ch"></a>
                                                     <li>
                                                         <option class="option_ch"><a href="#">{{ __('Childrens') }}</a>
@@ -214,53 +207,40 @@
                                                     </li>
                                                     </select>
                                             </li>
-                                                    <li><a href="#"><select name="dropdown" class="dropdown_ch"></a>
-                                                    <li>
-                                                        <option class="option_ch"><a href="#">{{ __('puzzling') }}</a>
-                                                        </option>
-                                                    </li>
-                                                    <li>
-                                                        <option class="option_ch"><a href="#">{{ __('Boys') }}</a>
-                                                        </option>
-                                                    </li>
-                                                    <li>
-                                                        <option class="option_ch"><a href="#">{{ __('Girls') }}</a>
-                                                        </option>
-                                                    </li>
-                                                    </select>
-                                            </li>
 
-                                </ul>
-                                </li>
+
+                                        </ul>
+                                        </li>
                                         <li class="col-md-3">
                                             <ul>
                                                 <li id="myCarousel" class="carousel slide" data-ride="carousel">
                                                     <div class="carousel-inner">
-                                                        <div class="item active"> <a href="#"><img
-                                                                    src="{{ asset('images/menu-banner1.jpg') }}"
+                                                        <div class="item active"><a href=""> <img
+                                                                    src="{{asset('images/menu-banner1.jpg')}}"
                                                                     class="img-responsive" alt="Banner1"></a></div>
-                                                        <!-- End Item -->
-                                                        <div class="item"> <a href="#"><img
-                                                                    src="{{ asset('images/menu-banner2.jpg') }}"
-                                                                    class="img-responsive" alt="Banner1"></a></div>
-                                                        <!-- End Item -->
-                                                        <div class="item"> <a href="#"><img
-                                                                    src="{{ asset('images/menu-banner3.jpg') }}"
-                                                                    class="img-responsive" alt="Banner1"></a></div>
-                                                        <!-- End Item -->
+                                                    {{--
+                                                        <div class="item"> <img
+                                                                    src="{{asset('images/menu-banner2.jpg')}}"
+                                                                    class="img-responsive" alt="Banner1"></div>
+
+                                                        <div class="item"> <img
+                                                                    src="{{asset('images/menu-banner3.jpg')}}"
+                                                                    class="img-responsive" alt="Banner1"></div> --}}
+
                                                     </div>
                                                     <!-- End Carousel Inner -->
                                                 </li>
                                                 <!-- /.carousel -->
                                             </ul>
-
-                                    </ul>
-                                </li>
-                                <li> <a href="shop">{{ __('shop') }}</a></li>
-                                <li> <a href="about">{{ __('About us') }}</a></li>
-                                <li> <a href="contact_us">{{ __('Contact us') }}</a></li>
-                            </ul>
-                        </div>
+                                        <li class="col-md-3">
+                                        </li>
+                                        </ul>
+                                        </li>
+                                        <li> <a href="shop">{{ __('shop') }}</a></li>
+                                        <li> <a href="about">{{ __('About us') }}</a></li>
+                                        <li> <a href="contact_us">{{ __('Contact us') }}</a></li>
+                                        </ul>
+                                    </div>
                         <!-- /.nav-collapse -->
                     </nav>
                 </div>

@@ -207,118 +207,97 @@
                     <button class="navbar-toggle" type="button" data-toggle="collapse"
                         data-target=".js-navbar-collapse"> <span class="i-bar"><i
                                 class="fa fa-bars"></i></span></button>
-                    <div class="collapse navbar-collapse js-navbar-collapse">
-                        <ul id="menu" class="nav navbar-nav">
-                            <li> <a href="/home">{{ __('Home') }}</a></li>
-                            <li class="dropdown mega-dropdown"> <a href="#" class="dropdown-toggle"
-                                    data-toggle="dropdown">{{ __('Collection') }} </a>
-                                <ul class="dropdown-menu mega-dropdown-menu row">
-                                    <li class="col-md-3">
-                                        <ul>
-                                            <li class="dropdown-header">{{ __('Women') }}</li>
-                                            <li><a href="#">{{ __('trouser') }}</a></li>
-                                            <li><a href="#">{{ __('T-Shirts') }}</a></li>
-                                            <li><a href="#">{{ __('dress') }}</a></li>
-                                            <li><a href="#">{{ __('Jumpsuit') }}</a></li>
-                                            <li><a href="#">{{ __('shoes') }}</a></li>
-                                            <li><a href="#">{{ __('blouse') }}</a></li>
-                                            <li><a href="#">{{ __('watches') }}</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="col-md-3">
-                                        <ul>
-                                            <li class="dropdown-header">{{ __('Men') }}</li>
-                                            <li><a href="#">{{ __('trouser') }}</a></li>
-                                            <li><a href="#">{{ __('T-Shirts') }}</a></li>
-                                            <li><a href="#">{{ __('Shirt') }}</a></li>
-                                            <li><a href="#">{{ __('Suits') }}</a></li>
-                                            <li><a href="#">{{ __('shoes') }}</a></li>
-                                            <li><a href="#">{{ __('Jackets') }}</a></li>
-                                            <li><a href="#">{{ __('watches') }}</a></li>
-                                        </ul>
-                                    </li>
+                                <div class="collapse navbar-collapse js-navbar-collapse">
+                                    <ul id="menu" class="nav navbar-nav">
+                                        <li> <a href="home">{{ __('Home') }}</a></li>
+                                        <li class="dropdown mega-dropdown"> <a href="#" class="dropdown-toggle"
+                                                data-toggle="dropdown">{{ __('Collection') }} </a>
+                                            <ul class="dropdown-menu mega-dropdown-menu row">
+                                                <li class="col-md-3">
+                                                    <ul>
+                                                        <li class="dropdown-header">{{ __('Women') }}</li>
+                                                        @foreach ($categories as $category)
+                                                            <li><a href="#">{{ __($category->name) }}</a></li>
+                                                        @endforeach
+                                                    </ul>
+                                                </li>
+                                                <li class="col-md-3">
+                                                    <ul>
+                                                        <li class="dropdown-header">{{ __('Men') }}</li>
+                                                        @foreach ($categories as $category)
+                                                            <li><a href="#">{{ __($category->name) }}</a></li>
+                                                        @endforeach
 
+                                                    </ul>
+                                                </li>
+
+                                                <li class="col-md-3">
+                                                    <ul>
+                                                        <li class="dropdown-header">{{ __('Children') }}</li>
+                                                        <li><a href="#"><select name="dropdown" class="dropdown_ch"></a>
+                                                        <li>
+                                                            <option class="option_ch"><a href="#">{{ __('Born') }}</a>
+                                                            </option>
+                                                        </li>
+                                                        <li>
+                                                            <option class="option_ch"><a href="#">{{ __('Boys') }}</a>
+                                                            </option>
+                                                        </li>
+                                                        <li>
+                                                            <option class="option_ch"><a href="#">{{ __('Girls') }}</a>
+                                                            </option>
+                                                        </li>
+                                                        </select>
+                                                </li>
+                                                <li><a href="#"><select name="dropdown" class="dropdown_ch"></a>
+                                                <li>
+                                                    <option class="option_ch"><a href="#">{{ __('Childrens') }}</a>
+                                                    </option>
+                                                </li>
+                                                <li>
+                                                    <option class="option_ch"><a href="#">{{ __('Boys') }}</a>
+                                                    </option>
+                                                </li>
+                                                <li>
+                                                    <option class="option_ch"><a href="#">{{ __('Girls') }}</a>
+                                                    </option>
+                                                </li>
+                                                </select>
+                                        </li>
+
+
+                                    </ul>
+                                    </li>
                                     <li class="col-md-3">
                                         <ul>
-                                            <li class="dropdown-header">{{ __('Children') }}</li>
-                                            <li><a href="#"><select name="dropdown" class="dropdown_ch"></a>
-                                            <li>
-                                                <option class="option_ch"><a href="#">{{ __('Born') }}</a>
-                                                </option>
-                                            </li>
-                                            <li>
-                                                <option class="option_ch"><a href="#">{{ __('Boys') }}</a>
-                                                </option>
-                                            </li>
-                                            <li>
-                                                <option class="option_ch"><a href="#">{{ __('Girls') }}</a>
-                                                </option>
-                                            </li>
-                                            </select>
-                                    </li>
-                                    <li><a href="#"><select name="dropdown" class="dropdown_ch"></a>
-                                    <li>
-                                        <option class="option_ch"><a href="#">{{ __('Childrens') }}</a>
-                                        </option>
-                                    </li>
-                                    <li>
-                                        <option class="option_ch"><a href="#">{{ __('Boys') }}</a>
-                                        </option>
-                                    </li>
-                                    <li>
-                                        <option class="option_ch"><a href="#">{{ __('Girls') }}</a>
-                                        </option>
-                                    </li>
-                                    </select>
-                            </li>
-                            <li><a href="#"><select name="dropdown" class="dropdown_ch"></a>
-                            <li>
-                                <option class="option_ch"><a href="#">{{ __('puzzling') }}</a>
-                                </option>
-                            </li>
-                            <li>
-                                <option class="option_ch"><a href="#">{{ __('Boys') }}</a>
-                                </option>
-                            </li>
-                            <li>
-                                <option class="option_ch"><a href="#">{{ __('Girls') }}</a>
-                                </option>
-                            </li>
-                            </select>
-                            </li>
+                                            <li id="myCarousel" class="carousel slide" data-ride="carousel">
+                                                <div class="carousel-inner">
+                                                    <div class="item active"><a href=""> <img
+                                                                src="{{asset('images/menu-banner1.jpg')}}"
+                                                                class="img-responsive" alt="Banner1"></a></div>
+                                                {{--
+                                                    <div class="item"> <img
+                                                                src="{{asset('images/menu-banner2.jpg')}}"
+                                                                class="img-responsive" alt="Banner1"></div>
 
-                        </ul>
-                        </li>
-                        <li class="col-md-3">
-                            <ul>
-                                <li id="myCarousel" class="carousel slide" data-ride="carousel">
-                                    <div class="carousel-inner">
-                                        <div class="item active"> <a href="#"><img
-                                                    src="{{ asset('images/menu-banner1.jpg') }}"
-                                                    class="img-responsive" alt="Banner1"></a></div>
-                                        <!-- End Item -->
-                                        <div class="item"> <a href="#"><img
-                                                    src="{{ asset('images/menu-banner2.jpg') }}"
-                                                    class="img-responsive" alt="Banner1"></a></div>
-                                        <!-- End Item -->
-                                        <div class="item"> <a href="#"><img
-                                                    src="{{ asset('images/menu-banner3.jpg') }}"
-                                                    class="img-responsive" alt="Banner1"></a></div>
-                                        <!-- End Item -->
-                                    </div>
-                                    <!-- End Carousel Inner -->
-                                </li>
-                                <!-- /.carousel -->
-                            </ul>
-                        <li class="col-md-3">
-                        </li>
-                        </ul>
-                        </li>
-                        <li> <a href="/shop">{{ __('shop') }}</a></li>
-                        <li> <a href="/about">{{ __('About us') }}</a></li>
-                        <li> <a href="/contact_us">{{ __('Contact us') }}</a></li>
-                        </ul>
-                    </div>
+                                                    <div class="item"> <img
+                                                                src="{{asset('images/menu-banner3.jpg')}}"
+                                                                class="img-responsive" alt="Banner1"></div> --}}
+
+                                                </div>
+                                                <!-- End Carousel Inner -->
+                                            </li>
+                                            <!-- /.carousel -->
+                                        </ul>
+                                    <li class="col-md-3">
+                                    </li>
+                                    </ul>
+                                    </li>
+                                    <li> <a href="shop">{{ __('shop') }}</a></li>
+                                    <li> <a href="about">{{ __('About us') }}</a></li>
+                                    <li> <a href="contact_us">{{ __('Contact us') }}</a></li>
+                                    </ul>
+                                </div>
                     <!-- /.nav-collapse -->
                 </nav>
             </div>
@@ -345,20 +324,24 @@
                         <!-- =====  PRODUCT TAB  ===== -->
                         <div class="mt_60">
                             <div class="heading-part mb_10 ">
-                                <h2 class="main_title">{{ __('Deals of the Week') }}</h2>
+                                <h2 class="main_title">{{ __('Men') }}</h2>
                             </div>
                             <div class="latest_pro box">
                                 <div class="latest owl-carousel">
+                                    @php
+                                    $i=0;
+                                @endphp
                                     @foreach ($products as $item)
                                     @if ($item->collection==$collect['M'])
                                     <div class="product-grid">
                                         <div class="item">
                                             <div class="product-thumb">
-                                                <div class="image product-imageblock"> <a href="product_detail_page">
-                                                        <img data-name="product_image"
+                                                <div class="image product-imageblock" style="height: 418px;">
+                                                    <a href="product_detail_page" style="height: -webkit-fill-available;">
+                                                        <img data-name="product_image" style="height: -webkit-fill-available;"
                                                             src="{{ asset(Storage::url($item->profile_image)) }}"
                                                             alt="iPod Classic" title="iPod Classic"
-                                                            class="img-responsive"> <img
+                                                            class="img-responsive"> <img style="height: -webkit-fill-available;"
                                                             src="{{ asset(Storage::url($item->profile_image)) }}"
                                                             alt="iPod Classic" title="iPod Classic"
                                                             class="img-responsive"> </a>
@@ -391,16 +374,20 @@
                                                             class="fa fa-stack"><i
                                                                 class="fa fa-star-o fa-stack-1x"></i><i
                                                                 class="fa fa-star fa-stack-x"></i></span> </div>
-                                                    <h6 data-name="product_name" class="product-name"><a
-                                                            href="#" title="Casual Shirt With Ruffle Hem">New
-                                                            LCDScreen and HD Vide..</a></h6>
-                                                    <span class="price"><span class="amount"><span
-                                                                class="currencySymbol">$</span>70.00</span>
-                                                    </span>
+                                                                <h6 data-name="product_name" class="product-name"><a
+                                                                    href="#"
+                                                                    title="Casual Shirt With Ruffle Hem">
+                                                                    {{$product_name_men[$i]->categories->name;}}..</a></h6>
+                                                            <span class="price"><span class="amount"><span
+                                                                        class="currencySymbol">$</span>{{ $item->price }}.00</span>
+                                                            </span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    @php
+                                    $i++;
+                                @endphp
                                     @endif
                                     @endforeach
                                 </div>
@@ -408,20 +395,24 @@
                         </div>
                         <div class="mt_60">
                             <div class="heading-part mb_10 ">
-                                <h2 class="main_title">{{ __('Deals of the Week') }}</h2>
+                                <h2 class="main_title">{{ __('Women') }}</h2>
                             </div>
                             <div class="latest_pro box">
                                 <div class="latest owl-carousel">
+                                    @php
+                                    $i=0;
+                                @endphp
                                     @foreach ($products as $item)
                                     @if ($item->collection==$collect['W'])
                                     <div class="product-grid">
                                         <div class="item">
                                             <div class="product-thumb">
-                                                <div class="image product-imageblock"> <a href="product_detail_page">
-                                                        <img data-name="product_image"
+                                                <div class="image product-imageblock" style="height: 418px;">
+                                                    <a href="product_detail_page" style="height: -webkit-fill-available;">
+                                                        <img data-name="product_image" style="height: -webkit-fill-available;"
                                                             src="{{ asset(Storage::url($item->profile_image)) }}"
                                                             alt="iPod Classic" title="iPod Classic"
-                                                            class="img-responsive"> <img
+                                                            class="img-responsive"> <img style="height: -webkit-fill-available;"
                                                             src="{{ asset(Storage::url($item->profile_image)) }}"
                                                             alt="iPod Classic" title="iPod Classic"
                                                             class="img-responsive"> </a>
@@ -454,16 +445,20 @@
                                                             class="fa fa-stack"><i
                                                                 class="fa fa-star-o fa-stack-1x"></i><i
                                                                 class="fa fa-star fa-stack-x"></i></span> </div>
-                                                    <h6 data-name="product_name" class="product-name"><a
-                                                            href="#" title="Casual Shirt With Ruffle Hem">New
-                                                            LCDScreen and HD Vide..</a></h6>
-                                                    <span class="price"><span class="amount"><span
-                                                                class="currencySymbol">$</span>70.00</span>
-                                                    </span>
+                                                                <h6 data-name="product_name" class="product-name"><a
+                                                                    href="#"
+                                                                    title="Casual Shirt With Ruffle Hem">
+                                                                    {{$product_name_men[$i]->categories->name;}}..</a></h6>
+                                                            <span class="price"><span class="amount"><span
+                                                                        class="currencySymbol">$</span>{{ $item->price }}.00</span>
+                                                            </span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    @php
+                                    $i++;
+                                @endphp
                                     @endif
                                     @endforeach
                                 </div>
@@ -471,20 +466,24 @@
                         </div>
                         <div class="mt_60">
                             <div class="heading-part mb_10 ">
-                                <h2 class="main_title">{{ __('Deals of the Week') }}</h2>
+                                <h2 class="main_title">{{ __('Children') }}</h2>
                             </div>
                             <div class="latest_pro box">
                                 <div class="latest owl-carousel">
+                                    @php
+                                    $i=0;
+                                @endphp
                                     @foreach ($products as $item)
                                     @if ($item->collection==$collect['C'])
                                     <div class="product-grid">
                                         <div class="item">
                                             <div class="product-thumb">
-                                                <div class="image product-imageblock"> <a href="product_detail_page">
-                                                        <img data-name="product_image"
+                                                <div class="image product-imageblock" style="height: 418px;">
+                                                    <a href="product_detail_page" style="height: -webkit-fill-available;">
+                                                        <img data-name="product_image" style="height: -webkit-fill-available;"
                                                             src="{{ asset(Storage::url($item->profile_image)) }}"
                                                             alt="iPod Classic" title="iPod Classic"
-                                                            class="img-responsive"> <img
+                                                            class="img-responsive"> <img  style="height: -webkit-fill-available;"
                                                             src="{{ asset(Storage::url($item->profile_image)) }}"
                                                             alt="iPod Classic" title="iPod Classic"
                                                             class="img-responsive"> </a>
@@ -517,16 +516,20 @@
                                                             class="fa fa-stack"><i
                                                                 class="fa fa-star-o fa-stack-1x"></i><i
                                                                 class="fa fa-star fa-stack-x"></i></span> </div>
-                                                    <h6 data-name="product_name" class="product-name"><a
-                                                            href="#" title="Casual Shirt With Ruffle Hem">New
-                                                            LCDScreen and HD Vide..</a></h6>
-                                                    <span class="price"><span class="amount"><span
-                                                                class="currencySymbol">$</span>70.00</span>
-                                                    </span>
+                                                                <h6 data-name="product_name" class="product-name"><a
+                                                                    href="#"
+                                                                    title="Casual Shirt With Ruffle Hem">
+                                                                    {{$product_name_men[$i]->categories->name;}}..</a></h6>
+                                                            <span class="price"><span class="amount"><span
+                                                                        class="currencySymbol">$</span>{{ $item->price }}.00</span>
+                                                            </span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    @php
+                                    $i++;
+                                @endphp
                                     @endif
                                     @endforeach
                                 </div>

@@ -9,22 +9,33 @@ use App\Models\Category;
 use Auth;
 class products extends Controller
 {
+
     public function product_product()
     {
+        $categoriez=Category::all();
+        $collect = array('M'=>'Men','W'=>'Women','C'=>'Children' );
+        $product_name_men=product::with('categories')->where('collection','=','Men')->get();
+        $product_name_women=product::with('categories')->where('collection','=','Women')->get();
+        $product_name_children=product::with('categories')->where('collection','=','Children')->get();
         $admin=product::with('admins')->get();
         $brand=product::with('brands')->get();
         $category=product::with('categories')->get();
         //  dd($brand);yy
-        return View('product.product',compact('admin','category','brand'));
+        return View('product.product',compact('admin','category','brand','collect','categoriez','product_name_men','product_name_women','product_name_children'));
 
     }
     public function item_brand($id)
     {
+        $categories=Category::all();
+
+        $product_name_men=product::with('categories')->where('collection','=','Men')->get();
+        $product_name_women=product::with('categories')->where('collection','=','Women')->get();
+        $product_name_children=product::with('categories')->where('collection','=','Children')->get();
         $collect = array('M'=>'Men','W'=>'Women','C'=>'Children' );
         $products = product::where('brand_id','=',$id)->get();
         $brand=brand::all();
         $title=brand::where('id','=',$id)->get('name');
-        return View('item.item_brand',compact('products','brand','title','collect'));
+        return View('item.item_brand',compact('products','brand','title','collect','categories','product_name_men','product_name_women','product_name_children'));
 
     }
 

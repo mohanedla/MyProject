@@ -4,13 +4,21 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\product;
+use App\Models\brand;
+use App\Models\Category;
 use Auth;
 class admins extends Controller
 {
     public function admin_admin()
     {
+        $categories=Category::all();
+        $collect = array('M'=>'Men','W'=>'Women','C'=>'Children' );
+        $product_name_men=product::with('categories')->where('collection','=','Men')->get();
+        $product_name_women=product::with('categories')->where('collection','=','Women')->get();
+        $product_name_children=product::with('categories')->where('collection','=','Children')->get();
         $admin=User::all();
-        return View('admin.admin',compact('admin'));
+        return View('admin.admin',compact('admin','collect','categories','product_name_men','product_name_women','product_name_children'));
     }
 
     public function admin_add_admin()
@@ -56,7 +64,7 @@ class admins extends Controller
 
     }
 
-   
+
     public function delete_admin($id)
     {
         $del=User::find($id);

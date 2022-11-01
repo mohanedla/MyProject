@@ -339,7 +339,7 @@
                                                 <div class="item">
                                                     <div class="product-thumb">
                                                         <div class="image product-imageblock" style="height: 418px;"> <a
-                                                                href="product_detail_page"  style="height: -webkit-fill-available;">
+                                                                href="product_detail_page" style="height: -webkit-fill-available;">
                                                                 <img data-name="product_image"
                                                                     style="height: -webkit-fill-available;"
                                                                     src="{{ asset(Storage::url($item->profile_image)) }}"

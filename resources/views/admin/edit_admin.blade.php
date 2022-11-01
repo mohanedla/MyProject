@@ -262,7 +262,9 @@
                         <ul>
                             <li><a href="home">{{ __('Home') }}</a></li>
                             <li><a href="admin">{{ __('admin') }}</a></li>
-                            <li><a href="edit_admin">{{ __('Edit admin') }}</a></li>
+                            <!-- <li><a href="edit_admin">{{ __('Edit admin') }}</a></li> -->
+                            <li class="active">{{ __('Edit admin') }}</li>
+
                         </ul>
                     </div>
                 </div>

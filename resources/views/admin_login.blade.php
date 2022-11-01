@@ -238,7 +238,7 @@
                     <div class="breadcrumb ptb_20">
                         <ul>
                             <li><a href="/home">{{ __('Home') }}</a></li>
-                            <li class="active">{{ __('Login') }}</li>
+                            <li class="active">{{ __('admin login') }}</li>
                         </ul>
                     </div>
                 </div>

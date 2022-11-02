@@ -29,6 +29,10 @@ class admins extends Controller
     {
         return View('/admin_login');
     }
+    public function admin_register()
+    {
+        return View('/admin_register');
+    }
 
 
 

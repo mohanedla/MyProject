@@ -3,420 +3,137 @@
 <html lang="en">
 <!--<![endif]-->
 
-<head>
-    <!-- =====  BASIC PAGE NEEDS  ===== -->
-    <meta charset="utf-8">
-    <title>{{ __('My Account') }}</title>
-    <!-- =====  SEO MATE  ===== -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="distribution" content="global">
-    <meta name="revisit-after" content="2 Days">
-    <meta name="robots" content="ALL">
-    <meta name="rating" content="8 YEARS">
-    <meta name="Language" content="en-us">
-    <meta name="GOOGLEBOT" content="NOARCHIVE">
-    <!-- =====  MOBILE SPECIFICATION  ===== -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="viewport" content="width=device-width">
-    <!-- =====  CSS  ===== -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.min.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/magnific-popup.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/owl.carousel.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/jquery-ui.css')}}">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <title>Material Design for Bootstrap</title>
+        <!-- MDB icon -->
+        <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
+        <!-- Google Fonts Roboto -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+        <!-- MDB -->
+        <link rel="stylesheet" href="{{ asset('css/bootstrap-login-form.min.css')}}" />
+      </head>
 
-    <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}">
-    <link rel="apple-touch-icon" href="{{ asset('images/apple-touch-icon.png') }}">
-    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('images/apple-touch-icon-72x72.png') }}">
-    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('images/apple-touch-icon-114x114.png') }}">
-</head>
+      <body>
+        <!-- Start your project here-->
 
-<body>
-    <!-- =====  LODER  ===== -->
-    <div class="loder"></div>
-    <div class="wrapper">
-        <!-- =====  HEADER START  ===== -->
-        <header id="header">
-            <div class="header-top">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-4">
-                            <div class="header-top-left">
-                                <div class="contact"><span class="hidden-xs hidden-sm hidden-md"></span></div>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-8">
-                            <ul class="header-top-right text-right">
-                                @guest
-                                @if (Route::has('login'))
-                                    <li class="nav-item">
-                                        <a class="account" href="/login_register">{{ __('My Account') }}</a>
-                                    </li>
-                                @endif
-
-
-                            @else
-                            <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                role="button">{{ Auth::user()->name }} <span class="caret"></span> </span>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
-
-                                <li><a class="dropdown-item" href="/home"
-                                    onclick="event.preventDefault();
-                                         document.getElementById('logout-form').submit();">
-                                     {{ __('Logout') }}</a>
-                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </li>
-                            </ul>
-                        </li>
-                            @endguest
-                                <li class="language dropdown"> <span class="dropdown-toggle" id="dropdownMenu1"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                        role="button">{{ __('Language') }} <span class="caret"></span> </span>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                        @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                                            <li>
-                                                <a rel="alternate" hreflang="{{ $localeCode }}"
-                                                    href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-                                                    {{ $properties['native'] }}
-                                                </a>
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="header">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-4">
-                        </div>
-                        <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="index"> <img
-                                    alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
-                        <div class="col-xs-6 col-sm-4 shopcart">
-
-                        </div>
-                    </div>
-                    <nav class="navbar">
-                        <p>menu</p>
-                        <button class="navbar-toggle" type="button" data-toggle="collapse"
-                            data-target=".js-navbar-collapse"> <span class="i-bar"><i
-                                    class="fa fa-bars"></i></span></button>
-                        <div class="collapse navbar-collapse js-navbar-collapse">
-                            <ul id="menu" class="nav navbar-nav">
-                                <li> <a href="home">{{ __('Home') }}</a></li>
-                                <li class="dropdown mega-dropdown"> <a href="#" class="dropdown-toggle"
-                                        data-toggle="dropdown">{{ __('Collection') }} </a>
-                                    <ul class="dropdown-menu mega-dropdown-menu row">
-                                        <li class="col-md-3">
-                                            <ul>
-                                                <li class="dropdown-header">{{ __('Womens') }}</li>
-                                                <li><a href="#">{{ __('trouser') }}</a></li>
-                                                <li><a href="#">{{ __('T-Shirts') }}</a></li>
-                                                <li><a href="#">{{ __('dress') }}</a></li>
-                                                <li><a href="#">{{ __('Jumpsuit') }}</a></li>
-                                                <li><a href="#">{{ __('shoes') }}</a></li>
-                                                <li><a href="#">{{ __('blouse') }}</a></li>
-                                                <li><a href="#">{{ __('watches') }}</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="col-md-3">
-                                            <ul>
-                                                <li class="dropdown-header">{{ __('Mans') }}</li>
-                                                <li><a href="#">{{ __('trouser') }}</a></li>
-                                                <li><a href="#">{{ __('T-Shirts') }}</a></li>
-                                                <li><a href="#">{{ __('Shirt') }}</a></li>
-                                                <li><a href="#">{{ __('Suits') }}</a></li>
-                                                <li><a href="#">{{ __('shoes') }}</a></li>
-                                                <li><a href="#">{{ __('Jackets') }}</a></li>
-                                                <li><a href="#">{{ __('watches') }}</a></li>
-                                            </ul>
-                                        </li>
-
-                                        <li class="col-md-3">
-                                            <ul>
-                                                <li class="dropdown-header">{{ __('Childrens') }}</li>
-                                                <li><a href="#"><select name="dropdown"
-                                                            class="dropdown_ch"></a>
-                                                <li>
-                                                    <option class="option_ch"><a
-                                                            href="#">{{ __('Born') }}</a>
-                                                    </option>
-                                                </li>
-                                                <li>
-                                                    <option class="option_ch"><a
-                                                            href="#">{{ __('Boys') }}</a>
-                                                    </option>
-                                                </li>
-                                                <li>
-                                                    <option class="option_ch"><a
-                                                            href="#">{{ __('Girls') }}</a>
-                                                    </option>
-                                                </li>
-                                                </select>
-                                        </li>
-                                        <li><a href="#"><select name="dropdown" class="dropdown_ch"></a>
-                                        <li>
-                                            <option class="option_ch"><a href="#">{{ __('Childrens') }}</a>
-                                            </option>
-                                        </li>
-                                        <li>
-                                            <option class="option_ch"><a href="#">{{ __('Boys') }}</a>
-                                            </option>
-                                        </li>
-                                        <li>
-                                            <option class="option_ch"><a href="#">{{ __('Girls') }}</a>
-                                            </option>
-                                        </li>
-                                        </select>
-                                </li>
-                                <li><a href="#"><select name="dropdown" class="dropdown_ch"></a>
-                                <li>
-                                    <option class="option_ch"><a href="#">{{ __('puzzling') }}</a>
-                                    </option>
-                                </li>
-                                <li>
-                                    <option class="option_ch"><a href="#">{{ __('Boys') }}</a>
-                                    </option>
-                                </li>
-                                <li>
-                                    <option class="option_ch"><a href="#">{{ __('Girls') }}</a>
-                                    </option>
-                                </li>
-                                </select>
-                                </li>
-
-                            </ul>
-                            </li>
-                            <li class="col-md-3">
-                                <ul>
-                                    <li id="myCarousel" class="carousel slide" data-ride="carousel">
-                                        <div class="carousel-inner">
-                                            <div class="item active"> <a href="#"><img
-                                                        src="{{ asset('images/menu-banner1.jpg') }}"
-                                                        class="img-responsive" alt="Banner1"></a></div>
-                                            <!-- End Item -->
-                                            <div class="item"> <a href="#"><img
-                                                        src="{{ asset('images/menu-banner2.jpg') }}"
-                                                        class="img-responsive" alt="Banner1"></a></div>
-                                            <!-- End Item -->
-                                            <div class="item"> <a href="#"><img
-                                                        src="{{ asset('images/menu-banner3.jpg') }}"
-                                                        class="img-responsive" alt="Banner1"></a></div>
-                                            <!-- End Item -->
-                                        </div>
-                                        <!-- End Carousel Inner -->
-                                    </li>
-                                    <!-- /.carousel -->
-                                </ul>
-                                </ul>
-                            </li>
-                            <li> <a href="shop">{{ __('shop') }}</a></li>
-                            <li> <a href="about">{{ __('About us') }}</a></li>
-                            <li> <a href="contact_us">{{ __('Contact us') }}</a></li>
-                            </ul>
-                        </div>
-                        <!-- /.nav-collapse -->
-                    </nav>
-                </div>
-            </div>
-        </header>
-        <!-- =====  HEADER END  ===== -->
-        <!-- =====  CONTAINER START  ===== -->
-        <div class="container">
-            <div class="row ">
-                <!-- =====  BANNER STRAT  ===== -->
-                <div class="col-sm-12">
-                    <div class="breadcrumb ptb_20">
-                        <ul>
-                            <li><a href="/home">{{ __('Home') }}</a></li>
-                            <li class="active">{{ __('admin login') }}</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-8 col-lg-9 mtb_20">
-                    <!-- contact  -->
-                    <div class="row">
-                        <div class="col-md-6 col-md-offset-3">
-                            <div class="panel-login panel">
-                                <div class="panel-heading">
-                                    <div class="row mb_20">
-                                        <div class="col-xs-6">
-                                            <a href="#" class="active"
-                                                id="login-form-link">{{ __('Login') }}</a>
-                                        </div>
-                                        <div class="col-xs-6">
-                                            <a href="#" id="register-form-link">{{ __('Register') }}</a>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                </div>
-                                <div class="panel-body">
-                                    <div class="row">
-                                        <div class="col-lg-12">
-
-                                            {{-- Form For Login --}}
-                                            <form id="login-form" method="POST" action="{{ route('login') }}">
-                                                @csrf
-                                                <div class="form-group">
-                                                    <input id="username" type="text"
-                                                        class="form-control @error('email') is-invalid @enderror"
-                                                        name="email" placeholder="{{ __('Username') }}"
-                                                        value="{{ old('email') }}" required autocomplete="email"
-                                                        autofocus>
-
-                                                    @error('email')
-                                                        <span class="invalid-feedback" role="alert">
-                                                            <strong>{{ $message }}</strong>
-                                                        </span>
-                                                    @enderror
-                                                </div>
-                                                <div class="form-group">
-                                                    <input type="password" name="password" id="password"
-                                                        tabindex="2" class="form-control"
-                                                        class="form-control @error('password') is-invalid @enderror"
-                                                        placeholder="{{ __('Password') }}" required
-                                                        autocomplete="current-password">
-                                                    @error('password')
-                                                        <span class="invalid-feedback" role="alert">
-                                                            <strong>{{ $message }}</strong>
-                                                        </span>
-                                                    @enderror
-                                                </div>
-                                                <div class="form-group text-center">
-                                                    <input type="checkbox" tabindex="3" class=""
-                                                        name="remember" id="remember"
-                                                        {{ old('remember') ? 'checked' : '' }}>
-                                                    <label for="remember"> {{ __('Remember Me') }}</label>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="row">
-                                                        <div class="col-sm-6 col-sm-offset-3">
-                                                            <input type="submit" name="login-submit"
-                                                                id="login-submit" tabindex="4"
-                                                                class="form-control btn btn-login"
-                                                                value="{{ __('Login') }}">
-                                                            @if (Route::has('password.request'))
-                                                                <a
-                                                                    href="{{ route('password.request') }}">
-                                                                    {{ __('Forgot Your Password?') }}
-                                                                </a>
-                                                            @endif
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="row">
-                                                        <div class="col-lg-12">
-                                                            <div class="text-center">
-                                                                <a href="#" tabindex="5"
-                                                                    class="forgot-password">{{ __('Forgot Password?') }}</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                            {{-- Form For Registerion --}}
-                                            {{-- @if(Auth::User()->role="admin") --}}
-                                            <form id="register-form" method="POST"
-                                                action="{{ route('admin_register') }}">
-                                                @csrf
-                                                <div class="form-group">
-
-                                                    <input id="username" type="text"
-                                                        class="form-control @error('name') is-invalid @enderror"
-                                                        name="name" placeholder="{{ __('Username') }}"
-                                                        value="{{ old('name') }}" required autocomplete="name"
-                                                        autofocus>
-
-                                                    @error('name')
-                                                        <span class="invalid-feedback" role="alert">
-                                                            <strong>{{ $message }}</strong>
-                                                        </span>
-                                                    @enderror
-                                                </div>
-                                                <div class="form-group">
-                                                    <input id="email" type="email"
-                                                        class="form-control @error('email') is-invalid @enderror"
-                                                        name="email" placeholder="{{ __('Email Address') }}"
-                                                        tabindex="1" class="form-control"
-                                                        value="{{ old('email') }}" required autocomplete="email">
-
-                                                    @error('email')
-                                                        <span class="invalid-feedback" role="alert">
-                                                            <strong>{{ $message }}</strong>
-                                                        </span>
-                                                    @enderror
-                                                </div>
-                                                <div class="form-group">
-
-                                                    <input id="password2" type="password"
-                                                        class="form-control @error('password') is-invalid @enderror"
-                                                        name="password" tabindex="2" class="form-control"
-                                                        placeholder="{{ __('Password') }}" required
-                                                        autocomplete="new-password">
-
-                                                    @error('password')
-                                                        <span class="invalid-feedback" role="alert">
-                                                            <strong>{{ $message }}</strong>
-                                                        </span>
-                                                    @enderror
-                                                </div>
-                                                <div class="form-group">
-
-                                                    <input id="confirm-password" type="password" class="form-control"
-                                                        name="password_confirmation" tabindex="2"
-                                                        class="form-control"
-                                                        placeholder="{{ __('Confirm Password') }}" required
-                                                    autocomplete="new-password">
-
-                                                </div>
-                                                <div class="form-group">
-
-                                                    <input id="role" type="hidden" class="form-control"
-                                                        name="role" value="admin" >
-
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="row">
-                                                        <div class="col-sm-6 col-sm-offset-3">
-                                                            <input type="submit" name="register-submit"
-                                                                id="register-submit" tabindex="4"
-                                                                class="form-control btn btn-register"
-                                                                value="{{ __('Register Now') }}">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            @extends('layout.footer')
-            <!-- =====  CONTAINER END  ===== -->
-            <!-- =====  FOOTER START  ===== -->
-            @section('footer')
-
-            @endsection
-            <!-- =====  FOOTER END  ===== -->
+        <style>
+          .divider:after,
+          .divider:before {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: #eee;
+          }
+          .h-custom {
+            height: calc(100% - 73px);
+          }
+          @media (max-width: 450px) {
+            .h-custom {
+              height: 100%;
+            }
+          }
+        </style> 
+<nav class="navbar">
+    <div class="dropdown" >
+        <button style="margin-left: 1150px; background: #1266f1; width: 170px;" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         {{ __('Language') }}
+        </button>
+        <div style="margin-left: 1160px;" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+            <li>
+                <a rel="alternate" hreflang="{{ $localeCode }}" class="dropdown-item"
+                    href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                    {{ $properties['native'] }}
+                </a>
+            </li>
+        @endforeach
         </div>
-        @extends('layout.js')
-        @section('js')
+      </div>
+    </nav>
+        <section class="vh-100">
+          <div class="container-fluid h-custom">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+              <div class="col-md-9 col-lg-6 col-xl-5">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" class="img-fluid"
+                  alt="Sample image">
+              </div>
+              <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                <form method="POST" action="{{ route('login') }}">
+                    @csrf
+                  <!-- Email input -->
+                  <div class="form-outline mb-4">
+                    <input type="email" id="form3Example3" class="form-control form-control-lg"
+                      placeholder="Enter a valid email address" class="form-control @error('password') is-invalid @enderror"
+                      name="email" value="{{ old('email') }}" required autocomplete="email"
+                      autofocus />
+                      @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                    <label class="form-label" for="form3Example3">{{ __('Email address')}}</label>
+                  </div>
 
-    </body>
+                  <!-- Password input -->
+                  <div class="form-outline mb-3">
+                    <input type="password" id="form3Example4" class="form-control form-control-lg"
+                    name="password" placeholder="Enter password" class="form-control @error('password') is-invalid @enderror"
+                    required autocomplete="current-password"/>
+                    @error('password')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+                    <label class="form-label" for="form3Example4">{{ __('Password')}}</label>
+                  </div>
+
+                  <div class="d-flex justify-content-between align-items-center">
+                    <!-- Checkbox -->
+                    <div class="form-check mb-0">
+                      <input class="form-check-input me-2" type="checkbox" name="remember" value="" id="form2Example3"
+                      tabindex="3" {{ old('remember') ? 'checked' : '' }} />
+                      <label class="form-check-label" for="form2Example3">
+                        {{ __('Remember Me') }}
+                      </label>
+                    </div>
+                    @if (Route::has('password.request'))
+                  <a
+                      href="{{ route('password.request') }}">
+                      {{ __('Forgot Your Password?') }}
+                  </a>
+              @endif
+                  </div>
+
+                  <div class="text-center text-lg-start mt-4 pt-2">
+                    <button type="submit" name="login-submit" class="btn btn-primary btn-lg"
+                    tabindex="4" style="padding-left: 2.5rem; padding-right: 2.5rem;">{{ __('Login') }}</button>
+                    <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="/admin_register"
+                        class="link-danger"> {{ __('Register') }}</a></p>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- End your project here-->
+
+        <!-- MDB -->
+        <script type="text/javascript" src="{{ asset('js/mdb.min.js')}}"></script>
+        <!-- Custom scripts -->
+        <script type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha1/js/bootstrap.bundle.min.js"></script>
+        <script>
+            $(function(){
+            $('.dropdown-toggle').dropdown();
+        });
+        </script>
+
+      </body>
 
     </html>

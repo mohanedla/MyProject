@@ -275,14 +275,6 @@
                                         <div class="item active"><a href=""> <img
                                                     src="{{ asset('images/menu-banner1.jpg') }}"
                                                     class="img-responsive" alt="Banner1"></a></div>
-                                        {{--
-                                                    <div class="item"> <img
-                                                                src="{{asset('images/menu-banner2.jpg')}}"
-                                                                class="img-responsive" alt="Banner1"></div>
-
-                                                    <div class="item"> <img
-                                                                src="{{asset('images/menu-banner3.jpg')}}"
-                                                                class="img-responsive" alt="Banner1"></div> --}}
 
                                                 </div>
                                                 <!-- End Carousel Inner -->

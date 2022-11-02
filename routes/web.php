@@ -64,22 +64,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     Route::get('/delete_user/{id}',[App\Http\Controllers\users::class,'delete_user']);
     Route::get('/item_brand/{id}',[App\Http\Controllers\products::class,'item_brand']);
+    Route::get('/category/{id}/{name}',[App\Http\Controllers\home::class,'category']);
 });
 Auth::routes();
 
-// Route::get('/', function () {
-//     return Inertia::render('index', [
-//         'canLogin' => Route::has('login'),
-//         'canRegister' => Route::has('register'),
-//         'laravelVersion' => Application::VERSION,
-//         'phpVersion' => PHP_VERSION,
-//     ]);
-// });
-
-// Route::get('/dashboard', function () {
-//     return Inertia::render('index');
-// })->middleware(['auth', 'verified'])->name('dashboard');
 
 require __DIR__.'/auth.php';
-
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

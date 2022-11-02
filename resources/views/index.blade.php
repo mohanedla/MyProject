@@ -218,7 +218,7 @@
                                         <ul>
                                             <li class="dropdown-header">{{ __('Women') }}</li>
                                             @foreach ($categories as $category)
-                                                <li><a href="#">{{ __($category->name) }}</a></li>
+                                                <li><a href="/category/{{$category->id}}/{{$collect['W']}}">{{ __($category->name) }}</a></li>
                                             @endforeach
                                         </ul>
                                     </li>
@@ -226,7 +226,7 @@
                                         <ul>
                                             <li class="dropdown-header">{{ __('Men') }}</li>
                                             @foreach ($categories as $category)
-                                                <li><a href="#">{{ __($category->name) }}</a></li>
+                                                <li><a href="/category/{{$category->id}}/{{$collect['M']}}">{{ __($category->name) }}</a></li>
                                             @endforeach
 
                                         </ul>
@@ -472,9 +472,9 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        @php
+                                        {{-- @php
                                             $i++;
-                                        @endphp
+                                        @endphp --}}
                                     @endif
                                 @endforeach
                             </div>

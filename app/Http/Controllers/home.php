@@ -102,6 +102,18 @@ class home extends Controller
             return View('checkout_page',compact('collect','categories','product_name_men','product_name_women','product_name_children'));
         }
 
+        public function category (int $id, string $name)
+        {
+            $categories=Category::all();
+            $collect = array('M'=>'Men','W'=>'Women','C'=>'Children' );
+            $brand=brand::all();
+            $product=Category::where('id','=',$id)->get();
+            $items= product::with('categories')->where('category_id','=',$id)->where('collection','=',$name)->get();
+            return View('category',compact('brand','collect','categories','product','items','name'));
+
+
+        }
+
     public function footer()
         {
             return View('footer');

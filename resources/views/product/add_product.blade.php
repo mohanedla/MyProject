@@ -266,7 +266,9 @@
                         <ul>
                             <li><a href="home">{{ __('Home') }}</a></li>
                             <li class="active"><a href="product">{{ __('Product Management') }}</a></li>
-                            <li class="active"><a href="add_product">{{ __('add Product') }}</a></li>
+                            <!-- <li class="active"><a href="add_product">{{ __('add Product') }}</a></li> -->
+                            <li class="active">{{ __('add Product') }}</li>
+
                         </ul>
                     </div>
                 </div>

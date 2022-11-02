@@ -189,11 +189,11 @@
                                     </table>
                                 </li>
                                 <li>
-                                    <form action="cart_page">
+                                    <form action="/cart_page">
                                         <input class="btn pull-left mt_10" value="{{ __('View cart') }}"
                                             type="submit">
                                     </form>
-                                    <form action="checkout_page">
+                                    <form action="/checkout_page">
                                         <input class="btn pull-right mt_10" value="{{ __('Checkout') }}"
                                             type="submit">
                                     </form>
@@ -207,26 +207,26 @@
                     <button class="navbar-toggle" type="button" data-toggle="collapse"
                         data-target=".js-navbar-collapse"> <span class="i-bar"><i
                                 class="fa fa-bars"></i></span></button>
-                    <div class="collapse navbar-collapse js-navbar-collapse">
-                        <ul id="menu" class="nav navbar-nav">
-                            <li> <a href="home">{{ __('Home') }}</a></li>
-                            <li class="dropdown mega-dropdown"> <a href="#" class="dropdown-toggle"
-                                    data-toggle="dropdown">{{ __('Collection') }} </a>
-                                <ul class="dropdown-menu mega-dropdown-menu row">
-                                    <li class="col-md-3">
-                                        <ul>
-                                            <li class="dropdown-header">{{ __('Women') }}</li>
-                                            @foreach ($categories as $category)
-                                                <li><a href="#">{{ __($category->name) }}</a></li>
-                                            @endforeach
-                                        </ul>
-                                    </li>
-                                    <li class="col-md-3">
-                                        <ul>
-                                            <li class="dropdown-header">{{ __('Men') }}</li>
-                                            @foreach ($categories as $category)
-                                                <li><a href="#">{{ __($category->name) }}</a></li>
-                                            @endforeach
+                                <div class="collapse navbar-collapse js-navbar-collapse">
+                                    <ul id="menu" class="nav navbar-nav">
+                                        <li> <a href="home">{{ __('Home') }}</a></li>
+                                        <li class="dropdown mega-dropdown"> <a href="#" class="dropdown-toggle"
+                                                data-toggle="dropdown">{{ __('Collection') }} </a>
+                                            <ul class="dropdown-menu mega-dropdown-menu row">
+                                                <li class="col-md-3">
+                                                    <ul>
+                                                        <li class="dropdown-header">{{ __('Women') }}</li>
+                                                        @foreach ($categories as $category)
+                                                            <li><a href="#">{{ __($category->name) }}</a></li>
+                                                        @endforeach
+                                                    </ul>
+                                                </li>
+                                                <li class="col-md-3">
+                                                    <ul>
+                                                        <li class="dropdown-header">{{ __('Men') }}</li>
+                                                        @foreach ($categories as $category)
+                                                            <li><a href="#">{{ __($category->name) }}</a></li>
+                                                        @endforeach
 
                                         </ul>
                                     </li>
@@ -284,20 +284,20 @@
                                                                 src="{{asset('images/menu-banner3.jpg')}}"
                                                                 class="img-responsive" alt="Banner1"></div> --}}
 
-                                    </div>
-                                    <!-- End Carousel Inner -->
-                                </li>
-                                <!-- /.carousel -->
-                            </ul>
-                        <li class="col-md-3">
-                        </li>
-                        </ul>
-                        </li>
-                        <li> <a href="shop">{{ __('shop') }}</a></li>
-                        <li> <a href="about">{{ __('About us') }}</a></li>
-                        <li> <a href="contact_us">{{ __('Contact us') }}</a></li>
-                        </ul>
-                    </div>
+                                                </div>
+                                                <!-- End Carousel Inner -->
+                                            </li>
+                                            <!-- /.carousel -->
+                                        </ul>
+                                    <li class="col-md-3">
+                                    </li>
+                                    </ul>
+                                    </li>
+                                    <li> <a href="shop">{{ __('shop') }}</a></li>
+                                    <li> <a href="about">{{ __('About us') }}</a></li>
+                                    <li> <a href="contact_us">{{ __('Contact us') }}</a></li>
+                                    </ul>
+                                </div>
                     <!-- /.nav-collapse -->
                 </nav>
             </div>

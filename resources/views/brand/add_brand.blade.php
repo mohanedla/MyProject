@@ -309,7 +309,7 @@
                     <div class="horizontal-group">
                         <div class="form-group left" id="adj">
                             <label class="label-title">{{ __('Country') }}</label>
-                            <input type="text" id="brand_country" name="brand_country" class="form-input" placeholder="{{ __('enter Country Name') }}"
+                            <input type="text" id="brand_country" name="brand_country" class="form-input" placeholder="{{ __('enter country name') }}"
                                 required="required" />
                         </div>
 

@@ -228,5 +228,9 @@
   "supervisor":"مشرف",
   "Admin":"مدير",
   "Forgot Your Password?":"نسيت رقمك السري؟",
+  "Dont have an account?":"ليس لديك حساب؟",
+  "Sign up":"إشـتـرك",
+  "Your Name":"اسمك",
+  "Your Email":"بريدك الالكتروني",
   "admin login":"تسجيل دخول المشرف"
 }

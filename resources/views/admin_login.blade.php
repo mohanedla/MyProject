@@ -7,7 +7,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
-        <title>Material Design for Bootstrap</title>
+        <title>admin_login</title>
         <!-- MDB icon -->
         <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
         <!-- Font Awesome -->
@@ -77,7 +77,7 @@
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
-                    <label class="form-label" for="form3Example3">{{ __('Email address')}}</label>
+                    <label class="form-label" for="form3Example3">{{ __('Email Address')}}</label>
                   </div>
 
                   <!-- Password input -->
@@ -113,7 +113,7 @@
                   <div class="text-center text-lg-start mt-4 pt-2">
                     <button type="submit" name="login-submit" class="btn btn-primary btn-lg"
                     tabindex="4" style="padding-left: 2.5rem; padding-right: 2.5rem;">{{ __('Login') }}</button>
-                    <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="/admin_register"
+                    <p class="small fw-bold mt-2 pt-1 mb-0">{{ __('Dont have an account?') }}<a href="/admin_register"
                         class="link-danger"> {{ __('Register') }}</a></p>
                   </div>
                 </form>

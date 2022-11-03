@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
-  <title>Material Design for Bootstrap</title>
+  <title>admin_register</title>
   <!-- MDB icon -->
   <link rel="icon" href="{{ asset('img/mdb-favicon.ico')}}" type="image/x-icon" />
   <!-- Font Awesome -->
@@ -45,7 +45,7 @@
             <div class="row justify-content-center">
               <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
-                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">{{ __('Sign up')}}</p>
                     <form class="mx-1 mx-md-4" method="POST" action="{{ route('admin_register') }}">
                     @csrf
                   <div class="d-flex flex-row align-items-center mb-4">

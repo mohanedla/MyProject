@@ -178,14 +178,6 @@
                                                         <div class="item active"><a href=""> <img
                                                                     src="{{asset('images/menu-banner1.jpg')}}"
                                                                     class="img-responsive" alt="Banner1"></a></div>
-                                                    {{--
-                                                        <div class="item"> <img
-                                                                    src="{{asset('images/menu-banner2.jpg')}}"
-                                                                    class="img-responsive" alt="Banner1"></div>
-
-                                                        <div class="item"> <img
-                                                                    src="{{asset('images/menu-banner3.jpg')}}"
-                                                                    class="img-responsive" alt="Banner1"></div> --}}
 
                                                     </div>
                                                     <!-- End Carousel Inner -->
@@ -281,12 +273,7 @@
                                                                 id="login-submit" tabindex="4"
                                                                 class="form-control btn btn-login"
                                                                 value="{{ __('Login') }}">
-                                                            @if (Route::has('password.request'))
-                                                                <a
-                                                                    href="{{ route('password.request') }}">
-                                                                    {{ __('Forgot Your Password?') }}
-                                                                </a>
-                                                            @endif
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -294,8 +281,13 @@
                                                     <div class="row">
                                                         <div class="col-lg-12">
                                                             <div class="text-center">
-                                                                <a href="#" tabindex="5"
-                                                                    class="forgot-password">{{ __('Forgot Password?') }}</a>
+                                                                @if (Route::has('password.request'))
+                                                                <a
+                                                                    href="{{ route('password.request') }}"  class="forgot-password">
+                                                                    {{ __('Forgot Password?') }}
+                                                                </a>
+                                                            @endif
+
                                                             </div>
                                                         </div>
                                                     </div>
@@ -366,6 +358,18 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <div class="text-center">
+                                                                <button type="button" class="btn_icone" data-toggle="modal"
+                                                                data-target="#admin_login" data-whatever="@getbootstrap">
+                                                                {{ __('Are You Admin')}}
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </form>
 
                                         </div>
@@ -376,7 +380,39 @@
                     </div>
                 </div>
             </div>
+            {{----------------}}
+<div class="modal fade" id="admin_login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">{{ __('Password')}}</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <form  action="{{ route('ValidationdAmin') }}" method="post" enctype="multipart/form-data">
+                        @csrf
+                    <div class="form-group">
+                      <label for="firstname" class="col-form-label">{{ __('Password') }} </label>
+                        <input form-control style="width: 230px" type="text" id="recipient-name" name="password" class="form-input"
+                            placeholder="{{ __('Enter Password') }}" required="required" />
+                            @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                    </div>
 
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('Close')}}</button>
+                  <button type="submit" class="btn">{{ __('Save') }}</button>
+                </form>
+                </div>
+              </div>
+            </div>
+          </div>
             @extends('layout.footer')
             <!-- =====  CONTAINER END  ===== -->
             <!-- =====  FOOTER START  ===== -->

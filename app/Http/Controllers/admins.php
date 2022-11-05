@@ -34,7 +34,16 @@ class admins extends Controller
         return View('/admin_register');
     }
 
-
+    public function validation_admin () {
+        $validate=request('password');
+        if($validate=='12345')
+        {
+            return view('/admin_login');
+        }
+        else{
+            return redirect('/login')->with('error','incorrect password');
+        }
+    }
 
     public function edit_admin($id)
     {

@@ -55,8 +55,9 @@ class products extends Controller
     {
         $category= new Category;
         $category->name=request('category_name');
+        // $category->collection=request('collection');
         $category->save();
-        return redirect('/add_product')->with('success','Thank You!');
+        return redirect()->back()->with('success','Thank You!');
 
     }
     public function edit_product($id)
@@ -68,7 +69,7 @@ class products extends Controller
         $get=product::with('brands')->get()->find($id);
         $get_category=product::with('categories')->get()->find($id);
         return View('product.edit_product',compact('product','brands','get','categories','get_category','collect'));
-
+ 
     }
     public function add_product()
     {
@@ -97,6 +98,7 @@ class products extends Controller
         $product->category_id=request('product_name');
         $product->brand_id=request('product_brand');
         $product->model=request('product_model');
+        $product->collection=request('product_collection');
         $product->specification=request('product_specification');
         $product->color=request('product_color');
         $product->quantity=request('product_quantity');

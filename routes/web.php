@@ -55,13 +55,14 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/delete_product/{id}',[App\Http\Controllers\products::class,'delete_product']);
     Route::post('/add_product',[App\Http\Controllers\products::class,'add_product'])->name('AddProduct');
     Route::post('/add_category',[App\Http\Controllers\products::class,'add_category'])->name('AddCategory');
+    Route::post('/add_collection',[App\Http\Controllers\CollectionController::class,'add_collection'])->name('AddCollection');
 
     Route::post('/edit_admin/{id}',[App\Http\Controllers\admins::class,'update_admin']);
     Route::get('/delete_admin/{id}',[App\Http\Controllers\admins::class,'delete_admin']);
     Route::post('/add_admin',[App\Http\Controllers\admins::class,'add_admin'])->name('Addadmin');
     Route::get('/admin_login',[App\Http\Controllers\admins::class,'admin_login']);
-    Route::get('/admin_register',[App\Http\Controllers\admins::class,'admin_register']);
     Route::post('/admin_login',[App\Http\Controllers\admins::class,'create'])->name('admin_register');
+    Route::post('/admin_register',[App\Http\Controllers\admins::class,'validation_admin'])->name('ValidationdAmin');
 
     Route::get('/delete_user/{id}',[App\Http\Controllers\users::class,'delete_user']);
     Route::get('/item_brand/{id}',[App\Http\Controllers\products::class,'item_brand']);

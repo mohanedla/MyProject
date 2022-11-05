@@ -124,7 +124,7 @@
                     <div class="row">
                         <div class="col-xs-12 col-sm-4">
                         </div>
-                        <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="index"> <img
+                        <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="/home"> <img
                                     alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
                         <div class="col-xs-6 col-sm-4 shopcart">
                         </div>
@@ -136,7 +136,7 @@
                                     class="fa fa-bars"></i></span></button>
                         <div class="collapse navbar-collapse js-navbar-collapse">
                             <ul id="menu" class="nav navbar-nav">
-                                <li> <a href="home">{{ __('Home') }}</a></li>
+                                <li> <a href="/home">{{ __('Home') }}</a></li>
                                 <li class="dropdown mega-dropdown"> <a href="#" class="dropdown-toggle"
                                         data-toggle="dropdown">{{ __('Collection') }} </a>
                                     <ul class="dropdown-menu mega-dropdown-menu row">
@@ -244,9 +244,9 @@
 
                                 </ul>
                             </li>
-                            <li> <a href="shop">{{ __('shop') }}</a></li>
-                            <li> <a href="about">{{ __('About us') }}</a></li>
-                            <li> <a href="contact_us">{{ __('Contact us') }}</a></li>
+                            <li> <a href="/shop">{{ __('shop') }}</a></li>
+                            <li> <a href="/about">{{ __('About us') }}</a></li>
+                            <li> <a href="/contact_us">{{ __('Contact us') }}</a></li>
                             </ul>
                         </div>
                         <!-- /.nav-collapse -->
@@ -264,7 +264,7 @@
                     <div class="breadcrumb ptb_20">
                         <h1>{{ __('add Product') }}</h1>
                         <ul>
-                            <li><a href="home">{{ __('Home') }}</a></li>
+                            <li><a href="/home">{{ __('Home') }}</a></li>
                             <li class="active"><a href="product">{{ __('Product Management') }}</a></li>
                             <!-- <li class="active"><a href="add_product">{{ __('add Product') }}</a></li> -->
                             <li class="active">{{ __('add Product') }}</li>
@@ -295,9 +295,20 @@
                     </div>
 
                     <div class="form-group right" >
-                        <label class="label-title">{{ __('Product Name') }}  <span style="margin-left:310px"><button type="button" class="btn_icone" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">
+                        <label class="label-title">{{ __('Product Name') }}
+                            @if(app()->getLocale()=="en")
+                            <span style="margin-left:255px"><button type="button" class="btn_icone" data-toggle="modal"
+                            data-target="#exampleModal" data-whatever="@getbootstrap">
                             <i class="fa fa-plus-square"></i>
-                        </button></span></label>
+                        </button></span>
+
+                            @else
+                            <span style="margin-left:310px"><button type="button" class="btn_icone" data-toggle="modal"
+                            data-target="#exampleModal" data-whatever="@getbootstrap">
+                            <i class="fa fa-plus-square"></i>
+                        </button></span>
+                        @endif
+                    </label>
                         {{-- <i class="fa fa-plus-circle"></i> --}}
                         <select name="product_name" class="form-input" id="level">
 
@@ -379,12 +390,30 @@
                     </div>
                 <div class="horizontal-group">
                     <div class="form-group right" id="adj">
-                        <label class="label-title">{{ __('Collection') }}</label>
+                        <label class="label-title">{{ __('Collection') }}
+                            @if(app()->getLocale()=="en")
+                            <span style="margin-left:288px"><button type="button" class="btn_icone" data-toggle="modal"
+                            data-target="#collection" data-whatever="@getbootstrap">
+                            <i class="fa fa-plus-square"></i>
+                        </button></span>
+
+                            @else
+                            <span style="margin-left:320px">
+                            {{-- <button type="button" class="btn_icone" data-toggle="modal"
+                            data-target="#collection" data-whatever="@getbootstrap">
+                            <i class="fa fa-plus-square"></i>
+                        </button> --}}
+                    </span>
+                        @endif
+                        </label>
                         <select name="product_collection" class="form-input" id="level">
                             <option value="">{{ __('Select') }}</option>
                             @for ($i=0;$i<count($collect);$i++)
                             <option value="{{ $collect[$i] }}">{{ __($collect[$i])}} </option>
                             @endfor
+                            {{-- @foreach ($collection as $collect)
+                            <option value="{{ $collect->id }}">{{ __($collect->name)}} </option>
+                            @endforeach --}}
 
                     </select>
                     </div>
@@ -418,7 +447,8 @@
         </form>
 
 
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         {{-- for categories --}}
+         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -445,6 +475,34 @@
               </div>
             </div>
           </div>
+          {{-- for collections --}}
+        {{-- <div class="modal fade" id="collection" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">{{ __('Add Collection')}}</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <form  action="{{ route('AddCollection') }}" method="post" enctype="multipart/form-data">
+                        @csrf
+                    <div class="form-group">
+                      <label for="firstname" class="col-form-label">{{ __('Collection Name') }} </label>
+                        <input form-control style="width: 230px" type="text" id="recipient-name" name="collection_name" class="form-input"
+                            placeholder="{{ __('Enter Collection Name') }}" required="required" />
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('Close')}}</button>
+                  <button type="submit" class="btn">{{ __('Save') }}</button>
+                </form>
+                </div>
+              </div>
+            </div>
+          </div> --}}
 
     </div>
     @extends('layout.footer')

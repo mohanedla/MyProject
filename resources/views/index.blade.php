@@ -218,6 +218,7 @@
                                         <ul>
                                             <li class="dropdown-header">{{ __('Women') }}</li>
                                             @foreach ($categories as $category)
+                                            
                                                 <li><a href="/category/{{$category->id}}/{{$collect['W']}}">{{ __($category->name) }}</a></li>
                                             @endforeach
                                         </ul>
@@ -276,15 +277,6 @@
                                         <div class="item active"><a href=""> <img
                                                     src="{{asset('images/menu-banner1.jpg')}}"
                                                     class="img-responsive" alt="Banner1"></a></div>
-                                    {{--
-                                        <div class="item"> <img
-                                                    src="{{asset('images/menu-banner2.jpg')}}"
-                                                    class="img-responsive" alt="Banner1"></div>
-
-                                        <div class="item"> <img
-                                                    src="{{asset('images/menu-banner3.jpg')}}"
-                                                    class="img-responsive" alt="Banner1"></div> --}}
-
                                     </div>
                                     <!-- End Carousel Inner -->
                                 </li>

@@ -4,6 +4,7 @@ namespace App\Models;
 use App\Models\User;
 use App\Models\brand;
 use App\Models\Category;
+use App\Models\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 

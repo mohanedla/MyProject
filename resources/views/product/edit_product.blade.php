@@ -302,9 +302,8 @@
                         </button></span></label>
                         {{-- <i class="fa fa-plus-circle"></i> --}}
                         <select name="product_name" class="form-input" id="level">
-
+                            <option value="">{{ __('Select') }}</option>
                             @foreach ($categories as $category)
-                                <option value="">{{ __('Select') }}</option>
                                 <option value="{{ $category->id }}"
                                     {{$get_category->categories->id == $category->id  ? 'selected' : ''}}>{{ __($category->name) }}</option>
                             @endforeach

@@ -232,5 +232,8 @@
   "Sign up":"إشـتـرك",
   "Your Name":"اسمك",
   "Your Email":"بريدك الالكتروني",
+  "admin_login":"دخول المشرف",
+  "Are You Admin":"هل أنت مشرف؟",
+  "Enter Password":"أدخل كلمة المرور",
   "admin login":"تسجيل دخول المشرف"
 }

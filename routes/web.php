@@ -2,6 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\PhotosController;
+use App\Http\Controllers\Auth1\LoginController;
+use App\Http\Controllers\Auth1\RegisterController;
+use App\Http\Controllers\ResetPasswordController;
+use App\Http\Controllers\FormController;
+use App\Http\Controllers\UserManagementController;
+use App\Http\Controllers\LockScreen;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -56,6 +64,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::post('/add_product',[App\Http\Controllers\products::class,'add_product'])->name('AddProduct');
     Route::post('/add_category',[App\Http\Controllers\products::class,'add_category'])->name('AddCategory');
     Route::post('/add_collection',[App\Http\Controllers\CollectionController::class,'add_collection'])->name('AddCollection');
+    Route::post('/add_color',[App\Http\Controllers\products::class,'add_color'])->name('AddColor');
+    Route::post('/add_size',[App\Http\Controllers\products::class,'add_size'])->name('AddSize');
 
     Route::post('/edit_admin/{id}',[App\Http\Controllers\admins::class,'update_admin']);
     Route::get('/delete_admin/{id}',[App\Http\Controllers\admins::class,'delete_admin']);
@@ -69,6 +79,51 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/category/{id}/{name}',[App\Http\Controllers\home::class,'category']);
 });
 Auth::routes();
+Route::get('/dashboard_home',function(){
+    return view('dashboard.home');
+});
 
-
-require __DIR__.'/auth.php';
+Route::get('/change_password',function(){
+    return view('dashboard.usermanagement.change_password');
+});
+Route::get('/dashboard_form',function(){
+    return view('dashboard.form.form');
+});
+Route::get('/dashboard_usermangment',function(){
+    return view('dashboard.sidebar.usermanagement');
+});
+Route::get('/dashboard_viewuser',function(){
+    return view('dashboard.usermanagement.user_control');
+});
+Route::get('/d_brand',function(){
+    return view('brand.d_brand');
+});
+Route::get('/dashboard_add_brand',function(){
+    return view('brand.dashboard_add_brand');
+});
+Route::get('/men_product',function(){
+    return view('product.men_product');
+});
+Route::get('/add_product_men',function(){
+    return view('product.add_product_men');
+});
+Route::get('/women_product',function(){
+    return view('product.women_product');
+});
+Route::get('/add_product_women',function(){
+    return view('product.add_product_women');
+});
+Route::get('/kids_product',function(){
+    return view('product.kids_product');
+});
+Route::get('/add_product_kids',function(){
+    return view('product.add_product_kids');
+});
+Route::get('/view_record',function(){
+    return view('dashboard.view_record.viewrecord');
+});
+Route::get('/view_detail',function(){
+    return view('dashboard.view_record.viewdetail');
+});
+require __DIR__.'/auth.php'
+;

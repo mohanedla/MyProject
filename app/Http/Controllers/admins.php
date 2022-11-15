@@ -41,7 +41,7 @@ class admins extends Controller
             return view('/admin_login');
         }
         else{
-            return redirect('/login')->with('error','incorrect password');
+            return redirect('/login_register')->with('error','incorrect password');
         }
     }
 

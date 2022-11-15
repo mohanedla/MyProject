@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\product;
 use App\Models\brand;
 use App\Models\Category;
+use App\Models\Size;
+use App\Models\Color;
 use Auth;
 class products extends Controller
 {
@@ -41,10 +43,13 @@ class products extends Controller
 
     public function product_add_product()
     {
+        // $size= array('S','M','L','XL','XXL','XXXL','XXXXL' );
+        $size= Size::all();
+        $color= Color::all();
         $collect = array('Men','Women','Children' );
         $brands=brand::all();
         $categories=Category::all();
-        return View('product.add_product',compact('brands','categories','collect'));
+        return View('product.add_product',compact('brands','categories','collect','size','color'));
     }
     public function product_detail_page()
     {
@@ -53,6 +58,7 @@ class products extends Controller
     }
     public function add_category()
     {
+
         $category= new Category;
         $category->name=request('category_name');
         // $category->collection=request('collection');
@@ -69,7 +75,23 @@ class products extends Controller
         $get=product::with('brands')->get()->find($id);
         $get_category=product::with('categories')->get()->find($id);
         return View('product.edit_product',compact('product','brands','get','categories','get_category','collect'));
- 
+
+    }
+
+    public function add_color ()
+    {
+        $color=new Color;
+        $color->name=request('color_name');
+        $color->save();
+        return redirect()->back();
+
+    }
+    public function add_size ()
+    {
+        $size=new Size;
+        $size->name=request('size_name');
+        $size->save();
+        return redirect()->back();
     }
     public function add_product()
     {
@@ -80,14 +102,19 @@ class products extends Controller
         $product->model=request('product_model');
         $product->collection=request('product_collection');
         $product->specification=request('product_specification');
-        $product->color=request('product_color');
+        $product->color=implode(',',request('product_color'));
         $product->quantity=request('product_quantity');
-        $product->size=request('product_size');
+        $product->size=implode(',',request('product_size'));
         $product->price=request('product_price');
         $product->admin_id=Auth::id();
         $product->profile_image=request()->file('product_image') ? request()->file('product_image')->store('public') : null;
 
         $product->save();
+
+        // $size= new Size;
+        // $size->name=request('product_size');
+        // $size->product_id=$product->id;
+        // $size->save();
         return redirect('product')->with('success','Thank You!');
 
     }
@@ -118,5 +145,7 @@ class products extends Controller
         $del->delete();
         return redirect('product');
     }
+
+
 
 }

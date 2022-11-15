@@ -218,7 +218,7 @@
                                         <ul>
                                             <li class="dropdown-header">{{ __('Women') }}</li>
                                             @foreach ($categories as $category)
-                                            
+
                                                 <li><a href="/category/{{$category->id}}/{{$collect['W']}}">{{ __($category->name) }}</a></li>
                                             @endforeach
                                         </ul>
@@ -286,6 +286,7 @@
                         </li>
                         </ul>
                         </li>
+                        
                         <li> <a href="shop">{{ __('shop') }}</a></li>
                         <li> <a href="about">{{ __('About us') }}</a></li>
                         <li> <a href="contact_us">{{ __('Contact us') }}</a></li>

@@ -27,7 +27,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style1.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/magnific-popup.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/owl.carousel.css') }}">
-    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/jquery-ui.css') }}">
 
     <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}">
     <link rel="apple-touch-icon" href="{{ asset('images/apple-touch-icon.png') }}">
@@ -367,16 +367,62 @@
 
                 <div class="horizontal-group">
                     <div class="form-group left">
-                        <label for="firstname" class="label-title">{{ __('Color') }} </label>
-                        <input type="text" id="product_name" name="product_color" class="form-input"
-                            placeholder="{{ __('enter Color') }}" required="required" />
+                        <label for="Color" class="label-title">{{ __('Color') }}
+                            @if(app()->getLocale()=="en")
+                            <span style="margin-left:310px"><button type="button" class="btn_icone" data-toggle="modal"
+                            data-target="#color" data-whatever="@getbootstrap">
+                            <i class="fa fa-plus-square"></i>
+                        </button></span>
+
+                            @else
+                            <span style="margin-left:323px"><button type="button" class="btn_icone" data-toggle="modal"
+                            data-target="#color" data-whatever="@getbootstrap">
+                            <i class="fa fa-plus-square"></i>
+                        </button></span>
+                        @endif
+                        </label>
+                        <select name="product_color[]" class="form-input" id="level" id="field2" multiselect-select-all="true"  multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true">
+                            {{-- @for ($i=0;$i<count($size);$i++)
+                            <option  value="{{$size[$i];}}">{{$size[$i];}}</option>
+                            @endfor --}}
+                            @foreach ($color as $c)
+                            <option value="{{ $c->id }}">{{ __($c->name)}} </option>
+                            @endforeach
+
+                          </select>
+
+                        {{-- <input type="text" id="product_name" name="product_color" class="form-input"
+                            placeholder="{{ __('enter Color') }}" required="required" /> --}}
                     </div>
                     </div>
                     <div class="horizontal-group">
                     <div class="form-group right">
-                        <label for="lastname" class="label-title">{{ __('Size') }}</label>
-                        <input type="text" name="product_size" id="lastname" class="form-input"
-                            placeholder="{{ __('enter Size') }}" />
+                        <label for="lastname" class="label-title">{{ __('Size') }}
+                            @if(app()->getLocale()=="en")
+                            <span style="margin-left:288px"><button type="button" class="btn_icone" data-toggle="modal"
+                            data-target="#size" data-whatever="@getbootstrap">
+                            <i class="fa fa-plus-square"></i>
+                        </button></span>
+
+                            @else
+                            <span style="margin-left:320px">
+                            <button type="button" class="btn_icone" data-toggle="modal"
+                            data-target="#size" data-whatever="@getbootstrap">
+                            <i class="fa fa-plus-square"></i>
+                        </button>
+                    </span>
+                        @endif
+                        </label>
+                        <select name="product_size[]" class="form-input" id="level" id="field1" multiselect-select-all="true"  multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true">
+                            {{-- @for ($i=0;$i<count($size);$i++)
+                            <option value="{{$size[$i];}}">{{$size[$i];}}</option>
+                            @endfor --}}
+                            @foreach ($size as $s)
+                            <option value="{{ $s->id }}">{{ __($s->name)}} </option>
+                            @endforeach
+                          </select>
+                        {{-- <input type="text" name="product_size" id="lastname" class="form-input"
+                            placeholder="{{ __('enter Size') }}" /> --}}
                     </div>
 
                 </div>
@@ -391,20 +437,6 @@
                 <div class="horizontal-group">
                     <div class="form-group right" id="adj">
                         <label class="label-title">{{ __('Collection') }}
-                            @if(app()->getLocale()=="en")
-                            <span style="margin-left:288px"><button type="button" class="btn_icone" data-toggle="modal"
-                            data-target="#collection" data-whatever="@getbootstrap">
-                            <i class="fa fa-plus-square"></i>
-                        </button></span>
-
-                            @else
-                            <span style="margin-left:320px">
-                            {{-- <button type="button" class="btn_icone" data-toggle="modal"
-                            data-target="#collection" data-whatever="@getbootstrap">
-                            <i class="fa fa-plus-square"></i>
-                        </button> --}}
-                    </span>
-                        @endif
                         </label>
                         <select name="product_collection" class="form-input" id="level">
                             <option value="">{{ __('Select') }}</option>
@@ -475,23 +507,23 @@
               </div>
             </div>
           </div>
-          {{-- for collections --}}
-        {{-- <div class="modal fade" id="collection" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         {{-- for size --}}
+         <div class="modal fade" id="size" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">{{ __('Add Collection')}}</h5>
+                  <h5 class="modal-title" id="exampleModalLabel">{{ __('Add Size')}}</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
                 <div class="modal-body">
-                    <form  action="{{ route('AddCollection') }}" method="post" enctype="multipart/form-data">
+                    <form  action="{{ route('AddSize') }}" method="post" enctype="multipart/form-data">
                         @csrf
                     <div class="form-group">
-                      <label for="firstname" class="col-form-label">{{ __('Collection Name') }} </label>
-                        <input form-control style="width: 230px" type="text" id="recipient-name" name="collection_name" class="form-input"
-                            placeholder="{{ __('Enter Collection Name') }}" required="required" />
+                      <label for="firstname" class="col-form-label">{{ __('Size Name') }} </label>
+                        <input form-control type="text" id="recipient-name" name="size_name" class="form-input"
+                            placeholder="{{ __('Enter Size Name') }}" required="required" />
                     </div>
 
                 </div>
@@ -502,7 +534,36 @@
                 </div>
               </div>
             </div>
-          </div> --}}
+          </div>
+         {{-- for colors --}}
+         <div class="modal fade" id="color" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">{{ __('Add Color')}}</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <form  action="{{ route('AddColor') }}" method="post" enctype="multipart/form-data">
+                        @csrf
+                    <div class="form-group">
+                      <label for="firstname" class="col-form-label">{{ __('Color Name') }} </label>
+                        <input form-control type="text" id="recipient-name" name="color_name" class="form-input"
+                            placeholder="{{ __('Enter Color Name') }}" required="required" />
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('Close')}}</button>
+                  <button type="submit" class="btn">{{ __('Save') }}</button>
+                </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
 
     </div>
     @extends('layout.footer')
@@ -515,7 +576,8 @@
     </div>
     @extends('layout.js')
     @section('js')
-
+    <script src="{{ asset('js/multiselect.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
 
     </body>
 

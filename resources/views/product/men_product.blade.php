@@ -7,8 +7,8 @@
 
     <div class="d-flex align-items-center justify-content-between">
         <a href="" class="logo d-flex align-items-center">
-            
-            <a class="d-none d-lg-block"> alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a>
+        <span class="d-none d-lg-block">Online Shop</span>
+            <!-- <a class="d-none d-lg-block"> alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> -->
         </a>
         <a href="#" class="burger-btn d-block d-xl-none">
             <i class="bi bi-justify fs-3"></i>
@@ -296,12 +296,12 @@
                                 <td class="name">moh</td>
                                 <td class="name">moh</td>
                                 <td class="name">moh</td>
-                                <td class="name">mohaned</td>
+                                <td class="name">moh</td>
                                 <td class="name">mohaned</td>
                                 <td class="name">mohaned</td>
                                 <td class="name">moed</td>
                                 <td class="name">mohaned</td>
-                                <td class="name">mohaned</td>
+                                <td class="name">mo</td>
                                 <td class="text-center">
                                     <a href="">
 

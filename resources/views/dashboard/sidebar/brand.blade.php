@@ -10,7 +10,7 @@
         </div>
         <div class="sidebar-menu">
             <ul class="menu">
-                <li class="sidebar-title">Menu</li>
+                <li class="sidebar-title">{{ __('Menu') }}</li>
                 <li class="sidebar-item">
                     <a href="/dashboard_home" class='sidebar-link'>
                         <i class="bi bi-house-fill"></i>

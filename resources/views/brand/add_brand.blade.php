@@ -295,6 +295,7 @@
                     </div>
 
 
+                    {{ __('') }}
                     <!-- Gender and Hobbies -->
 
                         <div class="horizontal-group">
@@ -303,7 +304,7 @@
                                 <input type="text" id="firstname" name="brand_model" class="form-input" placeholder="{{ __('enter model') }}"
                                     required="required" />
                             </div>
-                    </div>
+                        </div>
 
                     <!-- Source of Income and Income -->
                     <div class="horizontal-group">

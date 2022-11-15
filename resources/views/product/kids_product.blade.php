@@ -207,14 +207,16 @@
         <div class="page-title">
             <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
-                    <h3>User Management Control</h3>
-                    <p class="text-subtitle text-muted">For user to check they list</p>
+                <h3>{{ __('Products management control') }}</h3>
+                <br>
+                <br>
+
                 </div>
                 <div class="col-12 col-md-6 order-md-2 order-first">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="">Dashboard</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">User Mangement</li>
+                        <li class="breadcrumb-item"><a href="">{{ __('Dashboard') }}</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">{{ __('Product Management') }}</li>
                         </ol>
                     </nav>
                 </div>
@@ -225,9 +227,9 @@
         <section class="section">
             <div class="card">
                 <div class="card-header">
-                    User Datatable
+               <h4> {{ __('Brand List kids') }}</h4>
                     {{-- <div class="buttons"> --}}
-                        <a style="float: right;" href="/add_product_kids" class="btn btn-secondary">Secondary</a>
+                        <a style="float: right;" href="/add_product_kids" class="btn btn-secondary">{{ __('add Product') }}</a>
 
                   {{-- </div> --}}
                 </div>
@@ -235,14 +237,18 @@
                     <table class="table table-striped" id="table1">
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Full Name</th>
-                                <th>Profile</th>
-                                <th>Email Address</th>
-                                <th>Phone Number</th>
-                                <th>Status</th>
-                                <th>Role Name</th>
-                                <th class="text-center">Modify</th>
+                                <th style="width: 50px;" scope="col">{{ __('#')}}</th>
+                                <th style="width: 50px;" scope="col">{{ __('Name')}}</th>
+                                <th style="width: 50px;" scope="col">{{ __('brand')}}</th>
+                                <th style="width: 50px;" scope="col">{{ __('Specifications')}}</th>
+                                <th style="width: 50px;" scope="col">{{ __('Quantity')}}</th>
+                                <th style="width: 50px;" scope="col">{{ __('Size')}}</th>
+                                <th style="width: 50px;" scope="col">{{ __('Color')}}</th>
+                                <th style="width: 50px;" scope="col">{{ __('price')}}</th>
+                                <th style="width: 50px;" scope="col">{{ __('admin')}}</th>
+                                <th style="width: 50px;" scope="col">{{ __('photo')}}</th>
+                                <th style="width: 50px;" scope="col"></th>
+
                             </tr>
                         </thead>
                         <tbody>
@@ -289,10 +295,13 @@
 
                             <tr>
                                 <td class="id">1</td>
-                                <td class="name">mohaned</td>
-                                <td class="name">mohaned</td>
-                                <td class="name">mohaned</td>
-                                <td class="name">mohaned</td>
+                                <td class="name">moha</d>
+                                <td class="name">moha</td>
+                                <td class="name">mohan</td>
+                                <td class="name">ohaned</td>
+                                <td class="name">ohaned</td>
+                                <td class="name">maned</td>
+                                <td class="name">mohd</td>
                                 <td class="name">mohaned</td>
                                 <td class="name">mohaned</td>
                                 <td class="text-center">
@@ -316,11 +325,9 @@
     <footer>
         <div class="footer clearfix mb-0 text-muted ">
             <div class="float-start">
-                <p>2021 &copy; Soeng Souy</p>
             </div>
             <div class="float-end">
-                <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a
-                href="http://soengsouy.com">Soeng Souy</a></p>
+            
             </div>
         </div>
     </footer>

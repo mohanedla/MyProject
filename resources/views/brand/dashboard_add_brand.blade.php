@@ -225,14 +225,14 @@
             <div class="page-title">
                 <div class="row">
                     <div class="col-12 col-md-6 order-md-1 order-last">
-                        <h3>User Management View</h3>
-                        <p class="text-subtitle text-muted">For user to check they list</p>
+                        <h3>{{ __('Brand management control') }}</h3>
                     </div>
                     <div class="col-12 col-md-6 order-md-2 order-first">
                         <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="">Dashboard</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">User Mangement View</li>
+                            <li class="breadcrumb-item"><a href="">{{ __('Dashboard') }}</a></li>
+                            <li class="breadcrumb-item"><a href="">{{ __('Brand') }}</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">{{ __('add brand') }}</li>
                             </ol>
                         </nav>
                     </div>
@@ -241,7 +241,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">User View Detial</h4>
+                        <h4 class="card-title">{{ __('add brand') }}</h4>
                     </div>
                     <div class="card-content">
                         <div class="card-body">
@@ -250,51 +250,51 @@
                                 <div class="row">
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
-                                            <label for="first-name-column">First Name</label>
+                                            <label for="first-name-column">{{ __('Brand Name') }}</label>
                                             <input type="text" id="first-name-column" class="form-control"
-                                                placeholder="First Name" name="fname-column">
+                                                placeholder="{{ __('enter Brand Name') }}" name="fname-column">
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
-                                        <div class="form-group">
-                                            <label for="last-name-column">Last Name</label>
-                                            <input type="text" id="last-name-column" class="form-control"
-                                                placeholder="Last Name" name="lname-column">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-12">
-                                        <div class="form-group">
-                                            <label for="city-column">City</label>
-                                            <input type="text" id="city-column" class="form-control"
-                                                placeholder="City" name="city-column">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-12">
-                                        <div class="form-group">
-                                            <label for="country-floating">Country</label>
-                                            <input type="text" id="country-floating" class="form-control"
-                                                name="country-floating" placeholder="Country">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-12">
-                                        <div class="form-group">
-                                            <label for="company-column">Company</label>
-                                            <input type="text" id="company-column" class="form-control"
-                                                name="company-column" placeholder="Company">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-12">
-                                        <div class="form-group">
-                                            <label for="email-id-column">Email</label>
+                                    <div class="form-group">
+                                            <label for="email-id-column">{{ __('Email') }}</label>
                                             <input type="email" id="email-id-column" class="form-control"
-                                                name="email-id-column" placeholder="Email">
+                                                name="email-id-column" placeholder="{{ __('enter your email') }}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label for="city-column">{{ __('model') }} </label>
+                                            <input type="text" id="city-column" class="form-control"
+                                                placeholder="{{ __('enter model') }}" name="city-column">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label for="country-floating">{{ __('Phone Number') }}</label>
+                                            <input type="text" id="country-floating" class="form-control"
+                                                name="country-floating" placeholder="{{ __('Enter your phone number') }}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label for="company-column">{{ __('Country') }}</label>
+                                            <input type="text" id="company-column" class="form-control"
+                                                name="company-column" placeholder="{{ __('enter country name') }}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label for="email-id-column">{{ __('Address') }} </label>
+                                            <input type="email" id="email-id-column" class="form-control"
+                                                name="email-id-column" placeholder="{{ __('enter your address') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="form-group has-icon-lefts">
                                             <div class="form-group">
-                                                <label for="email-id-column">Email</label>
-                                                <input type="file" class="form-control" placeholder="Name"
+                                                <label for="email-id-column"> {{ __('Upload Product Picture') }}</label>
+                                                <input type="file" class="form-control" placeholder=""
                                                     id="first-name-icon" name="image" />
                                                 {{-- <div class="form-control-icon avatar avatar.avatar-im">
                                                 <img src="{{ URL::to('/images/'. $data[0]->avatar) }}">
@@ -308,13 +308,13 @@
                                         <div class='form-check'>
                                             <div class="checkbox">
                                                 <input type="checkbox" id="checkbox5" class='form-check-input' checked>
-                                                <label for="checkbox5">Remember Me</label>
+                                                <label for="checkbox5">{{ __('Remember Me') }}</label>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-12 d-flex justify-content-end">
-                                        <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
-                                        <button type="reset" class="btn btn-light-secondary me-1 mb-1">Reset</button>
+                                        <button type="submit" class="btn btn-primary me-1 mb-1">{{ __('Save') }}</button>
+                                        <button type="reset" class="btn btn-light-secondary me-1 mb-1">{{ __('Reset') }}</button>
                                     </div>
                                 </div>
 
@@ -327,11 +327,9 @@
         <footer>
             <div class="footer clearfix mb-0 text-muted ">
                 <div class="float-start">
-                    <p>2021 &copy; Soeng Souy</p>
                 </div>
                 <div class="float-end">
-                    <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a
-                            href="http://soengsouy.com">Soeng Souy</a></p>
+                  
                 </div>
             </div>
         </footer>

@@ -206,14 +206,15 @@
             <div class="page-title">
                 <div class="row">
                     <div class="col-12 col-md-6 order-md-1 order-last">
-                        <h3>User Management Control</h3>
-                        <p class="text-subtitle text-muted">For user to check they list</p>
+                        <h3>{{ __('Brand management control') }}</h3>
+                        <br>
+                        <br>
                     </div>
                     <div class="col-12 col-md-6 order-md-2 order-first">
                         <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="">Dashboard</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">User Mangement</li>
+                                <li class="breadcrumb-item"><a href="">{{ __('Dashboard') }}</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">{{ __('Brand') }}</li>
                             </ol>
                         </nav>
                     </div>
@@ -224,12 +225,12 @@
             <section class="section">
                 <div class="card">
                     <div class="card-header">
-                        User Datatable
+                        {{ __('Brand List') }}
                         {{-- <div class="buttons"> --}}
 
 
                         <a style="float: right;" href="/dashboard_add_brand"
-                        class="btn btn-secondary rounded-pill">{{ __('Add Product') }}</a>
+                        class="btn btn-secondary rounded-pill">{{ __('add brand') }}</a>
 
                         {{-- </div> --}}
                     </div>
@@ -323,11 +324,11 @@
         <footer>
             <div class="footer clearfix mb-0 text-muted ">
                 <div class="float-start">
-                    <p>2021 &copy; Soeng Souy</p>
+                    <!-- <p>2021 &copy; Soeng Souy</p> -->
                 </div>
                 <div class="float-end">
-                    <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a
-                            href="http://soengsouy.com">Soeng Souy</a></p>
+                    <!-- <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a
+                            href="http://soengsouy.com">Soeng Souy</a></p> -->
                 </div>
             </div>
         </footer>

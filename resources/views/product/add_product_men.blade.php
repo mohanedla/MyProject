@@ -225,14 +225,15 @@
             <div class="page-title">
                 <div class="row">
                     <div class="col-12 col-md-6 order-md-1 order-last">
-                        <h3>User Management View</h3>
-                        <p class="text-subtitle text-muted">For user to check they list</p>
+                    <h3>{{ __('Products management control') }}</h3>
+                        <br>
                     </div>
                     <div class="col-12 col-md-6 order-md-2 order-first">
                         <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="">Dashboard</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">User Mangement View</li>
+                            <li class="breadcrumb-item"><a href="">{{ __('Dashboard') }}</a></li>
+                            <li class="breadcrumb-item"><a href="">{{ __('Product Management') }}</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">{{ __('Add a men,s product') }}</li>
                             </ol>
                         </nav>
                     </div>
@@ -242,10 +243,10 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">User View Detial
+                        <h4 class="card-title">{{ __('Add a men,s product') }}
                             <button style="float: right;" type="button" data-bs-toggle="modal" data-bs-target="#type"
                                 data-bs-whatever="@mdo"
-                                class="btn btn-secondary rounded-pill">{{ __('New Type Model') }}</button>
+                                class="btn btn-secondary rounded-pill">{{ __('add Type') }}</button>
                             <button style="float: right;" type="button" data-bs-toggle="modal" data-bs-target="#size"
                                 data-bs-whatever="@mdo"
                                 class="btn btn-secondary rounded-pill">{{ __('Add Size') }}</button>
@@ -258,58 +259,65 @@
                     <div class="card-content">
                         <div class="card-body">
 
-                            <form class="form">
+                        <form class="form">
                                 <div class="row">
-                                    <div class="col-md-6 col-12">
+                                <div class="col-md-6 col-12">
                                         <div class="form-group">
-                                            <label for="first-name-column">First Name</label>
-                                            <input type="text" id="first-name-column" class="form-control"
-                                                placeholder="First Name" name="fname-column">
+                                            <label for="last-name-column">{{ __('Product Name') }}</label>
+                                            {{-- <input type="text" id="last-name-column" class="form-control"
+                                                placeholder="Last Name" name="lname-column"> --}}
+                                                <fieldset class="form-group">
+                                                    <select class="form-select @error('role_name') is-invalid @enderror" name="role_name" id="role_name">
+                                                        <option selected disabled>Select </option>
+                                                        <option value="Admin">Admin</option>
+                                                        <option value="Super Admin">Super Admin</option>
+                                                        <option value="Normal User">Normal User</option>
+                                                    </select>
+
+                                                </fieldset>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
-                                            <label for="last-name-column">Last Name</label>
+                                            <label for="last-name-column">{{ __('Brand') }}</label>
                                             {{-- <input type="text" id="last-name-column" class="form-control"
                                                 placeholder="Last Name" name="lname-column"> --}}
+                                                <fieldset class="form-group">
+                                                    <select class="form-select @error('role_name') is-invalid @enderror" name="role_name" id="role_name">
+                                                        <option selected disabled>Select </option>
+                                                        <option value="Admin">Admin</option>
+                                                        <option value="Super Admin">Super Admin</option>
+                                                        <option value="Normal User">Normal User</option>
+                                                    </select>
+
+                                                </fieldset>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label for="city-column">{{ __('Specifications') }} </label>
+                                            <input type="text" id="city-column" class="form-control"
+                                                placeholder="{{ __('enter Specifications') }}" name="city-column">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label for="country-floating">{{ __('Quantity') }}</label>
+                                            <input type="text" id="country-floating" class="form-control"
+                                                name="country-floating" placeholder="{{ __('enter Quantity') }}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label for="company-column">{{ __('Size') }}</label>
                                             <fieldset class="form-group">
-                                                <select class="form-select @error('role_name') is-invalid @enderror"
-                                                    name="role_name" id="role_name">
+                                                <select style="width=100%" class="form-select" name="product_color[]"  id="level" id="field2" multiselect-select-all="true"
+                                                 multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true">
+                                                {{-- <select multiple class="form-select @error('role_name') is-invalid @enderror" name="role_name" id="role_name"> --}}
                                                     <option selected disabled>Select </option>
                                                     <option value="Admin">Admin</option>
                                                     <option value="Super Admin">Super Admin</option>
                                                     <option value="Normal User">Normal User</option>
-                                                </select>
-
-                                            </fieldset>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-12">
-                                        <div class="form-group">
-                                            <label for="city-column">City</label>
-                                            <input type="text" id="city-column" class="form-control"
-                                                placeholder="City" name="city-column">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-12">
-                                        <div class="form-group">
-                                            <label for="country-floating">Country</label>
-                                            <input type="text" id="country-floating" class="form-control"
-                                                name="country-floating" placeholder="Country">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-12">
-                                        <div class="form-group">
-                                            <label for="company-column">Company</label>
-                                            <fieldset class="form-group">
-                                                <select style="width=100%" class="form-select" name="product_color[]"
-                                                    id="level" id="field2" multiselect-select-all="true" multiple
-                                                    onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))"
-                                                    multiselect-hide-x="true">
-                                                    {{-- <select multiple class="form-select @error('role_name') is-invalid @enderror" name="role_name" id="role_name"> --}}
-                                                    <option value="Admin">Admin</option>
-                                                    <option value="Super Admin">Super Admin</option>
-                                                    <option value="Normal User">Normal User</option>
                                                     <option value="Normal User">Normal User</option>
                                                 </select>
 
@@ -318,36 +326,37 @@
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
-                                            <label for="email-id-column">Email</label>
+                                            <label for="email-id-column">{{ __('Color') }}</label>
                                             <fieldset class="form-group">
-                                                <select style="width=100%" class="form-select" name="product_color[]"
-                                                    id="level" id="field2" multiselect-select-all="true" multiple
-                                                    onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))"
-                                                    multiselect-hide-x="true">
-                                                    {{-- <select multiple class="form-select @error('role_name') is-invalid @enderror" name="role_name" id="role_name"> --}}
+                                                <select style="width=100%" class="form-select" name="product_color[]"  id="level" id="field2" multiselect-select-all="true"
+                                                 multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true">
+                                                {{-- <select multiple class="form-select @error('role_name') is-invalid @enderror" name="role_name" id="role_name"> --}}
+                                                    <option selected disabled>Select </option>
                                                     <option value="Admin">Admin</option>
                                                     <option value="Super Admin">Super Admin</option>
                                                     <option value="Normal User">Normal User</option>
                                                     <option value="Normal User">Normal User</option>
                                                 </select>
+
+                                            </fieldset>
+
                                             </fieldset>
                                         </div>
                                     </div>
-                                    <br />
-                                    <br />
-                                    <br />
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
-                                            <label for="email-id-column">Email</label>
+                                            <br>
+                                            <label for="email-id-column">{{ __('price') }}</label>
                                             <input type="email" id="email-id-column" class="form-control"
-                                                name="email-id-column" placeholder="Email">
+                                                name="email-id-column" placeholder="{{ __('enter price') }}">
                                         </div>
                                     </div>
 
                                     <div class="col-md-6 col-12">
                                         <div class="form-group has-icon-lefts">
-                                            <div class="form-group">
-                                                <label for="email-id-column">Email</label>
+                                            <div<br>
+                                                <br>
+                                                <label for="email-id-column"> {{ __('Upload Product Picture') }}</label>
                                                 <input type="file" class="form-control" placeholder="Name"
                                                     id="first-name-icon" name="image" multiple />
                                                 {{-- <div class="form-control-icon avatar avatar.avatar-im">
@@ -360,8 +369,8 @@
 
 
                                     <div class="col-12 d-flex justify-content-end">
-                                        <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
-                                        <button type="reset" class="btn btn-light-secondary me-1 mb-1">Reset</button>
+                                        <button type="submit" class="btn btn-primary me-1 mb-1">{{ __('Save') }}</button>
+                                        <button type="reset" class="btn btn-light-secondary me-1 mb-1">{{ __('Reset') }}</button>
                                     </div>
                                 </div>
 
@@ -448,11 +457,9 @@
         <footer>
             <div class="footer clearfix mb-0 text-muted ">
                 <div class="float-start">
-                    <p>2021 &copy; Soeng Souy</p>
                 </div>
                 <div class="float-end">
-                    <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a
-                            href="http://soengsouy.com">Soeng Souy</a></p>
+                   
                 </div>
             </div>
         </footer>

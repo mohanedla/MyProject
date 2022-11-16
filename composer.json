@@ -6,8 +6,10 @@
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
+        "brian2694/laravel-toastr": "^5.57",
         "guzzlehttp/guzzle": "^7.2",
         "inertiajs/inertia-laravel": "^0.6.3",
+        "laralabs/toaster": "^4.0",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^2.8",
         "laravel/tinker": "^2.7",

@@ -119,17 +119,13 @@
                                                     <li class="col-md-3">
                                                         <ul>
                                                             <li class="dropdown-header">{{ __('Women') }}</li>
-                                                            @foreach ($categories as $category)
-                                                                <li><a href="#">{{ __($category->name) }}</a></li>
-                                                            @endforeach
+
                                                         </ul>
                                                     </li>
                                                     <li class="col-md-3">
                                                         <ul>
                                                             <li class="dropdown-header">{{ __('Men') }}</li>
-                                                            @foreach ($categories as $category)
-                                                                <li><a href="#">{{ __($category->name) }}</a></li>
-                                                            @endforeach
+                                                            
 
                                                         </ul>
                                                     </li>
@@ -222,7 +218,7 @@
                                             <a href="#" class="active"
                                                 id="login-form-link">{{ __('Login') }}</a>
                                         </div>
-                                        <div class="col-xs-6">   
+                                        <div class="col-xs-6">
                                             <a href="#admin_login" class="btn_icone" data-toggle="modal" data-whatever="@getbootstrap">{{ __('Are You Admin') }}</a>
                                             <div class="col-xs-6">
                                                 <a href="#" id="register-form-link">{{ __('Register') }}</a>

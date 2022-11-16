@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('colors', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            // $table->integer('product_id')->references('id')->on('products');
             $table->timestamps();
         });
     }

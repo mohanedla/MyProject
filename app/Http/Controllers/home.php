@@ -7,21 +7,25 @@ use App\Models\brand;
 use App\Models\product;
 use App\Models\User;
 use App\Models\Category;
+use App\Models\Men;
+use App\Models\Women;
+use App\Models\Kids;
 use auth;
 class home extends Controller
 {
     public function index()
         {
-            $categories=Category::all();
+            // $categories=Category::all();
 
             $collect = array('M'=>'Men','W'=>'Women','C'=>'Children' );
             $brand=brand::all();
             $products=product::all();
-            $product_name_men=product::with('categories')->where('collection','=','Men')->get();
-
-            $product_name_women=product::with('categories')->where('collection','=','Women')->get();
-            $product_name_children=product::with('categories')->where('collection','=','Children')->get();
-            return View('index',compact('brand','products','collect','categories','product_name_men','product_name_women','product_name_children'));
+            $category_men=Men::all();
+            $category_women=Women::all();
+            $category_kids=Kids::all();
+            // $product_name_women=product::with('categories')->where('collection','=','Women')->get();
+            // $product_name_children=product::with('categories')->where('collection','=','Children')->get();
+            return View('index',compact('products','collect','brand','category_men','category_women','category_kids'));
         }
     public function category_page()
         {
@@ -36,12 +40,12 @@ class home extends Controller
 
     public function login_register()
         {
-            $categories=Category::all();
-            $collect = array('M'=>'Men','W'=>'Women','C'=>'Children' );
-            $product_name_men=product::with('categories')->where('collection','=','Men')->get();
-            $product_name_women=product::with('categories')->where('collection','=','Women')->get();
-            $product_name_children=product::with('categories')->where('collection','=','Children')->get();
-            return View('/login',compact('collect','categories','product_name_men','product_name_women','product_name_children'));
+            // $categories=Category::all();
+            // $collect = array('M'=>'Men','W'=>'Women','C'=>'Children' );
+            // $product_name_men=product::with('categories')->where('collection','=','Men')->get();
+            // $product_name_women=product::with('categories')->where('collection','=','Women')->get();
+            // $product_name_children=product::with('categories')->where('collection','=','Children')->get();
+            return View('/login');
         }
 
     public function layout_empty()

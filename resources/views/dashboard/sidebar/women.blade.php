@@ -75,7 +75,7 @@
                     </li>
                 @endif --}}
                 <li class="sidebar-item">
-                    <a href="/dashboard_viewuser" class='sidebar-link'>
+                    <a href="/d_brand" class='sidebar-link'>
                         <i class="bi bi-shield-lock"></i>
                         <span>{{ __('Brands') }}</span>
                     </a>

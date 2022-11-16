@@ -77,6 +77,16 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/delete_user/{id}',[App\Http\Controllers\users::class,'delete_user']);
     Route::get('/item_brand/{id}',[App\Http\Controllers\products::class,'item_brand']);
     Route::get('/category/{id}/{name}',[App\Http\Controllers\home::class,'category']);
+
+
+
+    Route::post('/add_product_men',[App\Http\Controllers\products::class,'add_product'])->name('AddProduct');
+    Route::get('/add_product_men',[App\Http\Controllers\products::class,'add_product_men']);
+    Route::get('/men_product',[App\Http\Controllers\products::class,'men_product']);
+    
+    Route::get('/d_brand',[App\Http\Controllers\brands::class,'brand']);
+    Route::get('/dashboard_add_brand',[App\Http\Controllers\brands::class,'addbrand']);
+    Route::post('/dashboard_add_brand',[App\Http\Controllers\brands::class,'add_brand'])->name('AddBrand');
 });
 Auth::routes();
 Route::get('/dashboard_home',function(){
@@ -95,18 +105,7 @@ Route::get('/dashboard_usermangment',function(){
 Route::get('/dashboard_viewuser',function(){
     return view('dashboard.usermanagement.user_control');
 });
-Route::get('/d_brand',function(){
-    return view('brand.d_brand');
-});
-Route::get('/dashboard_add_brand',function(){
-    return view('brand.dashboard_add_brand');
-});
-Route::get('/men_product',function(){
-    return view('product.men_product');
-});
-Route::get('/add_product_men',function(){
-    return view('product.add_product_men');
-});
+
 Route::get('/women_product',function(){
     return view('product.women_product');
 });

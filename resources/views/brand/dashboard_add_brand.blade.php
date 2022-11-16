@@ -246,48 +246,49 @@
                     <div class="card-content">
                         <div class="card-body">
 
-                            <form class="form">
+                            <form class="signup-form"  action="{{ route('AddBrand') }}" method="post" enctype="multipart/form-data">
+                                @csrf
                                 <div class="row">
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
                                             <label for="first-name-column">{{ __('Brand Name') }}</label>
                                             <input type="text" id="first-name-column" class="form-control"
-                                                placeholder="{{ __('enter Brand Name') }}" name="fname-column">
+                                                placeholder="{{ __('enter Brand Name') }}" name="brand_name">
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
                                     <div class="form-group">
                                             <label for="email-id-column">{{ __('Email') }}</label>
                                             <input type="email" id="email-id-column" class="form-control"
-                                                name="email-id-column" placeholder="{{ __('enter your email') }}">
+                                                name="brand_email" placeholder="{{ __('enter your email') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
                                             <label for="city-column">{{ __('model') }} </label>
                                             <input type="text" id="city-column" class="form-control"
-                                                placeholder="{{ __('enter model') }}" name="city-column">
+                                                placeholder="{{ __('enter model') }}" name="brand_model">
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
                                             <label for="country-floating">{{ __('Phone Number') }}</label>
                                             <input type="text" id="country-floating" class="form-control"
-                                                name="country-floating" placeholder="{{ __('Enter your phone number') }}">
+                                                name="brand_phone" placeholder="{{ __('Enter your phone number') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
                                             <label for="company-column">{{ __('Country') }}</label>
                                             <input type="text" id="company-column" class="form-control"
-                                                name="company-column" placeholder="{{ __('enter country name') }}">
+                                                name="brand_country" placeholder="{{ __('enter country name') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
                                             <label for="email-id-column">{{ __('Address') }} </label>
-                                            <input type="email" id="email-id-column" class="form-control"
-                                                name="email-id-column" placeholder="{{ __('enter your address') }}">
+                                            <input type="text" id="email-id-column" class="form-control"
+                                                name="brand_address" placeholder="{{ __('enter your address') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
@@ -295,20 +296,7 @@
                                             <div class="form-group">
                                                 <label for="email-id-column"> {{ __('Upload Product Picture') }}</label>
                                                 <input type="file" class="form-control" placeholder=""
-                                                    id="first-name-icon" name="image" />
-                                                {{-- <div class="form-control-icon avatar avatar.avatar-im">
-                                                <img src="{{ URL::to('/images/'. $data[0]->avatar) }}">
-                                            </div> --}}
-                                                <input type="hidden" name="hidden_image" value="">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group col-12">
-                                        <div class='form-check'>
-                                            <div class="checkbox">
-                                                <input type="checkbox" id="checkbox5" class='form-check-input' checked>
-                                                <label for="checkbox5">{{ __('Remember Me') }}</label>
+                                                    id="first-name-icon" name="profile_image" />
                                             </div>
                                         </div>
                                     </div>
@@ -329,7 +317,7 @@
                 <div class="float-start">
                 </div>
                 <div class="float-end">
-                  
+
                 </div>
             </div>
         </footer>

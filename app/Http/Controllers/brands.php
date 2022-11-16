@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 use App\Models\product;
 use App\Models\brand;
@@ -26,6 +27,17 @@ class brands extends Controller
         return View('brand.add_brand');
 
     }
+    public function brand()
+    {
+        $brand=brand::all();
+        return View('brand.d_brand',compact('brand'));
+
+    }
+    public function addbrand()
+    {
+        return View('brand.dashboard_add_brand');
+
+    }
     public function edit_brand($id)
     {
         $brand=brand::find($id);
@@ -46,7 +58,9 @@ class brands extends Controller
         $brand->profile_image=request()->file('profile_image') ? request()->file('profile_image')->store('public') : null;
 
         $brand->save();
-        return redirect('/brand')->with('success','Thank You!');
+        Toastr::success('Create new Brand successfully :)','Success');
+
+        return redirect('/d_brand');
     }
     public function update_brand($id)
     {

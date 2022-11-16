@@ -221,7 +221,7 @@
                 </div>
             </div>
             {{-- message --}}
-            {{-- {!! Toastr::message() !!} --}}
+            {!! Toastr::message() !!}
             <section class="section">
                 <div class="card">
                     <div class="card-header">
@@ -292,28 +292,35 @@
                                 </tr>
                             @endforeach --}}
 
-                                <tr>
-                                    <td class="id">1</td>
-                                    <td class="name">mohaned</td>
-                                    <td class="name">mohaned</td>
-                                    <td class="name">mohaned</td>
-                                    <td class="name">mohaned</td>
-                                    <td class="name">mohaned</td>
-                                    <td class="name">mohaned</td>
-                                    <td class="name">mohaned</td>
-                                    <td class="text-center">
-                                        <a href="">
+                            @php
+                            $i=1;
+                        @endphp
+                        @foreach($brand as $x)
+                        <tr>
+                          <td>{{$i++}}</td>
+                          <td>{{$x->name}}</td>
+                          <td>{{$x->id}}</td>
+                          <td>{{$x->country}}</td>
+                          <td>{{$x->address}}</td>
+                          <td>{{$x->email}}</td>
+                          <td>{{$x->phone_number}}</td>
+                          <td><img style="width: 50%; height:50%;" src="{{asset(Storage::url($x->profile_image))}}" alt=""></td>
+                          <td class="text-center">
+                            <a href="">
 
-                                            <span class="badge bg-info"><i class="bi bi-eye-fill"></i></span>
-                                        </a>
-                                        <a href="">
-                                            <span class="badge bg-success"><i class="bi bi-pencil-square"></i></span>
-                                        </a>
-                                        <a href=""
-                                            onclick="return confirm('Are you sure to want to delete it?')"><span
-                                                class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
-                                    </td>
-                                </tr>
+                                <span class="badge bg-info"><i class="bi bi-eye-fill"></i></span>
+                            </a>
+                            <a href="">
+                                <span class="badge bg-success"><i class="bi bi-pencil-square"></i></span>
+                            </a>
+                            <a href=""
+                                onclick="return confirm('Are you sure to want to delete it?')"><span
+                                    class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
+                        </td>
+                    </tr>
+                        </tr>
+                        @endforeach
+
 
                             </tbody>
                         </table>

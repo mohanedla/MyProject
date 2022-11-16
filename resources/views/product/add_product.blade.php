@@ -551,7 +551,7 @@
                     <div class="form-group">
                       <label for="firstname" class="col-form-label">{{ __('Color Name') }} </label>
                         <input form-control type="text" id="recipient-name" name="color_name" class="form-input"
-                            placeholder="{{ __('Enter Color Name') }}" required="required" />
+                            placeholder="{{ __('Enter Color Name') }}" required="required"required="required" />
                     </div>
 
                 </div>

@@ -217,79 +217,48 @@
                                     <li class="col-md-3">
                                         <ul>
                                             <li class="dropdown-header">{{ __('Women') }}</li>
-                                            @foreach ($categories as $category)
-
-                                                <li><a href="/category/{{$category->id}}/{{$collect['W']}}">{{ __($category->name) }}</a></li>
+                                            @foreach ($category_women as $women)
+                                                <li><a href="#">{{ __($women->name) }}</a></li>
                                             @endforeach
                                         </ul>
                                     </li>
                                     <li class="col-md-3">
                                         <ul>
                                             <li class="dropdown-header">{{ __('Men') }}</li>
-                                            @foreach ($categories as $category)
-                                                <li><a href="/category/{{$category->id}}/{{$collect['M']}}">{{ __($category->name) }}</a></li>
+                                            @foreach ($category_men as $men)
+                                                <li><a href="#">{{ __($men->name) }}</a></li>
                                             @endforeach
-
                                         </ul>
                                     </li>
 
                                     <li class="col-md-3">
                                         <ul>
                                             <li class="dropdown-header">{{ __('Children') }}</li>
-                                            <li><a href="#"><select name="dropdown" class="dropdown_ch"></a>
-                                            <li>
-                                                <option class="option_ch"><a href="#">{{ __('Born') }}</a>
-                                                </option>
+                                            @foreach ($category_kids as $kids)
+                                                <li><a href="#">{{ __($kids->name) }}</a></li>
+                                            @endforeach
+                                        </ul>
+                                    </li>
+                                    <li class="col-md-3">
+                                        <ul>
+                                            <li id="myCarousel" class="carousel slide" data-ride="carousel">
+                                                <div class="carousel-inner">
+                                                    <div class="item active"><a href=""> <img
+                                                                src="{{ asset('images/menu-banner1.jpg') }}"
+                                                                class="img-responsive" alt="Banner1"></a></div>
+                                                </div>
+                                                <!-- End Carousel Inner -->
                                             </li>
-                                            <li>
-                                                <option class="option_ch"><a href="#">{{ __('Boys') }}</a>
-                                                </option>
-                                            </li>
-                                            <li>
-                                                <option class="option_ch"><a href="#">{{ __('Girls') }}</a>
-                                                </option>
-                                            </li>
-                                            </select>
+                                            <!-- /.carousel -->
+                                        </ul>
+                                    <li class="col-md-3">
                                     </li>
-                                    <li><a href="#"><select name="dropdown" class="dropdown_ch"></a>
-                                    <li>
-                                        <option class="option_ch"><a href="#">{{ __('Childrens') }}</a>
-                                        </option>
-                                    </li>
-                                    <li>
-                                        <option class="option_ch"><a href="#">{{ __('Boys') }}</a>
-                                        </option>
-                                    </li>
-                                    <li>
-                                        <option class="option_ch"><a href="#">{{ __('Girls') }}</a>
-                                        </option>
-                                    </li>
-                                    </select>
+                                </ul>
                             </li>
 
-
-                        </ul>
-                        </li>
-                        <li class="col-md-3">
-                            <ul>
-                                <li id="myCarousel" class="carousel slide" data-ride="carousel">
-                                    <div class="carousel-inner">
-                                        <div class="item active"><a href=""> <img
-                                                    src="{{asset('images/menu-banner1.jpg')}}"
-                                                    class="img-responsive" alt="Banner1"></a></div>
-                                    </div>
-                                    <!-- End Carousel Inner -->
-                                </li>
-                                <!-- /.carousel -->
-                            </ul>
-                        <li class="col-md-3">
-                        </li>
-                        </ul>
-                        </li>
-                        
-                        <li> <a href="shop">{{ __('shop') }}</a></li>
-                        <li> <a href="about">{{ __('About us') }}</a></li>
-                        <li> <a href="contact_us">{{ __('Contact us') }}</a></li>
+                            <li> <a href="shop">{{ __('shop') }}</a></li>
+                            <li> <a href="about">{{ __('About us') }}</a></li>
+                            <li> <a href="contact_us">{{ __('Contact us') }}</a></li>
                         </ul>
                     </div>
                     <!-- /.nav-collapse -->
@@ -322,8 +291,8 @@
                                 <h2 class="main_title">{{ __('Men') }}</h2>
                             </div>
                             @php
-                            $i=0;
-                        @endphp
+                                $i = 0;
+                            @endphp
                             <div class="latest_pro box">
                                 <div class="latest owl-carousel">
                                     @foreach ($products as $item)
@@ -331,8 +300,9 @@
                                             <div class="product-grid">
                                                 <div class="item">
                                                     <div class="product-thumb">
-                                                        <div class="image product-imageblock" style="height: 418px;"> <a
-                                                                href="product_detail_page" style="height: -webkit-fill-available;">
+                                                        <div class="image product-imageblock" style="height: 418px;">
+                                                            <a href="product_detail_page"
+                                                                style="height: -webkit-fill-available;">
                                                                 <img data-name="product_image"
                                                                     style="height: -webkit-fill-available;"
                                                                     src="{{ asset(Storage::url($item->profile_image)) }}"
@@ -376,7 +346,7 @@
                                                             <h6 data-name="product_name" class="product-name"><a
                                                                     href="#"
                                                                     title="Casual Shirt With Ruffle Hem">
-                                                                    {{$product_name_men[$i]->categories->name;}}..</a></h6>
+                                                                    {{ $item->category }}..</a></h6>
                                                             <span class="price"><span class="amount"><span
                                                                         class="currencySymbol">$</span>{{ $item->price }}.00</span>
                                                             </span>
@@ -387,7 +357,6 @@
                                             @php
                                                 $i++;
                                             @endphp
-
                                         @endif
                                     @endforeach
                                 </div>
@@ -405,8 +374,8 @@
                             <h2 class="main_title">{{ __('Women') }}</h2>
                         </div>
                         @php
-                        $i=0;
-                    @endphp
+                            $i = 0;
+                        @endphp
                         <div class="latest_pro box">
                             <div class="latest owl-carousel">
                                 @foreach ($products as $item)
@@ -415,7 +384,8 @@
                                             <div class="item">
                                                 <div class="product-thumb">
                                                     <div class="image product-imageblock" style="height: 418px;"> <a
-                                                            href="product_detail_page" style="height: -webkit-fill-available;">
+                                                            href="product_detail_page"
+                                                            style="height: -webkit-fill-available;">
                                                             <img data-name="product_image"
                                                                 style="height: -webkit-fill-available;"
                                                                 src="{{ asset(Storage::url($item->profile_image)) }}"
@@ -455,9 +425,8 @@
                                                                     class="fa fa-star-o fa-stack-1x"></i><i
                                                                     class="fa fa-star fa-stack-x"></i></span> </div>
                                                         <h6 data-name="product_name" class="product-name"><a
-                                                                href="#"
-                                                                title="Casual Shirt With Ruffle Hem">
-                                                                {{$product_name_women[$i]->categories->name;}}..</a></h6>
+                                                                href="#" title="Casual Shirt With Ruffle Hem">
+                                                                {{ $item->name }}..</a></h6>
                                                         <span class="price"><span class="amount"><span
                                                                     class="currencySymbol">$</span>{{ $item->price }}.00</span>
                                                         </span>
@@ -482,8 +451,8 @@
                                 <h2 class="main_title">{{ __('Children') }}</h2>
                             </div>
                             @php
-                            $i=0;
-                        @endphp
+                                $i = 0;
+                            @endphp
                             <div class="latest_pro box">
                                 <div class="latest owl-carousel">
                                     @foreach ($products as $item)
@@ -492,7 +461,8 @@
                                                 <div class="item">
                                                     <div class="product-thumb">
                                                         <div class="image product-imageblock" style="height: 418px;">
-                                                            <a href="product_detail_page" style="height: -webkit-fill-available;"
+                                                            <a href="product_detail_page"
+                                                                style="height: -webkit-fill-available;"
                                                                 sstyle="height: -webkit-fill-available;">
                                                                 <img data-name="product_image"
                                                                     style="height: -webkit-fill-available;"
@@ -510,7 +480,7 @@
                                                                 <div class="quickview"><a href="#"><span>Quick
                                                                             View</span></a></div>
                                                                 <div class="compare"><a
-                                                                        href="#"><span>{{ __('Compare')}}</span></a>
+                                                                        href="#"><span>{{ __('Compare') }}</span></a>
                                                                 </div>
                                                                 <div class="add-to-cart"><a href="#"><span>Add
                                                                             to
@@ -537,7 +507,7 @@
                                                             <h6 data-name="product_name" class="product-name"><a
                                                                     href="#"
                                                                     title="Casual Shirt With Ruffle Hem">
-                                                                    {{$product_name_children[$i]->categories->name;}}..</a></h6>
+                                                                    {{ $item->name }}..</a></h6>
                                                             <span class="price"><span class="amount"><span
                                                                         class="currencySymbol">$</span>{{ $item->price }}.00</span>
                                                             </span>

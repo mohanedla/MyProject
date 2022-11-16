@@ -222,7 +222,7 @@
             </div>
         </div>
         {{-- message --}}
-        {{-- {!! Toastr::message() !!} --}}
+        {!! Toastr::message() !!}
         <section class="section">
             <div class="card">
                 <div class="card-header">
@@ -239,10 +239,9 @@
                             <th style="width: 50px;" scope="col">{{ __('#')}}</th>
                                 <th style="width: 50px;" scope="col">{{ __('Name')}}</th>
                                 <th style="width: 50px;" scope="col">{{ __('brand')}}</th>
+                                <th style="width: 50px;" scope="col">{{ __('Collection')}}</th>
                                 <th style="width: 50px;" scope="col">{{ __('Specifications')}}</th>
                                 <th style="width: 50px;" scope="col">{{ __('Quantity')}}</th>
-                                <th style="width: 50px;" scope="col">{{ __('Size')}}</th>
-                                <th style="width: 50px;" scope="col">{{ __('Color')}}</th>
                                 <th style="width: 50px;" scope="col">{{ __('price')}}</th>
                                 <th style="width: 50px;" scope="col">{{ __('admin')}}</th>
                                 <th style="width: 50px;" scope="col">{{ __('photo')}}</th>
@@ -250,70 +249,37 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {{-- @foreach ($data as $key => $item)
+
+                            @php
+                                $i=0;
+                                $j=0;
+                            @endphp
+                                @foreach ($admin as $x)
                                 <tr>
-                                    <td class="id">{{ ++$key }}</td>
-                                    <td class="name">{{ $item->name }}</td>
-                                    <td class="name">
-                                        <div class="avatar avatar-xl">
-                                            <img src="{{ URL::to('/images/'. $item->avatar) }}" alt="{{ $item->avatar }}">
-                                        </div>
-                                    </td>
-                                    <td class="email">{{ $item->email }}</td>
-                                    <td class="phone_number">{{ $item->phone_number }}</td>
-                                    @if($item->status =='Active')
-                                    <td class="status"><span class="badge bg-success">{{ $item->status }}</span></td>
-                                    @endif
-                                    @if($item->status =='Disable')
-                                    <td class="status"><span class="badge bg-danger">{{ $item->status }}</span></td>
-                                    @endif
-                                    @if($item->status ==null)
-                                    <td class="status"><span class="badge bg-danger">{{ $item->status }}</span></td>
-                                    @endif
-                                    @if($item->role_name =='Admin')
-                                    <td class="role_name"><span  class="badge bg-success">{{ $item->role_name }}</span></td>
-                                    @endif
-                                    @if($item->role_name =='Super Admin')
-                                    <td class="role_name"><span  class="badge bg-info">{{ $item->role_name }}</span></td>
-                                    @endif
-                                    @if($item->role_name =='Normal User')
-                                    <td class="role_name"><span  class=" badge bg-warning">{{ $item->role_name }}</span></td>
-                                    @endif
+                                    <td>{{$i++}}</td>
+                                    <td>{{$x->category}}</td>
+                                    <td>{{$brand[$j]->brands->name}}</td>
+                                    <td>{{$x->collection}}</td>
+                                    <td>{{$x->specification}}</td>
+                                    <td>{{$x->quantity}}</td>
+                                    <td>{{$x->price}}$</td>
+                                    <td>{{Auth::User()->name}}</td>
+                                    <td><img style="width: 50%;" src="{{asset(Storage::url($x->profile_image))}}" alt=""></td>
                                     <td class="text-center">
-                                        <a href="{{ route('user/add/new') }}">
-                                            <span class="badge bg-info"><i class="bi bi-person-plus-fill"></i></span>
+                                        <a href="">
+                                            <span class="badge bg-info"><i class="bi bi-eye-fill"></i></span>
                                         </a>
-                                        <a href="{{ url('view/detail/'.$item->id) }}">
+                                        <a href=" /edit_product/{{$x->id}}">
                                             <span class="badge bg-success"><i class="bi bi-pencil-square"></i></span>
                                         </a>
-                                        <a href="{{ url('delete_user/'.$item->id) }}" onclick="return confirm('Are you sure to want to delete it?')"><span class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
+                                        <a href="/delete_product/{{$x->id}}" onclick="return confirm('Are you sure to want to delete it?')"><span class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
                                     </td>
                                 </tr>
-                            @endforeach --}}
+                                @php
+                                    $j++;
+                                @endphp
 
-                            <tr>
-                                <td class="id">1</td>
-                                <td class="name">moh</td>
-                                <td class="name">moh</td>
-                                <td class="name">moh</td>
-                                <td class="name">moh</td>
-                                <td class="name">mohaned</td>
-                                <td class="name">mohaned</td>
-                                <td class="name">moed</td>
-                                <td class="name">mohaned</td>
-                                <td class="name">mo</td>
-                                <td class="text-center">
-                                    <a href="">
-
-                                        <span class="badge bg-info"><i class="bi bi-eye-fill"></i></span>
-                                    </a>
-                                    <a href="">
-                                        <span class="badge bg-success"><i class="bi bi-pencil-square"></i></span>
-                                    </a>
-                                    <a href="" onclick="return confirm('Are you sure to want to delete it?')"><span class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
-                                </td>
-                            </tr>
-
+                                @endforeach
                         </tbody>
                     </table>
                 </div>

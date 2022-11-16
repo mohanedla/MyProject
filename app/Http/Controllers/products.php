@@ -1,13 +1,19 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 use App\Models\product;
 use App\Models\brand;
 use App\Models\Category;
+use App\Models\Men;
+use App\Models\Women;
+use App\Models\Kids;
 use App\Models\Size;
 use App\Models\Color;
+use App\Models\Color_Product;
+use App\Models\Size_Product;
+use App\Models\Image_Product;
 use Auth;
 class products extends Controller
 {
@@ -24,6 +30,14 @@ class products extends Controller
         $category=product::with('categories')->get();
         //  dd($brand);yy
         return View('product.product',compact('admin','category','brand','collect','categoriez','product_name_men','product_name_women','product_name_children'));
+
+    }
+    public function men_product()
+    {
+        $admin=product::all();
+        $brand=product::with('brands')->get();
+        //  dd($brand);yy
+        return View('product.men_product',compact('admin','brand',));
 
     }
     public function item_brand($id)
@@ -51,6 +65,14 @@ class products extends Controller
         $categories=Category::all();
         return View('product.add_product',compact('brands','categories','collect','size','color'));
     }
+    public function add_product_men()
+    {
+        $size= Size::all();
+        $color= Color::all();
+        $brands=brand::all();
+        $categories=Men::all();
+        return view('product.add_product_men',compact('brands','categories','size','color'));
+    }
     public function product_detail_page()
     {
         return View('product_detail_page');
@@ -59,11 +81,11 @@ class products extends Controller
     public function add_category()
     {
 
-        $category= new Category;
+        $category= new Men;
         $category->name=request('category_name');
-        // $category->collection=request('collection');
         $category->save();
-        return redirect()->back()->with('success','Thank You!');
+        Toastr::success('Create new Category successfully :)','Success');
+        return redirect()->back();
 
     }
     public function edit_product($id)
@@ -83,6 +105,7 @@ class products extends Controller
         $color=new Color;
         $color->name=request('color_name');
         $color->save();
+        Toastr::success('Create new Color successfully :)','Success');
         return redirect()->back();
 
     }
@@ -91,37 +114,54 @@ class products extends Controller
         $size=new Size;
         $size->name=request('size_name');
         $size->save();
+        Toastr::success('Create new Size successfully :)','Success');
         return redirect()->back();
     }
     public function add_product()
     {
         $product= new product;
-        $product->serial=request('product_serial');
-        $product->category_id=request('product_name');
+        $product->category=request('product_name');
         $product->brand_id=request('product_brand');
         $product->model=request('product_model');
-        $product->collection=request('product_collection');
+        $product->collection=request("product_collection");
+        // $product->collection=request('product_collection');
         $product->specification=request('product_specification');
-        $product->color=implode(',',request('product_color'));
         $product->quantity=request('product_quantity');
-        $product->size=implode(',',request('product_size'));
         $product->price=request('product_price');
+        $product->profile_image=request()->file('product_image')? request()->file('product_image')->store('public'):null;
         $product->admin_id=Auth::id();
-        $product->profile_image=request()->file('product_image') ? request()->file('product_image')->store('public') : null;
-
         $product->save();
+        $color=request('product_color');
+        $size=request('product_size');
 
-        // $size= new Size;
-        // $size->name=request('product_size');
-        // $size->product_id=$product->id;
-        // $size->save();
-        return redirect('product')->with('success','Thank You!');
+        // dd($color);
+        for($i=0;$i<count($color);$i++){
+        $color_product= new Color_Product;
+        $color_product->name=$color[$i];
+        $color_product->product_id=$product->id;
+        $color_product->save();
+        }
+        for($i=0;$i<count($size);$i++){
+        $size_product= new Size_Product;
+        $size_product->name=$size[$i];
+        $size_product->product_id=$product->id;
+        $size_product->save();
+        }
+        // $image=request()->file('all_images');
+        // for($i=0;$i<count($image);$i++){
+        // $image_product= new Image_Product;
+        // $image_product->name=$image[$i]->store('public');
+        // $image_product->product_id=$product->id;
+        // $image_product->save();
+        // }
+        Toastr::success('Create new Product successfully :)','Success');
+        return redirect('/men_product');
 
     }
     public function update_product($id)
     {
         $product= product::find($id);
-        $product->serial=request('product_serial');
+        // $product->serial=request('product_serial');
         $product->category_id=request('product_name');
         $product->brand_id=request('product_brand');
         $product->model=request('product_model');
@@ -143,7 +183,9 @@ class products extends Controller
     {
         $del=product::find($id);
         $del->delete();
-        return redirect('product');
+        Toastr::success('The product has been deleted successfully :)','Success');
+
+        return redirect('/men_product');
     }
 
 

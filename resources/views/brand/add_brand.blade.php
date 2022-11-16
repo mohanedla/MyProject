@@ -294,8 +294,6 @@
 
                     </div>
 
-
-                    {{ __('') }}
                     <!-- Gender and Hobbies -->
 
                         <div class="horizontal-group">

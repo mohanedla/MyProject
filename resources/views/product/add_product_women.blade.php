@@ -351,7 +351,6 @@
 
                                     <div class="col-md-6 col-12">
                                         <div class="form-group has-icon-lefts">
-                                            <div<br>
                                                 <br>
                                                 <label for="email-id-column"> {{ __('Upload Product Picture') }}</label>
                                                 <input type="file" class="form-control" placeholder="Name"
@@ -456,7 +455,7 @@
                 <div class="float-start">
                 </div>
                 <div class="float-end">
-                
+
                 </div>
             </div>
         </footer>

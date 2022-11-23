@@ -99,6 +99,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/dashboard_edit_brand/{id}',[App\Http\Controllers\brands::class,'dashboard_edit_brand']);
     Route::post('/dashboard_add_brand',[App\Http\Controllers\brands::class,'add_brand'])->name('AddBrand');
     Route::post('/dashboard_edit_brand/{id}',[App\Http\Controllers\brands::class,'update_brand']);
+
 });
 Auth::routes();
 Route::get('/dashboard_home',function(){
@@ -114,8 +115,17 @@ Route::get('/dashboard_form',function(){
 Route::get('/dashboard_usermangment',function(){
     return view('dashboard.sidebar.usermanagement');
 });
-Route::get('/dashboard_viewuser',function(){
-    return view('dashboard.usermanagement.user_control');
+Route::get('/bills;',function(){
+    return view('Bills.Bills');
+});
+Route::get('/d_bills;',function(){
+    return view('Bills.d_Bills');
+});
+Route::get('/notice;',function(){
+    return view('notice.notice');
+});
+Route::get('/d_notice;',function(){
+    return view('notice.d_notice');
 });
 
 Route::get('/view_record',function(){

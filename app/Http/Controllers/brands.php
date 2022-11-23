@@ -44,6 +44,12 @@ class brands extends Controller
         return View('brand.edit_brand',compact('brand'));
 
     }
+    public function dashboard_edit_brand($id)
+    {
+        $brand=brand::find($id);
+        return View('brand.dashboard_edit_brand',compact('brand'));
+
+    }
     //هذا للداتا بيز
     public function add_brand () {
 
@@ -76,14 +82,16 @@ class brands extends Controller
             $edit->profile_image=request()->file('profile_image')->store('public');
         }
         $edit->save();
-        return redirect('/brand')->with('message', 'edited succussfuly');
+        Toastr::success('Updated successfully :)','Success');
+        return redirect('/d_brand');
 
     }
     public function delete_brand($id)
     {
         $del=brand::find($id);
         $del->delete();
-        return redirect('/brand');
+        Toastr::success('Deleted successfully :)','Success');
+        return redirect('/d_brand');
     }
 }
 

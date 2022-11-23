@@ -17,7 +17,7 @@ class home extends Controller
         {
             // $categories=Category::all();
 
-            $collect = array('M'=>'Men','W'=>'Women','C'=>'Children' );
+            $collect = array('M'=>'Men','W'=>'Women','C'=>'Kids' );
             $brand=brand::all();
             $products=product::all();
             $category_men=Men::all();
@@ -31,7 +31,7 @@ class home extends Controller
         {
             $brand=brand::all();
             $categories=Category::all();
-            $collect = array('M'=>'Men','W'=>'Women','C'=>'Children' );
+            $collect = array('M'=>'Men','W'=>'Women','C'=>'Kids' );
             $product_name_men=product::with('categories')->where('collection','=','Men')->get();
             $product_name_women=product::with('categories')->where('collection','=','Women')->get();
             $product_name_children=product::with('categories')->where('collection','=','Children')->get();

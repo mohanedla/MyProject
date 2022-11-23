@@ -221,8 +221,8 @@
             <i class="bi bi-justify fs-3"></i>
         </a>
     </header> --}}
-    {{-- message --}}
-    {!! Toastr::message() !!}
+        {{-- message --}}
+        {!! Toastr::message() !!}
         <div class="page-heading">
             <div class="page-title">
                 <div class="row">
@@ -247,8 +247,8 @@
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title">{{ __('Add a men,s product') }}
-                            <button style="float: right;" type="button" data-bs-toggle="modal" data-bs-target="#type_kids"
-                                data-bs-whatever="@mdo"
+                            <button style="float: right;" type="button" data-bs-toggle="modal"
+                                data-bs-target="#type_kids" data-bs-whatever="@mdo"
                                 class="btn btn-secondary rounded-pill">{{ __('add Type') }}</button>
                             <button style="float: right;" type="button" data-bs-toggle="modal" data-bs-target="#size"
                                 data-bs-whatever="@mdo"
@@ -262,7 +262,7 @@
                     <div class="card-content">
                         <div class="card-body">
 
-                            <form class="signup-form" action="{{ route('AddProduct') }}" method="post"
+                            <form class="signup-form" action="{{ url('/edit_product/' . $product->id) }}" method="post"
                                 enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
@@ -275,7 +275,9 @@
                                                     name="product_name" id="role_name">
                                                     <option selected disabled>{{ __('Select') }} </option>
                                                     @foreach ($categories as $category)
-                                                        <option value="{{ $category->name }}">{{ __($category->name) }}
+                                                        <option value="{{ $category->name }}"
+                                                            {{ $product->category == $category->name ? 'selected' : '' }}>
+                                                            {{ __($category->name) }}</option>
                                                         </option>
                                                     @endforeach
 
@@ -292,7 +294,9 @@
                                                     name="product_brand" id="role_name">
                                                     <option selected disabled>Select </option>
                                                     @foreach ($brands as $brand)
-                                                        <option value="{{ $brand->id }}">{{ __($brand->name) }}
+                                                        <option value="{{ $brand->id }}"
+                                                            {{ $get->brands->id == $brand->id ? 'selected' : '' }}>
+                                                            {{ $brand->name }}
                                                         </option>
                                                     @endforeach
                                                 </select>
@@ -304,6 +308,7 @@
                                         <div class="form-group">
                                             <label for="city-column">{{ __('Specifications') }} </label>
                                             <input type="text" id="city-column" class="form-control"
+                                                value="{{ $product->specification }}"
                                                 placeholder="{{ __('enter Specifications') }}"
                                                 name="product_specification">
                                         </div>
@@ -312,7 +317,8 @@
                                         <div class="form-group">
                                             <label for="country-floating">{{ __('Quantity') }}</label>
                                             <input type="number" id="country-floating" class="form-control"
-                                                name="product_quantity" placeholder="{{ __('enter Quantity') }}">
+                                                value="{{ $product->quantity }}" name="product_quantity"
+                                                placeholder="{{ __('enter Quantity') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
@@ -323,9 +329,14 @@
                                                     id="level" id="field2" multiselect-select-all="true" multiple
                                                     onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))"
                                                     multiselect-hide-x="true">
-                                                    {{-- <select multiple class="form-select @error('role_name') is-invalid @enderror" name="role_name" id="role_name"> --}}
+                                                    @php
+                                                        $i = 0;
+                                                    @endphp
                                                     @foreach ($size as $s)
-                                                        <option value="{{ $s->name }}">{{ __($s->name) }} </option>
+                                                        <option value="{{ $s->name }}"
+                                                            {{ $get_size[$i]->name == $s->name ? 'selected' : '' }}>
+                                                            {{ __($s->name) }}</option>
+                                                        {{ $i++ }}
                                                     @endforeach
                                                 </select>
 
@@ -340,9 +351,26 @@
                                                     id="level" id="field2" multiselect-select-all="true" multiple
                                                     onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))"
                                                     multiselect-hide-x="true">
-                                                    {{-- <select multiple class="form-select @error('role_name') is-invalid @enderror" name="role_name" id="role_name"> --}}
+                                                    {{-- @php
+                                                        $i = 0;
+                                                    @endphp --}}
                                                     @foreach ($color as $c)
-                                                        <option value="{{ $c->name }}">{{ __($c->name) }} </option>
+                                                        @for ($i = 0; $i < count($get_color); $i++)
+                                                            @if ($color->name == $get_color[$i])
+                                                                <option value="{{ $c->name }}" selected></option>
+                                                            @endif
+                                                            {{-- <option value="{{ $c->name }}"
+                                                            {{ $get_color[$i]->name == $c->name ? 'selected' : '' }}>
+                                                            {{ __($c->name) }}</option> --}}
+                                                            {{-- {{ $i++; }} --}}
+                                                        @endfor
+                                                    @endforeach
+                                                    @foreach ($color as $c)
+                                                        @for ($i = 0; $i < count($get_color); $i++)
+                                                            @if ($color->name != $get_color[$i])
+                                                                <option value="{{ $c->name }}"></option>
+                                                            @endif
+                                                        @endfor
                                                     @endforeach
                                                 </select>
 
@@ -356,7 +384,8 @@
                                             <br>
                                             <label for="email-id-column">{{ __('price') }}</label>
                                             <input type="text" id="email-id-column" class="form-control"
-                                                name="product_price" placeholder="{{ __('enter price') }}">
+                                                value="{{ $product->price }}" name="product_price"
+                                                placeholder="{{ __('enter price') }}">
                                         </div>
                                     </div>
 
@@ -365,7 +394,8 @@
                                             <br>
                                             <label for="email-id-column"> {{ __('Upload Product Picture') }}</label>
                                             <input type="file" class="form-control" placeholder="Name"
-                                                id="first-name-icon" name="product_image" />
+                                                value="{{ $product->profile_image }}" id="first-name-icon"
+                                                name="product_image" />
                                             {{-- <div class="form-control-icon avatar avatar.avatar-im">
                                                 <img src="{{ URL::to('/images/'. $data[0]->avatar) }}">
                                             </div> --}}

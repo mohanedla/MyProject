@@ -3,6 +3,7 @@
     @extends('dashboard.sidebar.brand')
 @endsection
 @section('content')
+    <!-- ======= Header ======= -->
     <header id="header" class="header fixed-top d-flex align-items-center">
 
         <div class="d-flex align-items-center justify-content-between">
@@ -202,141 +203,121 @@
     </header><!-- End Header -->
 
     <div id="main">
+        <style>
+            .avatar.avatar-im .avatar-content,
+            .avatar.avatar-xl img {
+                width: 40px !important;
+                height: 40px !important;
+                font-size: 1rem !important;
+            }
+
+            .form-group[class*=has-icon-].has-icon-lefts .form-select {
+                padding-left: 2rem;
+            }
+        </style>
+
+        {{-- <header class="mb-3">
+        <a href="#" class="burger-btn d-block d-xl-none">
+            <i class="bi bi-justify fs-3"></i>
+        </a>
+    </header> --}}
         <div class="page-heading">
             <div class="page-title">
                 <div class="row">
                     <div class="col-12 col-md-6 order-md-1 order-last">
                         <h3>{{ __('Brand management control') }}</h3>
-                        <br>
-                        <br>
                     </div>
                     <div class="col-12 col-md-6 order-md-2 order-first">
                         <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="">{{ __('Dashboard') }}</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">{{ __('Brand') }}</li>
+                            <li class="breadcrumb-item"><a href="">{{ __('Dashboard') }}</a></li>
+                            <li class="breadcrumb-item"><a href="">{{ __('Brand') }}</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">{{ __('add brand') }}</li>
                             </ol>
                         </nav>
                     </div>
                 </div>
             </div>
-            {{-- message --}}
-            {!! Toastr::message() !!}
-            <section class="section">
+            <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        {{ __('Brand List') }}
-                        {{-- <div class="buttons"> --}}
-
-
-                        <a style="float: right;" href="/dashboard_add_brand"
-                        class="btn btn-secondary rounded-pill">{{ __('add brand') }}</a>
-
-                        {{-- </div> --}}
+                        <h4 class="card-title">{{ __('add brand') }}</h4>
                     </div>
-                    <div class="card-body">
-                        <table class="table table-striped" id="table1">
-                            <thead>
-                                <tr>
-                                    <th style="width: 50px;" scope="col">{{ __('#') }}</th>
-                                    <th style="width: 50px;" scope="col">{{ __('Name') }}</th>
-                                    <th style="width: 50px;" scope="col">{{ __('Serial Number') }}</th>
-                                    <th style="width: 50px;" scope="col">{{ __('Country') }}</th>
-                                    <th style="width: 50px;" scope="col">{{ __('Address') }}</th>
-                                    <th style="width: 50px;" scope="col">{{ __('E-mail') }}</th>
-                                    <th style="width: 50px;" scope="col">{{ __('Phone Number') }}</th>
-                                    <th style="width: 50px;" scope="col">{{ __('photo') }}</th>
-                                    <th style="width: 50px;" scope="col">{{ __('') }}</th>
+                    <div class="card-content">
+                        <div class="card-body">
 
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {{-- @foreach ($data as $key => $item)
-                                <tr>
-                                    <td class="id">{{ ++$key }}</td>
-                                    <td class="name">{{ $item->name }}</td>
-                                    <td class="name">
-                                        <div class="avatar avatar-xl">
-                                            <img src="{{ URL::to('/images/'. $item->avatar) }}" alt="{{ $item->avatar }}">
+                            <form class="signup-form"  action="{{url('/edit_brand/'.$brand->id)}}" method="post" enctype="multipart/form-data">
+                                @csrf
+                                <div class="row">
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label for="first-name-column">{{ __('Brand Name') }}</label>
+                                            <input type="text" id="first-name-column" class="form-control"
+                                            value="{{$brand->name}}" placeholder="{{ __('enter Brand Name') }}" name="brand_name">
                                         </div>
-                                    </td>
-                                    <td class="email">{{ $item->email }}</td>
-                                    <td class="phone_number">{{ $item->phone_number }}</td>
-                                    @if ($item->status == 'Active')
-                                    <td class="status"><span class="badge bg-success">{{ $item->status }}</span></td>
-                                    @endif
-                                    @if ($item->status == 'Disable')
-                                    <td class="status"><span class="badge bg-danger">{{ $item->status }}</span></td>
-                                    @endif
-                                    @if ($item->status == null)
-                                    <td class="status"><span class="badge bg-danger">{{ $item->status }}</span></td>
-                                    @endif
-                                    @if ($item->role_name == 'Admin')
-                                    <td class="role_name"><span  class="badge bg-success">{{ $item->role_name }}</span></td>
-                                    @endif
-                                    @if ($item->role_name == 'Super Admin')
-                                    <td class="role_name"><span  class="badge bg-info">{{ $item->role_name }}</span></td>
-                                    @endif
-                                    @if ($item->role_name == 'Normal User')
-                                    <td class="role_name"><span  class=" badge bg-warning">{{ $item->role_name }}</span></td>
-                                    @endif
-                                    <td class="text-center">
-                                        <a href="{{ route('user/add/new') }}">
-                                            <span class="badge bg-info"><i class="bi bi-person-plus-fill"></i></span>
-                                        </a>
-                                        <a href="{{ url('view/detail/'.$item->id) }}">
-                                            <span class="badge bg-success"><i class="bi bi-pencil-square"></i></span>
-                                        </a>
-                                        <a href="{{ url('delete_user/'.$item->id) }}" onclick="return confirm('Are you sure to want to delete it?')"><span class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
-                                    </td>
-                                </tr>
-                            @endforeach --}}
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                    <div class="form-group">
+                                            <label for="email-id-column">{{ __('Email') }}</label>
+                                            <input type="email" id="email-id-column" class="form-control"
+                                            value="{{$brand->email}}" name="brand_email" placeholder="{{ __('enter your email') }}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label for="city-column">{{ __('model') }} </label>
+                                            <input type="text" id="city-column" class="form-control"
+                                            value="{{$brand->model}}" placeholder="{{ __('enter model') }}" name="brand_model">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label for="country-floating">{{ __('Phone Number') }}</label>
+                                            <input type="text" id="country-floating" class="form-control"
+                                            value="{{$brand->phone_number}}" name="brand_phone" placeholder="{{ __('Enter your phone number') }}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label for="company-column">{{ __('Country') }}</label>
+                                            <input type="text" id="company-column" class="form-control"
+                                            value="{{$brand->country}}" name="brand_country" placeholder="{{ __('enter country name') }}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label for="email-id-column">{{ __('Address') }} </label>
+                                            <input type="text" id="email-id-column" class="form-control"
+                                            value="{{$brand->address}}" name="brand_address" placeholder="{{ __('enter your address') }}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group has-icon-lefts">
+                                            <div class="form-group">
+                                                <label for="email-id-column"> {{ __('Upload Product Picture') }}</label>
+                                                <input type="file" class="form-control" placeholder=""
+                                                value="{{$brand->profile_image}}" id="first-name-icon" name="profile_image" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 d-flex justify-content-end">
+                                        <button type="submit" class="btn btn-primary me-1 mb-1">{{ __('Save') }}</button>
+                                        <button type="reset" class="btn btn-light-secondary me-1 mb-1">{{ __('Reset') }}</button>
+                                    </div>
+                                </div>
 
-                            @php
-                            $i=1;
-                        @endphp
-                        @foreach($brand as $x)
-                        <tr>
-                          <td>{{$i++}}</td>
-                          <td>{{$x->name}}</td>
-                          <td>{{$x->id}}</td>
-                          <td>{{$x->country}}</td>
-                          <td>{{$x->address}}</td>
-                          <td>{{$x->email}}</td>
-                          <td>{{$x->phone_number}}</td>
-                          <td><img style="width: 50%; height:50%;" src="{{asset(Storage::url($x->profile_image))}}" alt=""></td>
-                          <td class="text-center">
-                            <a href="">
-
-
-                                <span class="badge bg-info"><i class="bi bi-eye-fill"></i></span>
-                            </a>
-                            <a href="/dashboard_edit_brand/{{$x->id}}">
-                                <span class="badge bg-success"><i class="bi bi-pencil-square"></i></span>
-                            </a>
-                            <a href="/delete_brand/{{$x->id}}"
-                                onclick="return confirm('Are you sure to want to delete it?')"><span
-                                    class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
-                        </td>
-                    </tr>
-                        </tr>
-                        @endforeach
-
-
-                            </tbody>
-                        </table>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </section>
+            </div>
         </div>
         <footer>
             <div class="footer clearfix mb-0 text-muted ">
                 <div class="float-start">
-                    <!-- <p>2021 &copy; Soeng Souy</p> -->
                 </div>
                 <div class="float-end">
-                    <!-- <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a
-                            href="http://soengsouy.com">Soeng Souy</a></p> -->
+
                 </div>
             </div>
         </footer>

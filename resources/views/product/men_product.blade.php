@@ -251,7 +251,7 @@
                         <tbody>
 
                             @php
-                                $i=0;
+                                $i=1;
                                 $j=0;
                             @endphp
                                 @foreach ($admin as $x)
@@ -269,7 +269,7 @@
                                         <a href="">
                                             <span class="badge bg-info"><i class="bi bi-eye-fill"></i></span>
                                         </a>
-                                        <a href=" /edit_product/{{$x->id}}">
+                                        <a href=" /edit_product_men/{{$x->id}}">
                                             <span class="badge bg-success"><i class="bi bi-pencil-square"></i></span>
                                         </a>
                                         <a href="/delete_product/{{$x->id}}" onclick="return confirm('Are you sure to want to delete it?')"><span class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
@@ -283,6 +283,11 @@
                         </tbody>
                     </table>
                 </div>
+                <script>
+                    $(document).ready(function () {
+                      $("#tblCustomer").DataTable();
+                    });
+                  </script>
             </div>
         </section>
     </div>

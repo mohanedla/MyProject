@@ -62,7 +62,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::post('/edit_product/{id}',[App\Http\Controllers\products::class,'update_product']);
     Route::get('/delete_product/{id}',[App\Http\Controllers\products::class,'delete_product']);
     Route::post('/add_product',[App\Http\Controllers\products::class,'add_product'])->name('AddProduct');
-    Route::post('/add_category',[App\Http\Controllers\products::class,'add_category'])->name('AddCategory');
+
     Route::post('/add_collection',[App\Http\Controllers\CollectionController::class,'add_collection'])->name('AddCollection');
     Route::post('/add_color',[App\Http\Controllers\products::class,'add_color'])->name('AddColor');
     Route::post('/add_size',[App\Http\Controllers\products::class,'add_size'])->name('AddSize');
@@ -82,11 +82,23 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     Route::post('/add_product_men',[App\Http\Controllers\products::class,'add_product'])->name('AddProduct');
     Route::get('/add_product_men',[App\Http\Controllers\products::class,'add_product_men']);
+    Route::get('/add_product_women',[App\Http\Controllers\products::class,'add_product_women']);
+    Route::get('/add_product_kids',[App\Http\Controllers\products::class,'add_product_kids']);
     Route::get('/men_product',[App\Http\Controllers\products::class,'men_product']);
-    
+    Route::get('/women_product',[App\Http\Controllers\products::class,'women_product']);
+    Route::get('/kids_product',[App\Http\Controllers\products::class,'kids_product']);
+    Route::get('/edit_product_men/{id}',[App\Http\Controllers\products::class,'edit_product_men']);
+    Route::get('/edit_product_women/{id}',[App\Http\Controllers\products::class,'edit_product_women']);
+    Route::get('/edit_product_kids/{id}',[App\Http\Controllers\products::class,'edit_product_kids']);
+    Route::post('/add_category_men',[App\Http\Controllers\products::class,'add_category_men'])->name('AddCategoryMen');
+    Route::post('/add_category_women',[App\Http\Controllers\products::class,'add_category_women'])->name('AddCategoryWomen');
+    Route::post('/add_category_kids',[App\Http\Controllers\products::class,'add_category_kids'])->name('AddCategoryKids');
+
     Route::get('/d_brand',[App\Http\Controllers\brands::class,'brand']);
     Route::get('/dashboard_add_brand',[App\Http\Controllers\brands::class,'addbrand']);
+    Route::get('/dashboard_edit_brand/{id}',[App\Http\Controllers\brands::class,'dashboard_edit_brand']);
     Route::post('/dashboard_add_brand',[App\Http\Controllers\brands::class,'add_brand'])->name('AddBrand');
+    Route::post('/dashboard_edit_brand/{id}',[App\Http\Controllers\brands::class,'update_brand']);
 });
 Auth::routes();
 Route::get('/dashboard_home',function(){
@@ -106,18 +118,6 @@ Route::get('/dashboard_viewuser',function(){
     return view('dashboard.usermanagement.user_control');
 });
 
-Route::get('/women_product',function(){
-    return view('product.women_product');
-});
-Route::get('/add_product_women',function(){
-    return view('product.add_product_women');
-});
-Route::get('/kids_product',function(){
-    return view('product.kids_product');
-});
-Route::get('/add_product_kids',function(){
-    return view('product.add_product_kids');
-});
 Route::get('/view_record',function(){
     return view('dashboard.view_record.viewrecord');
 });

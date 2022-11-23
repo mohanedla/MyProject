@@ -11,7 +11,7 @@
         <div class="sidebar-menu">
             <ul class="menu">
                 <li class="sidebar-title">{{ __('Menu') }}</li>
-                <li class="sidebar-item active">
+                <li class="sidebar-item">
                     <a href="/dashboard_home" class='sidebar-link'>
                         <i class="bi bi-house-fill"></i>
                         <span>{{ __('Dashboard') }}</span>
@@ -43,8 +43,8 @@
                         <span>{{ __('admin management') }}</span>
                     </a>
                 </li>
-                <li class="sidebar-item">
-                    <a href="/user" class='sidebar-link'>
+                <li class="sidebar-item active">
+                    <a href="/d_user" class='sidebar-link'>
                         <i class="bi bi-shield-lock"></i>
                         <span>{{ __('user management') }}</span>
                     </a>

@@ -11,7 +11,11 @@
         <div class="sidebar-menu">
             <ul class="menu">
                 <li class="sidebar-title">{{ __('Menu') }}</li>
+                @if($page == "home")
                 <li class="sidebar-item active">
+                @else
+                <li class="sidebar-item">
+                @endif
                     <a href="/dashboard_home" class='sidebar-link'>
                         <i class="bi bi-house-fill"></i>
                         <span>{{ __('Dashboard') }}</span>
@@ -37,19 +41,31 @@
                     </div>
                 </li>
 
+                @if($page == "employees")
+                <li class="sidebar-item active">
+                @else
                 <li class="sidebar-item">
-                    <a href="/dashboard_viewuser" class='sidebar-link'>
+                @endif
+                    <a href="{{route('employees')}}" class='sidebar-link'>
                         <i class="bi bi-shield-lock"></i>
                         <span>{{ __('admin management') }}</span>
                     </a>
                 </li>
+                @if($page == "users")
+                <li class="sidebar-item active">
+                @else
                 <li class="sidebar-item">
+                @endif
                     <a href="/user" class='sidebar-link'>
                         <i class="bi bi-shield-lock"></i>
                         <span>{{ __('user management') }}</span>
                     </a>
                 </li>
+                @if($page == "brands")
+                <li class="sidebar-item active">
+                @else
                 <li class="sidebar-item">
+                @endif
                     <a href="/d_brand" class='sidebar-link'>
                         <i class="bi bi-shield-lock"></i>
                         <span>{{ __('Brands') }}</span>
@@ -78,36 +94,57 @@
                 @endif --}}
 
                 {{-- <li class="sidebar-title">Forms &amp; Tables</li> --}}
+                @if($page == "product")
+                <li class="sidebar-item  has-sub active">
+                @else
                 <li class="sidebar-item  has-sub">
+                @endif
                     <a href="#" class='sidebar-link'>
                         <i class="bi bi-file-earmark-medical-fill"></i>
                         <span>{{ __('Products') }}</span>
                     </a>
                     <ul class="submenu">
+
                         <li class="submenu-item">
-                            <a href="/men_product">{{ __('Men') }}</a>
+                            <a href="{{route('all_product',['id'=>0])}}">الكل</a>
+                        </li>
+
+                        <li class="submenu-item">
+                            <a href="{{route('all_product',['id'=>1])}}">{{ __('Men') }}</a>
                         </li>
                         <li class="submenu-item">
-                            <a href="/women_product">{{ __('Women') }}</a>
+                            <a href="{{route('all_product',['id'=>2])}}">{{ __('Women') }}</a>
                         </li>
                         <li class="submenu-item">
-                            <a href="/kids_product">{{ __('Children') }}</a>
+                            <a href="{{route('all_product',['id'=>3])}}">{{ __('Children') }}</a>
                         </li>
                     </ul>
                 </li>
+                @if($page == "reports")
+                <li class="sidebar-item active">
+                @else
                 <li class="sidebar-item">
+                @endif
                     <a href="/dashboard_viewuser" class='sidebar-link'>
                         <i class="bi bi-shield-lock"></i>
                         <span>{{ __('Reports') }}</span>
                     </a>
                 </li>
+                @if($page == "notification")
+                <li class="sidebar-item active">
+                @else
                 <li class="sidebar-item">
+                @endif
                     <a href="/dashboard_viewuser" class='sidebar-link'>
                         <i class="bi bi-shield-lock"></i>
                         <span>{{ __('notice') }}</span>
                     </a>
                 </li>
+                @if($page == "bills")
+                <li class="sidebar-item active">
+                @else
                 <li class="sidebar-item">
+                @endif
                     <a href="/dashboard_viewuser" class='sidebar-link'>
                         <i class="bi bi-shield-lock"></i>
                         <span>{{ __('Bills') }}</span>

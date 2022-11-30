@@ -90,13 +90,13 @@
                     </a>
                     <ul class="submenu active">
                         <li class="submenu-item active">
-                            <a href="/men_product">{{ __('Men') }}</a>
+                            <a href="{{route('all_product',['id'=>1])}}">{{ __('Men') }}</a>
                         </li>
                         <li class="submenu-item">
-                            <a href="/women_product">{{ __('Women') }}</a>
+                            <a href="{{route('all_product',['id'=>2])}}">{{ __('Women') }}</a>
                         </li>
                         <li class="submenu-item">
-                            <a href="/kids_product">{{ __('Children') }}</a>
+                            <a href="{{route('all_product',['id'=>3])}}">{{ __('Children') }}</a>
                         </li>
                     </ul>
                 </li>

@@ -1,6 +1,6 @@
 @extends('dashboard.layouts.master')
 @section('menu')
-    @extends('dashboard.sidebar.kids')
+    @extends('dashboard.sidebar.dashboard')
 @endsection
 @section('content')
     <!-- ======= Header ======= -->
@@ -221,8 +221,8 @@
             <i class="bi bi-justify fs-3"></i>
         </a>
     </header> --}}
-        {{-- message --}}
-        {!! Toastr::message() !!}
+    {{-- message --}}
+    {!! Toastr::message() !!}
         <div class="page-heading">
             <div class="page-title">
                 <div class="row">
@@ -234,7 +234,7 @@
                         <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="">{{ __('Dashboard') }}</a></li>
-                                <li class="breadcrumb-item"><a href="">{{ __('Product Management') }}</a></li>
+                                <li class="breadcrumb-item"><a href="">اضافة مشرف</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">{{ __('Add a men,s product') }}
                                 </li>
                             </ol>
@@ -245,163 +245,52 @@
 
             <div class="col-12">
                 <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title">{{ __('Add a men,s product') }}
-                            <button style="float: right;" type="button" data-bs-toggle="modal"
-                                data-bs-target="#type_kids" data-bs-whatever="@mdo"
-                                class="btn btn-secondary rounded-pill">{{ __('add Type') }}</button>
-                            <button style="float: right;" type="button" data-bs-toggle="modal" data-bs-target="#size"
-                                data-bs-whatever="@mdo"
-                                class="btn btn-secondary rounded-pill">{{ __('Add Size') }}</button>
-                            <button style="float: right;" type="button" data-bs-toggle="modal" data-bs-target="#color"
-                                data-bs-whatever="@mdo"
-                                class="btn btn-secondary rounded-pill"">{{ __('Add Color') }}</button>
-
-                        </h4>
-                    </div>
                     <div class="card-content">
                         <div class="card-body">
 
-                            <form class="signup-form" action="{{ url('/edit_product/' . $product->id) }}" method="post"
+                            <form class="signup-form" action="{{ route('store_employee') }}" method="post"
                                 enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
-                                    <input type="hidden" name="product_collection" value="Kids">
+
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
-                                            <label for="last-name-column">{{ __('Product Name') }}</label>
-                                            <fieldset class="form-group">
-                                                <select class="form-select @error('role_name') is-invalid @enderror"
-                                                    name="product_name" id="role_name">
-                                                    <option selected disabled>{{ __('Select') }} </option>
-                                                    @foreach ($categories as $category)
-                                                        <option value="{{ $category->name }}"
-                                                            {{ $product->category == $category->name ? 'selected' : '' }}>
-                                                            {{ __($category->name) }}</option>
-                                                        </option>
-                                                    @endforeach
-
-                                                </select>
-
-                                            </fieldset>
+                                            <label for="city-column">اسم المشرف </label>
+                                            <input type="text" id="city-column" class="form-control" required
+                                                placeholder="ادخل اسم المشرف"
+                                                name="name">
                                         </div>
                                     </div>
+
+
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
-                                            <label for="last-name-column">{{ __('Brand') }}</label>
-                                            <fieldset class="form-group">
-                                                <select class="form-select @error('role_name') is-invalid @enderror"
-                                                    name="product_brand" id="role_name">
-                                                    <option selected disabled>Select </option>
-                                                    @foreach ($brands as $brand)
-                                                        <option value="{{ $brand->id }}"
-                                                            {{ $get->brands->id == $brand->id ? 'selected' : '' }}>
-                                                            {{ $brand->name }}
-                                                        </option>
-                                                    @endforeach
-                                                </select>
+                                            <label for="country-floating">البريد الالكتروني</label>
+                                            <input type="email" id="country-floating" class="form-control" required
+                                                name="email" placeholder="البريد الالكتروني">
+                                        </div>
+                                    </div>
 
-                                            </fieldset>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-12">
-                                        <div class="form-group">
-                                            <label for="city-column">{{ __('Specifications') }} </label>
-                                            <input type="text" id="city-column" class="form-control"
-                                                value="{{ $product->specification }}"
-                                                placeholder="{{ __('enter Specifications') }}"
-                                                name="product_specification">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-12">
-                                        <div class="form-group">
-                                            <label for="country-floating">{{ __('Quantity') }}</label>
-                                            <input type="number" id="country-floating" class="form-control"
-                                                value="{{ $product->quantity }}" name="product_quantity"
-                                                placeholder="{{ __('enter Quantity') }}">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-12">
-                                        <div class="form-group">
-                                            <label for="company-column">{{ __('Size') }}</label>
-                                            <fieldset class="form-group">
-                                                <select style="width=100%" class="form-select" name="product_size[]"
-                                                    id="level" id="field2" multiselect-select-all="true" multiple
-                                                    onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))"
-                                                    multiselect-hide-x="true">
-                                                    @php
-                                                        $i = 0;
-                                                    @endphp
-                                                    @foreach ($size as $s)
-                                                        <option value="{{ $s->name }}"
-                                                            {{ $get_size[$i]->name == $s->name ? 'selected' : '' }}>
-                                                            {{ __($s->name) }}</option>
-                                                        {{ $i++ }}
-                                                    @endforeach
-                                                </select>
 
-                                            </fieldset>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-12">
-                                        <div class="form-group">
-                                            <label for="email-id-column">{{ __('Color') }}</label>
-                                            <fieldset class="form-group">
-                                                <select style="width=100%" class="form-select" name="product_color[]"
-                                                    id="level" id="field2" multiselect-select-all="true" multiple
-                                                    onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))"
-                                                    multiselect-hide-x="true">
-                                                    {{-- @php
-                                                        $i = 0;
-                                                    @endphp --}}
-                                                    @foreach ($color as $c)
-                                                        @for ($i = 0; $i < count($get_color); $i++)
-                                                            @if ($color->name == $get_color[$i])
-                                                                <option value="{{ $c->name }}" selected></option>
-                                                            @endif
-                                                            {{-- <option value="{{ $c->name }}"
-                                                            {{ $get_color[$i]->name == $c->name ? 'selected' : '' }}>
-                                                            {{ __($c->name) }}</option> --}}
-                                                            {{-- {{ $i++; }} --}}
-                                                        @endfor
-                                                    @endforeach
-                                                    @foreach ($color as $c)
-                                                        @for ($i = 0; $i < count($get_color); $i++)
-                                                            @if ($color->name != $get_color[$i])
-                                                                <option value="{{ $c->name }}"></option>
-                                                            @endif
-                                                        @endfor
-                                                    @endforeach
-                                                </select>
-
-                                            </fieldset>
-
-                                            </fieldset>
-                                        </div>
-                                    </div>
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
                                             <br>
-                                            <label for="email-id-column">{{ __('price') }}</label>
-                                            <input type="text" id="email-id-column" class="form-control"
-                                                value="{{ $product->price }}" name="product_price"
-                                                placeholder="{{ __('enter price') }}">
+                                            <label for="email-id-column">كلمة المرور</label>
+                                            <input type="password" id="email-id-column" class="form-control" required
+                                                name="password" placeholder="كلمة المرور">
                                         </div>
                                     </div>
 
                                     <div class="col-md-6 col-12">
-                                        <div class="form-group has-icon-lefts">
+                                        <div class="form-group">
                                             <br>
-                                            <label for="email-id-column"> {{ __('Upload Product Picture') }}</label>
-                                            <input type="file" class="form-control" placeholder="Name"
-                                                value="{{ $product->profile_image }}" id="first-name-icon"
-                                                name="product_image" />
-                                            {{-- <div class="form-control-icon avatar avatar.avatar-im">
-                                                <img src="{{ URL::to('/images/'. $data[0]->avatar) }}">
-                                            </div> --}}
-
+                                            <label for="email-id-column">اعادة كلمة المرور</label>
+                                            <input type="password" id="email-id-column" class="form-control" required
+                                                name="password_confirmation" placeholder="اعادة كلمة المرور">
                                         </div>
                                     </div>
+
+
                                 </div>
 
 
@@ -410,7 +299,7 @@
                                     <button type="reset"
                                         class="btn btn-light-secondary me-1 mb-1">{{ __('Reset') }}</button>
                                 </div>
-                        </div>
+                            </div>
 
                         </form>
                     </div>
@@ -419,7 +308,7 @@
         </div>
     </div>
     {{-- for categories --}}
-    <div class="modal fade" id="type_kids" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="type_men" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -427,11 +316,11 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="{{ route('AddCategoryKids') }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('AddCategoryMen') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">{{ __('New Category') }}:</label>
-                            <input type="text" class="form-control" id="recipient-name" name="category_kids_name"
+                            <input type="text" class="form-control" id="recipient-name" name="category_men_name"
                                 placeholder="{{ __('Enter Category Name') }}" required="required">
                         </div>
 

@@ -250,18 +250,8 @@
   "Add a female product":"إضافة منتج نسائي",
   "Add a baby product":"إضافة منتج أطفال",
   "Menu":"قــائــمـة",
-<<<<<<< HEAD
   "Create new Category Women successfully":"تم انشاء نوع نسائي بنجاح",
   "Create new Category Men successfully":"تم انشاء نوع رجالي بنجاح",
-  "":"",
-=======
   "notice":"البلاغات",
-  "Bills":"الفواتير",
->>>>>>> e0019f74aff2d354d473db835cbc04d282f34a93
-  "":"",
-  "":"",
-  "":"",
-  "":"",
-  "":"",
-  "":""
+  "Bills":"الفواتير"
 }

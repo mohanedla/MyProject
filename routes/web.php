@@ -50,18 +50,19 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/user',[App\Http\Controllers\users::class,'user']);
 
     Route::get('/product',[App\Http\Controllers\products::class,'product_product']);
-    Route::get('add_product',[App\Http\Controllers\products::class,'product_add_product']);
-    Route::get('/product_detail_page',[App\Http\Controllers\products::class,'product_detail_page']);
-    Route::get('/edit_product/{id}',[App\Http\Controllers\products::class,'edit_product']);
 
+    Route::get('add_product',[App\Http\Controllers\products::class,'product_add_product'])->name('add_product');
+    Route::post('/add_product',[App\Http\Controllers\products::class,'add_product'])->name('AddProduct');
+
+    Route::get('/product_detail_page',[App\Http\Controllers\products::class,'product_detail_page']);
+    Route::get('/edit_product/{id}',[App\Http\Controllers\products::class,'edit_product'])->name('edit_product');
 
     Route::post('/edit_brand/{id}',[App\Http\Controllers\brands::class,'update_brand']);
     Route::get('/delete_brand/{id}',[App\Http\Controllers\brands::class,'delete_brand']);
     Route::post('/add_brand',[App\Http\Controllers\brands::class,'add_brand'])->name('AddBrand');
 
-    Route::post('/edit_product/{id}',[App\Http\Controllers\products::class,'update_product']);
-    Route::get('/delete_product/{id}',[App\Http\Controllers\products::class,'delete_product']);
-    Route::post('/add_product',[App\Http\Controllers\products::class,'add_product'])->name('AddProduct');
+    Route::post('/edit_product/{id}',[App\Http\Controllers\products::class,'update_product'])->name('update_product');
+    Route::get('/delete_product/{id}',[App\Http\Controllers\products::class,'delete_product'])->name('delete_product');
 
     Route::post('/add_collection',[App\Http\Controllers\CollectionController::class,'add_collection'])->name('AddCollection');
     Route::post('/add_color',[App\Http\Controllers\products::class,'add_color'])->name('AddColor');
@@ -79,17 +80,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/category/{id}/{name}',[App\Http\Controllers\home::class,'category']);
 
 
-
-    Route::post('/add_product_men',[App\Http\Controllers\products::class,'add_product'])->name('AddProduct');
-    Route::get('/add_product_men',[App\Http\Controllers\products::class,'add_product_men']);
-    Route::get('/add_product_women',[App\Http\Controllers\products::class,'add_product_women']);
-    Route::get('/add_product_kids',[App\Http\Controllers\products::class,'add_product_kids']);
-    Route::get('/men_product',[App\Http\Controllers\products::class,'men_product']);
+    Route::get('/all_product/{id}',[App\Http\Controllers\products::class,'all_product'])->name('all_product');
     Route::get('/women_product',[App\Http\Controllers\products::class,'women_product']);
     Route::get('/kids_product',[App\Http\Controllers\products::class,'kids_product']);
-    Route::get('/edit_product_men/{id}',[App\Http\Controllers\products::class,'edit_product_men']);
-    Route::get('/edit_product_women/{id}',[App\Http\Controllers\products::class,'edit_product_women']);
-    Route::get('/edit_product_kids/{id}',[App\Http\Controllers\products::class,'edit_product_kids']);
     Route::post('/add_category_men',[App\Http\Controllers\products::class,'add_category_men'])->name('AddCategoryMen');
     Route::post('/add_category_women',[App\Http\Controllers\products::class,'add_category_women'])->name('AddCategoryWomen');
     Route::post('/add_category_kids',[App\Http\Controllers\products::class,'add_category_kids'])->name('AddCategoryKids');
@@ -100,10 +93,21 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::post('/dashboard_add_brand',[App\Http\Controllers\brands::class,'add_brand'])->name('AddBrand');
     Route::post('/dashboard_edit_brand/{id}',[App\Http\Controllers\brands::class,'update_brand']);
 
+    // for Employees
+    Route::get('/employees',[App\Http\Controllers\EmployeeController::class,'employees'])->name('employees');
+    Route::get('add_employee',[App\Http\Controllers\EmployeeController::class,'add_employee'])->name('add_employee');
+    Route::post('/add_employee',[App\Http\Controllers\EmployeeController::class,'store_employee'])->name('store_employee');
+    Route::get('/edit_employee/{id}',[App\Http\Controllers\EmployeeController::class,'edit_employee'])->name('edit_employee');
+    Route::post('/edit_employee/{id}',[App\Http\Controllers\EmployeeController::class,'update_employee'])->name('update_employee');
+    Route::get('/delete_employee/{id}',[App\Http\Controllers\EmployeeController::class,'delete_employee'])->name('delete_employee');
+
+
+
 });
 Auth::routes();
 Route::get('/dashboard_home',function(){
-    return view('dashboard.home');
+    $page = "home";
+    return view('dashboard.home',compact('page'));
 });
 
 Route::get('/change_password',function(){

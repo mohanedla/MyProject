@@ -18,38 +18,44 @@ class brands extends Controller
         $product_name_women=product::with('categories')->where('collection','=','Women')->get();
         $product_name_children=product::with('categories')->where('collection','=','Children')->get();
         $brand=brand::all();
-        return View('brand.brand',compact('brand','collect','categories','product_name_men','product_name_women','product_name_children'));
+        $page = "brands";
+        return View('brand.brand',compact('brand','collect','categories','page','product_name_men','product_name_women','product_name_children'));
 
     }
 
     public function brand_add_brand()
     {
-        return View('brand.add_brand');
+        $page = "brands";
+        return View('brand.add_brand',compact('page'));
 
     }
     public function brand()
     {
         $brand=brand::all();
-        return View('brand.d_brand',compact('brand'));
+        $page = "brands";
+        return View('brand.d_brand',compact('brand','page'));
 
     }
     public function addbrand()
     {
-        return View('brand.dashboard_add_brand');
+        $page = "brands";
+        return View('brand.dashboard_add_brand',compact('page'));
 
     }
     public function edit_brand($id)
     {
         $brand=brand::find($id);
-        return View('brand.edit_brand',compact('brand'));
+        $page = "brands";
+        return View('brand.edit_brand',compact('brand','page'));
 
     }
     public function dashboard_edit_brand($id)
     {
         $brand=brand::find($id);
-        return View('brand.dashboard_edit_brand',compact('brand'));
-
+        $page = "brands";
+        return View('brand.dashboard_edit_brand',compact('brand','page'));
     }
+    
     //هذا للداتا بيز
     public function add_brand () {
 

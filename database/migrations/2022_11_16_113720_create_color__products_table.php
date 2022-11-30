@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('color__products', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->integer('product_id')->references('id')->on('products');
+            $table->integer('color_id');
+            $table->integer('product_id');
             $table->timestamps();
         });
     }

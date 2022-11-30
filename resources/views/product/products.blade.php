@@ -1,6 +1,6 @@
 @extends('dashboard.layouts.master')
 @section('menu')
-@extends('dashboard.sidebar.men')
+@extends('dashboard.sidebar.dashboard')
 @endsection
 @section('content')
 <header id="header" class="header fixed-top d-flex align-items-center">
@@ -228,7 +228,7 @@
                 <div class="card-header">
                 <h4>{{ __('Brand List Men') }}</h4>
                     {{-- <div class="buttons"> --}}
-                        <a style="float: right;" href="/add_product_men" class="btn btn-secondary">{{ __('add Product') }}</a>
+                        <a style="float: right;" href="{{route('add_product')}}" class="btn btn-secondary">{{ __('add Product') }}</a>
 
                   {{-- </div> --}}
                 </div>
@@ -237,8 +237,9 @@
                         <thead>
                             <tr>
                             <th style="width: 50px;" scope="col">{{ __('#')}}</th>
-                                <th style="width: 50px;" scope="col">{{ __('Name')}}</th>
-                                <th style="width: 50px;" scope="col">{{ __('brand')}}</th>
+                            <th style="width: 50px;" scope="col">{{ __('Name')}}</th>
+                            <th style="width: 50px;" scope="col">نوع المنتج</th>
+                            <th style="width: 50px;" scope="col">{{ __('brand')}}</th>
                                 <th style="width: 50px;" scope="col">{{ __('Collection')}}</th>
                                 <th style="width: 50px;" scope="col">{{ __('Specifications')}}</th>
                                 <th style="width: 50px;" scope="col">{{ __('Quantity')}}</th>
@@ -257,22 +258,24 @@
                                 @foreach ($admin as $x)
                                 <tr>
                                     <td>{{$i++}}</td>
-                                    <td>{{$x->category}}</td>
-                                    <td>{{$brand[$j]->brands->name}}</td>
+                                    <td>{{$x->name}}</td>
+                                    <td>{{$x->category->name}}</td>
+                                    <td>{{$x->brand->name}}</td>
                                     <td>{{$x->collection}}</td>
                                     <td>{{$x->specification}}</td>
                                     <td>{{$x->quantity}}</td>
                                     <td>{{$x->price}}$</td>
-                                    <td>{{Auth::User()->name}}</td>
+                                    <td>{{$x->user->name}}</td>
                                     <td><img style="width: 50%;" src="{{asset(Storage::url($x->profile_image))}}" alt=""></td>
                                     <td class="text-center">
-                                        <a href="">
+                                        <a data-bs-toggle="modal" data-bs-target="#type_men"
+                                        data-bs-whatever="@mdo" onclick="showDetails({{json_encode($x)}},{{json_encode($x->sizes)}},{{json_encode($x->colors)}})">
                                             <span class="badge bg-info"><i class="bi bi-eye-fill"></i></span>
                                         </a>
-                                        <a href=" /edit_product_men/{{$x->id}}">
+                                        <a href="{{route('edit_product',['id'=>$x->id])}}">
                                             <span class="badge bg-success"><i class="bi bi-pencil-square"></i></span>
                                         </a>
-                                        <a href="/delete_product/{{$x->id}}" onclick="return confirm('Are you sure to want to delete it?')"><span class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
+                                        <a href="{{route('delete_product',['id'=>$x->id])}}" onclick="return confirm('Are you sure to want to delete it?')"><span class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
                                     </td>
                                 </tr>
                                 @php
@@ -291,6 +294,42 @@
             </div>
         </section>
     </div>
+
+    {{-- for categories --}}
+    <div class="modal fade" id="type_men" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel"> بيانات المنتج </h1><br>
+                    <h1 class="modal-title fs-5" id="productName"></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <table class="table table-striped" id="table1">
+                        <thead>
+                            <tr>
+                                <th style="width: 50px;" scope="col">الالوان</th>
+                                <th style="width: 50px;" scope="col">المقاسات</th>
+                            </tr>
+                        </thead>
+                        <tbody id="bodyrow">
+
+
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                        data-bs-dismiss="modal">{{ __('Close') }}</button>
+                    <button type="submit" class="btn btn-primary">{{ __('Save') }}</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <footer>
         <div class="footer clearfix mb-0 text-muted ">
             <div class="float-start">
@@ -300,4 +339,27 @@
         </div>
     </footer>
 </div>
+<script>
+    
+function showDetails(pro,sizes,colors){
+    document.getElementById("productName").innerHTML = pro['name'];
+    var table = document.getElementById("bodyrow");
+    table.innerHTML = "";
+    var max = sizes.length;
+    if(max < colors.lenght){
+        var max = colors.length;
+    }
+    for(var i=0; i<max;i++){
+        if (top) { var row = table.insertRow(-1); }
+        else { var row = table.insertRow(); }
+      
+        // (B3) INSERT CELLS
+        var cell = row.insertCell();
+        cell.innerHTML = colors[i]['color']['name'];
+        cell = row.insertCell();
+        cell.innerHTML = sizes[i]['size']['name'];
+    }
+}
+
+</script>
 @endsection

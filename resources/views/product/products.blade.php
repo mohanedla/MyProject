@@ -6,7 +6,7 @@
 <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-        <a href="" class="logo d-flex align-items-center">
+        <a href="/home" class="logo d-flex align-items-center">
         <span class="d-none d-lg-block">Online Shop</span>
             <!-- <a class="d-none d-lg-block"> alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> -->
         </a>
@@ -226,7 +226,7 @@
         <section class="section">
             <div class="card">
                 <div class="card-header">
-                <h4>{{ __('Brand List Men') }}</h4>
+                <h4>{{ __('Products List') }}</h4>
                     {{-- <div class="buttons"> --}}
                         <a style="float: right;" href="{{route('add_product')}}" class="btn btn-secondary">{{ __('add Product') }}</a>
 
@@ -238,7 +238,7 @@
                             <tr>
                             <th style="width: 50px;" scope="col">{{ __('#')}}</th>
                             <th style="width: 50px;" scope="col">{{ __('Name')}}</th>
-                            <th style="width: 50px;" scope="col">نوع المنتج</th>
+                            <th style="width: 50px;" scope="col"> {{ __('Product type')}}</th>
                             <th style="width: 50px;" scope="col">{{ __('brand')}}</th>
                                 <th style="width: 50px;" scope="col">{{ __('Collection')}}</th>
                                 <th style="width: 50px;" scope="col">{{ __('Specifications')}}</th>

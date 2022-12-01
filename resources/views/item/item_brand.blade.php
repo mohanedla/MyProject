@@ -119,7 +119,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 col-sm-4">
-                        <div class="main-search mt_40">
+                        <!-- <div class="main-search mt_40">
                             <input id="search-input" name="search" value=""
                                 placeholder="{{ __('Search') }}" class="form-control input-lg" autocomplete="off"
                                 type="text">
@@ -127,7 +127,7 @@
                                 <button type="button" class="btn btn-default btn-lg"><i
                                         class="fa fa-search"></i></button>
                             </span>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="home"> <img
                                 alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>

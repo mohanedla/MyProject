@@ -7,7 +7,7 @@
     <header id="header" class="header fixed-top d-flex align-items-center">
 
         <div class="d-flex align-items-center justify-content-between">
-            <a href="" class="logo d-flex align-items-center">
+            <a href="home#" class="logo d-flex align-items-center">
 
                 <span class="d-none d-lg-block">Online Shop</span>
             </a>
@@ -227,15 +227,15 @@
             <div class="page-title">
                 <div class="row">
                     <div class="col-12 col-md-6 order-md-1 order-last">
-                        <h3>{{ __('Products management control') }}</h3>
+                        <h3>{{ __('add admin') }}</h3>
                         <br>
                     </div>
                     <div class="col-12 col-md-6 order-md-2 order-first">
                         <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="">{{ __('Dashboard') }}</a></li>
-                                <li class="breadcrumb-item"><a href="">اضافة مشرف</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">{{ __('Add a men,s product') }}
+                                <li class="breadcrumb-item"><a href="dashboard_home">{{ __('Dashboard') }}</a></li>
+                                <li class="breadcrumb-item"><a href="employees">{{ __('all admin') }}</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">{{ __('add admin') }}
                                 </li>
                             </ol>
                         </nav>
@@ -255,9 +255,9 @@
 
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
-                                            <label for="city-column">اسم المشرف </label>
+                                            <label for="city-column">{{ __('name admin') }}</label>
                                             <input type="text" id="city-column" class="form-control" required
-                                                placeholder="ادخل اسم المشرف"
+                                                placeholder="{{ __('enter name admin') }}"
                                                 name="name">
                                         </div>
                                     </div>
@@ -265,9 +265,9 @@
 
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
-                                            <label for="country-floating">البريد الالكتروني</label>
+                                            <label for="country-floating">{{ __('Email Address') }}</label>
                                             <input type="email" id="country-floating" class="form-control" required
-                                                name="email" placeholder="البريد الالكتروني">
+                                                name="email" placeholder=" {{ __('enter your email') }}">
                                         </div>
                                     </div>
 
@@ -275,18 +275,18 @@
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
                                             <br>
-                                            <label for="email-id-column">كلمة المرور</label>
+                                            <label for="email-id-column">{{ __('Password') }}</label>
                                             <input type="password" id="email-id-column" class="form-control" required
-                                                name="password" placeholder="كلمة المرور">
+                                                name="password" placeholder=" {{ __('enter password') }}">
                                         </div>
                                     </div>
 
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
                                             <br>
-                                            <label for="email-id-column">اعادة كلمة المرور</label>
+                                            <label for="email-id-column">{{ __('Confirm Password') }}</label>
                                             <input type="password" id="email-id-column" class="form-control" required
-                                                name="password_confirmation" placeholder="اعادة كلمة المرور">
+                                                name="password_confirmation" placeholder="{{ __('enter password again') }}">
                                         </div>
                                     </div>
 

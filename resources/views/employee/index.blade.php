@@ -6,7 +6,7 @@
 <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-        <a href="" class="logo d-flex align-items-center">
+        <a href="home#" class="logo d-flex align-items-center">
         <span class="d-none d-lg-block">Online Shop</span>
             <!-- <a class="d-none d-lg-block"> alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> -->
         </a>
@@ -207,7 +207,7 @@
         <div class="page-title">
             <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
-                <h3>{{ __('Products management control') }}</h3>
+                <h3>{{ __('admins management control') }}</h3>
                 <br>
                 <br>
                 </div>
@@ -215,7 +215,7 @@
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                         <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="">{{ __('Dashboard') }}</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">كل المشرفين</li>
+                                <li class="breadcrumb-item active" aria-current="page">{{ __('all admin') }}</li>
                         </ol>
                     </nav>
                 </div>
@@ -226,9 +226,9 @@
         <section class="section">
             <div class="card">
                 <div class="card-header">
-                <h4>{{ __('Brand List Men') }}</h4>
+                <h4>{{ __('Admins List') }}</h4>
                     {{-- <div class="buttons"> --}}
-                        <a style="float: right;" href="{{route('add_employee')}}" class="btn btn-secondary">اضاقة مشرف</a>
+                        <a style="float: right;" href="{{route('add_employee')}}" class="btn btn-secondary"> {{ __('add admin') }}</a>
 
                   {{-- </div> --}}
                 </div>
@@ -237,8 +237,8 @@
                         <thead>
                             <tr>
                             <th style="width: 50px;" scope="col">{{ __('#')}}</th>
-                            <th style="width: 50px;" scope="col">اسم المشرف</th>
-                            <th style="width: 50px;" scope="col">البريد الالكتروني</th>
+                            <th style="width: 50px;" scope="col">{{ __('name admin') }}</th>
+                            <th style="width: 50px;" scope="col">{{ __('Email Address') }}</th>
                                 <th style="width: 50px;" scope="col"></th>
                             </tr>
                         </thead>

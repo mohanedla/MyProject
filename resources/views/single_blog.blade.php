@@ -89,12 +89,12 @@
         <div class="container">
           <div class="row">
             <div class="col-xs-12 col-sm-4">
-              <div class="main-search mt_40">
+              <!-- <div class="main-search mt_40">
                 <input id="search-input" name="search" value="" placeholder="Search" class="form-control input-lg" autocomplete="off" type="text">
                 <span class="input-group-btn">
               <button type="button" class="btn btn-default btn-lg"><i class="fa fa-search"></i></button>
               </span> </div>
-            </div>
+            </div> -->
             <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="index.html"> <img alt="themini" src="images/logo.png"> </a> </div>
             <div class="col-xs-6 col-sm-4 shopcart">
               <div id="cart" class="btn-group btn-block mtb_40">

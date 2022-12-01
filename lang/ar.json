@@ -22,6 +22,7 @@
   "Register Now":"تسجيل الأن",
   "Remember Me": "تذكرني",
   "Reset Password": "استعادة كلمة المرور",
+  "enter name admin":"أدخل اسم المشرف",
   "enter your first name":"أدخل اسم الأول",
   "enter your last name":"أدخل اسم الأخير",
   "enter your email":"أدخل بريد الإلكتروني",
@@ -29,6 +30,8 @@
   "Enter your phone number":"أدخل رقم الهاتف",
   "enter your password":"أدخل كلمة المرور الخاصة بك",
   "enter your password again":"أدخل كلمة المرور الخاصة بك مرة أخرى",
+  "enter password":"أدخل كلمة المرور  ",
+  "enter password again":"أدخل كلمة المرور مرة أخرى",
   "enter serial number":"أدخل الرقم التسلسلي",
   "enter country name":"أدخل اسم البلد",
   "Gender":"الجنس",
@@ -81,6 +84,7 @@
   "Girls":"بنات",
   "Properties":"خصائص",
   "add admin":"إضافة مشرف",
+  "name admin":"اسم مشرف",
   "add brand":"إضافة علامة تجارية",
   "add Product":"إضافة منتج",
   "Reports":"التقارير",
@@ -253,5 +257,9 @@
   "Create new Category Women successfully":"تم انشاء نوع نسائي بنجاح",
   "Create new Category Men successfully":"تم انشاء نوع رجالي بنجاح",
   "notice":"البلاغات",
-  "Bills":"الفواتير"
+  "Bills":"الفواتير",
+  "admins management control":"إدارة تحكم المشرفين",
+
+  "all admin":"المشرفين",
+  "System management":"إدارة النظام"
 }

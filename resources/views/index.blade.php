@@ -74,6 +74,17 @@
                                     </ul>
                                 </li>
                             @endguest
+
+                            @if (Auth::user())
+                                @if (Auth::user()->role == 'admin' || Auth::user()->role == 'supervisor')
+                                    {{-- @if ((Auth::User()->role = 'admin') or (Auth::User()->role = 'supervisor')) --}}
+                                    <li class="nav-item">
+                                        <a class="account" href="/dashboard_home">{{ __('System management') }}</a>
+                                    </li>   
+                                @endif
+                                {{-- @endif --}}
+                            @endif
+                            
                             <li class="language dropdown"> <span class="dropdown-toggle" id="dropdownMenu1"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                     role="button">{{ __('Language') }} <span class="caret"></span> </span>
@@ -88,24 +99,7 @@
                                     @endforeach
                                 </ul>
                             </li>
-                            @if (Auth::user())
-                                @if (Auth::user()->role == 'admin' || Auth::user()->role == 'supervisor')
-                                    {{-- @if ((Auth::User()->role = 'admin') or (Auth::User()->role = 'supervisor')) --}}
-                                    <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                            role="button">{{ __('Properties') }} <span class="caret"></span> </span>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
-
-                                            <li><a href="admin">{{ __('admin management') }}</a></li>
-                                            <li><a href="user">{{ __('user management') }}</a></li>
-                                            <li><a href="product">{{ __('Product Management') }}</a></li>
-                                            <li><a href="brand">{{ __('Brands') }}</a></li>
-                                            <li><a href="reports">{{ __('Reports') }}</a></li>
-                                        </ul>
-                                    </li>
-                                @endif
-                                {{-- @endif --}}
-                            @endif
+                           
                         </ul>
                     </div>
                 </div>
@@ -120,7 +114,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 col-sm-4">
-                        <div class="main-search mt_40">
+                        <!-- <div class="main-search mt_40">
                             <input id="search-input" name="search" value=""
                                 placeholder="{{ __('Search') }}" class="form-control input-lg" autocomplete="off"
                                 type="text">
@@ -128,7 +122,7 @@
                                 <button type="button" class="btn btn-default btn-lg"><i
                                         class="fa fa-search"></i></button>
                             </span>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="home"> <img
                                 alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>

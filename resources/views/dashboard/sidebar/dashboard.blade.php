@@ -47,7 +47,7 @@
                 <li class="sidebar-item">
                 @endif
                     <a href="{{route('employees')}}" class='sidebar-link'>
-                        <i class="bi bi-shield-lock"></i>
+                        <i class="bi bi-people-fill"></i>
                         <span>{{ __('admin management') }}</span>
                     </a>
                 </li>
@@ -56,8 +56,8 @@
                 @else
                 <li class="sidebar-item">
                 @endif
-                    <a href="/user" class='sidebar-link'>
-                        <i class="bi bi-shield-lock"></i>
+                    <a href="/d_user" class='sidebar-link'>
+                        <i class="bi bi-people-fill"></i>
                         <span>{{ __('user management') }}</span>
                     </a>
                 </li>
@@ -67,7 +67,7 @@
                 <li class="sidebar-item">
                 @endif
                     <a href="/d_brand" class='sidebar-link'>
-                        <i class="bi bi-shield-lock"></i>
+                        <i class="bi bi-star-fill"></i>
                         <span>{{ __('Brands') }}</span>
                     </a>
                 </li>
@@ -100,13 +100,13 @@
                 <li class="sidebar-item  has-sub">
                 @endif
                     <a href="#" class='sidebar-link'>
-                        <i class="bi bi-file-earmark-medical-fill"></i>
+                        <i class="bi bi-bag-check-fill"></i>
                         <span>{{ __('Products') }}</span>
                     </a>
                     <ul class="submenu">
 
                         <li class="submenu-item">
-                            <a href="{{route('all_product',['id'=>0])}}">الكل</a>
+                            <a href="{{route('all_product',['id'=>0])}}">{{ __('all') }}</a>
                         </li>
 
                         <li class="submenu-item">
@@ -126,7 +126,8 @@
                 <li class="sidebar-item">
                 @endif
                     <a href="/dashboard_viewuser" class='sidebar-link'>
-                        <i class="bi bi-shield-lock"></i>
+                        <i class="bi bi-file-earmark-text-fill"></i>
+
                         <span>{{ __('Reports') }}</span>
                     </a>
                 </li>
@@ -135,8 +136,8 @@
                 @else
                 <li class="sidebar-item">
                 @endif
-                    <a href="/dashboard_viewuser" class='sidebar-link'>
-                        <i class="bi bi-shield-lock"></i>
+                    <a href="/d_notic" class='sidebar-link'>
+                    <i class="bi bi-chat-square-dots-fill"></i>
                         <span>{{ __('notice') }}</span>
                     </a>
                 </li>
@@ -146,8 +147,8 @@
                 <li class="sidebar-item">
                 @endif
                     <a href="/dashboard_viewuser" class='sidebar-link'>
-                        <i class="bi bi-shield-lock"></i>
-                        <span>{{ __('Bills') }}</span>
+                    <i class="bi bi-file-earmark-medical-fill"></i>
+                    <span>{{ __('Bills') }}</span>
                     </a>
                 </li>
 

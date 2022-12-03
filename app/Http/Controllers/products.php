@@ -153,7 +153,7 @@ class products extends Controller
         $product->price=request('product_price');
         $product->profile_image=request()->file('product_image')[0]? request()->file('product_image')[0]->store('public'):null;
         $product->admin_id=Auth::id();
-        $product->save();
+        $product->save();     
         $color=request('product_color');
         $size=request('product_size');
         $images=request()->file('product_image');

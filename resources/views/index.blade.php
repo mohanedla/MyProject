@@ -76,8 +76,8 @@
                             @endguest
 
                             @if (Auth::user())
-                                @if (Auth::user()->role == 'admin' || Auth::user()->role == 'supervisor')
-                                    {{-- @if ((Auth::User()->role = 'admin') or (Auth::User()->role = 'supervisor')) --}}
+                                @if (Auth::user()->role == '1' || Auth::user()->role == '2')
+                                    {{-- @if ((Auth::User()->role = '1') or (Auth::User()->role = '2')) --}}
                                     <li class="nav-item">
                                         <a class="account" href="/dashboard_home">{{ __('System management') }}</a>
                                     </li>   
@@ -249,8 +249,9 @@
                                     </li>
                                 </ul>
                             </li>
-
+                            @if(Auth::User())
                             <li> <a href="shop">{{ __('shop') }}</a></li>
+                            @endif
                             <li> <a href="about">{{ __('About us') }}</a></li>
                             <li> <a href="contact_us">{{ __('Contact us') }}</a></li>
                         </ul>
@@ -340,10 +341,12 @@
                                                             <h6 data-name="product_name" class="product-name"><a
                                                                     href="#"
                                                                     title="Casual Shirt With Ruffle Hem">
-                                                                    {{ $item->category }}..</a></h6>
+                                                                    {{ $item->name }}</a></h6>
+                                                                    @if(Auth::User())
                                                             <span class="price"><span class="amount"><span
                                                                         class="currencySymbol">$</span>{{ $item->price }}.00</span>
                                                             </span>
+                                                            @endif
                                                         </div>
                                                     </div>
                                                 </div>

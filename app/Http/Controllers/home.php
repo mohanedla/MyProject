@@ -77,15 +77,17 @@ class home extends Controller
             $product_name_women=product::with('categories')->where('collection','=','Women')->get();
             $product_name_children=product::with('categories')->where('collection','=','Children')->get();
             return View('about',compact('collect','categories','product_name_men','product_name_women','product_name_children'));
-        }
+        }   
     public function contact_us()
         {
-            $categories=Category::all();
-            $collect = array('M'=>'Men','W'=>'Women','C'=>'Children' );
-            $product_name_men=product::with('categories')->where('collection','=','Men')->get();
-            $product_name_women=product::with('categories')->where('collection','=','Women')->get();
-            $product_name_children=product::with('categories')->where('collection','=','Children')->get();
-            return View('contact_us',compact('collect','categories','product_name_men','product_name_women','product_name_children'));
+            $collect = array('M'=>'Men','W'=>'Women','C'=>'Kids' );
+            $brand=brand::all();
+            $products=product::all();
+            $category_men=Men::all();
+            $category_women=Women::all();
+            $category_kids=Kids::all();
+            // return View('contact_us',compact('collect','categories','product_name_men','product_name_women','product_name_children'));
+            return View('contact_us')
         }
 
     public function cart_page()
@@ -118,6 +120,12 @@ class home extends Controller
             return View('category',compact('brand','collect','categories','product','items','name'));
 
 
+        }
+        public function notic()
+        {
+    
+            return View('notic.d_notic');
+         
         }
 
     public function footer()

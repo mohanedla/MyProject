@@ -63,60 +63,59 @@
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-8">
-                            <ul class="header-top-right text-right">
-                                @guest
+                        <ul class="header-top-right text-right">
+
+                            @guest
                                 @if (Route::has('login'))
                                     <li class="nav-item">
                                         <a class="account" href="/login_register">{{ __('My Account') }}</a>
                                     </li>
                                 @endif
-
-
                             @else
-                            <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                role="button">{{ Auth::user()->name }} <span class="caret"></span> </span>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
-
-                                <li><a class="dropdown-item" href="/home"
-                                    onclick="event.preventDefault();
-                                         document.getElementById('logout-form').submit();">
-                                     {{ __('Logout') }}</a>
-                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </li>
-                            </ul>
-                        </li>
-                            @endguest                                <li class="language dropdown"> <span class="dropdown-toggle" id="dropdownMenu1"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                        role="button">{{ __('Language') }} <span class="caret"></span> </span>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                        @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                                            <li>
-                                                <a rel="alternate" hreflang="{{ $localeCode }}"
-                                                    href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-                                                    {{ $properties['native'] }}
-                                                </a>
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                </li>
                                 <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                        role="button">{{__('Properties')}} <span class="caret"></span> </span>
+                                        role="button">{{ Auth::user()->name }} <span class="caret"></span> </span>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
 
-                                        <li><a href="admin">{{__ ('admin management')}}</a></li>
-                                        <li><a href="user">{{__ ('user management')}}</a></li>
-                                        <li><a href="product">{{__ ('Product Management')}}</a></li>
-                                        <li><a href="brand">{{__ ('Brands')}}</a></li>
-                                        <li><a href="reports">{{__ ('Reports')}}</a></li>
+                                        <li><a class="dropdown-item" href="/home"
+                                                onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                                {{ __('Logout') }}</a>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                class="d-none">
+                                                @csrf
+                                            </form>
+                                        </li>
                                     </ul>
                                 </li>
+                            @endguest
 
-                            </ul>
-                        </div>
+                            @if (Auth::user())
+                                @if (Auth::user()->role == '1' || Auth::user()->role == '2')
+                                    {{-- @if ((Auth::User()->role = '1') or (Auth::User()->role = '2')) --}}
+                                    <li class="nav-item">
+                                        <a class="account" href="/dashboard_home">{{ __('System management') }}</a>
+                                    </li>   
+                                @endif
+                                {{-- @endif --}}
+                            @endif
+                            
+                            <li class="language dropdown"> <span class="dropdown-toggle" id="dropdownMenu1"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                    role="button">{{ __('Language') }} <span class="caret"></span> </span>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                    @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                                        <li>
+                                            <a rel="alternate" hreflang="{{ $localeCode }}"
+                                                href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                                {{ $properties['native'] }}
+                                            </a>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </li>
+                           
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -137,8 +136,10 @@
                                     class="fa fa-bars"></i></span></button>
                         <div class="collapse navbar-collapse js-navbar-collapse">
                             <ul id="menu" class="nav navbar-nav">
-                                <li> <a href="home">{{ __('Home') }}</a></li>
-                                <li class="dropdown mega-dropdown"> <a href="#" class="dropdown-toggle"
+                              
+                            <li> <a href="home">{{ __('Home') }}</a></li>
+                            
+                            <li class="dropdown mega-dropdown"> <a href="#" class="dropdown-toggle"
                                         data-toggle="dropdown">{{ __('Collection') }} </a>
                                     <ul class="dropdown-menu mega-dropdown-menu row">
                                         <li class="col-md-3">
@@ -216,7 +217,7 @@
                                             </li>
 
                                 </ul>
-                                </li>
+                            </li>
                                         <li class="col-md-3">
                                             <ul>
                                                 <li id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -269,19 +270,19 @@
         <!-- =====  BREADCRUMB END===== -->
         <div id="column-left" class="col-sm-4 col-lg-3 hidden-xs">
           <div id="category-menu" class="navbar collapse in mb_40" aria-expanded="true" style="" role="button">
-            <div class="nav-responsive">
+            <!-- <div class="nav-responsive">
               <div class="heading-part">              </div>
-          </div>
+          </div> -->
 
           </div>
           <div class="left_banner left-sidebar-widget mt_30 mb_40">  </div>
           <div class="left-special left-sidebar-widget mb_50">
-            <div class="heading-part mb_10 ">
+            <!-- <div class="heading-part mb_10 ">
             </div>
 
             {{-- <div id="left-special" class="owl-carousel">
 
-              </div>  --}}
+              </div>  --}} -->
             </div>
         </div>
         <div class="col-sm-8 col-lg-9 mtb_20">
@@ -375,12 +376,12 @@
             <div class="col-md-12">
               <div id="exTab5" class="mtb_30">
                 <ul class="nav nav-tabs">
-                  <li class="active"> <a href="#1c" data-toggle="tab"> {{__('Overview')}}</a> </li>
+                  <!-- <li class="active"> <a href="#1c" data-toggle="tab"> {{__('Overview')}}</a> </li> -->
                   <li><a href="#2c" data-toggle="tab"> {{__('Reviews')}} (1)</a> </li>
                 </ul>
                 <div class="tab-content ">
                   <div class="tab-pane active pt_20" id="1c">
-                    <p>CLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut lobortis malesuada mi id tristique. Sed ipsum nisi, dapibus at faucibus non, dictum a diam. Nunc vitae interdum diam. Sed finibus, justo vel maximus facilisis, sapien turpis euismod tellus, vulputate semper diam ipsum vel tellus.</p>
+                    <!-- <p>CLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut lobortis malesuada mi id tristique. Sed ipsum nisi, dapibus at faucibus non, dictum a diam. Nunc vitae interdum diam. Sed finibus, justo vel maximus facilisis, sapien turpis euismod tellus, vulputate semper diam ipsum vel tellus.</p> -->
                   </div>
                   <div class="tab-pane" id="2c">
                     <form class="form-horizontal">

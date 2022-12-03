@@ -75,7 +75,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::post('/admin_login',[App\Http\Controllers\admins::class,'create'])->name('admin_register');
     Route::post('/admin_register',[App\Http\Controllers\admins::class,'validation_admin'])->name('ValidationdAmin');
 
-    Route::get('/delete_user/{id}',[App\Http\Controllers\users::class,'delete_user']);
+    // Route::get('/delete_user/{id}',[App\Http\Controllers\users::class,'delete_user']);
     Route::get('/item_brand/{id}',[App\Http\Controllers\products::class,'item_brand']);
     Route::get('/category/{id}/{name}',[App\Http\Controllers\home::class,'category']);
 
@@ -100,6 +100,14 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/edit_employee/{id}',[App\Http\Controllers\EmployeeController::class,'edit_employee'])->name('edit_employee');
     Route::post('/edit_employee/{id}',[App\Http\Controllers\EmployeeController::class,'update_employee'])->name('update_employee');
     Route::get('/delete_employee/{id}',[App\Http\Controllers\EmployeeController::class,'delete_employee'])->name('delete_employee');
+    
+
+    Route::get('/d_user',[App\Http\Controllers\users::class,'user']);
+    Route::get('/delete_user/{id}',[App\Http\Controllers\user::class,'delete_user'])->name('delete_user');
+
+    Route::get('/d_notic',[App\Http\Controllers\home::class,'notic']);
+
+
 
 
 
@@ -109,7 +117,11 @@ Route::get('/dashboard_home',function(){
     $page = "home";
     return view('dashboard.home',compact('page'));
 });
-
+Auth::routes();
+// Route::get('/d_user',function(){
+//      $page = "home";
+//     return view('user.d_user');
+// });
 Route::get('/change_password',function(){
     return view('dashboard.usermanagement.change_password');
 });

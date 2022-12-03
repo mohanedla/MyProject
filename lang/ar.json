@@ -45,6 +45,7 @@
   "You are receiving this email because we received a password reset request for your account.": "لقد استلمت هذا الإيميل لأننا استقبلنا طلباً لاستعادة كلمة مرور حسابك.",
   "Home":"الرئيسي",
   "Collection":"مجموعة",
+  "collection":"المجموعة",
   "shop":"تسوق",
   "Blog":"تقارير",
   "About us":"معلومات عنا",
@@ -152,6 +153,7 @@
   "Admins List":"قائمة المشرفين ",
   "Products List":"قائمة المنتجات",
   "Users List":"قائمة المستخدمين",
+  "Users":"المستخدمين",
   "Manger":"مدير",
   "Close":"إغلاق",
   "Add Category":"إضافة صنف",
@@ -259,7 +261,10 @@
   "notice":"البلاغات",
   "Bills":"الفواتير",
   "admins management control":"إدارة تحكم المشرفين",
+  "user management control":"إدارة تحكم المستخدمين",
+
 
   "all admin":"المشرفين",
+  "all":"الكل",
   "System management":"إدارة النظام"
 }

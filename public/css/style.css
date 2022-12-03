@@ -967,6 +967,7 @@ label.checkme {
 }
 .header-top a {
     color: #ccc;
+    font-size: 18px;
 }
 .header-top-left, .header-top-right {
     margin: 8px 0;
@@ -974,6 +975,7 @@ label.checkme {
 .header-top-left li, .header-top-right li {
     display: inline;
     cursor: pointer;
+    font-size: 18px;
 }
 .header-top-left>li, .header-top-right>li {
     padding: 0 10px;
@@ -1119,7 +1121,7 @@ label.checkme {
     overflow: hidden;
     color: #fff;
     text-transform: uppercase;
-    font-size: larger;
+    font-size: 21px;
 }
 #menu>li>a:hover, #menu>li>a:focus {
     background-color: #fa4251;

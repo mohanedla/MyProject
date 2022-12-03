@@ -75,71 +75,7 @@
 
                 </li><!-- End Notification Nav -->
 
-                <li class="nav-item dropdown">
-
-                    <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-                        <i class="bi bi-chat-left-text"></i>
-                        <span class="badge bg-success badge-number">3</span>
-                    </a><!-- End Messages Icon -->
-
-                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
-                        <li class="dropdown-header">
-                            You have 3 new messages
-                            <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
-                        </li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-
-                        <li class="message-item">
-                            <a href="#">
-                                <img src="assets/img/messages-1.jpg" alt="" class="rounded-circle">
-                                <div>
-                                    <h4>Maria Hudson</h4>
-                                    <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                                    <p>4 hrs. ago</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-
-                        <li class="message-item">
-                            <a href="#">
-                                <img src="assets/img/messages-2.jpg" alt="" class="rounded-circle">
-                                <div>
-                                    <h4>Anna Nelson</h4>
-                                    <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                                    <p>6 hrs. ago</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-
-                        <li class="message-item">
-                            <a href="#">
-                                <img src="assets/img/messages-3.jpg" alt="" class="rounded-circle">
-                                <div>
-                                    <h4>David Muldon</h4>
-                                    <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                                    <p>8 hrs. ago</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-
-                        <li class="dropdown-footer">
-                            <a href="#">Show all messages</a>
-                        </li>
-
-                    </ul><!-- End Messages Dropdown Items -->
-
-                </li><!-- End Messages Nav -->
+          
 
                 <li class="nav-item dropdown pe-3">
 
@@ -202,7 +138,7 @@
 
     </header><!-- End Header -->
     <div class="page-heading">
-        <h3>Profile Statistics</h3>
+        <h2>{{__('Dashboard') }}</h2>
     </div>
     {{-- message --}}
     {{-- {!! Toastr::message() !!} --}}
@@ -279,162 +215,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-12 col-md-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h5 class="card-title">Multiple Files</h5>
-                            </div>
-                            <div class="card-content">
-                                <div class="card-body">
-                                    <p class="card-text">Using the basic table up, upload here to see how
-                                        <code>.multiple-files-filepond</code>-based basic file uploader look. You can use
-                                        <code>allowMultiple</code> or <code>multiple</code> attribute too to implement multiple upload.
-                                    </p>
-                                    <!-- File uploader with multiple files upload -->
-                                    {{-- <div class="filepond--root multiple-files-filepond filepond--hopper" data-style-button-remove-item-position="left" data-style-button-process-item-position="right" data-style-load-indicator-position="right" data-style-progress-indicator-position="right" data-style-button-remove-item-align="false" style="height: 76px;">
-                                        <input class="filepond--browser" type="file" id="filepond--browser-f0q1tssso" aria-controls="filepond--assistant-f0q1tssso" aria-labelledby="filepond--drop-label-f0q1tssso" accept="" multiple="" name="filepond">
-                                        <a class="filepond--credits" aria-hidden="true" href="https://pqina.nl/" target="_blank" rel="noopener noreferrer" style="transform: translateY(68px);">Powered by PQINA</a> --}}
-                                        <div class="filepond--root image-filter-filepond filepond--hopper" data-style-button-remove-item-position="left" data-style-button-process-item-position="right" data-style-load-indicator-position="right" data-style-progress-indicator-position="right" data-style-button-remove-item-align="false" style="height: 76px;">
-                                            <input class="filepond--browser" type="file" id="filepond--browser-7bpsfpfu9" aria-controls="filepond--assistant-7bpsfpfu9" aria-labelledby="filepond--drop-label-7bpsfpfu9" accept="image/png,image/jpg,image/jpeg" multiple="" name="filepond">
-                                            <a class="filepond--credits" aria-hidden="true" href="https://pqina.nl/" target="_blank" rel="noopener noreferrer" style="transform: translateY(68px);">
-                                                Powered by PQINA
-                                            </a>
-                                        <div class="filepond--drop-label" style="transform: translate3d(0px, 0px, 0px); opacity: 1;">
-                                            <label for="filepond--browser-f0q1tssso" id="filepond--drop-label-f0q1tssso" aria-hidden="true">Drag &amp; Drop your files or <span class="filepond--label-action" tabindex="0">Browse</span>
-                                            </label>
-                                        </div>
-                                        <div class="filepond--list-scroller" style="transform: translate3d(0px, 60px, 0px);">
-                                            <ul class="filepond--list" role="list"></ul></div>
-                                            <div class="filepond--panel filepond--panel-root" data-scalable="true">
-                                                <div class="filepond--panel-top filepond--panel-root"></div>
-                                                <div class="filepond--panel-center filepond--panel-root" style="transform: translate3d(0px, 8px, 0px) scale3d(1, 0.6, 1);"></div>
-                                                <div class="filepond--panel-bottom filepond--panel-root" style="transform: translate3d(0px, 68px, 0px);"></div></div>
-                                                <span class="filepond--assistant" id="filepond--assistant-f0q1tssso" role="status" aria-live="polite" aria-relevant="additions">
-                                                    </span><div class="filepond--drip">
-                                        </div>
-
-                                        <fieldset class="filepond--data"></fieldset></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {{-- <div class="col-12 col-md-6">
-                        <div class="card">
-                            <div class="card-header">
-                                <h5 class="card-title">Image Auto Filter</h5>
-                            </div>
-                            <div class="card-content">
-                                <div class="card-body">
-                                    <p class="card-text">Using the basic table up, upload here to see how
-                                        <code>.image-filter-filepond</code>-based basic file uploader look.
-                                    </p>
-                                    <!-- Auto filter image file uploader -->
-                                    <div class="filepond--root image-filter-filepond filepond--hopper" data-style-button-remove-item-position="left" data-style-button-process-item-position="right" data-style-load-indicator-position="right" data-style-progress-indicator-position="right" data-style-button-remove-item-align="false" style="height: 76px;">
-                                        <input class="filepond--browser" type="file" id="filepond--browser-7bpsfpfu9" aria-controls="filepond--assistant-7bpsfpfu9" aria-labelledby="filepond--drop-label-7bpsfpfu9" accept="image/png,image/jpg,image/jpeg" name="filepond">
-                                        <a class="filepond--credits" aria-hidden="true" href="https://pqina.nl/" target="_blank" rel="noopener noreferrer" style="transform: translateY(68px);">
-                                            Powered by PQINA
-                                        </a>
-                                        <div class="filepond--drop-label" style="transform: translate3d(0px, 0px, 0px); opacity: 1;">
-                                            <label for="filepond--browser-7bpsfpfu9" id="filepond--drop-label-7bpsfpfu9" aria-hidden="true">Drag &amp; Drop your files or <span class="filepond--label-action" tabindex="0">Browse</span>
-                                            </label>
-                                        </div>
-                                        <div class="filepond--list-scroller" style="transform: translate3d(0px, 0px, 0px);">
-                                            <ul class="filepond--list" role="list">
-                                                </ul>
-                                            </div>
-                                            <div class="filepond--panel filepond--panel-root" data-scalable="true">
-                                                <div class="filepond--panel-top filepond--panel-root">
-                                                    </div>
-                                                    <div class="filepond--panel-center filepond--panel-root" style="transform: translate3d(0px, 8px, 0px) scale3d(1, 0.6, 1);">
-                                                    </div>
-                                                    <div class="filepond--panel-bottom filepond--panel-root" style="transform: translate3d(0px, 68px, 0px);">
-                                                    </div>
-                                                </div>
-                                                <span class="filepond--assistant" id="filepond--assistant-7bpsfpfu9" role="status" aria-live="polite" aria-relevant="additions">Removed hmgoepprod (4).jpg, 0 files in list</span>
-                                                <div class="filepond--drip">
-                                                    </div>
-                                                    <fieldset class="filepond--data">
-                                                        </fieldset>
-                                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> --}}
-                    {{-- <div class="col-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4>Profile Visit</h4>
-                            </div>
-                            <div class="card-body">
-                                <div id="chart-profile-visit"></div>
-                            </div>
-                        </div>
-                    </div> --}}
-                </div>
+            
                 <div class="row">
                     <div class="col-12 col-xl-4">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4>Profile Visit</h4>
-                            </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <div class="d-flex align-items-center">
-                                            <svg class="bi text-primary" width="32" height="32" fill="blue"
-                                                style="width:10px">
-                                                <use
-                                                    xlink:href="assets/vendors/bootstrap-icons/bootstrap-icons.svg#circle-fill" />
-                                            </svg>
-                                            <h5 class="mb-0 ms-3">Europe</h5>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <h5 class="mb-0">862</h5>
-                                    </div>
-                                    <div class="col-12">
-                                        <div id="chart-europe"></div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-6">
-                                        <div class="d-flex align-items-center">
-                                            <svg class="bi text-success" width="32" height="32" fill="blue"
-                                                style="width:10px">
-                                                <use
-                                                    xlink:href="assets/vendors/bootstrap-icons/bootstrap-icons.svg#circle-fill" />
-                                            </svg>
-                                            <h5 class="mb-0 ms-3">America</h5>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <h5 class="mb-0">375</h5>
-                                    </div>
-                                    <div class="col-12">
-                                        <div id="chart-america"></div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-6">
-                                        <div class="d-flex align-items-center">
-                                            <svg class="bi text-danger" width="32" height="32" fill="blue"
-                                                style="width:10px">
-                                                <use
-                                                    xlink:href="assets/vendors/bootstrap-icons/bootstrap-icons.svg#circle-fill" />
-                                            </svg>
-                                            <h5 class="mb-0 ms-3">Indonesia</h5>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <h5 class="mb-0">1025</h5>
-                                    </div>
-                                    <div class="col-12">
-                                        <div id="chart-indonesia"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                       
                     </div>
                     <div class="col-12 col-xl-8">
                         <div class="card">
@@ -488,19 +272,7 @@
                 </div>
             </div>
             <div class="col-12 col-lg-3">
-                <div class="card" data-bs-toggle="modal" data-bs-target="#default">
-                    <div class="card-body py-4 px-5">
-                        <div class="d-flex align-items-center">
-                            {{-- <div class="avatar avatar-xl">
-                                <img src="{{ URL::to('/images/'. Auth::user()->avatar) }}" alt="{{ Auth::user()->avatar }}">
-                            </div> --}}
-                            <div class="ms-3 name">
-                                {{-- <h5 class="font-bold">{{ Auth::user()->name }}</h5> --}}
-                                {{-- <h6 class="text-muted mb-0">{{ Auth::user()->email }}</h6> --}}
-                            </div>
-                        </div>
-                    </div>
-                </div>
+               
                 {{-- user profile modal --}}
                 <div class="card-body">
                     <!--Basic Modal -->
@@ -636,14 +408,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-header">
-                        <h4>Visitors Profile</h4>
-                    </div>
-                    <div class="card-body">
-                        <div id="chart-visitors-profile"></div>
-                    </div>
-                </div>
+             
             </div>
         </section>
     </div>
@@ -651,11 +416,9 @@
     <footer>
         <div class="footer clearfix mb-0 text-muted">
             <div class="float-start">
-                <p>2021 &copy; Soeng Souy</p>
             </div>
             <div class="float-end">
-                <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a
-                href="http://soengsouy.com">Soeng Souy</a></p>
+         
             </div>
         </div>
     </footer>

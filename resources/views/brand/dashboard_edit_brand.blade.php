@@ -1,13 +1,13 @@
 @extends('dashboard.layouts.master')
 @section('menu')
-    @extends('dashboard.sidebar.brand')
+    @extends('dashboard.sidebar.dashboard')
 @endsection
 @section('content')
     <!-- ======= Header ======= -->
     <header id="header" class="header fixed-top d-flex align-items-center">
 
         <div class="d-flex align-items-center justify-content-between">
-            <a href="" class="logo d-flex align-items-center">
+            <a href="home" class="logo d-flex align-items-center">
 
                 <span class="d-none d-lg-block">Online Shop</span>
             </a>
@@ -230,8 +230,8 @@
                     <div class="col-12 col-md-6 order-md-2 order-first">
                         <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                             <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="">{{ __('Dashboard') }}</a></li>
-                            <li class="breadcrumb-item"><a href="">{{ __('Brand') }}</a></li>
+                            <li class="breadcrumb-item"><a href="dashboard_home">{{ __('Dashboard') }}</a></li>
+                            <li class="breadcrumb-item"><a href="d_brand">{{ __('Brand') }}</a></li>
                             <li class="breadcrumb-item active" aria-current="page">{{ __('add brand') }}</li>
                             </ol>
                         </nav>

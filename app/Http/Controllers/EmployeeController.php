@@ -47,14 +47,16 @@ class EmployeeController extends Controller
         $user->password = Hash::make(request('password'));
         $user->save();
         Toastr::success('Create new User successfully :)','Success');
-        return redirect()->back()->with('success','تــمــت إضــافــة مـسـتـخـدم بــنــجــاح');
+        return redirect('/employees');
+        // return redirect('/employeess')->with('success','Thank You!');
+        // return redirect()->back()->with('success','تــمــت إضــافــة مـسـتـخـدم بــنــجــاح');
     }
 
     public function delete_employee($id)
     {
         $user = User::find($id)->delete();
         Toastr::success('Delete User successfully :)','Success');
-        return redirect()->back()->with('success','تــمــت حذف مـسـتـخـدم بــنــجــاح');
+        return redirect('/employees');
     }
 
 }

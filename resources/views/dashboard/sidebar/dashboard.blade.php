@@ -120,12 +120,12 @@
                         </li>
                     </ul>
                 </li>
-                @if($page == "reports")
+                @if($page == "report")
                 <li class="sidebar-item active">
                 @else
                 <li class="sidebar-item">
                 @endif
-                    <a href="/dashboard_viewuser" class='sidebar-link'>
+                    <a href="/d_report" class='sidebar-link'>
                         <i class="bi bi-file-earmark-text-fill"></i>
 
                         <span>{{ __('Reports') }}</span>

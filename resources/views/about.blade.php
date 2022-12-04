@@ -48,60 +48,69 @@
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-8">
-                            <ul class="header-top-right text-right">
-                                @guest
-                                @if (Route::has('login'))
-                                    <li class="nav-item">
-                                        <a class="account" href="/login_register">{{ __('My Account') }}</a>
-                                    </li>
-                                @endif
+                        <ul class="header-top-right text-right">
+                            @guest
+                                    @if (Route::has('login'))
+                                        <li class="nav-item">
+                                            <a class="account" href="/login_register">{{ __('My Account') }}</a>
+                                        </li>
+                                    @endif
 
 
-                            @else
-                            <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                role="button">{{ Auth::user()->name }} <span class="caret"></span> </span>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
-
-                                <li><a class="dropdown-item" href="/home"
-                                    onclick="event.preventDefault();
-                                         document.getElementById('logout-form').submit();">
-                                     {{ __('Logout') }}</a>
-                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </li>
-                            </ul>
-                        </li>
-                            @endguest                                <li class="language dropdown"> <span class="dropdown-toggle" id="dropdownMenu1"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                        role="button">{{ __('Language') }} <span class="caret"></span> </span>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                        @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                                            <li>
-                                                <a rel="alternate" hreflang="{{ $localeCode }}"
-                                                    href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-                                                    {{ $properties['native'] }}
-                                                </a>
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                </li>
-
+                                @else
                                 <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                    role="button">{{__('Properties')}} <span class="caret"></span> </span>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
+                                    role="button">{{ Auth::user()->name }} <span class="caret"></span> </span>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
 
-                                        <li><a href="/admin">{{__ ('admin management')}}</a></li>
-                                        <li><a href="/user">{{__ ('user management')}}</a></li>
-                                        <li><a href="/product">{{__ ('Product Management')}}</a></li>
-                                        <li><a href="/brand">{{__ ('Brands')}}</a></li>
-                                        <li><a href="/reports">{{__ ('Reports')}}</a></li>
+                                    <li><a class="dropdown-item" href="/home"
+                                        onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                         {{ __('Logout') }}</a>
+                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            @csrf
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                                @endguest
+                            <li class="language dropdown"> <span class="dropdown-toggle" id="dropdownMenu1"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                    role="button">{{ __('Language') }} <span class="caret"></span> </span>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                    @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                                        <li>
+                                            <a rel="alternate" hreflang="{{ $localeCode }}"
+                                                href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                                {{ $properties['native'] }}
+                                            </a>
+                                        </li>
+                                        @endforeach
                                     </ul>
                             </li>
-                            </ul>
-                        </div>
+                            @if (Auth::user())
+                                @if (Auth::user()->role == '1' || Auth::user()->role == '2')
+                                    {{-- @if ((Auth::User()->role = '1') or (Auth::User()->role = '2')) --}}
+                                    <li class="nav-item">
+                                        <a class="account" href="/dashboard_home">{{ __('System management') }}</a>
+                                    </li>
+                                @endif
+                                {{-- @endif --}}
+                            @endif
+                            <!-- <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                role="button">{{__('Properties')}} <span class="caret"></span> </span>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
+
+                                    <li><a href="admin">{{__ ('admin management')}}</a></li>
+                                    <li><a href="user">{{__ ('user management')}}</a></li>
+                                    <li><a href="product">{{__ ('Product Management')}}</a></li>
+                                    <li><a href="brand">{{__ ('Brands')}}</a></li>
+                                    <li><a href="reports">{{__ ('Reports')}}</a></li>
+                                </ul>
+                            </li> -->
+                        </ul>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -257,12 +266,17 @@
                 </div>
                 </div>
             </div>
-            <div class="col-sm-8 col-lg-9 mtb_20">
             <!-- about  -->
-            <div class="row">
-                <div class="col-md-12">
+            <!-- <div class="row"> -->
+                <!-- <div class="col-md-12">
                 <figure> <img src="{{ asset('images\about-page11-gaando.jpg')}}" alt="#"> </figure>
-                </div>
+                </div> -->
+                <div class="banner">
+        <div class="main-banner owl-carousel">
+            <div class="item"><a href="#"><img src="{{ asset('images\about-page11-gaando.jpg')}}"
+                        style="height: 350px; Width: " alt="Main Banner" class="img-responsive" /></a></div>
+        </div>
+
                 <div class="col-md-12">
                 <div class="about-text">
                     <div class="about-heading-wrap">
@@ -271,14 +285,17 @@
                     </div>
                 </div>
                 </div>
-            </div>
+            <!-- </div> -->
             <br>
             <br>
             <!-- =====  product ===== -->
                     <p><h3 style=" text-align: center">{{ __('We offer you the pleasure of shopping with international brands at competitive prices. At the time you enter the site, the exchange value and product prices are stored in US dollars and the equivalent in Libyan dinars') }}</h3></p>
               <br>
                     <div class="item team-detail">
+                    <br>
+
                     <div class="team-item-img"> <img src="{{ asset('images\brand\13.jpg')}}" alt="" /> </div>
+                    <br>
                     <div class="team-designation mt_20"><h1>{{ __('THE ENNGINEER') }}</h1></div>
                     <h3 class="copyright-part">{{ __('Aymen Abd_Almjeed Ben Ghali') }}</h3>
 

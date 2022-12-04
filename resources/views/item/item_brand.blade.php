@@ -90,21 +90,15 @@
                                 </ul>
                             </li>
                             @if (Auth::user())
-                                @if (Auth::user()->role == 'admin' || Auth::user()->role == 'supervisor')
-                                    <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                            role="button">{{ __('Properties') }} <span class="caret"></span> </span>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
-
-                                            <li><a href="/admin">{{ __('admin management') }}</a></li>
-                                            <li><a href="/user">{{ __('user management') }}</a></li>
-                                            <li><a href="/product">{{ __('Product Management') }}</a></li>
-                                            <li><a href="/brand">{{ __('Brands') }}</a></li>
-                                            <li><a href="/reports">{{ __('Reports') }}</a></li>
-                                        </ul>
+                                @if (Auth::user()->role == '1' || Auth::user()->role == '2')
+                                    {{-- @if ((Auth::User()->role = '1') or (Auth::User()->role = '2')) --}}
+                                    <li class="nav-item">
+                                        <a class="account" href="/dashboard_home">{{ __('System management') }}</a>
                                     </li>
                                 @endif
+                                {{-- @endif --}}
                             @endif
+
                         </ul>
                     </div>
                 </div>
@@ -209,7 +203,7 @@
                                 class="fa fa-bars"></i></span></button>
                                 <div class="collapse navbar-collapse js-navbar-collapse">
                                     <ul id="menu" class="nav navbar-nav">
-                                        <li> <a href="home">{{ __('Home') }}</a></li>
+                                        <li> <a href="\home">{{ __('Home') }}</a></li>
                                         <li class="dropdown mega-dropdown"> <a href="#" class="dropdown-toggle"
                                                 data-toggle="dropdown">{{ __('Collection') }} </a>
                                                 <ul class="dropdown-menu mega-dropdown-menu row">
@@ -254,9 +248,9 @@
                                                     </li>
                                                 </ul>
                                     </li>
-                                    <li> <a href="shop">{{ __('shop') }}</a></li>
-                                    <li> <a href="about">{{ __('About us') }}</a></li>
-                                    <li> <a href="contact_us">{{ __('Contact us') }}</a></li>
+                                    <li> <a href="\shop">{{ __('shop') }}</a></li>
+                                    <li> <a href="\about">{{ __('About us') }}</a></li>
+                                    <li> <a href="\contact_us">{{ __('Contact us') }}</a></li>
                                     </ul>
                                 </div>
                     <!-- /.nav-collapse -->

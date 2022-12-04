@@ -24,6 +24,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 {
 	/** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
 
+    // Route::get('url اسم ',[App\Http\Controllers\اسم الكترولر::class,'اسم الفانكشن']);
     Route::get('/home',[App\Http\Controllers\home::class,'index']);
     Route::get('/',[App\Http\Controllers\home::class,'index']);
     Route::get('/',[App\Http\Controllers\home::class,'index'])->name('home');
@@ -35,8 +36,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/cart_page',[App\Http\Controllers\home::class,'cart_page']);
     Route::get('/checkout_page',[App\Http\Controllers\home::class,'checkout_page']);
     Route::get('/foot',[App\Http\Controllers\home::class,'footer']);
-    Route::get('/reports',[App\Http\Controllers\home::class,'report_reports']);
-    Route::get('/add_report',[App\Http\Controllers\home::class,'report_add_report']);
+    Route::get('/notic',[App\Http\Controllers\home::class,'notic']);
+    Route::get('/report',[App\Http\Controllers\home::class,'report']);
+
 
 
     Route::get('/admin',[App\Http\Controllers\admins::class,'admin_admin']);
@@ -106,6 +108,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/delete_user/{id}',[App\Http\Controllers\user::class,'delete_user'])->name('delete_user');
 
     Route::get('/d_notic',[App\Http\Controllers\home::class,'notic']);
+    Route::get('/d_reprt',[App\Http\Controllers\home::class,'reprt']);
+
 
 
 
@@ -133,16 +137,16 @@ Route::get('/bills;',function(){
 Route::get('/d_bills;',function(){
     return view('Bills.d_Bills');
 });
-Route::get('/notice;',function(){
-    return view('notice.notice');
-});
-Route::get('/d_notice;',function(){
-    return view('notice.d_notice');
-});
+// Route::get('/notice;',function(){
+//     return view('notice.notice');
+// });
+// Route::get('/d_notice;',function(){
+//     return view('notice.d_notice');
+// });
 
-Route::get('/view_record',function(){
-    return view('dashboard.view_record.viewrecord');
-});
+// Route::get('/view_record',function(){
+//     return view('dashboard.view_record.viewrecord');
+// });
 Route::get('/view_detail',function(){
     return view('dashboard.view_record.viewdetail');
 });

@@ -89,6 +89,16 @@
                                         @endforeach
                                     </ul>
                                 </li>
+                                @if (Auth::user())
+                                @if (Auth::user()->role == '1' || Auth::user()->role == '2')
+                                    {{-- @if ((Auth::User()->role = '1') or (Auth::User()->role = '2')) --}}
+                                    <li class="nav-item">
+                                        <a class="account" href="/dashboard_home">{{ __('System management') }}</a>
+                                    </li>
+                                @endif
+                                {{-- @endif --}}
+                            @endif
+
 
                             </ul>
                         </div>
@@ -111,78 +121,78 @@
                         </div>
                         <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="home"> <img
                                     alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
-                        <div class="col-xs-6 col-sm-4 shopcart">
-                            <div id="cart" class="btn-group btn-block mtb_40">
-                                <button type="button" class="btn" data-target="#cart-dropdown"
-                                    data-toggle="collapse" aria-expanded="true"><span
-                                        id="shippingcart">{{ __('Shopping Cart') }}</span><span id="cart-total">(0)
-                                        {{ __('items') }}</span> </button>
-                            </div>
-                            <div id="cart-dropdown" class="cart-menu collapse">
-                                <ul>
-                                    <li>
-                                        <table class="table table-striped">
-                                            <tbody>
-                                                <tr>
-                                                    <td class="text-center"><a href="#"><img
-                                                                src="{{ asset('images/product/70x84.jpg') }}"
-                                                                alt="iPod Classic" title="iPod Classic"></a></td>
-                                                    <td class="text-left product-name"><a href="#">MacBook
-                                                            Pro</a> <span class="text-left price">$20.00</span>
-                                                        <input class="cart-qty" name="product_quantity"
-                                                            min="1" value="1" type="number">
-                                                    </td>
-                                                    <td class="text-center"><a class="close-cart"><i
-                                                                class="fa fa-times-circle"></i></a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center"><a href="#"><img
-                                                                src="{{ asset('images/product/70x84.jpg') }}"
-                                                                alt="iPod Classic" title="iPod Classic"></a></td>
-                                                    <td class="text-left product-name"><a href="#">MacBook
-                                                            Pro</a> <span class="text-left price">$20.00</span>
-                                                        <input class="cart-qty" name="product_quantity"
-                                                            min="1" value="1" type="number">
-                                                    </td>
-                                                    <td class="text-center"><a class="close-cart"><i
-                                                                class="fa fa-times-circle"></i></a></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </li>
-                                    <li>
-                                        <table class="table">
-                                            <tbody>
-                                                <tr>
-                                                    <td class="text-right"><strong>{{ __('Sub-Total') }} </strong>
-                                                    </td>
-                                                    <td class="text-right">$2,100.00</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-right"><strong>{{ __('VAT') }} (20%)</strong>
-                                                    </td>
-                                                    <td class="text-right">$20.00</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-right"><strong>"{{ __('Total') }}"</strong></td>
-                                                    <td class="text-right">$2,122.00</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </li>
-                                    <li>
-                                        <form action="cart_page">
-                                            <input class="btn pull-left mt_10" value="{{ __('View cart') }}"
-                                                type="submit">
-                                        </form>
-                                        <form action="checkout_page">
-                                            <input class="btn pull-right mt_10" value="{{ __('Checkout') }}"
-                                                type="submit">
-                                        </form>
-                                    </li>
-                                </ul>
-                            </div>
+                                    @if (Auth::User())
+                    <div class="col-xs-6 col-sm-4 shopcart">
+                        <div id="cart" class="btn-group btn-block mtb_40">
+                            <button type="button" class="btn" data-target="#cart-dropdown"
+                                data-toggle="collapse" aria-expanded="true"><span
+                                    id="shippingcart">{{ __('Shopping cart') }}</span><span
+                                    id="cart-total">{{ __('items') }} (0)</span> </button>
                         </div>
+                        <div id="cart-dropdown" class="cart-menu collapse">
+                            <ul>
+                                <li>
+                                    <table class="table table-striped">
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-center"><a href="#"><img
+                                                            src="{{ asset('images/product/70x84.jpg') }}"
+                                                            alt="iPod Classic" title="iPod Classic"></a></td>
+                                                <td class="text-left product-name"><a href="#">MacBook
+                                                        Pro</a> <span class="text-left price">$20.00</span>
+                                                    <input class="cart-qty" name="product_quantity" min="1"
+                                                        value="1" type="number">
+                                                </td>
+                                                <td class="text-center"><a class="close-cart"><i
+                                                            class="fa fa-times-circle"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"><a href="#"><img
+                                                            src="{{ asset('images/product/70x84.jpg') }}"
+                                                            alt="iPod Classic" title="iPod Classic"></a></td>
+                                                <td class="text-left product-name"><a href="#">MacBook
+                                                        Pro</a> <span class="text-left price">$20.00</span>
+                                                    <input class="cart-qty" name="product_quantity" min="1"
+                                                        value="1" type="number">
+                                                </td>
+                                                <td class="text-center"><a class="close-cart"><i
+                                                            class="fa fa-times-circle"></i></a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </li>
+                                <li>
+                                    <table class="table">
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-right"><strong>{{ __('Sub-Total') }} </strong></td>
+                                                <td class="text-right">$2,100.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-right"><strong>{{ __('VAT') }} (20%)</strong></td>
+                                                <td class="text-right">$20.00</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-right"><strong>"{{ __('Total') }}"</strong></td>
+                                                <td class="text-right">$2,122.00</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </li>
+                                <li>
+                                    <form action="cart_page">
+                                        <input class="btn pull-left mt_10" value="{{ __('View cart') }}"
+                                            type="submit">
+                                    </form>
+                                    <form action="checkout_page">
+                                        <input class="btn pull-right mt_10" value="{{ __('Checkout') }}"
+                                            type="submit">
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    @endif
                     </div>
                     <nav class="navbar">
                         <p>menu</p>
@@ -281,9 +291,9 @@
                             </p>
                             <div id="slider-range" class="mtb_20"></div>
                             <div class="list-group">
-                                <div class="list-group-item mb_10">
-                                    <label>{{ __('Color') }}</label>
-                                    <div id="filter-group1">
+                                 <div class="list-group-item mb_10">
+                                  <!--  <label>{{ __('Color') }}</label>
+                                    <!-- <div id="filter-group1">
                                         <div class="checkbox">
                                             <label>
                                                 <input value="" type="checkbox"> {{ __('Red') }}
@@ -299,10 +309,10 @@
                                                 <input value="" type="checkbox"> {{ __('Blue') }}(09)
                                             </label>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="list-group-item mb_10">
-                                    <label>Size</label>
+                                    </div> -->
+                                </div> 
+                                <div class="list-group-item mb_10"> 
+                                    <!-- <label>Size</label>
                                     <div id="filter-group3">
                                         <div class="checkbox">
                                             <label>
@@ -319,8 +329,9 @@
                                                 <input value="" type="checkbox"> {{ __('Small') }}
                                                 (1)</label>
                                         </div>
-                                    </div>
-                                </div>
+                                    </div> -->
+                                </div> 
+                                <br>
                                 <button type="button" class="btn">{{ __('Search') }}</button>
                             </div>
                         </div>
@@ -470,24 +481,26 @@
                 </div>
             </div>
             <div id="brand_carouse" class="ptb_60 text-center">
-                <div class="type-01">
-                    <div class="heading-part mb_10 ">
-                        <h2 class="main_title">{{ __('Brands') }}</h2>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="brand owl-carousel ptb_20">
-                                @foreach ($brand as $x)
-                                <div class="item text-center"> <a href="#"><img
-                                    src="{{asset(Storage::url($x->profile_image))}}" alt=""
-                                            class="img-responsive" /></a> </div>
-                                @endforeach
-
+                        <div class="type-01">
+                            <div class="heading-part mb_10 ">
+                                <h2 class="main_title">{{ __('Brands') }}</h2>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="brand owl-carousel ptb_20">
+                                        @foreach ($brand as $x)
+                                        <div class="item text-center">
+                                               
+                                                 <a   @if (Auth::User()) href="item_brand/{{ $x->id }}" @endif >
+                                               <img src="{{ asset(Storage::url($x->profile_image)) }}"
+                                                        alt="" class="img-responsive" /></a> 
+                                                    </div>
+                                        @endforeach
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
         </div>
         @extends('layout.footer')
         <!-- =====  CONTAINER END  ===== -->

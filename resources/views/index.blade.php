@@ -75,15 +75,7 @@
                                 </li>
                             @endguest
 
-                            @if (Auth::user())
-                                @if (Auth::user()->role == '1' || Auth::user()->role == '2')
-                                    {{-- @if ((Auth::User()->role = '1') or (Auth::User()->role = '2')) --}}
-                                    <li class="nav-item">
-                                        <a class="account" href="/dashboard_home">{{ __('System management') }}</a>
-                                    </li>
-                                @endif
-                                {{-- @endif --}}
-                            @endif
+                          
 
                             <li class="language dropdown"> <span class="dropdown-toggle" id="dropdownMenu1"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
@@ -99,7 +91,15 @@
                                     @endforeach
                                 </ul>
                             </li>
-
+                            @if (Auth::user())
+                                @if (Auth::user()->role == '1' || Auth::user()->role == '2')
+                                    {{-- @if ((Auth::User()->role = '1') or (Auth::User()->role = '2')) --}}
+                                    <li class="nav-item">
+                                        <a class="account" href="/dashboard_home">{{ __('System management') }}</a>
+                                    </li>
+                                @endif
+                                {{-- @endif --}}
+                            @endif
                         </ul>
                     </div>
                 </div>
@@ -126,6 +126,7 @@
                     </div>
                     <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="home"> <img
                                 alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
+                   @if (Auth::User())
                     <div class="col-xs-6 col-sm-4 shopcart">
                         <div id="cart" class="btn-group btn-block mtb_40">
                             <button type="button" class="btn" data-target="#cart-dropdown"
@@ -196,6 +197,7 @@
                             </ul>
                         </div>
                     </div>
+                    @endif
                 </div>
                 <nav class="navbar">
                     <p>menu</p>
@@ -266,7 +268,7 @@
     <div class="banner">
         <div class="main-banner owl-carousel">
             <div class="item"><a href="#"><img src="{{ asset('images/logo/logo1.jpg') }}"
-                        style="height: 365px;" alt="Main Banner" class="img-responsive" /></a></div>
+                        style="height: 390px;" alt="Main Banner" class="img-responsive" /></a></div>
         </div>
     </div>
 
@@ -318,6 +320,7 @@
                                                                             cart</span></a></div>
                                                             </div>
                                                         </div>
+                                                        
                                                         <div class="caption product-detail text-center">
                                                             <div class="rating"> <span class="fa fa-stack"><i
                                                                         class="fa fa-star-o fa-stack-1x"></i><i
@@ -517,12 +520,13 @@
                                 <div class="col-sm-12">
                                     <div class="brand owl-carousel ptb_20">
                                         @foreach ($brand as $x)
-                                            <div class="item text-center"> <a
-                                                    href="item_brand/{{ $x->id }}"><img
-                                                        src="{{ asset(Storage::url($x->profile_image)) }}"
-                                                        alt="" class="img-responsive" /></a> </div>
+                                        <div class="item text-center">
+                                               
+                                                 <a   @if (Auth::User()) href="item_brand/{{ $x->id }}" @endif >
+                                               <img src="{{ asset(Storage::url($x->profile_image)) }}"
+                                                        alt="" class="img-responsive" /></a> 
+                                                    </div>
                                         @endforeach
-
                                     </div>
                                 </div>
                             </div>

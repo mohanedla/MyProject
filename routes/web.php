@@ -100,7 +100,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/edit_employee/{id}',[App\Http\Controllers\EmployeeController::class,'edit_employee'])->name('edit_employee');
     Route::post('/edit_employee/{id}',[App\Http\Controllers\EmployeeController::class,'update_employee'])->name('update_employee');
     Route::get('/delete_employee/{id}',[App\Http\Controllers\EmployeeController::class,'delete_employee'])->name('delete_employee');
-    
+
 
     Route::get('/d_user',[App\Http\Controllers\users::class,'user']);
     Route::get('/delete_user/{id}',[App\Http\Controllers\user::class,'delete_user'])->name('delete_user');
@@ -117,11 +117,7 @@ Route::get('/dashboard_home',function(){
     $page = "home";
     return view('dashboard.home',compact('page'));
 });
-Auth::routes();
-// Route::get('/d_user',function(){
-//      $page = "home";
-//     return view('user.d_user');
-// });
+
 Route::get('/change_password',function(){
     return view('dashboard.usermanagement.change_password');
 });

@@ -80,11 +80,11 @@
                                     {{-- @if ((Auth::User()->role = '1') or (Auth::User()->role = '2')) --}}
                                     <li class="nav-item">
                                         <a class="account" href="/dashboard_home">{{ __('System management') }}</a>
-                                    </li>   
+                                    </li>
                                 @endif
                                 {{-- @endif --}}
                             @endif
-                            
+
                             <li class="language dropdown"> <span class="dropdown-toggle" id="dropdownMenu1"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                     role="button">{{ __('Language') }} <span class="caret"></span> </span>
@@ -99,7 +99,7 @@
                                     @endforeach
                                 </ul>
                             </li>
-                           
+
                         </ul>
                     </div>
                 </div>
@@ -249,8 +249,8 @@
                                     </li>
                                 </ul>
                             </li>
-                            @if(Auth::User())
-                            <li> <a href="shop">{{ __('shop') }}</a></li>
+                            @if (Auth::User())
+                                <li> <a href="shop">{{ __('shop') }}</a></li>
                             @endif
                             <li> <a href="about">{{ __('About us') }}</a></li>
                             <li> <a href="contact_us">{{ __('Contact us') }}</a></li>
@@ -265,8 +265,8 @@
     <!-- =====  BANNER STRAT  ===== -->
     <div class="banner">
         <div class="main-banner owl-carousel">
-            <div class="item"><a href="#"><img src="{{ asset('images/logo/logo1.jpg') }}" alt="Main Banner"
-                        class="img-responsive" /></a></div>
+            <div class="item"><a href="#"><img src="{{ asset('images/logo/logo1.jpg') }}"
+                        style="height: 365px;" alt="Main Banner" class="img-responsive" /></a></div>
         </div>
     </div>
 
@@ -285,9 +285,6 @@
                             <div class="heading-part mb_10 ">
                                 <h2 class="main_title">{{ __('Men') }}</h2>
                             </div>
-                            @php
-                                $i = 0;
-                            @endphp
                             <div class="latest_pro box">
                                 <div class="latest owl-carousel">
                                     @foreach ($products as $item)
@@ -342,18 +339,15 @@
                                                                     href="#"
                                                                     title="Casual Shirt With Ruffle Hem">
                                                                     {{ $item->name }}</a></h6>
-                                                                    @if(Auth::User())
-                                                            <span class="price"><span class="amount"><span
-                                                                        class="currencySymbol">$</span>{{ $item->price }}.00</span>
-                                                            </span>
+                                                            @if (Auth::User())
+                                                                <span class="price"><span class="amount"><span
+                                                                            class="currencySymbol">$</span>{{ $item->price }}.00</span>
+                                                                </span>
                                                             @endif
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            @php
-                                                $i++;
-                                            @endphp
                                         @endif
                                     @endforeach
                                 </div>
@@ -370,9 +364,6 @@
                         <div class="heading-part mb_10 ">
                             <h2 class="main_title">{{ __('Women') }}</h2>
                         </div>
-                        @php
-                            $i = 0;
-                        @endphp
                         <div class="latest_pro box">
                             <div class="latest owl-carousel">
                                 @foreach ($products as $item)
@@ -424,16 +415,15 @@
                                                         <h6 data-name="product_name" class="product-name"><a
                                                                 href="#" title="Casual Shirt With Ruffle Hem">
                                                                 {{ $item->name }}..</a></h6>
-                                                        <span class="price"><span class="amount"><span
-                                                                    class="currencySymbol">$</span>{{ $item->price }}.00</span>
-                                                        </span>
+                                                                @if (Auth::User())
+                                                                <span class="price"><span class="amount"><span
+                                                                            class="currencySymbol">$</span>{{ $item->price }}.00</span>
+                                                                </span>
+                                                            @endif
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        {{-- @php
-                                            $i++;
-                                        @endphp --}}
+                                        </div
                                     @endif
                                 @endforeach
                             </div>
@@ -447,9 +437,6 @@
                             <div class="heading-part mb_10 ">
                                 <h2 class="main_title">{{ __('Children') }}</h2>
                             </div>
-                            @php
-                                $i = 0;
-                            @endphp
                             <div class="latest_pro box">
                                 <div class="latest owl-carousel">
                                     @foreach ($products as $item)
@@ -505,16 +492,15 @@
                                                                     href="#"
                                                                     title="Casual Shirt With Ruffle Hem">
                                                                     {{ $item->name }}..</a></h6>
-                                                            <span class="price"><span class="amount"><span
-                                                                        class="currencySymbol">$</span>{{ $item->price }}.00</span>
-                                                            </span>
+                                                                    @if (Auth::User())
+                                                                    <span class="price"><span class="amount"><span
+                                                                                class="currencySymbol">$</span>{{ $item->price }}.00</span>
+                                                                    </span>
+                                                                @endif
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            @php
-                                                $i++;
-                                            @endphp
                                         @endif
                                     @endforeach
                                 </div>

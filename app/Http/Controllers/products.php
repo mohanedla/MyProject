@@ -55,15 +55,15 @@ class products extends Controller
     {
         $categories=Category::all();
 
-        $product_name_men=product::with('categories')->where('collection','=','Men')->get();
-        $product_name_women=product::with('categories')->where('collection','=','Women')->get();
-        $product_name_children=product::with('categories')->where('collection','=','Children')->get();
+        $category_men=Men::all();
+        $category_women=Women::all();
+        $category_kids=Kids::all();
         $collect = array('M'=>'Men','W'=>'Women','C'=>'Children' );
         $products = product::where('brand_id','=',$id)->get();
         $brand=brand::all();
         $title=brand::where('id','=',$id)->get('name');
         $page = "product";
-        return View('item.item_brand',compact('products','page','brand','title','collect','categories','product_name_men','product_name_women','product_name_children'));
+        return View('item.item_brand',compact('products','page','brand','title','collect','categories','category_men','category_women','category_kids'));
 
     }
 
@@ -79,10 +79,16 @@ class products extends Controller
 
     public function product_detail_page()
     {
-        $page = "product";
-        return View('product_detail_page',compact('page'));
-
+            $page = "product";
+            $collect = array('M'=>'Men','W'=>'Women','C'=>'Kids' );
+            $brand=brand::all();
+            $products=product::all();
+            $category_men=Men::all();
+            $category_women=Women::all();
+            $category_kids=Kids::all();
+            return View('product_detail_page',compact('page','products','collect','brand','category_men','category_women','category_kids'));
     }
+
     public function add_category_men()
     {
         $category_men= new Category;
@@ -153,7 +159,7 @@ class products extends Controller
         $product->price=request('product_price');
         $product->profile_image=request()->file('product_image')[0]? request()->file('product_image')[0]->store('public'):null;
         $product->admin_id=Auth::id();
-        $product->save();     
+        $product->save();
         $color=request('product_color');
         $size=request('product_size');
         $images=request()->file('product_image');

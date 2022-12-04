@@ -116,87 +116,48 @@
                                         <ul id="menu" class="nav navbar-nav">
                                             <li> <a href="home">{{ __('Home') }}</a></li>
                                             <li class="dropdown mega-dropdown"> <a href="#" class="dropdown-toggle"
-                                                    data-toggle="dropdown">{{ __('Collection') }} </a>
-                                                <ul class="dropdown-menu mega-dropdown-menu row">
-                                                    <li class="col-md-3">
-                                                        <ul>
-                                                            <li class="dropdown-header">{{ __('Women') }}</li>
-                                                            @foreach ($categories as $category)
-                                                                <li><a href="#">{{ __($category->name) }}</a></li>
-                                                            @endforeach
-                                                        </ul>
-                                                    </li>
-                                                    <li class="col-md-3">
-                                                        <ul>
-                                                            <li class="dropdown-header">{{ __('Men') }}</li>
-                                                            @foreach ($categories as $category)
-                                                                <li><a href="#">{{ __($category->name) }}</a></li>
-                                                            @endforeach
-
-                                                        </ul>
-                                                    </li>
-
-                                                    <li class="col-md-3">
-                                                        <ul>
-                                                            <li class="dropdown-header">{{ __('Children') }}</li>
-                                                            <li><a href="#"><select name="dropdown" class="dropdown_ch"></a>
-                                                            <li>
-                                                                <option class="option_ch"><a href="#">{{ __('Born') }}</a>
-                                                                </option>
-                                                            </li>
-                                                            <li>
-                                                                <option class="option_ch"><a href="#">{{ __('Boys') }}</a>
-                                                                </option>
-                                                            </li>
-                                                            <li>
-                                                                <option class="option_ch"><a href="#">{{ __('Girls') }}</a>
-                                                                </option>
-                                                            </li>
-                                                            </select>
-                                                    </li>
-                                                    <li><a href="#"><select name="dropdown" class="dropdown_ch"></a>
-                                                    <li>
-                                                        <option class="option_ch"><a href="#">{{ __('Childrens') }}</a>
-                                                        </option>
-                                                    </li>
-                                                    <li>
-                                                        <option class="option_ch"><a href="#">{{ __('Boys') }}</a>
-                                                        </option>
-                                                    </li>
-                                                    <li>
-                                                        <option class="option_ch"><a href="#">{{ __('Girls') }}</a>
-                                                        </option>
-                                                    </li>
-                                                    </select>
-                                            </li>
-
-
-                                        </ul>
-                                        </li>
-                                        <li class="col-md-3">
-                                            <ul>
-                                                <li id="myCarousel" class="carousel slide" data-ride="carousel">
-                                                    <div class="carousel-inner">
-                                                        <div class="item active"><a href=""> <img
-                                                                    src="{{asset('images/menu-banner1.jpg')}}"
-                                                                    class="img-responsive" alt="Banner1"></a></div>
-                                                    {{--
-                                                        <div class="item"> <img
-                                                                    src="{{asset('images/menu-banner2.jpg')}}"
-                                                                    class="img-responsive" alt="Banner1"></div>
-
-                                                        <div class="item"> <img
-                                                                    src="{{asset('images/menu-banner3.jpg')}}"
-                                                                    class="img-responsive" alt="Banner1"></div> --}}
-
-                                                    </div>
-                                                    <!-- End Carousel Inner -->
+                                                data-toggle="dropdown">{{ __('Collection') }} </a>
+                                            <ul class="dropdown-menu mega-dropdown-menu row">
+                                                <li class="col-md-3">
+                                                    <ul>
+                                                        <li class="dropdown-header">{{ __('Women') }}</li>
+                                                        @foreach ($category_women as $women)
+                                                            <li><a href="#">{{ __($women->name) }}</a></li>
+                                                        @endforeach
+                                                    </ul>
                                                 </li>
-                                                <!-- /.carousel -->
+                                                <li class="col-md-3">
+                                                    <ul>
+                                                        <li class="dropdown-header">{{ __('Men') }}</li>
+                                                        @foreach ($category_men as $men)
+                                                            <li><a href="#">{{ __($men->name) }}</a></li>
+                                                        @endforeach
+                                                    </ul>
+                                                </li>
+
+                                                <li class="col-md-3">
+                                                    <ul>
+                                                        <li class="dropdown-header">{{ __('Children') }}</li>
+                                                        @foreach ($category_kids as $kids)
+                                                            <li><a href="#">{{ __($kids->name) }}</a></li>
+                                                        @endforeach
+                                                    </ul>
+                                                </li>
+                                                <li class="col-md-3">
+                                                    <ul>
+                                                        <li id="myCarousel" class="carousel slide" data-ride="carousel">
+                                                            <div class="carousel-inner">
+                                                                <div class="item active"><a href=""> <img
+                                                                            src="{{ asset('images/menu-banner1.jpg') }}"
+                                                                            class="img-responsive" alt="Banner1"></a></div>
+                                                            </div>
+                                                            <!-- End Carousel Inner -->
+                                                        </li>
+                                                        <!-- /.carousel -->
+                                                    </ul>
+                                                <li class="col-md-3">
+                                                </li>
                                             </ul>
-                                        <li class="col-md-3">
-                                        </li>
-                                        </ul>
                                         </li>
                                         <li> <a href="shop">{{ __('shop') }}</a></li>
                                         <li> <a href="about">{{ __('About us') }}</a></li>
@@ -223,7 +184,299 @@
           </div>
         </div>
         <!-- =====  BREADCRUMB END===== -->
+
         <div id="column-left" class="col-sm-4 col-lg-3 hidden-xs">
+          <div id="category-menu" class="navbar collapse in mb_40" aria-expanded="true" style="" role="button">
+            <div class="nav-responsive">
+              <div class="heading-part">
+                <h2 class="main_title">Top category</h2>
+              </div>
+              <ul class="nav  main-navigation collapse in">
+                <li><a href="#">Appliances</a></li>
+                <li><a href="#">Mobile Phones</a></li>
+                <li><a href="#">Tablet PC &amp; Accessories</a></li>
+                <li><a href="#">Consumer Electronics</a></li>
+                <li><a href="#">Computers &amp; Networking</a></li>
+                <li><a href="#">Electrical &amp; Tools</a></li>
+                <li><a href="#">Apparel</a></li>
+                <li><a href="#">Bags &amp; Shoes</a></li>
+                <li><a href="#">Toys &amp; Hobbies</a></li>
+                <li><a href="#">Watches &amp; Jewelry</a></li>
+                <li><a href="#">Home &amp; Garden</a></li>
+                <li><a href="#">Health &amp; Beauty</a></li>
+                <li><a href="#">Outdoors &amp; Sports</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="left_banner left-sidebar-widget mt_30 mb_40"> <a href="#"><img src="images/left1.jpg" alt="Left Banner" class="img-responsive"></a> </div>
+          <div class="left-special left-sidebar-widget mb_50">
+            <div class="heading-part mb_10 ">
+              <h2 class="main_title">Top Products</h2>
+            </div>
+            <div id="left-special" class="owl-carousel owl-loaded owl-drag">
+
+
+
+
+            <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 907px;"><div class="owl-item active" style="width: 226.656px;"><ul class="row ">
+                <li class="item product-layout-left mb_20">
+                  <div class="product-list col-xs-4">
+                    <div class="product-thumb">
+                      <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product3.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product3-1.jpg"> </a> </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-8">
+                    <div class="caption product-detail">
+                      <h6 class="product-name"><a href="#">New LCDScreen and HD Video Recording</a></h6>
+                      <div class="rating">
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
+                      </div>
+                      <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
+                      </span>
+                    </div>
+                  </div>
+                </li>
+                <li class="item product-layout-left mb_20">
+                  <div class="product-list col-xs-4">
+                    <div class="product-thumb">
+                      <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product4.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product4-1.jpg"> </a> </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-8">
+                    <div class="caption product-detail">
+                      <h6 class="product-name"><a href="#">New LCDScreen and HD Video Recording</a></h6>
+                      <div class="rating">
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
+                      </div>
+                      <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
+                      </span>
+                    </div>
+                  </div>
+                </li>
+                <li class="item product-layout-left mb_20">
+                  <div class="product-list col-xs-4">
+                    <div class="product-thumb">
+                      <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product5.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product5-1.jpg"> </a> </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-8">
+                    <div class="caption product-detail">
+                      <h6 class="product-name"><a href="#">New LCDScreen and HD Video Recording</a></h6>
+                      <div class="rating">
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
+                      </div>
+                      <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
+                      </span>
+                    </div>
+                  </div>
+                </li>
+              </ul></div><div class="owl-item active" style="width: 226.656px;"><ul class="row ">
+                <li class="item product-layout-left mb_20">
+                  <div class="product-list col-xs-4">
+                    <div class="product-thumb">
+                      <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product6.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product6-1.jpg"> </a> </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-8">
+                    <div class="caption product-detail">
+                      <h6 class="product-name"><a href="#">New LCDScreen and HD Video Recording</a></h6>
+                      <div class="rating">
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
+                      </div>
+                      <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
+                      </span>
+                    </div>
+                  </div>
+                </li>
+                <li class="item product-layout-left mb_20">
+                  <div class="product-list col-xs-4">
+                    <div class="product-thumb">
+                      <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product7.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product7-1.jpg"> </a> </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-8">
+                    <div class="caption product-detail">
+                      <h6 class="product-name"><a href="#">New LCDScreen and HD Video Recording</a></h6>
+                      <div class="rating">
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
+                      </div>
+                      <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
+                      </span>
+                    </div>
+                  </div>
+                </li>
+                <li class="item product-layout-left mb_20">
+                  <div class="product-list col-xs-4">
+                    <div class="product-thumb">
+                      <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product8.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product8-1.jpg"> </a> </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-8">
+                    <div class="caption product-detail">
+                      <h6 class="product-name"><a href="#">New LCDScreen and HD Video Recording</a></h6>
+                      <div class="rating">
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
+                      </div>
+                      <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
+                      </span>
+                    </div>
+                  </div>
+                </li>
+              </ul></div><div class="owl-item" style="width: 226.656px;"><ul class="row ">
+                <li class="item product-layout-left mb_20">
+                  <div class="product-list col-xs-4">
+                    <div class="product-thumb">
+                      <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product9.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product9-1.jpg"> </a> </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-8">
+                    <div class="caption product-detail">
+                      <h6 class="product-name"><a href="#">New LCDScreen and HD Video Recording</a></h6>
+                      <div class="rating">
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
+                      </div>
+                      <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
+                      </span>
+                    </div>
+                  </div>
+                </li>
+                <li class="item product-layout-left mb_20">
+                  <div class="product-list col-xs-4">
+                    <div class="product-thumb">
+                      <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product10.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product10-1.jpg"> </a> </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-8">
+                    <div class="caption product-detail">
+                      <h6 class="product-name"><a href="#">New LCDScreen and HD Video Recording</a></h6>
+                      <div class="rating">
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
+                      </div>
+                      <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
+                      </span>
+                    </div>
+                  </div>
+                </li>
+                <li class="item product-layout-left mb_20">
+                  <div class="product-list col-xs-4">
+                    <div class="product-thumb">
+                      <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product1.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product1-1.jpg"> </a> </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-8">
+                    <div class="caption product-detail">
+                      <h6 class="product-name"><a href="#">New LCDScreen and HD Video Recording</a></h6>
+                      <div class="rating">
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
+                      </div>
+                      <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
+                      </span>
+                    </div>
+                  </div>
+                </li>
+              </ul></div><div class="owl-item" style="width: 226.656px;"><ul class="row ">
+                <li class="item product-layout-left mb_20">
+                  <div class="product-list col-xs-4">
+                    <div class="product-thumb">
+                      <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product2.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product2-1.jpg"> </a> </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-8">
+                    <div class="caption product-detail">
+                      <h6 class="product-name"><a href="#">New LCDScreen and HD Video Recording</a></h6>
+                      <div class="rating">
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
+                      </div>
+                      <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
+                      </span>
+                    </div>
+                  </div>
+                </li>
+                <li class="item product-layout-left mb_20">
+                  <div class="product-list col-xs-4">
+                    <div class="product-thumb">
+                      <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product3.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product3-1.jpg"> </a> </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-8">
+                    <div class="caption product-detail">
+                      <h6 class="product-name"><a href="#">New LCDScreen and HD Video Recording</a></h6>
+                      <div class="rating">
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
+                      </div>
+                      <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
+                      </span>
+                    </div>
+                  </div>
+                </li>
+                <li class="item product-layout-left mb_20">
+                  <div class="product-list col-xs-4">
+                    <div class="product-thumb">
+                      <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product4.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product4-1.jpg"> </a> </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-8">
+                    <div class="caption product-detail">
+                      <h6 class="product-name"><a href="#">New LCDScreen and HD Video Recording</a></h6>
+                      <div class="rating">
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
+                      </div>
+                      <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
+                      </span>
+                    </div>
+                  </div>
+                </li>
+              </ul></div></div></div><div class="owl-nav"><div class="owl-prev disabled">prev</div><div class="owl-next">next</div></div><div class="owl-dots"><div class="owl-dot active"><span></span></div><div class="owl-dot"><span></span></div><div class="owl-dot"><span></span></div><div class="owl-dot"><span></span></div></div></div>
+          </div>
+        </div>
 
            <div class="left_banner left-sidebar-widget mb_50 mt_30"> <a href="#"></a> </div>
         </div>

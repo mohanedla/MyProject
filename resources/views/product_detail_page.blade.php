@@ -95,11 +95,11 @@
                                     {{-- @if ((Auth::User()->role = '1') or (Auth::User()->role = '2')) --}}
                                     <li class="nav-item">
                                         <a class="account" href="/dashboard_home">{{ __('System management') }}</a>
-                                    </li>   
+                                    </li>
                                 @endif
                                 {{-- @endif --}}
                             @endif
-                            
+
                             <li class="language dropdown"> <span class="dropdown-toggle" id="dropdownMenu1"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                     role="button">{{ __('Language') }} <span class="caret"></span> </span>
@@ -114,7 +114,7 @@
                                     @endforeach
                                 </ul>
                             </li>
-                           
+
                         </ul>
                     </div>
                 </div>
@@ -136,9 +136,9 @@
                                     class="fa fa-bars"></i></span></button>
                         <div class="collapse navbar-collapse js-navbar-collapse">
                             <ul id="menu" class="nav navbar-nav">
-                              
+
                             <li> <a href="home">{{ __('Home') }}</a></li>
-                            
+
                             <li class="dropdown mega-dropdown"> <a href="#" class="dropdown-toggle"
                                         data-toggle="dropdown">{{ __('Collection') }} </a>
                                     <ul class="dropdown-menu mega-dropdown-menu row">
@@ -257,6 +257,7 @@
     <div class="container">
       <div class="row ">
         <!-- =====  BANNER STRAT  ===== -->
+
         <div class="col-sm-12">
           <div class="breadcrumb ptb_20">
             <h1> {{ __('product_detail_page') }} </h1>
@@ -269,22 +270,39 @@
         </div>
         <!-- =====  BREADCRUMB END===== -->
         <div id="column-left" class="col-sm-4 col-lg-3 hidden-xs">
+            <div id="category-menu" class="navbar collapse in mb_40" aria-expanded="true" style="" role="button">
+              <div class="nav-responsive">
+                <div class="heading-part">
+                  <h2 class="main_title">Top category</h2>
+                </div>
+                <ul class="nav  main-navigation collapse in">
+                  <li><a href="#">Appliances</a></li>
+                  <li><a href="#">Mobile Phones</a></li>
+                  <li><a href="#">Tablet PC &amp; Accessories</a></li>
+                  <li><a href="#">Consumer Electronics</a></li>
+                  <li><a href="#">Computers &amp; Networking</a></li>
+                  <li><a href="#">Electrical &amp; Tools</a></li>
+                  <li><a href="#">Apparel</a></li>
+                  <li><a href="#">Bags &amp; Shoes</a></li>
+                  <li><a href="#">Toys &amp; Hobbies</a></li>
+                  <li><a href="#">Watches &amp; Jewelry</a></li>
+                  <li><a href="#">Home &amp; Garden</a></li>
+                  <li><a href="#">Health &amp; Beauty</a></li>
+                  <li><a href="#">Outdoors &amp; Sports</a></li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        {{-- <div id="column-left" class="col-sm-4 col-lg-3 hidden-xs">
           <div id="category-menu" class="navbar collapse in mb_40" aria-expanded="true" style="" role="button">
-            <!-- <div class="nav-responsive">
-              <div class="heading-part">              </div>
-          </div> -->
 
           </div>
           <div class="left_banner left-sidebar-widget mt_30 mb_40">  </div>
           <div class="left-special left-sidebar-widget mb_50">
-            <!-- <div class="heading-part mb_10 ">
-            </div>
 
-            {{-- <div id="left-special" class="owl-carousel">
-
-              </div>  --}} -->
             </div>
-        </div>
+        </div> --}}
         <div class="col-sm-8 col-lg-9 mtb_20">
           <div class="row mt_10 ">
             <div class="col-md-6">
@@ -372,57 +390,7 @@
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-12">
-              <div id="exTab5" class="mtb_30">
-                <ul class="nav nav-tabs">
-                  <!-- <li class="active"> <a href="#1c" data-toggle="tab"> {{__('Overview')}}</a> </li> -->
-                  <li><a href="#2c" data-toggle="tab"> {{__('Reviews')}} (1)</a> </li>
-                </ul>
-                <div class="tab-content ">
-                  <div class="tab-pane active pt_20" id="1c">
-                    <!-- <p>CLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut lobortis malesuada mi id tristique. Sed ipsum nisi, dapibus at faucibus non, dictum a diam. Nunc vitae interdum diam. Sed finibus, justo vel maximus facilisis, sapien turpis euismod tellus, vulputate semper diam ipsum vel tellus.</p> -->
-                  </div>
-                  <div class="tab-pane" id="2c">
-                    <form class="form-horizontal">
-                      <div id="review"></div>
-                      <h4 class="mt_20 mb_30">Write a review</h4>
-                      <div class="form-group required">
-                        <div class="col-sm-12">
-                          <label class="control-label" for="input-name">Your Name</label>
-                          <input name="name" value="" id="input-name" class="form-control" type="text">
-                        </div>
-                      </div>
-                      <div class="form-group required">
-                        <div class="col-sm-12">
-                          <label class="control-label" for="input-review">Your Review</label>
-                          <textarea name="text" rows="5" id="input-review" class="form-control"></textarea>
-                          <div class="help-block"><span class="text-danger">Note:</span> HTML is not translated!</div>
-                        </div>
-                      </div>
-                      <div class="form-group required">
-                        <div class="col-md-6">
-                          <label class="control-label">Rating</label>
-                          <div class="rates"><span>Bad</span>
-                            <input name="rating" value="1" type="radio">
-                            <input name="rating" value="2" type="radio">
-                            <input name="rating" value="3" type="radio">
-                            <input name="rating" value="4" type="radio">
-                            <input name="rating" value="5" type="radio">
-                            <span>Good</span></div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="buttons pull-right">
-                            <button type="submit" class="btn btn-md btn-link">Continue</button>
-                          </div>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+
           <div class="row">
             <div class="col-md-12">
 
@@ -434,10 +402,10 @@
       </div>
       <div id="brand_carouse" class="ptb_60 text-center">
         <div class="type-01">
-            <div class="heading-part mb_10 ">
-                <h2 class="main_title">{{ __('Brands') }}</h2>
+            <div class="heading-part mb_10 " bis_skin_checked="1">
+                <h2 class="main_title">{{ __('Brands')}}</h2>
             </div>
-            <div class="row">
+            {{-- <div class="row">
                 <div class="col-sm-12">
                     <div class="brand owl-carousel ptb_20">
                         <div class="item text-center"> <a href="#"><img
@@ -470,6 +438,19 @@
                         <div class="item text-center"> <a href="#"><img
                                     src="{{ asset('images/brand/10.jpg') }}" alt="Canon"
                                     class="img-responsive" /></a> </div>
+                    </div>
+                </div>
+            </div> --}}
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="brand owl-carousel ptb_20">
+                        @foreach ($brand as $x)
+                            <div class="item text-center"> <a
+                                    href="item_brand/{{ $x->id }}"><img
+                                        src="{{ asset(Storage::url($x->profile_image)) }}"
+                                        alt="" class="img-responsive" /></a> </div>
+                        @endforeach
+
                     </div>
                 </div>
             </div>

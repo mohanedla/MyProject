@@ -63,7 +63,7 @@
                                         role="button">{{ Auth::user()->name }} <span class="caret"></span> </span>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
 
-                                        <li><a class="dropdown-item" href="/home"
+                                        <li><a class="dropdown-item" href="/"
                                                 onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
                                                 {{ __('Logout') }}</a>
@@ -212,78 +212,47 @@
                                         <li> <a href="home">{{ __('Home') }}</a></li>
                                         <li class="dropdown mega-dropdown"> <a href="#" class="dropdown-toggle"
                                                 data-toggle="dropdown">{{ __('Collection') }} </a>
-                                            <ul class="dropdown-menu mega-dropdown-menu row">
-                                                <li class="col-md-3">
-                                                    <ul>
-                                                        <li class="dropdown-header">{{ __('Women') }}</li>
-                                                        @foreach ($categories as $category)
-                                                            <li><a href="#">{{ __($category->name) }}</a></li>
-                                                        @endforeach
-                                                    </ul>
-                                                </li>
-                                                <li class="col-md-3">
-                                                    <ul>
-                                                        <li class="dropdown-header">{{ __('Men') }}</li>
-                                                        @foreach ($categories as $category)
-                                                            <li><a href="#">{{ __($category->name) }}</a></li>
-                                                        @endforeach
+                                                <ul class="dropdown-menu mega-dropdown-menu row">
+                                                    <li class="col-md-3">
+                                                        <ul>
+                                                            <li class="dropdown-header">{{ __('Women') }}</li>
+                                                            @foreach ($category_women as $women)
+                                                                <li><a href="#">{{ __($women->name) }}</a></li>
+                                                            @endforeach
+                                                        </ul>
+                                                    </li>
+                                                    <li class="col-md-3">
+                                                        <ul>
+                                                            <li class="dropdown-header">{{ __('Men') }}</li>
+                                                            @foreach ($category_men as $men)
+                                                                <li><a href="#">{{ __($men->name) }}</a></li>
+                                                            @endforeach
+                                                        </ul>
+                                                    </li>
 
-                                        </ul>
-                                    </li>
-
-                                    <li class="col-md-3">
-                                        <ul>
-                                            <li class="dropdown-header">{{ __('Children') }}</li>
-                                            <li><a href="#"><select name="dropdown" class="dropdown_ch"></a>
-                                            <li>
-                                                <option class="option_ch"><a href="#">{{ __('Born') }}</a>
-                                                </option>
-                                            </li>
-                                            <li>
-                                                <option class="option_ch"><a href="#">{{ __('Boys') }}</a>
-                                                </option>
-                                            </li>
-                                            <li>
-                                                <option class="option_ch"><a href="#">{{ __('Girls') }}</a>
-                                                </option>
-                                            </li>
-                                            </select>
-                                    </li>
-                                    <li><a href="#"><select name="dropdown" class="dropdown_ch"></a>
-                                    <li>
-                                        <option class="option_ch"><a href="#">{{ __('Childrens') }}</a>
-                                        </option>
-                                    </li>
-                                    <li>
-                                        <option class="option_ch"><a href="#">{{ __('Boys') }}</a>
-                                        </option>
-                                    </li>
-                                    <li>
-                                        <option class="option_ch"><a href="#">{{ __('Girls') }}</a>
-                                        </option>
-                                    </li>
-                                    </select>
-                            </li>
-
-
-                        </ul>
-                        </li>
-                        <li class="col-md-3">
-                            <ul>
-                                <li id="myCarousel" class="carousel slide" data-ride="carousel">
-                                    <div class="carousel-inner">
-                                        <div class="item active"><a href=""> <img
-                                                    src="{{ asset('images/menu-banner1.jpg') }}"
-                                                    class="img-responsive" alt="Banner1"></a></div>
-
-                                                </div>
-                                                <!-- End Carousel Inner -->
-                                            </li>
-                                            <!-- /.carousel -->
-                                        </ul>
-                                    <li class="col-md-3">
-                                    </li>
-                                    </ul>
+                                                    <li class="col-md-3">
+                                                        <ul>
+                                                            <li class="dropdown-header">{{ __('Children') }}</li>
+                                                            @foreach ($category_kids as $kids)
+                                                                <li><a href="#">{{ __($kids->name) }}</a></li>
+                                                            @endforeach
+                                                        </ul>
+                                                    </li>
+                                                    <li class="col-md-3">
+                                                        <ul>
+                                                            <li id="myCarousel" class="carousel slide" data-ride="carousel">
+                                                                <div class="carousel-inner">
+                                                                    <div class="item active"><a href=""> <img
+                                                                                src="{{ asset('images/menu-banner1.jpg') }}"
+                                                                                class="img-responsive" alt="Banner1"></a></div>
+                                                                </div>
+                                                                <!-- End Carousel Inner -->
+                                                            </li>
+                                                            <!-- /.carousel -->
+                                                        </ul>
+                                                    <li class="col-md-3">
+                                                    </li>
+                                                </ul>
                                     </li>
                                     <li> <a href="shop">{{ __('shop') }}</a></li>
                                     <li> <a href="about">{{ __('About us') }}</a></li>
@@ -374,7 +343,7 @@
                                                             <h6 data-name="product_name" class="product-name"><a
                                                                     href="#"
                                                                     title="Casual Shirt With Ruffle Hem">
-                                                                    {{ $product_name_men[$i]->categories->name }}..</a>
+                                                                    {{ $item->name }}..</a>
                                                             </h6>
                                                             <span class="price"><span class="amount"><span
                                                                         class="currencySymbol">$</span>{{ $item->price }}.00</span>
@@ -397,9 +366,6 @@
                             </div>
                             <div class="latest_pro box">
                                 <div class="latest owl-carousel">
-                                    @php
-                                        $i = 0;
-                                    @endphp
                                     @foreach ($products as $item)
                                         @if ($item->collection == $collect['W'])
                                             <div class="product-grid">
@@ -451,7 +417,7 @@
                                                             <h6 data-name="product_name" class="product-name"><a
                                                                     href="#"
                                                                     title="Casual Shirt With Ruffle Hem">
-                                                                    {{ $product_name_men[$i]->categories->name }}..</a>
+                                                                    {{ $item->name }}..</a>
                                                             </h6>
                                                             <span class="price"><span class="amount"><span
                                                                         class="currencySymbol">$</span>{{ $item->price }}.00</span>
@@ -460,9 +426,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            @php
-                                                $i++;
-                                            @endphp
                                         @endif
                                     @endforeach
                                 </div>
@@ -474,9 +437,6 @@
                             </div>
                             <div class="latest_pro box">
                                 <div class="latest owl-carousel">
-                                    @php
-                                        $i = 0;
-                                    @endphp
                                     @foreach ($products as $item)
                                         @if ($item->collection == $collect['C'])
                                             <div class="product-grid">
@@ -528,7 +488,7 @@
                                                             <h6 data-name="product_name" class="product-name"><a
                                                                     href="#"
                                                                     title="Casual Shirt With Ruffle Hem">
-                                                                    {{ $product_name_men[$i]->categories->name }}..</a>
+                                                                    {{ $item->name }}..</a>
                                                             </h6>
                                                             <span class="price"><span class="amount"><span
                                                                         class="currencySymbol">$</span>{{ $item->price }}.00</span>
@@ -537,9 +497,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            @php
-                                                $i++;
-                                            @endphp
                                         @endif
                                     @endforeach
                                 </div>

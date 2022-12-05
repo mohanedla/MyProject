@@ -74,7 +74,7 @@
 
             </li><!-- End Notification Nav -->
 
-        
+
 
             <li class="nav-item dropdown pe-3">
 
@@ -163,10 +163,10 @@
             <div class="card">
                 <div class="card-header">
                 <h4>{{ __('Products List') }}</h4>
-                
                     {{-- <div class="buttons"> --}}
-                        <a style="float: right;" href="{{route('add_product')}}" class="btn btn-secondary">{{ __('add Product') }}</a>
-
+                        @if($id!=0)
+                        <a style="float: right;" href="{{route('add_product',['id'=>$id])}}" class="btn btn-secondary">{{ __('add Product') }}</a>
+                        @endif
                   {{-- </div> --}}
                 </div>
                 <div class="card-body">
@@ -209,7 +209,8 @@
                                         data-bs-whatever="@mdo" onclick="showDetails({{json_encode($x)}},{{json_encode($x->sizes)}},{{json_encode($x->colors)}})">
                                             <span class="badge bg-info"><i class="bi bi-eye-fill"></i></span>
                                         </a>
-                                        <a href="{{route('edit_product',['id'=>$x->id])}}">
+
+                                        <a href="/edit_product/{{$x->id}}/{{$id}}">
                                             <span class="badge bg-success"><i class="bi bi-pencil-square"></i></span>
                                         </a>
                                         <a href="{{route('delete_product',['id'=>$x->id])}}" onclick="return confirm('Are you sure to want to delete it?')"><span class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
@@ -251,9 +252,6 @@
                             </tr>
                         </thead>
                         <tbody id="bodyrow">
-
-
-
                         </tbody>
                     </table>
                 </div>
@@ -277,7 +275,7 @@
     </footer>
 </div>
 <script>
-    
+
 function showDetails(pro,sizes,colors){
     document.getElementById("productName").innerHTML = pro['name'];
     var table = document.getElementById("bodyrow");
@@ -289,7 +287,7 @@ function showDetails(pro,sizes,colors){
     for(var i=0; i<max;i++){
         if (top) { var row = table.insertRow(-1); }
         else { var row = table.insertRow(); }
-      
+
         // (B3) INSERT CELLS
         var cell = row.insertCell();
         cell.innerHTML = colors[i]['color']['name'];

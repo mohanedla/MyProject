@@ -18,21 +18,21 @@ use Auth;
 class products extends Controller
 {
 
-    public function product_product()
-    {
-        $categoriez=Category::all();
-        $collect = array('M'=>'Men','W'=>'Women','C'=>'Children' );
-        $product_name_men=product::with('categories')->where('collection','=','Men')->get();
-        $product_name_women=product::with('categories')->where('collection','=','Women')->get();
-        $product_name_children=product::with('categories')->where('collection','=','Children')->get();
-        $admin=product::with('admins')->get();
-        $brand=product::with('brands')->get();
-        $category=product::with('categories')->get();
-        //  dd($brand);yy
-        $page = "product";
-        return View('product.product',compact('admin','page','category','brand','collect','categoriez','product_name_men','product_name_women','product_name_children'));
+    // public function product_product()
+    // {
+    //     $categoriez=Category::all();
+    //     $collect = array('M'=>'Men','W'=>'Women','C'=>'Children' );
+    //     $product_name_men=product::with('categories')->where('collection','=','Men')->get();
+    //     $product_name_women=product::with('categories')->where('collection','=','Women')->get();
+    //     $product_name_children=product::with('categories')->where('collection','=','Children')->get();
+    //     $admin=product::with('admins')->get();
+    //     $brand=product::with('brands')->get();
+    //     $category=product::with('categories')->get();
+    //     //  dd($brand);yy
+    //     $page = "product";
+    //     return View('product.product',compact('admin','page','category','brand','collect','categoriez','product_name_men','product_name_women','product_name_children'));
 
-    }
+    // }
     public function all_product($id)
     {
         if($id == 0){
@@ -47,7 +47,7 @@ class products extends Controller
         //  dd($brand);
         $page = "product";
 
-        return View('product.products',compact('admin','page'));
+        return View('product.products',compact('admin','page','id'));
 
     }
 
@@ -58,7 +58,7 @@ class products extends Controller
         $category_men=Men::all();
         $category_women=Women::all();
         $category_kids=Kids::all();
-        $collect = array('M'=>'Men','W'=>'Women','C'=>'Children' );
+        $collect = array('M'=>'Men','W'=>'Women','C'=>'Kids' );
         $products = product::where('brand_id','=',$id)->get();
         $brand=brand::all();
         $title=brand::where('id','=',$id)->get('name');
@@ -67,14 +67,22 @@ class products extends Controller
 
     }
 
-    public function product_add_product()
+    public function product_add_product($id)
     {
+        if($id == 1){
+            $categories=Men::all();
+        }elseif($id ==2){
+            $categories=Women::all();
+        }else{
+            $categories=Kids::all();
+        }
+
         $size= Size::all();
         $color= Color::all();
         $brands=brand::all();
-        $categories=Category::all();
+
         $page = "product";
-        return view('product.add_product',compact('brands','page','categories','size','color'));
+        return view('product.add_product',compact('id','brands','page','categories','size','color'));
     }
 
     public function product_detail_page()
@@ -91,19 +99,41 @@ class products extends Controller
 
     public function add_category_men()
     {
-        $category_men= new Category;
-        $category_men->name=request('category_men_name');
+        $category_men= new Men;
+        $category_men->name=request('category_name');
         $category_men->save();
         Toastr::success( __('Create new Category Men successfully :)'),'Success');
         return redirect()->back();
     }
+    public function add_category_women()
+    {
+        $category_women= new Women;
+        $category_women->name=request('category_name');
+        $category_women->save();
+        Toastr::success( __('Create new Category Women successfully :)'),'Success');
+        return redirect()->back();
+    }
+    public function add_category_kids()
+    {
+        $category_kids= new Kids;
+        $category_kids->name=request('category_name');
+        $category_kids->save();
+        Toastr::success( __('Create new Category Kids successfully :)'),'Success');
+        return redirect()->back();
+    }
 
-    public function edit_product($id)
+    public function edit_product($id,$id_page)
     {
         $collect = array('Men','Women','Kids' );
         $product=product::find($id);
         $brands=brand::all();
-        $categories=Category::all();
+        if($id == 1){
+            $categories=Men::all();
+        }elseif($id ==2){
+            $categories=Women::all();
+        }else{
+            $categories=Kids::all();
+        }
         $get=product::with('brands')->get()->find($id);
         $color=Color::all();
         $size=Size::all();
@@ -111,7 +141,7 @@ class products extends Controller
         $get_size=Size_Product::with('products')->where('product_id','=',$id)->get();
 
         $page = "product";
-        return View('product.edit_product',compact('product','page','brands','get','categories','collect','color','size','get_color','get_size'));
+        return View('product.edit_product',compact('product','id_page','page','brands','get','categories','collect','color','size','get_color','get_size'));
 
     }
 
@@ -132,7 +162,7 @@ class products extends Controller
         Toastr::success('Create new Size successfully :)','Success');
         return redirect()->back();
     }
-    public function add_product()
+    public function add_product($id)
     {
 
         request()->validate(
@@ -141,7 +171,6 @@ class products extends Controller
                 'product_name'  => "required",
                 'product_brand'  => "required",
                 'product_quantity'  => "required",
-                'product_collection'  => "required",
                 'product_size'  => "required",
                 'product_color'  => "required",
                 'product_price'  => "required",
@@ -153,7 +182,14 @@ class products extends Controller
         $product->category_id=request('product_name');
         $product->brand_id=request('product_brand');
         $product->model=request('product_model');
-        $product->collection=request("product_collection");
+        if($id == 1){
+            $product->collection="Men";
+        }elseif($id ==2){
+            $product->collection="Women";
+        }else{
+            $product->collection="Kids";
+        }
+
         $product->specification=request('product_specification');
         $product->quantity=request('product_quantity');
         $product->price=request('product_price');
@@ -182,13 +218,7 @@ class products extends Controller
         $size_product->product_id=$product->id;
         $size_product->save();
         }
-        // $image=request()->file('all_images');
-        // for($i=0;$i<count($image);$i++){
-        // $image_product= new Image_Product;
-        // $image_product->name=$image[$i]->store('public');
-        // $image_product->product_id=$product->id;
-        // $image_product->save();
-        // }
+
         Toastr::success('Create new Product successfully :)','Success');
         if($product->collection=="Men"){
             return redirect()->route('all_product',['id'=>1]);
@@ -210,7 +240,6 @@ class products extends Controller
             'product_name'  => "required",
             'product_brand'  => "required",
             'product_quantity'  => "required",
-            'product_collection'  => "required",
             'product_price'  => "required",
         ]);
         $product= product::find($id);
@@ -218,7 +247,6 @@ class products extends Controller
         $product->category_id=request('product_name');
         $product->brand_id=request('product_brand');
         $product->model=request('product_model');
-        $product->collection=request("product_collection");
         $product->specification=request('product_specification');
         $product->quantity=request('product_quantity');
         $product->price=request('product_price');
@@ -284,7 +312,5 @@ class products extends Controller
 
         return redirect('/men_product');
     }
-
-
 
 }

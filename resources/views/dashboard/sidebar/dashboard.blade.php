@@ -125,7 +125,7 @@
                 @else
                 <li class="sidebar-item">
                 @endif
-                    <a href="/dashboard_viewuser" class='sidebar-link'>
+                    <a href="/d_report" class='sidebar-link'>
                         <i class="bi bi-file-earmark-text-fill"></i>
 
                         <span>{{ __('Reports') }}</span>
@@ -146,7 +146,7 @@
                 @else
                 <li class="sidebar-item">
                 @endif
-                    <a href="/dashboard_viewuser" class='sidebar-link'>
+                    <a href="/d_Bills" class='sidebar-link'>
                     <i class="bi bi-file-earmark-medical-fill"></i>
                     <span>{{ __('Bills') }}</span>
                     </a>

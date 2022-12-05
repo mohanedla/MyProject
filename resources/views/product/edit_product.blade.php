@@ -75,7 +75,7 @@
 
                 </li><!-- End Notification Nav -->
 
-              
+
 
                 <li class="nav-item dropdown pe-3">
 
@@ -267,7 +267,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-6 col-12">
+                                    {{-- <div class="col-md-6 col-12">
                                         <div class="form-group">
                                             <label for="company-column">المجموعة</label>
                                             <fieldset class="form-group">
@@ -281,8 +281,8 @@
 
                                             </fieldset>
                                         </div>
-                                    </div>
-                                    
+                                    </div> --}}
+
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
                                             <label for="company-column">{{ __('Size') }}</label>
@@ -331,7 +331,7 @@
 
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
-                                            <br>
+
                                             <label for="email-id-column">{{ __('price') }}</label>
                                             <input type="text" id="email-id-column" value="{{$product->price}}" class="form-control" required
                                                 name="product_price" placeholder="{{ __('enter price') }}">
@@ -390,11 +390,17 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                    @if ($id_page==1)
                     <form action="{{ route('AddCategoryMen') }}" method="post" enctype="multipart/form-data">
+                        @elseif ($id_page==2)
+                        <form action="{{ route('AddCategoryWomen') }}" method="post" enctype="multipart/form-data">
+                        @else
+                        <form action="{{ route('AddCategoryKids') }}" method="post" enctype="multipart/form-data">
+                    @endif
                         @csrf
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">{{ __('New Category') }}:</label>
-                            <input type="text" class="form-control" id="recipient-name" name="category_men_name"
+                            <input type="text" class="form-control" id="recipient-name" name="category_name"
                                 placeholder="{{ __('Enter Category Name') }}" required="required">
                         </div>
 

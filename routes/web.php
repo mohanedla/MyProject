@@ -51,11 +51,11 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     Route::get('/product',[App\Http\Controllers\products::class,'product_product']);
 
-    Route::get('add_product',[App\Http\Controllers\products::class,'product_add_product'])->name('add_product');
-    Route::post('/add_product',[App\Http\Controllers\products::class,'add_product'])->name('AddProduct');
+    Route::get('/add_product/{id}',[App\Http\Controllers\products::class,'product_add_product'])->name('add_product');
+    Route::post('/add_product/{id}',[App\Http\Controllers\products::class,'add_product'])->name('AddProduct');
 
     Route::get('/product_detail_page',[App\Http\Controllers\products::class,'product_detail_page']);
-    Route::get('/edit_product/{id}',[App\Http\Controllers\products::class,'edit_product'])->name('edit_product');
+    Route::get('/edit_product/{id}/{id_page}',[App\Http\Controllers\products::class,'edit_product']);
 
     Route::post('/edit_brand/{id}',[App\Http\Controllers\brands::class,'update_brand']);
     Route::get('/delete_brand/{id}',[App\Http\Controllers\brands::class,'delete_brand']);
@@ -106,9 +106,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/delete_user/{id}',[App\Http\Controllers\user::class,'delete_user'])->name('delete_user');
 
     Route::get('/d_notic',[App\Http\Controllers\home::class,'notic']);
-
-
-
+    Route::get('/d_report',[App\Http\Controllers\home::class,'report']);
+    Route::get('/d_Bills',[App\Http\Controllers\home::class,'Bills']);
 
 
 });

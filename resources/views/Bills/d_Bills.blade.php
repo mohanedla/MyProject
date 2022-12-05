@@ -1,6 +1,6 @@
 @extends('dashboard.layouts.master')
 @section('menu')
-@extends('dashboard.sidebar.Bills')
+@extends('dashboard.sidebar.dashboard')
 @endsection
 @section('content')
 <header id="header" class="header fixed-top d-flex align-items-center">

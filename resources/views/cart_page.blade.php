@@ -96,18 +96,15 @@
                                         @endforeach
                                     </ul>
                                 </li>
-                                <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                        role="button">{{ __('Properties') }} <span class="caret"></span> </span>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
-
-                                        <li><a href="admin">{{ __('admin management') }}</a></li>
-                                        <li><a href="user">{{ __('user management') }}</a></li>
-                                        <li><a href="product">{{ __('Product Management') }}</a></li>
-                                        <li><a href="brand">{{ __('Brands') }}</a></li>
-                                        <li><a href="reports">{{ __('Reports') }}</a></li>
-                                    </ul>
-                                </li>
+                                @if (Auth::user())
+                                @if (Auth::user()->role == '1' || Auth::user()->role == '2')
+                                    {{-- @if ((Auth::User()->role = '1') or (Auth::User()->role = '2')) --}}
+                                    <li class="nav-item">
+                                        <a class="account" href="/dashboard_home">{{ __('System management') }}</a>
+                                    </li>
+                                @endif
+                                {{-- @endif --}}
+                            @endif
 
                             </ul>
                         </div>
@@ -132,7 +129,50 @@
                         <div class="collapse navbar-collapse js-navbar-collapse">
                             <ul id="menu" class="nav navbar-nav">
                                 <li> <a href="home">{{ __('Home') }}</a></li>
-                                cart_page
+                                <li class="dropdown mega-dropdown"> <a href="#" class="dropdown-toggle"
+                                    data-toggle="dropdown">{{ __('Collection') }} </a>
+                                <ul class="dropdown-menu mega-dropdown-menu row">
+                                    <li class="col-md-3">
+                                        <ul>
+                                            <li class="dropdown-header">{{ __('Women') }}</li>
+                                            @foreach ($category_women as $women)
+                                                <li><a href="#">{{ __($women->name) }}</a></li>
+                                            @endforeach
+                                        </ul>
+                                    </li>
+                                    <li class="col-md-3">
+                                        <ul>
+                                            <li class="dropdown-header">{{ __('Men') }}</li>
+                                            @foreach ($category_men as $men)
+                                                <li><a href="#">{{ __($men->name) }}</a></li>
+                                            @endforeach
+                                        </ul>
+                                    </li>
+
+                                    <li class="col-md-3">
+                                        <ul>
+                                            <li class="dropdown-header">{{ __('Children') }}</li>
+                                            @foreach ($category_kids as $kids)
+                                                <li><a href="#">{{ __($kids->name) }}</a></li>
+                                            @endforeach
+                                        </ul>
+                                    </li>
+                                    <li class="col-md-3">
+                                        <ul>
+                                            <li id="myCarousel" class="carousel slide" data-ride="carousel">
+                                                <div class="carousel-inner">
+                                                    <div class="item active"><a href=""> <img
+                                                                src="{{ asset('images/menu-banner1.jpg') }}"
+                                                                class="img-responsive" alt="Banner1"></a></div>
+                                                </div>
+                                                <!-- End Carousel Inner -->
+                                            </li>
+                                            <!-- /.carousel -->
+                                        </ul>
+                                    <li class="col-md-3">
+                                    </li>
+                                </ul>
+                            </li>
                                 <li> <a href="shop">{{ __('shop') }}</a></li>
                                 <li> <a href="about">{{ __('About us') }}</a></li>
                                 <li> <a href="contact_us">{{ __('Contact us') }}</a></li>
@@ -318,58 +358,36 @@
                         </div>
                     </div>
 
-                    <form action="index">
+                    <form action="\home">
                         <input class="btn pull-left mt_30" type="submit" value="{{ __('Continue Shopping') }}" />
                     </form>
-                    <form action="checkout">
+                    <form action="checkout_page">
                         <input class="btn pull-right mt_30" type="submit" value="{{ __('Checkout') }}
 " />
                     </form>
                 </div>
             </div>
             <div id="brand_carouse" class="ptb_60 text-center">
-                <div class="type-01">
-                    <div class="heading-part mb_10 ">
-                        <h2 class="main_title">{{ __('Brands') }}</h2>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="brand owl-carousel ptb_20">
-                                <div class="item text-center"> <a href="#"><img
-                                            src="{{ asset('images/brand/1.jpg') }}" alt="Disney"
-                                            class="img-responsive" /></a> </div>
-                                <div class="item text-center"> <a href="#"><img
-                                            src="{{ asset('images/brand/2.jpg') }}" alt="Dell"
-                                            class="img-responsive" /></a> </div>
-                                <div class="item text-center"> <a href="#"><img
-                                            src="{{ asset('images/brand/3.jpg') }}" alt="Harley"
-                                            class="img-responsive" /></a> </div>
-                                <div class="item text-center"> <a href="#"><img
-                                            src="{{ asset('images/brand/4.jpg') }}" alt="Canon"
-                                            class="img-responsive" /></a> </div>
-                                <div class="item text-center"> <a href="#"><img
-                                            src="{{ asset('images/brand/5.jpg') }}" alt="Canon"
-                                            class="img-responsive" /></a> </div>
-                                <div class="item text-center"> <a href="#"><img
-                                            src="{{ asset('images/brand/6.jpg') }}" alt="Canon"
-                                            class="img-responsive" /></a> </div>
-                                <div class="item text-center"> <a href="#"><img
-                                            src="{{ asset('images/brand/7.jpg') }}" alt="Canon"
-                                            class="img-responsive" /></a> </div>
-                                <div class="item text-center"> <a href="#"><img
-                                            src="{{ asset('images/brand/8.jpg') }}" alt="Canon"
-                                            class="img-responsive" /></a> </div>
-                                <div class="item text-center"> <a href="#"><img
-                                            src="{{ asset('images/brand/9.jpg') }}" alt="Canon"
-                                            class="img-responsive" /></a> </div>
-                                <div class="item text-center"> <a href="#"><img
-                                            src="{{ asset('images/brand/10.jpg') }}" alt="Canon"
-                                            class="img-responsive" /></a> </div>
+                        <div class="type-01">
+                            <div class="heading-part mb_10 ">
+                                <h2 class="main_title">{{ __('Brands') }}</h2>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="brand owl-carousel ptb_20">
+                                        @foreach ($brand as $x)
+                                        <div class="item text-center">
+                                               
+                                                 <a   @if (Auth::User()) href="item_brand/{{ $x->id }}" @endif >
+                                               <img src="{{ asset(Storage::url($x->profile_image)) }}"
+                                                        alt="" class="img-responsive" /></a> 
+                                                    </div>
+                                        @endforeach
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
 
         </div>
         <!-- =====  FOOTER END  ===== -->

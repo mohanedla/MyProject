@@ -120,7 +120,7 @@
                         </li>
                     </ul>
                 </li>
-                @if($page == "reports")
+                @if($page == "report")
                 <li class="sidebar-item active">
                 @else
                 <li class="sidebar-item">

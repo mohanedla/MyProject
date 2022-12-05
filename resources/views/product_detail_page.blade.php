@@ -90,15 +90,7 @@
                                 </li>
                             @endguest
 
-                            @if (Auth::user())
-                                @if (Auth::user()->role == '1' || Auth::user()->role == '2')
-                                    {{-- @if ((Auth::User()->role = '1') or (Auth::User()->role = '2')) --}}
-                                    <li class="nav-item">
-                                        <a class="account" href="/dashboard_home">{{ __('System management') }}</a>
-                                    </li>
-                                @endif
-                                {{-- @endif --}}
-                            @endif
+                           
 
                             <li class="language dropdown"> <span class="dropdown-toggle" id="dropdownMenu1"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
@@ -114,7 +106,15 @@
                                     @endforeach
                                 </ul>
                             </li>
-
+                            @if (Auth::user())
+                                @if (Auth::user()->role == '1' || Auth::user()->role == '2')
+                                    {{-- @if ((Auth::User()->role = '1') or (Auth::User()->role = '2')) --}}
+                                    <li class="nav-item">
+                                        <a class="account" href="/dashboard_home">{{ __('System management') }}</a>
+                                    </li>
+                                @endif
+                                {{-- @endif --}}
+                            @endif
                         </ul>
                     </div>
                 </div>
@@ -139,109 +139,51 @@
 
                             <li> <a href="home">{{ __('Home') }}</a></li>
 
-                            <li class="dropdown mega-dropdown"> <a href="#" class="dropdown-toggle"
-                                        data-toggle="dropdown">{{ __('Collection') }} </a>
-                                    <ul class="dropdown-menu mega-dropdown-menu row">
-                                        <li class="col-md-3">
-                                                <ul>
-                                                    <li class="dropdown-header">{{ __('Womens') }}</li>
-                                                    <li><a href="#">{{ __('trouser') }}</a></li>
-                                                    <li><a href="#">{{ __('T-Shirts') }}</a></li>
-                                                    <li><a href="#">{{ __('dress') }}</a></li>
-                                                    <li><a href="#">{{ __('Jumpsuit') }}</a></li>
-                                                    <li><a href="#">{{ __('shoes') }}</a></li>
-                                                    <li><a href="#">{{ __('blouse') }}</a></li>
-                                                    <li><a href="#">{{ __('watches') }}</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="col-md-3">
-                                                <ul>
-                                                    <li class="dropdown-header">{{ __('Mans') }}</li>
-                                                    <li><a href="#">{{ __('trouser') }}</a></li>
-                                                    <li><a href="#">{{ __('T-Shirts') }}</a></li>
-                                                    <li><a href="#">{{ __('Shirt') }}</a></li>
-                                                    <li><a href="#">{{ __('Suits') }}</a></li>
-                                                    <li><a href="#">{{ __('shoes') }}</a></li>
-                                                    <li><a href="#">{{ __('Jackets') }}</a></li>
-                                                    <li><a href="#">{{ __('watches') }}</a></li>
-                                                </ul>
-                                            </li>
+                          <li class="dropdown mega-dropdown"> <a href="#" class="dropdown-toggle"
+                                    data-toggle="dropdown">{{ __('Collection') }} </a>
+                                <ul class="dropdown-menu mega-dropdown-menu row">
+                                    <li class="col-md-3">
+                                        <ul>
+                                            <li class="dropdown-header">{{ __('Women') }}</li>
+                                            @foreach ($category_women as $women)
+                                                <li><a href="#">{{ __($women->name) }}</a></li>
+                                            @endforeach
+                                        </ul>
+                                    </li>
+                                    <li class="col-md-3">
+                                        <ul>
+                                            <li class="dropdown-header">{{ __('Men') }}</li>
+                                            @foreach ($category_men as $men)
+                                                <li><a href="#">{{ __($men->name) }}</a></li>
+                                            @endforeach
+                                        </ul>
+                                    </li>
 
-                                            <li class="col-md-3">
-                                                <ul>
-                                                    <li class="dropdown-header">{{ __('Childrens') }}</li>
-                                                    <li><a href="#"><select name="dropdown" class="dropdown_ch"></a>
-                                                    <li>
-                                                        <option class="option_ch"><a href="#">{{ __('Born') }}</a>
-                                                        </option>
-                                                    </li>
-                                                    <li>
-                                                        <option class="option_ch"><a href="#">{{ __('Boys') }}</a>
-                                                        </option>
-                                                    </li>
-                                                    <li>
-                                                        <option class="option_ch"><a href="#">{{ __('Girls') }}</a>
-                                                        </option>
-                                                    </li>
-                                                    </select>
+                                    <li class="col-md-3">
+                                        <ul>
+                                            <li class="dropdown-header">{{ __('Children') }}</li>
+                                            @foreach ($category_kids as $kids)
+                                                <li><a href="#">{{ __($kids->name) }}</a></li>
+                                            @endforeach
+                                        </ul>
+                                    </li>
+                                    <li class="col-md-3">
+                                        <ul>
+                                            <li id="myCarousel" class="carousel slide" data-ride="carousel">
+                                                <div class="carousel-inner">
+                                                    <div class="item active"><a href=""> <img
+                                                                src="{{ asset('images/menu-banner1.jpg') }}"
+                                                                class="img-responsive" alt="Banner1"></a></div>
+                                                </div>
+                                                <!-- End Carousel Inner -->
                                             </li>
-                                                    <li><a href="#"><select name="dropdown" class="dropdown_ch"></a>
-                                                    <li>
-                                                        <option class="option_ch"><a href="#">{{ __('Childrens') }}</a>
-                                                        </option>
-                                                    </li>
-                                                    <li>
-                                                        <option class="option_ch"><a href="#">{{ __('Boys') }}</a>
-                                                        </option>
-                                                    </li>
-                                                    <li>
-                                                        <option class="option_ch"><a href="#">{{ __('Girls') }}</a>
-                                                        </option>
-                                                    </li>
-                                                    </select>
-                                            </li>
-                                                    <li><a href="#"><select name="dropdown" class="dropdown_ch"></a>
-                                                    <li>
-                                                        <option class="option_ch"><a href="#">{{ __('puzzling') }}</a>
-                                                        </option>
-                                                    </li>
-                                                    <li>
-                                                        <option class="option_ch"><a href="#">{{ __('Boys') }}</a>
-                                                        </option>
-                                                    </li>
-                                                    <li>
-                                                        <option class="option_ch"><a href="#">{{ __('Girls') }}</a>
-                                                        </option>
-                                                    </li>
-                                                    </select>
-                                            </li>
-
+                                            <!-- /.carousel -->
+                                        </ul>
+                                    <li class="col-md-3">
+                                    </li>
                                 </ul>
                             </li>
-                                        <li class="col-md-3">
-                                            <ul>
-                                                <li id="myCarousel" class="carousel slide" data-ride="carousel">
-                                                    <div class="carousel-inner">
-                                                        <div class="item active"> <a href="#"><img
-                                                                    src="{{ asset('images/menu-banner1.jpg') }}"
-                                                                    class="img-responsive" alt="Banner1"></a></div>
-                                                        <!-- End Item -->
-                                                        <div class="item"> <a href="#"><img
-                                                                    src="{{ asset('images/menu-banner2.jpg') }}"
-                                                                    class="img-responsive" alt="Banner1"></a></div>
-                                                        <!-- End Item -->
-                                                        <div class="item"> <a href="#"><img
-                                                                    src="{{ asset('images/menu-banner3.jpg') }}"
-                                                                    class="img-responsive" alt="Banner1"></a></div>
-                                                        <!-- End Item -->
-                                                    </div>
-                                                    <!-- End Carousel Inner -->
-                                                </li>
-                                                <!-- /.carousel -->
-                                            </ul>
-
-                                    </ul>
-                                </li>
+                                     
                                 <li> <a href="shop">{{ __('shop') }}</a></li>
                                 <li> <a href="about">{{ __('About us') }}</a></li>
                                 <li> <a href="contact_us">{{ __('Contact us') }}</a></li>
@@ -273,7 +215,7 @@
             <div id="category-menu" class="navbar collapse in mb_40" aria-expanded="true" style="" role="button">
               <div class="nav-responsive">
                 <div class="heading-part">
-                  <h2 class="main_title">Top category</h2>
+                  <h2 class="main_title">{{ __('all_product') }}</h2>
                 </div>
                 <ul class="nav  main-navigation collapse in">
                   <li><a href="#">Appliances</a></li>

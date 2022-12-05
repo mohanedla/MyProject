@@ -51,7 +51,7 @@ class home extends Controller
     public function report_reports()
         {
             $categories=Category::all();
-            $collect = array('M'=>'Men','W'=>'Women','C'=>'Kids' );
+            $collect = array('M'=>'Men','W'=>'Women','C'=>'Children' );
             $product_name_men=product::with('categories')->where('collection','=','Men')->get();
             $product_name_women=product::with('categories')->where('collection','=','Women')->get();
             $product_name_children=product::with('categories')->where('collection','=','Children')->get();
@@ -111,25 +111,21 @@ class home extends Controller
 
 
         }
+
+
         public function notic()
         {
-            $page="notification";
-            return View('notic.d_notic',compact('page'));
+
+            return View('notic.d_notic');
 
         }
+
         public function report()
         {
-            $page="reports";
-            return View('report.d_report',compact('page'));
+            $page = "reports";
 
+            return View('report.d_report',compact("page"));
         }
-        public function Bills()
-        {
-            $page="bills";
-            return View('Bills.d_Bills',compact('page'));
-
-        }
-
     public function footer()
         {
             return View('footer');

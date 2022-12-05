@@ -63,37 +63,60 @@
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-8">
-                            <ul class="header-top-right text-right">
-                                <li class="account"><a href="login">{{ __('My Account')}}</a></li>
-                                <li class="language dropdown"> <span class="dropdown-toggle" id="dropdownMenu1"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                        role="button">{{ __('Language') }} <span class="caret"></span> </span>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                        @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                                            <li>
-                                                <a rel="alternate" hreflang="{{ $localeCode }}"
-                                                    href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-                                                    {{ $properties['native'] }}
-                                                </a>
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                </li>
+                        <ul class="header-top-right text-right">
+
+                            @guest
+                                @if (Route::has('login'))
+                                    <li class="nav-item">
+                                        <a class="account" href="/login_register">{{ __('My Account') }}</a>
+                                    </li>
+                                @endif
+                            @else
                                 <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                        role="button">{{__('Properties')}} <span class="caret"></span> </span>
+                                        role="button">{{ Auth::user()->name }} <span class="caret"></span> </span>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
 
-                                        <li><a href="admin">{{__ ('admin management')}}</a></li>
-                                        <li><a href="user">{{__ ('user management')}}</a></li>
-                                        <li><a href="product">{{__ ('Product Management')}}</a></li>
-                                        <li><a href="brand">{{__ ('Brands')}}</a></li>
-                                        <li><a href="reports">{{__ ('Reports')}}</a></li>
+                                        <li><a class="dropdown-item" href="/home"
+                                                onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                                {{ __('Logout') }}</a>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                class="d-none">
+                                                @csrf
+                                            </form>
+                                        </li>
                                     </ul>
                                 </li>
+                            @endguest
 
-                            </ul>
-                        </div>
+                          
+
+                            <li class="language dropdown"> <span class="dropdown-toggle" id="dropdownMenu1"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                    role="button">{{ __('Language') }} <span class="caret"></span> </span>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                    @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                                        <li>
+                                            <a rel="alternate" hreflang="{{ $localeCode }}"
+                                                href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                                {{ $properties['native'] }}
+                                            </a>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </li>
+                            @if (Auth::user())
+                                @if (Auth::user()->role == '1' || Auth::user()->role == '2')
+                                    {{-- @if ((Auth::User()->role = '1') or (Auth::User()->role = '2')) --}}
+                                    <li class="nav-item">
+                                        <a class="account" href="/dashboard_home">{{ __('System management') }}</a>
+                                    </li>
+                                @endif
+                                {{-- @endif --}}
+                            @endif
+                        </ul>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -187,7 +210,7 @@
 
         <div id="column-left" class="col-sm-4 col-lg-3 hidden-xs">
           <div id="category-menu" class="navbar collapse in mb_40" aria-expanded="true" style="" role="button">
-            <div class="nav-responsive">
+            <!-- <div class="nav-responsive">
               <div class="heading-part">
                 <h2 class="main_title">Top category</h2>
               </div>
@@ -206,14 +229,14 @@
                 <li><a href="#">Health &amp; Beauty</a></li>
                 <li><a href="#">Outdoors &amp; Sports</a></li>
               </ul>
-            </div>
+            </div> -->
           </div>
-          <div class="left_banner left-sidebar-widget mt_30 mb_40"> <a href="#"><img src="images/left1.jpg" alt="Left Banner" class="img-responsive"></a> </div>
+          <!-- <div class="left_banner left-sidebar-widget mt_30 mb_40"> <a href="#"><img src="images/left1.jpg" alt="Left Banner" class="img-responsive"></a> </div> -->
           <div class="left-special left-sidebar-widget mb_50">
-            <div class="heading-part mb_10 ">
+             <!-- <!-- <div class="heading-part mb_10 ">
               <h2 class="main_title">Top Products</h2>
-            </div>
-            <div id="left-special" class="owl-carousel owl-loaded owl-drag">
+            </div> -->
+            <div id="left-special" class="owl-carousel owl-loaded owl-drag"> 
 
 
 
@@ -222,10 +245,10 @@
                 <li class="item product-layout-left mb_20">
                   <div class="product-list col-xs-4">
                     <div class="product-thumb">
-                      <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product3.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product3-1.jpg"> </a> </div>
+                      <!-- <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product3.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product3-1.jpg"> </a> </div> -->
                     </div>
                   </div>
-                  <div class="col-xs-8">
+                  <!-- <div class="col-xs-8">
                     <div class="caption product-detail">
                       <h6 class="product-name"><a href="#">New LCDScreen and HD Video Recording</a></h6>
                       <div class="rating">
@@ -238,15 +261,15 @@
                       <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
                       </span>
                     </div>
-                  </div>
+                  </div> -->
                 </li>
                 <li class="item product-layout-left mb_20">
                   <div class="product-list col-xs-4">
                     <div class="product-thumb">
-                      <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product4.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product4-1.jpg"> </a> </div>
+                      <!-- <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product4.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product4-1.jpg"> </a> </div> -->
                     </div>
                   </div>
-                  <div class="col-xs-8">
+                  <!-- <div class="col-xs-8">
                     <div class="caption product-detail">
                       <h6 class="product-name"><a href="#">New LCDScreen and HD Video Recording</a></h6>
                       <div class="rating">
@@ -474,8 +497,17 @@
                     </div>
                   </div>
                 </li>
-              </ul></div></div></div><div class="owl-nav"><div class="owl-prev disabled">prev</div><div class="owl-next">next</div></div><div class="owl-dots"><div class="owl-dot active"><span></span></div><div class="owl-dot"><span></span></div><div class="owl-dot"><span></span></div><div class="owl-dot"><span></span></div></div></div>
-          </div>
+              </div> -->
+              <!-- </ul> -->
+            </div>
+            </div>
+         
+                  <div >
+                 </div>
+                  <div class="owl-dot"></div>
+                  <div class="owl-dot"></div>
+                  <div class="owl-dot"></div>
+                </div></div>
         </div>
 
            <div class="left_banner left-sidebar-widget mb_50 mt_30"> <a href="#"></a> </div>
@@ -520,7 +552,7 @@
                 </div>
               </div>
             </div>
-            <div class="panel panel-default ">
+         <div class="panel panel-default ">
               <div class="panel-heading">
                 <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">{{ __('Step') }} 2:{{ __('Billing Details') }}   <i class="fa fa-caret-down"></i></a> </h4>
               </div>
@@ -853,48 +885,26 @@
         </div>
       </div>
       <div id="brand_carouse" class="ptb_60 text-center">
-        <div class="type-01">
-            <div class="heading-part mb_10 ">
-                <h2 class="main_title">{{ __('Brands') }}</h2>
-            </div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="brand owl-carousel ptb_20">
-                        <div class="item text-center"> <a href="#"><img
-                                    src="{{ asset('images/brand/1.jpg') }}" alt="Disney"
-                                    class="img-responsive" /></a> </div>
-                        <div class="item text-center"> <a href="#"><img
-                                    src="{{ asset('images/brand/2.jpg') }}" alt="Dell"
-                                    class="img-responsive" /></a> </div>
-                        <div class="item text-center"> <a href="#"><img
-                                    src="{{ asset('images/brand/3.jpg') }}" alt="Harley"
-                                    class="img-responsive" /></a> </div>
-                        <div class="item text-center"> <a href="#"><img
-                                    src="{{ asset('images/brand/4.jpg') }}" alt="Canon"
-                                    class="img-responsive" /></a> </div>
-                        <div class="item text-center"> <a href="#"><img
-                                    src="{{ asset('images/brand/5.jpg') }}" alt="Canon"
-                                    class="img-responsive" /></a> </div>
-                        <div class="item text-center"> <a href="#"><img
-                                    src="{{ asset('images/brand/6.jpg') }}" alt="Canon"
-                                    class="img-responsive" /></a> </div>
-                        <div class="item text-center"> <a href="#"><img
-                                    src="{{ asset('images/brand/7.jpg') }}" alt="Canon"
-                                    class="img-responsive" /></a> </div>
-                        <div class="item text-center"> <a href="#"><img
-                                    src="{{ asset('images/brand/8.jpg') }}" alt="Canon"
-                                    class="img-responsive" /></a> </div>
-                        <div class="item text-center"> <a href="#"><img
-                                    src="{{ asset('images/brand/9.jpg') }}" alt="Canon"
-                                    class="img-responsive" /></a> </div>
-                        <div class="item text-center"> <a href="#"><img
-                                    src="{{ asset('images/brand/10.jpg') }}" alt="Canon"
-                                    class="img-responsive" /></a> </div>
+                        <div class="type-01">
+                            <div class="heading-part mb_10 ">
+                                <h2 class="main_title">{{ __('Brands') }}</h2>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="brand owl-carousel ptb_20">
+                                        @foreach ($brand as $x)
+                                        <div class="item text-center">
+                                               
+                                                 <a   @if (Auth::User()) href="item_brand/{{ $x->id }}" @endif >
+                                               <img src="{{ asset(Storage::url($x->profile_image)) }}"
+                                                        alt="" class="img-responsive" /></a> 
+                                                    </div>
+                                        @endforeach
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
     </div>
     <!-- =====  FOOTER END  ===== -->
   </div>

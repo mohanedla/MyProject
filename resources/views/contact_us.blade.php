@@ -86,10 +86,19 @@
                                                 {{ $properties['native'] }}
                                             </a>
                                         </li>
-                                    @endforeach
-                                </ul>
-                            </li>
-                            <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"
+                                        @endforeach
+                                    </ul>
+                                </li>
+                            @if (Auth::user())
+                                @if (Auth::user()->role == '1' || Auth::user()->role == '2')
+                                    {{-- @if ((Auth::User()->role = '1') or (Auth::User()->role = '2')) --}}
+                                    <li class="nav-item">
+                                        <a class="account" href="/dashboard_home">{{ __('System management') }}</a>
+                                    </li>
+                                @endif
+                                {{-- @endif --}}
+                            @endif
+                            <!-- <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                 role="button">{{__('Properties')}} <span class="caret"></span> </span>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
@@ -100,7 +109,7 @@
                                     <li><a href="brand">{{__ ('Brands')}}</a></li>
                                     <li><a href="reports">{{__ ('Reports')}}</a></li>
                                 </ul>
-                        </li>
+                            </li> -->
                         </ul>
                     </div>
                 </div>
@@ -256,13 +265,19 @@
             </div>
               </div>
         </div>
-    <div class="col-sm-8 col-lg-9 mtb_20">
+    <!-- <div class="col-sm-8 col-lg-9 mtb_20"> -->
       <!-- about  -->
-      <div class="row">
-        <div class="col-md-12">
+      <!-- <div class="row"> -->
+        <!-- <div class="col-md-12">
           <figure> <img src="{{ asset('images\about-page11-gaando.jpg')}}" alt="#"> </figure>
+        </div> -->
+        <div class="banner">
+        <div class="main-banner owl-carousel">
+            <div class="item"><a href="#"><img src="{{ asset('images\about-page11-gaando.jpg')}}"
+                        style="height: 350px; Width: 5000px;" alt="Main Banner" class="img-responsive" /></a></div>
         </div>
-      </div>
+    <!-- </div> -->
+      <!-- </div> -->
     <!-- =====  HEADER END  ===== -->
     <!-- =====  CONTAINER START  ===== -->
     <div class="container mt_30">

@@ -2,6 +2,8 @@
 @section('menu')
 @extends('dashboard.sidebar.dashboard')
 @endsection
+@section('content')
+
 <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
@@ -142,7 +144,7 @@
         <div class="page-title">
             <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
-                <h3>{{ __('user management control') }}</h3>
+                <h3>{{ __('notic management ') }}</h3>
                 <br>
                 <br>
                 </div>
@@ -150,7 +152,7 @@
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                         <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="dashboard_home">{{ __('Dashboard') }}</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">{{ __('Users') }}</li>
+                                <li class="breadcrumb-item active" aria-current="page">{{ __('notice') }}</li>
                         </ol>
                     </nav>
                 </div>
@@ -165,7 +167,7 @@
 
                 </div>
                 <div class="card-body">
-                     <table class="table table-striped" id="table1">
+                    <!-- <table class="table table-striped" id="table1">
                         <thead>
                             <tr>
                             <th style="width: 50px;" scope="col">{{ __('#')}}</th>
@@ -180,22 +182,25 @@
                                 $i=1;
                                 $j=0;
                             @endphp
-                                {{-- @foreach ($notics as $x)
+                                @foreach ($notics as $x)
                                 <tr>
                                     <td>{{$i++}}</td>
                                     <td>{{$x->name}}</td>
                                     <td>{{$x->email}}</td>
-                                    <td class="text-center">
-                                    <a href="{{route('delete_user',['id'=>$x->id])}}" onclick="return confirm('Are you sure to want to delete it?')"><span class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
-                                    </td>
+                                    <!-- <td class="text-center">
+                                        <a href="{{route('delete_user',['id'=>$x->id])}}" onclick="return confirm('Are you sure to want to delete it?')"><span class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
+                                    </td> -->
                                 </tr>
                                 @php
                                     $j++;
                                 @endphp
 
-                                @endforeach --}}
+                                @endforeach
                         </tbody>
-                    </table> -->
+                    </table>
+                </div>
+                <div class="card-body">
+
                 </div>
                 <script>
                     $(document).ready(function () {
@@ -273,3 +278,4 @@ function showDetails(pro,sizes,colors){
 }
 
 </script>
+@endsection

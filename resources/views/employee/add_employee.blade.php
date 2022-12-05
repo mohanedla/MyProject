@@ -225,11 +225,12 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
-                                        <div class="form-group has-icon-lefts">
+                                        <div class="form-group">
                                             <div class="form-group">
                                                 <label for="email-id-column"> {{ __('Upload Profile Picture') }}</label>
-                                                <input type="file" class="form-control" placeholder=""
-                                                    id="first-name-icon" name="profile_image" />
+                                                <input type="file" class="form-control" required 
+                                                placeholder=""
+                                                    id="first-name-icon" name="profile_image">
                                             </div>
                                         </div>
                                     </div>

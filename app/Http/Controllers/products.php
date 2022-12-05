@@ -310,7 +310,7 @@ class products extends Controller
         Image_Product::where('product_id', $id)->delete();
         Toastr::success('The product has been deleted successfully :)','Success');
 
-        return redirect('/men_product');
+        return redirect('/product.products');
     }
 
 }

@@ -53,7 +53,7 @@
                                 @guest
                                 @if (Route::has('login'))
                                     <li class="nav-item">
-                                        <a class="account" href="/login_register">{{ __('My Account') }}</a>
+                                        <a class="account" href="/home">{{ __('My Account') }}</a>
                                     </li>
                                 @endif
 
@@ -219,11 +219,11 @@
                                                 id="login-form-link">{{ __('Login') }}</a>
                                         </div>
                                         <div class="col-xs-6">
-                                            <a href="#admin_login" class="btn_icone" data-toggle="modal" data-whatever="@getbootstrap">{{ __('Are You Admin') }}</a>
+                                            <!-- <a href="#admin_login" class="btn_icone" data-toggle="modal" data-whatever="@getbootstrap">{{ __('Are You Admin') }}</a> -->
                                             <div class="col-xs-6">
                                                 <a href="#" id="register-form-link">{{ __('Register') }}</a>
                                             </div>
-                                    </div>
+                                        </div>
                                     <hr>
                                 </div>
                                 <div class="panel-body">
@@ -345,7 +345,7 @@
                                                         placeholder="{{ __('Confirm Password') }}" required
                                                     autocomplete="new-password">
 
-                                                </div>
+                                                </div>  
                                                 <div class="form-group">
                                                     <div class="row">
                                                         <div class="col-sm-6 col-sm-offset-3">
@@ -356,7 +356,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="form-group">
+                                                <!-- <div class="form-group">
                                                     <div class="row">
                                                         <div class="col-lg-12">
                                                             <!-- <div class="text-center">
@@ -365,9 +365,9 @@
                                                                 {{ __('Are You Admin')}}
                                                                 </button>
                                                             </div>
-                                                        </div> -->
+                                                        </div> 
                                                     </div>
-                                                </div>
+                                                </div> -->
                                             </form>
 
                                         </div>

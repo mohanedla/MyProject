@@ -163,44 +163,48 @@
         <section class="section">
             <div class="card">
                 <div class="card-header">
-                <h4>{{ __('Users List') }}</h4>
-
+                 <h4>{{ __('notice List') }}</h4>
+                
+                 
                 </div>
                 <div class="card-body">
-                    <!-- <table class="table table-striped" id="table1">
+                    <table class="table table-striped" id="table1">
                         <thead>
                             <tr>
                             <th style="width: 50px;" scope="col">{{ __('#')}}</th>
-                            <th style="width: 50px;" scope="col">{{ __('name admin') }}</th>
+                            <th style="width: 50px;" scope="col">{{ __('User name') }}</th>
                             <th style="width: 50px;" scope="col">{{ __('Email Address') }}</th>
-                                <th style="width: 50px;" scope="col"></th>
-                            </tr>
-                        </thead>
+                            <th style="width: 50px;" scope="col">{{ __('Phone Number') }}</th>
+                            <th style="width: 50px;" scope="col"></th>
+
+                        
+                        </tr>
+                    </thead>
+                    <td>
+                    </td>
+
+                    <td>
+                    </td> 
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+
+
+                    <td class="text-center">
+                                    <a data-bs-toggle="modal" data-bs-target="#type_men"
+                                    data-bs-whatever="@mdo" >
+                                        <span class="badge bg-info"><i class="bi bi-eye-fill"></i></span>
+                                    </a>
+
+                                 
+                                    <a href="#" onclick="return confirm('Are you sure to want to delete it?')"><span class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
+                                </td>
                         <tbody>
 
-                            @php
-                                $i=1;
-                                $j=0;
-                            @endphp
-                                @foreach ($notics as $x)
-                                <tr>
-                                    <td>{{$i++}}</td>
-                                    <td>{{$x->name}}</td>
-                                    <td>{{$x->email}}</td>
-                                    <!-- <td class="text-center">
-                                        <a href="{{route('delete_user',['id'=>$x->id])}}" onclick="return confirm('Are you sure to want to delete it?')"><span class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
-                                    </td> -->
-                                </tr>
-                                @php
-                                    $j++;
-                                @endphp
-
-                                @endforeach
+                           
                         </tbody>
                     </table>
-                </div>
-                <div class="card-body">
-
                 </div>
                 <script>
                     $(document).ready(function () {
@@ -216,7 +220,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel"> بيانات المنتج </h1><br>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel"> {{ __('The reason for the notice') }} </h1><br>
                     <h1 class="modal-title fs-5" id="productName"></h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -225,8 +229,8 @@
                     <table class="table table-striped" id="table1">
                         <thead>
                             <tr>
-                                <th style="width: 50px;" scope="col">الالوان</th>
-                                <th style="width: 50px;" scope="col">المقاسات</th>
+                                <!-- <th style="width: 50px;" scope="col">الالوان</th>
+                                <th style="width: 50px;" scope="col">المقاسات</th> -->
                             </tr>
                         </thead>
                         <tbody id="bodyrow">
@@ -239,7 +243,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary"
                         data-bs-dismiss="modal">{{ __('Close') }}</button>
-                    <button type="submit" class="btn btn-primary">{{ __('Save') }}</button>
+                    <!-- <button type="submit" class="btn btn-primary">{{ __('Save') }}</button> -->
                 </div>
                 </form>
             </div>

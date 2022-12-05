@@ -154,7 +154,7 @@
                                 <li class="breadcrumb-item active" aria-current="page">{{ __('all admin') }}</li>
                         </ol>
                     </nav>
-                </div>
+                </div>   
             </div>
         </div>
         {{-- message --}}
@@ -162,7 +162,7 @@
         <section class="section">
             <div class="card">
                 <div class="card-header">
-                <h4>{{ __('Admins List') }}</h4>
+                 <h4>{{ __('Admins List') }}</h4>
                     {{-- <div class="buttons"> --}}
                         <a style="float: right;" href="{{route('add_employee')}}" class="btn btn-secondary"> {{ __('add admin') }}</a>
 
@@ -175,7 +175,8 @@
                             <th style="width: 50px;" scope="col">{{ __('#')}}</th>
                             <th style="width: 50px;" scope="col">{{ __('name admin') }}</th>
                             <th style="width: 50px;" scope="col">{{ __('Email Address') }}</th>
-                                <th style="width: 50px;" scope="col"></th>
+                            <th style="width: 50px;" scope="col">{{ __('photo') }}</th>
+                            <th style="width: 50px;" scope="col">{{ __('') }}</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -189,7 +190,12 @@
                                     <td>{{$i++}}</td>
                                     <td>{{$x->name}}</td>
                                     <td>{{$x->email}}</td>
+                                    <td><img style="width: 50%; height:50%;" src="{{asset(Storage::url($x->profile_image))}}" alt=""></td>
                                     <td class="text-center">
+                                    <a data-bs-toggle="modal" data-bs-target="#type_men"
+                                        data-bs-whatever="@mdo" onclick="showDetails({{json_encode($x)}},{{json_encode($x->sizes)}},{{json_encode($x->colors)}})">
+                                            <span class="badge bg-info"><i class="bi bi-eye-fill"></i></span>
+                                        </a>
                                         <a href="{{route('delete_employee',['id'=>$x->id])}}" onclick="return confirm('Are you sure to want to delete it?')"><span class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
                                     </td>
                                 </tr>

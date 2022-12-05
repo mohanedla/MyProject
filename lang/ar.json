@@ -16,6 +16,8 @@
   "First name":"الإسم الأول",
   "Last name":"إسم العائلة",
   "Username":"إسم المستخدم",
+  "User name":"إسم المستخدم",
+
   "user":"مستخدم",
   "Password": "كلمة المرور",
   "Register": "تسجيل",
@@ -260,6 +262,9 @@
   "Create new Category Men successfully":"تم انشاء نوع رجالي بنجاح",
   "notice":"البلاغات",
   "Bills":"الفواتير",
+  "invoice number":"رقم الفاتورة",
+  "Bills management":"إدارة الفواتير",
+  "Bills List":"قائمة الفواتير",
   "admins management control":"إدارة تحكم المشرفين",
   "user management control":"إدارة تحكم المستخدمين",
 
@@ -269,5 +274,8 @@
   "all":"الكل",
   "notic management ":"إدارة  البلاغات",
   "notice List":"قائمة البلاغات",
+  "The reason for the notice":"سبب البــلاغ",
+  "reports List":"قائمة التقارير",
+  "Reports management":"إدارة التقارير",
   "System management":"إدارة النظام"
 }

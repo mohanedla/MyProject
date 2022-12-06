@@ -167,7 +167,7 @@
 
                 </div>
                 <div class="card-body">
-                    <!-- <table class="table table-striped" id="table1">
+                    <table class="table table-striped" id="table1">
                         <thead>
                             <tr>
                             <th style="width: 50px;" scope="col">{{ __('#')}}</th>
@@ -182,20 +182,20 @@
                                 $i=1;
                                 $j=0;
                             @endphp
-                                @foreach ($notics as $x)
+                                {{-- @foreach ($notics as $x)
                                 <tr>
                                     <td>{{$i++}}</td>
                                     <td>{{$x->name}}</td>
                                     <td>{{$x->email}}</td>
-                                    <!-- <td class="text-center">
+                                     <td class="text-center">
                                         <a href="{{route('delete_user',['id'=>$x->id])}}" onclick="return confirm('Are you sure to want to delete it?')"><span class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
-                                    </td> -->
+                                    </td>
                                 </tr>
                                 @php
                                     $j++;
                                 @endphp
 
-                                @endforeach
+                                @endforeach --}}
                         </tbody>
                     </table>
                 </div>

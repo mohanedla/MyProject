@@ -115,14 +115,20 @@ class home extends Controller
 
         public function notic()
         {
-
-            return View('notic.d_notic');
+            $page = "notifiction";
+            return View('notic.d_notic',compact("page"));
 
         }
 
         public function report()
         {
             $page = "reports";
+
+            return View('report.d_report',compact("page"));
+        }
+        public function Bills()
+        {
+            $page = "bills";
 
             return View('report.d_report',compact("page"));
         }

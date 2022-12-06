@@ -24,6 +24,7 @@ return new class extends Migration
             $table->integer('category_id');
             $table->integer('quantity');
             $table->float('price');
+            $table->float('price_purchas');
             $table->string('profile_image')->nullable();
             $table->string('all_images')->nullable();
 

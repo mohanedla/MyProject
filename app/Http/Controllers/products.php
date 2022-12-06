@@ -193,6 +193,7 @@ class products extends Controller
         $product->specification=request('product_specification');
         $product->quantity=request('product_quantity');
         $product->price=request('product_price');
+        $product->price_purchas=request('product_price_purchas');
         $product->profile_image=request()->file('product_image')[0]? request()->file('product_image')[0]->store('public'):null;
         $product->admin_id=Auth::id();
         $product->save();
@@ -250,6 +251,7 @@ class products extends Controller
         $product->specification=request('product_specification');
         $product->quantity=request('product_quantity');
         $product->price=request('product_price');
+        $product->price_purchas=request('product_price_purchas');
         $images=request()->file('product_image');
         // dd($images);
 
@@ -309,8 +311,15 @@ class products extends Controller
         Size_Product::where('product_id', $id)->delete();
         Image_Product::where('product_id', $id)->delete();
         Toastr::success('The product has been deleted successfully :)','Success');
-
-        return redirect('/product.products');
+        if($product->collection=="Men"){
+            return redirect()->route('all_product',['id'=>1]);
+        }
+        elseif($product->collection=="Women"){
+            return redirect()->route('all_product',['id'=>2]);
+        }
+        else{
+            return redirect()->route('all_product',['id'=>3]);
+        }
     }
 
 }

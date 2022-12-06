@@ -125,7 +125,14 @@ class home extends Controller
             $page = "bills";
             return View('bills.d_bills',compact("page"));
         }
-    public function footer()
+
+        public function Bills1()
+        {
+            $page = "bills";
+            return View('bills.Bills',compact("page"));
+        }
+    public
+     function footer()
         {
             return View('footer');
         }

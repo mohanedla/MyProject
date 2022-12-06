@@ -110,6 +110,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/d_notic',[App\Http\Controllers\home::class,'notic']);
     Route::get('/d_report',[App\Http\Controllers\home::class,'report']);
     Route::get('/d_Bills',[App\Http\Controllers\home::class,'bills']);
+    Route::get('/Bills',[App\Http\Controllers\home::class,'Bills1']);
 
 
 

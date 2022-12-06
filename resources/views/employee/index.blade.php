@@ -221,8 +221,8 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">  </h1><br>
-                    <h1 class="modal-title fs-5" id="productName"></h1>
+                    <h1 class="modal-title fs-5" > {{ __('Supervisor personal data') }}</h1><br>
+                    <h1 class="modal-title fs-5"></h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -232,7 +232,7 @@
                             <tr>
                                
                                 <td>
-                                    <img style="width: 35%;   margin-left: 30px;" src="{{asset(Storage::url($x->profile_image))}}" alt=""></td>
+                                    <img style="width: 55%;   margin-left: 30px;" src="{{asset(Storage::url($x->profile_image))}}" alt=""></td>
                                     <td class="text-center">
                             </tr>
 
@@ -243,9 +243,9 @@
                         <tbody id="bodyrow">
                         </tbody>
                     </table>
-                    <td>{{$x->name}}</td>
-<tr>    </tr>
-                    <td>{{$x->email}}</td>
+                    <td>{{ __('Name') }} : &nbsp {{$x->name}}</td>
+                    <br>
+                    <td> {{ __('Email Address') }} : &nbsp {{$x->email}}</td>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary"

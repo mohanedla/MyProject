@@ -1493,6 +1493,7 @@ input#amount {
     color: #000;
 }
 
+
 /* ----------------------------------------------
 	3.2.1 main banner
 ----------------------------------------------- */
@@ -2830,6 +2831,9 @@ height: 100vh;
 border-radius: 0;
 border: none;
 }
+
+
+
 
 .modal.modal-fullscreen .modal-body {
 overflow-y: auto;

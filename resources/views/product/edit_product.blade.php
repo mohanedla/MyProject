@@ -218,7 +218,7 @@
                                             <fieldset class="form-group">
                                                 <select class="form-select @error('role_name') is-invalid @enderror" required
                                                     name="product_name" id="role_name">
-                                                    <option selected value="{{$product->category_id}}">{{$product->category->name}} </option>
+                                                    <option selected value="{{$product->category_id}}">{{$product->name}} </option>
                                                     @foreach ($categories as $category)
                                                     @if($product->category_id != $category->id)
                                                         <option value="{{ $category->id }}">{{ __($category->name) }}
@@ -267,22 +267,7 @@
                                         </div>
                                     </div>
 
-                                    {{-- <div class="col-md-6 col-12">
-                                        <div class="form-group">
-                                            <label for="company-column">المجموعة</label>
-                                            <fieldset class="form-group">
-                                                <select class="form-select @error('role_name') is-invalid @enderror" required
-                                                    name="product_collection">
-                                                    <option selected value="{{$product->collection}}">{{$product->collection}} </option>
-                                                    <option value="Men">Men</option>
-                                                    <option value="Women">Women</option>
-                                                    <option value="Kids">Kids</option>
-                                                </select>
-
-                                            </fieldset>
-                                        </div>
-                                    </div> --}}
-
+                            
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
                                             <label for="company-column">{{ __('Size') }}</label>
@@ -332,22 +317,30 @@
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
 
-                                            <label for="email-id-column">{{ __('price') }}</label>
-                                            <input type="text" id="email-id-column" value="{{$product->price}}" class="form-control" required
-                                                name="product_price" placeholder="{{ __('enter price') }}">
+                                            <label for="email-id-column">{{ __('Purchasing price') }}</label>
+                                            <input type="text" id="email-id-column" value="{{$product->price_purchas}}" class="form-control" required
+                                                name="product_price_purchas" placeholder="{{ __('enter price') }}">
                                         </div>
                                     </div>
-
+                                    
                                     <div class="col-md-6 col-12">
                                         <div class="form-group has-icon-lefts">
-                                            <br>
+                                            
                                             <label for="email-id-column"> {{ __('Upload Product Picture') }}</label>
                                             <input type="file" class="form-control" placeholder="Name"
-                                                id="first-name-icon" name="product_image[]" multiple/>
+                                            id="first-name-icon" name="product_image[]" multiple/>
                                             {{-- <div class="form-control-icon avatar avatar.avatar-im">
                                                 <img src="{{ URL::to('/images/'. $data[0]->avatar) }}">
                                             </div> --}}
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group">
 
+                                            <label for="email-id-column">{{ __('Sellig price') }}</label>
+                                            <input type="text" id="email-id-column" value="{{$product->price}}" class="form-control" required
+                                                name="product_price" placeholder="{{ __('enter price') }}">
                                         </div>
                                     </div>
 

@@ -198,8 +198,7 @@
 
 
                     <td class="text-center">
-                                    <a data-bs-toggle="modal" data-bs-target="#type_men"
-                                    data-bs-whatever="@mdo" >
+                                    <a href="Bills" >
                                         <span class="badge bg-info"><i class="bi bi-eye-fill"></i></span>
                                     </a>
 

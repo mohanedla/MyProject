@@ -263,11 +263,12 @@
             </section>
         </div>
         <div class="modal fade" id="type_men" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+       
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel"> {{ __('Brand') }}  </h1><br>
-                    <h1 class="modal-title fs-5" id="productName"></h1>
+                    <h1 class="modal-title fs-5" > {{ __('Brand') }}</h1><br>
+                    <h1 class="modal-title fs-5"></h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -275,16 +276,26 @@
                     <table class="table table-striped" id="table1">
                         <thead>
                             <tr>
-                                <!-- <th style="width: 50px;" scope="col">الالوان</th>
-                                <th style="width: 50px;" scope="col">المقاسات</th> -->
+                               
+                                <td>
+                                    <img style="width: 66%;   margin-left: 30px;" src="{{asset(Storage::url($view->profile_image))}}" alt=""></td>
+                                    <td class="text-center">
                             </tr>
+
+                            
                         </thead>
-                        <tbody id="bodyrow">
-
-
-
+                        
+                    
+                        <tbody id="bodyrow" style=" word-spacing: 50px; " >
                         </tbody>
                     </table>
+                            <td > {{ __('Name') }} : &nbsp; {{$view->name}} </td>
+                            <td > &nbsp; &nbsp; &nbsp; &nbsp; {{ __('Email Address') }} : &nbsp {{$view->email}}</td>
+                            <br>
+                            <td>{{$view->country}} :  {{ __('Country') }} &nbsp; </td>
+                            <td>&nbsp; &nbsp; &nbsp; &nbsp;  {{$view->address}}  :&nbsp; {{ __('Address') }} </td>
+                            <br>
+                            <td> {{ __('Phone Number') }}  :   {{$view->phone_number}} </td>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary"
@@ -294,6 +305,7 @@
                 </form>
             </div>
         </div>
+    </div>
     </div>
         <footer>
             <div class="footer clearfix mb-0 text-muted ">

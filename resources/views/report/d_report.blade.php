@@ -75,7 +75,7 @@
 
             </li><!-- End Notification Nav -->
 
-    
+
 
             <li class="nav-item dropdown pe-3">
 
@@ -144,7 +144,7 @@
         <div class="page-title">
             <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
-                <h3>{{ __('user management control') }}</h3>
+                <h3>{{ __('Reports management') }}</h3>
                 <br>
                 <br>
                 </div>
@@ -152,7 +152,7 @@
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                         <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="dashboard_home">{{ __('Dashboard') }}</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">{{ __('Users') }}</li>
+                                <li class="breadcrumb-item active" aria-current="page">{{ __('Reports') }}</li>
                         </ol>
                     </nav>
                 </div>
@@ -160,14 +160,60 @@
         </div>
         {{-- message --}}
         {!! Toastr::message() !!}
+      
         <section class="section">
             <div class="card">
                 <div class="card-header">
-                <h4>{{ __('Users List') }}</h4>
-               
+                 <h4>{{ __('reports List') }}</h4>
+                    {{-- <div class="buttons"> --}}
+                        <a style="float: right; margin: 3px; " href="#" class="btn btn-secondary"> {{ __('اكثر 5 منتجات مبيعا') }}</a>
+                        <a style="float: right; margin: 3px;" href="#" class="btn btn-secondary"> {{ __('المنتجات المباعة') }}</a>
+                        <a style="float: right; margin: 3px;" href="#" class="btn btn-secondary"> {{ __('جرد مالي ') }}</a>
+                        <a style="float: right; margin: 3px;" href="#" class="btn btn-secondary"> {{ __('أعلى منتج مبيعا') }}</a>
+                        <a style="float: right; margin: 3px;" href="#" class="btn btn-secondary"> {{ __('الأرباح') }}</a>
+                        <a style="float: right; margin: 3px;" href="#" class="btn btn-secondary"> {{ __('جرد المنتجات') }}</a>
+
+                  {{-- </div> --}}
+                 
                 </div>
                 <div class="card-body">
-                    
+                    <table class="table table-striped" id="table1">
+                        <thead>
+                            <tr>
+                            <th style="width: 50px;" scope="col">{{ __('#')}}</th>
+                            <th style="width: 50px;" scope="col">{{ __('name admin') }}</th>
+                            <th style="width: 50px;" scope="col">{{ __('نوع التقرير') }}</th>
+                                <th style="width: 50px;" scope="col"></th>
+                        
+                        </tr>
+                    </thead>
+                    <td>
+                    </td>
+
+                    <td>
+                    </td> 
+                    <td>
+                    </td>
+
+
+                    <td class="text-center">
+                    @if (Auth::user()->role == '1')
+
+                                    <a data-bs-toggle="modal" data-bs-target="#type_men"
+                                    data-bs-whatever="@mdo" >
+                                        <span class="badge bg-info"><i class="bi bi-eye-fill"></i></span>
+                                    </a>
+                                    @endif
+
+
+                                 
+                                    <a href="#" onclick="return confirm('Are you sure to want to delete it?')"><span class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
+                                </td>
+                        <tbody>
+
+                           
+                        </tbody>
+                    </table>
                 </div>
                 <script>
                     $(document).ready(function () {
@@ -223,7 +269,7 @@
     </footer>
 </div>
 <script>
-    
+
 function showDetails(pro,sizes,colors){
     document.getElementById("productName").innerHTML = pro['name'];
     var table = document.getElementById("bodyrow");
@@ -235,7 +281,7 @@ function showDetails(pro,sizes,colors){
     for(var i=0; i<max;i++){
         if (top) { var row = table.insertRow(-1); }
         else { var row = table.insertRow(); }
-      
+
         // (B3) INSERT CELLS
         var cell = row.insertCell();
         cell.innerHTML = colors[i]['color']['name'];

@@ -180,7 +180,8 @@
                                 <th style="width: 50px;" scope="col">{{ __('Collection')}}</th>
                                 <th style="width: 50px;" scope="col">{{ __('Specifications')}}</th>
                                 <th style="width: 50px;" scope="col">{{ __('Quantity')}}</th>
-                                <th style="width: 50px;" scope="col">{{ __('price')}}</th>
+                                <th style="width: 50px;" scope="col">{{ __('Purchasing price')}}</th>
+                                <th style="width: 50px;" scope="col">{{ __('Selling price')}}</th>
                                 <th style="width: 50px;" scope="col">{{ __('admin')}}</th>
                                 <th style="width: 50px;" scope="col">{{ __('photo')}}</th>
                                 <th style="width: 50px;" scope="col"></th>
@@ -196,12 +197,13 @@
                                 <tr>
                                     <td>{{$i++}}</td>
                                     <td>{{$x->name}}</td>
-                                    <td>{{$x->category->name}}</td>
+                                    <td>{{$x->name}}</td>
                                     <td>{{$x->brand->name}}</td>
                                     <td>{{$x->collection}}</td>
                                     <td>{{$x->specification}}</td>
                                     <td>{{$x->quantity}}</td>
                                     <td>{{$x->price}}$</td>
+                                    <td>{{$x->price_purchas}}$</td>
                                     <td>{{$x->user->name}}</td>
                                     <td><img style="width: 50%;" src="{{asset(Storage::url($x->profile_image))}}" alt=""></td>
                                     <td class="text-center">

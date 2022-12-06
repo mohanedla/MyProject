@@ -40,8 +40,8 @@
                         </div>
                     </div>
                 </li>
-
-                @if($page == "employees")
+                @if (Auth::user()->role == '1')
+                 @if($page == "employees")
                 <li class="sidebar-item active">
                 @else
                 <li class="sidebar-item">
@@ -51,6 +51,8 @@
                         <span>{{ __('admin management') }}</span>
                     </a>
                 </li>
+                @endif
+
                 @if($page == "users")
                 <li class="sidebar-item active">
                 @else

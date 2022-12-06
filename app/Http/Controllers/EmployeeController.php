@@ -45,11 +45,10 @@ class EmployeeController extends Controller
         $user->email = request('email');
         $user->role = 2;
         $user->password = Hash::make(request('password'));
+        $user->profile_image=request()->file('profile_image') ? request()->file('profile_image')->store('public') : null;
         $user->save();
         Toastr::success('Create new User successfully :)','Success');
         return redirect('/employees');
-        // return redirect('/employeess')->with('success','Thank You!');
-        // return redirect()->back()->with('success','تــمــت إضــافــة مـسـتـخـدم بــنــجــاح');
     }
 
     public function delete_employee($id)

@@ -32,8 +32,9 @@ class brands extends Controller
     public function brand()
     {
         $brand=brand::all();
+        $view=brand::find($id);
         $page = "brands";
-        return View('brand.d_brand',compact('brand','page'));
+        return View('brand.d_brand',compact('brand','view','page'));
 
     }
     public function addbrand()
@@ -74,6 +75,7 @@ class brands extends Controller
 
         return redirect('/d_brand');
     }
+
     public function update_brand($id)
     {
         $edit= brand::find($id);

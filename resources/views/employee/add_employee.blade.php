@@ -224,10 +224,16 @@
                                                 name="password_confirmation" placeholder="{{ __('enter password again') }}">
                                         </div>
                                     </div>
-
-
-                                </div>
-
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group">
+                                            <div class="form-group">
+                                                <label for="email-id-column"> {{ __('Upload Profile Picture') }}</label>
+                                                <input type="file" class="form-control" required 
+                                                placeholder=""
+                                                    id="first-name-icon" name="profile_image">
+                                            </div>
+                                        </div>
+                                    </div>
 
                                 <div class="col-12 d-flex justify-content-end">
                                     <button type="submit" class="btn btn-primary me-1 mb-1">{{ __('Save') }}</button>

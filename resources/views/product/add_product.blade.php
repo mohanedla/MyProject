@@ -316,27 +316,34 @@
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
 
-                                            <label for="email-id-column">{{ __('price') }}</label>
+                                            <label for="email-id-column">{{ __('Purchasing price') }}</label>
                                             <input type="text" id="email-id-column" class="form-control" required
-                                                name="product_price" placeholder="{{ __('enter price') }}">
+                                                name="product_price_purchas" placeholder="{{ __('enter price') }}">
                                         </div>
                                     </div>
 
+                                    
                                     <div class="col-md-6 col-12">
                                         <div class="form-group has-icon-lefts">
-                                            <br>
+                                            
                                             <label for="email-id-column"> {{ __('Upload Product Picture') }}</label>
                                             <input type="file" class="form-control" placeholder="Name" required
-                                                id="first-name-icon" name="product_image[]" multiple />
+                                            id="first-name-icon" name="product_image[]" multiple />
                                             {{-- <div class="form-control-icon avatar avatar.avatar-im">
                                                 <img src="{{ URL::to('/images/'. $data[0]->avatar) }}">
                                             </div> --}}
-
+                                            
                                         </div>
                                     </div>
+                                    <div class="col-md-6 col-12">
+                                            <div class="form-group">
+    
+                                                <label for="email-id-column">{{ __('selling price') }}</label>
+                                                <input type="text" id="email-id-column" class="form-control" required
+                                                    name="product_price" placeholder="{{ __('enter price') }}">
+                                            </div>
+                                        </div>
                                 </div>
-
-
                                 <div class="col-12 d-flex justify-content-end">
                                     <button type="submit" class="btn btn-primary me-1 mb-1">{{ __('Save') }}</button>
                                     <button type="reset"

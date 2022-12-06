@@ -36,8 +36,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/cart_page',[App\Http\Controllers\home::class,'cart_page']);
     Route::get('/checkout_page',[App\Http\Controllers\home::class,'checkout_page']);
     Route::get('/foot',[App\Http\Controllers\home::class,'footer']);
-    Route::get('/notic',[App\Http\Controllers\home::class,'notic']);
-    Route::get('/report',[App\Http\Controllers\home::class,'report']);
+    // Route::get('/notic',[App\Http\Controllers\home::class,'notic']);
+    // Route::get('/report',[App\Http\Controllers\home::class,'report']);
 
 
 
@@ -110,9 +110,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/d_notic',[App\Http\Controllers\home::class,'notic']);
     Route::get('/d_report',[App\Http\Controllers\home::class,'report']);
     Route::get('/d_Bills',[App\Http\Controllers\home::class,'Bills']);
-
-
-
+    Route::get('/Bills',[App\Http\Controllers\home::class,'Bills1']);
 
 
 });

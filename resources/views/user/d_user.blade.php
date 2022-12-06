@@ -186,6 +186,10 @@
                                     <td>{{$x->name}}</td>
                                     <td>{{$x->email}}</td>
                                     <td class="text-center">
+                                    <a data-bs-toggle="modal" data-bs-target="#type_men"
+                                        data-bs-whatever="@mdo" onclick="showDetails({{json_encode($x)}},{{json_encode($x->sizes)}},{{json_encode($x->colors)}})">
+                                            <span class="badge bg-info"><i class="bi bi-eye-fill"></i></span>
+                                        </a>
                                         <a href="{{route('delete_user',['id'=>$x->id])}}" onclick="return confirm('Are you sure to want to delete it?')"><span class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
                                     </td>
                                 </tr>
@@ -207,7 +211,7 @@
     </div>
 
     {{-- for categories --}}
-    <div class="modal fade" id="type_men" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- <div class="modal fade" id="type_men" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -235,6 +239,45 @@
                     <button type="button" class="btn btn-secondary"
                         data-bs-dismiss="modal">{{ __('Close') }}</button>
                     <button type="submit" class="btn btn-primary">{{ __('Save') }}</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div> -->
+    <div class="modal fade" id="type_men" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" > {{ __('user personal data') }}</h1><br>
+                    <h1 class="modal-title fs-5"></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <table class="table table-striped" id="table1">
+                        <thead>
+                            <!-- <tr>
+                               
+                                <td>
+                                    <!-- <img style="width: 35%;   margin-left: 30px;" src="{{asset(Storage::url($x->profile_image))}}" alt=""></td>
+                                    <td class="text-center"> 
+                            </tr> -->
+
+                            
+                        </thead>
+                        
+                    
+                        <tbody id="bodyrow">
+                        </tbody>
+                    </table>
+                    <td>{{ __('Name') }} : &nbsp {{$x->name}}</td>
+                    <br>
+                    <td> {{ __('Email Address') }} :&nbsp {{$x->email}}</td>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                        data-bs-dismiss="modal">{{ __('Close') }}</button>
+                    <!-- <button type="submit" class="btn btn-primary">{{ __('Save') }}</button> -->
                 </div>
                 </form>
             </div>

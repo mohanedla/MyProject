@@ -163,7 +163,7 @@
         <section class="section">
             <div class="card">
                 <div class="card-header">
-                 <h4>{{ __('Bills List') }}</h4>
+                 <h4>{{ __('notice List') }}</h4>
                 
                  
                 </div>
@@ -198,7 +198,8 @@
 
 
                     <td class="text-center">
-                                    <a href="Bills" >
+                                    <a data-bs-toggle="modal" data-bs-target="#type_men"
+                                    data-bs-whatever="@mdo" >
                                         <span class="badge bg-info"><i class="bi bi-eye-fill"></i></span>
                                     </a>
 
@@ -221,11 +222,11 @@
     </div>
 
     {{-- for categories --}}
-    <div class="modal fade" id="type_men" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- <div class="modal fade" id="type_men" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <!-- <h1 class="modal-title fs-5" id="exampleModalLabel"> بيانات المنتج </h1><br> -->
+                    <h1 class="modal-title fs-5" id="exampleModalLabel"> بيانات المنتج </h1><br>
                     <h1 class="modal-title fs-5" id="productName"></h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -234,8 +235,8 @@
                     <table class="table table-striped" id="table1">
                         <thead>
                             <tr>
-                                <!-- <th style="width: 50px;" scope="col">الالوان</th>
-                                <th style="width: 50px;" scope="col">المقاسات</th> -->
+                                <th style="width: 50px;" scope="col">الالوان</th>
+                                <th style="width: 50px;" scope="col">المقاسات</th>
                             </tr>
                         </thead>
                         <tbody id="bodyrow">
@@ -253,7 +254,7 @@
                 </form>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <footer>
         <div class="footer clearfix mb-0 text-muted ">

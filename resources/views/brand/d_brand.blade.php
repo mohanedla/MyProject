@@ -1,6 +1,6 @@
 @extends('dashboard.layouts.master')
 @section('menu')
-    @extends('dashboard.sidebar.dashboard')
+@extends('dashboard.sidebar.dashboard')
 @endsection
 @section('content')
     <header id="header" class="header fixed-top d-flex align-items-center">
@@ -164,7 +164,7 @@
 
 
                         <a style="float: right;" href="/dashboard_add_brand"
-                            class="btn btn-secondary rounded-pill">{{ __('add brand') }}</a>
+                        class="btn btn-secondary rounded-pill">{{ __('add brand') }}</a>
 
                         {{-- </div> --}}
                     </div>
@@ -179,7 +179,7 @@
                                     <th style="width: 50px;" scope="col">{{ __('Address') }}</th>
                                     <th style="width: 50px;" scope="col">{{ __('E-mail') }}</th>
                                     <th style="width: 50px;" scope="col">{{ __('Phone Number') }}</th>
-                                    <th style="width: 50px;" scope="col">{{ __('photo') }}</th>
+                                    <th style="width: 50px;" scope="col">{{ __('photo') }}</th> 
                                     <th style="width: 50px;" scope="col">{{ __('') }}</th>
 
                                 </tr>
@@ -226,35 +226,34 @@
                                 </tr>
                             @endforeach --}}
 
-                                @php
-                                    $i = 1;
-                                @endphp
-                                @foreach ($brand as $x)
-                                    <tr>
-                                        <td>{{ $i++ }}</td>
-                                        <td>{{ $x->name }}</td>
-                                        <td>{{ $x->id }}</td>
-                                        <td>{{ $x->country }}</td>
-                                        <td>{{ $x->address }}</td>
-                                        <td>{{ $x->email }}</td>
-                                        <td>{{ $x->phone_number }}</td>
-                                        <td><img style="width: 50%; height:50%;"
-                                                src="{{ asset(Storage::url($x->profile_image)) }}" alt=""></td>
-                                        <td class="text-center">
-                                            <a data-bs-toggle="modal" data-bs-target="#type_men" data-bs-whatever="@mdo"
-                                                onclick="showDetails({{ json_encode($x) }},{{ json_encode(asset(Storage::url($x->profile_image))) }}) ">
-                                                <span class="badge bg-info"><i class="bi bi-eye-fill"></i></span>
-                                            </a>
-                                            <a href="/dashboard_edit_brand/{{ $x->id }}">
-                                                <span class="badge bg-success"><i class="bi bi-pencil-square"></i></span>
-                                            </a>
-                                            <a href="/delete_brand/{{ $x->id }}"
-                                                onclick="return confirm('Are you sure to want to delete it?')"><span
-                                                    class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
-                                        </td>
-                                    </tr>
-                                    </tr>
-                                @endforeach
+                            @php
+                            $i=1;
+                        @endphp
+                        @foreach($brand as $x)
+                        <tr>
+                          <td>{{$i++}}</td>
+                          <td>{{$x->name}}</td>
+                          <td>{{$x->id}}</td>
+                          <td>{{$x->country}}</td>
+                          <td>{{$x->address}}</td>
+                          <td>{{$x->email}}</td>
+                          <td>{{$x->phone_number}}</td>
+                          <td><img style="width: 50%; height:50%;" src="{{asset(Storage::url($x->profile_image))}}" alt=""></td>
+                          <td class="text-center">
+                          <a data-bs-toggle="modal" data-bs-target="#type_men"
+                                        data-bs-whatever="@mdo" onclick="showDetails({{json_encode($x)}},{{json_encode($x->sizes)}},{{json_encode($x->colors)}})">
+                                            <span class="badge bg-info"><i class="bi bi-eye-fill"></i></span>
+                                        </a>
+                            <a href="/dashboard_edit_brand/{{$x->id}}">
+                                <span class="badge bg-success"><i class="bi bi-pencil-square"></i></span>
+                            </a>
+                            <a href="/delete_brand/{{$x->id}}"
+                                onclick="return confirm('Are you sure to want to delete it?')"><span
+                                    class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
+                        </td>
+                    </tr>
+                        </tr>
+                        @endforeach
 
 
                             </tbody>
@@ -264,75 +263,60 @@
             </section>
         </div>
         <div class="modal fade" id="type_men" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+       
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" > {{ __('Brand') }}</h1><br>
+                    <h1 class="modal-title fs-5"></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
 
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5"> {{ __('Brand') }}</h1><br>
-                        <h1 class="modal-title fs-5"></h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-
-                        <table class="table table-striped" id="table1">
-                            <thead>
-                                <tr>
-
-                                    <td>
-                                        <img id="image" style="width: 66%; margin-left: 30px;">
-                                    </td>
+                    <table class="table table-striped" id="table1">
+                        <thead>
+                            <tr>
+                               
+                                <td>
+                                    <img style="width: 66%;   margin-left: 30px;" src="{{asset(Storage::url($x->profile_image))}}" alt=""></td>
                                     <td class="text-center">
-                                </tr>
+                            </tr>
 
-
-                            </thead>
-
-
-                            <tbody id="bodyrow" style=" word-spacing: 50px; ">
-                            </tbody>
-                        </table>
-                        <td> {{ __('Name') }} : &nbsp; <span id="brand_name"></span> </td>
-                        <td> &nbsp; &nbsp; &nbsp; &nbsp; {{ __('Email Address') }} : &nbsp <span id="brand_email"></span>
-                        </td>
-                        <br>
-                        <td>{{ __('Country') }} : <span id="brand_country"></span> &nbsp; </td>
-                        <td>&nbsp; &nbsp; &nbsp; &nbsp; <span id="brand_address"></span> :&nbsp; {{ __('Address') }} </td>
-                        <br>
-                        <td> {{ __('Phone Number') }} : <span id="brand_phone"></span> </td>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary"
-                            data-bs-dismiss="modal">{{ __('Close') }}</button>
-
-                    </div>
-                    </form>
+                            
+                        </thead>
+                        
+                    
+                        <tbody id="bodyrow" style=" word-spacing: 50px; " >
+                        </tbody>
+                    </table>
+                            <td > {{ __('Name') }} : &nbsp; {{$x->name}} </td>
+                            <td > &nbsp; &nbsp; &nbsp; &nbsp; {{ __('Email Address') }} : &nbsp {{$x->email}}</td>
+                            <br>
+                            <td> {{ __('Country') }} : &nbsp; {{$x->country}}  </td>
+                            <td>&nbsp; &nbsp; &nbsp; &nbsp;  {{$x->address}}  :&nbsp; {{ __('Address') }} </td>
+                            <br>
+                            <td> {{ __('Phone Number') }}  :   {{$x->phone_number}} </td>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"
+                        data-bs-dismiss="modal">{{ __('Close') }}</button>
+                    <!-- <button type="submit" class="btn btn-primary">{{ __('Save') }}</button> -->
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+        <footer>
+            <div class="footer clearfix mb-0 text-muted ">
+                <div class="float-start">
+                    <!-- <p>2021 &copy; Soeng Souy</p> -->
+                </div>
+                <div class="float-end">
+                    <!-- <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a
+                            href="http://soengsouy.com">Soeng Souy</a></p> -->
                 </div>
             </div>
-        </div>
+        </footer>
     </div>
-    <footer>
-        <div class="footer clearfix mb-0 text-muted ">
-            <div class="float-start">
-                <!-- <p>2021 &copy; Soeng Souy</p> -->
-            </div>
-            <div class="float-end">
-                <!-- <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a
-                                                    href="http://soengsouy.com">Soeng Souy</a></p> -->
-            </div>
-        </div>
-    </footer>
-    </div>
-    <script>
-        function showDetails(brand, img) {
-            document.getElementById("brand_name").innerHTML = brand['name'];
-            document.getElementById("brand_email").innerHTML = brand['email'];
-            document.getElementById("brand_country").innerHTML = brand['country'];
-            document.getElementById("brand_address").innerHTML = brand['address'];
-            document.getElementById("brand_phone").innerHTML = brand['phone_number'];
-            var myImage = document.getElementById("image");
-            myImage.src = img;
-            console.log(img);
-            myImage.alt = 'alt';
-        }
-    </script>
 @endsection

@@ -64,6 +64,7 @@
                                 </div>
                             </li>
 
+
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -134,12 +135,15 @@
                             </li>
 
                         </ul><!-- End Profile Dropdown Items -->
-                    </li><!-- End Profile Nav -->
+                    </li>
+                    <!-- End Profile Nav -->
 
                 </ul>
-            </nav><!-- End Icons Navigation -->
+            </nav>
+            <!-- End Icons Navigation -->
 
-        </header><!-- End Header -->
+        </header>
+        <!-- End Header -->
         <div class="page-heading">
             <h2>{{ __('Dashboard') }}</h2>
         </div>

@@ -268,7 +268,12 @@
   "admins management control":"إدارة تحكم المشرفين",
   "user management control":"إدارة تحكم المستخدمين",
 
-
+"Product data":"بيانات المنتج",
+"Colors":"الألوان",
+"Sizes":"المقاسات",
+"Purchasing price":"سعر الشراء",
+"Selling price":"سعر البيع",
+"":"",
   "all admin":"المشرفين",
   "Supervisor personal data":"بيانات المشرف الشخصية",
   "user personal data":"بيانات المستخدم الشخصية",

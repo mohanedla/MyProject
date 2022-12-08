@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <!--[if (gte IE 9)|!(IE)]><!-->
 <html lang="en">
 <!--<![endif]-->
@@ -97,14 +97,16 @@
             <div class="header">
                 <div class="container">
                     <div class="row">
+                    <br>
                         <div class="col-xs-12 col-sm-4">
                         </div>
-                        <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="index"> <img
+                        <div class="navbar-header col-xs-6 col-sm-4"> <a  style="margin-top=20px width=300px height=100px" href="index"> <img
                                     alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
-                        <div class="col-xs-6 col-sm-4 shopcart">
+                        <!-- <div class="col-xs-6 col-sm-4 shopcart">
 
-                        </div>
+                        </div> -->
                     </div>
+                    <br>
                     <nav class="navbar">
                         <p>menu</p>
                         <button class="navbar-toggle" type="button" data-toggle="collapse"
@@ -113,7 +115,7 @@
                                     <div class="collapse navbar-collapse js-navbar-collapse">
                                         <ul id="menu" class="nav navbar-nav">
                                             <li> <a href="home">{{ __('Home') }}</a></li>
-                                            <li class="dropdown mega-dropdown"> <a href="#" class="dropdown-toggle"
+                                            <!-- <li class="dropdown mega-dropdown"> <a href="#" class="dropdown-toggle"
                                                     data-toggle="dropdown">{{ __('Collection') }} </a>
                                                 <ul class="dropdown-menu mega-dropdown-menu row">
                                                     <li class="col-md-3">
@@ -177,16 +179,18 @@
 
                                                     </div>
                                                     <!-- End Carousel Inner -->
-                                                </li>
+                                                <!-- </li> -->
                                                 <!-- /.carousel -->
-                                            </ul>
+                                            <!-- </ul>
                                         <li class="col-md-3">
                                         </li>
                                         </ul>
-                                        </li>
-                                        <li> <a href="shop">{{ __('shop') }}</a></li>
+                                        </li> --> 
+                                        <!-- <li> <a href="shop">{{ __('shop') }}</a></li> -->
                                         <li> <a href="about">{{ __('About us') }}</a></li>
+                                        @if (Auth::User())   
                                         <li> <a href="contact_us">{{ __('Contact us') }}</a></li>
+                                        @endif
                                         </ul>
                                     </div>
                         <!-- /.nav-collapse -->
@@ -199,14 +203,14 @@
         <div class="container">
             <div class="row ">
                 <!-- =====  BANNER STRAT  ===== -->
-                <div class="col-sm-12">
+                <!-- <div class="col-sm-12">
                     <div class="breadcrumb ptb_20">
                         <ul>
                             <li><a href="/home">{{ __('Home') }}</a></li>
                             <li class="active">{{ __('Login') }}</li>
                         </ul>
                     </div>
-                </div>
+                </div> -->
                 <div class="col-sm-8 col-lg-9 mtb_20">
                     <!-- contact  -->
                     <div class="row">
@@ -219,7 +223,7 @@
                                                 id="login-form-link">{{ __('Login') }}</a>
                                         </div>
                                         <div class="col-xs-6">
-                                            <!-- <a href="#admin_login" class="btn_icone" data-toggle="modal" data-whatever="@getbootstrap">{{ __('Are You Admin') }}</a> -->
+                                            <a href="#admin_login" class="btn_icone" data-toggle="modal" data-whatever="@getbootstrap">{{ __('View the conditions') }}</a>
                                             <div class="col-xs-6">
                                                 <a href="#" id="register-form-link">{{ __('Register') }}</a>
                                             </div>
@@ -349,7 +353,7 @@
                                                 <div class="form-group">
                                                     <div class="row">
                                                         <div class="col-sm-6 col-sm-offset-3">
-                                                            <input type="submit" name="register-submit"
+                                                            <input type="submit" name="/home"
                                                                 id="register-submit" tabindex="4"
                                                                 class="form-control btn btn-register"
                                                                 value="{{ __('Register Now') }}">
@@ -383,23 +387,28 @@
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">{{ __('Password')}}</h5>
+                  <h5 class="modal-title" id="exampleModalLabel">{{ __('الشروط')}}</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
                 <div class="modal-body">
                     <form  action="{{ route('ValidationdAmin') }}" method="post" enctype="multipart/form-data">
-                        @csrf
+                        <br>
+                        <p>
+                            hgfdskjhgfgfhgfgf
+                        </p>
+                        
+                        <!-- @csrf
                     <div class="form-group">
-                      <label for="firstname" class="col-form-label">{{ __('Password') }} </label>
+                      <label for="firstname" class="col-form-label">{{ __('الشروط') }} </label>
                         <input form-control style="width: 230px" type="text" id="recipient-name" name="password" class="form-input"
                             placeholder="{{ __('Enter Password') }}" required="required" />
                             @error('password')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
-                            @enderror
+                            @enderror -->
                     </div>
 
                 </div>
@@ -424,4 +433,4 @@
 
     </body>
 
-    </html>
+    </html> -->

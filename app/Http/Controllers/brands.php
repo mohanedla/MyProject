@@ -32,9 +32,9 @@ class brands extends Controller
     public function brand()
     {
         $brand=brand::all();
-        $view=brand::find($id);
+        // $view=brand::find($id);
         $page = "brands";
-        return View('brand.d_brand',compact('brand','view','page'));
+        return View('brand.d_brand',compact('brand','page'));
 
     }
     public function addbrand()
@@ -56,7 +56,7 @@ class brands extends Controller
         $page = "brands";
         return View('brand.dashboard_edit_brand',compact('brand','page'));
     }
-    
+
     //هذا للداتا بيز
     public function add_brand () {
 

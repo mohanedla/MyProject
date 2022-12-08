@@ -73,7 +73,7 @@
 
             </li><!-- End Notification Nav -->
 
-    
+
 
             <li class="nav-item dropdown pe-3">
 
@@ -162,7 +162,7 @@
             <div class="card">
                 <div class="card-header">
                 <h4>{{ __('Users List') }}</h4>
-               
+
                 </div>
                 <div class="card-body">
                     <table class="table table-striped" id="table1">
@@ -187,7 +187,7 @@
                                     <td>{{$x->email}}</td>
                                     <td class="text-center">
                                     <a data-bs-toggle="modal" data-bs-target="#type_men"
-                                        data-bs-whatever="@mdo" onclick="showDetails({{json_encode($x)}},{{json_encode($x->sizes)}},{{json_encode($x->colors)}})">
+                                        data-bs-whatever="@mdo" onclick="showDetails({{json_encode($x)}},{{ json_encode(asset(Storage::url($x->profile_image))) }})">
                                             <span class="badge bg-info"><i class="bi bi-eye-fill"></i></span>
                                         </a>
                                         <a href="{{route('delete_user',['id'=>$x->id])}}" onclick="return confirm('Are you sure to want to delete it?')"><span class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
@@ -211,44 +211,13 @@
     </div>
 
     {{-- for categories --}}
-    <!-- <div class="modal fade" id="type_men" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel"> بيانات المنتج </h1><br>
-                    <h1 class="modal-title fs-5" id="productName"></h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
 
-                    <table class="table table-striped" id="table1">
-                        <thead>
-                            <tr>
-                                <th style="width: 50px;" scope="col">الالوان</th>
-                                <th style="width: 50px;" scope="col">المقاسات</th>
-                            </tr>
-                        </thead>
-                        <tbody id="bodyrow">
-
-
-
-                        </tbody>
-                    </table>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary"
-                        data-bs-dismiss="modal">{{ __('Close') }}</button>
-                    <button type="submit" class="btn btn-primary">{{ __('Save') }}</button>
-                </div>
-                </form>
-            </div>
-        </div>
-    </div> -->
     <div class="modal fade" id="type_men" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" > {{ __('user personal data') }}</h1><br>
+                    <h1 class="modal-title fs-5"> {{ __('Employee') }}</h1><br>
                     <h1 class="modal-title fs-5"></h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -256,33 +225,35 @@
 
                     <table class="table table-striped" id="table1">
                         <thead>
-                            <!-- <tr>
-                               
-                                <td>
-                                    <!-- <img style="width: 35%;   margin-left: 30px;" src="{{asset(Storage::url($x->profile_image))}}" alt=""></td>
-                                    <td class="text-center"> 
-                            </tr> -->
+                            <tr>
 
-                            
+                                <td>
+                                    <img id="image" style="width: 66%; margin-left: 30px;">
+                                </td>
+                                <td class="text-center">
+                            </tr>
+
+
                         </thead>
-                        
-                    
-                        <tbody id="bodyrow">
+
+
+                        <tbody id="bodyrow" style=" word-spacing: 50px; ">
                         </tbody>
                     </table>
-                    <td>{{ __('Name') }} : &nbsp {{$x->name}}</td>
-                    <br>
-                    <td> {{ __('Email Address') }} :&nbsp {{$x->email}}</td>
+                    <td> {{ __('Name') }} : &nbsp; <span id="user_name"></span> </td>
+                    <td> &nbsp; &nbsp; &nbsp; &nbsp; {{ __('Email Address') }} : &nbsp <span id="user_email"></span>
+                    </td>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary"
                         data-bs-dismiss="modal">{{ __('Close') }}</button>
-                    <!-- <button type="submit" class="btn btn-primary">{{ __('Save') }}</button> -->
+
                 </div>
                 </form>
             </div>
         </div>
     </div>
+</div>
 
     <footer>
         <div class="footer clearfix mb-0 text-muted ">
@@ -294,25 +265,12 @@
     </footer>
 </div>
 <script>
-    
-function showDetails(pro,sizes,colors){
-    document.getElementById("productName").innerHTML = pro['name'];
-    var table = document.getElementById("bodyrow");
-    table.innerHTML = "";
-    var max = sizes.length;
-    if(max < colors.lenght){
-        var max = colors.length;
+    function showDetails(user, img) {
+        document.getElementById("user_name").innerHTML = user['name'];
+        document.getElementById("user_email").innerHTML = user['email'];
+        var myImage = document.getElementById("image");
+        myImage.src = img;
+        console.log(img);
+        myImage.alt = 'alt';
     }
-    for(var i=0; i<max;i++){
-        if (top) { var row = table.insertRow(-1); }
-        else { var row = table.insertRow(); }
-      
-        // (B3) INSERT CELLS
-        var cell = row.insertCell();
-        cell.innerHTML = colors[i]['color']['name'];
-        cell = row.insertCell();
-        cell.innerHTML = sizes[i]['size']['name'];
-    }
-}
-
 </script>

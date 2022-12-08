@@ -102,8 +102,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/edit_employee/{id}',[App\Http\Controllers\EmployeeController::class,'edit_employee'])->name('edit_employee');
     Route::post('/edit_employee/{id}',[App\Http\Controllers\EmployeeController::class,'update_employee'])->name('update_employee');
     Route::get('/delete_employee/{id}',[App\Http\Controllers\EmployeeController::class,'delete_employee'])->name('delete_employee');
-
-
+    Route::get('change_password', [App\Http\Controllers\EmployeeController::class, 'change_password'])->middleware('auth')->name('change/password');
+    Route::post('change_password/db', [App\Http\Controllers\EmployeeController::class, 'changePasswordDB'])->name('change/password/db');
     Route::get('/d_user',[App\Http\Controllers\users::class,'user']);
     Route::get('/delete_user/{id}',[App\Http\Controllers\user::class,'delete_user'])->name('delete_user');
 
@@ -118,10 +118,6 @@ Auth::routes();
 Route::get('/dashboard_home',function(){
     $page = "home";
     return view('dashboard.home',compact('page'));
-});
-
-Route::get('/change_password',function(){
-    return view('dashboard.usermanagement.change_password');
 });
 Route::get('/dashboard_form',function(){
     return view('dashboard.form.form');

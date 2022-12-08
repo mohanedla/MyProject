@@ -6,7 +6,7 @@ use Brian2694\Toastr\Facades\Toastr;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-
+use App\Rules\MatchOldPassword;
 class EmployeeController extends Controller
 {
     public function employees()
@@ -56,6 +56,26 @@ class EmployeeController extends Controller
         $user = User::find($id)->delete();
         Toastr::success('Delete User successfully :)','Success');
         return redirect('/employees');
+    }
+
+    public function change_password()
+    {
+        $page="home";
+        return view('employee.change_password',compact('page'));
+    }
+
+    // change password in db
+    public function changePasswordDB(Request $request)
+    {
+        $request->validate([
+            'current_password' => ['required', new MatchOldPassword],
+            'new_password' => ['required'],
+            'new_confirm_password' => ['same:new_password'],
+        ]);
+
+        User::find(auth()->user()->id)->update(['password'=> Hash::make($request->new_password)]);
+        Toastr::success('User change successfully :)','Success');
+        return redirect('dashboard_home');
     }
 
 }

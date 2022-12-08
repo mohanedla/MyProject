@@ -198,7 +198,7 @@
                                     <td>{{$i++}}</td>
                                     <td>{{$x->name}}</td>
                                     <td>{{$x->name}}</td>
-                                    <td>{{$x->brand->name}}</td>
+                                    <td>{{$x->brands->name}}</td>
                                     <td>{{$x->collection}}</td>
                                     <td>{{$x->specification}}</td>
                                     <td>{{$x->quantity}}</td>

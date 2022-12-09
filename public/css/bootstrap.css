@@ -1780,7 +1780,6 @@ pre code {
   }
   .col-sm-12 {
     width: 100%;
-    height: 60px;
   }
   .col-sm-11 {
     width: 91.66666667%;
@@ -5454,16 +5453,17 @@ button.list-group-item-danger.active:focus {
 .panel {
   margin-bottom: 20px;
   background-color: #fff;
+  /* border: 1px solid transparent; */
   border: 5px solid transparent;
   border-radius: 4px;
   margin-left: 50px;
   width: 140%;
   -webkit-box-shadow: 0 1px 8px rgba(0, 0, 0, .05);
-          box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
 }
 .panel-body {
   padding: 25px;
-  
+
 }
 .panel-heading {
   padding: 10px 15px;

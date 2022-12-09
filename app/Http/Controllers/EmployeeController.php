@@ -1,12 +1,11 @@
 <?php
-
 namespace App\Http\Controllers;
 use Brian2694\Toastr\Facades\Toastr;
-
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Rules\MatchOldPassword;
+
 class EmployeeController extends Controller
 {
     public function employees()
@@ -57,7 +56,7 @@ class EmployeeController extends Controller
         Toastr::success('Delete User successfully :)','Success');
         return redirect('/employees');
     }
-
+   
     public function change_password()
     {
         $page="home";

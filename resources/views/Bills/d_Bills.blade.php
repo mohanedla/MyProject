@@ -163,7 +163,7 @@
         <section class="section">
             <div class="card">
                 <div class="card-header">
-                 <h4>{{ __('notice List') }}</h4>
+                 <h4>{{ __('Bills List') }}</h4>
                 
                  
                 </div>
@@ -198,7 +198,7 @@
 
 
                     <td class="text-center">
-                                    <a data-bs-toggle="modal" data-bs-target="#type_men"
+                                    <a href="Bills"  data-bs-target="#type_men"
                                     data-bs-whatever="@mdo" >
                                         <span class="badge bg-info"><i class="bi bi-eye-fill"></i></span>
                                     </a>
@@ -267,25 +267,26 @@
 </div>
 <script>
 
-function showDetails(pro,sizes,colors){
-    document.getElementById("productName").innerHTML = pro['name'];
-    var table = document.getElementById("bodyrow");
-    table.innerHTML = "";
-    var max = sizes.length;
-    if(max < colors.lenght){
-        var max = colors.length;
-    }
-    for(var i=0; i<max;i++){
-        if (top) { var row = table.insertRow(-1); }
-        else { var row = table.insertRow(); }
+// function showDetails(pro,sizes,colors)
+{
+//     document.getElementById("productName").innerHTML = pro['name'];
+//     var table = document.getElementById("bodyrow");
+//     table.innerHTML = "";
+//     var max = sizes.length;
+//     if(max < colors.lenght){
+//         var max = colors.length;
+//     }
+//     for(var i=0; i<max;i++){
+//         if (top) { var row = table.insertRow(-1); }
+//         else { var row = table.insertRow(); }
 
-        // (B3) INSERT CELLS
-        var cell = row.insertCell();
-        cell.innerHTML = colors[i]['color']['name'];
-        cell = row.insertCell();
-        cell.innerHTML = sizes[i]['size']['name'];
-    }
-}
+//         // (B3) INSERT CELLS
+//         var cell = row.insertCell();
+//         cell.innerHTML = colors[i]['color']['name'];
+//         cell = row.insertCell();
+//         cell.innerHTML = sizes[i]['size']['name'];
+//     }
+// }
 
 </script>
 @endsection

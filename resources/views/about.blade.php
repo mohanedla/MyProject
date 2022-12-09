@@ -230,9 +230,10 @@
                                                     <ul>
                                                         <li id="myCarousel" class="carousel slide" data-ride="carousel">
                                                             <div class="carousel-inner">
-                                                                <div class="item active"><a href=""> <img
-                                                                            src="{{ asset('images/menu-banner1.jpg') }}"
-                                                                            class="img-responsive" alt="Banner1"></a></div>
+                                                            <div class="item active">
+                                                            <a href=""> <img src="{{ asset('images\uploads\shof_1d433f3c8569e7d-removebg-preview.png') }}"
+                                                                class="img-responsive" alt="Banner1"></a>
+                                                    </div>
                                                             </div>
                                                             <!-- End Carousel Inner -->
                                                         </li>
@@ -242,9 +243,13 @@
                                                 </li>
                                             </ul>
                                         </li>
+                                        @if (Auth::User())
                                         <li> <a href="shop">{{ __('shop') }}</a></li>
+                                        @endif
                                         <li> <a href="about">{{ __('About us') }}</a></li>
+                                        @if (Auth::User())
                                         <li> <a href="contact_us">{{ __('Contact us') }}</a></li>
+                                        @endif
                                         </ul>
                                     </div>
                         <!-- /.nav-collapse -->

@@ -70,9 +70,13 @@ body, html {
 body {
     line-height: 24px;
     color: #9E9E9E;
-    font-size: 14px;
+    font-size: 17px;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
+    /* margin-left: 290px; */
+    margin: auto;
+    width: 100%;
+    padding: 25px;
     letter-spacing: 0.5px;
     background: #000;
 }
@@ -178,7 +182,7 @@ a {
     -o-transition: all 0.25s ease 0s;
 }
 a:hover, a:focus {
-    color: #000;
+    color: rgb(255, 248, 248);
     text-decoration: none;
     transition: all 0.25s ease 0s;
     -moz-transition: all 0.25s ease 0s;
@@ -261,6 +265,7 @@ h6 {
 }
 .mt_10 {
     margin-top: 10px;
+    margin-right: 30px;
 }
 .mt_20 {
     margin-top: 20px;
@@ -970,20 +975,23 @@ label.checkme {
     font-size: 18px;
 }
 .header-top-left, .header-top-right {
-    margin: 8px 0;
+    margin-top:-15px ;
 }
 .header-top-left li, .header-top-right li {
     display: inline;
     cursor: pointer;
     font-size: 18px;
+
 }
 .header-top-left>li, .header-top-right>li {
     padding: 0 10px;
     line-height: 11px;
+
 }
 
 .header-top-right>li:last-child {
     padding: 0 0 0 20px;
+
 }
 
 .header-top-left .contact {
@@ -993,14 +1001,17 @@ label.checkme {
     color: #fa4251;
     font-size: 16px;
     font-weight: 500;
+    
 }
 .header-top-left .contact>a:hover,
 .header-top-left .contact>a:focus {
     color: #ccc;
+
 }
 .header-top-left .contact span {
     color: #ccc;
     padding-left: 5px;
+
 }
 
 
@@ -1010,6 +1021,7 @@ label.checkme {
     font-size: 18px;
     padding-right: 9px;
     vertical-align: -1px;
+
 }
 
 /* ----------------------------------------------
@@ -2831,7 +2843,9 @@ height: 100vh;
 border-radius: 0;
 border: none;
 }
+/* _____________________________________ */
 
+/* ________________________________ */
 
 
 

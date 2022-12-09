@@ -223,9 +223,12 @@
                                                 id="login-form-link">{{ __('Login') }}</a>
                                         </div>
                                         <div class="col-xs-6">
-                                            <a href="#admin_login" class="btn_icone" data-toggle="modal" data-whatever="@getbootstrap">{{ __('View the conditions') }}</a>
-                                            <div class="col-xs-6">
-                                                <a href="#" id="register-form-link">{{ __('Register') }}</a>
+
+                                            <a href="#login_register"class="active" data-toggle="modal" data-whatever="@getbootstrap">
+                                                {{ __('View the conditions') }}</a>
+
+                                            <div class="col-xs-6" >
+                                                <a href="#" class="active" id="register-form-link">{{ __('Register') }}</a>
                                             </div>
                                         </div>
                                     <hr>
@@ -279,7 +282,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="form-group">
+                                                <!-- <div class="form-group">
                                                     <div class="row">
                                                         <div class="col-lg-12">
                                                             <div class="text-center">
@@ -293,7 +296,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> -->
                                             </form>
                                             {{-- Form For Registerion --}}
                                             {{-- @if(Auth::User()->role="admin") --}}
@@ -360,18 +363,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- <div class="form-group">
-                                                    <div class="row">
-                                                        <div class="col-lg-12">
-                                                            <!-- <div class="text-center">
-                                                                <button type="button" class="btn_icone" data-toggle="modal"
-                                                                data-target="#admin_login" data-whatever="@getbootstrap">
-                                                                {{ __('Are You Admin')}}
-                                                                </button>
-                                                            </div>
-                                                        </div> 
-                                                    </div>
-                                                </div> -->
+                                              
                                             </form>
 
                                         </div>
@@ -382,25 +374,34 @@
                     </div>
                 </div>
             </div>
-            {{----------------}}
-<div class="modal fade" id="admin_login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="login_register" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">{{ __('الشروط')}}</h5>
+                  <h2 class="modal-title" id="exampleModalLabel" style="margin-left:230px; color:black"; >{{ __('the conditions')}}</h2>
+
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
-                </div>
-                <div class="modal-body">
+                <!-- </div> -->
+                <div class="modal-header">
                     <form  action="{{ route('ValidationdAmin') }}" method="post" enctype="multipart/form-data">
                         <br>
-                        <p>
-                            hgfdskjhgfgfhgfgf
-                        </p>
+                        <p style="color:black">
+                        {{ __('• When booking, the bill value is completely deducted from the bank account.')}}
+                        <br>
+</p>
+                      <p style="color:black">
                         
+                        <!-- <h3> -->
+                        {{ __('• When booking, the customer can decide to receive it at the company, or the order will be delivered to him.')}}
+                        <!-- </> -->
+</p>
+                         <p style="color:black" > 
+                         {{ __('• Upon confirmation of receipt from the supervisor, in the event of non-receipt for a maximum period of 10 days, 3/4 of the invoice value will be returned to the user, and the remainder will be taken as a delay fine.')}}
+</p>
                         <!-- @csrf
-                    <div class="form-group">
+                       <div class="form-group">
                       <label for="firstname" class="col-form-label">{{ __('الشروط') }} </label>
                         <input form-control style="width: 230px" type="text" id="recipient-name" name="password" class="form-input"
                             placeholder="{{ __('Enter Password') }}" required="required" />
@@ -410,11 +411,12 @@
                             </span>
                             @enderror -->
                     </div>
+                    </div>
 
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('Close')}}</button>
-                  <button type="submit" class="btn">{{ __('Save') }}</button>
+                  <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('Close')}}</button>
+                  <button type="submit" class="btn">{{ __('Save') }}</button> -->
                 </form>
                 </div>
               </div>

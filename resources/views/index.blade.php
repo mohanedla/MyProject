@@ -239,9 +239,10 @@
                                         <ul>
                                             <li id="myCarousel" class="carousel slide" data-ride="carousel">
                                                 <div class="carousel-inner">
-                                                    <div class="item active"><a href=""> <img
-                                                                src="{{ asset('images/menu-banner1.jpg') }}"
-                                                                class="img-responsive" alt="Banner1"></a></div>
+                                                    <div class="item active">
+                                                    <a href=""> <img src="{{ asset('images\uploads\shof_1d433f3c8569e7d-removebg-preview.png') }}"
+                                                                class="img-responsive" alt="Banner1"></a>
+                                                    </div>
                                                 </div>
                                                 <!-- End Carousel Inner -->
                                             </li>
@@ -255,7 +256,9 @@
                                 <li> <a href="shop">{{ __('shop') }}</a></li>
                             @endif
                             <li> <a href="about">{{ __('About us') }}</a></li>
+                            @if (Auth::User())
                             <li> <a href="contact_us">{{ __('Contact us') }}</a></li>
+                            @endif
                         </ul>
                     </div>
                     <!-- /.nav-collapse -->
@@ -374,8 +377,9 @@
                                         <div class="product-grid">
                                             <div class="item">
                                                 <div class="product-thumb">
-                                                    <div class="image product-imageblock" style="height: 418px;"> <a
-                                                            href="product_detail_page"
+                                                    <div class="image product-imageblock" style="height: 418px;">
+                                                   
+                                                    <a href="product_detail_page"
                                                             style="height: -webkit-fill-available;">
                                                             <img data-name="product_image"
                                                                 style="height: -webkit-fill-available;"
@@ -385,7 +389,9 @@
                                                                 style="height: -webkit-fill-available;"
                                                                 src="{{ asset(Storage::url($item->profile_image)) }}"
                                                                 alt="iPod Classic" title="iPod Classic"
-                                                                class="img-responsive"> </a>
+                                                                class="img-responsive"> 
+                                            
+                                                            </a>
                                                         <div class="button-group text-center">
                                                             <div class="wishlist"><a
                                                                     href="#"><span>wishlist</span></a>
@@ -447,7 +453,8 @@
                                             <div class="product-grid">
                                                 <div class="item">
                                                     <div class="product-thumb">
-                                                        <div class="image product-imageblock" style="height: 418px;">
+                                                        
+                                                    <div class="image product-imageblock" style="height: 418px;">
                                                             <a href="product_detail_page"
                                                                 style="height: -webkit-fill-available;"
                                                                 sstyle="height: -webkit-fill-available;">
@@ -509,11 +516,15 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    
+                    <br>
                     <!-- =====  SUB BANNER END  ===== -->
                     <div id="brand_carouse" class="ptb_60 text-center">
+                    
                         <div class="type-01">
                             <div class="heading-part mb_10 ">
+                            <br>
+                            <br>
                                 <h2 class="main_title">{{ __('Brands') }}</h2>
                             </div>
                             <div class="row">
@@ -535,11 +546,13 @@
                 </div>
                 <!-- =====  CONTAINER END  ===== -->
                 <!-- =====  FOOTER START  ===== -->
+        </div>
+
                 @extends('layout.footer')
+                
                 @section('footer')
                 @endsection
                 <!-- =====  FOOTER END  ===== -->
-            </div>
             @extends('layout.js')
             @section('js')
             @endsection

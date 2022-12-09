@@ -119,7 +119,7 @@ class home extends Controller
         {
             $page = "bills";
 
-            return View('report.d_report',compact("page"));
+            return View('bills.d_bills',compact("page"));
         }
 
 

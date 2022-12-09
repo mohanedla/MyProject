@@ -38,7 +38,7 @@ class admins extends Controller
         $validate=request('password');
         if($validate=='12345')
         {
-            return view('/admin_login');
+            return view('/login_register');
         }
         else{
             return redirect('/login_register')->with('error','incorrect password');

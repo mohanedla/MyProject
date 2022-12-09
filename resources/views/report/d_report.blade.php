@@ -203,11 +203,12 @@
                                     data-bs-whatever="@mdo" >
                                         <span class="badge bg-info"><i class="bi bi-eye-fill"></i></span>
                                     </a>
-                                    @endif
+                                  
 
 
                                  
                                     <a href="#" onclick="return confirm('Are you sure to want to delete it?')"><span class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
+                                    @endif
                                 </td>
                         <tbody>
 

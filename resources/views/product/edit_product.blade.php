@@ -7,7 +7,7 @@
     <header id="header" class="header fixed-top d-flex align-items-center">
 
         <div class="d-flex align-items-center justify-content-between">
-            <a href="home" class="logo d-flex align-items-center">
+            <a href="/home" class="logo d-flex align-items-center">
 
                 <span class="d-none d-lg-block">Online Shop</span>
             </a>
@@ -171,7 +171,7 @@
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="dashboard_home">{{ __('Dashboard') }}</a></li>
                                 <li class="breadcrumb-item"><a href="all_product/0">{{ __('Product Management') }}</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">{{ __('Add Product') }}
+                                <li class="breadcrumb-item active" aria-current="page">{{ __('edit Product') }}
                                 </li>
                             </ol>
                         </nav>
@@ -182,7 +182,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">{{ __('Add Product') }}
+                        <h4 class="card-title">{{ __('edit Product') }}
                             <button style="float: right;" type="button" data-bs-toggle="modal" data-bs-target="#type_men"
                                 data-bs-whatever="@mdo"
                                 class="btn btn-secondary rounded-pill">{{ __('add Type') }}</button>

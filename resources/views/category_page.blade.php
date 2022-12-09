@@ -234,9 +234,10 @@
                                                     <ul>
                                                         <li id="myCarousel" class="carousel slide" data-ride="carousel">
                                                             <div class="carousel-inner">
-                                                                <div class="item active"><a href=""> <img
-                                                                            src="{{ asset('images/menu-banner1.jpg') }}"
-                                                                            class="img-responsive" alt="Banner1"></a></div>
+                                                            <div class="item active">
+                                                            <a href=""> <img src="{{ asset('images\uploads\shof_1d433f3c8569e7d-removebg-preview.png') }}"
+                                                                class="img-responsive" alt="Banner1"></a>
+                                                    </div>
                                                             </div>
                                                             <!-- End Carousel Inner -->
                                                         </li>
@@ -274,12 +275,52 @@
                 
                 <div id="column-left" class="col-sm-4 col-lg-3 ">
                     <div id="category-menu" class="navbar collapse in mb_40" aria-expanded="true" style=""
-                        role="button">
-                        <div class="nav-responsive">
+                        role="button"></div>
+                        <!-- <div class="nav-responsive">
 
 
-                        </div>
-                    </div>
+                        
+                    </div> -->
+             <!-- </div> -->
+      <!-- <div id="column-left" class="col-sm-4 col-lg-3 hidden-xs"> -->
+      <div class="filter left-sidebar-widget mb_50">
+            <div id="category-menu" class="navbar collapse in mb_40" >
+              <div class="nav-responsive">
+                <div class="heading-part">
+                  <h2 class="main_title">{{ __('Women') }}</h2>
+                </div>
+                <li class="nav navbar-nav">
+                   <ul>
+                       @foreach ($category_women as $women)
+                        <li><a href="#">{{ __($women->name) }}</a></li>
+                       @endforeach
+                     </ul>
+                </li>
+                <!-- </ul> -->
+              <!-- </div> -->
+              <div class="heading-part">
+                  <h2 class="main_title">{{ __('Men') }}</h2>
+                </div>
+                <li class="nav navbar-nav">
+                   <ul>
+                   @foreach ($category_men as $men)
+                     <li><a href="#">{{ __($men->name) }}</a></li>
+                       @endforeach
+                     </ul>
+                </li>
+            </div>
+            <div class="heading-part">
+                  <h2 class="main_title">{{ __('Children') }}</h2>
+                </div>
+                <li class="nav navbar-nav">
+                   <ul>
+                      @foreach ($category_kids as $kids)
+                       <li><a href="#">{{ __($kids->name) }}</a></li>
+                         @endforeach
+                     </ul>
+                </li>
+                 </div>
+                </div>
                     <div class="filter left-sidebar-widget mb_50">
                         <div class="heading-part mtb_20 ">
                             <h2 class="main_title">{{ __('Refine Search') }}</h2>
@@ -292,44 +333,10 @@
                             <div id="slider-range" class="mtb_20"></div>
                             <div class="list-group">
                                  <div class="list-group-item mb_10">
-                                  <!--  <label>{{ __('Color') }}</label>
-                                    <!-- <div id="filter-group1">
-                                        <div class="checkbox">
-                                            <label>
-                                                <input value="" type="checkbox"> {{ __('Red') }}
-                                                (10)</label>
-                                        </div>
-                                        <div class="checkbox">
-                                            <label>
-                                                <input value="" type="checkbox"> {{ __('Green') }}
-                                                (06)</label>
-                                        </div>
-                                        <div class="checkbox ">
-                                            <label>
-                                                <input value="" type="checkbox"> {{ __('Blue') }}(09)
-                                            </label>
-                                        </div>
-                                    </div> -->
+                                
                                 </div> 
                                 <div class="list-group-item mb_10"> 
-                                    <!-- <label>Size</label>
-                                    <div id="filter-group3">
-                                        <div class="checkbox">
-                                            <label>
-                                                <input value="" type="checkbox"> {{ __('Big') }}
-                                                (3)</label>
-                                        </div>
-                                        <div class="checkbox">
-                                            <label>
-                                                <input value="" type="checkbox"> {{ __('Medium') }}
-                                                (2)</label>
-                                        </div>
-                                        <div class="checkbox">
-                                            <label>
-                                                <input value="" type="checkbox"> {{ __('Small') }}
-                                                (1)</label>
-                                        </div>
-                                    </div> -->
+                                 
                                 </div> 
                                 <br>
                                 <button type="button" class="btn">{{ __('Search') }}</button>
@@ -337,7 +344,11 @@
                         </div>
                     </div>
 
-                </div>
+        </div>
+                
+
+
+
                 <div class="col-sm-8 col-lg-9 mtb_20">
                     <div class="category-page-wrapper mb_30">
                         <div class="list-grid-wrapper pull-left">
@@ -502,6 +513,8 @@
                         </div>
                     </div>
         </div>
+        <br>
+        <br>
         @extends('layout.footer')
         <!-- =====  CONTAINER END  ===== -->
         <!-- =====  FOOTER START  ===== -->

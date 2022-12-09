@@ -243,9 +243,10 @@
                                     <ul>
                                         <li id="myCarousel" class="carousel slide" data-ride="carousel">
                                             <div class="carousel-inner">
-                                                <div class="item active"><a href=""> <img
-                                                            src="{{ asset('images/menu-banner1.jpg') }}"
-                                                            class="img-responsive" alt="Banner1"></a></div>
+                                            <div class="item active">
+                                            <a href=""> <img src="{{ asset('images\uploads\shof_1d433f3c8569e7d-removebg-preview.png') }}"
+                                                                class="img-responsive" alt="Banner1"></a>
+                                                    </div>
                                             </div>
                                             <!-- End Carousel Inner -->
                                         </li>

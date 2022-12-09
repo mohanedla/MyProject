@@ -61,7 +61,6 @@ class brands extends Controller
     public function add_brand () {
 
         $brand= new brand;
-        $brand->id=request('brand_serial');
         $brand->name=request('brand_name');
         $brand->model=request('brand_model');
         $brand->phone_number=request('brand_phone');

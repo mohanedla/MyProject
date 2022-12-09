@@ -143,7 +143,7 @@
                                     <li class="col-md-3">
                                         <ul>
                                             <li class="dropdown-header">{{ __('Men') }}</li>
-                                            @foreach ($category_men as $men)
+                                             @foreach ($category_men as $men)
                                                 <li><a href="#">{{ __($men->name) }}</a></li>
                                             @endforeach
                                         </ul>
@@ -161,9 +161,10 @@
                                         <ul>
                                             <li id="myCarousel" class="carousel slide" data-ride="carousel">
                                                 <div class="carousel-inner">
-                                                    <div class="item active"><a href=""> <img
-                                                                src="{{ asset('images/menu-banner1.jpg') }}"
-                                                                class="img-responsive" alt="Banner1"></a></div>
+                                                <div class="item active">
+                                                <a href=""> <img src="{{ asset('images\uploads\shof_1d433f3c8569e7d-removebg-preview.png') }}"
+                                                                class="img-responsive" alt="Banner1"></a>
+                                                    </div>
                                                 </div>
                                                 <!-- End Carousel Inner -->
                                             </li>
@@ -393,7 +394,8 @@
         <!-- =====  FOOTER END  ===== -->
     </div>
     <a id="scrollup"></a>
-
+    <br>
+<br>
     @extends('layout.footer')
     @section('footer')
     @endsection

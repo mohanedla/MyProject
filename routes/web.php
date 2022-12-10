@@ -113,12 +113,12 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/Bills',[App\Http\Controllers\home::class,'Bills1']);
 
 
+    Route::get('/dashboard_home',function(){
+        $page = "home";
+        return view('dashboard.home',compact('page'));
+    });
 });
 Auth::routes();
-Route::get('/dashboard_home',function(){
-    $page = "home";
-    return view('dashboard.home',compact('page'));
-});
 Route::get('/dashboard_form',function(){
     return view('dashboard.form.form');
 });

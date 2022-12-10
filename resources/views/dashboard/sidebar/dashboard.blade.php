@@ -8,6 +8,7 @@
                 </div>
             </div>
         </div>
+        
         <div class="sidebar-menu">
             <ul class="menu">
                 <li class="sidebar-title">{{ __('Menu') }}</li>

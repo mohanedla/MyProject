@@ -38,6 +38,11 @@
     <link href="{{ URL::to('assets1/vendor/quill/quill.snow.css')}}" rel="stylesheet">
     <link href="{{ URL::to('assets1/vendor/quill/quill.bubble.css')}}" rel="stylesheet">
     <link href="{{ URL::to('assets1/vendor/remixicon/remixicon.css')}}" rel="stylesheet">
+
+
+
+    <link href="{{ URL::to('assets2/css/main/app.css')}}" rel="stylesheet">
+    <link href="{{ URL::to('assets2/css/main/app-dark.css')}}" rel="stylesheet">
     {{-- <link href="{{ URL::to('assets1/vendor/simple-datatables/style.css')}}" rel="stylesheet"> --}}
 
     <!-- Template Main CSS File -->
@@ -103,6 +108,8 @@
   <script src="{{ asset('js/jQuery_v3.1.1.min.js')}}"></script>
   <script src="{{ asset('js/owl.carousel.min.js')}}"></script>
   <script src="{{ asset('js/bootstrap.min.js')}}"></script>
+  <script src="{{ asset('assets2/js/app.js')}}"></script>
+  <script src="{{ asset('assets2/js/initTheme.js')}}"></script>
 
 <script>
     const myModal = document.getElementById('myModal')

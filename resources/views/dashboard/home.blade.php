@@ -22,7 +22,23 @@
 
             <nav class="header-nav ms-auto">
                 <ul class="d-flex align-items-center">
+                    <li class="nav-item dropdown pe-3">
 
+                    <li class="nav-item dropdown pe-3">
+                        <span class="nav-link nav-profile d-flex align-items-center pe-0"
+                        data-bs-toggle="dropdown" role="button">{{ __('Language') }} </span>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile" >
+                        @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                            <li class="dropdown-header">
+                                <a rel="alternate" hreflang="{{ $localeCode }}"
+                                    href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                    {{ $properties['native'] }}
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
+
+                        </li>
                     <li class="nav-item dropdown">
 
                         <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
@@ -99,14 +115,6 @@
                             </li>
                             <li>
                                 <hr class="dropdown-divider">
-                            </li>
-
-                            <li>
-                                <a class="dropdown-item d-flex align-items-center"
-                                    href="/user_profile/{{ Auth::User()->id }}">
-                                    <i class="bi bi-person"></i>
-                                    <span>My Profile</span>
-                                </a>
                             </li>
                             <li>
                                 <hr class="dropdown-divider">

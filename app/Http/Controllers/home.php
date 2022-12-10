@@ -91,14 +91,15 @@ class home extends Controller
             return View('checkout_page',compact('collect','brand','category_men','category_women','category_kids'));
         }
 
-        public function category (int $id, string $name)
+        public function category (string $id, string $name)
         {
-            $categories=Category::all();
-            $collect = array('M'=>'Men','W'=>'Women','C'=>'Kids' );
+            $category_men=Men::all();
+            $category_women=Women::all();
+            $category_kids=Kids::all();
             $brand=brand::all();
-            $product=Category::where('id','=',$id)->get();
-            $items= product::with('categories')->where('category_id','=',$id)->where('collection','=',$name)->get();
-            return View('category',compact('brand','collect','categories','product','items','name'));
+            $product=product::where('category_id',$id)->where('collection',$name)->get();
+            // dd($product);
+            return View('category',compact('brand','product','category_men','category_women','category_kids','name'));
 
 
         }

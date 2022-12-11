@@ -75,7 +75,7 @@
                                 </li>
                             @endguest
 
-
+                          
 
                             <li class="language dropdown"> <span class="dropdown-toggle" id="dropdownMenu1"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
@@ -162,29 +162,35 @@
                                                 </td>
                                                 <td class="text-center"><a class="close-cart"><i
                                                             class="fa fa-times-circle"></i></a></td>
+                                                            
                                             </tr>
+                                            <td class="text-right"><strong>"{{ __('Total') }}"</strong></td>
+                                                <td class="text-right">$2,122.00</td>
                                         </tbody>
                                     </table>
                                 </li>
                                 <li>
                                     <table class="table">
                                         <tbody>
+                                           
                                             <tr>
-                                                <td class="text-right"><strong>{{ __('Sub-Total') }} </strong></td>
-                                                <td class="text-right">$2,100.00</td>
                                             </tr>
                                             <tr>
-                                                <td class="text-right"><strong>{{ __('VAT') }} (20%)</strong></td>
-                                                <td class="text-right">$20.00</td>
+                                            <form action="cart_page">
+                                        <input class="btn pull-left mt_10" value="{{ __('View cart') }}"
+                                            type="submit">
+                                    </form>
                                             </tr>
                                             <tr>
-                                                <td class="text-right"><strong>"{{ __('Total') }}"</strong></td>
-                                                <td class="text-right">$2,122.00</td>
+                                            <form action="checkout_page">
+                                        <input class="btn pull-right mt_10" value="{{ __('Checkout') }}"
+                                            type="submit">
+                                    </form>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </li>
-                                <li>
+                                <!-- <li>
                                     <form action="cart_page">
                                         <input class="btn pull-left mt_10" value="{{ __('View cart') }}"
                                             type="submit">
@@ -193,7 +199,7 @@
                                         <input class="btn pull-right mt_10" value="{{ __('Checkout') }}"
                                             type="submit">
                                     </form>
-                                </li>
+                                </li> -->
                             </ul>
                         </div>
                     </div>
@@ -214,7 +220,7 @@
                                         <ul>
                                             <li class="dropdown-header">{{ __('Women') }}</li>
                                             @foreach ($category_women as $women)
-                                                <li><a href="/category/{{$women->id}}/Women">{{ __($women->name) }}</a></li>
+                                                <li><a href="#">{{ __($women->name) }}</a></li>
                                             @endforeach
                                         </ul>
                                     </li>
@@ -222,7 +228,7 @@
                                         <ul>
                                             <li class="dropdown-header">{{ __('Men') }}</li>
                                             @foreach ($category_men as $men)
-                                                <li><a href="/category/{{$men->id}}/Men">{{ __($men->name) }}</a></li>
+                                                <li><a href="#">{{ __($men->name) }}</a></li>
                                             @endforeach
                                         </ul>
                                     </li>
@@ -231,7 +237,7 @@
                                         <ul>
                                             <li class="dropdown-header">{{ __('Children') }}</li>
                                             @foreach ($category_kids as $kids)
-                                                <li><a href="/category/{{$kids->id}}/Kids">{{ __($kids->name) }}</a></li>
+                                                <li><a href="#">{{ __($kids->name) }}</a></li>
                                             @endforeach
                                         </ul>
                                     </li>
@@ -323,7 +329,7 @@
                                                                             cart</span></a></div>
                                                             </div>
                                                         </div>
-
+                                                        
                                                         <div class="caption product-detail text-center">
                                                             <div class="rating"> <span class="fa fa-stack"><i
                                                                         class="fa fa-star-o fa-stack-1x"></i><i
@@ -378,7 +384,7 @@
                                             <div class="item">
                                                 <div class="product-thumb">
                                                     <div class="image product-imageblock" style="height: 418px;">
-
+                                                   
                                                     <a href="product_detail_page"
                                                             style="height: -webkit-fill-available;">
                                                             <img data-name="product_image"
@@ -389,8 +395,8 @@
                                                                 style="height: -webkit-fill-available;"
                                                                 src="{{ asset(Storage::url($item->profile_image)) }}"
                                                                 alt="iPod Classic" title="iPod Classic"
-                                                                class="img-responsive">
-
+                                                                class="img-responsive"> 
+                                            
                                                             </a>
                                                         <div class="button-group text-center">
                                                             <div class="wishlist"><a
@@ -453,8 +459,7 @@
                                             <div class="product-grid">
                                                 <div class="item">
                                                     <div class="product-thumb">
-
-                                                    <div class="image product-imageblock" style="height: 418px;">
+                                                        <div class="image product-imageblock" style="height: 418px;">
                                                             <a href="product_detail_page"
                                                                 style="height: -webkit-fill-available;"
                                                                 sstyle="height: -webkit-fill-available;">
@@ -516,11 +521,11 @@
                                 </div>
                             </div>
                         </div>
-
+                    
                     <br>
                     <!-- =====  SUB BANNER END  ===== -->
                     <div id="brand_carouse" class="ptb_60 text-center">
-
+                    
                         <div class="type-01">
                             <div class="heading-part mb_10 ">
                             <br>
@@ -532,10 +537,10 @@
                                     <div class="brand owl-carousel ptb_20">
                                         @foreach ($brand as $x)
                                         <div class="item text-center">
-
+                                               
                                                  <a   @if (Auth::User()) href="item_brand/{{ $x->id }}" @endif >
                                                <img src="{{ asset(Storage::url($x->profile_image)) }}"
-                                                        alt="" class="img-responsive" /></a>
+                                                        alt="" class="img-responsive" /></a> 
                                                     </div>
                                         @endforeach
                                     </div>
@@ -549,7 +554,7 @@
         </div>
 
                 @extends('layout.footer')
-
+                
                 @section('footer')
                 @endsection
                 <!-- =====  FOOTER END  ===== -->

@@ -22,23 +22,7 @@
 
             <nav class="header-nav ms-auto">
                 <ul class="d-flex align-items-center">
-                    <li class="nav-item dropdown pe-3">
 
-                    <li class="nav-item dropdown pe-3">
-                        <span class="nav-link nav-profile d-flex align-items-center pe-0"
-                        data-bs-toggle="dropdown" role="button">{{ __('Language') }} </span>
-                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile" >
-                        @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                            <li class="dropdown-header">
-                                <a rel="alternate" hreflang="{{ $localeCode }}"
-                                    href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-                                    {{ $properties['native'] }}
-                                </a>
-                            </li>
-                        @endforeach
-                    </ul>
-
-                        </li>
                     <li class="nav-item dropdown">
 
                         <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
@@ -116,6 +100,14 @@
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
+
+                            <!-- <li>
+                                <a class="dropdown-item d-flex align-items-center"
+                                    href="/user_profile/{{ Auth::User()->id }}">
+                                    <i class="bi bi-person"></i>
+                                    <span>My Profile</span>
+                                </a>
+                            </li> -->
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -167,12 +159,16 @@
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="stats-icon purple">
-                                                <i class="iconly-boldShow"></i>
+                                            <!-- <i class="iconly-boldProfile"></i> -->
+                                            <i class="bi bi-people-fill"></i>
+
+
                                             </div>
                                         </div>
                                         <div class="col-md-8">
-                                            <h6 class="text-muted font-semibold">Activity Log</h6>
-                                            {{-- <h6 class="font-extrabold mb-0">{{ $activity_logs }}</h6> --}}
+                                            <h6 class="text-muted font-semibold">{{ __('all admin') }}</h6>
+                                            <!-- {{-- <h6 class="font-extrabold mb-0">{{ $activity_logs }}</h6> --}} -->
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -183,12 +179,13 @@
                                 <div class="card-body px-3 py-4-5">
                                     <div class="row">
                                         <div class="col-md-4">
-                                            <div class="stats-icon blue">
-                                                <i class="iconly-boldProfile"></i>
+                                        <div class="stats-icon purple">
+                                                
+                                                <i class="bi bi-people-fill"></i>
                                             </div>
                                         </div>
                                         <div class="col-md-8">
-                                            <h6 class="text-muted font-semibold">User Activity log</h6>
+                                            <h6 class="text-muted font-semibold">{{ __('Users') }}</h6>
                                             {{-- <h6 class="font-extrabold mb-0">{{ $user_activity_logs }}</h6> --}}
                                         </div>
                                     </div>
@@ -200,6 +197,144 @@
                                 <div class="card-body px-3 py-4-5">
                                     <div class="row">
                                         <div class="col-md-4">
+                                        <div class="stats-icon purple">
+                                            <i class="bi bi-star-fill"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <h6 class="text-muted font-semibold">{{ __('Brands') }}</h6>
+                                            {{-- <h6 class="font-extrabold mb-0">{{ $user_activity_logs }}</h6> --}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       
+                        <div class="col-6 col-lg-3 col-md-6">
+                            <div class="card">
+                                <div class="card-body px-3 py-4-5">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                        <div class="stats-icon purple">
+                                            <i class="bi bi-chat-square-dots-fill"></i>
+                                         </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <h6 class="text-muted font-semibold">{{ __('notice') }}</h6>
+                                            {{-- <h6 class="font-extrabold mb-0">{{ $user_activity_logs }}</h6> --}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-3 col-md-6">
+                            <div class="card">
+                                <div class="card-body px-3 py-4-5">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                        <div class="stats-icon purple">
+                                            <i class="bi bi-bag-check-fill"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <h6 class="text-muted font-semibold">{{ __('all_product') }}</h6>
+                                            {{-- <h6 class="font-extrabold mb-0">{{ $user_activity_logs }}</h6> --}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-3 col-md-6">
+                            <div class="card">
+                                <div class="card-body px-3 py-4-5">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                        <div class="stats-icon purple">
+                                            <i class="bi bi-bag-check-fill"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <h6 class="text-muted font-semibold">{{ __('Men Products') }}</h6>
+                                            {{-- <h6 class="font-extrabold mb-0">{{ $user_activity_logs }}</h6> --}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-3 col-md-6">
+                            <div class="card">
+                                <div class="card-body px-3 py-4-5">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                        <div class="stats-icon purple">
+                                            <i class="bi bi-bag-check-fill"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <h6 class="text-muted font-semibold">{{ __('Women Products') }}</h6>
+                                            {{-- <h6 class="font-extrabold mb-0">{{ $user_activity_logs }}</h6> --}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-3 col-md-6">
+                            <div class="card">
+                                <div class="card-body px-3 py-4-5">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                        <div class="stats-icon purple">
+                                            <i class="bi bi-bag-check-fill"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <h6 class="text-muted font-semibold">{{ __('Kids Products') }}</h6>
+                                            {{-- <h6 class="font-extrabold mb-0">{{ $user_activity_logs }}</h6> --}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-3 col-md-6">
+                            <div class="card">
+                                <div class="card-body px-3 py-4-5">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                        <div class="stats-icon purple">
+                                            <i class="bi bi-file-earmark-text-fill"></i>
+                                         </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <h6 class="text-muted font-semibold">{{ __('Reports') }}</h6>
+                                            {{-- <h6 class="font-extrabold mb-0">{{ $user_activity_logs }}</h6> --}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       
+                        <div class="col-6 col-lg-3 col-md-6">
+                            <div class="card">
+                                <div class="card-body px-3 py-4-5">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                        <div class="stats-icon purple">
+                                            <i class="bi bi-file-earmark-medical-fill"></i>
+                                         </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <h6 class="text-muted font-semibold">{{ __('Bills') }}</h6>
+                                            {{-- <h6 class="font-extrabold mb-0">{{ $user_activity_logs }}</h6> --}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="col-6 col-lg-3 col-md-6">
+                            <div class="card">
+                                <div class="card-body px-3 py-4-5">
+                                    <div class="row">
+                                        <div class="col-md-4">
                                             <div class="stats-icon green">
                                                 <i class="iconly-boldAdd-User"></i>
                                             </div>
@@ -207,6 +342,40 @@
                                         <div class="col-md-8">
                                             <h6 class="text-muted font-semibold">User Total</h6>
                                             {{-- <h6 class="font-extrabold mb-0">{{ $users }}</h6> --}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                        <!-- <div class="col-6 col-lg-3 col-md-6">
+                            <div class="card">
+                                <div class="card-body px-3 py-4-5">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="stats-icon red">
+                                                <i class="iconly-boldBookmark"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <h6 class="text-muted font-semibold">Saved Record</h6>
+                                            {{-- <h6 class="font-extrabold mb-0">{{ $staff }}</h6> --}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                        <!-- <div class="col-6 col-lg-3 col-md-6">
+                            <div class="card">
+                                <div class="card-body px-3 py-4-5">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="stats-icon red">
+                                                <i class="iconly-boldBookmark"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <h6 class="text-muted font-semibold">Saved Record</h6>
+                                            {{-- <h6 class="font-extrabold mb-0">{{ $staff }}</h6> --}}
                                         </div>
                                     </div>
                                 </div>
@@ -229,9 +398,43 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-6 col-lg-3 col-md-6">
+                            <div class="card">
+                                <div class="card-body px-3 py-4-5">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="stats-icon red">
+                                                <i class="iconly-boldBookmark"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <h6 class="text-muted font-semibold">Saved Record</h6>
+                                            {{-- <h6 class="font-extrabold mb-0">{{ $staff }}</h6> --}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-3 col-md-6">
+                            <div class="card">
+                                <div class="card-body px-3 py-4-5">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="stats-icon red">
+                                                <i class="iconly-boldBookmark"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <h6 class="text-muted font-semibold">Saved Record</h6>
+                                            {{-- <h6 class="font-extrabold mb-0">{{ $staff }}</h6> --}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
                     </div>
 
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col-12 col-xl-4">
 
                         </div>
@@ -284,13 +487,13 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
-                <div class="col-12 col-lg-3">
+                <!-- <div class="col-12 col-lg-3">
 
                     {{-- user profile modal --}}
                     <div class="card-body">
-                        <!--Basic Modal -->
+                        <Basic Modal
                         <div class="modal fade text-left" id="default" tabindex="-1" aria-labelledby="myModalLabel1"
                             style="display: none;" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-scrollable" role="document">
@@ -384,7 +587,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> 
                     {{-- end user profile modal --}}
 
                     <div class="card">
@@ -426,7 +629,7 @@
                         </div>
                     </div>
 
-                </div>
+                </div> -->
             </section>
         </div>
 

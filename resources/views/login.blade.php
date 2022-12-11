@@ -400,6 +400,9 @@
                          <p style="color:black" > 
                          {{ __('• Upon confirmation of receipt from the supervisor, in the event of non-receipt for a maximum period of 10 days, 3/4 of the invoice value will be returned to the user, and the remainder will be taken as a delay fine.')}}
 </p>
+<p style="color:black" > 
+                         {{ __('You must be logged in to confirm the exchange rate')}}
+</p>
                         <!-- @csrf
                        <div class="form-group">
                       <label for="firstname" class="col-form-label">{{ __('الشروط') }} </label>

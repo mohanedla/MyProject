@@ -104,7 +104,6 @@ class home extends Controller
 
         }
 
-<!-- bmfdmbc -->
         public function notic()
         {
             $page = "notifiction";
@@ -128,6 +127,39 @@ class home extends Controller
         {
             $page = "bills";
             return View('bills.Bills',compact("page"));
+        }
+
+        public function R1()
+        {
+            $page = "R1";
+            return View('report.R1',compact("page"));
+        }
+
+        public function R2()
+        {
+            $page = "R2";
+            return View('report.R2',compact("page"));
+        }
+
+        public function R3()
+        {
+            $page = "R3";
+
+            return View('report.R3',compact("page"));
+        }
+        
+        public function R4()
+        {
+            $page = "R4";
+
+            return View('report.R4',compact("page"));
+        }
+
+        public function R5()
+        {
+            $page = "R5";
+
+            return View('report.R5',compact("page"));
         }
      function footer()
         {

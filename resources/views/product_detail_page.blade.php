@@ -376,27 +376,30 @@
                 <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
                 <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
               </div>
-              <span class="price mb_20"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
+              <span class="price mb_20"><span class="amount"><span class="currencySymbol">25</span>$</span>
+              <span   ><span class="amount"><span class="currencySymbol">125</span>DL</span>
+
               </span>
               <hr>
               <ul class="list-unstyled product_info mtb_20">
                 <li>
-                  <label>{{ __('Brand') }}:</label>
-                  <span> <a href="#">Apple</a></span></li>
+                  <h4>{{ __('Brand') }} :  lakoste </h4>
+                  </li>
+              
                 <li>
-                  <label>{{ __('Serial Number') }}:</label>
-                  <span> product 20</span></li>
-                <li>
-                  <label>{{ __('Availability') }}:</label>
-                  <span> In Stock</span></li>
+                  <label><h4>{{ __('Product Name') }}  : Shirt</h4></label>
+                  <!-- <span><h5> Shirt </h5></span> -->
+                </li>
+              
               </ul>
               <hr>
-              <p class="product-desc mtb_30"> More room to move. With 80GB or 160GB of storage and up to 40 hours of battery life, the new iPod classic lets you enjoy up to 40,000 songs or up to 200 hours of video or any combination wherever you go. Cover Flow. Browse through your music collection by flipping..</p>
+              <!-- <p class="product-desc mtb_30"> More room to move. With 80GB or 160GB of storage and up to 40 hours of battery life, the new iPod classic lets you enjoy up to 40,000 songs or up to 200 hours of video or any combination wherever you go. Cover Flow. Browse through your music collection by flipping..</p> -->
               <div id="product">
+                <br>
                 <div class="form-group">
                   <div class="row">
                     <div class="Sort-by col-md-6">
-                      <label>{{ __('Sort by') }}</label>
+                      <label><h4>{{ __('Sort by') }}</h4></label>
                       <select name="product_size" id="select-by-size" class="selectpicker form-control">
                         <option>Small</option>
                         <option>Medium</option>
@@ -404,7 +407,7 @@
                       </select>
                     </div>
                     <div class="Color col-md-6">
-                      <label>{{ __('Color') }}</label>
+                      <label><h4>{{ __('Color') }}</h4></label>
                       <select name="product_color" id="select-by-color" class="selectpicker form-control">
                         <option>Blue</option>
                         <option>Green</option>
@@ -415,7 +418,7 @@
                   </div>
                 </div>
                 <div class="qty mt_30 form-group2">
-                  <label>{{ __('Quantity') }}</label>
+                  <label><h4>{{ __('Quantity') }}</h4></label>
                   <input name="product_quantity" min="1" value="1" type="number">
                 </div>
                 <div class="button-group mt_30">

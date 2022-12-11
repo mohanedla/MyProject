@@ -129,7 +129,7 @@
                                     id="shippingcart">{{ __('Shopping cart') }}</span><span
                                     id="cart-total">{{ __('items') }} (0)</span> </button>
                         </div>
-                        <div id="cart-dropdown" class="cart-menu collapse">
+                        <!-- <div id="cart-dropdown" class="cart-menu collapse">
                             <ul>
                                 <li>
                                     <table class="table table-striped">
@@ -189,6 +189,74 @@
                                             type="submit">
                                     </form>
                                 </li>
+                            </ul>
+                        </div> -->
+                        <div id="cart-dropdown" class="cart-menu collapse">
+                            <ul>
+                                <li>
+                                    <table class="table table-striped">
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-center"><a href="#"><img
+                                                            src="{{ asset('images/product/70x84.jpg') }}"
+                                                            alt="iPod Classic" title="iPod Classic"></a></td>
+                                                <td class="text-left product-name"><a href="#">MacBook
+                                                        Pro</a> <span class="text-left price">$20.00</span>
+                                                    <input class="cart-qty" name="product_quantity" min="1"
+                                                        value="1" type="number">
+                                                </td>
+                                                <td class="text-center"><a class="close-cart"><i
+                                                            class="fa fa-times-circle"></i></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"><a href="#"><img
+                                                            src="{{ asset('images/product/70x84.jpg') }}"
+                                                            alt="iPod Classic" title="iPod Classic"></a></td>
+                                                <td class="text-left product-name"><a href="#">MacBook
+                                                        Pro</a> <span class="text-left price">$20.00</span>
+                                                    <input class="cart-qty" name="product_quantity" min="1"
+                                                        value="1" type="number">
+                                                </td>
+                                                <td class="text-center"><a class="close-cart"><i
+                                                            class="fa fa-times-circle"></i></a></td>
+                                                            
+                                            </tr>
+                                            <td class="text-right"><strong>"{{ __('Total') }}"</strong></td>
+                                                <td class="text-right">$2,122.00</td>
+                                        </tbody>
+                                    </table>
+                                </li>
+                                <li>
+                                    <table class="table">
+                                        <tbody>
+                                           
+                                            <tr>
+                                            </tr>
+                                            <tr>
+                                            <form action="cart_page">
+                                        <input class="btn pull-left mt_10" value="{{ __('View cart') }}"
+                                            type="submit">
+                                    </form>
+                                            </tr>
+                                            <tr>
+                                            <form action="checkout_page">
+                                        <input class="btn pull-right mt_10" value="{{ __('Checkout') }}"
+                                            type="submit">
+                                    </form>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </li>
+                                <!-- <li>
+                                    <form action="cart_page">
+                                        <input class="btn pull-left mt_10" value="{{ __('View cart') }}"
+                                            type="submit">
+                                    </form>
+                                    <form action="checkout_page">
+                                        <input class="btn pull-right mt_10" value="{{ __('Checkout') }}"
+                                            type="submit">
+                                    </form>
+                                </li> -->
                             </ul>
                         </div>
                     </div>
@@ -308,8 +376,8 @@
                        @endforeach
                      </ul>
                 </li>
-            </div>
-            <div class="heading-part">
+             </div>
+              <div class="heading-part">
                   <h2 class="main_title">{{ __('Children') }}</h2>
                 </div>
                 <li class="nav navbar-nav">
@@ -319,8 +387,9 @@
                          @endforeach
                      </ul>
                 </li>
-                 </div>
-                </div>
+          </div>
+                       
+        </div>
                     <div class="filter left-sidebar-widget mb_50">
                         <div class="heading-part mtb_20 ">
                             <h2 class="main_title">{{ __('Refine Search') }}</h2>

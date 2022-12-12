@@ -24,7 +24,21 @@
                 <ul class="d-flex align-items-center">
 
                     <li class="nav-item dropdown">
+                    <li class="nav-item dropdown pe-3">
+                        <span class="nav-link nav-profile d-flex align-items-center pe-0"
+                        data-bs-toggle="dropdown" role="button">{{ __('Language') }} </span>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile" >
+                        @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                            <li class="dropdown-header">
+                                <a rel="alternate" hreflang="{{ $localeCode }}"
+                                    href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                    {{ $properties['native'] }}
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
 
+                        </li>
                         <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
                             <i class="bi bi-bell"></i>
                             <span class="badge bg-primary badge-number">4</span>
@@ -153,16 +167,17 @@
             <section class="row">
                 <div class="col-12 col-lg-9">
                     <div class="row">
+                        @if (Auth::user()->role == '1')
                         <div class="col-6 col-lg-3 col-md-6">
                             <div class="card">
                                 <div class="card-body px-3 py-4-5">
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="stats-icon purple">
-                                            <!-- <i class="iconly-boldProfile"></i> -->
-                                            <i class="bi bi-people-fill"></i>
-
-
+                                                <!-- <i class="iconly-boldProfile"></i> -->
+                                                <i class="bi bi-people-fill"></i>
+                                                
+                                                
                                             </div>
                                         </div>
                                         <div class="col-md-8">
@@ -174,6 +189,8 @@
                                 </div>
                             </div>
                         </div>
+                        @endif
+
                         <div class="col-6 col-lg-3 col-md-6">
                             <div class="card">
                                 <div class="card-body px-3 py-4-5">

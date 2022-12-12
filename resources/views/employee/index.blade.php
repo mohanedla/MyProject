@@ -186,7 +186,7 @@
                                 $j=0;
                             @endphp
                                 @foreach ($users as $x)
-                                <tr>
+                                <tr>  
                                     <td>{{$i++}}</td>
                                     <td>{{$x->name}}</td>
                                     <td>{{$x->email}}</td>

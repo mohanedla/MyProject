@@ -10,6 +10,8 @@ use App\Models\Category;
 use App\Models\Men;
 use App\Models\Women;
 use App\Models\Kids;
+use App\Models\Notice;
+
 use auth;
 class home extends Controller
 {
@@ -63,12 +65,24 @@ class home extends Controller
         {
             $collect = array('M'=>'Men','W'=>'Women','C'=>'Kids' );
             $brand=brand::all();
-            // $products=product::all();
             $category_men=Men::all();
             $category_women=Women::all();
             $category_kids=Kids::all();
             return View('contact_us',compact('collect','brand','category_men','category_women','category_kids'));
         }
+        public function contact_notice(Request $request)
+    {
+        $notice= new Notice;
+        $notice->name=request('name');
+        $notice->email=request('email');
+        $notice->phone1=request('phone1');   
+        $notice->subject=request('subject');
+        $notice->save();
+        // Toastr::success('Create new notice successfully :)','Success');
+
+        return redirect('/home');
+    }
+
 
     public function cart_page()
         {
@@ -107,7 +121,8 @@ class home extends Controller
         public function notic()
         {
             $page = "notifiction";
-            return View('notic.d_notic',compact("page"));
+            $notices=Notice::all();
+            return View('notic.d_notic',compact('notices','page'));
         }
 
         public function report()

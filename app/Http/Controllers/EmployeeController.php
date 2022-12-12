@@ -41,7 +41,7 @@ class EmployeeController extends Controller
         ]);
         $user = new User;
         $user->name = request('name');
-        $user->email = request('email');
+        $user->email = request('email'); 
         $user->role = 2;
         $user->password = Hash::make(request('password'));
         $user->profile_image=request()->file('profile_image') ? request()->file('profile_image')->store('public') : null;

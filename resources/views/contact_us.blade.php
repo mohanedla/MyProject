@@ -309,22 +309,29 @@
                 <div class="email mt_10"><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:aymenbenghali@gmail.com" target="_top">aymenbenghali@gmail.com</a></div>
               </div>
             </div>
+
+
+
+
+
+
             <div class="col-md-8 col-xs-12 contact-form mb_50">
               <!-- Contact FORM -->
               <div id="contact_form">
-                <form id="contact_body" method="post" action="contact_me.php">
+                  <form id="contact_body" method="get" action="{{ route('contact_notice')}}"  enctype="multipart/form-data" >
+                    @csrf
                   <!--                                <label class="full-with-form" ><span>Name</span></label>
 -->
-                  <input class="full-with-form " type="text" name="name" placeholder="{{__ ('Name')}}" data-required="true" />
+                  <input class="full-with-form " type="text" name="name" placeholder="{{__ ('Name')}}"  required="required" data-required="true" />
                   <!--                <label class="full-with-form" ><span>Email Address</span></label>
 -->
-                  <input class="full-with-form  mt_30" type="email" name="email" placeholder="{{__('Email Address')}}" data-required="true" />
+                  <input class="full-with-form  mt_30" type="email" name="email" placeholder="{{__('Email Address')}}"  required="required" data-required="true" />
                   <!--                <label class="full-with-form" ><span>Phone Number</span></label>
 -->
-                  <input class="full-with-form  mt_30" type="text" name="phone1" placeholder="{{__ ('Phone Number')}}" maxlength="15" data-required="true" />
+                  <input class="full-with-form  mt_30" type="text" name="phone1" placeholder="{{__ ('Phone Number')}}" maxlength="15"  required="required" data-required="true" />
                   <!--                <label class="full-with-form" ><span>Subject</span></label>
 -->
-                  <input class="full-with-form  mt_30" type="text" name="subject" placeholder="{{__('Subject')}}" data-required="true">
+                  <input class="full-with-form  mt_30" type="text" name="subject" placeholder="{{__('Subject')}}" data-required="true"  required="required">
                   <!--                                <label class="full-with-form" ><span>Attachment</span></label>
 -->
                   <!--                                <label class="full-with-form" ><span>Message</span></label>

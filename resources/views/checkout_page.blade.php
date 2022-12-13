@@ -74,7 +74,8 @@
                             @else
                                 <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                        role="button">{{ Auth::user()->name }} <span class="caret"></span> </span>
+                                        role="button"> {{ Auth::user()->name }} 
+                                        <span class="caret"></span> </span>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
 
                                         <li><a class="dropdown-item" href="/home"

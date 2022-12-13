@@ -182,8 +182,13 @@
                                         </div>
                                         <div class="col-md-8">
                                             <h6 class="text-muted font-semibold">{{ __('all admin') }}</h6>
-                                            <!-- {{-- <h6 class="font-extrabold mb-0">{{ $activity_logs }}</h6> --}} -->
                                             
+                                            <h4>{{$counts}}</h4>
+                                            
+
+
+                                
+                                            <!-- {{-- <h6 class="font-extrabold mb-0">{{ $activity_logs }}</h6> --}} -->
                                         </div>
                                     </div>
                                 </div>
@@ -203,7 +208,7 @@
                                         </div>
                                         <div class="col-md-8">
                                             <h6 class="text-muted font-semibold">{{ __('Users') }}</h6>
-                                            {{-- <h6 class="font-extrabold mb-0">{{ $user_activity_logs }}</h6> --}}
+                                            <h4>{{$counts1}}</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -220,7 +225,7 @@
                                         </div>
                                         <div class="col-md-8">
                                             <h6 class="text-muted font-semibold">{{ __('Brands') }}</h6>
-                                            {{-- <h6 class="font-extrabold mb-0">{{ $user_activity_logs }}</h6> --}}
+                                            <h4>{{$counts2}}</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -239,7 +244,7 @@
                                         </div>
                                         <div class="col-md-8">
                                             <h6 class="text-muted font-semibold">{{ __('Reports') }}</h6>
-                                            {{-- <h6 class="font-extrabold mb-0">{{ $user_activity_logs }}</h6> --}}
+                                            <h4>{{$counts3}}</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -256,7 +261,7 @@
                                         </div>
                                         <div class="col-md-8">
                                             <h6 class="text-muted font-semibold">{{ __('all_product') }}</h6>
-                                            {{-- <h6 class="font-extrabold mb-0">{{ $user_activity_logs }}</h6> --}}
+                                            <h4>{{$counts4}}</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -273,7 +278,7 @@
                                         </div>
                                         <div class="col-md-8">
                                             <h6 class="text-muted font-semibold">{{ __('Men Products') }}</h6>
-                                            {{-- <h6 class="font-extrabold mb-0">{{ $user_activity_logs }}</h6> --}}
+                                            <h4>{{$counts5}}</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -290,7 +295,8 @@
                                         </div>
                                         <div class="col-md-8">
                                             <h6 class="text-muted font-semibold">{{ __('Women Products') }}</h6>
-                                            {{-- <h6 class="font-extrabold mb-0">{{ $user_activity_logs }}</h6> --}}
+                                            <h4>{{$counts6}}</h4>
+
                                         </div>
                                     </div>
                                 </div>
@@ -307,7 +313,8 @@
                                         </div>
                                         <div class="col-md-8">
                                             <h6 class="text-muted font-semibold">{{ __('Kids Products') }}</h6>
-                                            {{-- <h6 class="font-extrabold mb-0">{{ $user_activity_logs }}</h6> --}}
+                                            <h4>{{$counts7}}</h4>
+
                                         </div>
                                     </div>
                                 </div>
@@ -324,7 +331,7 @@
                                         </div>
                                         <div class="col-md-8">
                                             <h6 class="text-muted font-semibold">{{ __('notice') }}</h6>
-                                            {{-- <h6 class="font-extrabold mb-0">{{ $user_activity_logs }}</h6> --}}
+                                            <h4>{{$counts8}}</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -342,7 +349,7 @@
                                         </div>
                                         <div class="col-md-8">
                                             <h6 class="text-muted font-semibold">{{ __('Bills') }}</h6>
-                                            {{-- <h6 class="font-extrabold mb-0">{{ $user_activity_logs }}</h6> --}}
+                                            <h4>{{$counts9}}</h4>
                                         </div>
                                     </div>
                                 </div>

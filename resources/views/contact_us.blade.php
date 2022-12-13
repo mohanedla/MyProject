@@ -322,18 +322,24 @@
                     @csrf
                   <!--                                <label class="full-with-form" ><span>Name</span></label>
 -->
-                  <input class="full-with-form " type="text" name="name" placeholder="{{__ ('Name')}}"  required="required" data-required="true" />
-                  <!--                <label class="full-with-form" ><span>Email Address</span></label>
--->
-                  <input class="full-with-form  mt_30" type="email" name="email" placeholder="{{__('Email Address')}}"  required="required" data-required="true" />
-                  <!--                <label class="full-with-form" ><span>Phone Number</span></label>
--->
-                  <input class="full-with-form  mt_30" type="text" name="phone1" placeholder="{{__ ('Phone Number')}}" maxlength="15"  required="required" data-required="true" />
+<input class="full-with-form  mt_30" type="hidden" name="role" value="{{ Auth()->user()->role}}" />
+
+                 @if(auth()->user())
+                  <input class="full-with-form " type="text" name="name"  value="{{ Auth()->user()->name }}" placeholder="{{__ ('Name')}}"  required="required" data-required="true" />
+                  @else
+                  <input class="full-with-form " type="text" name="name"  placeholder="{{__ ('Name')}}"  required="required" data-required="true" />
+@endif
+@if(auth()->user())
+<input class="full-with-form  mt_30" type="email" name="email"   value="{{ Auth()->user()->email}}" placeholder="{{__('Email Address')}}"  required="required" data-required="true" />
+                  @else
+                  <input class="full-with-form  mt_30" type="email" name="email"   placeholder="{{__('Email Address')}}"  required="required" data-required="true" />
+@endif
+                <input class="full-with-form  mt_30" type="text" name="phone1" placeholder="{{__ ('Phone Number')}}" maxlength="15"  required="required" data-required="true" />
                   <!--                <label class="full-with-form" ><span>Subject</span></label>
 -->
                   <input class="full-with-form  mt_30" type="text" name="subject" placeholder="{{__('Subject')}}" data-required="true"  required="required">
                   <!--                                <label class="full-with-form" ><span>Attachment</span></label>
--->
+--> 
                   <!--                                <label class="full-with-form" ><span>Message</span></label>
 -->
                   {{-- <textarea class="full-with-form  mt_30" name="message" placeholder="Message" data-required="true"></textarea> --}}

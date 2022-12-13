@@ -174,6 +174,8 @@
                                     <th style="width: 50px;" scope="col">{{ __('User name') }}</th>
                                     <th style="width: 50px;" scope="col">{{ __('Email Address') }}</th>
                                     <th style="width: 50px;" scope="col">{{ __('Phone Number') }}</th>
+                                    <th style="width: 50px;" scope="col">{{ __('Role') }}</th>
+                                    
                                     <th style="width: 50px;" scope="col"></th>
 
 
@@ -183,15 +185,21 @@
                                
                             @php
                                 $i=1;
-                                $j=0;
+                                
                             @endphp
                             @foreach ($notices as $x)
+                               @if(Auth::User()->role==1)
+                                
                                 <tr>
                                     <td>{{$i++}}</td>
                                     <td>{{$x->name}}</td>
                                     <td>{{$x->email}}</td>
                                     <td>{{$x->phone1}}</td>
-                                    <td>{{$x->subject}}</td> 
+                                    @if($x->role==2)
+                                    <td>{{__('Supervisor')}}</td>
+                                    @else
+                                    <td>{{__('user')}}</td>
+                                    @endif
                                      <td class="text-center"> 
                                  <a data-bs-toggle="modal" data-bs-target="#type_men" data-bs-whatever="@mdo">
                                     <span class="badge bg-info"><i class="bi bi-eye-fill"></i></span>
@@ -200,11 +208,32 @@
 
                                 <a href="#" onclick="return confirm('Are you sure to want to delete it?')"><span
                                         class="badge bg-danger"><i class="bi bi-trash"></i></span></a> 
-                             </td> 
+                             </td>
                                 </tr>
-                                @php
-                                    $j++;
-                                @endphp
+                                @elseif(Auth::User()->role==2 and $x->role==3)
+                                <tr>
+                                    <td>{{$i++}}</td>
+                                    <td>{{$x->name}}</td>
+                                    <td>{{$x->email}}</td>
+                                    <td>{{$x->phone1}}</td>
+                                    @if($x->role==2)
+                                    <td>{{__('Supervisor')}}</td>
+                                    @else
+                                    <td>{{__('user')}}</td>
+                                    @endif
+                                    <td>{{$x->subject}}</td>
+                                    
+                                     <td class="text-center"> 
+                                 <a data-bs-toggle="modal" data-bs-target="#type_men" data-bs-whatever="@mdo">
+                                    <span class="badge bg-info"><i class="bi bi-eye-fill"></i></span>
+                                </a>
+
+
+                                <a href="#" onclick="return confirm('Are you sure to want to delete it?')"><span
+                                        class="badge bg-danger"><i class="bi bi-trash"></i></span></a> 
+                             </td>
+                                </tr>
+                                @endif
                                 @endforeach                            
                             <tbody>
 
@@ -240,7 +269,6 @@
                                 </tr>
                             </thead>
                             <tbody id="bodyrow">
-
 
                             <tr>{{$x->subject}}</tr> 
 

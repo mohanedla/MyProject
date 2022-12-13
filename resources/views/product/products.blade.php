@@ -279,7 +279,8 @@
 </div>
 <script>
 
-function showDetails(pro,sizes,colors){
+function showDetails(pro,sizes,colors)
+{
     document.getElementById("productName").innerHTML = pro['name'];
     var table = document.getElementById("bodyrow");
     table.innerHTML = "";

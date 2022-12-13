@@ -262,9 +262,7 @@
                                 <li> <a href="shop">{{ __('shop') }}</a></li>
                             @endif
                             <li> <a href="about">{{ __('About us') }}</a></li>
-                            @if (Auth::User())
                             <li> <a href="contact_us">{{ __('Contact us') }}</a></li>
-                            @endif
                         </ul>
                     </div>
                     <!-- /.nav-collapse -->

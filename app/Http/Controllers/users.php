@@ -24,15 +24,15 @@ class users extends Controller
         return View('user.d_user',compact('users','page'));
         // return View('',compact('users','collect','categories','product_name_men','product_name_women','product_name_children'));
      
-    }
+    }    
 
     public function delete_user($id)
     {
-        $del=User::find($id);
+        $del=User::find($id)->delete();
         $del->delete();
         Toastr::success('Delete User successfully :)','Success');
         return redirect('/d_user');
     }
-
+  
    
 }

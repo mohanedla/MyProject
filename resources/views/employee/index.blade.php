@@ -187,7 +187,7 @@
                             @endphp
                                 @foreach ($users as $x)
                                 <tr>  
-                                    <td>{{$i++}}</td>
+                                    <td>{{$i++}}</td>  
                                     <td>{{$x->name}}</td>
                                     <td>{{$x->email}}</td>
                                     <td><img style="width: 50%; height:50%;" src="{{asset(Storage::url($x->profile_image))}}" alt=""></td>

@@ -11,6 +11,9 @@ use App\Models\Men;
 use App\Models\Women;
 use App\Models\Kids;
 use App\Models\Notice;
+use App\Models\report;
+use App\Models\Bills;
+
 
 use auth;
 class home extends Controller
@@ -77,6 +80,7 @@ class home extends Controller
         $notice->email=request('email');
         $notice->phone1=request('phone1');   
         $notice->subject=request('subject');
+        $notice->role=request('role');
         $notice->save();
         // Toastr::success('Create new notice successfully :)','Success');
 
@@ -120,10 +124,31 @@ class home extends Controller
 
         public function notic()
         {
-            $page = "notifiction";
+            $page = "notification";
             $notices=Notice::all();
             return View('notic.d_notic',compact('notices','page'));
         }
+
+        public function dashboard_home()
+        {
+            $page = "home";
+            $Users=User::all();
+            $counts= User::where('role','2')->count();
+            $counts1= User::where('role','3')->count();
+            $counts2= brand::count();
+            $counts3= report::count();
+            $counts4= product::count();
+            $counts5= Men::count();
+            $counts6= Women::count();
+            $counts7= Kids::count();
+            $counts8= Notice::count();
+            $counts9= Bills::count();
+
+
+
+            return View('dashboard.home',compact('Users','counts','counts1','counts2','counts3','counts4','counts5','counts6','counts7','counts8','counts9','page'));
+        }
+
 
         public function report()
         {

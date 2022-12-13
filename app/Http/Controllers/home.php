@@ -104,7 +104,6 @@ class home extends Controller
 
         }
 
-<!-- bmfdmbc -->
         public function notic()
         {
             $page = "notifiction";

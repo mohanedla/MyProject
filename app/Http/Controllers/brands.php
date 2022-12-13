@@ -58,12 +58,13 @@ class brands extends Controller
     }
 
     //هذا للداتا بيز
-    public function add_brand () {
+    public function add_brand ()
+     {
 
         $brand= new brand;
         $brand->name=request('brand_name');
         $brand->model=request('brand_model');
-        $brand->phone_number=request('brand_phone');
+        $brand->phone_number=request('brand_phone');   
         $brand->email=request('brand_email');
         $brand->country=request('brand_country');
         $brand->address=request('brand_address');

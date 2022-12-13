@@ -5669,16 +5669,20 @@ button.list-group-item-danger.active:focus {
 .panel-group {
   margin-bottom: 30px;
   overflow: hidden;
+
 }
 .panel-group .panel {
   margin-bottom: 0;
   border-radius: 4px;
+  
 }
 .panel-group .panel + .panel {
   margin-top: 5px;
+  
 }
 .panel-group .panel-heading {
   border-bottom: 0;
+  
 }
 .panel-group .panel-heading + .panel-collapse > .panel-body,
 .panel-group .panel-heading + .panel-collapse > .list-group {

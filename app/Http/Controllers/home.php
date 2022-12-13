@@ -10,6 +10,11 @@ use App\Models\Category;
 use App\Models\Men;
 use App\Models\Women;
 use App\Models\Kids;
+use App\Models\Notice;
+use App\Models\report;
+use App\Models\Bills;
+
+
 use auth;
 class home extends Controller
 {
@@ -63,12 +68,25 @@ class home extends Controller
         {
             $collect = array('M'=>'Men','W'=>'Women','C'=>'Kids' );
             $brand=brand::all();
-            // $products=product::all();
             $category_men=Men::all();
             $category_women=Women::all();
             $category_kids=Kids::all();
             return View('contact_us',compact('collect','brand','category_men','category_women','category_kids'));
         }
+        public function contact_notice(Request $request)
+    {
+        $notice= new Notice;
+        $notice->name=request('name');
+        $notice->email=request('email');
+        $notice->phone1=request('phone1');   
+        $notice->subject=request('subject');
+        $notice->role=request('role');
+        $notice->save();
+        // Toastr::success('Create new notice successfully :)','Success');
+
+        return redirect('/home');
+    }
+
 
     public function cart_page()
         {
@@ -106,9 +124,31 @@ class home extends Controller
 
         public function notic()
         {
-            $page = "notifiction";
-            return View('notic.d_notic',compact("page"));
+            $page = "notification";
+            $notices=Notice::all();
+            return View('notic.d_notic',compact('notices','page'));
         }
+
+        public function dashboard_home()
+        {
+            $page = "home";
+            $Users=User::all();
+            $counts= User::where('role','2')->count();
+            $counts1= User::where('role','3')->count();
+            $counts2= brand::count();
+            $counts3= report::count();
+            $counts4= product::count();
+            $counts5= Men::count();
+            $counts6= Women::count();
+            $counts7= Kids::count();
+            $counts8= Notice::count();
+            $counts9= Bills::count();
+
+
+
+            return View('dashboard.home',compact('Users','counts','counts1','counts2','counts3','counts4','counts5','counts6','counts7','counts8','counts9','page'));
+        }
+
 
         public function report()
         {
@@ -127,6 +167,39 @@ class home extends Controller
         {
             $page = "bills";
             return View('bills.Bills',compact("page"));
+        }
+
+        public function R1()
+        {
+            $page = "R1";
+            return View('report.R1',compact("page"));
+        }
+
+        public function R2()
+        {
+            $page = "R2";
+            return View('report.R2',compact("page"));
+        }
+
+        public function R3()
+        {
+            $page = "R3";
+
+            return View('report.R3',compact("page"));
+        }
+        
+        public function R4()
+        {
+            $page = "R4";
+
+            return View('report.R4',compact("page"));
+        }
+
+        public function R5()
+        {
+            $page = "R5";
+
+            return View('report.R5',compact("page"));
         }
      function footer()
         {

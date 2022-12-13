@@ -159,7 +159,7 @@
             </div>
             {{-- message --}}
             {!! Toastr::message() !!}
-            <section class="section">
+            <section class="section">  
                 <div class="card">
                     <div class="card-header">
                         <h4>{{ __('notice List') }}</h4>
@@ -174,52 +174,68 @@
                                     <th style="width: 50px;" scope="col">{{ __('User name') }}</th>
                                     <th style="width: 50px;" scope="col">{{ __('Email Address') }}</th>
                                     <th style="width: 50px;" scope="col">{{ __('Phone Number') }}</th>
+                                    <th style="width: 50px;" scope="col">{{ __('Role') }}</th>
+                                    
                                     <th style="width: 50px;" scope="col"></th>
 
 
                                 </tr>
                             </thead>
-                            <td>
-                            </td>
-
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-
-
-                            <td class="text-center">
-                                <a data-bs-toggle="modal" data-bs-target="#type_men" data-bs-whatever="@mdo">
+                            <tbody>
+                               
+                            @php
+                                $i=1;
+                                
+                            @endphp
+                            @foreach ($notices as $x)
+                               @if(Auth::User()->role==1)
+                                
+                                <tr>
+                                    <td>{{$i++}}</td>
+                                    <td>{{$x->name}}</td>
+                                    <td>{{$x->email}}</td>
+                                    <td>{{$x->phone1}}</td>
+                                    @if($x->role==2)
+                                    <td>{{__('Supervisor')}}</td>
+                                    @else
+                                    <td>{{__('user')}}</td>
+                                    @endif
+                                     <td class="text-center"> 
+                                 <a data-bs-toggle="modal" data-bs-target="#type_men" data-bs-whatever="@mdo">
                                     <span class="badge bg-info"><i class="bi bi-eye-fill"></i></span>
                                 </a>
 
 
                                 <a href="#" onclick="return confirm('Are you sure to want to delete it?')"><span
-                                        class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
-                            </td>
-                            <tbody>
-
-                                @php
-                                    $i = 1;
-                                    $j = 0;
-                                @endphp
-                                {{-- @foreach ($notics as $x)
+                                        class="badge bg-danger"><i class="bi bi-trash"></i></span></a> 
+                             </td>
+                                </tr>
+                                @elseif(Auth::User()->role==2 and $x->role==3)
                                 <tr>
                                     <td>{{$i++}}</td>
                                     <td>{{$x->name}}</td>
                                     <td>{{$x->email}}</td>
-                                     <td class="text-center">
-                                        <a href="{{route('delete_user',['id'=>$x->id])}}" onclick="return confirm('Are you sure to want to delete it?')"><span class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
-                                    </td>
+                                    <td>{{$x->phone1}}</td>
+                                    @if($x->role==2)
+                                    <td>{{__('Supervisor')}}</td>
+                                    @else
+                                    <td>{{__('user')}}</td>
+                                    @endif
+                                    <td>{{$x->subject}}</td>
+                                    
+                                     <td class="text-center"> 
+                                 <a data-bs-toggle="modal" data-bs-target="#type_men" data-bs-whatever="@mdo">
+                                    <span class="badge bg-info"><i class="bi bi-eye-fill"></i></span>
+                                </a>
+
+
+                                <a href="#" onclick="return confirm('Are you sure to want to delete it?')"><span
+                                        class="badge bg-danger"><i class="bi bi-trash"></i></span></a> 
+                             </td>
                                 </tr>
-                                @php
-                                    $j++;
-                                @endphp
-
-                                @endforeach --}}
-
+                                @endif
+                                @endforeach                            
+                            <tbody>
 
                             </tbody>
                         </table>
@@ -254,7 +270,7 @@
                             </thead>
                             <tbody id="bodyrow">
 
-
+                            <tr>{{$x->subject}}</tr> 
 
                             </tbody>
                         </table>
@@ -278,28 +294,5 @@
             </div>
         </footer>
     </div>
-    <script>
-        function showDetails(pro, sizes, colors) {
-            document.getElementById("productName").innerHTML = pro['name'];
-            var table = document.getElementById("bodyrow");
-            table.innerHTML = "";
-            var max = sizes.length;
-            if (max < colors.lenght) {
-                var max = colors.length;
-            }
-            for (var i = 0; i < max; i++) {
-                if (top) {
-                    var row = table.insertRow(-1);
-                } else {
-                    var row = table.insertRow();
-                }
-
-                // (B3) INSERT CELLS
-                var cell = row.insertCell();
-                cell.innerHTML = colors[i]['color']['name'];
-                cell = row.insertCell();
-                cell.innerHTML = sizes[i]['size']['name'];
-            }
-        }
-    </script>
+ 
 @endsection

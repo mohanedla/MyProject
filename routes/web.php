@@ -77,7 +77,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::post('/admin_login',[App\Http\Controllers\admins::class,'create'])->name('admin_register');
     Route::post('/admin_register',[App\Http\Controllers\admins::class,'validation_admin'])->name('ValidationdAmin');
 
-    // Route::get('/delete_user/{id}',[App\Http\Controllers\users::class,'delete_user']);
     Route::get('/item_brand/{id}',[App\Http\Controllers\products::class,'item_brand']);
     Route::get('/category/{id}/{name}',[App\Http\Controllers\home::class,'category']);
 
@@ -105,18 +104,31 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('change_password', [App\Http\Controllers\EmployeeController::class, 'change_password'])->middleware('auth')->name('change/password');
     Route::post('change_password/db', [App\Http\Controllers\EmployeeController::class, 'changePasswordDB'])->name('change/password/db');
     Route::get('/d_user',[App\Http\Controllers\users::class,'user']);
-    Route::get('/delete_user/{id}',[App\Http\Controllers\user::class,'delete_user'])->name('delete_user');
+
+    Route::get('/delete_user/{id}',[App\Http\Controllers\EmployeeController::class,'delete_employee'])->name('delete_user');
+
+    Route::get('/contact_notice',[App\Http\Controllers\home::class,'contact_notice'])->name('contact_notice');
+
 
     Route::get('/d_notic',[App\Http\Controllers\home::class,'notic']);
     Route::get('/d_report',[App\Http\Controllers\home::class,'report']);
     Route::get('/d_Bills',[App\Http\Controllers\home::class,'Bills']);
     Route::get('/Bills',[App\Http\Controllers\home::class,'Bills1']);
+    Route::get('/R1',[App\Http\Controllers\home::class,'R1']);
+    Route::get('/R2',[App\Http\Controllers\home::class,'R2']);
+    Route::get('/R3',[App\Http\Controllers\home::class,'R3']);
+    Route::get('/R4',[App\Http\Controllers\home::class,'R4']);
+    Route::get('/R5',[App\Http\Controllers\home::class,'R5']);
+    Route::get('/dashboard_home',[App\Http\Controllers\home::class,'dashboard_home']);
 
 
-    Route::get('/dashboard_home',function(){
-        $page = "home";
-        return view('dashboard.home',compact('page'));
-    });
+
+
+
+    // Route::get('/dashboard_home',function(){
+    //     $page = "home";
+    //     return view('dashboard.home',compact('page'));
+    // });
 });
 Auth::routes();
 Route::get('/dashboard_form',function(){

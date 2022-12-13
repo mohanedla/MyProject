@@ -202,9 +202,46 @@
                 <div id="column-left" class="col-sm-4 col-lg-3 hidden-xs">
                     <div id="category-menu" class="navbar collapse in mb_40" aria-expanded="true" style=""
                         role="button">
+                        <div id="category-menu" class="navbar collapse in mb_40" >
+              <div class="nav-responsive">
+                <div class="heading-part">
+                  <h2 class="main_title">{{ __('Women') }}</h2>
+                </div>
+                <li class="nav navbar-nav">
+                   <ul>
+                       @foreach ($category_women as $women)
+                        <li><a href="#">{{ __($women->name) }}</a></li>
+                       @endforeach
+                     </ul>
+                </li>
+                <!-- </ul> -->
+              <!-- </div> -->
+              <div class="heading-part">
+                  <h2 class="main_title">{{ __('Men') }}</h2>
+                </div>
+                <li class="nav navbar-nav">
+                   <ul>
+                   @foreach ($category_men as $men)
+                     <li><a href="#">{{ __($men->name) }}</a></li>
+                       @endforeach
+                     </ul>
+                </li>
+             </div>
+              <div class="heading-part">
+                  <h2 class="main_title">{{ __('Children') }}</h2>
+                </div>
+                <li class="nav navbar-nav">
+                   <ul>
+                      @foreach ($category_kids as $kids)
+                       <li><a href="#">{{ __($kids->name) }}</a></li>
+                         @endforeach
+                     </ul>
+                </li>
+          </div>
                     </div>
 
                 </div>
+                
                 <div class="col-sm-8 col-lg-9 mtb_20">
                     <form enctype="multipart/form-data" method="post" action="#">
                         <div class="table-responsive">
@@ -213,7 +250,7 @@
                                     <tr>
                                         <td class="text-center">{{ __('Image') }}</td>
                                         <td class="text-left">{{ __('Product Name') }}</td>
-                                        <td class="text-left">{{ __('Model') }}</td>
+                                        <!-- <td class="text-left">{{ __('Model') }}</td> -->
                                         <td class="text-left">{{ __('Quantity') }}</td>
                                         <td class="text-right">{{ __('Unit Price') }}</td>
                                         <td class="text-right">{{ __('Total') }}</td>
@@ -225,7 +262,32 @@
                                                     src="{{ asset('images/product/70x84.jpg') }} " alt="iPod Classic"
                                                     title="iPod Classic"></a></td>
                                         <td class="text-left"><a href="product"> {{ __('iPhone') }} </a></td>
-                                        <td class="text-left">{{ __('product 11') }} </td>
+                                        <!-- <td class="text-left">{{ __('product 11') }} </td> -->
+                                        <td class="text-left">
+                                            <div style="max-width: 200px;" class="input-group btn-block">
+                                                <input type="text" class="form-control quantity" size="1"
+                                                    value="1" name="quantity">
+                                                <span class="input-group-btn">
+                                                    <button class="btn" title="" data-toggle="tooltip"
+                                                        type="submit" data-original-title="Update"><i
+                                                            class="fa fa-refresh"></i></button>
+                                                    <button class="btn btn-danger" title=""
+                                                        data-toggle="tooltip" type="button"
+                                                        data-original-title="Remove"><i
+                                                            class="fa fa-times-circle"></i></button>
+                                                </span>
+                                            </div>
+                                        </td>
+                                        <td class="text-right">$254.00</td>
+                                        <td class="text-right">$254.00</td>
+                                    </tr>
+                              
+                                    <tr>
+                                        <td class="text-center"><a href="#"><img
+                                                    src="{{ asset('images/product/70x84.jpg') }} " alt="iPod Classic"
+                                                    title="iPod Classic"></a></td>
+                                        <td class="text-left"><a href="product"> {{ __('iPhone') }} </a></td>
+                                        <!-- <td class="text-left">{{ __('product 11') }} </td> -->
                                         <td class="text-left">
                                             <div style="max-width: 200px;" class="input-group btn-block">
                                                 <input type="text" class="form-control quantity" size="1"
@@ -246,12 +308,14 @@
                                     </tr>
                                 </tbody>
                             </table>
+                            
+
                         </div>
                     </form>
-                    <h3 class="mtb_10"> {{ __('What would you like to do next?') }}</h3>
+                    <!-- <h3 class="mtb_10"> {{ __('What would you like to do next?') }}</h3>
                     <p>{{ __('Choose if you have a discount code or reward points you want to use or would like to estimate your delivery cost') }}
-                    </p>
-                    <div class="panel-group mt_20" id="accordion">
+                    </p> -->
+                    <!-- <div class="panel-group mt_20" id="accordion">
                         <div class="panel panel-default pull-left">
                             <div class="panel-heading">
                                 <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion"
@@ -357,7 +421,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <form action="\home">
                         <input class="btn pull-left mt_30" type="submit" value="{{ __('Continue Shopping') }}" />

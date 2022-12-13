@@ -74,7 +74,8 @@
                             @else
                                 <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                        role="button">{{ Auth::user()->name }} <span class="caret"></span> </span>
+                                        role="button"> {{ Auth::user()->name }} 
+                                        <span class="caret"></span> </span>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
 
                                         <li><a class="dropdown-item" href="/home"
@@ -514,14 +515,15 @@
            <div class="left_banner left-sidebar-widget mb_50 mt_30"> <a href="#"></a> </div>
         </div>
         <div class="col-sm-8 col-lg-9 mtb_20">
-          <div class="panel-group" id="accordion">
-            <div class="panel panel-default  ">
-              <div class="panel-heading">
-                <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">{{ __('Step') }} 1:{{ __('Checkout Options') }}  <i class="fa fa-caret-down"></i></a></h4>
+          <div class="panel-group" id="accordion" >
+            <div class="panel panel-default" >
+              <div class="panel-heading" >
+                <h4 class="panel-title"  style="margin:right 100px;" > <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">{{ __('Step') }} 1:{{ __('Checkout Options') }}  <i class="fa fa-caret-down"></i></a></h4>
               </div>
+              <!-- style="margin:right 10px;" -->
               <div id="collapseOne" class="panel-collapse collapse in">
-                <div class="panel-body">
-                  <div class="row">
+                <div class="panel-body"  >
+                  <div class="row" >
                     <div class="col-sm-6">
                       <h3>{{ __('New Customer') }}</h3>
                       <p>{{ __('Checkout Options') }}:</p>
@@ -798,7 +800,7 @@
                   </div>
                   <p><strong>{{ __('Add Comments About Your Order') }}</strong></p>
                   <p>
-                    <textarea class="form-control" rows="8" name="comment"></textarea>
+                    <textarea class="form-control" rows="8" name="comment" style="margin:rihgt 10px;" ></textarea>
                   </p>
                   <div class="buttons">
                     <div class="pull-right">
@@ -813,7 +815,7 @@
                 <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapsefive">{{ __('Step') }} 5: {{ __('ayment Method P') }}<i class="fa fa-caret-down"></i></a> </h4>
               </div>
               <div id="collapsefive" class="panel-collapse collapse">
-                <div class="panel-body">
+                <div class="panel-body" style="margin:right 10px;">
                   <p>{{ __('Please select the preferred payment method to use on this order') }}.</p>
                   <div class="radio">
                     <label>

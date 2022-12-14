@@ -237,10 +237,10 @@
                          @endforeach
                      </ul>
                 </li>
-          </div>
-                    </div>
-
                 </div>
+                </div>
+                </div>
+
                 
                 <div class="col-sm-8 col-lg-9 mtb_20">
                     <form enctype="multipart/form-data" method="post" action="#">
@@ -254,6 +254,10 @@
                                         <td class="text-left">{{ __('Quantity') }}</td>
                                         <td class="text-right">{{ __('Unit Price') }}</td>
                                         <td class="text-right">{{ __('Total') }}</td>
+                                        <td class="text-right">{{ __('Unit Price') }}</td>
+                                        <td class="text-right">{{ __('Total') }}</td>
+
+                                        
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -278,16 +282,21 @@
                                                 </span>
                                             </div>
                                         </td>
-                                        <td class="text-right">$254.00</td>
-                                        <td class="text-right">$254.00</td>
+                                        <td class="text-right">254.00 $</td>
+                                        <td class="text-right">254.00 DL</td>
+                                        <td class="text-right">254.00 DL</td>
+                                        <td class="text-right">254.00 $</td>
+
+
+
                                     </tr>
-                              
+
                                     <tr>
                                         <td class="text-center"><a href="#"><img
                                                     src="{{ asset('images/product/70x84.jpg') }} " alt="iPod Classic"
                                                     title="iPod Classic"></a></td>
                                         <td class="text-left"><a href="product"> {{ __('iPhone') }} </a></td>
-                                        <!-- <td class="text-left">{{ __('product 11') }} </td> -->
+                                        
                                         <td class="text-left">
                                             <div style="max-width: 200px;" class="input-group btn-block">
                                                 <input type="text" class="form-control quantity" size="1"
@@ -300,18 +309,28 @@
                                                         data-toggle="tooltip" type="button"
                                                         data-original-title="Remove"><i
                                                             class="fa fa-times-circle"></i></button>
+                                                            
                                                 </span>
                                             </div>
                                         </td>
-                                        <td class="text-right">$254.00</td>
-                                        <td class="text-right">$254.00</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            
+                                        <td class="text-right">254.00 $</td>
+                                        <td class="text-right">254.00 $</td>
+                                        <td class="text-right">254.00 DL</td>
+                                        <td class="text-right">254.00 DL</td>
+                                        <td class="text-right"></td>
 
-                        </div>
-                    </form>
+                                    </tr>
+                                    <td class="text-right"></td>
+                                    <td class="text-left"></td>
+
+                                    <tr class="text-hight"></tr>
+                                
+                                </tbody>
+                                                             
+                            </table>
+                            </form>  
+
+                      
                     <!-- <h3 class="mtb_10"> {{ __('What would you like to do next?') }}</h3>
                     <p>{{ __('Choose if you have a discount code or reward points you want to use or would like to estimate your delivery cost') }}
                     </p> -->
@@ -427,11 +446,15 @@
                         <input class="btn pull-left mt_30" type="submit" value="{{ __('Continue Shopping') }}" />
                     </form>
                     <form action="checkout_page">
-                        <input class="btn pull-right mt_30" type="submit" value="{{ __('Checkout') }}
-" />
-                    </form>
-                </div>
-            </div>
+                        <input class="btn pull-right mt_30" type="submit" value="{{ __('Checkout') }}" />
+                        </form>
+
+                   
+                        </div>
+                        </div>
+
+                    
+            
             <div id="brand_carouse" class="ptb_60 text-center">
                         <div class="type-01">
                             <div class="heading-part mb_10 ">

@@ -12,6 +12,12 @@ class brands extends Controller
 {
     public function brand_brand()
     {
+        if(!Auth::check() )
+        return redirect('/');
+        if(Auth::user()->role != 1 && Auth::user()->role != 2)
+        return redirect('/');
+
+        else{
         $categories=Category::all();
         $collect = array('M'=>'Men','W'=>'Women','C'=>'Children' );
         $product_name_men=product::with('categories')->where('collection','=','Men')->get();
@@ -22,13 +28,21 @@ class brands extends Controller
         return View('brand.brand',compact('brand','collect','categories','page','product_name_men','product_name_women','product_name_children'));
 
     }
+}
 
     public function brand_add_brand()
-    {
+    { 
+        if(!Auth::check() )
+        return redirect('/');
+        if(Auth::user()->role != 1 && Auth::user()->role != 2)
+        return redirect('/');
+
+        else{
         $page = "brands";
         return View('brand.add_brand',compact('page'));
 
     }
+}
     public function brand()
     {
         $brand=brand::all();
@@ -52,10 +66,17 @@ class brands extends Controller
     }
     public function dashboard_edit_brand($id)
     {
+        if(!Auth::check() )
+        return redirect('/');
+        if(Auth::user()->role != 1 && Auth::user()->role != 2)
+        return redirect('/');
+
+        else{
         $brand=brand::find($id);
         $page = "brands";
         return View('brand.dashboard_edit_brand',compact('brand','page'));
     }
+}
 
     //هذا للداتا بيز
     public function add_brand ()

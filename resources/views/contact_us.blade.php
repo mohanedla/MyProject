@@ -343,7 +343,7 @@
                   <!--                                <label class="full-with-form" ><span>Message</span></label>
 -->
                   {{-- <textarea class="full-with-form  mt_30" name="message" placeholder="Message" data-required="true"></textarea> --}}
-                  <button class="btn mt_30" type="submit">{{__ ('Send Message')}}</button>
+                  <button class="btn mt_30" type="submit">{{__ ('Send')}}</button>
                 </form>
                 <div id="contact_results"></div>
               </div>

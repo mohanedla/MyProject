@@ -501,352 +501,95 @@
                 </li>
               </div> -->
               <!-- </ul> -->
-            </div>
+              </div>
             </div>
          
-                  <div >
+                  <div>
                  </div>
                   <div class="owl-dot"></div>
                   <div class="owl-dot"></div>
                   <div class="owl-dot"></div>
-                </div></div>
-        </div>
-
-           <div class="left_banner left-sidebar-widget mb_50 mt_30"> <a href="#"></a> </div>
-        </div>
-        <div class="col-sm-8 col-lg-9 mtb_20">
-          <div class="panel-group" id="accordion" >
-            <div class="panel panel-default" >
-              <div class="panel-heading" >
-                <h4 class="panel-title"  style="margin:right 100px;" > <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">{{ __('Step') }} 1:{{ __('Checkout Options') }}  <i class="fa fa-caret-down"></i></a></h4>
-              </div>
-              <!-- style="margin:right 10px;" -->
-              <div id="collapseOne" class="panel-collapse collapse in">
-                <div class="panel-body"  >
-                  <div class="row" >
-                    <div class="col-sm-6">
-                      <h3>{{ __('New Customer') }}</h3>
-                      <p>{{ __('Checkout Options') }}:</p>
-                      <div class="radio">
-                        <label>
-                          <input type="radio" checked="checked" value="register" name="account"> {{ __('Register Account') }}</label>
-                      </div>
-                      <div class="radio">
-                        <label>
-                          <input type="radio" value="guest" name="account"> {{ __('Guest Checkout') }}</label>
-                      </div>
-                      <p>{{ __('By creating an account, you ll be able to shop faster, see products, and keep track of the orders you ve placed') }}</p>
-                      <input type="button" class="btn mt_20" data-loading-text="Loading..." id="button-account" value="{{ __('Continue') }}">
-                    </div>
-                    <div class="col-sm-6">
-                      <h3>{{ __('Returning Customer') }}</h3>
-                      <p>{{ __('I am a returning customer') }}</p>
-                      <div class="form-group">
-                        <label for="input-email" class="control-label">{{ __('E-mail') }}</label>
-                        <input type="text" class="form-control" id="input-email" placeholder="{{ __('E-mail') }}" value="" name="{{ __('E-mail') }}">
-                      </div>
-                      <div class="form-group">
-                        <label for="input-password" class="control-label">{{ __('Password') }}</label>
-                        <input type="password" class="form-control" id="input-password" placeholder="{{ __('Password') }}" value="" name="{{ __('password') }}">
-                        <input type="button" class="btn" data-loading-text="Loading..." id="button-login" value="{{ __('Login') }}">
-                        <a class="pt_30" href="#"> {{ __('Forgotten Password') }}</a></div>
-                    </div>
-                  </div>
                 </div>
               </div>
-            </div>
-         <div class="panel panel-default ">
+        </div>
+
+        </div>
+        
+        
+    
+  
+  <div class="col-sm-8 col-lg-9 mtb_20" >
+         <div class="panel panel-default " style="margin-left:3px;" >
               <div class="panel-heading">
-                <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">{{ __('Step') }} 2:{{ __('Billing Details') }}   <i class="fa fa-caret-down"></i></a> </h4>
+                
+                <h3>  {{ __('تعبئة البيانات') }} &nbsp; &nbsp; </h3>
+                   <h4 class="panel-title"> 
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">{{ __('Step') }} 1   <i class="fa fa-caret-down"></i> 
+               
+              </a> </h4>
               </div>
               <div id="collapseTwo" class="panel-collapse collapse">
                 <div class="panel-body">
                   <form class="form-horizontal">
-                    <div class="radio">
-                      <label>
-                        <input type="radio" checked="checked" value="existing" name="payment_address" data-id="payment-existing">{{ __('I want to use an existing address') }}</label>
-                    </div>
-                    <div id="payment-existing">
-                      <select class="form-control" name="address_id">
-                        <option selected="selected" value="4">{{ __('adsasd') }}</option>
-                      </select>
-                    </div>
-                    <div class="radio">
-                      <label>
-                        <input type="radio" value="new" name="payment_address" data-id="payment-new"> {{ __('I want to use a new address') }}</label>
-                    </div>
-                    <br>
-                    <div id="payment-new" style="display: none;">
-                      <div class="form-group required">
-                        <label for="input-payment-firstname" class="col-sm-2 control-label">{{ __('First name') }}</label>
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" id="input-payment-firstname" placeholder="{{ __('First name') }}" value="" name="firstname">
-                        </div>
-                      </div>
-                      <div class="form-group required">
-                        <label for="input-payment-lastname" class="col-sm-2 control-label">{{ __('Last name') }}</label>
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" id="input-payment-lastname" placeholder="{{ __('Last name') }}" value="" name="lastname">
-                        </div>
+                   
+                  <div class="col-sm-6">
+                      <div class="form-group">
+                        <label  class="control-label">{{ __('رقم الحساب المصرفي') }}</label>
+                        <input type="text" class="form-control" >
                       </div>
                       <div class="form-group">
-                        <label for="input-payment-company" class="col-sm-2 control-label">{{ __('Company') }}</label>
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" id="input-payment-company" placeholder="{{ __('Company') }}" value="" name="company">
-                        </div>
-                      </div>
-                      <div class="form-group required">
-                        <label for="input-payment-address-1" class="col-sm-2 control-label">{{ __('Address') }} 1</label>
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" id="input-payment-address-1" placeholder="{{ __('Address') }} 1" value="" name="address_1">
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label for="input-payment-address-2" class="col-sm-2 control-label">{{ __('Address') }} 2</label>
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" id="input-payment-address-2" placeholder="{{ __('Address') }} 2" value="" name="address_2">
-                        </div>
-                      </div>
-                      <div class="form-group required">
-                        <label for="input-payment-city" class="col-sm-2 control-label">{{ __('City') }}</label>
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" id="input-payment-city" placeholder="{{ __('City') }}" value="" name="city">
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label for="input-payment-postcode" class="col-sm-2 control-label">{{ __('Post Code') }}</label>
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" id="input-payment-postcode" placeholder="{{ __('Post Code') }}" value="" name="postcode">
-                        </div>
-                      </div>
-                      <div class="form-group required">
-                        <label for="input-payment-country" class="col-sm-2 control-label">{{ __('Country') }}</label>
-                        <div class="col-sm-10">
-                          <select class="form-control" id="input-payment-country" name="country_id">
-                            <option value=""> --- {{ __('Please Select') }}--- </option>
-                            <option value="244">Aaland Islands</option>
-                            <option value="1">Afghanistan</option>
-                            <option value="2">Albania</option>
-                            <option value="3">Algeria</option>
-                            <option value="4">American Samoa</option>
-                            <option value="5">Andorra</option>
-                            <option value="6">Angola</option>
-                            <option value="7">Anguilla</option>
-                            <option value="8">Antarctica</option>
-                            <option value="9">Antigua and Barbuda</option>
-                            <option value="10">Argentina</option>
+                        <label for="input-password" class="control-label">{{ __('Address') }}</label>
+                        <input type="text" class="form-control"  placeholder="{{ __('') }}" >
+                      
 
-                          </select>
-                        </div>
                       </div>
-                      <div class="form-group required">
-                        <label for="input-payment-zone" class="col-sm-2 control-label">{{ __('Region / State') }}</label>
-                        <div class="col-sm-10">
-                          <select class="form-control" id="input-payment-zone" name="zone_id">
-                            <option value=""> --- {{ __('Please Select') }}---</option>
-                            <option selected="selected" value="3121">Al Hasakah</option>
-                            <option value="3122">Al Ladhiqiyah</option>
-                            <option value="3123">Al Qunaytirah</option>
-                            <option value="3124">Ar Raqqah</option>
-                            <option value="3125">As Suwayda</option>
-                            <option value="3126">Dara</option>
-                            <option value="3127">Dayr az Zawr</option>
-                            <option value="3128">Dimashq</option>
-                            <option value="3129">Halab</option>
-                            <option value="3130">Hamah</option>
-                            <option value="3131">Hims</option>
-                            <option value="3132">Idlib</option>
-                            <option value="3133">Rif Dimashq</option>
-                            <option value="3134">Tartus</option>
-                          </select>
-                        </div>
+                      <div class="form-group">
+                     
+                        <label for="input-password" class="control-label">{{ __('Upload Picture') }}</label>
+
+                           <input type="file" name="profile_image" id="file"  class="form-control">
+                                <label for="file">
+                                  <p class="file-name"></p>
+                                </label>
+                                <div class="container">
+                                  <div class="radio-inline">
+                                    <h3>  طريقة الإستلام</h3>
+                                    <label class="radio-inline">
+                                      <input type="radio" name="optradio" checked> {{ __('توصيل') }}
+                                    </label>
+                                    <label class="radio-inline">
+                                      <input type="radio" name="optradio" checked>{{ __('الإستلام في الشركة') }}
+                                    </label>
+                                  </div>
+                    <div class="form-group">
+                        <br>
+                       <input type="button" class="btn" data-loading-text="Loading..." id="button-login" value="{{ __('Register') }}">
+
                       </div>
-                    </div>
-                    <div class="buttons clearfix">
-                      <div class="pull-right">
-                        <input type="button" class="btn" data-loading-text="Loading..." id="button-payment-address" value="{{ __('Continue') }}">
-                      </div>
-                    </div>
+</div>
+</div>
+</div>
+
                   </form>
                 </div>
               </div>
             </div>
-            <div class="panel panel-default ">
+            <div class="panel panel-default " style="margin-left:3px;">
               <div class="panel-heading">
-                <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">{{ __('Step') }} 3: {{ __('Delivery Details') }} <i class="fa fa-caret-down"></i></a> </h4>
+              <h3>  {{ __('Confirm Order') }} &nbsp; &nbsp; </h3>
+                   <h4 class="panel-title"> 
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapsesix">{{ __('Step') }} 2  <i class="fa fa-caret-down"></i></a> </h4>
               </div>
-              <div id="collapseThree" class="panel-collapse collapse">
-                <div class="panel-body">
-                  <form class="form-horizontal">
-                    <div class="radio">
-                      <label>
-                        <input type="radio" checked="checked" value="existing" name="shipping_address"> {{ __('I want to use an existing address') }}</label>
-                    </div>
-                    <div id="shipping-existing">
-                      <select class="form-control" name="address_id">
-                        <option selected="selected" value="4">{{ __('adsasd') }}</option>
-                      </select>
-                    </div>
-                    <div class="radio">
-                      <label>
-                        <input type="radio" value="new" name="shipping_address">{{ __('I want to use a new address') }}</label>
-                    </div>
-                    <br>
-                    <div id="shipping-new" style="display: none;">
-                      <div class="form-group required">
-                        <label for="input-shipping-firstname" class="col-sm-2 control-label">{{ __('First name') }}</label>
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" id="input-shipping-firstname" placeholder="{{ __('First name') }}" value="" name="firstname">
-                        </div>
-                      </div>
-                      <div class="form-group required">
-                        <label for="input-shipping-lastname" class="col-sm-2 control-label">{{ __('Last name') }}</label>
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" id="input-shipping-lastname" placeholder="{{ __('Last ame') }}" value="" name="lastname">
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label for="input-shipping-company" class="col-sm-2 control-label">{{ __('Company') }}</label>
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" id="input-shipping-company" placeholder="{{ __('Company') }}" value="" name="company">
-                        </div>
-                      </div>
-                      <div class="form-group required">
-                        <label for="input-shipping-address-1" class="col-sm-2 control-label">{{ __('Address') }} 1</label>
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" id="input-shipping-address-1" placeholder="{{ __('Address') }} 1" value="" name="address_1">
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label for="input-shipping-address-2" class="col-sm-2 control-label">{{ __('Address') }} 2</label>
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" id="input-shipping-address-2" placeholder="{{ __('Address') }} 2" value="" name="address_2">
-                        </div>
-                      </div>
-                      <div class="form-group required">
-                        <label for="input-shipping-city" class="col-sm-2 control-label">{{ __('City') }}</label>
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" id="input-shipping-city" placeholder="{{ __('City') }}" value="" name="city">
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label for="input-shipping-postcode" class="col-sm-2 control-label">{{ __('Post Code') }}</label>
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" id="input-shipping-postcode" placeholder="{{ __('Post Code') }}" value="123456" name="postcode">
-                        </div>
-                      </div>
-                      <div class="form-group required">
-                        <label for="input-shipping-country" class="col-sm-2 control-label">{{ __('Country') }}</label>
-                        <div class="col-sm-10">
-                          <select class="form-control" id="input-shipping-country" name="country_id">
-                            <option value=""> --- {{ __('Please Select') }} --- </option>
-                            <option value="244">Aaland Islands</option>
-                            <option value="1">Afghanistan</option>
-                            <option value="2">Albania</option>
-                            <option value="3">Algeria</option>
-                            <option value="4">American Samoa</option>
-                            <option value="5">Andorra</option>
-                            <option value="6">Angola</option>
-                            <option value="7">Anguilla</option>
-                            <option value="8">Antarctica</option>
-                            <option value="9">Antigua and Barbuda</option>
-                            <option value="10">Argentina</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="form-group required">
-                        <label for="input-payment-zone" class="col-sm-2 control-label">{{ __('Region / State') }}</label>
-                        <div class="col-sm-10">
-                          <select class="form-control" id="input-payment-zone" name="zone_id">
-                            <option value=""> --- {{ __('Please Select') }}---</option>
-                            <option selected="selected" value="3121">Al Hasakah</option>
-                            <option value="3122">Al Ladhiqiyah</option>
-                            <option value="3123">Al Qunaytirah</option>
-                            <option value="3124">Ar Raqqah</option>
-                            <option value="3125">As Suwayda</option>
-                            <option value="3126">Dara</option>
-                            <option value="3127">Dayr az Zawr</option>
-                            <option value="3128">Dimashq</option>
-                            <option value="3129">Halab</option>
-                            <option value="3130">Hamah</option>
-                            <option value="3131">Hims</option>
-                            <option value="3132">Idlib</option>
-                            <option value="3133">Rif Dimashq</option>
-                            <option value="3134">Tartus</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="buttons clearfix">
-                      <div class="pull-right">
-                        <input type="button" class="btn" data-loading-text="Loading..." id="button-shipping-address" value="{{ __('Continue') }}">
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-            <div class="panel panel-default ">
-              <div class="panel-heading">
-                <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapsefour">{{ __('Step') }} 4: {{ __('Delivery Method') }} <i class="fa fa-caret-down"></i></a> </h4>
-              </div>
-              <div id="collapsefour" class="panel-collapse collapse">
-                <div class="panel-body">
-                  <p>{{ __('Please select the preferred shipping method to use on this order') }}.</p>
-                  <p><strong>{{ __('Flat Rate') }}</strong></p>
-                  <div class="radio">
-                    <label>
-                      <input type="radio" checked="checked" value="flat.flat" name="shipping_method">{{ __('Flat Shipping Rate') }}  - $5.00</label>
-                  </div>
-                  <p><strong>{{ __('Add Comments About Your Order') }}</strong></p>
-                  <p>
-                    <textarea class="form-control" rows="8" name="comment" style="margin:rihgt 10px;" ></textarea>
-                  </p>
-                  <div class="buttons">
-                    <div class="pull-right">
-                      <input type="button" class="btn mt_20" data-loading-text="Loading..." id="button-shipping-method" value="{{ __('Continue') }}">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="panel panel-default ">
-              <div class="panel-heading">
-                <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapsefive">{{ __('Step') }} 5: {{ __('ayment Method P') }}<i class="fa fa-caret-down"></i></a> </h4>
-              </div>
-              <div id="collapsefive" class="panel-collapse collapse">
-                <div class="panel-body" style="margin:right 10px;">
-                  <p>{{ __('Please select the preferred payment method to use on this order') }}.</p>
-                  <div class="radio">
-                    <label>
-                      <input type="radio" checked="checked" value="cod" name="payment_method">{{ __('Cash On Delivery') }}  </label>
-                  </div>
-                  <p><strong>{{ __('Add Comments About Your Order') }}</strong></p>
-                  <p>
-                    <textarea class="form-control" rows="8" name="comment"></textarea>
-                  </p>
-                  <div class="buttons">
-                    <div class="pull-right mt_20">{{ __('I have read and agree') }} <a class="agree" href="#"><b>{{ __('Terms & Conditions') }}</b></a>
-                      <input type="checkbox" value="1" name="agree"> &nbsp;
-                      <input type="button" class="btn" data-loading-text="Loading..." id="button-payment-method" value="Continue">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="panel panel-default ">
-              <div class="panel-heading">
-                <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapsesix">{{ __('Step') }} 6:{{ __('Confirm Order') }}  <i class="fa fa-caret-down"></i></a> </h4>
-              </div>
-              <div id="collapsesix" class="panel-collapse collapse">
-                <div class="panel-body">
-                  <div class="table-responsive">
-                    <table class="table table-bordered table-hover">
-                      <thead>
+              <div id="collapsesix" class="panel-collapse collapse" >
+                <div class="panel-body"  >
+                  <div class="table-responsive"  >
+                    <table class="table table-bordered table-hover"  >
+                      <thead style="background-color:#424242;" >
                         <tr>
                           <td class="text-left">{{ __('Product Name') }}</td>
-                          <td class="text-left">{{ __('Model') }}</td>
                           <td class="text-right">{{ __('Quantity') }}</td>
+                          <td class="text-right">{{ __('Unit Price') }}</td>
+                          <td class="text-right">{{ __('Total') }}</td>
                           <td class="text-right">{{ __('Unit Price') }}</td>
                           <td class="text-right">{{ __('Total') }}</td>
                         </tr>
@@ -854,25 +597,29 @@
                       <tbody>
                         <tr>
                           <td class="text-left"><a href="http://localhost/opc001/index.php?route=product/product&amp;product_id=46">Sony VAIO</a></td>
-                          <td class="text-left">{{ __('Product 19') }}</td>
                           <td class="text-right">1</td>
                           <td class="text-right">$1,000.00</td>
                           <td class="text-right">$1,000.00</td>
+                          <td class="text-right">$1,000.00</td>
+                          <td class="text-right">$1,000.00</td>
+
+
                         </tr>
                       </tbody>
-                      <tfoot>
+                       <tfoot>
                         <tr>
-                          <td class="text-right" colspan="4"><strong>{{ __('Sub-Total') }}:</strong></td>
-                          <td class="text-right">$1,000.00</td>
+                          <td class="text-right"colspan="4">$1,000.00</td>
+                          <td></td>
+                          <td class="text-right"colspan="4">$1,000.00</td>
                         </tr>
-                        <tr>
+                      <!--  <tr>
                           <td class="text-right" colspan="4"><strong>{{ __('Flat Shipping Rate') }}:</strong></td>
                           <td class="text-right">$5.00</td>
                         </tr>
                         <tr>
                           <td class="text-right" colspan="4"><strong>{{ __('Total') }}:</strong></td>
                           <td class="text-right">$1,005.00</td>
-                        </tr>
+                        </tr> -->
                       </tfoot>
                     </table>
                   </div>
@@ -909,6 +656,8 @@
                         </div>
                     </div>
     </div>
+    </div>
+
     <!-- =====  FOOTER END  ===== -->
   </div>
   <a id="scrollup"></a>

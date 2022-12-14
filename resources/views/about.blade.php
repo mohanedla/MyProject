@@ -277,14 +277,20 @@
                 <figure> <img src="{{ asset('images\about-page11-gaando.jpg')}}" alt="#"> </figure>
                 </div> -->
                 <div class="banner">
-        <div class="main-banner owl-carousel">
+        <!-- <div class="main-banner owl-carousel">
             <div class="item"><a href="#"><img src="{{ asset('images\about-page11-gaando.jpg')}}"
                         style="height: 350px; Width: " alt="Main Banner" class="img-responsive" /></a></div>
-        </div>
+        </div> -->
 
                 <div class="col-md-12">
                 <div class="about-text">
                     <div class="about-heading-wrap">
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+
                         <p><h1 style=" text-align: center">Online shop</h1></p>
                         <p><h3 style=" text-align: center"><span>{{ __('Designing this website is the best part of my life') }}</h3></p>
                     </div>
@@ -299,10 +305,10 @@
                     <div class="item team-detail">
                     <br>
 
-                    <div class="team-item-img"> <img src="{{ asset('images\brand\13.jpg')}}" alt="" /> </div>
-                    <br>
                     <div class="team-designation mt_20"><h1>{{ __('THE ENNGINEER') }}</h1></div>
                     <h3 class="copyright-part">{{ __('Aymen Abd_Almjeed Ben Ghali') }}</h3>
+                    <div class="team-item-img"> <img src="{{ asset('images\about-page1122.jpg')}}" alt=""> </div>
+                    <br>
 
                     <div class="col-sm-4">
                     <div class="social_icon">

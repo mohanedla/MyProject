@@ -124,10 +124,18 @@ class home extends Controller
 
         public function notic()
         {
+            if(!Auth::check() )
+            return redirect('/');
+            if(Auth::user()->role != 1 && Auth::user()->role != 2)
+            return redirect('/');
+    
+            else{
             $page = "notification";
             $notices=Notice::all();
             return View('notic.d_notic',compact('notices','page'));
         }
+    }
+
 
         public function dashboard_home()
         {
@@ -155,55 +163,105 @@ class home extends Controller
 
         public function report()
         {
-            $page = "reports";
+            if(!Auth::check() )
+            return redirect('/');
+            if(Auth::user()->role != 1 && Auth::user()->role != 2)
+             return redirect('/');
+
+            else{
+            $page = "report";
             return View('report.d_report',compact("page"));
         }
+    }
+
         public function Bills()
         {
+            if(!Auth::check() )
+            return redirect('/');
+            if(Auth::user()->role != 1 && Auth::user()->role != 2)
+             return redirect('/');
+
+            else{
             $page = "bills";
 
             return View('bills.d_bills',compact("page"));
         }
-
+ }
 
         public function Bills1()
         {
+            if(!Auth::check() )
+            return redirect('/');
+            if(Auth::user()->role != 1 && Auth::user()->role != 2)
+             return redirect('/');
+
+            else{
             $page = "bills";
             return View('bills.Bills',compact("page"));
         }
-
+    }
         public function R1()
         {
+            if(!Auth::check() )
+            return redirect('/');
+            if(Auth::user()->role != 1 && Auth::user()->role != 2)
+             return redirect('/');
+
+            else{
             $page = "R1";
             return View('report.R1',compact("page"));
         }
-
+    }
         public function R2()
-        {
+        { 
+            if(!Auth::check() )
+            return redirect('/');
+            if(Auth::user()->role != 1 && Auth::user()->role != 2)
+             return redirect('/');
+
+            else{
             $page = "R2";
             return View('report.R2',compact("page"));
         }
-
+    }
         public function R3()
         {
+            if(!Auth::check() )
+            return redirect('/');
+            if(Auth::user()->role != 1 && Auth::user()->role != 2)
+             return redirect('/');
+
+            else{
             $page = "R3";
 
             return View('report.R3',compact("page"));
         }
-
+    }
         public function R4()
-        {
+        { if(!Auth::check() )
+            return redirect('/');
+            if(Auth::user()->role != 1 && Auth::user()->role != 2)
+             return redirect('/');
+
+            else{
             $page = "R4";
 
             return View('report.R4',compact("page"));
         }
-
+    }
         public function R5()
-        {
+        {  
+            if(!Auth::check() )
+            return redirect('/');
+            if(Auth::user()->role != 1 && Auth::user()->role != 2)
+             return redirect('/');
+
+            else{
             $page = "R5";
 
             return View('report.R5',compact("page"));
         }
+    }
      function footer()
         {
             return View('footer');

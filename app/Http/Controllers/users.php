@@ -12,6 +12,12 @@ class users extends Controller
 { 
     public function user()
     {
+        if(!Auth::check() )
+        return redirect('/');
+        if(Auth::user()->role != 1 && Auth::user()->role != 2)
+        return redirect('/');
+
+        else{
         // $categories=Category::all();
         // $collect = array('M'=>'Men','W'=>'Women','C'=>'Children' );
         // $product_name_men=product::with('categories')->where('collection','=','Men')->get();
@@ -24,7 +30,8 @@ class users extends Controller
         return View('user.d_user',compact('users','page'));
         // return View('',compact('users','collect','categories','product_name_men','product_name_women','product_name_children'));
      
-    }    
+    } 
+}       
 
     public function delete_user($id)
     {

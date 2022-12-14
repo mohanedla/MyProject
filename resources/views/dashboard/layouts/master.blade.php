@@ -88,11 +88,10 @@
             <nav class="header-nav ms-auto">
                 <ul class="d-flex align-items-center">
 
-                    <li class="nav-item dropdown">
-                    <li class="nav-item dropdown pe-3">
+                      <li class="nav-item dropdown pe-3">
                         <span class="nav-link nav-profile d-flex align-items-center pe-0"
-                        data-bs-toggle="dropdown" role="button">{{ __('Language') }} </span>
-                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile" >
+                         data-bs-toggle="dropdown" role="button">{{ __('Language') }} </span>
+                      <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile" >
                         @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                             <li class="dropdown-header">
                                 <a rel="alternate" hreflang="{{ $localeCode }}"
@@ -101,9 +100,11 @@
                                 </a>
                             </li>
                         @endforeach
-                    </ul>
+                          </ul>
 
                         </li>
+                        <li class="nav-item dropdown">
+
                         <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
                             <i class="bi bi-bell"></i>
                             <span class="badge bg-primary badge-number">4</span>

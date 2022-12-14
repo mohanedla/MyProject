@@ -5,21 +5,37 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Rules\MatchOldPassword;
-
+use auth;
 class EmployeeController extends Controller
 {
     public function employees()
     {
+            if(!Auth::check() )
+            return redirect('/');
+            if(Auth::user()->role != 1 && Auth::user()->role != 2)
+            return redirect('/');
+
+            else{
         $users = User::where('role', 2)->get();
         $page = "employees";
         return View('employee.index',compact('users','page'));
+        
+
+          }
 
     }
 
     public function add_employee()
     {
+        if(!Auth::check() )
+        return redirect('/');
+        if(Auth::user()->role != 1 && Auth::user()->role != 2)
+        return redirect('/');
+
+        else{
         $page = "employees";
         return view('employee.add_employee',compact('page'));
+    }
     }
 
     public function store_employee(Request $request)

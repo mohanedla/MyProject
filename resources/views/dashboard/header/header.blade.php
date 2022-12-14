@@ -69,7 +69,8 @@
 
                     </ul><!-- End Notification Dropdown Items -->
 
-                </li><!-- End Notification Nav -->
+                </li>
+                <!-- End Notification Nav -->
 
 
 

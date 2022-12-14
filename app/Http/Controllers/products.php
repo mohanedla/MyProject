@@ -35,6 +35,12 @@ class products extends Controller
     // }
     public function all_product($id)
     {
+        if(!Auth::check() )
+        return redirect('/');
+        if(Auth::user()->role != 1 && Auth::user()->role != 2)
+        return redirect('/');
+
+        else{
         if($id == 0){
             $admin=product::with('sizes.size','colors.color')->get();
         }elseif($id == 1){
@@ -48,6 +54,7 @@ class products extends Controller
         $page = "product";
 
         return View('product.products',compact('admin','page','id'));
+    }
 
     }
 
@@ -124,6 +131,13 @@ class products extends Controller
 
     public function edit_product($id,$id_page)
     {
+        if(!Auth::check() )
+        return redirect('/');
+        if(Auth::user()->role != 1 && Auth::user()->role != 2)
+        return redirect('/');
+
+        else{
+
         $collect = array('Men','Women','Kids' );
         $product=product::find($id);
         $brands=brand::all();
@@ -143,6 +157,7 @@ class products extends Controller
         $page = "product";
         return View('product.edit_product',compact('product','id_page','page','brands','get','categories','collect','color','size','get_color','get_size'));
 
+    }
     }
 
     public function add_color ()
@@ -164,6 +179,12 @@ class products extends Controller
     }
     public function add_product($id)
     {
+        if(!Auth::check() )
+        return redirect('/');
+        if(Auth::user()->role != 1 && Auth::user()->role != 2)
+        return redirect('/');
+
+        else{
 
         request()->validate(
         [
@@ -232,6 +253,7 @@ class products extends Controller
         }
 
     }
+}
 
     public function update_product($id)
     {

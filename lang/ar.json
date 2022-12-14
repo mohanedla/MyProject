@@ -12,6 +12,8 @@
   "Save": "حفظ",
   "Upload Profile Picture": "تحميل صورة الملف الشخصي",
   "Upload Product Picture": "تحميل صورة المنتج",
+  "Upload Picture": "تحميل صورة",
+
   "Adjective":"الصفة",
   "First name":"الإسم الأول",
   "Last name":"إسم العائلة",
@@ -103,6 +105,7 @@
   "Tripoli":"طرابلس",
   "Tripoli/":"سوق الجمعة / طرابلس",
   "Send Message":"إرسال رسالة",
+  "Send":"إرسال",
   "Subject":"الموضوع",
   "Phone Number":"رقم الهاتف",
   "Make By: Aymen Ben Ghali":"بواسطة :أيمن بن غالي",

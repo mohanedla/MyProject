@@ -383,11 +383,13 @@
               <hr>
               <ul class="list-unstyled product_info mtb_20">
                 <li>
-                  <h4>{{ __('Brand') }} :  lakoste </h4>
+                <label><h4>{{ __('Product Name') }}  : Shirt</h4></label>
+
                   </li>
-              
+              <br>
                 <li>
-                  <label><h4>{{ __('Product Name') }}  : Shirt</h4></label>
+                  <h4>{{ __('Brand') }} :  lakoste </h4>
+
                   <!-- <span><h5> Shirt </h5></span> -->
                 </li>
               
@@ -399,7 +401,7 @@
                 <div class="form-group">
                   <div class="row">
                     <div class="Sort-by col-md-6">
-                      <label><h4>{{ __('Sort by') }}</h4></label>
+                      <label><h4>{{ __('Size') }}</h4></label>
                       <select name="product_size" id="select-by-size" class="selectpicker form-control">
                         <option>Small</option>
                         <option>Medium</option>

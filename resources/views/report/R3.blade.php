@@ -16,7 +16,8 @@
         </a>
         {{-- <i class="bi bi-list toggle-sidebar-btn"></i> --}}
 
-    </div><!-- End Logo -->
+    </div>
+    <!-- End Logo -->
 
 
 
@@ -73,7 +74,8 @@
 
                 </ul><!-- End Notification Dropdown Items -->
 
-            </li><!-- End Notification Nav -->
+            </li>
+            <!-- End Notification Nav -->
 
 
 

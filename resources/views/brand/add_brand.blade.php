@@ -38,13 +38,13 @@
 <body>
     @if(!Auth::check())
     <script>
-       window.location.href ='home';
+       window.location.href ='/';
    </script>
 @endif
     @if (Auth::user())
     @if (Auth::user()->role != "admin" && Auth::user()->role != "supervisor")
 <script>
-    window.location.href ='home';
+    window.location.href ='/';
 </script>
 
 @endif

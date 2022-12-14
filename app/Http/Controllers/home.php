@@ -78,7 +78,7 @@ class home extends Controller
         $notice= new Notice;
         $notice->name=request('name');
         $notice->email=request('email');
-        $notice->phone1=request('phone1');   
+        $notice->phone1=request('phone1');
         $notice->subject=request('subject');
         $notice->role=request('role');
         $notice->save();
@@ -131,6 +131,12 @@ class home extends Controller
 
         public function dashboard_home()
         {
+            if(!Auth::check() )
+            return redirect('/');
+            if(Auth::user()->role != 1 && Auth::user()->role != 2)
+             return redirect('/');
+
+            else{
             $page = "home";
             $Users=User::all();
             $counts= User::where('role','2')->count();
@@ -138,17 +144,14 @@ class home extends Controller
             $counts2= brand::count();
             $counts3= report::count();
             $counts4= product::count();
-            $counts5= Men::count();
-            $counts6= Women::count();
-            $counts7= Kids::count();
+            $counts5= product::where('collection','Men')->count();
+            $counts6= product::where('collection','Women')->count();
+            $counts7= product::where('collection','Kids')->count();
             $counts8= Notice::count();
             $counts9= Bills::count();
-
-
-
             return View('dashboard.home',compact('Users','counts','counts1','counts2','counts3','counts4','counts5','counts6','counts7','counts8','counts9','page'));
         }
-
+    }
 
         public function report()
         {
@@ -187,7 +190,7 @@ class home extends Controller
 
             return View('report.R3',compact("page"));
         }
-        
+
         public function R4()
         {
             $page = "R4";

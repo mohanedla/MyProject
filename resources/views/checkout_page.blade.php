@@ -583,7 +583,7 @@
               <div id="collapsesix" class="panel-collapse collapse" >
                 <div class="panel-body"  >
                   <div class="table-responsive"  >
-                    <table class="table table-bordered table-hover"  >
+                    <table class="table table-bordered table-hover" style=" font-color:#wihte;" >
                       <thead style="background-color:#424242;" >
                         <tr>
                           <td class="text-left">{{ __('Product Name') }}</td>
@@ -594,9 +594,9 @@
                           <td class="text-right">{{ __('Total') }}</td>
                         </tr>
                       </thead>
-                      <tbody>
+                      <tbody style="background-color:#424242; font-color:#wihte;">
                         <tr>
-                          <td class="text-left"><a href="http://localhost/opc001/index.php?route=product/product&amp;product_id=46">Sony VAIO</a></td>
+                          <td >Sony VAIO</td>
                           <td class="text-right">1</td>
                           <td class="text-right">$1,000.00</td>
                           <td class="text-right">$1,000.00</td>
@@ -606,21 +606,14 @@
 
                         </tr>
                       </tbody>
-                       <tfoot>
+                       <tbody>
                         <tr>
                           <td class="text-right"colspan="4">$1,000.00</td>
                           <td></td>
                           <td class="text-right"colspan="4">$1,000.00</td>
                         </tr>
-                      <!--  <tr>
-                          <td class="text-right" colspan="4"><strong>{{ __('Flat Shipping Rate') }}:</strong></td>
-                          <td class="text-right">$5.00</td>
-                        </tr>
-                        <tr>
-                          <td class="text-right" colspan="4"><strong>{{ __('Total') }}:</strong></td>
-                          <td class="text-right">$1,005.00</td>
-                        </tr> -->
-                      </tfoot>
+                    
+                        </tbody>
                     </table>
                   </div>
                   <div class="buttons">

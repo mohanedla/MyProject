@@ -108,6 +108,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/delete_user/{id}',[App\Http\Controllers\EmployeeController::class,'delete_employee'])->name('delete_user');
 
     Route::get('/contact_notice',[App\Http\Controllers\home::class,'contact_notice'])->name('contact_notice');
+    Route::get('/delete_notice/{id}',[App\Http\Controllers\home::class,'delete_notice'])->name('delete_notice');
 
 
     Route::get('/d_notic',[App\Http\Controllers\home::class,'notic']);

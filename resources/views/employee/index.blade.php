@@ -64,7 +64,7 @@
                                     <a data-bs-toggle="modal" data-bs-target="#type_men"
                                     data-bs-whatever="@mdo" onclick="showDetails({{ json_encode($x) }},{{ json_encode(asset(Storage::url($x->profile_image))) }}) ">
                                             <span class="badge bg-info"><i class="bi bi-eye-fill"></i></span>
-                                        </a>
+                                         </a>
                                         <a href="{{route('delete_employee',['id'=>$x->id])}}" onclick="return confirm('Are you sure to want to delete it?')"><span class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
                                     </td>
                                 </tr>
@@ -91,7 +91,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5"> {{ __('Employee') }}</h1><br>
+                    <h1 class="modal-title fs-5"> {{ __('admin') }}</h1><br>
                     <h1 class="modal-title fs-5"></h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -114,16 +114,16 @@
                         <tbody id="bodyrow" style=" word-spacing: 50px; ">
                         </tbody>
                     </table>
-                    <td> {{ __('Name') }} : &nbsp; <span id="user_name"></span> </td>
-                    <td> &nbsp; &nbsp; &nbsp; &nbsp; {{ __('Email Address') }} : &nbsp <span id="user_email"></span>
-                    </td>
+                    <h1 class="modal-title fs-5"> {{ __('Name') }} : &nbsp; <span id="user_name"></span> </h1>
+                    <h1 class="modal-title fs-5">  {{ __('Email Address') }} : &nbsp <span id="user_email"></span>
+                </h1>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary"
                         data-bs-dismiss="modal">{{ __('Close') }}</button>
 
                 </div>
-                </form>
+                </form>   
             </div>
         </div>
     </div>

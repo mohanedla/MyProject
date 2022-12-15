@@ -45,14 +45,14 @@
                             <th style="width: 50px;" scope="col">{{ __('Name')}}</th>
                             <th style="width: 50px;" scope="col"> {{ __('Product type')}}</th>
                             <th style="width: 50px;" scope="col">{{ __('brand')}}</th>
-                                <th style="width: 50px;" scope="col">{{ __('Collection')}}</th>
-                                <th style="width: 50px;" scope="col">{{ __('Specifications')}}</th>
-                                <th style="width: 50px;" scope="col">{{ __('Quantity')}}</th>
-                                <th style="width: 50px;" scope="col">{{ __('Purchasing price')}}</th>
-                                <th style="width: 50px;" scope="col">{{ __('Selling price')}}</th>
-                                <th style="width: 50px;" scope="col">{{ __('admin')}}</th>
-                                <th style="width: 50px;" scope="col">{{ __('photo')}}</th>
-                                <th style="width: 50px;" scope="col"></th>
+                            <th style="width: 50px;" scope="col">{{ __('Collection')}}</th>
+                            <th style="width: 50px;" scope="col">{{ __('Specifications')}}</th>
+                            <th style="width: 50px;" scope="col">{{ __('Quantity')}}</th>
+                            <th style="width: 50px;" scope="col">{{ __('Purchasing price')}}</th>
+                            <th style="width: 50px;" scope="col">{{ __('Selling price')}}</th>
+                            <th style="width: 50px;" scope="col">{{ __('admin')}}</th>
+                            <th style="width: 50px;" scope="col">{{ __('photo')}}</th>
+                            <th style="width: 50px;" scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -76,9 +76,9 @@
                                     <td><img style="width: 50%;" src="{{asset(Storage::url($x->profile_image))}}" alt=""></td>
                                     <td class="text-center">
                                         <a data-bs-toggle="modal" data-bs-target="#type_men"
-                                        data-bs-whatever="@mdo" onclick="showDetails({{json_encode($x)}},{{json_encode($x->sizes)}},{{json_encode($x->colors)}})">
-                                            <span class="badge bg-info"><i class="bi bi-eye-fill"></i></span>
-                                        </a>
+                                        data-bs-whatever="@mdo" 
+                                        onclick="showDetails({{json_encode($x)}},{{json_encode($x->sizes)}},{{json_encode($x->colors)}},{{ json_encode(asset(Storage::url($x->profile_image))) }})">
+                                            <span class="badge bg-info"><i class="bi bi-eye-fill"></i></span> </a>
 
                                         <a href="/edit_product/{{$x->id}}/{{$id}}">
                                             <span class="badge bg-success"><i class="bi bi-pencil-square"></i></span>
@@ -108,23 +108,40 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel"> {{ __('Product data') }}</h1><br>
-                    <h1 class="modal-title fs-5" id="productName"></h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel"> {{ __('Product data') }}</h1>
+
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                <!-- <h1 class="modal-title fs-5"> {{ __('Name') }} &nbsp; &nbsp; :  <span id="productName"></span> </h1> -->
 
                     <table class="table table-striped" id="table1">
                         <thead>
                             <tr>
+                            <img id="image" style="width: 40%; margin-left: 30px;">
+
+                            </tr>
+                            <div>
+                        <h1 class="modal-title fs-5"> {{ __('Purchasing price') }} : &nbsp; <span id="price1"> </span> 
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                         {{ __('Selling price') }}  : &nbsp; <span id="price2"></span> 
+                    </h1>
+                </div>
                                 <th style="width: 50px;" scope="col">{{ __('Colors') }}</th>
                                 <th style="width: 50px;" scope="col">{{ __('Sizes') }}</th>
-                            </tr>
+                            
+                            
+
+
+                        
                         </thead>
                         <tbody id="bodyrow">
+                            
                         </tbody>
+                     
                     </table>
                    </div>
+
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary"
                         data-bs-dismiss="modal">{{ __('Close') }}</button>
@@ -147,9 +164,13 @@
 </div>
 <script>
 
-function showDetails(pro,sizes,colors)
+function showDetails(pro,sizes,colors,img)
 {
-    document.getElementById("productName").innerHTML = pro['name'];
+    // document.getElementById("productName").innerHTML = pro['name'];
+    var myImage = document.getElementById("image");
+    document.getElementById("price1").innerHTML = pro['price'];
+    document.getElementById("price2").innerHTML = pro['price_purchas'];
+
     var table = document.getElementById("bodyrow");
     table.innerHTML = "";
     var max = sizes.length;
@@ -158,14 +179,21 @@ function showDetails(pro,sizes,colors)
     }
     for(var i=0; i<max;i++){
         if (top) { var row = table.insertRow(-1); }
-        else { var row = table.insertRow(); }
+        else
+         { var row = table.insertRow(); }
 
         // (B3) INSERT CELLS
         var cell = row.insertCell();
         cell.innerHTML = colors[i]['color']['name'];
         cell = row.insertCell();
         cell.innerHTML = sizes[i]['size']['name'];
+        
     }
+    myImage.src = img;
+        console.log(img);
+        myImage.alt = 'alt';
+       
+      
 }
 
 </script>

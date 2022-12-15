@@ -205,7 +205,7 @@
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
 
-                                            <label for="email-id-column">{{ __('Sellig price') }}</label>
+                                            <label for="email-id-column">{{ __('Selling price') }}</label>
                                             <input type="text" id="email-id-column" value="{{$product->price}}" class="form-control" required
                                                 name="product_price" placeholder="{{ __('enter price') }}">
                                         </div>

@@ -68,15 +68,20 @@
                                     @else
                                     <td>{{__('user')}}</td>
                                     @endif
-                                     <td class="text-center"> 
-                                 <a data-bs-toggle="modal" data-bs-target="#type_men" data-bs-whatever="@mdo">
+                                    <td class="text-center"> 
+                                 <!-- <a data-bs-toggle="modal" data-bs-target="#type_men" data-bs-whatever="@mdo">
                                     <span class="badge bg-info"><i class="bi bi-eye-fill"></i></span>
-                                </a>
+                                </a> -->
+                                <a data-bs-toggle="modal" data-bs-target="#type_men"
+                                    data-bs-whatever="@mdo" onclick="showDetails({{ json_encode($x) }}) ">
+                                            <span class="badge bg-info"><i class="bi bi-eye-fill"></i></span>
 
 
-                                <a href="#" onclick="return confirm('Are you sure to want to delete it?')"><span
-                                        class="badge bg-danger"><i class="bi bi-trash"></i></span></a> 
-                             </td>
+                            
+                             
+                                        <a href="{{route('delete_notice',['id'=>$notices->id])}}" onclick="return confirm('Are you sure to want to delete it?')"><span class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
+
+                                    </td>
                                 </tr>
                                 @elseif(Auth::User()->role==2 and $x->role==3)
                                 <tr>
@@ -89,17 +94,22 @@
                                     @else
                                     <td>{{__('user')}}</td>
                                     @endif
-                                    <td>{{$x->subject}}</td>
+                                    <!-- <td>{{$x->subject}}</td> -->
                                     
                                      <td class="text-center"> 
-                                 <a data-bs-toggle="modal" data-bs-target="#type_men" data-bs-whatever="@mdo">
+                                 <!-- <a data-bs-toggle="modal" data-bs-target="#type_men" data-bs-whatever="@mdo">
                                     <span class="badge bg-info"><i class="bi bi-eye-fill"></i></span>
-                                </a>
+                                </a> -->
+                                <a data-bs-toggle="modal" data-bs-target="#type_men"
+                                    data-bs-whatever="@mdo" onclick="showDetails({{ json_encode($x) }}) ">
+                                            <span class="badge bg-info"><i class="bi bi-eye-fill"></i></span>
 
 
-                                <a href="#" onclick="return confirm('Are you sure to want to delete it?')"><span
-                                        class="badge bg-danger"><i class="bi bi-trash"></i></span></a> 
-                             </td>
+                            
+                             
+                                        <a href="{{route('delete_notice',['id'=>$notices->id])}}" onclick="return confirm('Are you sure to want to delete it?')"><span class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
+
+                                    </td>
                                 </tr>
                                 @endif
                                 @endforeach                            
@@ -137,8 +147,8 @@
                                 </tr>
                             </thead>
                             <tbody id="bodyrow">
-
-                            <tr>{{$x->subject}}</tr> 
+                            <h2 class="modal-title fs-5"> <span id="notices_subject"> </span> </h2>
+                            <!-- <tr>  </tr>  -->
 
                             </tbody>
                         </table>
@@ -162,5 +172,11 @@
             </div>
         </footer>
     </div>
- 
+    <script>
+    function showDetails(notices) {
+        document.getElementById("notices_subject").innerHTML = notices['subject'];
+
+        myImage.alt = 'alt';
+    }
+</script>
 @endsection

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 use App\Models\brand;
 use App\Models\product;
@@ -86,7 +86,17 @@ class home extends Controller
 
         return redirect('/home');
     }
+    public function delete_notice($id)
+    {
 
+        $del= Notice::find($id);
+        // $user=$del;
+        $del->delete();
+        Toastr::success('Deleted successfully :)','Success');
+        return redirect('/d_notic');
+       
+
+    }
 
     public function cart_page()
         {

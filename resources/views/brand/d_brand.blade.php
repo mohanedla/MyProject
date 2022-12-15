@@ -201,14 +201,12 @@
                             <tbody id="bodyrow" style=" word-spacing: 50px; ">
                             </tbody>
                         </table>
-                        <td> {{ __('Name') }} : &nbsp; <span id="brand_name"></span> </td>
-                        <td> &nbsp; &nbsp; &nbsp; &nbsp; {{ __('Email Address') }} : &nbsp <span id="brand_email"></span>
-                        </td>
-                        <br>
-                        <td>{{ __('Country') }} : <span id="brand_country"></span> &nbsp; </td>
-                        <td>&nbsp; &nbsp; &nbsp; &nbsp; <span id="brand_address"></span> :&nbsp; {{ __('Address') }} </td>
-                        <br>
-                        <td> {{ __('Phone Number') }} : <span id="brand_phone"></span> </td>
+                        <h1 class="modal-title fs-5"> {{ __('Name') }} : &nbsp; <span id="brand_name"></span> </h1>
+                        <h1 class="modal-title fs-5"> {{ __('Email Address') }} : &nbsp <span id="brand_email"></span></h1>
+                       
+                        <h1 class="modal-title fs-5">{{ __('Country') }} : <span id="brand_country"></span> &nbsp; </h1>
+                        <h1 class="modal-title fs-5"> <span id="brand_address"></span> :&nbsp; {{ __('Address') }} </h1>
+                        <h1 class="modal-title fs-5">{{ __('Phone Number') }} : <span id="brand_phone"></span> </h1>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary"

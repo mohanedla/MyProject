@@ -535,7 +535,7 @@
                   <div class="col-sm-6">
                       <div class="form-group">
                         <label  class="control-label">{{ __('رقم الحساب المصرفي') }}</label>
-                        <input type="text" class="form-control" >
+                        <input type="text" name="bank_num"   value="" class="form-control" >
                       </div>
                       <div class="form-group">
                         <label for="input-password" class="control-label">{{ __('Address') }}</label>
@@ -547,7 +547,8 @@
                      
                         <label for="input-password" class="control-label">{{ __('Upload Picture') }}</label>
 
-                           <input type="file" name="profile_image" id="file"  class="form-control">
+                           <input type="file" name="profile_image" id="file"  class="form-control"
+                           value=""  name="profile_image">
                                 <label for="file">
                                   <p class="file-name"></p>
                                 </label>
@@ -563,6 +564,7 @@
                                   </div>
                     <div class="form-group">
                         <br>
+                        
                        <input type="button" class="btn" data-loading-text="Loading..." id="button-login" value="{{ __('Register') }}">
 
                       </div>
@@ -592,7 +594,7 @@
                           <td class="text-right">{{ __('Total') }}</td>
                           <td class="text-right">{{ __('Unit Price') }}</td>
                           <td class="text-right">{{ __('Total') }}</td>
-                        </tr>
+                        </tr>    
                       </thead>
                       <tbody style="background-color:#424242; font-color:#wihte;">
                         <tr>

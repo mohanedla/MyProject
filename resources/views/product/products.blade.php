@@ -43,9 +43,9 @@
                             <tr>
                             <th style="width: 50px;" scope="col">{{ __('#')}}</th>
                             <th style="width: 50px;" scope="col">{{ __('Name')}}</th>
-                            <th style="width: 50px;" scope="col"> {{ __('Product type')}}</th>
+                            <!-- <th style="width: 50px;" scope="col"> {{ __('Product type')}}</th> -->
                             <th style="width: 50px;" scope="col">{{ __('brand')}}</th>
-                            <th style="width: 50px;" scope="col">{{ __('Collection')}}</th>
+                            <th style="width: 50px;" scope="col">{{ __('Gender')}}</th>
                             <th style="width: 50px;" scope="col">{{ __('Specifications')}}</th>
                             <th style="width: 50px;" scope="col">{{ __('Quantity')}}</th>
                             <th style="width: 50px;" scope="col">{{ __('Purchasing price')}}</th>
@@ -65,13 +65,13 @@
                                 <tr>
                                     <td>{{$i++}}</td>
                                     <td>{{$x->name}}</td>
-                                    <td>{{$x->name}}</td>
+                                    <!-- <td>{{$x->name}}</td> -->
                                     <td>{{$x->brands->name}}</td>
                                     <td>{{$x->collection}}</td>
                                     <td>{{$x->specification}}</td>
                                     <td>{{$x->quantity}}</td>
-                                    <td>{{$x->price}}$</td>
                                     <td>{{$x->price_purchas}}$</td>
+                                    <td>{{$x->price}}$</td>
                                     <td>{{$x->user->name}}</td>
                                     <td><img style="width: 50%;" src="{{asset(Storage::url($x->profile_image))}}" alt=""></td>
                                     <td class="text-center">
@@ -122,10 +122,10 @@
 
                             </tr>
                             <div>
-                        <h1 class="modal-title fs-5"> {{ __('Purchasing price') }} : &nbsp; <span id="price1"> </span> 
+                            <tr style="width: 50px; font-color: black"> {{ __('Purchasing price') }} : &nbsp; <span id="price1"> </span> 
                         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
                          {{ __('Selling price') }}  : &nbsp; <span id="price2"></span> 
-                    </h1>
+                </tr>
                 </div>
                                 <th style="width: 50px;" scope="col">{{ __('Colors') }}</th>
                                 <th style="width: 50px;" scope="col">{{ __('Sizes') }}</th>
@@ -142,11 +142,11 @@
                     </table>
                    </div>
 
-                  <div class="modal-footer">
+                  <!-- <div class="modal-footer">
                     <button type="button" class="btn btn-secondary"
                         data-bs-dismiss="modal">{{ __('Close') }}</button>
                     <button type="submit" class="btn btn-primary">{{ __('Save') }}</button>
-                </div>
+                </div> -->
 
                 </form>
             </div>

@@ -288,7 +288,7 @@ class products extends Controller
                 $image_product->save();
             }
         }
-
+    
         $color=request('product_color');
         $size=request('product_size');
         // dd($color);

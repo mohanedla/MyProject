@@ -231,6 +231,7 @@
                                                 <a href="#" class="active" id="register-form-link">{{ __('Register') }}</a>
                                             </div>
                                         </div>
+
                                     <hr>
                                 </div>
                                 <div class="panel-body">
@@ -355,11 +356,11 @@
                                                 </div>  
                                                 <div class="form-group">
                                                     <div class="row">
-                                                        <div class="col-sm-6 col-sm-offset-3">
+                                                      <a href="/home">  <div class="col-sm-6 col-sm-offset-3">
                                                             <input type="submit" name="/home"
                                                                 id="register-submit" tabindex="4"
                                                                 class="form-control btn btn-register"
-                                                                value="{{ __('Register Now') }}">
+                                                                value="{{ __('Register Now') }}"></a>
                                                         </div>
                                                     </div>
                                                 </div>

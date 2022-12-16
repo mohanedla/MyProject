@@ -79,7 +79,7 @@
 
                             
                              
-                                        <a href="{{route('delete_notice',['id'=>$notices->id])}}" onclick="return confirm('Are you sure to want to delete it?')"><span class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
+                                        <a href="{{route('delete_notice',['id'=>$x->id])}}" onclick="return confirm('Are you sure to want to delete it?')"><span class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
 
                                     </td>
                                 </tr>
@@ -142,8 +142,7 @@
                         <table class="table table-striped" id="table1">
                             <thead>
                                 <tr>
-                                    <!-- <th style="width: 50px;" scope="col">الالوان</th>
-                                    <th style="width: 50px;" scope="col">المقاسات</th> -->
+                                
                                 </tr>
                             </thead>
                             <tbody id="bodyrow">
@@ -151,7 +150,7 @@
                             <!-- <tr>  </tr>  -->
 
                             </tbody>
-                        </table>   
+                        </table>
                     </div>
                     <div class="modal-footer">
                         <!-- <button type="button" class="btn btn-secondary"

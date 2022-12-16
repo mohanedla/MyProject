@@ -124,7 +124,8 @@
                             </span>
                         </div> -->
                     </div>
-                    <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="home"> <img
+                    <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="home">
+                         <img
                                 alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
                    @if (Auth::User())
                     <div class="col-xs-6 col-sm-4 shopcart">

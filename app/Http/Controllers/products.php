@@ -42,17 +42,17 @@ class products extends Controller
 
         else{
         if($id == 0){
-            $admin=product::with('sizes.size','colors.color')->get();
+            $admin=product::with('sizes.size','colors.color','images.image')->get();
         }elseif($id == 1){
-            $admin=product::where('collection','Men')->with('sizes.size','colors.color')->get();
+            $admin=product::where('collection','Men')->with('sizes.size','colors.color','images.image')->get();
         }elseif($id ==2){
-            $admin=product::where('collection','Women')->with('sizes.size','colors.color')->get();
+            $admin=product::where('collection','Women')->with('sizes.size','colors.color','images.image')->get();
         }else{
-            $admin=product::where('collection','kids')->with('sizes.size','colors.color')->get();
+            $admin=product::where('collection','kids')->with('sizes.size','colors.color','images.image')->get();
         }
         //  dd($brand);
         $page = "product";
-
+        // $images=Image_Product::all();
         return View('product.products',compact('admin','page','id'));
     }
 
@@ -328,18 +328,20 @@ class products extends Controller
     public function delete_product($id)
     {
         $del=product::find($id);
+        $product=$del;
         $del->delete();
         color_Product::where('product_id', $id)->delete();
         Size_Product::where('product_id', $id)->delete();
         Image_Product::where('product_id', $id)->delete();
         Toastr::success('The product has been deleted successfully :)','Success');
+
         if($product->collection=="Men"){
             return redirect()->route('all_product',['id'=>1]);
         }
         elseif($product->collection=="Women"){
             return redirect()->route('all_product',['id'=>2]);
         }
-        else{
+        elseif($product->collection=="Kids"){
             return redirect()->route('all_product',['id'=>3]);
         }
     }

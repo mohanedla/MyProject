@@ -215,12 +215,13 @@
                             <li> <a href="home">{{ __('Home') }}</a></li>
                             <li class="dropdown mega-dropdown"> <a href="#" class="dropdown-toggle"
                                     data-toggle="dropdown">{{ __('Collection') }} </a>
+                                    
                                 <ul class="dropdown-menu mega-dropdown-menu row">
                                     <li class="col-md-3">
                                         <ul>
                                             <li class="dropdown-header">{{ __('Women') }}</li>
                                             @foreach ($category_women as $women)
-                                                <li><a href="#">{{ __($women->name) }}</a></li>
+                                                <li><a href="/category/{{$women->id}}/Women">{{ __($women->name) }}</a></li>
                                             @endforeach
                                         </ul>
                                     </li>
@@ -228,7 +229,7 @@
                                         <ul>
                                             <li class="dropdown-header">{{ __('Men') }}</li>
                                             @foreach ($category_men as $men)
-                                                <li><a href="#">{{ __($men->name) }}</a></li>
+                                                <li><a href="/category/{{$men->id}}/Women">{{ __($men->name) }}</a></li>
                                             @endforeach
                                         </ul>
                                     </li>
@@ -237,7 +238,7 @@
                                         <ul>
                                             <li class="dropdown-header">{{ __('Children') }}</li>
                                             @foreach ($category_kids as $kids)
-                                                <li><a href="#">{{ __($kids->name) }}</a></li>
+                                                <li><a href="/category/{{$kids->id}}/Women">{{ __($kids->name) }}</a></li>
                                             @endforeach
                                         </ul>
                                     </li>

@@ -30,12 +30,14 @@ class home extends Controller
         }
     public function category_page()
         {
+            $products=product::all();
+            // dd($products);
             $brand=brand::all();
             $collect = array('M'=>'Men','W'=>'Women','C'=>'Kids' );
             $category_men=Men::all();
             $category_women=Women::all();
             $category_kids=Kids::all();
-            return View('category_page',compact('brand','collect','category_men','category_women','category_kids'));
+            return View('category_page',compact('brand','collect','category_men','category_women','category_kids','products'));
         }
 
     public function login_register()
@@ -94,7 +96,7 @@ class home extends Controller
         $del->delete();
         Toastr::success('Deleted successfully :)','Success');
         return redirect('/d_notic');
-       
+
 
     }
 
@@ -138,7 +140,7 @@ class home extends Controller
             return redirect('/');
             if(Auth::user()->role != 1 && Auth::user()->role != 2)
             return redirect('/');
-    
+
             else{
             $page = "notification";
             $notices=Notice::all();
@@ -223,7 +225,7 @@ class home extends Controller
         }
     }
         public function R2()
-        { 
+        {
             if(!Auth::check() )
             return redirect('/');
             if(Auth::user()->role != 1 && Auth::user()->role != 2)
@@ -260,7 +262,7 @@ class home extends Controller
         }
     }
         public function R5()
-        {  
+        {
             if(!Auth::check() )
             return redirect('/');
             if(Auth::user()->role != 1 && Auth::user()->role != 2)

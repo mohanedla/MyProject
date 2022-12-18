@@ -115,7 +115,7 @@
                         </tbody>
                     </table>
                     <h1 class="modal-title fs-5"> {{ __('Name') }} : &nbsp; <span id="user_name"></span> </h1>
-                    <h1 class="modal-title fs-5">  {{ __('Email Address') }} : &nbsp <span id="user_email"></span>
+                    <h1 class="modal-title fs-5">  {{ __('Email Address') }} : &nbsp; <span id="user_email"></span>
                 </h1>
                 </div>
                 <div class="modal-footer">

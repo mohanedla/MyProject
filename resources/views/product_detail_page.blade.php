@@ -387,7 +387,7 @@
 
                   </li>
               <br>
-                <li>
+                <li>   
                   <h4>{{ __('Brand') }} :  lakoste </h4>
 
                   <!-- <span><h5> Shirt </h5></span> -->

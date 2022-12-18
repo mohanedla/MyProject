@@ -19,7 +19,7 @@
   "Last name":"إسم العائلة",
   "Username":"إسم المستخدم",
   "User name":"إسم المستخدم",
-
+"INVOICE":"الطلبية",
   "user":"مستخدم",
   "Password": "كلمة المرور",
   "Register": "تسجيل",
@@ -41,6 +41,7 @@
   "enter serial number":"أدخل الرقم التسلسلي",
   "enter country name":"أدخل اسم البلد",
   "Gender":"الجنس",
+  "Thanks for shopping":"شكرا للتسوق",
   "Male":"ذكر",
   "Female":"أنثى",
   "Job No.":"الرقم الوظيفي",

@@ -41,14 +41,14 @@
 							<img class="img-responsive" alt="iamgurdeeposahan" src="https://bootdey.com/img/Content/avatar/avatar6.png" style="width: 71px; border-radius: 43px;">
 						</div>
 					</div>
-					<div class="col-xs-6 col-sm-6 col-md-6 text-right">
+					<!-- <div class="col-xs-6 col-sm-6 col-md-6 text-right">
 						<div class="receipt-right">
 							<h5>Company Name.</h5>
 							<p>+1 3649-6589 <i class="fa fa-phone"></i></p>
 							<p>company@gmail.com <i class="fa fa-envelope-o"></i></p>
 							<p>USA <i class="fa fa-location-arrow"></i></p>
 						</div>
-					</div>
+					</div> -->
 				</div>
             </div>
 
@@ -56,15 +56,15 @@
 				<div class="receipt-header receipt-header-mid">
 					<div class="col-xs-8 col-sm-8 col-md-8 text-left">
 						<div class="receipt-right">
-							<h5>Customer Name </h5>
-							<p><b>Mobile :</b> +1 12345-4569</p>
-							<p><b>Email :</b> customer@gmail.com</p>
-							<p><b>Address :</b> New York, USA</p>
+							<h5>{{ __('User name') }} </h5>
+							<p><b>{{ __('Phone Number') }}:</b> 091820630</p>
+							<p><b> {{ __('Email') }}:</b> Aymen@gmail.com</p>
+							<p><b> {{ __('Address') }}:</b> {{ __('Tripoli') }}</p>
 						</div>
 					</div>
 					<div class="col-xs-4 col-sm-4 col-md-4">
 						<div class="receipt-left">
-							<h3>INVOICE # 102</h3>
+							<h3>{{ __('INVOICE') }} # 102</h3>
 						</div>
 					</div>
 				</div>
@@ -74,57 +74,31 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th>Description</th>
-                            <th>Amount</th>
+                            <th>{{ __('Product Name') }}</th>
+                            <th>{{ __('Quantity') }}</th>
+                            <th>{{ __('Unit Price') }}</th>
+                            <th>{{ __('Unit Price') }}</th>
+                        
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="col-md-9">Payment for August 2016</td>
-                            <td class="col-md-3"><i class="fa fa-inr"></i> 15,000/-</td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-9">Payment for June 2016</td>
-                            <td class="col-md-3"><i class="fa fa-inr"></i> 6,00/-</td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-9">Payment for May 2016</td>
-                            <td class="col-md-3"><i class="fa fa-inr"></i> 35,00/-</td>
-                        </tr>
-                        <tr>
-                            <td class="text-right">
-                            <p>
-                                <strong>Total Amount: </strong>
-                            </p>
-                            <p>
-                                <strong>Late Fees: </strong>
-                            </p>
-							<p>
-                                <strong>Payable Amount: </strong>
-                            </p>
-							<p>
-                                <strong>Balance Due: </strong>
-                            </p>
-							</td>
-                            <td>
-                            <p>
-                                <strong><i class="fa fa-inr"></i> 65,500/-</strong>
-                            </p>
-                            <p>
-                                <strong><i class="fa fa-inr"></i> 500/-</strong>
-                            </p>
-							<p>
-                                <strong><i class="fa fa-inr"></i> 1300/-</strong>
-                            </p>
-							<p>
-                                <strong><i class="fa fa-inr"></i> 9500/-</strong>
-                            </p>
-							</td>
-                        </tr>
-                        <tr>
+                            <td class="col-md-9">تيشرت</td>
+                            <td class="col-md-9">4</td>
+                            <td class="text-right">300</td>
+                            <td class="col-md-9">150</td>
 
-                            <td class="text-right"><h2><strong>Total: </strong></h2></td>
-                            <td class="text-left text-danger"><h2><strong><i class="fa fa-inr"></i> 31.566/-</strong></h2></td>
+                        </tr>
+                        <tr>
+                            <td class="text-right"><h2><strong>{{ __('Total') }} </strong></h2></td>
+                            <th></th>
+                            <td class="text-right"><h2><strong>120,00$ </strong></h2></td>
+                            <td class="text-right"><h2><strong>300,00DL </strong></h2></td>
+
+                            <!-- <td class="text-left text-danger">
+                                <h2><strong><i class="fa fa-inr"></i>   120$</strong></h2></td>
+                            <td class="text-left text-danger">
+                                <h2><strong><i class="fa fa-inr"></i> 300Dl</strong></h2></td> -->
                         </tr>
                     </tbody>
                 </table>
@@ -134,16 +108,20 @@
 				<div class="receipt-header receipt-header-mid receipt-footer">
 					<div class="col-xs-8 col-sm-8 col-md-8 text-left">
 						<div class="receipt-right">
-							<p><b>Date :</b> 15 Aug 2016</p>
-							<h5 style="color: rgb(140, 140, 140);">Thanks for shopping.!</h5>
+							<h5 >{{ __('Thanks for shopping') }}</h5>
 						</div>
 					</div>
-					<div class="col-xs-4 col-sm-4 col-md-4">
-						<div class="receipt-left">
-							<h1>Stamp</h1>
+					<div >
+						<div>
+                        <div> <a >
+                         <img style="width:10%; height:40%;"
+                                alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
 						</div>
 					</div>
+
 				</div>
+                <h6> 16 Dec 2022</h6>
+
             </div>
 
         </div>

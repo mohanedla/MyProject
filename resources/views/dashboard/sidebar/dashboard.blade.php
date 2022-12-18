@@ -124,6 +124,16 @@
                         </li>
                     </ul>
                 </li>
+                @if($page == "notification")
+                <li class="sidebar-item active">
+                @else
+                <li class="sidebar-item">
+                @endif
+                    <a href="/d_notic" class='sidebar-link'>
+                    <i class="bi bi-chat-square-dots-fill"></i>
+                        <span>{{ __('notice') }}</span>
+                    </a>
+                </li>
                 @if($page == "report")
                 <li class="sidebar-item active">
                 @else
@@ -133,16 +143,6 @@
                         <i class="bi bi-file-earmark-text-fill"></i>
 
                         <span>{{ __('Reports') }}</span>
-                    </a>
-                </li>
-                @if($page == "notification")
-                <li class="sidebar-item active">
-                @else
-                <li class="sidebar-item">
-                @endif
-                    <a href="/d_notic" class='sidebar-link'>
-                    <i class="bi bi-chat-square-dots-fill"></i>
-                        <span>{{ __('notice') }}</span>
                     </a>
                 </li>
                 @if($page == "bills")

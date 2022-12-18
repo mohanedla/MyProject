@@ -112,6 +112,10 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                 role="button">{{ __('Properties') }} <span class="caret"></span> </span>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4e1736db48d47838495683771b8903b10ad5eae0
                                     <li><a href="admin">{{ __('admin management') }}</a></li>
                                     <li><a href="user">{{ __('user management') }}</a></li>
                                     <li><a href="product">{{ __('Product Management') }}</a></li>
@@ -340,7 +344,11 @@
                                 <div id="product-thumbnail" class="owl-carousel">
                                     <div class="item">
                                     </div>
+<<<<<<< HEAD
                                     <!-- {{-- <div class="image-additional"><a class="thumbnail" href="images/product/product1.jpg" data-fancybox="group1"> <img src="{{asset('images/product/product1.jpg')}}"  /></a></div>
+=======
+                                    {{-- <div class="image-additional"><a class="thumbnail" href="images/product/product1.jpg" data-fancybox="group1"> <img src="{{asset('images/product/product1.jpg')}}"  /></a></div>
+>>>>>>> 4e1736db48d47838495683771b8903b10ad5eae0
                 <div class="item">
                   <div class="image-additional"><a class="thumbnail" href="images/product/product2.jpg" data-fancybox="group1"> <img src="{{asset('images/product/product2.jpg')}}"  /></a></div>
                 </div>
@@ -355,7 +363,11 @@
                 </div>
                 <div class="item">
                   <div class="image-additional"><a class="thumbnail" href="images/product/product6.jpg" data-fancybox="group1"> <img src="{{asset('images/product/product6.jpg')}}"  /></a></div>
+<<<<<<< HEAD
                 </div> --}} -->
+=======
+                </div> --}}
+>>>>>>> 4e1736db48d47838495683771b8903b10ad5eae0
                                     @foreach ($product->images as $image)
                                         <div class="item">
                                             <div class="image-additional"><a class="thumbnail"
@@ -549,4 +561,8 @@
         </script>
     </body>
 
+<<<<<<< HEAD
     </html>
+=======
+    </html>
+>>>>>>> 4e1736db48d47838495683771b8903b10ad5eae0

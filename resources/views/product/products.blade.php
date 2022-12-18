@@ -43,9 +43,9 @@
                             <tr>
                             <th style="width: 50px;" scope="col">{{ __('#')}}</th>
                             <th style="width: 50px;" scope="col">{{ __('Name')}}</th>
-                            <th style="width: 50px;" scope="col"> {{ __('Product type')}}</th>
+                            <!-- <th style="width: 50px;" scope="col"> {{ __('Product type')}}</th> -->
                             <th style="width: 50px;" scope="col">{{ __('brand')}}</th>
-                            <th style="width: 50px;" scope="col">{{ __('Collection')}}</th>
+                            <th style="width: 50px;" scope="col">{{ __('Gender')}}</th>
                             <th style="width: 50px;" scope="col">{{ __('Specifications')}}</th>
                             <th style="width: 50px;" scope="col">{{ __('Quantity')}}</th>
                             <th style="width: 50px;" scope="col">{{ __('Purchasing price')}}</th>
@@ -65,13 +65,13 @@
                                 <tr>
                                     <td>{{$i++}}</td>
                                     <td>{{$x->name}}</td>
-                                    <td>{{$x->name}}</td>
+                                    <!-- <td>{{$x->name}}</td> -->
                                     <td>{{$x->brands->name}}</td>
                                     <td>{{$x->collection}}</td>
                                     <td>{{$x->specification}}</td>
                                     <td>{{$x->quantity}}</td>
-                                    <td>{{$x->price}}$</td>
                                     <td>{{$x->price_purchas}}$</td>
+                                    <td>{{$x->price}}$</td>
                                     <td>{{$x->user->name}}</td>
                                     <td><img style="width: 50%;" src="{{asset(Storage::url($x->profile_image))}}" alt=""></td>
                                     <td class="text-center">
@@ -126,19 +126,11 @@
                                         <p id="create_div_img">
 
                                         </p>
-<<<<<<< HEAD
-                                        
-                                        <div class="carousel-item" >
-                                            <img  class="d-block w-100" id="imag" style="height: 300px;">
-                                        </div>
-                                        
-=======
 
                                         <div class="carousel-item" >
                                             <img  class="d-block w-100" id="imag" style="height: 300px;">
                                         </div>
 
->>>>>>> 4e1736db48d47838495683771b8903b10ad5eae0
                                     <a class="carousel-control-prev" href="#Gallerycarousel" role="button" type="button" data-bs-slide="prev">
                                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                     </a>
@@ -167,11 +159,11 @@
                     </table>
                    </div>
 
-                  <div class="modal-footer">
+                  <!-- <div class="modal-footer">
                     <button type="button" class="btn btn-secondary"
                         data-bs-dismiss="modal">{{ __('Close') }}</button>
                     <button type="submit" class="btn btn-primary">{{ __('Save') }}</button>
-                </div>
+                </div> -->
 
                 </form>
             </div>
@@ -188,10 +180,6 @@
     </footer>
 </div>
 <script>
-<<<<<<< HEAD
-=======
-
->>>>>>> 4e1736db48d47838495683771b8903b10ad5eae0
 function showDetails(pro,images,sizes,colors,img)
 {
     // document.getElementById("productName").innerHTML = pro['name'];
@@ -213,10 +201,6 @@ function showDetails(pro,images,sizes,colors,img)
         cell.innerHTML = colors[i]['color']['name'];
         cell = row.insertCell();
         cell.innerHTML = sizes[i]['size']['name'];
-<<<<<<< HEAD
-=======
-
->>>>>>> 4e1736db48d47838495683771b8903b10ad5eae0
     }
         myImage.src = img;
         myImage.alt = 'alt';
@@ -229,11 +213,7 @@ function showDetails(pro,images,sizes,colors,img)
                 // img1.className = 'class="d-block w-100"';
                 // var create_div = document.getElementById("create_div_img");
                 // img1.style.height='300px';
-<<<<<<< HEAD
-                // img1.style.width= '100%'; 
-=======
                 // img1.style.width= '100%';
->>>>>>> 4e1736db48d47838495683771b8903b10ad5eae0
                 // img1.src="";
             // create_div.appendChild(div);
             // div.appendChild(img1);
@@ -242,19 +222,6 @@ function showDetails(pro,images,sizes,colors,img)
             img1.src="/storage"+images[i]['image'].slice(6);
                 console.log(img1.src);
         }
-<<<<<<< HEAD
-        
-                
-=======
-
-
->>>>>>> 4e1736db48d47838495683771b8903b10ad5eae0
 }
 </script>
-<<<<<<< HEAD
 @endsection
-=======
-@endsection
-
-
->>>>>>> 4e1736db48d47838495683771b8903b10ad5eae0

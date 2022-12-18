@@ -30,12 +30,13 @@ class home extends Controller
         }
     public function category_page()
         {
+            $products=product::all();
             $brand=brand::all();
             $collect = array('M'=>'Men','W'=>'Women','C'=>'Kids' );
             $category_men=Men::all();
             $category_women=Women::all();
             $category_kids=Kids::all();
-            return View('category_page',compact('brand','collect','category_men','category_women','category_kids'));
+            return View('category_page',compact('brand','collect','category_men','category_women','category_kids','products'));
         }
 
     public function login_register()

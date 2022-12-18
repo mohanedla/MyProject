@@ -157,7 +157,7 @@
                                                 </td>
                                                 <td class="text-center"><a class="close-cart"><i
                                                             class="fa fa-times-circle"></i></a></td>
-                                                            
+
                                             </tr>
                                             <td class="text-right"><strong>"{{ __('Total') }}"</strong></td>
                                                 <td class="text-right">$2,122.00</td>
@@ -167,7 +167,7 @@
                                 <li>
                                     <table class="table">
                                         <tbody>
-                                           
+
                                             <tr>
                                             </tr>
                                             <tr>
@@ -278,14 +278,11 @@
                     </div>
                 </div>
                 <!-- =====  BREADCRUMB END===== -->
-                
+
                 <div id="column-left" class="col-sm-4 col-lg-3 ">
                     <div id="category-menu" class="navbar collapse in mb_40" aria-expanded="true" style=""
                         role="button"></div>
                         <!-- <div class="nav-responsive">
-
-
-                        
                     </div> -->
              <!-- </div> -->
       <!-- <div id="column-left" class="col-sm-4 col-lg-3 hidden-xs"> -->
@@ -326,7 +323,7 @@
                      </ul>
                 </li>
           </div>
-                       
+
         </div>
                     <div class="filter left-sidebar-widget mb_50">
                         <div class="heading-part mtb_20 ">
@@ -340,11 +337,11 @@
                             <div id="slider-range" class="mtb_20"></div>
                             <div class="list-group">
                                  <div class="list-group-item mb_10">
-                                
-                                </div> 
-                                <div class="list-group-item mb_10"> 
-                                 
-                                </div> 
+
+                                </div>
+                                <div class="list-group-item mb_10">
+
+                                </div>
                                 <br>
                                 <button type="button" class="btn">{{ __('Search') }}</button>
                             </div>
@@ -352,7 +349,7 @@
                     </div>
 
         </div>
-                
+
 
 
 
@@ -397,28 +394,22 @@
                         </div>
                     </div>
                     <div class="row">
+                        @foreach ($products as $product)
                         <div class="product-layout product-grid col-md-4 col-xs-6 ">
                             <div class="item">
                                 <div class="product-thumb clearfix mb_30">
                                     <div class="image product-imageblock"> <a href="product_detail_page"> <img
                                                 data-name="product_image"
-                                                src="{{ asset('images/product/product3.jpg') }}" alt="iPod Classic"
+                                                src="{{asset(Storage::url($product->profile_image))}}" alt="iPod Classic"
                                                 title="iPod Classic" class="img-responsive" /> <img
-                                                src="{{ asset('images/product/product3-1.jpg') }}" alt="iPod Classic"
+                                                src="{{asset(Storage::url($product->profile_image))}}" alt="iPod Classic"
                                                 title="iPod Classic" class="img-responsive" /> </a>
-                                        <div class="button-group text-center">
-                                            <div class="wishlist"><a href="#"><span>wishlist</span></a></div>
-                                            <div class="quickview"><a href="#"><span>Quick View</span></a></div>
-                                            <div class="compare"><a href="#"><span>Compare</span></a></div>
-                                            <div class="add-to-cart"><a href="#"><span>Add to cart</span></a>
-                                            </div>
-                                        </div>
+
                                     </div>
                                     <div class="caption product-detail text-center">
                                         <h6 data-name="product_name" class="product-name mt_20"><a href="#"
-                                                title="Casual Shirt With Ruffle Hem">New LCDScreen and HD Video
-                                                Recording</a></h6>
-                                        <div class="rating"> <span class="fa fa-stack"><i
+                                                title="Casual Shirt With Ruffle Hem">{{$product->name}}</a></h6>
+                                        {{-- <div class="rating"> <span class="fa fa-stack"><i
                                                     class="fa fa-star-o fa-stack-1x"></i><i
                                                     class="fa fa-star fa-stack-1x"></i></span> <span
                                                 class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
@@ -428,53 +419,14 @@
                                                 class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
                                                     class="fa fa-star fa-stack-1x"></i></span> <span
                                                 class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
-                                                    class="fa fa-star fa-stack-x"></i></span> </div>
+                                                    class="fa fa-star fa-stack-x"></i></span> </div> --}}
+                                                    <div class="button-group text-center">
+
+                                                        <div class="add-to-cart"><a href="#"><span>Add to cart</span></a>
+                                                        </div>
+                                                    </div>
                                         <span class="price"><span class="amount"><span
-                                                    class="currencySymbol">$</span>70.00</span>
-                                        </span>
-                                        <p class="product-desc mt_20 mb_60"> More room to move. With 80GB or 160GB of
-                                            storage and up to 40 hours of battery life, the new iPod classic lets you
-                                            enjoy up to 40,000 songs or up to 200 hours of video or any combination
-                                            wherever you go.Cover Flow. Browse through your music collection by
-                                            flipping..</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-layout product-grid col-md-4 col-xs-6 ">
-                            <div class="item">
-                                <div class="product-thumb clearfix mb_30">
-                                    <div class="image product-imageblock"> <a href="product_detail_page"> <img
-                                                data-name="product_image"
-                                                src="{{ asset('images/product/product4.jpg') }}" alt="iPod Classic"
-                                                title="iPod Classic" class="img-responsive" /> <img
-                                                src="{{ asset('images/product/product4-1.jpg') }}" alt="iPod Classic"
-                                                title="iPod Classic" class="img-responsive" /> </a>
-                                        <div class="button-group text-center">
-                                            <div class="wishlist"><a href="#"><span>wishlist</span></a></div>
-                                            <div class="quickview"><a href="#"><span>Quick View</span></a></div>
-                                            <div class="compare"><a href="#"><span>Compare</span></a></div>
-                                            <div class="add-to-cart"><a href="#"><span>Add to cart</span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="caption product-detail text-center">
-                                        <h6 data-name="product_name" class="product-name mt_20"><a href="#"
-                                                title="Casual Shirt With Ruffle Hem">New LCDScreen and HD Video
-                                                Recording</a></h6>
-                                        <div class="rating"> <span class="fa fa-stack"><i
-                                                    class="fa fa-star-o fa-stack-1x"></i><i
-                                                    class="fa fa-star fa-stack-1x"></i></span> <span
-                                                class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
-                                                    class="fa fa-star fa-stack-1x"></i></span> <span
-                                                class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
-                                                    class="fa fa-star fa-stack-1x"></i></span> <span
-                                                class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
-                                                    class="fa fa-star fa-stack-1x"></i></span> <span
-                                                class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
-                                                    class="fa fa-star fa-stack-x"></i></span> </div>
-                                        <span class="price"><span class="amount"><span
-                                                    class="currencySymbol">$</span>70.00</span>
+                                                    class="currencySymbol">$</span>{{$product->price}}</span>
                                         </span>
                                         <p class="product-desc mt_20 mb_60"> More room to move. With 80GB or 160GB of
                                             storage and up to 40 hours of battery life, the new iPod classic lets you
@@ -486,16 +438,9 @@
                             </div>
                         </div>
 
+                        @endforeach
                     </div>
-                    <div class="pagination-nav text-center mt_50">
-                        <ul>
-                            <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
-                            <li class="active"><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
-                        </ul>
-                    </div>
+
                 </div>
             </div>
             <div id="brand_carouse" class="ptb_60 text-center">
@@ -508,10 +453,10 @@
                                     <div class="brand owl-carousel ptb_20">
                                         @foreach ($brand as $x)
                                         <div class="item text-center">
-                                               
+
                                                  <a   @if (Auth::User()) href="item_brand/{{ $x->id }}" @endif >
                                                <img src="{{ asset(Storage::url($x->profile_image)) }}"
-                                                        alt="" class="img-responsive" /></a> 
+                                                        alt="" class="img-responsive" /></a>
                                                     </div>
                                         @endforeach
                                     </div>

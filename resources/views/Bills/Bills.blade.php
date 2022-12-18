@@ -77,22 +77,38 @@
                             <th>{{ __('Product Name') }}</th>
                             <th>{{ __('Quantity') }}</th>
                             <th>{{ __('Unit Price') }}</th>
+                            <th>{{ __('Total') }}</th>
                             <th>{{ __('Unit Price') }}</th>
+                            <th>{{ __('Total') }}</th>
                         
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
+                        <td class="text-right"><h5><strong>تيشرت </strong></h5></td>
+                        <td class="text-right"><h5><strong>4 </strong></h5></td>
+                        <td class="text-right"><h5><strong>100$ </strong></h5></td>
+                        <td class="text-right"><h5><strong>400$ </strong></h5></td>
+                        <td class="text-right"><h5><strong>500DL </strong></h5></td>
+                        <td class="text-right"><h5><strong>2000DL </strong></h5></td>
+
+<!-- 
                             <td class="col-md-9">تيشرت</td>
                             <td class="col-md-9">4</td>
-                            <td class="text-right">300</td>
-                            <td class="col-md-9">150</td>
+                            <td class="text-right">100,00$</td>
+                            <td class="col-md-9">400,00$</td>
+                            <td class="col-md-9">500,00DL</td>
+                            <td class="col-md-9">2000,00DL</td> -->
+
 
                         </tr>
                         <tr>
                             <td class="text-right"><h2><strong>{{ __('Total') }} </strong></h2></td>
                             <th></th>
+                            <th></th>
+
                             <td class="text-right"><h2><strong>120,00$ </strong></h2></td>
+                            <th></th>
                             <td class="text-right"><h2><strong>300,00DL </strong></h2></td>
 
                             <!-- <td class="text-left text-danger">

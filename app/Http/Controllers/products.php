@@ -42,17 +42,17 @@ class products extends Controller
 
         else{
         if($id == 0){
-            $admin=product::with('sizes.size','colors.color')->get();
+            $admin=product::with('sizes.size','colors.color','images.image')->get();
         }elseif($id == 1){
-            $admin=product::where('collection','Men')->with('sizes.size','colors.color')->get();
+            $admin=product::where('collection','Men')->with('sizes.size','colors.color','images')->get();
         }elseif($id ==2){
-            $admin=product::where('collection','Women')->with('sizes.size','colors.color')->get();
+            $admin=product::where('collection','Women')->with('sizes.size','colors.color','images')->get();
         }else{
-            $admin=product::where('collection','kids')->with('sizes.size','colors.color')->get();
+            $admin=product::where('collection','kids')->with('sizes.size','colors.color','images')->get();
         }
         //  dd($brand);
         $page = "product";
-
+        // $images=Image_Product::all();
         return View('product.products',compact('admin','page','id'));
     }
 
@@ -97,11 +97,12 @@ class products extends Controller
             $page = "product";
             $collect = array('M'=>'Men','W'=>'Women','C'=>'Kids' );
             $brand=brand::all();
-            $products=product::all();
+            $products=product::with('brands','colors.color','sizes.size','images')->get();
             $category_men=Men::all();
             $category_women=Women::all();
             $category_kids=Kids::all();
-            return View('product_detail_page',compact('page','products','collect','brand','category_men','category_women','category_kids'));
+            $size=Size::all();
+            return View('product_detail_page',compact('page','products','collect','brand','category_men','category_women','category_kids','size'));
     }
 
     public function add_category_men()
@@ -288,7 +289,7 @@ class products extends Controller
                 $image_product->save();
             }
         }
-    
+
         $color=request('product_color');
         $size=request('product_size');
         // dd($color);
@@ -328,18 +329,20 @@ class products extends Controller
     public function delete_product($id)
     {
         $del=product::find($id);
+        $product=$del;
         $del->delete();
         color_Product::where('product_id', $id)->delete();
         Size_Product::where('product_id', $id)->delete();
         Image_Product::where('product_id', $id)->delete();
         Toastr::success('The product has been deleted successfully :)','Success');
+
         if($product->collection=="Men"){
             return redirect()->route('all_product',['id'=>1]);
         }
         elseif($product->collection=="Women"){
             return redirect()->route('all_product',['id'=>2]);
         }
-        else{
+        elseif($product->collection=="Kids"){
             return redirect()->route('all_product',['id'=>3]);
         }
     }

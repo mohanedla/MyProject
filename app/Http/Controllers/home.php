@@ -31,10 +31,7 @@ class home extends Controller
     public function category_page()
         {
             $products=product::all();
-<<<<<<< HEAD
-=======
             // dd($products);
->>>>>>> 4e1736db48d47838495683771b8903b10ad5eae0
             $brand=brand::all();
             $collect = array('M'=>'Men','W'=>'Women','C'=>'Kids' );
             $category_men=Men::all();

@@ -1,12 +1,16 @@
 @extends('dashboard.layouts.master')
 @section('menu')
-    @extends('dashboard.sidebar.dashboard')
+<title>{{ __('checkout') }}</title>
+
+@extends('dashboard.sidebar.dashboard')
 @endsection
-@section('content')   
+@section('content')  
+itle>
+
     <!-- End Header -->
 
     <div id="main">
-
+        
         <div class="page-heading">
             <div class="page-title">
                 <div class="row">

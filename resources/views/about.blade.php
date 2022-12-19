@@ -6,7 +6,7 @@
     <head>
         <!-- =====  BASIC PAGE NEEDS  ===== -->
         <meta charset="utf-8">
-        <title>{{ __('Home') }}</title>
+        <title>{{ __('About us') }}</title>
         <!-- =====  SEO MATE  ===== -->
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">

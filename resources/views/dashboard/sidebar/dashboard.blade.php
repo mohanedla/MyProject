@@ -1,5 +1,6 @@
 
-<div id="sidebar" class="active">
+<div id="sidebar" class="active">   
+
     <div class="sidebar-wrapper active">
         <div class="sidebar-header">
             <div class="d-flex justify-content-between">
@@ -12,9 +13,12 @@
 
         <div class="sidebar-menu">
             <ul class="menu">
-                <li class="sidebar-title">{{ __('Menu') }}</li>
+                <!-- <li class="sidebar-title">{{ __('Menu') }}</li> -->
+                <br>
                 @if($page == "home")
                 <li class="sidebar-item active">
+                <title>{{__ ('Dashboard')}}</title>
+
                 @else
                 <li class="sidebar-item">
                 @endif
@@ -45,6 +49,8 @@
                 @if (Auth::user()->role == '1')
                  @if($page == "employees")
                 <li class="sidebar-item active">
+                <title>{{__ ('all admin')}}</title>
+
                 @else
                 <li class="sidebar-item">
                 @endif
@@ -57,6 +63,8 @@
 
                 @if($page == "users")
                 <li class="sidebar-item active">
+                <title>{{__ ('Users')}}</title>
+
                 @else
                 <li class="sidebar-item">
                 @endif
@@ -67,12 +75,14 @@
                 </li>
                 @if($page == "brands")
                 <li class="sidebar-item active">
+                <title>{{__ ('Bŕand')}}</title>
+
                 @else
                 <li class="sidebar-item">
                 @endif
                     <a href="/d_brand" class='sidebar-link'>
                         <i class="bi bi-star-fill"></i>
-                        <span>{{ __('Brands') }}</span>
+                        <span>{{ __('Bŕand') }}</span>
                     </a>
                 </li>
 
@@ -100,6 +110,8 @@
                 {{-- <li class="sidebar-title">Forms &amp; Tables</li> --}}
                 @if($page == "product")
                 <li class="sidebar-item  has-sub active">
+                <title>{{__ ('Products')}}</title>
+
                 @else
                 <li class="sidebar-item  has-sub">
                 @endif
@@ -126,6 +138,8 @@
                 </li>
                 @if($page == "notification")
                 <li class="sidebar-item active">
+                <title>{{__ ('notice')}}</title>
+
                 @else
                 <li class="sidebar-item">
                 @endif
@@ -136,6 +150,8 @@
                 </li>
                 @if($page == "report")
                 <li class="sidebar-item active">
+                <title>{{__ ('Reports')}}</title>
+
                 @else
                 <li class="sidebar-item">
                 @endif
@@ -147,6 +163,8 @@
                 </li>
                 @if($page == "bills")
                 <li class="sidebar-item active">
+                <title>{{__ ('Bills')}}</title>
+
                 @else
                 <li class="sidebar-item">
                 @endif

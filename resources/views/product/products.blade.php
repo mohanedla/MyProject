@@ -180,14 +180,12 @@
     </footer>
 </div>
 <script>
-
 function showDetails(pro,images,sizes,colors,img)
 {
     // document.getElementById("productName").innerHTML = pro['name'];
     var myImage = document.getElementById("image");
     document.getElementById("price1").innerHTML = pro['price'];
     document.getElementById("price2").innerHTML = pro['price_purchas'];
-
     var table = document.getElementById("bodyrow");
     table.innerHTML = "";
     var max = sizes.length;
@@ -198,13 +196,11 @@ function showDetails(pro,images,sizes,colors,img)
         if (top) { var row = table.insertRow(-1); }
         else
          { var row = table.insertRow(); }
-
         // (B3) INSERT CELLS
         var cell = row.insertCell();
         cell.innerHTML = colors[i]['color']['name'];
         cell = row.insertCell();
         cell.innerHTML = sizes[i]['size']['name'];
-
     }
         myImage.src = img;
         myImage.alt = 'alt';
@@ -226,11 +222,6 @@ function showDetails(pro,images,sizes,colors,img)
             img1.src="/storage"+images[i]['image'].slice(6);
                 console.log(img1.src);
         }
-
-
 }
-
 </script>
 @endsection
-
-

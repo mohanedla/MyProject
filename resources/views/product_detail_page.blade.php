@@ -215,7 +215,7 @@
                                                 <ul>
                                                     <li class="dropdown-header">{{ __('Men') }}</li>
                                                     @foreach ($category_men as $men)
-                                                        <li><a href="/category/{{$men->id}}/Women">{{ __($men->name) }}</a></li>
+                                                        <li><a href="/category/{{$men->id}}/Men">{{ __($men->name) }}</a></li>
                                                     @endforeach
                                                 </ul>
                                             </li>
@@ -224,7 +224,7 @@
                                                 <ul>
                                                     <li class="dropdown-header">{{ __('Kids') }}</li>
                                                     @foreach ($category_kids as $kids)
-                                                        <li><a href="/category/{{$kids->id}}/Women">{{ __($kids->name) }}</a></li>
+                                                        <li><a href="/category/{{$kids->id}}/Kids">{{ __($kids->name) }}</a></li>
                                                     @endforeach
                                                 </ul>
                                             </li>
@@ -446,7 +446,7 @@
                 <div class="col-sm-12">
                     <div class="brand owl-carousel ptb_20">
                         @foreach ($brand as $x)
-                            <div class="item text-center"> <a href="item_brand/{{ $x->id }}"><img
+                            <div class="item text-center"> <a href="/item_brand/{{ $x->id }}"><img
                                         src="{{ asset(Storage::url($x->profile_image)) }}" alt=""
                                         class="img-responsive" /></a> </div>
                         @endforeach

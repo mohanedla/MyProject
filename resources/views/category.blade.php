@@ -215,7 +215,7 @@
                             <li> <a href="/home">{{ __('Home') }}</a></li>
                             <li class="dropdown mega-dropdown"> <a href="#" class="dropdown-toggle"
                                     data-toggle="dropdown">{{ __('Collection') }} </a>
-                                    
+
                                 <ul class="dropdown-menu mega-dropdown-menu row">
                                     <li class="col-md-3">
                                         <ul>
@@ -376,7 +376,7 @@
                         <div class="item">
                             <div class="product-thumb clearfix mb_30">
                                 <div class="image product-imageblock" style="height: 418px;">
-                                        <a href="product_detail_page/{{$item->id}}" style="height: -webkit-fill-available;">
+                                        <a href="/product_detail_page/{{$item->id}}" style="height: -webkit-fill-available;">
                                             <img style="height: -webkit-fill-available;" data-name="product_image"
                                             src="{{ asset(Storage::url($item->profile_image)) }}" alt="iPod Classic"
                                             title="iPod Classic" class="img-responsive" />
@@ -444,7 +444,7 @@
                                     <div class="brand owl-carousel ptb_20">
                                         @foreach ($brand as $x)
                                             <div class="item text-center"> <a
-                                                    href="item_brand/{{ $x->id }}"><img
+                                                    href="/item_brand/{{ $x->id }}"><img
                                                         src="{{ asset(Storage::url($x->profile_image)) }}"
                                                         alt="" class="img-responsive" /></a> </div>
                                         @endforeach

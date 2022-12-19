@@ -76,7 +76,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::post('/edit_brand/{id}',[App\Http\Controllers\brands::class,'update_brand']);
     Route::get('/delete_brand/{id}',[App\Http\Controllers\brands::class,'delete_brand']);
     Route::post('/add_brand',[App\Http\Controllers\brands::class,'add_brand'])->name('AddBrand');
-    
+
     Route::get('/brand',[App\Http\Controllers\brands::class,'brand_brand']);
     Route::get('/add_brand',[App\Http\Controllers\brands::class,'brand_add_brand']);
     Route::get('/edit_brand/{id}',[App\Http\Controllers\brands::class,'edit_brand']);
@@ -90,24 +90,24 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     // Controller products
 
-    
+
     Route::get('/product',[App\Http\Controllers\products::class,'product_product']);
 
     Route::get('/add_product/{id}',[App\Http\Controllers\products::class,'product_add_product'])->name('add_product');
     Route::post('/add_product/{id}',[App\Http\Controllers\products::class,'add_product'])->name('AddProduct');
 
-    Route::get('/product_detail_page',[App\Http\Controllers\products::class,'product_detail_page']);
+    Route::get('/product_detail_page/{id}',[App\Http\Controllers\products::class,'product_detail_page']);
     Route::get('/edit_product/{id}/{id_page}',[App\Http\Controllers\products::class,'edit_product']);
 
-    
+
     Route::post('/edit_product/{id}',[App\Http\Controllers\products::class,'update_product'])->name('update_product');
     Route::get('/delete_product/{id}',[App\Http\Controllers\products::class,'delete_product'])->name('delete_product');
-    
+
     Route::post('/add_collection',[App\Http\Controllers\CollectionController::class,'add_collection'])->name('AddCollection');
     Route::post('/add_color',[App\Http\Controllers\products::class,'add_color'])->name('AddColor');
     Route::post('/add_size',[App\Http\Controllers\products::class,'add_size'])->name('AddSize');
-    
-    
+
+
     Route::get('/item_brand/{id}',[App\Http\Controllers\products::class,'item_brand']);
 
     Route::get('/all_product/{id}',[App\Http\Controllers\products::class,'all_product'])->name('all_product');
@@ -116,9 +116,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::post('/add_category_men',[App\Http\Controllers\products::class,'add_category_men'])->name('AddCategoryMen');
     Route::post('/add_category_women',[App\Http\Controllers\products::class,'add_category_women'])->name('AddCategoryWomen');
     Route::post('/add_category_kids',[App\Http\Controllers\products::class,'add_category_kids'])->name('AddCategoryKids');
-    
+
      // end Controller products
-    
+
 
     // for Employees
     Route::get('/employees',[App\Http\Controllers\EmployeeController::class,'employees'])->name('employees');
@@ -129,14 +129,14 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/delete_employee/{id}',[App\Http\Controllers\EmployeeController::class,'delete_employee'])->name('delete_employee');
     Route::get('change_password', [App\Http\Controllers\EmployeeController::class, 'change_password'])->middleware('auth')->name('change/password');
     Route::post('change_password/db', [App\Http\Controllers\EmployeeController::class, 'changePasswordDB'])->name('change/password/db');
-    
+
     Route::get('/delete_user/{id}',[App\Http\Controllers\EmployeeController::class,'delete_employee'])->name('delete_user');
     // end Employees
 
     Route::get('/user',[App\Http\Controllers\users::class,'user']);
     Route::get('/d_user',[App\Http\Controllers\users::class,'user']);
-    
-    
+
+
 
 
 

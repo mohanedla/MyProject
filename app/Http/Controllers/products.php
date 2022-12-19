@@ -92,12 +92,12 @@ class products extends Controller
         return view('product.add_product',compact('id','brands','page','categories','size','color'));
     }
 
-    public function product_detail_page()
+    public function product_detail_page($id)
     {
             $page = "product";
             $collect = array('M'=>'Men','W'=>'Women','C'=>'Kids' );
             $brand=brand::all();
-            $products=product::with('brands','colors.color','sizes.size','images')->get();
+            $products=product::with('brands','colors.color','sizes.size','images')->where('id',$id)->get();
             $category_men=Men::all();
             $category_women=Women::all();
             $category_kids=Kids::all();

@@ -325,15 +325,7 @@
                     </div>
                 </div>
 
-                {{-- <div id="column-left" class="col-sm-4 col-lg-3 hidden-xs">
-          <div id="category-menu" class="navbar collapse in mb_40" aria-expanded="true" style="" role="button">
 
-          </div>
-          <div class="left_banner left-sidebar-widget mt_30 mb_40">  </div>
-          <div class="left-special left-sidebar-widget mb_50">
-
-            </div>
-        </div> --}}
                 @foreach ($products as $product)
                     <div class="col-sm-8 col-lg-9 mtb_20">
                         <div class="row mt_10 ">
@@ -343,26 +335,13 @@
                                 <div id="product-thumbnail" class="owl-carousel">
                                     <div class="item">
                                     </div>
-                                    {{-- <div class="image-additional"><a class="thumbnail" href="images/product/product1.jpg" data-fancybox="group1"> <img src="{{asset('images/product/product1.jpg')}}"  /></a></div>
-                <div class="item">
-                  <div class="image-additional"><a class="thumbnail" href="images/product/product2.jpg" data-fancybox="group1"> <img src="{{asset('images/product/product2.jpg')}}"  /></a></div>
-                </div>
-                <div class="item">
-                  <div class="image-additional"><a class="thumbnail" href="images/product/product3.jpg" data-fancybox="group1"> <img src="{{asset('images/product/product3.jpg')}}"  /></a></div>
-                </div>
-                <div class="item">
-                  <div class="image-additional"><a class="thumbnail" href="images/product/product4.jpg" data-fancybox="group1"> <img src="{{asset('images/product/product4.jpg')}}"  /></a></div>
-                </div>
-                <div class="item">
-                  <div class="image-additional"><a class="thumbnail" href="images/product/product5.jpg" data-fancybox="group1"> <img src="{{asset('images/product/product5.jpg')}}"  /></a></div>
-                </div>
-                <div class="item">
-                  <div class="image-additional"><a class="thumbnail" href="images/product/product6.jpg" data-fancybox="group1"> <img src="{{asset('images/product/product6.jpg')}}"  /></a></div>
-                </div> --}}
+
                                     @foreach ($product->images as $image)
                                         <div class="item">
+
                                             <div class="image-additional"><a class="thumbnail"
-                                                    href="images/product/product7.jpg" data-fancybox="group1"> <img
+                                                    href="{{ asset(Storage::url($image->image)) }}"
+                                                    data-fancybox="group1"> <img
                                                         src="{{ asset(Storage::url($image->image)) }}" /></a></div>
                                         </div>
                                     @endforeach
@@ -468,42 +447,7 @@
             <div class="heading-part mb_10 " bis_skin_checked="1">
                 <h2 class="main_title">{{ __('Brands') }}</h2>
             </div>
-            {{-- <div class="row">
-                <div class="col-sm-12">
-                    <div class="brand owl-carousel ptb_20">
-                        <div class="item text-center"> <a href="#"><img
-                                    src="{{ asset('images/brand/1.jpg') }}" alt="Disney"
-                                    class="img-responsive" /></a> </div>
-                        <div class="item text-center"> <a href="#"><img
-                                    src="{{ asset('images/brand/2.jpg') }}" alt="Dell"
-                                    class="img-responsive" /></a> </div>
-                        <div class="item text-center"> <a href="#"><img
-                                    src="{{ asset('images/brand/3.jpg') }}" alt="Harley"
-                                    class="img-responsive" /></a> </div>
-                        <div class="item text-center"> <a href="#"><img
-                                    src="{{ asset('images/brand/4.jpg') }}" alt="Canon"
-                                    class="img-responsive" /></a> </div>
-                        <div class="item text-center"> <a href="#"><img
-                                    src="{{ asset('images/brand/5.jpg') }}" alt="Canon"
-                                    class="img-responsive" /></a> </div>
-                        <div class="item text-center"> <a href="#"><img
-                                    src="{{ asset('images/brand/6.jpg') }}" alt="Canon"
-                                    class="img-responsive" /></a> </div>
-                        <div class="item text-center"> <a href="#"><img
-                                    src="{{ asset('images/brand/7.jpg') }}" alt="Canon"
-                                    class="img-responsive" /></a> </div>
-                        <div class="item text-center"> <a href="#"><img
-                                    src="{{ asset('images/brand/8.jpg') }}" alt="Canon"
-                                    class="img-responsive" /></a> </div>
-                        <div class="item text-center"> <a href="#"><img
-                                    src="{{ asset('images/brand/9.jpg') }}" alt="Canon"
-                                    class="img-responsive" /></a> </div>
-                        <div class="item text-center"> <a href="#"><img
-                                    src="{{ asset('images/brand/10.jpg') }}" alt="Canon"
-                                    class="img-responsive" /></a> </div>
-                    </div>
-                </div>
-            </div> --}}
+
             <div class="row">
                 <div class="col-sm-12">
                     <div class="brand owl-carousel ptb_20">

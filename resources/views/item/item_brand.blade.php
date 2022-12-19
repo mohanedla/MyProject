@@ -7,7 +7,7 @@
     <!-- =====  BASIC PAGE NEEDS  ===== -->
     <meta charset="utf-8">
 
-    <title>{{ __('Products') . ' ' . $title[0]->name }}</title>
+    <title>{{ __('Products') . ' '  }}</title>
     <!-- =====  SEO MATE  ===== -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="">
@@ -123,7 +123,7 @@
                             </span>
                         </div> -->
                     </div>
-                    <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="home"> <img
+                    <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="/home"> <img
                                 alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
                     <div class="col-xs-6 col-sm-4 shopcart">
                         <div id="cart" class="btn-group btn-block mtb_40">
@@ -292,7 +292,7 @@
                                                 <div class="item">
                                                     <div class="product-thumb">
                                                         <div class="image product-imageblock" style="height: 418px;">
-                                                            <a href="product_detail_page"
+                                                            <a href="/product_detail_page/{{$item->id}}"
                                                                 style="height: -webkit-fill-available;">
                                                                 <img data-name="product_image"
                                                                     style="height: -webkit-fill-available;"
@@ -366,7 +366,7 @@
                                                 <div class="item">
                                                     <div class="product-thumb">
                                                         <div class="image product-imageblock" style="height: 418px;">
-                                                            <a href="product_detail_page"
+                                                            <a href="/product_detail_page/{{$product->id}}"
                                                                 style="height: -webkit-fill-available;">
                                                                 <img data-name="product_image"
                                                                     style="height: -webkit-fill-available;"
@@ -437,7 +437,7 @@
                                                 <div class="item">
                                                     <div class="product-thumb">
                                                         <div class="image product-imageblock" style="height: 418px;">
-                                                            <a href="product_detail_page"
+                                                            <a href="/product_detail_page/{{$item->id}}"
                                                                 style="height: -webkit-fill-available;">
                                                                 <img data-name="product_image"
                                                                     style="height: -webkit-fill-available;"

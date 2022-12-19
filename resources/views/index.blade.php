@@ -75,7 +75,7 @@
                                 </li>
                             @endguest
 
-                          
+
 
                             <li class="language dropdown"> <span class="dropdown-toggle" id="dropdownMenu1"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
@@ -124,7 +124,7 @@
                             </span>
                         </div> -->
                     </div>
-                    <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="home">
+                    <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="/home">
                          <img
                                 alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
                    @if (Auth::User())
@@ -163,7 +163,7 @@
                                                 </td>
                                                 <td class="text-center"><a class="close-cart"><i
                                                             class="fa fa-times-circle"></i></a></td>
-                                                            
+
                                             </tr>
                                             <td class="text-right"><strong>"{{ __('Total') }}"</strong></td>
                                                 <td class="text-right">$2,122.00</td>
@@ -173,7 +173,7 @@
                                 <li>
                                     <table class="table">
                                         <tbody>
-                                           
+
                                             <tr>
                                             </tr>
                                             <tr>
@@ -216,7 +216,7 @@
                             <li> <a href="home">{{ __('Home') }}</a></li>
                             <li class="dropdown mega-dropdown"> <a href="#" class="dropdown-toggle"
                                     data-toggle="dropdown">{{ __('Collection') }} </a>
-                                    
+
                                 <ul class="dropdown-menu mega-dropdown-menu row">
                                     <li class="col-md-3">
                                         <ul>
@@ -230,16 +230,16 @@
                                         <ul>
                                             <li class="dropdown-header">{{ __('Men') }}</li>
                                             @foreach ($category_men as $men)
-                                                <li><a href="/category/{{$men->id}}/Women">{{ __($men->name) }}</a></li>
+                                                <li><a href="/category/{{$men->id}}/Men">{{ __($men->name) }}</a></li>
                                             @endforeach
                                         </ul>
                                     </li>
 
                                     <li class="col-md-3">
                                         <ul>
-                                            <li class="dropdown-header">{{ __('Children') }}</li>
+                                            <li class="dropdown-header">{{ __('Kids') }}</li>
                                             @foreach ($category_kids as $kids)
-                                                <li><a href="/category/{{$kids->id}}/Women">{{ __($kids->name) }}</a></li>
+                                                <li><a href="/category/{{$kids->id}}/Kids">{{ __($kids->name) }}</a></li>
                                             @endforeach
                                         </ul>
                                     </li>
@@ -304,7 +304,7 @@
                                                 <div class="item">
                                                     <div class="product-thumb">
                                                         <div class="image product-imageblock" style="height: 418px;">
-                                                            <a href="product_detail_page"
+                                                            <a href="/product_detail_page/{{$item->id}}"
                                                                 style="height: -webkit-fill-available;">
                                                                 <img data-name="product_image"
                                                                     style="height: -webkit-fill-available;"
@@ -329,7 +329,7 @@
                                                                             cart</span></a></div>
                                                             </div>
                                                         </div>
-                                                        
+
                                                         <div class="caption product-detail text-center">
                                                             <div class="rating"> <span class="fa fa-stack"><i
                                                                         class="fa fa-star-o fa-stack-1x"></i><i
@@ -384,8 +384,8 @@
                                             <div class="item">
                                                 <div class="product-thumb">
                                                     <div class="image product-imageblock" style="height: 418px;">
-                                                   
-                                                    <a href="product_detail_page"
+
+                                                    <a href="/product_detail_page/{{$item->id}}"
                                                             style="height: -webkit-fill-available;">
                                                             <img data-name="product_image"
                                                                 style="height: -webkit-fill-available;"
@@ -395,8 +395,8 @@
                                                                 style="height: -webkit-fill-available;"
                                                                 src="{{ asset(Storage::url($item->profile_image)) }}"
                                                                 alt="iPod Classic" title="iPod Classic"
-                                                                class="img-responsive"> 
-                                            
+                                                                class="img-responsive">
+
                                                             </a>
                                                         <div class="button-group text-center">
                                                             <div class="wishlist"><a
@@ -460,7 +460,7 @@
                                                 <div class="item">
                                                     <div class="product-thumb">
                                                         <div class="image product-imageblock" style="height: 418px;">
-                                                            <a href="product_detail_page"
+                                                            <a href="/product_detail_page/{{$item->id}}"
                                                                 style="height: -webkit-fill-available;"
                                                                 sstyle="height: -webkit-fill-available;">
                                                                 <img data-name="product_image"
@@ -521,11 +521,11 @@
                                 </div>
                             </div>
                         </div>
-                    
+
                     <br>
                     <!-- =====  SUB BANNER END  ===== -->
                     <div id="brand_carouse" class="ptb_60 text-center">
-                    
+
                         <div class="type-01">
                             <div class="heading-part mb_10 ">
                             <br>
@@ -537,10 +537,10 @@
                                     <div class="brand owl-carousel ptb_20">
                                         @foreach ($brand as $x)
                                         <div class="item text-center">
-                                               
+
                                                  <a   @if (Auth::User()) href="item_brand/{{ $x->id }}" @endif >
                                                <img src="{{ asset(Storage::url($x->profile_image)) }}"
-                                                        alt="" class="img-responsive" /></a> 
+                                                        alt="" class="img-responsive" /></a>
                                                     </div>
                                         @endforeach
                                     </div>
@@ -554,7 +554,7 @@
         </div>
 
                 @extends('layout.footer')
-                
+
                 @section('footer')
                 @endsection
                 <!-- =====  FOOTER END  ===== -->

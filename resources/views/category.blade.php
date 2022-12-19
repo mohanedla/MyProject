@@ -6,7 +6,9 @@
 <head>
     <!-- =====  BASIC PAGE NEEDS  ===== -->
     <meta charset="utf-8">
-    <title>{{ __($product[0]->name)}}{{' '}}{{ __($name) }}</title>
+    <title>
+        {{-- {{ __($product[0]->name)}} --}}
+        {{' '}}{{ __($name) }}</title>
     <!-- =====  SEO MATE  ===== -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="">
@@ -130,7 +132,7 @@
                             </span>
                         </div> -->
                     </div>
-                    <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="home"> <img
+                    <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="/home"> <img
                                 alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
                     <div class="col-xs-6 col-sm-4 shopcart">
                         <div id="cart" class="btn-group btn-block mtb_40">
@@ -264,7 +266,9 @@
                     <!-- /.nav-collapse -->
                 </nav>
             </div>
+
         </div>
+
     </header>
     <!-- =====  HEADER END  ===== -->
     <!-- =====  BANNER STRAT  ===== -->
@@ -280,6 +284,47 @@
     <div class="container">
         <!-- =====  SUB BANNER  STRAT ===== -->
         <div class="row ">
+            <div id="column-left" class="col-sm-4 col-lg-3 hidden-xs">
+                <div id="category-menu" class="navbar collapse in mb_40">
+                    <div class="nav-responsive">
+                        <div class="heading-part">
+                            <h2 class="main_title">{{ __('Women') }}</h2>
+                        </div>
+                        <li class="nav navbar-nav">
+                            <ul>
+                                @foreach ($category_women as $women)
+                                <li><a href="/category/{{$women->id}}/Women">{{ __($women->name) }}</a></li>
+                            @endforeach
+                            </ul>
+                        </li>
+                        <!-- </ul> -->
+
+
+
+                        <!-- </div> -->
+                        <div class="heading-part">
+                            <h2 class="main_title">{{ __('Men') }}</h2>
+                        </div>
+                        <li class="nav navbar-nav">
+                            <ul>
+                                @foreach ($category_men as $men)
+                                    <li><a href="/category/{{$men->id}}/Men">{{ __($men->name) }}</a></li>
+                                @endforeach
+                            </ul>
+                        </li>
+                    </div>
+                    <div class="heading-part">
+                        <h2 class="main_title">{{ __('Kids') }}</h2>
+                    </div>
+                    <li class="nav navbar-nav">
+                        <ul>
+                            @foreach ($category_kids as $kids)
+                                <li><a href="/category/{{$kids->id}}/Kids">{{ __($kids->name) }}</a></li>
+                            @endforeach
+                        </ul>
+                    </li>
+                </div>
+            </div>
             <div class="col-sm-8 col-lg-9 mtb_20">
                 <div class="category-page-wrapper mb_30">
                     <div class="list-grid-wrapper pull-left">
@@ -330,7 +375,7 @@
                         <div class="item">
                             <div class="product-thumb clearfix mb_30">
                                 <div class="image product-imageblock" style="height: 418px;">
-                                        <a href="product_detail_page" style="height: -webkit-fill-available;">
+                                        <a href="product_detail_page/{{$item->id}}" style="height: -webkit-fill-available;">
                                             <img style="height: -webkit-fill-available;" data-name="product_image"
                                             src="{{ asset(Storage::url($item->profile_image)) }}" alt="iPod Classic"
                                             title="iPod Classic" class="img-responsive" />

@@ -47,6 +47,8 @@
     <!-- =====  LODER  ===== -->
     <div class="loder"></div>
     <div class="wrapper">
+
+
         <!-- =====  HEADER START  ===== -->
         <header id="header">
             <div class="header-top">
@@ -106,23 +108,9 @@
                                                 href="/dashboard_home">{{ __('System management') }}</a>
                                         </li>
                                     @endif
-                                    {{-- @endif --}}
-                                @endif
-                                <!-- <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                role="button">{{ __('Properties') }} <span class="caret"></span> </span>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
-<<<<<<< HEAD
-=======
 
->>>>>>> 4e1736db48d47838495683771b8903b10ad5eae0
-                                    <li><a href="admin">{{ __('admin management') }}</a></li>
-                                    <li><a href="user">{{ __('user management') }}</a></li>
-                                    <li><a href="product">{{ __('Product Management') }}</a></li>
-                                    <li><a href="brand">{{ __('Brands') }}</a></li>
-                                    <li><a href="reports">{{ __('Reports') }}</a></li>
-                                </ul>
-                            </li> -->
+                                @endif
+
                             </ul>
                         </div>
                     </div>
@@ -134,7 +122,7 @@
                         <div class="col-xs-12 col-sm-4">
 
                         </div>
-                        <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="home"> <img
+                        <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="/home"> <img
                                     alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
                         <div class="col-xs-6 col-sm-4 shopcart">
 
@@ -211,59 +199,58 @@
                                     class="fa fa-bars"></i></span></button>
                         <div class="collapse navbar-collapse js-navbar-collapse">
                             <ul id="menu" class="nav navbar-nav">
-                                <li> <a href="home">{{ __('Home') }}</a></li>
+                                <li> <a href="/home">{{ __('Home') }}</a></li>
                                 <li class="dropdown mega-dropdown"> <a href="#" class="dropdown-toggle"
                                         data-toggle="dropdown">{{ __('Collection') }} </a>
-                                    <ul class="dropdown-menu mega-dropdown-menu row">
-                                        <li class="col-md-3">
-                                            <ul>
-                                                <li class="dropdown-header">{{ __('Women') }}</li>
-                                                @foreach ($category_women as $women)
-                                                    <li><a href="#">{{ __($women->name) }}</a></li>
-                                                @endforeach
-                                            </ul>
-                                        </li>
-                                        <li class="col-md-3">
-                                            <ul>
-                                                <li class="dropdown-header">{{ __('Men') }}</li>
-                                                @foreach ($category_men as $men)
-                                                    <li><a href="#">{{ __($men->name) }}</a></li>
-                                                @endforeach
-                                            </ul>
-                                        </li>
+                                        <ul class="dropdown-menu mega-dropdown-menu row">
+                                            <li class="col-md-3">
+                                                <ul>
+                                                    <li class="dropdown-header">{{ __('Women') }}</li>
+                                                    @foreach ($category_women as $women)
+                                                        <li><a href="/category/{{$women->id}}/Women">{{ __($women->name) }}</a></li>
+                                                    @endforeach
+                                                </ul>
+                                            </li>
+                                            <li class="col-md-3">
+                                                <ul>
+                                                    <li class="dropdown-header">{{ __('Men') }}</li>
+                                                    @foreach ($category_men as $men)
+                                                        <li><a href="/category/{{$men->id}}/Women">{{ __($men->name) }}</a></li>
+                                                    @endforeach
+                                                </ul>
+                                            </li>
 
-                                        <li class="col-md-3">
-                                            <ul>
-                                                <li class="dropdown-header">{{ __('Children') }}</li>
-                                                @foreach ($category_kids as $kids)
-                                                    <li><a href="#">{{ __($kids->name) }}</a></li>
-                                                @endforeach
-                                            </ul>
-                                        </li>
-                                        <li class="col-md-3">
-                                            <ul>
-                                                <li id="myCarousel" class="carousel slide" data-ride="carousel">
-                                                    <div class="carousel-inner">
-                                                        <div class="item active">
-                                                            <a href=""> <img
-                                                                    src="{{ asset('images\uploads\shof_1d433f3c8569e7d-removebg-preview.png') }}"
-                                                                    class="img-responsive" alt="Banner1"></a>
+                                            <li class="col-md-3">
+                                                <ul>
+                                                    <li class="dropdown-header">{{ __('Kids') }}</li>
+                                                    @foreach ($category_kids as $kids)
+                                                        <li><a href="/category/{{$kids->id}}/Women">{{ __($kids->name) }}</a></li>
+                                                    @endforeach
+                                                </ul>
+                                            </li>
+                                            <li class="col-md-3">
+                                                <ul>
+                                                    <li id="myCarousel" class="carousel slide" data-ride="carousel">
+                                                        <div class="carousel-inner">
+                                                            <div class="item active">
+                                                            <a href=""> <img src="{{ asset('images\uploads\shof_1d433f3c8569e7d-removebg-preview.png') }}"
+                                                                        class="img-responsive" alt="Banner1"></a>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <!-- End Carousel Inner -->
-                                                </li>
-                                                <!-- /.carousel -->
-                                            </ul>
-                                        <li class="col-md-3">
-                                        </li>
-                                    </ul>
+                                                        <!-- End Carousel Inner -->
+                                                    </li>
+                                                    <!-- /.carousel -->
+                                                </ul>
+                                            <li class="col-md-3">
+                                            </li>
+                                        </ul>
                                 </li>
                                 @if (Auth::User())
-                                    <li> <a href="shop">{{ __('shop') }}</a></li>
+                                    <li> <a href="/shop">{{ __('shop') }}</a></li>
                                 @endif
-                                <li> <a href="about">{{ __('About us') }}</a></li>
+                                <li> <a href="/about">{{ __('About us') }}</a></li>
                                 @if (Auth::User())
-                                    <li> <a href="contact_us">{{ __('Contact us') }}</a></li>
+                                    <li> <a href="/contact_us">{{ __('Contact us') }}</a></li>
                                 @endif
                             </ul>
                         </div>
@@ -272,6 +259,7 @@
                 </div>
             </div>
         </header>
+
         <!-- =====  HEADER END  ===== -->
         <!-- =====  CONTAINER START  ===== -->
         <div class="container">
@@ -298,11 +286,14 @@
                             <li class="nav navbar-nav">
                                 <ul>
                                     @foreach ($category_women as $women)
-                                        <li><a href="#">{{ __($women->name) }}</a></li>
-                                    @endforeach
+                                    <li><a href="/category/{{$women->id}}/Women">{{ __($women->name) }}</a></li>
+                                @endforeach
                                 </ul>
                             </li>
                             <!-- </ul> -->
+
+
+
                             <!-- </div> -->
                             <div class="heading-part">
                                 <h2 class="main_title">{{ __('Men') }}</h2>
@@ -310,18 +301,18 @@
                             <li class="nav navbar-nav">
                                 <ul>
                                     @foreach ($category_men as $men)
-                                        <li><a href="#">{{ __($men->name) }}</a></li>
+                                        <li><a href="/category/{{$men->id}}/Men">{{ __($men->name) }}</a></li>
                                     @endforeach
                                 </ul>
                             </li>
                         </div>
                         <div class="heading-part">
-                            <h2 class="main_title">{{ __('Children') }}</h2>
+                            <h2 class="main_title">{{ __('Kids') }}</h2>
                         </div>
                         <li class="nav navbar-nav">
                             <ul>
                                 @foreach ($category_kids as $kids)
-                                    <li><a href="#">{{ __($kids->name) }}</a></li>
+                                    <li><a href="/category/{{$kids->id}}/Kids">{{ __($kids->name) }}</a></li>
                                 @endforeach
                             </ul>
                         </li>
@@ -338,22 +329,7 @@
                                 <div id="product-thumbnail" class="owl-carousel">
                                     <div class="item">
                                     </div>
-                                    {{-- <div class="image-additional"><a class="thumbnail" href="images/product/product1.jpg" data-fancybox="group1"> <img src="{{asset('images/product/product1.jpg')}}"  /></a></div>
-                <div class="item">
-                  <div class="image-additional"><a class="thumbnail" href="images/product/product2.jpg" data-fancybox="group1"> <img src="{{asset('images/product/product2.jpg')}}"  /></a></div>
-                </div>
-                <div class="item">
-                  <div class="image-additional"><a class="thumbnail" href="images/product/product3.jpg" data-fancybox="group1"> <img src="{{asset('images/product/product3.jpg')}}"  /></a></div>
-                </div>
-                <div class="item">
-                  <div class="image-additional"><a class="thumbnail" href="images/product/product4.jpg" data-fancybox="group1"> <img src="{{asset('images/product/product4.jpg')}}"  /></a></div>
-                </div>
-                <div class="item">
-                  <div class="image-additional"><a class="thumbnail" href="images/product/product5.jpg" data-fancybox="group1"> <img src="{{asset('images/product/product5.jpg')}}"  /></a></div>
-                </div>
-                <div class="item">
-                  <div class="image-additional"><a class="thumbnail" href="images/product/product6.jpg" data-fancybox="group1"> <img src="{{asset('images/product/product6.jpg')}}"  /></a></div>
-                </div> --}}
+
                                     @foreach ($product->images as $image)
                                         <div class="item">
 
@@ -513,9 +489,3 @@
             });
         </script>
     </body>
-
-<<<<<<< HEAD
-    </html>
-=======
-    </html>
->>>>>>> 4e1736db48d47838495683771b8903b10ad5eae0

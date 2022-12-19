@@ -128,9 +128,7 @@ class home extends Controller
             $category_kids=Kids::all();
             $brand=brand::all();
             $product=product::where('category_id',$id)->where('collection',$name)->get();
-            // dd($product);
             return View('category',compact('brand','product','category_men','category_women','category_kids','name'));
-
 
         }
 

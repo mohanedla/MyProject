@@ -7,7 +7,7 @@
 
     <!-- =====  BASIC PAGE NEEDS  ===== -->
     <meta charset="utf-8">
-    <title>{{ __('checkout') }}</title>
+    <title>{{ __('product_detail') }}</title>
 
     <!-- =====  SEO MATE  ===== -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -110,7 +110,21 @@
                                     @endif
 
                                 @endif
+                                <!-- <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                role="button">{{ __('Properties') }} <span class="caret"></span> </span>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
+<<<<<<< HEAD
+=======
 
+>>>>>>> 4e1736db48d47838495683771b8903b10ad5eae0
+                                    <li><a href="admin">{{ __('admin management') }}</a></li>
+                                    <li><a href="user">{{ __('user management') }}</a></li>
+                                    <li><a href="product">{{ __('Product Management') }}</a></li>
+                                    <li><a href="brand">{{ __('Brands') }}</a></li>
+                                    <li><a href="reports">{{ __('Reports') }}</a></li>
+                                </ul>
+                            </li> -->
                             </ul>
                         </div>
                     </div>
@@ -202,48 +216,49 @@
                                 <li> <a href="/home">{{ __('Home') }}</a></li>
                                 <li class="dropdown mega-dropdown"> <a href="#" class="dropdown-toggle"
                                         data-toggle="dropdown">{{ __('Collection') }} </a>
-                                        <ul class="dropdown-menu mega-dropdown-menu row">
-                                            <li class="col-md-3">
-                                                <ul>
-                                                    <li class="dropdown-header">{{ __('Women') }}</li>
-                                                    @foreach ($category_women as $women)
-                                                        <li><a href="/category/{{$women->id}}/Women">{{ __($women->name) }}</a></li>
-                                                    @endforeach
-                                                </ul>
-                                            </li>
-                                            <li class="col-md-3">
-                                                <ul>
-                                                    <li class="dropdown-header">{{ __('Men') }}</li>
-                                                    @foreach ($category_men as $men)
-                                                        <li><a href="/category/{{$men->id}}/Women">{{ __($men->name) }}</a></li>
-                                                    @endforeach
-                                                </ul>
-                                            </li>
+                                    <ul class="dropdown-menu mega-dropdown-menu row">
+                                        <li class="col-md-3">
+                                            <ul>
+                                                <li class="dropdown-header">{{ __('Women') }}</li>
+                                                @foreach ($category_women as $women)
+                                                    <li><a href="#">{{ __($women->name) }}</a></li>
+                                                @endforeach
+                                            </ul>
+                                        </li>
+                                        <li class="col-md-3">
+                                            <ul>
+                                                <li class="dropdown-header">{{ __('Men') }}</li>
+                                                @foreach ($category_men as $men)
+                                                    <li><a href="#">{{ __($men->name) }}</a></li>
+                                                @endforeach
+                                            </ul>
+                                        </li>
 
-                                            <li class="col-md-3">
-                                                <ul>
-                                                    <li class="dropdown-header">{{ __('Kids') }}</li>
-                                                    @foreach ($category_kids as $kids)
-                                                        <li><a href="/category/{{$kids->id}}/Women">{{ __($kids->name) }}</a></li>
-                                                    @endforeach
-                                                </ul>
-                                            </li>
-                                            <li class="col-md-3">
-                                                <ul>
-                                                    <li id="myCarousel" class="carousel slide" data-ride="carousel">
-                                                        <div class="carousel-inner">
-                                                            <div class="item active">
-                                                            <a href=""> <img src="{{ asset('images\uploads\shof_1d433f3c8569e7d-removebg-preview.png') }}"
-                                                                        class="img-responsive" alt="Banner1"></a>
-                                                            </div>
+                                        <li class="col-md-3">
+                                            <ul>
+                                                <li class="dropdown-header">{{ __('Children') }}</li>
+                                                @foreach ($category_kids as $kids)
+                                                    <li><a href="#">{{ __($kids->name) }}</a></li>
+                                                @endforeach
+                                            </ul>
+                                        </li>
+                                        <li class="col-md-3">
+                                            <ul>
+                                                <li id="myCarousel" class="carousel slide" data-ride="carousel">
+                                                    <div class="carousel-inner">
+                                                        <div class="item active">
+                                                            <a href=""> <img
+                                                                    src="{{ asset('images\uploads\shof_1d433f3c8569e7d-removebg-preview.png') }}"
+                                                                    class="img-responsive" alt="Banner1"></a>
                                                         </div>
-                                                        <!-- End Carousel Inner -->
-                                                    </li>
-                                                    <!-- /.carousel -->
-                                                </ul>
-                                            <li class="col-md-3">
-                                            </li>
-                                        </ul>
+                                                    </div>
+                                                    <!-- End Carousel Inner -->
+                                                </li>
+                                                <!-- /.carousel -->
+                                            </ul>
+                                        <li class="col-md-3">
+                                        </li>
+                                    </ul>
                                 </li>
                                 @if (Auth::User())
                                     <li> <a href="/shop">{{ __('shop') }}</a></li>
@@ -489,3 +504,9 @@
             });
         </script>
     </body>
+
+<<<<<<< HEAD
+    </html>
+=======
+    </html>
+>>>>>>> 4e1736db48d47838495683771b8903b10ad5eae0

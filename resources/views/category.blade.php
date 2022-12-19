@@ -214,7 +214,8 @@
                         <ul id="menu" class="nav navbar-nav">
                             <li> <a href="/home">{{ __('Home') }}</a></li>
                             <li class="dropdown mega-dropdown"> <a href="#" class="dropdown-toggle"
-                                data-toggle="dropdown">{{ __('Collection') }} </a>
+                                    data-toggle="dropdown">{{ __('Collection') }} </a>
+                                    
                                 <ul class="dropdown-menu mega-dropdown-menu row">
                                     <li class="col-md-3">
                                         <ul>
@@ -228,7 +229,7 @@
                                         <ul>
                                             <li class="dropdown-header">{{ __('Men') }}</li>
                                             @foreach ($category_men as $men)
-                                                <li><a href="/category/{{$men->id}}/Men">{{ __($men->name) }}</a></li>
+                                                <li><a href="/category/{{$men->id}}/Women">{{ __($men->name) }}</a></li>
                                             @endforeach
                                         </ul>
                                     </li>
@@ -237,7 +238,7 @@
                                         <ul>
                                             <li class="dropdown-header">{{ __('Children') }}</li>
                                             @foreach ($category_kids as $kids)
-                                                <li><a href="/category/{{$kids->id}}/Kids">{{ __($kids->name) }}</a></li>
+                                                <li><a href="/category/{{$kids->id}}/Women">{{ __($kids->name) }}</a></li>
                                             @endforeach
                                         </ul>
                                     </li>
@@ -257,7 +258,7 @@
                                     <li class="col-md-3">
                                     </li>
                                 </ul>
-                        </li>
+                            </li>
                         <li> <a href="/shop">{{ __('shop') }}</a></li>
                         <li> <a href="/about">{{ __('About us') }}</a></li>
                         <li> <a href="/contact_us">{{ __('Contact us') }}</a></li>

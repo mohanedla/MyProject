@@ -204,42 +204,46 @@
                     <div id="category-menu" class="navbar collapse in mb_40" aria-expanded="true" style=""
                         role="button">
                         <div id="category-menu" class="navbar collapse in mb_40" >
-              <div class="nav-responsive">
+                        <div class="nav-responsive">
                 <div class="heading-part">
-                  <h2 class="main_title">{{ __('Women') }}</h2>
+                    <h2 class="main_title">{{ __('Women') }}</h2>
                 </div>
                 <li class="nav navbar-nav">
-                   <ul>
-                       @foreach ($category_women as $women)
-                        <li><a href="#">{{ __($women->name) }}</a></li>
-                       @endforeach
-                     </ul>
+                    <ul>
+                        @foreach ($category_women as $women)
+                        <li><a href="/category/{{$women->id}}/Women">{{ __($women->name) }}</a></li>
+                    @endforeach
+                    </ul>
                 </li>
                 <!-- </ul> -->
-              <!-- </div> -->
-              <div class="heading-part">
-                  <h2 class="main_title">{{ __('Men') }}</h2>
+
+
+
+                <!-- </div> -->
+                <div class="heading-part">
+                    <h2 class="main_title">{{ __('Men') }}</h2>
                 </div>
                 <li class="nav navbar-nav">
-                   <ul>
-                   @foreach ($category_men as $men)
-                     <li><a href="#">{{ __($men->name) }}</a></li>
-                       @endforeach
-                     </ul>
+                    <ul>
+                        @foreach ($category_men as $men)
+                            <li><a href="/category/{{$men->id}}/Men">{{ __($men->name) }}</a></li>
+                        @endforeach
+                    </ul>
                 </li>
-             </div>
-              <div class="heading-part">
-                  <h2 class="main_title">{{ __('Children') }}</h2>
-                </div>
-                <li class="nav navbar-nav">
-                   <ul>
-                      @foreach ($category_kids as $kids)
-                       <li><a href="#">{{ __($kids->name) }}</a></li>
-                         @endforeach
-                     </ul>
-                </li>
-                </div>
-                </div>
+            </div>
+            <div class="heading-part">
+                <h2 class="main_title">{{ __('Kids') }}</h2>
+            </div>
+            <li class="nav navbar-nav">
+                <ul>
+                    @foreach ($category_kids as $kids)
+                        <li><a href="/category/{{$kids->id}}/Kids">{{ __($kids->name) }}</a></li>
+                    @endforeach
+                </ul>
+            </li>
+        </div>
+        </div>   
+
                 </div>
 
                 

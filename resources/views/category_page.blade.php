@@ -382,7 +382,7 @@
                             </div>
                             <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
                         </div>
-                        <div class="sort-wrapper pull-right">
+                        <!-- <div class="sort-wrapper pull-right">
                             <label class="control-label" for="input-sort">{{ __('Sort By') }} :</label>
                             <div class="sort-inner">
                                 <select id="input-sort" class="form-control">
@@ -398,7 +398,7 @@
                                 </select>
                             </div>
                             <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="row">
                         @foreach ($products as $product)
@@ -413,9 +413,15 @@
                                                 title="iPod Classic" class="img-responsive" /> </a>
 
                                     </div>
-                                    <div class="caption product-detail text-center">
+                                    <div class="caption product-detail text-center">&nbsp;&nbsp;&nbsp;
                                         <h6 data-name="product_name" class="product-name mt_20"><a href="#"
                                                 title="Casual Shirt With Ruffle Hem">{{$product->name}}</a></h6>
+                                                <!-- <div class="button-group text-center">
+
+                                                        <div class="add-to-cart"><a href="#"><span>Add to cart</span></a>
+                                                        </div>
+                                                    </div> -->
+                                                    
                                         {{-- <div class="rating"> <span class="fa fa-stack"><i
                                                     class="fa fa-star-o fa-stack-1x"></i><i
                                                     class="fa fa-star fa-stack-1x"></i></span> <span
@@ -427,13 +433,14 @@
                                                     class="fa fa-star fa-stack-1x"></i></span> <span
                                                 class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
                                                     class="fa fa-star fa-stack-x"></i></span> </div> --}}
-                                                    <div class="button-group text-center">
-
-                                                        <div class="add-to-cart"><a href="#"><span>Add to cart</span></a>
-                                                        </div>
-                                                    </div>
+                                                    
                                         <span class="price"><span class="amount"><span
                                                     class="currencySymbol">$</span>{{$product->price}}</span>
+                                                    <form action="/">
+             
+             <input class="btn pull-right mt_30" type="submit" value="{{ __('أضف إلى العربة') }}" />
+             
+         </form>
                                         </span>
                                         <p class="product-desc mt_20 mb_60"> More room to move. With 80GB or 160GB of
                                             storage and up to 40 hours of battery life, the new iPod classic lets you

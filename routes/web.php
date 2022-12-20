@@ -138,6 +138,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
 
 
+    // Route::get('/profile_product',[App\Http\Controllers\products::class,'profile']);
+
+
+
 
 
 

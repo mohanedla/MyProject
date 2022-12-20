@@ -366,7 +366,7 @@
                                                 <div class="item">
                                                     <div class="product-thumb">
                                                         <div class="image product-imageblock" style="height: 418px;">
-                                                            <a href="/product_detail_page/{{$product->id}}"
+                                                            <a href="/product_detail_page/{{$item->id}}"
                                                                 style="height: -webkit-fill-available;">
                                                                 <img data-name="product_image"
                                                                     style="height: -webkit-fill-available;"

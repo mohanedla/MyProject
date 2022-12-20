@@ -42,13 +42,13 @@ class products extends Controller
 
         else{
         if($id == 0){
-            $admin=product::with('sizes.size','colors.color','images.image')->get();
+            $admin=product::with('brands','sizes.size','colors.color','images')->get();
         }elseif($id == 1){
-            $admin=product::where('collection','Men')->with('sizes.size','colors.color','images')->get();
+            $admin=product::where('collection','Men')->with('brands','sizes.size','colors.color','images')->get();
         }elseif($id ==2){
-            $admin=product::where('collection','Women')->with('sizes.size','colors.color','images')->get();
+            $admin=product::where('collection','Women')->with('brands','sizes.size','colors.color','images')->get();
         }else{
-            $admin=product::where('collection','kids')->with('sizes.size','colors.color','images')->get();
+            $admin=product::where('collection','kids')->with('brands','sizes.size','colors.color','images')->get();
         }
         //  dd($brand);
         $page = "product";
@@ -57,6 +57,14 @@ class products extends Controller
     }
 
     }
+
+    // public function profile()
+    // {
+    //     $page= "product";
+
+    //     return view ('product.profile',compact('page'));
+    // }
+
 
     public function item_brand($id)
     {

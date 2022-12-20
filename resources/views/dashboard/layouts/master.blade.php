@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>soengsouy.com</title>
+    <link rel="stylesheet" type="text/css" href="{{ URL::to('css/magnific-popup.css') }}">
 
 
     <link rel="stylesheet" href="{{ URL::to('assets/vendors/toastify/toastify.css') }}">
@@ -39,8 +40,9 @@
     <link href="{{ URL::to('assets1/vendor/quill/quill.snow.css') }}" rel="stylesheet">
     <link href="{{ URL::to('assets1/vendor/quill/quill.bubble.css') }}" rel="stylesheet">
     <link href="{{ URL::to('assets1/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
-
-
+{{--
+    <link rel="stylesheet" href="{{URL::to('assets/vendors/sweetalert2/sweetalert2.min.css')}}">
+    <script src="{{URL::to('assets/vendors/sweetalert2/sweetalert2.all.min.js')}}"></script> --}}
 
     <link href="{{ URL::to('assets2/css/main/app.css') }}" rel="stylesheet">
     <link href="{{ URL::to('assets2/css/main/app-dark.css') }}" rel="stylesheet">

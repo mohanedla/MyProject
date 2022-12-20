@@ -65,7 +65,6 @@
                                 <tr>
                                     <td>{{$i++}}</td>
                                     <td>{{$x->name}}</td>
-                                    <!-- <td>{{$x->name}}</td> -->
                                     <td>{{$x->brands->name}}</td>
                                     <td>{{$x->collection}}</td>
                                     <td>{{$x->specification}}</td>
@@ -73,7 +72,14 @@
                                     <td>{{$x->price_purchas}}$</td>
                                     <td>{{$x->price}}$</td>
                                     <td>{{$x->user->name}}</td>
-                                    <td><img style="width: 50%;" src="{{asset(Storage::url($x->profile_image))}}" alt=""></td>
+                                    <td>
+                                        
+
+                                        <div class="avatar avatar-xl me-3">
+                                            <img src="{{asset(Storage::url($x->profile_image))}}" alt="" srcset="">
+                                        </div>
+
+                                        </td>
                                     <td class="text-center">
                                         <a data-bs-toggle="modal" data-bs-target="#type_men"
                                         data-bs-whatever="@mdo"
@@ -121,15 +127,18 @@
                                 <div id="Gallerycarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
                                     <div class="carousel-inner" >
                                         <div class="carousel-item active">
-                                            <img  class="d-block w-100" id="image" style="height: 300px;">
+                                            <img  class="d-block w-100" id="image"  style="height: 300px;">
                                         </div>
                                         <p id="create_div_img">
 
                                         </p>
 
+
+
                                         <div class="carousel-item" >
                                             <img  class="d-block w-100" id="imag" style="height: 300px;">
                                         </div>
+
 
                                     <a class="carousel-control-prev" href="#Gallerycarousel" role="button" type="button" data-bs-slide="prev">
                                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -217,11 +226,15 @@ function showDetails(pro,images,sizes,colors,img)
                 // img1.src="";
             // create_div.appendChild(div);
             // div.appendChild(img1);
-        console.log(images.length);
+        console.log(images.length);{{$i=0;}}
+        // value(images.length);
+
         for (let i = 0; i < images.length; i++) {
             img1.src="/storage"+images[i]['image'].slice(6);
                 console.log(img1.src);
-        }
+
+                change(img1.src);
+    }
 }
 </script>
 @endsection

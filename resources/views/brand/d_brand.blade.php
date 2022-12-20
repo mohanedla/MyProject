@@ -136,8 +136,11 @@
                                         <td>{{ $x->address }}</td>
                                         <td>{{ $x->email }}</td>
                                         <td>{{ $x->phone_number }}</td>
-                                        <td><img style="width: 50%; height:50%;"
-                                                src="{{ asset(Storage::url($x->profile_image)) }}" alt=""></td>
+                                        <td>
+                                            <div class="avatar avatar-xl me-3">
+                                                <img src="{{ asset(Storage::url($x->profile_image)) }}" alt="" srcset="">
+                                            </div>
+                                            </td>
                                         <td class="text-center">
                                             <a data-bs-toggle="modal" data-bs-target="#type_men" data-bs-whatever="@mdo"
                                                 onclick="showDetails({{ json_encode($x) }},{{ json_encode(asset(Storage::url($x->profile_image))) }}) ">
@@ -203,7 +206,7 @@
                         </table>
                         <h1 class="modal-title fs-5"> {{ __('Name') }} : &nbsp; <span id="brand_name"></span> </h1>
                         <h1 class="modal-title fs-5"> {{ __('Email Address') }} : &nbsp <span id="brand_email"></span></h1>
-                       
+
                         <h1 class="modal-title fs-5">{{ __('Country') }} : <span id="brand_country"></span> &nbsp; </h1>
                         <h1 class="modal-title fs-5"> <span id="brand_address"></span> :&nbsp; {{ __('Address') }} </h1>
                         <h1 class="modal-title fs-5">{{ __('Phone Number') }} : <span id="brand_phone"></span> </h1>

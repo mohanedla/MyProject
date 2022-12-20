@@ -55,11 +55,16 @@
                                 $j=0;
                             @endphp
                                 @foreach ($users as $x)
-                                <tr>  
-                                    <td>{{$i++}}</td>  
+                                <tr>
+                                    <td>{{$i++}}</td>
                                     <td>{{$x->name}}</td>
                                     <td>{{$x->email}}</td>
-                                    <td><img style="width: 50%; height:50%;" src="{{asset(Storage::url($x->profile_image))}}" alt=""></td>
+                                    <td>
+                                        <div class="avatar avatar-xl me-3">
+                                            <img src="{{asset(Storage::url($x->profile_image))}}" alt="" srcset="">
+                                        </div>
+                                        
+                                    </td>
                                     <td class="text-center">
                                     <a data-bs-toggle="modal" data-bs-target="#type_men"
                                     data-bs-whatever="@mdo" onclick="showDetails({{ json_encode($x) }},{{ json_encode(asset(Storage::url($x->profile_image))) }}) ">
@@ -123,7 +128,7 @@
                         data-bs-dismiss="modal">{{ __('Close') }}</button>
 
                 </div>
-                </form>   
+                </form>
             </div>
         </div>
     </div>

@@ -22,19 +22,19 @@ class product extends Model
     // public function admins(){
     //     return $this->belongsToMany('App\User','admin_id')->withTimestamps();
     // }
-    
+
     public function admins() {
         return $this->belongsTo('App\Models\User','admin_id');
     }
-    public function brands() {
-        return $this->belongsTo('App\Models\brand','brand_id');
-    }
+    // public function brands() {
+    //     return $this->belongsTo('App\Models\brand','brand_id');
+    // }
 
     public function user(){
         return $this->hasOne(User::class, 'id', 'admin_id');
     }
 
-    public function brand(){
+    public function brands(){
         return $this->hasOne(brand::class, 'id', 'brand_id');
     }
 

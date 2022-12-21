@@ -240,7 +240,7 @@
 
                                     <li class="col-md-3">
                                         <ul>
-                                            <li class="dropdown-header">{{ __('Kids') }}</li>
+                                            <li class="dropdown-header">{{ __('Children') }}</li>
                                             @foreach ($category_kids as $kids)
                                                 <li><a
                                                         href="/category/{{ $kids->id }}/Kids">{{ __($kids->name) }}</a>
@@ -322,7 +322,7 @@
                                                                     alt="iPod Classic" title="iPod Classic"
                                                                     class="img-responsive"> </a>
                                                             <div class="button-group text-center">
-                                                                <div class="wishlist"><a
+                                                                <!-- <div class="wishlist"><a
                                                                         href="#"><span>wishlist</span></a>
                                                                 </div>
                                                                 <div class="quickview"><a href="#"><span>Quick
@@ -332,7 +332,7 @@
                                                                 </div>
                                                                 <div class="add-to-cart"><a href="#"><span>Add
                                                                             to
-                                                                            cart</span></a></div>
+                                                                            cart</span></a></div> -->
                                                             </div>
                                                         </div>
 
@@ -359,7 +359,13 @@
                                                                     {{ $item->name }}</a></h6>
                                                             @if (Auth::User())
                                                                 <span class="price"><span class="amount"><span
-                                                                            class="currencySymbol">$</span>{{ $item->price }}.00</span>
+                                                                            class="currencySymbol">$</span>{{ $item->price }}.00
+                                                                        </span>
+                                                                        <!-- <form action="/">
+             
+             <input class="btn pull-right mt_30" type="submit" value="{{ __('Add to cart') }}" />
+             
+         </form> -->
                                                                 </span>
                                                             @endif
                                                         </div>
@@ -372,6 +378,7 @@
                             </div>
                         </div>
                     </div>
+                  
                     <!-- =====  PRODUCT TAB  END ===== -->
                 </div>
             </div>
@@ -405,7 +412,7 @@
 
                                                         </a>
                                                         <div class="button-group text-center">
-                                                            <div class="wishlist"><a
+                                                            <!-- <div class="wishlist"><a
                                                                     href="#"><span>wishlist</span></a>
                                                             </div>
                                                             <div class="quickview"><a href="#"><span>Quick
@@ -414,7 +421,7 @@
                                                                     href="#"><span>Compare</span></a>
                                                             </div>
                                                             <div class="add-to-cart"><a href="#"><span>Add to
-                                                                        cart</span></a></div>
+                                                                        cart</span></a></div> -->
                                                         </div>
                                                     </div>
                                                     <div class="caption product-detail text-center">
@@ -439,7 +446,14 @@
                                                         @if (Auth::User())
                                                             <span class="price"><span class="amount"><span
                                                                         class="currencySymbol">$</span>{{ $item->price }}.00</span>
-                                                            </span>
+                                                                        <!-- <form action="/">
+             
+             <input class="btn pull-right mt_30" type="submit" value="{{ __('Add to cart') }}" />
+             
+         </form> -->
+                    
+                        
+                                                                    </span>
                                                         @endif
                                                     </div>
                                                 </div>
@@ -478,7 +492,7 @@
                                                                     alt="iPod Classic" title="iPod Classic"
                                                                     class="img-responsive"> </a>
                                                             <div class="button-group text-center">
-                                                                <div class="wishlist"><a
+                                                                <!-- <div class="wishlist"><a
                                                                         href="#"><span>wishlist</span></a>
                                                                 </div>
                                                                 <div class="quickview"><a href="#"><span>Quick
@@ -488,7 +502,7 @@
                                                                 </div>
                                                                 <div class="add-to-cart"><a href="#"><span>Add
                                                                             to
-                                                                            cart</span></a></div>
+                                                                            cart</span></a></div> -->
                                                             </div>
                                                         </div>
                                                         <div class="caption product-detail text-center">
@@ -515,7 +529,13 @@
                                                             @if (Auth::User())
                                                                 <span class="price"><span class="amount"><span
                                                                             class="currencySymbol">$</span>{{ $item->price }}.00</span>
-                                                                </span>
+                                                                            <!-- <form action="/">
+             
+             <input class="btn pull-right mt_30" type="submit" value="{{ __('Add to cart') }}" />
+             
+         </form> -->
+                        
+                                                                        </span>
                                                             @endif
                                                         </div>
                                                     </div>

@@ -222,7 +222,7 @@
 
                                             <li class="col-md-3">
                                                 <ul>
-                                                    <li class="dropdown-header">{{ __('Kids') }}</li>
+                                                    <li class="dropdown-header">{{ __('Children') }}</li>
                                                     @foreach ($category_kids as $kids)
                                                         <li><a href="/category/{{$kids->id}}/Kids">{{ __($kids->name) }}</a></li>
                                                     @endforeach
@@ -307,7 +307,7 @@
                             </li>
                         </div>
                         <div class="heading-part">
-                            <h2 class="main_title">{{ __('Kids') }}</h2>
+                            <h2 class="main_title">{{ __('Children') }}</h2>
                         </div>
                         <li class="nav navbar-nav">
                             <ul>
@@ -415,19 +415,18 @@
                                             </label>
                                             <input name="product_quantity" min="1" value="1"
                                                 type="number">
-                                        </div>
-                                        <div class="button-group mt_30">
-                                            <div class="add-to-cart"><a href="#"><span>Add to cart</span></a>
+                                                <form action="/">
+             
+             <input class="btn pull-right mt_30" type="submit" value="{{ __('Add to cart') }}" />
+             
+         </form>
                                             </div>
-                                            <div class="wishlist"><a href="#"><span>wishlist</span></a></div>
-                                            <div class="compare"><a href="#"><span>Compare</span></a></div>
                                         </div>
                                     </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-12">
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-12">
 
                             </div>
                         </div>

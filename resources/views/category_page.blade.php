@@ -230,7 +230,7 @@
 
                                                         <li class="col-md-3">
                                                             <ul>
-                                                                <li class="dropdown-header">{{ __('Kids') }}</li>
+                                                                <li class="dropdown-header">{{ __('Children') }}</li>
                                                                 @foreach ($category_kids as $kids)
                                                                     <li><a href="/category/{{$kids->id}}/Kids">{{ __($kids->name) }}</a></li>
                                                                 @endforeach
@@ -320,7 +320,7 @@
                 </li>
             </div>
             <div class="heading-part">
-                <h2 class="main_title">{{ __('Kids') }}</h2>
+                <h2 class="main_title">{{ __('Children') }}</h2>
             </div>
             <li class="nav navbar-nav">
                 <ul>
@@ -382,7 +382,7 @@
                             </div>
                             <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
                         </div>
-                        <div class="sort-wrapper pull-right">
+                        <!-- <div class="sort-wrapper pull-right">
                             <label class="control-label" for="input-sort">{{ __('Sort By') }} :</label>
                             <div class="sort-inner">
                                 <select id="input-sort" class="form-control">
@@ -398,7 +398,7 @@
                                 </select>
                             </div>
                             <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="row">
                         @foreach ($products as $product)
@@ -413,9 +413,15 @@
                                                 title="iPod Classic" class="img-responsive" /> </a>
 
                                     </div>
-                                    <div class="caption product-detail text-center">
-                                        <h6 data-name="product_name" class="product-name mt_20"><a href="#"
-                                                title="Casual Shirt With Ruffle Hem">{{$product->name}}</a></h6>
+                                    <div class="caption product-detail text-center">&nbsp;&nbsp;&nbsp;
+                                        <h2 data-name="product_name" class="product-name mt_20"><a href="#"
+                                                title="Casual Shirt With Ruffle Hem">{{$product->name}}</a></h2>
+                                                <!-- <div class="button-group text-center">
+
+                                                        <div class="add-to-cart"><a href="#"><span>Add to cart</span></a>
+                                                        </div>
+                                                    </div> -->
+                                                    
                                         {{-- <div class="rating"> <span class="fa fa-stack"><i
                                                     class="fa fa-star-o fa-stack-1x"></i><i
                                                     class="fa fa-star fa-stack-1x"></i></span> <span
@@ -427,19 +433,18 @@
                                                     class="fa fa-star fa-stack-1x"></i></span> <span
                                                 class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
                                                     class="fa fa-star fa-stack-x"></i></span> </div> --}}
-                                                    <div class="button-group text-center">
-
-                                                        <div class="add-to-cart"><a href="#"><span>Add to cart</span></a>
-                                                        </div>
-                                                    </div>
-                                        <span class="price"><span class="amount"><span
-                                                    class="currencySymbol">$</span>{{$product->price}}</span>
+                                                    
+                                        <span class="price"><h3 class="amount"><span
+                                                    class="currencySymbol">$</span>{{$product->price}}</h3>
+                                                    <h3 class="product-desc mt_20 mb_60">{{ __('Specifications') }}
+                                            :  {{$product->specification}} </h3>
+                                                    <!-- <form action="/">
+             
+             <input class="btn pull-right mt_30" type="submit" value="{{ __('Add to cart') }}" />
+             
+         </form> -->
                                         </span>
-                                        <p class="product-desc mt_20 mb_60"> More room to move. With 80GB or 160GB of
-                                            storage and up to 40 hours of battery life, the new iPod classic lets you
-                                            enjoy up to 40,000 songs or up to 200 hours of video or any combination
-                                            wherever you go.Cover Flow. Browse through your music collection by
-                                            flipping..</p>
+                                    
                                     </div>
                                 </div>
                             </div>

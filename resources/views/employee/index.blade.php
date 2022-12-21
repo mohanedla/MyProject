@@ -107,7 +107,7 @@
                             <tr>
 
                                 <td>
-                                    <img id="image" style="width: 66%; margin-left: 30px;">
+                                    <img id="image" style="width: 66%;  margin-left: 30px;">
                                 </td>
                                 <td class="text-center">
                             </tr>
@@ -124,8 +124,8 @@
                 </h1>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary"
-                        data-bs-dismiss="modal">{{ __('Close') }}</button>
+                    <!-- <button type="button" class="btn btn-secondary"
+                        data-bs-dismiss="modal">{{ __('Close') }}</button> -->
 
                 </div>
                 </form>

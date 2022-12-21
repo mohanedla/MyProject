@@ -35,7 +35,7 @@
                             <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="dashboard_home">{{ __('Dashboard') }}</a></li>
                             <li class="breadcrumb-item"><a href="d_brand">{{ __('Brand') }}</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">{{ __('add brand') }}</li>
+                            <li class="breadcrumb-item active" aria-current="page">{{ __('Edit Brand') }}</li>
                             </ol>
                         </nav>
                     </div>
@@ -44,7 +44,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">{{ __('add brand') }}</h4>
+                        <h4 class="card-title">{{ __('Edit Brand') }}</h4>
                     </div>
                     <div class="card-content">
                         <div class="card-body">

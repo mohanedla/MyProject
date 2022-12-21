@@ -91,19 +91,10 @@
                                 </ul>
                             </li>
                             @if (Auth::user())
-                                @if (Auth::user()->role == 'admin' || Auth::user()->role == 'supervisor')
-                                    {{-- @if ((Auth::User()->role = 'admin') or (Auth::User()->role = 'supervisor')) --}}
-                                    <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                            role="button">{{ __('Properties') }} <span class="caret"></span> </span>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
-
-                                            <li><a href="/admin">{{ __('admin management') }}</a></li>
-                                            <li><a href="/user">{{ __('user management') }}</a></li>
-                                            <li><a href="/product">{{ __('Product Management') }}</a></li>
-                                            <li><a href="/brand">{{ __('Brands') }}</a></li>
-                                            <li><a href="/reports">{{ __('Reports') }}</a></li>
-                                        </ul>
+                                @if (Auth::user()->role == '1' || Auth::user()->role == '2')
+                                    {{-- @if ((Auth::User()->role = '1') or (Auth::User()->role = '2')) --}}
+                                    <li class="nav-item">
+                                        <a class="account" href="/dashboard_home">{{ __('System management') }}</a>
                                     </li>
                                 @endif
                                 {{-- @endif --}}
@@ -295,6 +286,7 @@
                             <ul>
                                 @foreach ($category_women as $women)
                                 <li><a href="/category/{{$women->id}}/Women">{{ __($women->name) }}</a></li>
+                                
                             @endforeach
                             </ul>
                         </li>
@@ -315,7 +307,7 @@
                         </li>
                     </div>
                     <div class="heading-part">
-                        <h2 class="main_title">{{ __('Kids') }}</h2>
+                        <h2 class="main_title">{{ __('Children') }}</h2>
                     </div>
                     <li class="nav navbar-nav">
                         <ul>
@@ -348,9 +340,9 @@
                         </div>
                         <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
                     </div>
-                    <div class="sort-wrapper pull-right">
+                    <!-- <div class="sort-wrapper pull-right">
                         <label class="control-label" for="input-sort">{{ __('Sort By') }} :</label>
-                        <div class="sort-inner">
+                        <!-- <div class="sort-inner">
                             <select id="input-sort" class="form-control">
                                 <option value="ASC" selected="selected">{{ __('Default') }}</option>
                                 <option value="ASC">{{ __('Name') }} (A - Z)</option>
@@ -362,9 +354,9 @@
                                 <option value="ASC"> {{ __('Model') }}(A - Z)</option>
                                 <option value="DESC">{{ __('Model') }}(Z - A)</option>
                             </select>
-                        </div>
+                        </div> 
                         <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="row">
                     @php
@@ -383,19 +375,22 @@
                                             <img style="height: -webkit-fill-available;"
                                             src="{{ asset(Storage::url($item->profile_image)) }}" alt="iPod Classic"
                                             title="iPod Classic" class="img-responsive" /> </a>
-                                    <div class="button-group text-center">
-                                        <div class="wishlist"><a href="#"><span>wishlist</span></a></div>
-                                        <div class="quickview"><a href="#"><span>Quick View</span></a></div>
-                                        <div class="compare"><a href="#"><span>Compare</span></a></div>
+                                   
+                                </div>
+                                <div class="caption product-detail text-center">&nbsp;&nbsp;&nbsp;
+                                    
+                                    <h6 data-name="product_name" class="product-name mt_20"><a href="#"
+                                            title="Casual Shirt With Ruffle Hem">&nbsp;&nbsp;
+
+                                            {{ __($item->name)}}</a></h6>
+                                            <!-- <div class="button-group text-center">
+                                 
                                         <div class="add-to-cart"><a href="#"><span>Add to cart</span></a>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="caption product-detail text-center">
-                                    <h6 data-name="product_name" class="product-name mt_20"><a href="#"
-                                            title="Casual Shirt With Ruffle Hem">
-                                            {{ __($item->name)}}</a></h6>
-                                    <div class="rating"> <span class="fa fa-stack"><i
+                                    </div> -->
+                                    <div class="rating"> <span class="fa fa-stack">
+                                        
+                                        <i
                                                 class="fa fa-star-o fa-stack-1x"></i><i
                                                 class="fa fa-star fa-stack-1x"></i></span> <span
                                             class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
@@ -406,13 +401,20 @@
                                                 class="fa fa-star fa-stack-1x"></i></span> <span
                                             class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
                                                 class="fa fa-star fa-stack-x"></i></span> </div>
+                                                
                                     <span class="price"><span class="amount"><span
                                                 class="currencySymbol">$</span>{{ $item->price }}.00</span>
+                            
                                     </span>
+                                    
                                 </div>
+                                
                             </div>
+                    
                         </div>
+                    
                     </div>
+                    
                     @php
                     $i++;
                 @endphp

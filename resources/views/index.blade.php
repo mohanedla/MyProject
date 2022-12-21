@@ -240,7 +240,7 @@
 
                                     <li class="col-md-3">
                                         <ul>
-                                            <li class="dropdown-header">{{ __('Kids') }}</li>
+                                            <li class="dropdown-header">{{ __('Children') }}</li>
                                             @foreach ($category_kids as $kids)
                                                 <li><a
                                                         href="/category/{{ $kids->id }}/Kids">{{ __($kids->name) }}</a>
@@ -361,11 +361,11 @@
                                                                 <span class="price"><span class="amount"><span
                                                                             class="currencySymbol">$</span>{{ $item->price }}.00
                                                                         </span>
-                                                                        <form action="/">
-                                                  
-                        <input class="btn pull-right mt_30" type="submit" value="{{ __('أضف إلى العربة') }}" />
-                        </form>
-        
+                                                                        <!-- <form action="/">
+             
+             <input class="btn pull-right mt_30" type="submit" value="{{ __('Add to cart') }}" />
+             
+         </form> -->
                                                                 </span>
                                                             @endif
                                                         </div>
@@ -446,11 +446,11 @@
                                                         @if (Auth::User())
                                                             <span class="price"><span class="amount"><span
                                                                         class="currencySymbol">$</span>{{ $item->price }}.00</span>
-                                                                        <form action="/">
+                                                                        <!-- <form action="/">
              
-                        <input class="btn pull-right mt_30" type="submit" value="{{ __('أضف إلى العربة') }}" />
-                        
-                    </form>
+             <input class="btn pull-right mt_30" type="submit" value="{{ __('Add to cart') }}" />
+             
+         </form> -->
                     
                         
                                                                     </span>
@@ -529,10 +529,11 @@
                                                             @if (Auth::User())
                                                                 <span class="price"><span class="amount"><span
                                                                             class="currencySymbol">$</span>{{ $item->price }}.00</span>
-                                                                            <form action="/">
-                                                  
-                                                  <input class="btn pull-right mt_30" type="submit" value="{{ __('أضف إلى العربة') }}" />
-                                                  </form>
+                                                                            <!-- <form action="/">
+             
+             <input class="btn pull-right mt_30" type="submit" value="{{ __('Add to cart') }}" />
+             
+         </form> -->
                         
                                                                         </span>
                                                             @endif

@@ -232,7 +232,7 @@
                 </li>
             </div>
             <div class="heading-part">
-                <h2 class="main_title">{{ __('Kids') }}</h2>
+                <h2 class="main_title">{{ __('Children') }}</h2>
             </div>
             <li class="nav navbar-nav">
                 <ul>

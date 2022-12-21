@@ -159,7 +159,9 @@ class products extends Controller
         }
         $get=product::with('brands')->get()->find($id);
         $color=Color::all();
+        // $color_product::all();
         $size=Size::all();
+        // $size_product::all();
         $get_color=Color_Product::with('products')->where('product_id','=',$id)->get();
         $get_size=Size_Product::with('products')->where('product_id','=',$id)->get();
 
@@ -241,12 +243,16 @@ class products extends Controller
         $color_product= new Color_Product;
         $color_product->color_id=$color[$i];
         $color_product->product_id=$product->id;
+        $color_product->product_quantity=request('product_quantity');
+
         $color_product->save();
         }
         for($i=0;$i<count($size);$i++){
         $size_product= new Size_Product;
         $size_product->size_id=$size[$i];
         $size_product->product_id=$product->id;
+        $size_product->product_quantity=request('product_quantity');
+
         $size_product->save();
         }
 

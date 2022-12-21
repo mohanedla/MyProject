@@ -111,7 +111,7 @@ itle>
 
                             
                              
-                                        <a href="{{route('delete_notice',['id'=>$notices->id])}}" onclick="return confirm('Are you sure to want to delete it?')"><span class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
+                                        <a href="{{route('delete_notice',['id'=>$x->id])}}" onclick="return confirm('Are you sure to want to delete it?')"><span class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
 
                                     </td>
                                 </tr>

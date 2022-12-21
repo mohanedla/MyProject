@@ -246,11 +246,11 @@
                                         </ul>
                                 </li>
                                 @if (Auth::User())
-                                    <li> <a href="shop">{{ __('shop') }}</a></li>
+                                    <li> <a href="/shop">{{ __('shop') }}</a></li>
                                 @endif
-                                <li> <a href="about">{{ __('About us') }}</a></li>
+                                <li> <a href="/about">{{ __('About us') }}</a></li>
                                 @if (Auth::User())
-                                    <li> <a href="contact_us">{{ __('Contact us') }}</a></li>
+                                    <li> <a href="/contact_us">{{ __('Contact us') }}</a></li>
                                 @endif
                             </ul>
                         </div>
@@ -272,7 +272,7 @@
                         <ul>
                             <li><a href="/home">{{ __('Home') }}</a></li>
                             <li class="active"><a href="/category_page">{{ __('shop') }}</a></li>
-                            <li class="active"><a href="/product_detail_page">{{ __('product_detail') }}</a></li>
+                            <li class="active">{{ __('product_detail') }}</li>
                         </ul>
                     </div>
                 </div>

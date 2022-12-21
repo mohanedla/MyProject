@@ -15,14 +15,14 @@ return new class extends Migration
     {
         Schema::create('carts', function (Blueprint $table) 
         {
-            $table->id();
-            $table->string('profile_image')->nullable();
-            $table->string('name');
-            $table->integer('quantity');
-            $table->float('Unit_Price');
-            $table->float('Total_$');
-            $table->float('Unit_Price');
-            $table->float('Total_DL');
+            // $table->id();
+            // $table->string('profile_image')->nullable();
+            // $table->string('name');
+            // $table->integer('quantity');
+            // $table->float('Unit_Price');
+            // $table->float('Total_$');
+            // $table->float('Unit_Price');
+            // $table->float('Total_DL');
 
 
             $table->timestamps();

@@ -404,11 +404,7 @@
                                                 
                                     <span class="price"><span class="amount"><span
                                                 class="currencySymbol">$</span>{{ $item->price }}.00</span>
-                                                <form action="/">
-             
-             <input class="btn pull-right mt_30" type="submit" value="{{ __('Add to cart') }}" />
-             
-         </form>
+                            
                                     </span>
                                     
                                 </div>

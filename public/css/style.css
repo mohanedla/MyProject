@@ -1001,7 +1001,7 @@ label.checkme {
     color: #fa4251;
     font-size: 16px;
     font-weight: 500;
-    
+
 }
 .header-top-left .contact>a:hover,
 .header-top-left .contact>a:focus {
@@ -1979,7 +1979,7 @@ blockquote {
     height: auto;
     padding: 0px;
 }
-.pagination-nav ul li a {
+/* .pagination-nav ul li a {
     background-color: #f7f7f7;
     color: #808080;
     display: block;
@@ -1988,7 +1988,7 @@ blockquote {
     line-height: 36px;
     text-align: center;
     width: 36px;
-}
+} */
 .pagination-nav ul li.active a {
     background: #fa4251 none repeat scroll 0 0;
     color: #fff;

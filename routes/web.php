@@ -30,7 +30,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/home',[App\Http\Controllers\home::class,'index']);
     Route::get('/',[App\Http\Controllers\home::class,'index']);
     Route::get('/',[App\Http\Controllers\home::class,'index'])->name('home');
-    Route::get('/shop',[App\Http\Controllers\home::class,'category_page']);
+    Route::get('/shop',[App\Http\Controllers\home::class,'category_page'])->name('shop');
     Route::get('/login_register',[App\Http\Controllers\home::class,'login_register']);
     Route::get('/empty',[App\Http\Controllers\home::class,'layout_empty']);
     Route::get('/about',[App\Http\Controllers\home::class,'about']);

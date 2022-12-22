@@ -28,9 +28,9 @@ class home extends Controller
             $category_kids=Kids::all();
             return View('index',compact('products','collect','brand','category_men','category_women','category_kids'));
         }
-    public function category_page()
+    public function category_page(Request $request)
         {
-            $products=product::all();
+            $products = product::paginate($request->get('per_page', 5));
             // dd($products);
             $brand=brand::all();
             $collect = array('M'=>'Men','W'=>'Women','C'=>'Kids' );

@@ -124,6 +124,7 @@
                             </span>
                         </div> -->
                     </div>
+
                     <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="/home">
                             <img alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
                             {{-- @if (Auth::User()) --}}
@@ -139,13 +140,33 @@
                                             </span>
                                              </button>
                                 </div>
-                                <div id="cart-dropdown" class="cart-menu collapse">
+<style>
+#cart-dropdown1 {
+   width: 390px;
+   height: 350px;
+   overflow: scroll;
+}
+#cart-dropdown1::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* #cart-dropdown1::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+     border-radius: 10px;
+ } */
+
+#cart-dropdown1::-webkit-scrollbar-thumb {
+    border-radius: 1px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+</style>
+                                <div id="cart-dropdown" class="cart-menu collapse" >
                                     <ul>
                                         <li>
-                                            <table class="table table-striped">
-                                                <tbody>
+                                            <div id="cart-dropdown1">
+                                            <table class="table table-striped" >
+                                                <tbody >
                                                     @if (Cart::count() > 0)
-
 
                                                     @foreach (Cart::content() as $item)
 
@@ -164,29 +185,34 @@
                                                             </td>
                                                     </tr>
                                                     @endforeach
-                                                    @endif
-                                                    <td class="text-right"><strong>"{{ __('Total') }}"</strong></td>
-                                                    <td class="text-right">${{\Cart::priceTotal()}}</td>
-                                                </tbody>
-                                            </table>
-                                        </li>
-                                        <li>
-                                            <table class="table">
-                                                <tbody>
 
+                                                    @endif
+                                                </tbody>
+
+                                            </table>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <table class="table">
+
+                                                <tbody>
                                                     <tr>
+                                                        <th>${{\Cart::priceTotal()}}</th>
+                                                        <th><strong>:"{{ __('Total') }}"</strong></th>
                                                     </tr>
                                                     <tr>
+                                                        <td>
                                                         <form action="cart_page">
                                                             <input class="btn pull-left mt_10"
                                                                 value="{{ __('View cart') }}" type="submit">
                                                         </form>
-                                                    </tr>
-                                                    <tr>
+                                                    </td>
+                                                    <td>
                                                         <form action="checkout_page">
                                                             <input class="btn pull-right mt_10"
                                                                 value="{{ __('Checkout') }}" type="submit">
                                                         </form>
+                                                    </td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -301,7 +327,7 @@
                                             <div class="product-grid">
                                                 <div class="item">
                                                     <div class="product-thumb">
-                                                        <div class="image product-imageblock" style="height: 418px;">
+                                                        <div class="image product-imageblock" style="height: 300px;">
                                                             <a href="/product_detail_page/{{ $item->id }}"
                                                                 style="height: -webkit-fill-available;">
                                                                 <img data-name="product_image"
@@ -388,7 +414,7 @@
                                         <div class="product-grid">
                                             <div class="item">
                                                 <div class="product-thumb">
-                                                    <div class="image product-imageblock" style="height: 418px;">
+                                                    <div class="image product-imageblock" style="height: 300px;">
 
                                                         <a href="/product_detail_page/{{ $item->id }}"
                                                             style="height: -webkit-fill-available;">
@@ -470,7 +496,7 @@
                                             <div class="product-grid">
                                                 <div class="item">
                                                     <div class="product-thumb">
-                                                        <div class="image product-imageblock" style="height: 418px;">
+                                                        <div class="image product-imageblock" style="height: 300px;">
                                                             <a href="/product_detail_page/{{ $item->id }}"
                                                                 style="height: -webkit-fill-available;"
                                                                 sstyle="height: -webkit-fill-available;">

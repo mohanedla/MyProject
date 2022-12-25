@@ -126,7 +126,7 @@
                     </div>
                     <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="/home">
                             <img alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
-                            @if (Auth::User())
+                            {{-- @if (Auth::User()) --}}
                             <div class="col-xs-6 col-sm-4 shopcart">
                                 <div id="cart" class="btn-group btn-block mtb_40">
                                     <button type="button" class="btn" data-target="#cart-dropdown"
@@ -195,7 +195,7 @@
                                     </ul>
                                 </div>
                             </div>
-                        @endif
+                        {{-- @endif --}}
                 </div>
                 <nav class="navbar">
                     <p>menu</p>

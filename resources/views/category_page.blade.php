@@ -186,7 +186,7 @@
                                                 </tbody>
                                             </table>
                                         </li>
-                                       
+
                                     </ul>
                                 </div>
                             </div>
@@ -379,7 +379,7 @@
                                 {!! Form::open(['url' => route('shop'), 'method' => 'get']) !!}
                                 {!! Form::select(
                                     'per_page',
-                                    ['5' => '5', '10' => '10', '25' => '25', '50' => '50', '75' => '75', '100' => '100'],
+                                    ['Select','9' => '9', '18' => '18', '32' => '32', '50' => '50', '75' => '75', '100' => '100'],
                                     '5',
                                     ['onchange' => 'submit()', 'class' => 'form-control'],
                                 ) !!}
@@ -410,19 +410,21 @@
                             <div class="product-layout product-grid col-md-4 col-xs-6 ">
                                 <div class="item">
                                     <div class="product-thumb clearfix mb_30">
-                                        <div class="image product-imageblock"> <a
+                                        <div class="image product-imageblock" style="height: 200px; width: 250px;"> <a
                                                 href="product_detail_page/{{ $product->id }}"> <img
                                                     data-name="product_image"
                                                     src="{{ asset(Storage::url($product->profile_image)) }}"
+                                                    style="height: 200px; width: 250px;"
                                                     alt="iPod Classic" title="iPod Classic" class="img-responsive" />
                                                 <img src="{{ asset(Storage::url($product->profile_image)) }}"
+                                                style="height: 200px; width: 250px;"
                                                     alt="iPod Classic" title="iPod Classic" class="img-responsive" />
                                             </a>
 
                                         </div>
                                         <div class="caption product-detail text-center">&nbsp;&nbsp;&nbsp;
-                                            <h2 data-name="product_name" class="product-name mt_20"><a href="#"
-                                                    title="Casual Shirt With Ruffle Hem">{{ $product->name }}</a></h2>
+                                            <h3 data-name="product_name" class="product-name mt_20"><a href="#"
+                                                    title="Casual Shirt With Ruffle Hem">{{ $product->name }}</a></h3>
                                             <!-- <div class="button-group text-center">
 
                                                         <div class="add-to-cart"><a href="#"><span>Add to cart</span></a>

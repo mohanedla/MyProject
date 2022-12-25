@@ -42,7 +42,8 @@
     <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet" />
 
     <link href="{{ asset('css/design4.css') }}" rel="stylesheet" />
-
+    @livewireStyles
+</head>
 <body>
     <!-- =====  LODER  ===== -->
     <div class="loder"></div>
@@ -410,30 +411,35 @@
                                             </div>
                                         </div>
                                         <div class="qty mt_30 form-group2">
-                                            <label>
-                                                <h4>{{ __('Quantity') }}</h4>
-                                            </label>
-                                            <input name="product_quantity" min="1" value="1"
-                                                type="number">
-                                                <form action="/">
-             
-             <input class="btn pull-right mt_30" type="submit" value="{{ __('Add to cart') }}" />
-             
-         </form>
+
+                                                <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
+                                                    @csrf
+                                                    <input type="hidden" value="{{ $product->id }}" name="id">
+                                                    <input type="hidden" value="{{ $product->name }}" name="name">
+                                                    <input type="hidden" value="{{ $product->price }}" name="price">
+                                                    <label>
+                                                        <h4>{{ __('Quantity') }}</h4>
+                                                    </label>
+                                                    <input name="quantity" min="1" value="1"
+                                                        type="number">
+                                                    <input type="hidden" value="{{ $product->profile_image }}"  name="image">
+                                                    <br>
+                                                    <input class="btn pull-right mt_30" type="submit" value="{{ __('Add to cart') }}" />
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="row">
                                     <div class="col-md-12">
 
                             </div>
                         </div>
                     </div>
+                @endforeach
             </div>
         </div>
-        @endforeach
     </div>
     <div id="brand_carouse" class="ptb_60 text-center">
         <div class="type-01">
@@ -487,4 +493,5 @@
                 }
             });
         </script>
+        @livewireScripts
     </body>

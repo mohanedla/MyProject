@@ -131,7 +131,7 @@
                                 <li> <a href="home">{{ __('Home') }}</a></li>
                                 <li class="dropdown mega-dropdown"> <a href="#" class="dropdown-toggle"
                                     data-toggle="dropdown">{{ __('Collection') }} </a>
-                                    
+
                                 <ul class="dropdown-menu mega-dropdown-menu row">
                                     <li class="col-md-3">
                                         <ul>
@@ -242,13 +242,13 @@
                 </ul>
             </li>
         </div>
-        </div>   
+        </div>
 
                 </div>
 
-                
+
                 <div class="col-sm-8 col-lg-9 mtb_20">
-                    <form enctype="multipart/form-data" method="post" action="#">
+                    {{-- <form enctype="multipart/form-data" method="post" action="#"> --}}
                         <div class="table-responsive">
                             <table class="table table-bordered">
                                 <thead>
@@ -262,204 +262,75 @@
                                         <td class="text-right">{{ __('Unit Price') }}</td>
                                         <td class="text-right">{{ __('Total') }}</td>
 
-                                        
+
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @if (Cart::count() > 0)
+
+                                    @foreach (Cart::content() as $item)
                                     <tr>
-                                        <td class="text-center"><a href="#"><img
-                                                    src="{{ asset('images/product/70x84.jpg') }} " alt="iPod Classic"
-                                                    title="iPod Classic"></a></td>
-                                        <td class="text-left"><a href="product"> {{ __('iPhone') }} </a></td>
-                                        <!-- <td class="text-left">{{ __('product 11') }} </td> -->
+                                        <td class="text-center"><a href="#"><img style="width: 80px"
+                                            src="{{ asset(Storage::url($item->image)) }}"
+                                            alt="iPod Classic" title="iPod Classic"></a></td>
+                                        <td class="text-left"><a href="product"> {{ __($item->name) }} </a></td>
                                         <td class="text-left">
                                             <div style="max-width: 200px;" class="input-group btn-block">
-                                                <input type="text" class="form-control quantity" size="1"
-                                                    value="1" name="quantity">
+                                                <form action="{{ url('/updatecart') }}" method="POST">
+                                                    @csrf
+                                                    <input type="hidden" name="id" value="{{ $item->rowId}}" >
+                                                    <input style="width: 100px" type="number" class="form-control quantity" size="1"
+                                                    min="0" max="" value="{{$item->qty}}" name="quantity">
                                                 <span class="input-group-btn">
                                                     <button class="btn" title="" data-toggle="tooltip"
-                                                        type="submit" data-original-title="Update"><i
-                                                            class="fa fa-refresh"></i></button>
-                                                    <button class="btn btn-danger" title=""
-                                                        data-toggle="tooltip" type="button"
-                                                        data-original-title="Remove"><i
-                                                            class="fa fa-times-circle"></i></button>
-                                                </span>
+                                                    type="submit" data-original-title="Update"><i
+                                                        class="fa fa-refresh"></i></button>
+                                            </span>
+                                                  </form>
                                             </div>
                                         </td>
-                                        <td class="text-right">254.00 $</td>
+                                        <td class="text-right">${{$item->price}}</td>
+                                        <td class="text-right">${{$item->price*$item->qty}}</td>
                                         <td class="text-right">254.00 DL</td>
                                         <td class="text-right">254.00 DL</td>
-                                        <td class="text-right">254.00 $</td>
-
-
+                                        <td class="text-right"><a class="close-cart" href="{{ url('remove', $item->rowId ) }}"><i
+                                            class="fa fa-times-circle"></i>
+                                        </a></td>
 
                                     </tr>
+                                    @endforeach
+                                    @endif
+                                    <td class="text-right">
 
-                                    <tr>
-                                        <td class="text-center"><a href="#"><img
-                                                    src="{{ asset('images/product/70x84.jpg') }} " alt="iPod Classic"
-                                                    title="iPod Classic"></a></td>
-                                        <td class="text-left"><a href="product"> {{ __('iPhone') }} </a></td>
-                                        
-                                        <td class="text-left">
-                                            <div style="max-width: 200px;" class="input-group btn-block">
-                                                <input type="text" class="form-control quantity" size="1"
-                                                    value="1" name="quantity">
-                                                <span class="input-group-btn">
-                                                    <button class="btn" title="" data-toggle="tooltip"
-                                                        type="submit" data-original-title="Update"><i
-                                                            class="fa fa-refresh"></i></button>
-                                                    <button class="btn btn-danger" title=""
-                                                        data-toggle="tooltip" type="button"
-                                                        data-original-title="Remove"><i
-                                                            class="fa fa-times-circle"></i></button>
-                                                            
-                                                </span>
-                                            </div>
-                                        </td>
-                                        <td class="text-right">254.00 $</td>
-                                        <td class="text-right">254.00 $</td>
-                                        <td class="text-right">254.00 DL</td>
-                                        <td class="text-right">254.00 DL</td>
-                                        <td class="text-right"></td>
 
-                                    </tr>
-                                    <td class="text-right"></td>
+                                    </td>
                                     <td class="text-left"></td>
 
                                     <tr class="text-hight"></tr>
-                                
+
                                 </tbody>
-                                                             
                             </table>
-                            </form>  
+                            <div style="float: right;">
+                                <li style="float: right; display: -webkit-box; list-style-type: none;"><strong>:"{{ __('Total') }}"</strong></li>
+                                <li style="float: right; display: -webkit-box; list-style-type: none;  padding-right: 25px;">${{\Cart::priceTotal()}}</li>
+                            </div>
+                            <br>
 
-                      
-                    <!-- <h3 class="mtb_10"> {{ __('What would you like to do next?') }}</h3>
-                    <p>{{ __('Choose if you have a discount code or reward points you want to use or would like to estimate your delivery cost') }}
-                    </p> -->
-                    <!-- <div class="panel-group mt_20" id="accordion">
-                        <div class="panel panel-default pull-left">
-                            <div class="panel-heading">
-                                <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion"
-                                        href="#collapseOne">{{ __('Use Coupon Code') }} <i
-                                            class="fa fa-caret-down"></i></a></h4>
-                            </div>
-                            <div id="collapseOne" class="panel-collapse collapse in">
-                                <div class="panel-body">
-                                    <label for="input-coupon"
-                                        class="col-sm-4 control-label">{{ __('Enter coupon here') }}</label>
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" id="input-coupon"
-                                            placeholder="{{ __('Enter coupon here') }}" value=""
-                                            name="coupon">
-                                        <span class="input-group-btn">
-                                            <input type="button" class="btn" data-loading-text="Loading..."
-                                                id="button-coupon" value="{{ __('Apply Coupon') }}">
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default pull-left">
-                            <div class="panel-heading">
-                                <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion"
-                                        href="#collapseTwo">{{ __('Use Gift Voucher') }} <i
-                                            class="fa fa-caret-down"></i></a> </h4>
-                            </div>
-                            <div id="collapseTwo" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <label for="input-voucher"
-                                        class="col-sm-4 control-label">{{ __('Enter gift voucher code here') }}</label>
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" id="input-voucher"
-                                            placeholder="{{ __('Enter gift voucher code here') }}" value=""
-                                            name="voucher">
-                                        <span class="input-group-btn">
-                                            <input type="button" class="btn" data-loading-text="Loading..."
-                                                id="button-voucher" value="{{ __('Apply Voucher') }}">
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default pull-left">
-                            <div class="panel-heading">
-                                <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion"
-                                        href="#collapseThree">{{ __('Estimate Shipping & Taxes') }} <i
-                                            class="fa fa-caret-down"></i></a> </h4>
-                            </div>
-                            <div id="collapseThree" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <p>{{ __('Enter destination to get a shipping estimate') }}.</p>
-                                    <form class="form-horizontal">
-                                        <div class="form-group required">
-                                            <label for="input-country"
-                                                class="col-sm-2 control-label">{{ __('Country') }}</label>
-                                            <div class="col-sm-10">
-                                                <select class="form-control" id="input-country" name="country_id">
-                                                    <option value="">--- {{ __('Please Select') }}--- </option>
-                                                    <option value="244">Aaland Islands</option>
-                                                    <option value="1">Afghanistan</option>
-                                                    <option value="2">Albania</option>
-                                                    <option value="3">Algeria</option>
-                                                    <option value="4">American Samoa</option>
-                                                    <option value="5">Andorra</option>
-                                                    <option value="6">Angola</option>
-                                                    <option value="7">Anguilla</option>
-                                                    <option value="8">Antarctica</option>
-                                                    <option value="9">Antigua and Barbuda</option>
-                                                    <option value="10">Argentina</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="form-group required">
-                                            <label for="input-zone"
-                                                class="col-sm-2 control-label">{{ __('Region / State') }}</label>
-                                            <div class="col-sm-10">
-                                                <select class="form-control" id="input-zone" name="zone_id">
-                                                    <option value="">--- {{ __('Please Select') }}--- </option>
-                                                    <option value="3513">Aberdeen</option>
-                                                    <option value="3514">Aberdeenshire</option>
-                                                    <option value="3515">Anglesey</option>
-                                                    <option value="3516">Angus</option>
-                                                    <option value="3517">Argyll and Bute</option>
-                                                    <option value="3518">Bedfordshire</option>
-                                                    <option value="3519">Berkshire</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="form-group required">
-                                            <label for="input-postcode"
-                                                class="col-sm-2 control-label">{{ __('Post Code') }}</label>
-                                            <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="input-postcode"
-                                                    placeholder="{{ __('Enter Post Code') }}" value=""
-                                                    name="{{ __('postcode') }}">
-                                            </div>
-                                        </div>
-                                        <input type="button" class="btn pull-right" data-loading-text="Loading..."
-                                            id="button-quote" value="{{ __('Get Quotes') }}">
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
+                            {{-- </form> --}}
 
-                    <form action="\home">
+                    <form action="\shop">
                         <input class="btn pull-left mt_30" type="submit" value="{{ __('Continue Shopping') }}" />
                     </form>
                     <form action="checkout_page">
                         <input class="btn pull-right mt_30" type="submit" value="{{ __('Checkout') }}" />
                         </form>
 
-                   
+
                         </div>
                         </div>
 
-                    
-            
+
+
             <div id="brand_carouse" class="ptb_60 text-center">
                         <div class="type-01">
                             <div class="heading-part mb_10 ">
@@ -470,10 +341,10 @@
                                     <div class="brand owl-carousel ptb_20">
                                         @foreach ($brand as $x)
                                         <div class="item text-center">
-                                               
+
                                                  <a   @if (Auth::User()) href="item_brand/{{ $x->id }}" @endif >
                                                <img src="{{ asset(Storage::url($x->profile_image)) }}"
-                                                        alt="" class="img-responsive" /></a> 
+                                                        alt="" class="img-responsive" /></a>
                                                     </div>
                                         @endforeach
                                     </div>

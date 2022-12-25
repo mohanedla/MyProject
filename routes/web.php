@@ -142,7 +142,12 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
 
 
-
+    Route::get('/', [ProductController::class, 'productList'])->name('products.list');
+    Route::get('cart', [CartController::class, 'cartList'])->name('cart.list');
+    Route::post('cart', [App\Http\Controllers\CartController::class, 'addToCart'])->name('cart.store');
+    Route::post('/updatecart', [App\Http\Controllers\CartController::class, 'updateCart']);
+    Route::get('remove/{id}', [App\Http\Controllers\CartController::class, 'removeCart']);
+    Route::post('clear', [CartController::class, 'clearAllCart'])->name('cart.clear');
 
 
 

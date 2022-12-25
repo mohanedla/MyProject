@@ -7,6 +7,7 @@
     "require": {
         "php": "^8.0.2",
         "brian2694/laravel-toastr": "^5.57",
+        "bumbummen99/shoppingcart": "^4.2",
         "guzzlehttp/guzzle": "^7.2",
         "inertiajs/inertia-laravel": "^0.6.3",
         "laralabs/toaster": "^4.0",
@@ -14,6 +15,7 @@
         "laravel/sanctum": "^2.8",
         "laravel/tinker": "^2.7",
         "laravelcollective/html": "^6.3",
+        "livewire/livewire": "^2.10",
         "mcamara/laravel-localization": "^1.7",
         "tightenco/ziggy": "^1.0"
     },

@@ -140,26 +140,7 @@
                                             </span>
                                              </button>
                                 </div>
-<style>
-#cart-dropdown1 {
-   width: 390px;
-   height: 350px;
-   overflow: scroll;
-}
-#cart-dropdown1::-webkit-scrollbar {
-    width: 5px;
-}
 
-/* #cart-dropdown1::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-     border-radius: 10px;
- } */
-
-#cart-dropdown1::-webkit-scrollbar-thumb {
-    border-radius: 1px;
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
-}
-</style>
                                 <div id="cart-dropdown" class="cart-menu collapse" >
                                     <ul>
                                         <li>

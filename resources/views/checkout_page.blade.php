@@ -523,9 +523,9 @@
          <div class="panel panel-default " style="margin-left:3px;" >
               <div class="panel-heading">
                 
-                <h3>  {{ __('تعبئة البيانات') }} &nbsp; &nbsp; </h3>
+                <h3>  {{ __('data Entry') }} &nbsp; &nbsp; </h3>
                    <h4 class="panel-title"> 
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">{{ __('Step') }} 1   <i class="fa fa-caret-down"></i> 
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">   <i class="fa fa-caret-down"></i> 
                
               </a> </h4>
               </div>
@@ -535,7 +535,7 @@
                    
                   <div class="col-sm-6">
                       <div class="form-group">
-                        <label  class="control-label">{{ __('رقم الحساب المصرفي') }}</label>
+                        <label  class="control-label">{{ __('Bank account number') }}</label>
                         <input type="text" name="bank_num"   value="" class="form-control" >
                       </div>
                       <div class="form-group">
@@ -555,12 +555,12 @@
                                 </label>
                                 <div class="container">
                                   <div class="radio-inline">
-                                    <h3>  طريقة الإستلام</h3>
+                                    <h3> {{ __('Receipt method') }} </h3>
                                     <label class="radio-inline">
-                                      <input type="radio" name="optradio" checked> {{ __('توصيل') }}
+                                      <input type="radio" name="optradio" checked> {{ __('Delivery') }}
                                     </label>
                                     <label class="radio-inline">
-                                      <input type="radio" name="optradio" checked>{{ __('الإستلام في الشركة') }}
+                                      <input type="radio" name="optradio" checked>{{ __('Receipt in the company') }}
                                     </label>
                                   </div>
                     <div class="form-group">
@@ -581,7 +581,7 @@
               <div class="panel-heading">
               <h3>  {{ __('Confirm Order') }} &nbsp; &nbsp; </h3>
                    <h4 class="panel-title"> 
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapsesix">{{ __('Step') }} 2  <i class="fa fa-caret-down"></i></a> </h4>
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapsesix">  <i class="fa fa-caret-down"></i></a> </h4>
               </div>
               <div id="collapsesix" class="panel-collapse collapse" >
                 <div class="panel-body"  >

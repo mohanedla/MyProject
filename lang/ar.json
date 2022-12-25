@@ -157,6 +157,13 @@
   "E-mail":"البريد الإلكتروني",
   "Products type":"نوع المنتجات",
   "Product type":"نوع المنتج",
+  "New Size":"حجم جديد",
+  "New Color":"لون جديد",
+  "New Category":"نوع جديد",
+  "Enter Color Name":"أدخل اللون الجديد",
+  "Enter Size Name":"أدخل الحجم الجديد",
+  "previous orders":"الطلبيات السابقة",
+
   "enter Product type":"أدخل نوع المنتج",
   "enter Specifications":"أدخل المواصفات",
   "photo":"الصورة",
@@ -287,8 +294,12 @@
   "admins management control":"إدارة تحكم المشرفين",
   "user management control":"إدارة تحكم المستخدمين",
   "Supervisor":"مشرف",
-  
-
+  "data Entry":"تعبة البيانات",
+  "Bank account number":"رقم الحساب المصرفي",
+  "Delivery":"توصيل",
+"Receipt in the company":"الإستلام في الشركة",
+"Receipt method":"طريقة الإستلام",
+"enter photo":"أدخل الصورة",
   "Change Password":"غير كلمة السر",
   "Choose Confirm Password":"اختر تأكيد كلمة المرور",
   "Enter Current Password":"أدخل كلمة السر الحالية",

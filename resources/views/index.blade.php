@@ -75,11 +75,11 @@
                                 </li>
                             @endguest
 
-
-
+                        
+                        
                             <li class="language dropdown"> <span class="dropdown-toggle" id="dropdownMenu1"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                    role="button">{{ __('Language') }} <span class="caret"></span> </span>
+                                    role="button">{{ __('Language') }}&nbsp;  <span class="caret"></span> </span>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                     @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                                         <li>
@@ -91,6 +91,21 @@
                                     @endforeach
                                 </ul>
                             </li>
+<!-- 
+                            @if (Auth::user())
+                                @if (Auth::user()->role == '3')
+                            <li class="currency dropdown">
+                                 <span class="dropdown-toggle" id="dropdownMenu12"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                role="button">{{__('previous orders')}}&nbsp; <span class="caret"></span> </span>
+                              <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
+                                <li><a href="admin">{{__ ('طلبية 1')}}</a></li>
+                                <li><a href="user">{{__ ('طلبية 2')}}</a></li>
+                            </ul>
+                            
+                        
+                        @endif
+                        @endif -->
                             @if (Auth::user())
                                 @if (Auth::user()->role == '1' || Auth::user()->role == '2')
                                     {{-- @if ((Auth::User()->role = '1') or (Auth::User()->role = '2')) --}}
@@ -258,9 +273,24 @@
                                     </li>
                                 </ul>
                             </li>
+                            
+                      
+
                             @if (Auth::User())
                                 <li> <a href="shop">{{ __('shop') }}</a></li>
                             @endif
+                            @if (Auth::user())
+                                @if (Auth::user()->role == '3')
+                            <!-- <li> <a href="blog_page.html">{{__('Blog')}}</a></li> -->
+                <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{__('previous orders')}} </a>
+                  <ul class="dropdown-menu">
+                    <li> <a href="cart_page.html">طلبية 1 </a></li>
+                    <li> <a href="checkout_page.html">طلبية 2</a></li>
+                 
+                  </ul>
+                </li>
+                @endif
+                @endif
                             <li> <a href="about">{{ __('About us') }}</a></li>
                             <li> <a href="contact_us">{{ __('Contact us') }}</a></li>
                         </ul>

@@ -81,7 +81,7 @@
 
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
-                                            <label for="last-name-column">نوع المنتج</label>
+                                            <label for="last-name-column"> {{ __('Product type') }}</label>
                                             <fieldset class="form-group">
                                                 <select class="form-select @error('role_name') is-invalid @enderror" required
                                                     name="product_name" id="role_name">

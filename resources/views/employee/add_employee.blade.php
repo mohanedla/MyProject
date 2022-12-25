@@ -97,8 +97,8 @@
                                         <div class="form-group">
                                             <div class="form-group">
                                                 <label for="email-id-column"> {{ __('Upload Profile Picture') }}</label>
-                                                <input type="file" class="form-control" required 
-                                                placeholder=""
+                                                <input type="file"  placeholder="{{ __('enter photo') }}" class="form-control" required 
+                                               
                                                     id="first-name-icon" name="profile_image">
                                             </div>
                                         </div>

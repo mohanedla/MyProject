@@ -367,7 +367,7 @@
                     <div class="product-layout product-grid col-md-4 col-xs-6 ">
                         <div class="item">
                             <div class="product-thumb clearfix mb_30">
-                                <div class="image product-imageblock" style="height: 418px;">
+                                <div class="image product-imageblock" style="height: 418px;" >
                                         <a href="/product_detail_page/{{$item->id}}" style="height: -webkit-fill-available;">
                                             <img style="height: -webkit-fill-available;" data-name="product_image"
                                             src="{{ asset(Storage::url($item->profile_image)) }}" alt="iPod Classic"

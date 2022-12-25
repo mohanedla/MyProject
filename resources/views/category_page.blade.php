@@ -405,13 +405,13 @@
                             <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
                         </div> -->
                     </div>
-                    <div class="row">
+                    <div class="row" style="height: 418px;">
                         @foreach ($products as $product)
-                            <div class="product-layout product-grid col-md-4 col-xs-6 ">
+                            <div class="product-layout product-grid col-md-4 col-xs-6 " >
                                 <div class="item">
-                                    <div class="product-thumb clearfix mb_30">
-                                        <div class="image product-imageblock"> <a
-                                                href="product_detail_page/{{ $product->id }}"> <img
+                                    <div class="product-thumb clearfix mb_30" >
+                                        <div class="image product-imageblock" style="height: 418px;" > <a  style="height: 418px;"
+                                                href="product_detail_page/{{ $product->id }}">  <img 
                                                     data-name="product_image"
                                                     src="{{ asset(Storage::url($product->profile_image)) }}"
                                                     alt="iPod Classic" title="iPod Classic" class="img-responsive" />
@@ -442,6 +442,8 @@
                                                     class="fa fa-star fa-stack-x"></i></span> </div> --}}
 
                                             <span class="price">
+                                            <h3 class="amount"><span
+                                                        class="currencySymbol"></span>{{ $product->brands->name}}</h3>
                                                 <h3 class="amount"><span
                                                         class="currencySymbol">$</span>{{ $product->price }}</h3>
                                                 <h3 class="product-desc mt_20 mb_60">{{ __('Specifications') }}

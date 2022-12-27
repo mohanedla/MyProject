@@ -119,9 +119,9 @@
                                 </span>
                             </div> -->
                         </div>
-                        <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="home"> <img
-                                    alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
-                        @if (Auth::User())
+                        <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="/home">
+                            <img alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
+                            {{-- @if (Auth::User()) --}}
                             <div class="col-xs-6 col-sm-4 shopcart">
                                 <div id="cart" class="btn-group btn-block mtb_40">
                                     <button type="button" class="btn" data-target="#cart-dropdown"
@@ -134,13 +134,14 @@
                                             </span>
                                              </button>
                                 </div>
-                                <div id="cart-dropdown" class="cart-menu collapse">
+
+                                <div id="cart-dropdown" class="cart-menu collapse" >
                                     <ul>
                                         <li>
-                                            <table class="table table-striped">
-                                                <tbody>
+                                            <div id="cart-dropdown1">
+                                            <table class="table table-striped" >
+                                                <tbody >
                                                     @if (Cart::count() > 0)
-
 
                                                     @foreach (Cart::content() as $item)
 
@@ -159,38 +160,45 @@
                                                             </td>
                                                     </tr>
                                                     @endforeach
-                                                    @endif
-                                                    <td class="text-right"><strong>"{{ __('Total') }}"</strong></td>
-                                                    <td class="text-right">${{\Cart::priceTotal()}}</td>
-                                                </tbody>
-                                            </table>
-                                        </li>
-                                        <li>
-                                            <table class="table">
-                                                <tbody>
 
+                                                    @endif
+                                                </tbody>
+
+                                            </table>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <table class="table">
+
+                                                <tbody>
                                                     <tr>
+                                                        <th>${{\Cart::priceTotal()}}</th>
+                                                        <th><strong>:"{{ __('Total') }}"</strong></th>
                                                     </tr>
                                                     <tr>
+                                                        <td>
                                                         <form action="cart_page">
                                                             <input class="btn pull-left mt_10"
                                                                 value="{{ __('View cart') }}" type="submit">
                                                         </form>
-                                                    </tr>
-                                                    <tr>
+                                                    </td>
+                                                    <td>
                                                         <form action="checkout_page">
                                                             <input class="btn pull-right mt_10"
                                                                 value="{{ __('Checkout') }}" type="submit">
                                                         </form>
+                                                    </td>
                                                     </tr>
                                                 </tbody>
                                             </table>
                                         </li>
-                                       
+
                                     </ul>
                                 </div>
                             </div>
-                        @endif
+                        {{-- @endif --}}
+                </div>
+
                     </div>
                     <nav class="navbar">
                         <p>menu</p>
@@ -379,7 +387,7 @@
                                 {!! Form::open(['url' => route('shop'), 'method' => 'get']) !!}
                                 {!! Form::select(
                                     'per_page',
-                                    ['5' => '5', '10' => '10', '25' => '25', '50' => '50', '75' => '75', '100' => '100'],
+                                    ['Select', '9' => '9', '18' => '18', '32' => '32', '50' => '50', '75' => '75', '100' => '100'],
                                     '5',
                                     ['onchange' => 'submit()', 'class' => 'form-control'],
                                 ) !!}
@@ -405,26 +413,27 @@
                             <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
                         </div> -->
                     </div>
-                    <div class="row" style="height: 418px;">
+                    <div class="row">
                         @foreach ($products as $product)
-                            <div class="product-layout product-grid col-md-4 col-xs-6 " >
+                            <div class="product-layout product-grid col-md-4 col-xs-6 ">
                                 <div class="item">
-                                    <div class="product-thumb clearfix mb_30" >
-                                        <div class="image product-imageblock" style="height: 418px;" > <a  style="height: 418px;"
-                                                href="product_detail_page/{{ $product->id }}">  <img 
+                                    <div class="product-thumb clearfix mb_30">
+                                        <div class="image product-imageblock" style="height: 200px; width: 250px;"> <a
+                                                href="product_detail_page/{{ $product->id }}"> <img
                                                     data-name="product_image"
                                                     src="{{ asset(Storage::url($product->profile_image)) }}"
-                                                    alt="iPod Classic" title="iPod Classic" class="img-responsive" />
+                                                    style="height: 200px; width: 250px;" alt="iPod Classic"
+                                                    title="iPod Classic" class="img-responsive" />
                                                 <img src="{{ asset(Storage::url($product->profile_image)) }}"
-                                                    alt="iPod Classic" title="iPod Classic" class="img-responsive" />
+                                                    style="height: 200px; width: 250px;" alt="iPod Classic"
+                                                    title="iPod Classic" class="img-responsive" />
                                             </a>
 
                                         </div>
                                         <div class="caption product-detail text-center">&nbsp;&nbsp;&nbsp;
-                                            <h2 data-name="product_name" class="product-name mt_20"><a href="#"
-                                                    title="Casual Shirt With Ruffle Hem">{{ $product->name }}</a></h2>
+                                            <h3 data-name="product_name" class="product-name mt_20"><a href="#"
+                                                    title="Casual Shirt With Ruffle Hem">{{ $product->name }}</a></h3>
                                             <!-- <div class="button-group text-center">
-
                                                         <div class="add-to-cart"><a href="#"><span>Add to cart</span></a>
                                                         </div>
                                                     </div> -->
@@ -442,16 +451,12 @@
                                                     class="fa fa-star fa-stack-x"></i></span> </div> --}}
 
                                             <span class="price">
-                                            <h3 class="amount"><span
-                                                        class="currencySymbol"></span>{{ $product->brands->name}}</h3>
                                                 <h3 class="amount"><span
                                                         class="currencySymbol">$</span>{{ $product->price }}</h3>
                                                 <h3 class="product-desc mt_20 mb_60">{{ __('Specifications') }}
                                                     : {{ $product->specification }} </h3>
                                                 <!-- <form action="/">
-
              <input class="btn pull-right mt_30" type="submit" value="{{ __('Add to cart') }}" />
-
          </form> -->
                                             </span>
 
@@ -510,7 +515,7 @@
     </div>
     @extends('layout.js')
     @section('js')
-    @livewireScripts
+        @livewireScripts
     </body>
 
     </html>

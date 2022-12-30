@@ -74,7 +74,7 @@
                             @else
                                 <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                        role="button"> {{ Auth::user()->name }} 
+                                        role="button"> {{ Auth::user()->name }}
                                         <span class="caret"></span> </span>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
 
@@ -91,7 +91,7 @@
                                 </li>
                             @endguest
 
-                          
+
 
                             <li class="language dropdown"> <span class="dropdown-toggle" id="dropdownMenu1"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
@@ -141,7 +141,7 @@
                                             <li> <a href="home">{{ __('Home') }}</a></li>
                                             <li class="dropdown mega-dropdown"> <a href="#" class="dropdown-toggle"
                                     data-toggle="dropdown">{{ __('Collection') }} </a>
-                                    
+
                                 <ul class="dropdown-menu mega-dropdown-menu row">
                                     <li class="col-md-3">
                                         <ul>
@@ -213,33 +213,11 @@
 
         <div id="column-left" class="col-sm-4 col-lg-3 hidden-xs">
           <div id="category-menu" class="navbar collapse in mb_40" aria-expanded="true" style="" role="button">
-            <!-- <div class="nav-responsive">
-              <div class="heading-part">
-                <h2 class="main_title">Top category</h2>
-              </div>
-              <ul class="nav  main-navigation collapse in">
-                <li><a href="#">Appliances</a></li>
-                <li><a href="#">Mobile Phones</a></li>
-                <li><a href="#">Tablet PC &amp; Accessories</a></li>
-                <li><a href="#">Consumer Electronics</a></li>
-                <li><a href="#">Computers &amp; Networking</a></li>
-                <li><a href="#">Electrical &amp; Tools</a></li>
-                <li><a href="#">Apparel</a></li>
-                <li><a href="#">Bags &amp; Shoes</a></li>
-                <li><a href="#">Toys &amp; Hobbies</a></li>
-                <li><a href="#">Watches &amp; Jewelry</a></li>
-                <li><a href="#">Home &amp; Garden</a></li>
-                <li><a href="#">Health &amp; Beauty</a></li>
-                <li><a href="#">Outdoors &amp; Sports</a></li>
-              </ul>
-            </div> -->
+
           </div>
-          <!-- <div class="left_banner left-sidebar-widget mt_30 mb_40"> <a href="#"><img src="images/left1.jpg" alt="Left Banner" class="img-responsive"></a> </div> -->
           <div class="left-special left-sidebar-widget mb_50">
-             <!-- <!-- <div class="heading-part mb_10 ">
-              <h2 class="main_title">Top Products</h2>
-            </div> -->
-            <div id="left-special" class="owl-carousel owl-loaded owl-drag"> 
+
+            <div id="left-special" class="owl-carousel owl-loaded owl-drag">
 
 
 
@@ -248,263 +226,19 @@
                 <li class="item product-layout-left mb_20">
                   <div class="product-list col-xs-4">
                     <div class="product-thumb">
-                      <!-- <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product3.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product3-1.jpg"> </a> </div> -->
                     </div>
                   </div>
-                  <!-- <div class="col-xs-8">
-                    <div class="caption product-detail">
-                      <h6 class="product-name"><a href="#">New LCDScreen and HD Video Recording</a></h6>
-                      <div class="rating">
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
-                      </div>
-                      <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
-                      </span>
-                    </div>
-                  </div> -->
+
                 </li>
                 <li class="item product-layout-left mb_20">
                   <div class="product-list col-xs-4">
                     <div class="product-thumb">
-                      <!-- <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product4.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product4-1.jpg"> </a> </div> -->
                     </div>
                   </div>
-                  <!-- <div class="col-xs-8">
-                    <div class="caption product-detail">
-                      <h6 class="product-name"><a href="#">New LCDScreen and HD Video Recording</a></h6>
-                      <div class="rating">
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
-                      </div>
-                      <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
-                      </span>
-                    </div>
-                  </div>
-                </li>
-                <li class="item product-layout-left mb_20">
-                  <div class="product-list col-xs-4">
-                    <div class="product-thumb">
-                      <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product5.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product5-1.jpg"> </a> </div>
-                    </div>
-                  </div>
-                  <div class="col-xs-8">
-                    <div class="caption product-detail">
-                      <h6 class="product-name"><a href="#">New LCDScreen and HD Video Recording</a></h6>
-                      <div class="rating">
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
-                      </div>
-                      <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
-                      </span>
-                    </div>
-                  </div>
-                </li>
-              </ul></div><div class="owl-item active" style="width: 226.656px;"><ul class="row ">
-                <li class="item product-layout-left mb_20">
-                  <div class="product-list col-xs-4">
-                    <div class="product-thumb">
-                      <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product6.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product6-1.jpg"> </a> </div>
-                    </div>
-                  </div>
-                  <div class="col-xs-8">
-                    <div class="caption product-detail">
-                      <h6 class="product-name"><a href="#">New LCDScreen and HD Video Recording</a></h6>
-                      <div class="rating">
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
-                      </div>
-                      <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
-                      </span>
-                    </div>
-                  </div>
-                </li>
-                <li class="item product-layout-left mb_20">
-                  <div class="product-list col-xs-4">
-                    <div class="product-thumb">
-                      <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product7.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product7-1.jpg"> </a> </div>
-                    </div>
-                  </div>
-                  <div class="col-xs-8">
-                    <div class="caption product-detail">
-                      <h6 class="product-name"><a href="#">New LCDScreen and HD Video Recording</a></h6>
-                      <div class="rating">
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
-                      </div>
-                      <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
-                      </span>
-                    </div>
-                  </div>
-                </li>
-                <li class="item product-layout-left mb_20">
-                  <div class="product-list col-xs-4">
-                    <div class="product-thumb">
-                      <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product8.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product8-1.jpg"> </a> </div>
-                    </div>
-                  </div>
-                  <div class="col-xs-8">
-                    <div class="caption product-detail">
-                      <h6 class="product-name"><a href="#">New LCDScreen and HD Video Recording</a></h6>
-                      <div class="rating">
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
-                      </div>
-                      <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
-                      </span>
-                    </div>
-                  </div>
-                </li>
-              </ul></div><div class="owl-item" style="width: 226.656px;"><ul class="row ">
-                <li class="item product-layout-left mb_20">
-                  <div class="product-list col-xs-4">
-                    <div class="product-thumb">
-                      <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product9.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product9-1.jpg"> </a> </div>
-                    </div>
-                  </div>
-                  <div class="col-xs-8">
-                    <div class="caption product-detail">
-                      <h6 class="product-name"><a href="#">New LCDScreen and HD Video Recording</a></h6>
-                      <div class="rating">
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
-                      </div>
-                      <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
-                      </span>
-                    </div>
-                  </div>
-                </li>
-                <li class="item product-layout-left mb_20">
-                  <div class="product-list col-xs-4">
-                    <div class="product-thumb">
-                      <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product10.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product10-1.jpg"> </a> </div>
-                    </div>
-                  </div>
-                  <div class="col-xs-8">
-                    <div class="caption product-detail">
-                      <h6 class="product-name"><a href="#">New LCDScreen and HD Video Recording</a></h6>
-                      <div class="rating">
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
-                      </div>
-                      <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
-                      </span>
-                    </div>
-                  </div>
-                </li>
-                <li class="item product-layout-left mb_20">
-                  <div class="product-list col-xs-4">
-                    <div class="product-thumb">
-                      <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product1.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product1-1.jpg"> </a> </div>
-                    </div>
-                  </div>
-                  <div class="col-xs-8">
-                    <div class="caption product-detail">
-                      <h6 class="product-name"><a href="#">New LCDScreen and HD Video Recording</a></h6>
-                      <div class="rating">
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
-                      </div>
-                      <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
-                      </span>
-                    </div>
-                  </div>
-                </li>
-              </ul></div><div class="owl-item" style="width: 226.656px;"><ul class="row ">
-                <li class="item product-layout-left mb_20">
-                  <div class="product-list col-xs-4">
-                    <div class="product-thumb">
-                      <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product2.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product2-1.jpg"> </a> </div>
-                    </div>
-                  </div>
-                  <div class="col-xs-8">
-                    <div class="caption product-detail">
-                      <h6 class="product-name"><a href="#">New LCDScreen and HD Video Recording</a></h6>
-                      <div class="rating">
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
-                      </div>
-                      <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
-                      </span>
-                    </div>
-                  </div>
-                </li>
-                <li class="item product-layout-left mb_20">
-                  <div class="product-list col-xs-4">
-                    <div class="product-thumb">
-                      <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product3.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product3-1.jpg"> </a> </div>
-                    </div>
-                  </div>
-                  <div class="col-xs-8">
-                    <div class="caption product-detail">
-                      <h6 class="product-name"><a href="#">New LCDScreen and HD Video Recording</a></h6>
-                      <div class="rating">
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
-                      </div>
-                      <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
-                      </span>
-                    </div>
-                  </div>
-                </li>
-                <li class="item product-layout-left mb_20">
-                  <div class="product-list col-xs-4">
-                    <div class="product-thumb">
-                      <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product4.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="images/product/product4-1.jpg"> </a> </div>
-                    </div>
-                  </div>
-                  <div class="col-xs-8">
-                    <div class="caption product-detail">
-                      <h6 class="product-name"><a href="#">New LCDScreen and HD Video Recording</a></h6>
-                      <div class="rating">
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
-                      </div>
-                      <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
-                      </span>
-                    </div>
-                  </div>
-                </li>
-              </div> -->
-              <!-- </ul> -->
+
               </div>
             </div>
-         
+
                   <div>
                  </div>
                   <div class="owl-dot"></div>
@@ -515,24 +249,26 @@
         </div>
 
         </div>
-        
-        
-    
-  
+
+
+
+
   <div class="col-sm-8 col-lg-9 mtb_20" >
+    @if(!Auth::User()->bank_num)
          <div class="panel panel-default " style="margin-left:3px;" >
               <div class="panel-heading">
-                
+
                 <h3>  {{ __('تعبئة البيانات') }} &nbsp; &nbsp; </h3>
-                   <h4 class="panel-title"> 
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">{{ __('Step') }} 1   <i class="fa fa-caret-down"></i> 
-               
+                   <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">{{ __('Step') }} 1   <i class="fa fa-caret-down"></i>
+
               </a> </h4>
               </div>
               <div id="collapseTwo" class="panel-collapse collapse">
                 <div class="panel-body">
-                  <form class="form-horizontal">
-                   
+                    <form class="form-horizontal" action="{{ route('updateuser') }}" method="post"
+                        enctype="multipart/form-data">
+                        @csrf
                   <div class="col-sm-6">
                       <div class="form-group">
                         <label  class="control-label">{{ __('رقم الحساب المصرفي') }}</label>
@@ -540,12 +276,12 @@
                       </div>
                       <div class="form-group">
                         <label for="input-password" class="control-label">{{ __('Address') }}</label>
-                        <input type="text" class="form-control"  placeholder="{{ __('') }}" >
-                      
+                        <input type="text" class="form-control" name="address" placeholder="{{ __('') }}" >
+
 
                       </div>
                       <div class="form-group">
-                     
+
                         <label for="input-password" class="control-label">{{ __('Upload Picture') }}</label>
 
                            <input type="file" name="profile_image" id="file"  class="form-control"
@@ -557,19 +293,19 @@
                                   <div class="radio-inline">
                                     <h3>  طريقة الإستلام</h3>
                                     <label class="radio-inline">
-                                      <input type="radio" name="optradio" checked> {{ __('توصيل') }}
+                                      <input type="radio" name="recive" value="0" checked> {{ __('توصيل') }}
                                     </label>
                                     <label class="radio-inline">
-                                      <input type="radio" name="optradio" checked>{{ __('الإستلام في الشركة') }}
+                                      <input type="radio" name="recive" value="1" checked>{{ __('الإستلام في الشركة') }}
                                     </label>
                                   </div>
                     <div class="form-group">
                         <br>
-                        
-                       <input type="button" class="btn" data-loading-text="Loading..." id="button-login" value="{{ __('Register') }}">
+
+                       <input type="submit" class="btn" data-loading-text="Loading..." id="button-login" value="{{ __('Register') }}">
 
                       </div>
-</div>
+        </div>
 </div>
 </div>
 
@@ -577,10 +313,12 @@
                 </div>
               </div>
             </div>
+            @endif
+            @if(Auth::User()->bank_num)
             <div class="panel panel-default " style="margin-left:3px;">
               <div class="panel-heading">
               <h3>  {{ __('Confirm Order') }} &nbsp; &nbsp; </h3>
-                   <h4 class="panel-title"> 
+                   <h4 class="panel-title">
                 <a data-toggle="collapse" data-parent="#accordion" href="#collapsesix">{{ __('Step') }} 2  <i class="fa fa-caret-down"></i></a> </h4>
               </div>
               <div id="collapsesix" class="panel-collapse collapse" >
@@ -595,38 +333,44 @@
                           <td class="text-right">{{ __('Total') }}</td>
                           <td class="text-right">{{ __('Unit Price') }}</td>
                           <td class="text-right">{{ __('Total') }}</td>
-                        </tr>    
+                        </tr>
                       </thead>
                       <tbody style="background-color:#424242; font-color:#wihte;">
+                        @foreach (Cart::content() as $item)
                         <tr>
-                          <td >Sony VAIO</td>
-                          <td class="text-right">1</td>
-                          <td class="text-right">$1,000.00</td>
-                          <td class="text-right">$1,000.00</td>
+                          <td >{{ __($item->name) }}</td>
+                          <td class="text-right">{{$item->qty}}</td>
+                          <td class="text-right">${{$item->price}}</td>
+                          <td class="text-right">${{$item->price*$item->qty}}</td>
                           <td class="text-right">$1,000.00</td>
                           <td class="text-right">$1,000.00</td>
 
 
                         </tr>
+                        @endforeach
                       </tbody>
                        <tbody>
                         <tr>
-                          <td class="text-right"colspan="4">$1,000.00</td>
+                          <td class="text-right"colspan="4">${{\Cart::priceTotal()}}</td>
                           <td></td>
                           <td class="text-right"colspan="4">$1,000.00</td>
                         </tr>
-                    
+
                         </tbody>
                     </table>
                   </div>
                   <div class="buttons">
                     <div class="pull-right">
-                      <input type="button" data-loading-text="Loading..." class="btn" id="button-confirm" value="{{ __('Confirm Order') }}">
+                        <form action="{{route('orderproduct')}}" method="post">
+                            {{-- <input type="hidden" name='id' value="{{\Cart::RowId}}"> --}}
+                      <input type="submit" data-loading-text="Loading..." class="btn" id="button-confirm" value="{{ __('Confirm Order') }}">
+                    </form>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+            @endif
           </div>
         </div>
       </div>
@@ -640,10 +384,10 @@
                                     <div class="brand owl-carousel ptb_20">
                                         @foreach ($brand as $x)
                                         <div class="item text-center">
-                                               
+
                                                  <a   @if (Auth::User()) href="item_brand/{{ $x->id }}" @endif >
                                                <img src="{{ asset(Storage::url($x->profile_image)) }}"
-                                                        alt="" class="img-responsive" /></a> 
+                                                        alt="" class="img-responsive" /></a>
                                                     </div>
                                         @endforeach
                                     </div>

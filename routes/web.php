@@ -135,6 +135,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     Route::get('/user',[App\Http\Controllers\users::class,'user']);
     Route::get('/d_user',[App\Http\Controllers\users::class,'user']);
+    Route::post('/update_user_',[App\Http\Controllers\users::class,'update_user'])->name('updateuser');
+    Route::post('/order',[App\Http\Controllers\users::class,'order_product'])->name('orderproduct');
 
 
 

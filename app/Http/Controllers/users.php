@@ -7,9 +7,10 @@ use App\Models\User;
 use App\Models\product;
 use App\Models\brand;
 use App\Models\Category;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Auth;
 class users extends Controller
-{ 
+{
     public function user()
     {
         if(!Auth::check() )
@@ -18,20 +19,26 @@ class users extends Controller
         return redirect('/');
 
         else{
-        // $categories=Category::all();
-        // $collect = array('M'=>'Men','W'=>'Women','C'=>'Children' );
-        // $product_name_men=product::with('categories')->where('collection','=','Men')->get();
-        // $product_name_women=product::with('categories')->where('collection','=','Women')->get();
-        // $product_name_children=product::with('categories')->where('collection','=','Children')->get();
-        // $users=User::all();
+
 
         $users = User::where('role', 3)->get();
         $page = "users";
         return View('user.d_user',compact('users','page'));
-        // return View('',compact('users','collect','categories','product_name_men','product_name_women','product_name_children'));
-     
-    } 
-}       
+
+    }
+}
+public function update_user(){
+    $user=User::find(Auth::User()->id);
+    $user->bank_num=request('bank_num');
+    $user->address=request('address');
+    if(request()->file('profile_image'))
+    {
+        $user->profile_image=request()->file('profile_image')->store('public');
+    }
+    $user->recive=request('recive');
+    $user->update();
+    return redirect('/checkout_page');
+}
 
     public function delete_user($id)
     {
@@ -40,6 +47,13 @@ class users extends Controller
         Toastr::success('Delete User successfully :)','Success');
         return redirect('/d_user');
     }
-  
-   
+
+    public function order_product(){
+       $orderProducts=Cart::all();
+
+        Bills::insert($orderProducts);
+
+        return redirect('/');
+    }
+
 }

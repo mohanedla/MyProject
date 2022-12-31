@@ -193,12 +193,12 @@ class home extends Controller
 
             else{
             $page = "bills";
-
-            return View('bills.d_bills',compact("page"));
+            $orders=Bills::all();
+            return View('bills.d_bills',compact('page','orders'));
         }
  }
 
-        public function Bills1()
+        public function Bills1($id)
         {
             if(!Auth::check() )
             return redirect('/');
@@ -207,8 +207,23 @@ class home extends Controller
 
             else{
             $page = "bills";
-            return View('bills.Bills',compact("page"));
+            $orders=Bills::where('id',$id)->with('user')->get();
+            $name=[];
+            $quantity=[];
+            $Unit_Price=[];
+            $Total=[];
+            foreach ($orders as $order){
+            $name=explode(',' ,$order->name);
+            $quantity=explode(',' ,$order->quantity);
+            $Unit_Price=explode(',' ,$order->Unit_Price);
+            $Total=explode(',' ,$order->Total);
+            }
+            return View('bills.Bills',compact('page','orders','name','quantity','Unit_Price','Total'));
         }
+    }
+    public function delete_bill($id) {
+        $delete=Bills::find($id)->delete();
+        return redirect()->back();
     }
         public function R1()
         {
@@ -272,6 +287,8 @@ class home extends Controller
             return View('report.R5',compact("page"));
         }
     }
+
+
      function footer()
         {
             return View('footer');

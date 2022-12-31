@@ -384,7 +384,7 @@
                                                             <h6 data-name="product_name" class="product-name"><a
                                                                     href="#"
                                                                     title="Casual Shirt With Ruffle Hem">
-                                                                    {{ $item->name }}</a></h6>
+                                                                    {{ $item->name }} &nbsp; {{ $item->brands->name }} </a></h6>
                                                             @if (Auth::User())
                                                                 <span class="price"><span class="amount"><span
                                                                             class="currencySymbol">$</span>{{ $item->price }}.00
@@ -470,7 +470,7 @@
                                                                     class="fa fa-star fa-stack-x"></i></span> </div>
                                                         <h6 data-name="product_name" class="product-name"><a
                                                                 href="#" title="Casual Shirt With Ruffle Hem">
-                                                                {{ $item->name }}..</a></h6>
+                                                                {{ $item->name }} &nbsp; {{ $item->brands->name }}</a></h6>
                                                         @if (Auth::User())
                                                             <span class="price"><span class="amount"><span
                                                                         class="currencySymbol">$</span>{{ $item->price }}.00</span>
@@ -553,7 +553,7 @@
                                                             <h6 data-name="product_name" class="product-name"><a
                                                                     href="#"
                                                                     title="Casual Shirt With Ruffle Hem">
-                                                                    {{ $item->name }}..</a></h6>
+                                                                    {{ $item->name }} &nbsp; {{ $item->brands->name }}</a></h6>
                                                             @if (Auth::User())
                                                                 <span class="price"><span class="amount"><span
                                                                             class="currencySymbol">$</span>{{ $item->price }}.00</span>

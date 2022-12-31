@@ -9,7 +9,7 @@ return new class extends Migration
     /**
      * Run the migrations.
      *
-     * @return void  
+     * @return void
      */
     public function up()
     {
@@ -21,7 +21,9 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('bank_num')->nullable();
+            $table->string('address')->nullable();
             $table->integer('role')->default(3);
+            $table->integer('recive')->nullable();
             $table->rememberToken();
 
             $table->timestamps();

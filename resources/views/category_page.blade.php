@@ -119,49 +119,9 @@
                                 </span>
                             </div> -->
                         </div>
-                        <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="/home">
-                            <img alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
-                            {{-- @if (Auth::User()) --}}
-                            <div class="col-xs-6 col-sm-4 shopcart">
-                                <div id="cart" class="btn-group btn-block mtb_40">
-                                    <button type="button" class="btn" data-target="#cart-dropdown"
-                                        data-toggle="collapse" aria-expanded="true"><span
-                                            id="shippingcart">{{ __('Shopping cart') }}</span>
-                                            {{-- @livewire('cart-counter') --}}
-                                            <span
-                                            id="cart-total">{{ __('items') }}
-                                             ({{\Cart::content()->count()}})
-                                            </span>
-                                             </button>
-                                </div>
+                        <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="home"> <img
+                                    alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
 
-<<<<<<< HEAD
-                                <div id="cart-dropdown" class="cart-menu collapse" >
-                                    <ul>
-                                        <li>
-                                            <div id="cart-dropdown1">
-                                            <table class="table table-striped" >
-                                                <tbody >
-                                                    @if (Cart::count() > 0)
-
-                                                    @foreach (Cart::content() as $item)
-
-                                                    <tr>
-                                                        <td class="text-center"><a href="#"><img style="width: 80px"
-                                                                    src="{{ asset(Storage::url($item->image)) }}"
-                                                                    alt="iPod Classic" title="iPod Classic"></a></td>
-                                                        <td class="text-left product-name"><a href="#">{{$item->name}}</a> <span class="text-left price">${{$item->price}}</span>
-                                                            <input class="cart-qty" name="product_quantity"
-                                                                min="1" value="{{$item->qty}}" type="number">
-                                                        </td>
-                                                        <td class="text-center">
-                                                            <a class="close-cart" href="{{ url('remove', $item->rowId ) }}"><i
-                                                                    class="fa fa-times-circle"></i>
-                                                                </a>
-                                                            </td>
-                                                    </tr>
-                                                    @endforeach
-=======
                         <div class="col-xs-6 col-sm-4 shopcart">
                             <div id="cart" class="btn-group btn-block mtb_40">
                                 <button type="button" class="btn" data-target="#cart-dropdown"
@@ -204,7 +164,6 @@
                                                             </tr>
                                                         @endforeach
 
->>>>>>> 193a57ef1988c30b2dfc3eb91b75f173bdb45056
 
                                                     @endif
                                                 </tbody>
@@ -214,37 +173,6 @@
                                     </li>
                                     <li>
                                         <table class="table">
-<<<<<<< HEAD
-
-                                                <tbody>
-                                                    <tr>
-                                                        <th>${{\Cart::priceTotal()}}</th>
-                                                        <th><strong>:"{{ __('Total') }}"</strong></th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                        <form action="cart_page">
-                                                            <input class="btn pull-left mt_10"
-                                                                value="{{ __('View cart') }}" type="submit">
-                                                        </form>
-                                                    </td>
-                                                    <td>
-                                                        <form action="checkout_page">
-                                                            <input class="btn pull-right mt_10"
-                                                                value="{{ __('Checkout') }}" type="submit">
-                                                        </form>
-                                                    </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </li>
-
-                                    </ul>
-                                </div>
-                            </div>
-                        {{-- @endif --}}
-                </div>
-=======
 
                                             <tbody>
                                                 <tr>
@@ -272,7 +200,6 @@
                                 </ul>
                             </div>
                         </div>
->>>>>>> 193a57ef1988c30b2dfc3eb91b75f173bdb45056
 
                     </div>
                     <nav class="navbar">

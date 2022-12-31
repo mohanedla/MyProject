@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\product;
 use App\Models\brand;
 use App\Models\Category;
+use App\Models\Bills;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Auth;
 class users extends Controller
@@ -49,11 +50,39 @@ public function update_user(){
     }
 
     public function order_product(){
-       $orderProducts=Cart::all();
+        $carts=Cart::content();
+        $order=new Bills;
+        $order->admin_id=Auth::user()->id;
+        // $name=request('name');
+        // $quantity=request('qty');
+        // $Unit_Price=request('price');
+        // $Total=request('tprice');
+        // dd($cart);
+        $i=0;
+        $name =[];
+        $quantity =[];
+        $Unit_Price =[];
+        $Total =[];
+        foreach ($carts as $cart ){
 
-        Bills::insert($orderProducts);
-
-        return redirect('/');
+            $name[$i]= $cart->name;
+            $quantity[$i]=$cart->qty;
+            $Unit_Price[$i]=$cart->price;
+            $Total[$i]=$cart->price*$cart->qty;
+            $i++;
+        }
+        $order->quantity=implode(',' , $quantity);
+        $order->name=implode(',' , $name);
+        $order->Unit_Price=implode(',' , $Unit_Price);
+        $order->Total=implode(',' , $Total);
+        $order->Unit_Price_DL=10000;
+        $order->Total_DL=10000;
+        $order->Totals=Cart::priceTotal();
+        $order->Totals_Dl=100000;
+        $order->save();
+        Cart::destroy();
+        return redirect('/home');
     }
+
 
 }

@@ -17,11 +17,13 @@ return new class extends Migration
             $table->id();
             $table->integer('admin_id')->references('id')->on('users');
             $table->string('name');
-            $table->integer('quantity');
-            $table->float('Unit_Price');
-            $table->float('Total_$');
-            $table->float('Unit_Price_DL');
-            $table->float('Total_DL');
+            $table->string('quantity');
+            $table->string('Unit_Price');
+            $table->string('Total');
+            $table->string('Unit_Price_DL');
+            $table->string('Total_DL');
+            $table->float('Totals');
+            $table->float('Totals_Dl');
             $table->timestamps();
         });
     }

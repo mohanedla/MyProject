@@ -53,7 +53,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/R5',[App\Http\Controllers\home::class,'R5']);
 
     Route::get('/d_Bills',[App\Http\Controllers\home::class,'Bills']);
-    Route::get('/Bills',[App\Http\Controllers\home::class,'Bills1']);
+    Route::get('/Bills/{id}',[App\Http\Controllers\home::class,'Bills1']);
+    Route::get('/delete_bills/{id}',[App\Http\Controllers\home::class,'delete_bill']);
 
     Route::get('/dashboard_home',[App\Http\Controllers\home::class,'dashboard_home']);
 
@@ -136,7 +137,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/user',[App\Http\Controllers\users::class,'user']);
     Route::get('/d_user',[App\Http\Controllers\users::class,'user']);
     Route::post('/update_user_',[App\Http\Controllers\users::class,'update_user'])->name('updateuser');
-    Route::post('/order',[App\Http\Controllers\users::class,'order_product'])->name('orderproduct');
+    Route::post('/order',[App\Http\Controllers\users::class,'order_product'])->name('aymen');
 
 
 

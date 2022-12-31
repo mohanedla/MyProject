@@ -42,7 +42,6 @@
                             <th style="width: 50px;" scope="col">{{ __('invoice number') }}</th>
                             <th style="width: 50px;" scope="col">{{ __('User name') }}</th>
                             <th style="width: 50px;" scope="col">{{ __('Email Address') }}</th>
-                            <th style="width: 50px;" scope="col">{{ __('Phone Number') }}</th>
                             <th style="width: 50px;" scope="col">{{ __('Total') }}</th>
 
                             <th style="width: 50px;" scope="col"></th>
@@ -50,32 +49,42 @@
 
                         </tr>
                     </thead>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
+                    <tbody>
+                        @php
+                            $i=0;
+                        @endphp
+                        @foreach ($orders as $order)
+                        <tr>
+                            <td>
+                                {{++$i}}
+                            </td>
+                            <td>
+                                {{$order->id}}
+                            </td>
+                            <td>
+                                {{$order->user->name}}
+                            </td>
+                            <td>
+                                {{$order->user->email}}
+                            </td>
+                            <td>
+                                ${{$order->Totals}}
+                            </td>
 
 
-                    <td class="text-center">
-                                    <a href="Bills"  data-bs-target="#type_men"
-                                    data-bs-whatever="@mdo" >
-                                        <span class="badge bg-info"><i class="bi bi-eye-fill"></i></span>
-                                    </a>
+                            <td class="text-center">
+                                            <a href="/Bills/{{$order->id}}"  data-bs-target="#type_men"
+                                            data-bs-whatever="@mdo" >
+                                                <span class="badge bg-info"><i class="bi bi-eye-fill"></i></span>
+                                            </a>
 
 
-                                    <a href="#" onclick="return confirm('Are you sure to want to delete it?')"><span class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
-                                </td>
-                        <tbody>
+                                            <a href="/delete_bills/{{$order->id}}" onclick="return confirm('Are you sure to want to delete it?')"><span class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
+                                        </td>
 
+                                    </tr>
 
+                                    @endforeach
                         </tbody>
                     </table>
                 </div>

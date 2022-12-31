@@ -37,8 +37,11 @@
             <div class="row">
     			<div class="receipt-header">
 					<div class="col-xs-6 col-sm-6 col-md-6">
+
 						<div class="receipt-left">
-							<img class="img-responsive" alt="iamgurdeeposahan" src="https://bootdey.com/img/Content/avatar/avatar6.png" style="width: 71px; border-radius: 43px;">
+                            @foreach ($orders as $order)
+                                <img class="img-responsive" alt="iamgurdeeposahan" src="{{ asset(Storage::url($order->user->profile_image)) }}" style="width: 71px; border-radius: 43px;">
+                            @endforeach
 						</div>
 					</div>
 					<!-- <div class="col-xs-6 col-sm-6 col-md-6 text-right">
@@ -53,21 +56,24 @@
             </div>
 
 			<div class="row">
+                @foreach ($orders as $order)
 				<div class="receipt-header receipt-header-mid">
 					<div class="col-xs-8 col-sm-8 col-md-8 text-left">
 						<div class="receipt-right">
-							<h5>{{ __('User name') }} </h5>
-							<p><b>{{ __('Phone Number') }}:</b> 091820630</p>
-							<p><b> {{ __('Email') }}:</b> Aymen@gmail.com</p>
-							<p><b> {{ __('Address') }}:</b> {{ __('Tripoli') }}</p>
+							<h5>{{ __($order->user->name) }}</h5>
+							<p><b>{{ __('Phone Number') }}:</b> {{ __($order->user->name) }}</p>
+							<p><b> {{ __('Email') }}:</b>   {{ __($order->user->email)}}    </p>
+							<p><b> {{ __('Address') }}:</b>   {{   $order->user->address}}   </p>
+
 						</div>
 					</div>
 					<div class="col-xs-4 col-sm-4 col-md-4">
 						<div class="receipt-left">
-							<h3>{{ __('INVOICE') }} # 102</h3>
+							<h3>{{ __('INVOICE') }} # {{$order->id}}</h3>
 						</div>
 					</div>
 				</div>
+                @endforeach
             </div>
 
             <div>
@@ -80,37 +86,32 @@
                             <th>{{ __('Total') }}</th>
                             <th>{{ __('Unit Price') }}</th>
                             <th>{{ __('Total') }}</th>
-                        
+
                         </tr>
                     </thead>
                     <tbody>
+                        @if ($name)
+                        @for ($i=0;$i<count($name);$i++)
                         <tr>
-                        <td class="text-right"><h5><strong>تيشرت </strong></h5></td>
-                        <td class="text-right"><h5><strong>4 </strong></h5></td>
-                        <td class="text-right"><h5><strong>100$ </strong></h5></td>
-                        <td class="text-right"><h5><strong>400$ </strong></h5></td>
+                        <td class="text-right"><h5><strong>{{$name[$i]}} </strong></h5></td>
+                        <td class="text-right"><h5><strong>{{$quantity[$i]}} </strong></h5></td>
+                        <td class="text-right"><h5><strong>${{$Unit_Price[$i]}} </strong></h5></td>
+                        <td class="text-right"><h5><strong>${{$Total[$i]}}</strong></h5></td>
                         <td class="text-right"><h5><strong>500DL </strong></h5></td>
                         <td class="text-right"><h5><strong>2000DL </strong></h5></td>
-
-<!-- 
-                            <td class="col-md-9">تيشرت</td>
-                            <td class="col-md-9">4</td>
-                            <td class="text-right">100,00$</td>
-                            <td class="col-md-9">400,00$</td>
-                            <td class="col-md-9">500,00DL</td>
-                            <td class="col-md-9">2000,00DL</td> -->
-
+                        @endfor
+                        @endif
 
                         </tr>
                         <tr>
                             <td class="text-right"><h2><strong>{{ __('Total') }} </strong></h2></td>
                             <th></th>
                             <th></th>
-
-                            <td class="text-right"><h2><strong>120,00$ </strong></h2></td>
+                            @foreach ($orders as $order)
+                            <td class="text-right"><h2><strong>${{$order->Totals}} </strong></h2></td>
                             <th></th>
-                            <td class="text-right"><h2><strong>300,00DL </strong></h2></td>
-
+                            <td class="text-right"><h2><strong>${{$order->Totals_Dl}} </strong></h2></td>
+                            @endforeach
                             <!-- <td class="text-left text-danger">
                                 <h2><strong><i class="fa fa-inr"></i>   120$</strong></h2></td>
                             <td class="text-left text-danger">
@@ -136,7 +137,10 @@
 					</div>
 
 				</div>
-                <h6> 16 Dec 2022</h6>
+                @foreach ($orders as $order)
+
+                <h6> {{$order->created_at}}</h6>
+                @endforeach
 
             </div>
 

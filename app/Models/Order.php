@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Bills extends Model
+class Order extends Model
 {
-    public function orders(){
-        return $this->hasOne(User::class, 'id', 'order_id');
+    public function user(){
+        return $this->hasOne(User::class, 'id', 'user_id');
     }
 }

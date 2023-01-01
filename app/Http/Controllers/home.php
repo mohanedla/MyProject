@@ -13,6 +13,7 @@ use App\Models\Kids;
 use App\Models\Notice;
 use App\Models\report;
 use App\Models\Bills;
+use App\Models\Order;
 
 
 use auth;
@@ -193,8 +194,14 @@ class home extends Controller
 
             else{
             $page = "bills";
-            $orders=Bills::all();
-            return View('bills.d_bills',compact('page','orders'));
+            $orders=Order::all();
+            $bills=Bills::all();
+            $totals=[];
+            $i=0;
+            foreach($bills as $bill){
+            $totals[$i++]=$bill->totals;
+            }
+            return View('bills.d_bills',compact('page','orders','totals'));
         }
  }
 
@@ -207,22 +214,15 @@ class home extends Controller
 
             else{
             $page = "bills";
-            $orders=Bills::where('id',$id)->with('user')->get();
-            $name=[];
-            $quantity=[];
-            $Unit_Price=[];
-            $Total=[];
-            foreach ($orders as $order){
-            $name=explode(',' ,$order->name);
-            $quantity=explode(',' ,$order->quantity);
-            $Unit_Price=explode(',' ,$order->Unit_Price);
-            $Total=explode(',' ,$order->Total);
-            }
-            return View('bills.Bills',compact('page','orders','name','quantity','Unit_Price','Total'));
+            $bills=Bills::where('order_id',$id)->get();
+            $orders=Order::where('id',$id)->with('user')->get();
+
+            return View('bills.Bills',compact('page','bills','orders'));
         }
     }
     public function delete_bill($id) {
-        $delete=Bills::find($id)->delete();
+        $delete=Bills::where('order_id',$id)->delete();
+        $del=Order::find($id)->delete();
         return redirect()->back();
     }
         public function R1()

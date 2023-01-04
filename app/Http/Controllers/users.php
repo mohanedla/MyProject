@@ -65,8 +65,6 @@ public function update_user(){
         $bills->total=$cart->price*$cart->qty;
         $bills->price_dl=10000;
         $bills->total_dl=10000;
-        $bills->totals_dl=100000;
-        $bills->totals=Cart::priceTotal();
         $bills->save();
         }
         Cart::destroy();

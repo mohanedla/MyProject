@@ -385,7 +385,7 @@
                                             <form class="form-horizontal" action="{{ route('aymen') }}"
                                                 method="post" enctype="multipart/form-data">
                                                 @csrf
-                                               
+
                                                 {{-- <input type="hidden" name='total' value="{{\Cart::priceTotal()}}"> --}}
                                                 <input type="submit" class="btn" id="button-confirm"
                                                     value="{{ __('Confirm Order') }}">
@@ -428,12 +428,6 @@
     <a id="scrollup"></a>
     <br>
     <br>
-    {{-- <script src="js/jQuery_v3.1.1.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.magnific-popup.js"></script>
-  <script src="js/custom.js"></script>
-   --}}
     @extends('layout.footer')
     @section('footer')
     @endsection

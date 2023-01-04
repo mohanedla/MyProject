@@ -115,7 +115,6 @@
 
                                     </tr>
                                 @endforeach
-                                @foreach ($bills as $bill)
                                     <tr>
                                         <td class="text-right">
                                             <h2><strong>{{ __('Total') }} </strong></h2>
@@ -123,13 +122,12 @@
                                         <th></th>
                                         <th></th>
                                         <td class="text-right">
-                                            <h2><strong>${{ $bill->price += $bill->price }} </strong></h2>
+                                            <h2><strong>${{ $totals }} </strong></h2>
                                         </td>
                                         <th></th>
                                         <td class="text-right">
-                                            <h2><strong>${{ $bill->totals_dl }} </strong></h2>
+                                            {{-- <h2><strong>${{ $bill->totals_dl }} </strong></h2> --}}
                                         </td>
-                                @endforeach
                                 <!-- <td class="text-left text-danger">
                                         <h2><strong><i class="fa fa-inr"></i>   120$</strong></h2></td>
                                     <td class="text-left text-danger">

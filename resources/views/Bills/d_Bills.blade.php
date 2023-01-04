@@ -42,8 +42,6 @@
                             <th style="width: 50px;" scope="col">{{ __('invoice number') }}</th>
                             <th style="width: 50px;" scope="col">{{ __('User name') }}</th>
                             <th style="width: 50px;" scope="col">{{ __('Email Address') }}</th>
-                            {{-- <th style="width: 50px;" scope="col">{{ __('Total') }}</th> --}}
-
                             <th style="width: 50px;" scope="col"></th>
 
 
@@ -68,11 +66,7 @@
                             <td>
                                 {{$order->user->email}}
                             </td>
-                            {{-- @if ($totals[$j++])
-                            <td>
-                                ${{$totals[$j]}}
-                            </td>
-                            @endif --}}
+
 
 
                             <td class="text-center">
@@ -86,7 +80,9 @@
                                         </td>
 
                                     </tr>
-
+                                    @php
+                                        $j++;
+                                    @endphp
                                     @endforeach
                         </tbody>
                     </table>

@@ -22,9 +22,6 @@ use App\Http\Controllers\LockScreen;
 */
 Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 {
-	/** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
-
-    // Controller home
 
     // Route::get('url اسم ',[App\Http\Controllers\اسم الكترولر::class,'اسم الفانكشن']);
     Route::get('/home',[App\Http\Controllers\home::class,'index']);
@@ -61,17 +58,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     // end Controller home
 
     Route::post('/admin_register',[App\Http\Controllers\admins::class,'validation_admin'])->name('ValidationdAmin');
-
-
-    // Route::get('/admin',[App\Http\Controllers\admins::class,'admin_admin']);
-    // Route::get('/add_admin',[App\Http\Controllers\admins::class,'admin_add_admin']);
-    // Route::get('/edit_admin/{id}',[App\Http\Controllers\admins::class,'edit_admin']);
-    // Route::post('/edit_admin/{id}',[App\Http\Controllers\admins::class,'update_admin']);
-    // Route::get('/delete_admin/{id}',[App\Http\Controllers\admins::class,'delete_admin']);
-    // Route::post('/add_admin',[App\Http\Controllers\admins::class,'add_admin'])->name('Addadmin');
-    // Route::get('/admin_login',[App\Http\Controllers\admins::class,'admin_login']);
-    // Route::post('/admin_login',[App\Http\Controllers\admins::class,'create'])->name('admin_register');
-
 
     // Controller brands
     Route::post('/edit_brand/{id}',[App\Http\Controllers\brands::class,'update_brand']);
@@ -150,25 +136,15 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('remove/{id}', [App\Http\Controllers\CartController::class, 'removeCart']);
     Route::post('clear', [CartController::class, 'clearAllCart'])->name('cart.clear');
 
-
+    Route::get('markAsRead',function ()
+    {
+        Auth::User()->unreadNotifications->markAsRead();
+        return redirect()->back();
+    })->name('MarkAsRead');
 
 });
 Auth::routes();
-// Route::get('/dashboard_form',function(){
-//     return view('dashboard.form.form');
-// });
-// Route::get('/dashboard_usermangment',function(){
-//     return view('dashboard.sidebar.usermanagement');
-// });
-// Route::get('/bills;',function(){
-//     return view('Bills.Bills');
-// });
-// Route::get('/d_bills;',function(){
-//     return view('Bills.d_Bills');
-// });
 
-// Route::get('/view_detail',function(){
-//     return view('dashboard.view_record.viewdetail');
-// });
+
 require __DIR__.'/auth.php'
 ;

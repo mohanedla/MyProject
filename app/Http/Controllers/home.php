@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
+// use Illuminate\Notifications\Notification;
+use App\Notifications\NewUser;
+
 use App\Models\brand;
 use App\Models\product;
 use App\Models\User;
@@ -168,6 +171,8 @@ class home extends Controller
             $counts7= product::where('collection','Kids')->count();
             $counts8= Notice::count();
             $counts9= Bills::count();
+            $user=Auth::User()->notify(new NewUser);
+            // $user->markAsRead();
             return View('dashboard.home',compact('Users','counts','counts1','counts2','counts3','counts4','counts5','counts6','counts7','counts8','counts9','page'));
         }
     }

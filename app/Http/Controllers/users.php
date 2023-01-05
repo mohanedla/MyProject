@@ -33,6 +33,7 @@ public function update_user(){
     $user=User::find(Auth::User()->id);
     $user->bank_num=request('bank_num');
     $user->address=request('address');
+    $user->phone_number=request('phone_number');
     if(request()->file('profile_image'))
     {
         $user->profile_image=request()->file('profile_image')->store('public');

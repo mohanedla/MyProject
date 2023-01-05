@@ -268,7 +268,7 @@
                                 <h3> {{ __('تعبئة البيانات') }} &nbsp; &nbsp; </h3>
                                 <h4 class="panel-title">
                                     <a data-toggle="collapse" data-parent="#accordion"
-                                        href="#collapseTwo">{{ __('Step') }} 1 <i class="fa fa-caret-down"></i>
+                                        href="#collapseTwo"> <i class="fa fa-caret-down"></i>
 
                                     </a>
                                 </h4>
@@ -291,6 +291,12 @@
                                                     placeholder="{{ __('') }}">
 
 
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="input-password"
+                                                class="control-label">{{ __('Phone Number') }}</label>
+                                                <input type="integer" class="form-control" name="phone_number"
+                                                placeholder="{{ __('') }}">
                                             </div>
                                             <div class="form-group">
 

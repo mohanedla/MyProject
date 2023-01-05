@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('bank_num')->nullable();
             $table->string('address')->nullable();
+            $table->integer('phone_number')->nullable();
             $table->integer('role')->default(3);
             $table->integer('recive')->nullable();
             $table->rememberToken();

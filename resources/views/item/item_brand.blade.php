@@ -289,8 +289,8 @@
                                             <div class="product-grid">
                                                 <div class="item">
                                                     <div class="product-thumb">
-                                                        <div class="image product-imageblock" style="height: 418px;">
-                                                            <a href="/product_detail_page/{{$item->id}}"
+                                                    <div class="image product-imageblock" style="height: 300px;">
+                                                            <a href="/product_detail_page/{{ $item->id }}"
                                                                 style="height: -webkit-fill-available;">
                                                                 <img data-name="product_image"
                                                                     style="height: -webkit-fill-available;"
@@ -302,7 +302,7 @@
                                                                     alt="iPod Classic" title="iPod Classic"
                                                                     class="img-responsive"> </a>
                                                             <div class="button-group text-center">
-                                                                <div class="wishlist"><a
+                                                                <!-- <div class="wishlist"><a
                                                                         href="#"><span>wishlist</span></a>
                                                                 </div>
                                                                 <div class="quickview"><a href="#"><span>Quick
@@ -312,7 +312,7 @@
                                                                 </div>
                                                                 <div class="add-to-cart"><a href="#"><span>Add
                                                                             to
-                                                                            cart</span></a></div>
+                                                                            cart</span></a></div> -->
                                                             </div>
                                                         </div>
                                                         <div class="caption product-detail text-center">
@@ -335,11 +335,18 @@
                                                             <h6 data-name="product_name" class="product-name"><a
                                                                     href="#"
                                                                     title="Casual Shirt With Ruffle Hem">
-                                                                    {{ $item->name }}..</a>
-                                                            </h6>
-                                                            <span class="price"><span class="amount"><span
-                                                                        class="currencySymbol">$</span>{{ $item->price }}.00</span>
-                                                            </span>
+                                                                    {{ $item->name }} &nbsp; {{ $item->brands->name }} </a></h6>
+                                                            @if (Auth::User())
+                                                                <span class="price"><span class="amount"><span
+                                                                            class="currencySymbol">$</span>{{ $item->price }}.00
+                                                                        </span>
+                                                                        <!-- <form action="/">
+
+             <input class="btn pull-right mt_30" type="submit" value="{{ __('Add to cart') }}" />
+
+         </form> -->
+                                                                </span>
+                                                            @endif
                                                         </div>
                                                     </div>
                                                 </div>
@@ -363,58 +370,66 @@
                                             <div class="product-grid">
                                                 <div class="item">
                                                     <div class="product-thumb">
-                                                        <div class="image product-imageblock" style="height: 418px;">
-                                                            <a href="/product_detail_page/{{$item->id}}"
-                                                                style="height: -webkit-fill-available;">
-                                                                <img data-name="product_image"
-                                                                    style="height: -webkit-fill-available;"
-                                                                    src="{{ asset(Storage::url($item->profile_image)) }}"
-                                                                    alt="iPod Classic" title="iPod Classic"
-                                                                    class="img-responsive"> <img
-                                                                    style="height: -webkit-fill-available;"
-                                                                    src="{{ asset(Storage::url($item->profile_image)) }}"
-                                                                    alt="iPod Classic" title="iPod Classic"
-                                                                    class="img-responsive"> </a>
-                                                            <div class="button-group text-center">
-                                                                <div class="wishlist"><a
-                                                                        href="#"><span>wishlist</span></a>
-                                                                </div>
-                                                                <div class="quickview"><a href="#"><span>Quick
-                                                                            View</span></a></div>
-                                                                <div class="compare"><a
-                                                                        href="#"><span>Compare</span></a>
-                                                                </div>
-                                                                <div class="add-to-cart"><a href="#"><span>Add
-                                                                            to
-                                                                            cart</span></a></div>
-                                                            </div>
+                                                    <div class="image product-imageblock" style="height: 300px;">
+
+                                                    <a href="/product_detail_page/{{ $item->id }}"
+                                                        style="height: -webkit-fill-available;">
+                                                        <img data-name="product_image"
+                                                            style="height: -webkit-fill-available;"
+                                                            src="{{ asset(Storage::url($item->profile_image)) }}"
+                                                            alt="iPod Classic" title="iPod Classic"
+                                                            class="img-responsive"> <img
+                                                            style="height: -webkit-fill-available;"
+                                                            src="{{ asset(Storage::url($item->profile_image)) }}"
+                                                            alt="iPod Classic" title="iPod Classic"
+                                                            class="img-responsive">
+
+                                                    </a>
+                                                    <div class="button-group text-center">
+                                                        <!-- <div class="wishlist"><a
+                                                                href="#"><span>wishlist</span></a>
                                                         </div>
-                                                        <div class="caption product-detail text-center">
-                                                            <div class="rating"> <span class="fa fa-stack"><i
-                                                                        class="fa fa-star-o fa-stack-1x"></i><i
-                                                                        class="fa fa-star fa-stack-1x"></i></span>
-                                                                <span class="fa fa-stack"><i
-                                                                        class="fa fa-star-o fa-stack-1x"></i><i
-                                                                        class="fa fa-star fa-stack-1x"></i></span>
-                                                                <span class="fa fa-stack"><i
-                                                                        class="fa fa-star-o fa-stack-1x"></i><i
-                                                                        class="fa fa-star fa-stack-1x"></i></span>
-                                                                <span class="fa fa-stack"><i
-                                                                        class="fa fa-star-o fa-stack-1x"></i><i
-                                                                        class="fa fa-star fa-stack-1x"></i></span>
-                                                                <span class="fa fa-stack"><i
-                                                                        class="fa fa-star-o fa-stack-1x"></i><i
-                                                                        class="fa fa-star fa-stack-x"></i></span>
-                                                            </div>
-                                                            <h6 data-name="product_name" class="product-name"><a
-                                                                    href="#"
-                                                                    title="Casual Shirt With Ruffle Hem">
-                                                                    {{ $item->name }}..</a>
-                                                            </h6>
-                                                            <span class="price"><span class="amount"><span
-                                                                        class="currencySymbol">$</span>{{ $item->price }}.00</span>
-                                                            </span>
+                                                        <div class="quickview"><a href="#"><span>Quick
+                                                                    View</span></a></div>
+                                                        <div class="compare"><a
+                                                                href="#"><span>Compare</span></a>
                                                         </div>
+                                                        <div class="add-to-cart"><a href="#"><span>Add to
+                                                                    cart</span></a></div> -->
+                                                    </div>
+                                                    </div>
+                                                    <div class="caption product-detail text-center">
+                                                    <div class="rating"> <span class="fa fa-stack"><i
+                                                                class="fa fa-star-o fa-stack-1x"></i><i
+                                                                class="fa fa-star fa-stack-1x"></i></span> <span
+                                                            class="fa fa-stack"><i
+                                                                class="fa fa-star-o fa-stack-1x"></i><i
+                                                                class="fa fa-star fa-stack-1x"></i></span> <span
+                                                            class="fa fa-stack"><i
+                                                                class="fa fa-star-o fa-stack-1x"></i><i
+                                                                class="fa fa-star fa-stack-1x"></i></span> <span
+                                                            class="fa fa-stack"><i
+                                                                class="fa fa-star-o fa-stack-1x"></i><i
+                                                                class="fa fa-star fa-stack-1x"></i></span> <span
+                                                            class="fa fa-stack"><i
+                                                                class="fa fa-star-o fa-stack-1x"></i><i
+                                                                class="fa fa-star fa-stack-x"></i></span> </div>
+                                                    <h6 data-name="product_name" class="product-name"><a
+                                                            href="#" title="Casual Shirt With Ruffle Hem">
+                                                            {{ $item->name }} &nbsp; {{ $item->brands->name }}</a></h6>
+                                                    @if (Auth::User())
+                                                        <span class="price"><span class="amount"><span
+                                                                    class="currencySymbol">$</span>{{ $item->price }}.00</span>
+                                                                    <!-- <form action="/">
+
+                                                    <input class="btn pull-right mt_30" type="submit" value="{{ __('Add to cart') }}" />
+
+                                                    </form> -->
+
+
+                                                                </span>
+                                                    @endif
+                                                    </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -434,9 +449,10 @@
                                             <div class="product-grid">
                                                 <div class="item">
                                                     <div class="product-thumb">
-                                                        <div class="image product-imageblock" style="height: 418px;">
-                                                            <a href="/product_detail_page/{{$item->id}}"
-                                                                style="height: -webkit-fill-available;">
+                                                    <div class="image product-imageblock" style="height: 300px;">
+                                                            <a href="/product_detail_page/{{ $item->id }}"
+                                                                style="height: -webkit-fill-available;"
+                                                                sstyle="height: -webkit-fill-available;">
                                                                 <img data-name="product_image"
                                                                     style="height: -webkit-fill-available;"
                                                                     src="{{ asset(Storage::url($item->profile_image)) }}"
@@ -447,17 +463,17 @@
                                                                     alt="iPod Classic" title="iPod Classic"
                                                                     class="img-responsive"> </a>
                                                             <div class="button-group text-center">
-                                                                <div class="wishlist"><a
+                                                                <!-- <div class="wishlist"><a
                                                                         href="#"><span>wishlist</span></a>
                                                                 </div>
                                                                 <div class="quickview"><a href="#"><span>Quick
                                                                             View</span></a></div>
                                                                 <div class="compare"><a
-                                                                        href="#"><span>Compare</span></a>
+                                                                        href="#"><span>{{ __('Compare') }}</span></a>
                                                                 </div>
                                                                 <div class="add-to-cart"><a href="#"><span>Add
                                                                             to
-                                                                            cart</span></a></div>
+                                                                            cart</span></a></div> -->
                                                             </div>
                                                         </div>
                                                         <div class="caption product-detail text-center">
@@ -480,11 +496,18 @@
                                                             <h6 data-name="product_name" class="product-name"><a
                                                                     href="#"
                                                                     title="Casual Shirt With Ruffle Hem">
-                                                                    {{ $item->name }}..</a>
-                                                            </h6>
-                                                            <span class="price"><span class="amount"><span
-                                                                        class="currencySymbol">$</span>{{ $item->price }}.00</span>
-                                                            </span>
+                                                                    {{ $item->name }} &nbsp; {{ $item->brands->name }}</a></h6>
+                                                            @if (Auth::User())
+                                                                <span class="price"><span class="amount"><span
+                                                                            class="currencySymbol">$</span>{{ $item->price }}.00</span>
+                                                                            <!-- <form action="/">
+
+             <input class="btn pull-right mt_30" type="submit" value="{{ __('Add to cart') }}" />
+
+         </form> -->
+
+                                                                        </span>
+                                                            @endif
                                                         </div>
                                                     </div>
                                                 </div>

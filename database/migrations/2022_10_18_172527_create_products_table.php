@@ -23,6 +23,7 @@ return new class extends Migration
             $table->integer('brand_id')->references('id')->on('brands');
             $table->integer('category_id');
             $table->integer('quantity');
+            $table->integer('quantity_price')->nullable();
             $table->float('price');
             $table->float('price_purchas');
             $table->string('profile_image')->nullable();

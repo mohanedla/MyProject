@@ -453,8 +453,9 @@
                                                     class="fa fa-star fa-stack-x"></i></span> </div> --}}
 
                                             <span class="price">
-                                                <h3 class="amount"><span
-                                                        class="currencySymbol">$</span>{{ $product->price }}</h3>
+                                                <h5 class="amount"><span
+                                                        class="currencySymbol">$</span>{{ $product->price }}&nbsp;
+                                                        {{ $product->brands->name}}</h5>
                                                 <h3 class="product-desc mt_20 mb_60">{{ __('Specifications') }}
                                                     : {{ $product->specification }} </h3>
                                                 <!-- <form action="/">

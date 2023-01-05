@@ -287,10 +287,9 @@
                             @endif
                             @if (Auth::user())
                                 @if (Auth::user()->role == '3')
-                            <!-- <li> <a href="blog_page.html">{{__('Blog')}}</a></li> -->
                 <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{__('previous orders')}} </a>
                   <ul class="dropdown-menu">
-                    <li> <a href="cart_page.html">طلبية 1 </a></li>
+                    <li> <a href="/old_Bills">طلبية 1 </a></li>
                     <li> <a href="checkout_page.html">طلبية 2</a></li>
                  
                   </ul>

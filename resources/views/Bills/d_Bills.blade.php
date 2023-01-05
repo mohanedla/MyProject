@@ -42,6 +42,7 @@
                             <th style="width: 50px;" scope="col">{{ __('invoice number') }}</th>
                             <th style="width: 50px;" scope="col">{{ __('User name') }}</th>
                             <th style="width: 50px;" scope="col">{{ __('Email Address') }}</th>
+                            <th style="width: 50px;" scope="col">{{ __('Phone Number') }}</th>
                             <th style="width: 50px;" scope="col"></th>
 
 
@@ -65,6 +66,9 @@
                             </td>
                             <td>
                                 {{$order->user->email}}
+                            </td>
+                            <td>
+                                {{$order->user->phone_number}}
                             </td>
 
 
@@ -106,6 +110,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+
                     <table class="table table-striped" id="table1">
                         <thead>
                             <tr>
@@ -114,6 +119,9 @@
                             </tr>
                         </thead>
                         <tbody id="bodyrow">
+
+
+
                         </tbody>
                     </table>
                 </div>
@@ -137,8 +145,9 @@
     </footer>
 </div>
 <script>
+
 // function showDetails(pro,sizes,colors)
-{
+
 //     document.getElementById("productName").innerHTML = pro['name'];
 //     var table = document.getElementById("bodyrow");
 //     table.innerHTML = "";
@@ -149,6 +158,7 @@
 //     for(var i=0; i<max;i++){
 //         if (top) { var row = table.insertRow(-1); }
 //         else { var row = table.insertRow(); }
+
 //         // (B3) INSERT CELLS
 //         var cell = row.insertCell();
 //         cell.innerHTML = colors[i]['color']['name'];
@@ -156,5 +166,6 @@
 //         cell.innerHTML = sizes[i]['size']['name'];
 //     }
 // }
+
 </script>
 @endsection

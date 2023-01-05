@@ -228,6 +228,24 @@ class home extends Controller
         $del=Order::find($id)->delete();
         return redirect()->back();
     }
+    public function old_Bills()
+    {
+        // if(!Auth::check() )
+        // return redirect('/');
+        // if(Auth::user()->role != 1 && Auth::user()->role != 2)
+        //  return redirect('/');
+
+        // else{
+        $page = "old_Bills";
+        $brand=brand::all();
+        $collect = array('M'=>'Men','W'=>'Women','C'=>'Kids' );
+        $products=product::all();
+        $category_men=Men::all();
+        $category_women=Women::all();
+        $category_kids=Kids::all();
+        return View('bills.old_Bills',compact('products','collect','brand','category_men','category_women','category_kids'));
+        // return View('bills.old_Bills',compact('page','brand'));
+    }
         public function R1()
         {
             if(!Auth::check() )
@@ -236,6 +254,7 @@ class home extends Controller
              return redirect('/');
 
             else{
+                
             $page = "R1";
             return View('report.R1',compact("page"));
         }

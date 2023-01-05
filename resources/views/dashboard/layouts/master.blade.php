@@ -106,11 +106,13 @@
 
                         </li>
                         <li class="nav-item dropdown">
+                            @if (Auth::User()->unreadNotifications->count())
 
-                        <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-                            <i class="bi bi-bell"></i>
-                            <span class="badge bg-primary badge-number">4</span>
-                        </a><!-- End Notification Icon -->
+                            <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+                                <i class="bi bi-bell"></i>
+                                <span class="badge bg-primary badge-number">{{Auth::User()->unreadNotifications->count()}}</span>
+                            </a><!-- End Notification Icon -->
+                            @endif
 
                         <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
                             <li class="dropdown-header">
@@ -123,28 +125,40 @@
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-
+                            <li><a style="color: green" href="{{route('MarkAsRead')}}">{{ __('MarkAsRead')}}</a></li>
+                            @foreach (Auth::User()->unreadNotifications as $notification)
+                            <li style="background: whitesmoke" class="notification-item">
+                                <i class="bi bi-check-circle text-success"></i>
+                                <div>
+                                    <h4>Sit rerum fuga</h4>
+                                    <p>{{$notification->data['data']}}</p>
+                                    <p>2 hrs. ago</p>
+                                </div>
+                            </li>
+                            @endforeach
+                            @foreach (Auth::User()->readNotifications as $notification)
                             <li class="notification-item">
                                 <i class="bi bi-check-circle text-success"></i>
                                 <div>
                                     <h4>Sit rerum fuga</h4>
-                                    <p>Quae dolorem earum veritatis oditseno</p>
+                                    <p>{{$notification->data['data']}}</p>
                                     <p>2 hrs. ago</p>
                                 </div>
                             </li>
+                            @endforeach
 
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
 
-                            <li class="notification-item">
+                            {{-- <li class="notification-item">
                                 <i class="bi bi-info-circle text-primary"></i>
                                 <div>
                                     <h4>Dicta reprehenderit</h4>
                                     <p>Quae dolorem earum veritatis oditseno</p>
                                     <p>4 hrs. ago</p>
                                 </div>
-                            </li>
+                            </li> --}}
 
 
                             <li>

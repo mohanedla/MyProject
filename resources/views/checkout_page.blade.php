@@ -322,10 +322,29 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <br>
-
-                                                        <input type="submit" class="btn"
-                                                            data-loading-text="Loading..." id="button-login"
-                                                            value="{{ __('Register') }}">
+                    <form  action="{{ route('bills') }}" method="post" enctype="multipart/form-data">
+                        <br>
+                        <p style="color:black">
+                        {{ __('لقد تم خصم 200 من حسابك المصرفي ')}}
+                        نحن في انتظارك لتستلم الطلبية
+                        <br>
+                        </p> 
+                        <p style="color:black">
+                        {{ __('لقد تم خصم 200 من حسابك المصرفي  ')}}
+                        سيتم توصيل الطلبية إليك
+                        <br>
+                        </p>          
+                        <div class="modal-footer">
+                            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('Close')}}</button>
+                            <button type="submit" class="btn">{{ __('Save') }}</button> -->
+                            <input type="submit" class="btn"
+                            data-loading-text="Loading..." 
+                            value="{{ __('Register') }}">
+                        </div>
+    
+                    </div>
+                </form>
+                </div>
 
                                                     </div>
                                                 </div>

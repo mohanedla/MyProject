@@ -75,8 +75,8 @@
                                 </li>
                             @endguest
 
-                        
-                        
+
+
                             <li class="language dropdown"> <span class="dropdown-toggle" id="dropdownMenu1"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                     role="button">{{ __('Language') }}&nbsp;  <span class="caret"></span> </span>
@@ -91,7 +91,7 @@
                                     @endforeach
                                 </ul>
                             </li>
-<!-- 
+<!--
                             @if (Auth::user())
                                 @if (Auth::user()->role == '3')
                             <li class="currency dropdown">
@@ -102,8 +102,8 @@
                                 <li><a href="admin">{{__ ('طلبية 1')}}</a></li>
                                 <li><a href="user">{{__ ('طلبية 2')}}</a></li>
                             </ul>
-                            
-                        
+
+
                         @endif
                         @endif -->
                             @if (Auth::user())
@@ -141,7 +141,7 @@
                     </div>
                     <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="/home">
                             <img alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
-                             @if (Auth::User()) 
+                             @if (Auth::User())
                             <div class="col-xs-6 col-sm-4 shopcart">
                                 <div id="cart" class="btn-group btn-block mtb_40">
                                     <button type="button" class="btn" data-target="#cart-dropdown"
@@ -279,8 +279,8 @@
                                     </li>
                                 </ul>
                             </li>
-                            
-                      
+
+
 
                             @if (Auth::User())
                                 <li> <a href="shop">{{ __('shop') }}</a></li>
@@ -289,9 +289,19 @@
                                 @if (Auth::user()->role == '3')
                 <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{__('previous orders')}} </a>
                   <ul class="dropdown-menu">
-                    <li> <a href="/old_Bills">طلبية 1 </a></li>
-                    <li> <a href="checkout_page.html">طلبية 2</a></li>
-                 
+                    @php
+                        $i=0;
+                    @endphp
+                  @foreach ($old_order as $order)
+                    <li> <a href="/old_Bills/{{$order->id}}">طلبية {{++$i}} </a></li>
+                    @endforeach
+                  {{-- @foreach ($old_order as $order) --}}
+                  @empty($old_order->count())
+                  <li style="text-align: center;" > لايوجد طلبيات</li>
+                  @endempty
+                    {{-- @endforeach --}}
+                    {{-- @if($old_order==[]) --}}
+
                   </ul>
                 </li>
                 @endif

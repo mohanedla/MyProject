@@ -30,8 +30,12 @@ class home extends Controller
             $category_men=Men::all();
             $category_women=Women::all();
             $category_kids=Kids::all();
-            return View('index',compact('products','collect','brand','category_men','category_women','category_kids'));
-        }
+            $old_order=0;
+            if(Auth::check()){
+            $old_order=Order::where('user_id',Auth::User()->id)->get();
+            // dd($old_order);
+            }
+            return View('index',compact('old_order','products','collect','brand','category_men','category_women','category_kids'));        }
     public function category_page(Request $request)
         {
             $products = product::paginate($request->get('per_page', 5));
@@ -41,7 +45,12 @@ class home extends Controller
             $category_men=Men::all();
             $category_women=Women::all();
             $category_kids=Kids::all();
-            return View('category_page',compact('brand','collect','category_men','category_women','category_kids','products'));
+            $old_order=0;
+            if(Auth::check()){
+            $old_order=Order::where('user_id',Auth::User()->id)->get();
+            // dd($old_order);
+            }
+            return View('category_page',compact('old_order','brand','collect','category_men','category_women','category_kids','products'));
         }
 
     public function login_register()
@@ -68,7 +77,12 @@ class home extends Controller
             $category_men=Men::all();
             $category_women=Women::all();
             $category_kids=Kids::all();
-            return View('about',compact('collect','brand','category_men','category_women','category_kids'));
+            $old_order=0;
+            if(Auth::check()){
+            $old_order=Order::where('user_id',Auth::User()->id)->get();
+            // dd($old_order);
+            }
+            return View('about',compact('old_order','collect','brand','category_men','category_women','category_kids'));
         }
     public function contact_us()
         {
@@ -77,7 +91,12 @@ class home extends Controller
             $category_men=Men::all();
             $category_women=Women::all();
             $category_kids=Kids::all();
-            return View('contact_us',compact('collect','brand','category_men','category_women','category_kids'));
+            $old_order=0;
+            if(Auth::check()){
+            $old_order=Order::where('user_id',Auth::User()->id)->get();
+            // dd($old_order);
+            }
+            return View('contact_us',compact('old_order','collect','brand','category_men','category_women','category_kids'));
         }
         public function contact_notice(Request $request)
     {
@@ -111,7 +130,12 @@ class home extends Controller
             $category_men=Men::all();
             $category_women=Women::all();
             $category_kids=Kids::all();
-            return View('cart_page',compact('collect','brand','category_men','category_women','category_kids'));
+            $old_order=0;
+            if(Auth::check()){
+            $old_order=Order::where('user_id',Auth::User()->id)->get();
+            // dd($old_order);
+            }
+            return View('cart_page',compact('old_order','collect','brand','category_men','category_women','category_kids'));
 
         }
 
@@ -122,7 +146,12 @@ class home extends Controller
             $category_men=Men::all();
             $category_women=Women::all();
             $category_kids=Kids::all();
-            return View('checkout_page',compact('collect','brand','category_men','category_women','category_kids'));
+            $old_order=0;
+            if(Auth::check()){
+            $old_order=Order::where('user_id',Auth::User()->id)->get();
+            // dd($old_order);
+            }
+            return View('checkout_page',compact('old_order','collect','brand','category_men','category_women','category_kids'));
         }
 
         public function category (string $id, string $name)
@@ -132,7 +161,12 @@ class home extends Controller
             $category_kids=Kids::all();
             $brand=brand::all();
             $product=product::where('category_id',$id)->where('collection',$name)->get();
-            return View('category',compact('brand','product','category_men','category_women','category_kids','name'));
+            $old_order=0;
+            if(Auth::check()){
+            $old_order=Order::where('user_id',Auth::User()->id)->get();
+            // dd($old_order);
+            }
+            return View('category',compact('old_order','brand','product','category_men','category_women','category_kids','name'));
 
         }
 
@@ -228,7 +262,7 @@ class home extends Controller
         $del=Order::find($id)->delete();
         return redirect()->back();
     }
-    public function old_Bills()
+    public function old_Bills($id)
     {
         // if(!Auth::check() )
         // return redirect('/');
@@ -243,7 +277,12 @@ class home extends Controller
         $category_men=Men::all();
         $category_women=Women::all();
         $category_kids=Kids::all();
-        return View('bills.old_Bills',compact('products','collect','brand','category_men','category_women','category_kids'));
+        $old_bills=Bills::where('order_id',$id)->with('orders')->get();
+        $total=0;
+        foreach ($old_bills as $bill){
+            $total+=$bill->total;
+        }
+        return View('bills.old_Bills',compact('total','old_bills','products','collect','brand','category_men','category_women','category_kids'));
         // return View('bills.old_Bills',compact('page','brand'));
     }
         public function R1()

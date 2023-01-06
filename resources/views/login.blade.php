@@ -404,16 +404,7 @@
 <p style="color:black" > 
                          {{ __('You must be logged in to confirm the exchange rate')}}
 </p>
-                        <!-- @csrf
-                       <div class="form-group">
-                      <label for="firstname" class="col-form-label">{{ __('الشروط') }} </label>
-                        <input form-control style="width: 230px" type="text" id="recipient-name" name="password" class="form-input"
-                            placeholder="{{ __('Enter Password') }}" required="required" />
-                            @error('password')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror -->
+                    
                     </div>
                     </div>
 

@@ -59,13 +59,16 @@ public function update_user(){
         // dd($order->id);
         foreach($carts as $cart){
             $bills=new Bills;
-        $bills->order_id=$order->id;
-        $bills->name=$cart->name;
-        $bills->quantity=$cart->qty;
-        $bills->price=$cart->price;
-        $bills->total=$cart->price*$cart->qty;
-        $bills->price_dl=10000;
-        $bills->total_dl=10000;
+            $bills->order_id=$order->id;
+            $bills->name=$cart->name;
+            $bills->quantity=$cart->qty;
+            $bills->price=$cart->price;
+            $bills->total=$cart->price*$cart->qty;
+            $bills->price_dl=10000;
+            $bills->total_dl=10000;
+            $product = product::find($cart->id);
+            $product->quantity_price = $product->quantity_price+$cart->qty;
+            $product->save();
         $bills->save();
         }
         Cart::destroy();

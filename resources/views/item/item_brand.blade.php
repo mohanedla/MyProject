@@ -286,6 +286,8 @@
                                     @endphp
                                     @foreach ($products as $item)
                                         @if ($item->collection == $collect['M'])
+                                        @if($item->quantity>$item->quantity_price)
+
                                             <div class="product-grid">
                                                 <div class="item">
                                                     <div class="product-thumb">
@@ -355,6 +357,7 @@
                                                 $i++;
                                             @endphp
                                         @endif
+                                        @endif
                                     @endforeach
                                 </div>
                             </div>
@@ -367,6 +370,8 @@
                                 <div class="latest owl-carousel">
                                     @foreach ($products as $item)
                                         @if ($item->collection == $collect['W'])
+                                        @if($item->quantity>$item->quantity_price)
+
                                             <div class="product-grid">
                                                 <div class="item">
                                                     <div class="product-thumb">
@@ -434,6 +439,7 @@
                                                 </div>
                                             </div>
                                         @endif
+                                        @endif
                                     @endforeach
                                 </div>
                             </div>
@@ -446,6 +452,8 @@
                                 <div class="latest owl-carousel">
                                     @foreach ($products as $item)
                                         @if ($item->collection == $collect['C'])
+                                        @if($item->quantity>$item->quantity_price)
+
                                             <div class="product-grid">
                                                 <div class="item">
                                                     <div class="product-thumb">
@@ -512,6 +520,7 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                        @endif
                                         @endif
                                     @endforeach
                                 </div>

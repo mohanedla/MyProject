@@ -188,6 +188,27 @@
                                     </ul>
                                 </li>
                                 <li> <a href="shop">{{ __('shop') }}</a></li>
+                                @if (Auth::user())
+                                @if (Auth::user()->role == '3')
+                                <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{__('previous orders')}} </a>
+                  <ul class="dropdown-menu">
+                  @php
+                        $i=0;
+                    @endphp
+                  @foreach ($old_order as $order)
+                    <li> <a href="/old_Bills/{{$order->id}}">طلبية {{++$i}} </a></li>
+                    @endforeach
+                  {{-- @foreach ($old_order as $order) --}}
+                  @empty($old_order->count())
+                  <li style="text-align: center;" > لايوجد طلبيات</li>
+                  @endempty
+                    {{-- @endforeach --}}
+                    {{-- @if($old_order==[]) --}}
+
+                  </ul>
+                </li>
+                @endif
+                @endif
                                 <li> <a href="about">{{ __('About us') }}</a></li>
                                 <li> <a href="contact_us">{{ __('Contact us') }}</a></li>
                             </ul>
@@ -261,7 +282,6 @@
 
 
                 <div class="col-sm-8 col-lg-9 mtb_20">
-                    @if (!Auth::User()->bank_num)
                         <div class="panel panel-default " style="margin-left:3px;">
                             <div class="panel-heading">
 
@@ -281,14 +301,14 @@
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label class="control-label">{{ __('رقم الحساب المصرفي') }}</label>
-                                                <input type="text" name="bank_num" value=""
+                                                <input type="text" name="bank_num" value="{{Auth::user()->bank_num}}"
                                                     class="form-control">
                                             </div>
                                             <div class="form-group">
                                                 <label for="input-password"
                                                     class="control-label">{{ __('Address') }}</label>
                                                 <input type="text" class="form-control" name="address"
-                                                    placeholder="{{ __('') }}">
+                                                    placeholder="{{ __('') }} " value="{{Auth::user()->address}}">
 
 
                                             </div>
@@ -296,6 +316,7 @@
                                                 <label for="input-password"
                                                 class="control-label">{{ __('Phone Number') }}</label>
                                                 <input type="integer" class="form-control" name="phone_number"
+                                                value="{{Auth::user()->phone_number}}"
                                                 placeholder="{{ __('') }}">
                                             </div>
                                             <div class="form-group">
@@ -304,7 +325,7 @@
                                                     class="control-label">{{ __('Upload Picture') }}</label>
 
                                                 <input type="file" name="profile_image" id="file"
-                                                    class="form-control" value="" name="profile_image">
+                                                    class="form-control"  value="{{Auth::user()->profile_image}}" name="profile_image">
                                                 <label for="file">
                                                     <p class="file-name"></p>
                                                 </label>
@@ -316,35 +337,23 @@
                                                                 checked> {{ __('توصيل') }}
                                                         </label>
                                                         <label class="radio-inline">
-                                                            <input type="radio" name="recive" value="1"
+                                                            @if(Auth::user()->recive== 1)
+                                                             <input type="radio" name="recive" value="1"
                                                                 checked>{{ __('الإستلام في الشركة') }}
+                                                                @else
+                                                                <input type="radio" name="recive" value="1"
+                                                                >{{ __('الإستلام في الشركة') }}
+                                                                @endif
                                                         </label>
                                                     </div>
                                                     <div class="form-group">
                                                         <br>
-                    <form  action="{{ route('bills') }}" method="post" enctype="multipart/form-data">
-                        <br>
-                        <p style="color:black">
-                        {{ __('لقد تم خصم 200 من حسابك المصرفي ')}}
-                        نحن في انتظارك لتستلم الطلبية
-                        <br>
-                        </p> 
-                        <p style="color:black">
-                        {{ __('لقد تم خصم 200 من حسابك المصرفي  ')}}
-                        سيتم توصيل الطلبية إليك
-                        <br>
-                        </p>          
-                        <div class="modal-footer">
-                            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('Close')}}</button>
-                            <button type="submit" class="btn">{{ __('Save') }}</button> -->
-                            <input type="submit" class="btn"
-                            data-loading-text="Loading..." 
-                            value="{{ __('Register') }}">
-                        </div>
-    
-                    </div>
-                </form>
-                </div>
+                                                        
+<input type="submit" class="btn"
+                                                            data-loading-text="Loading..." id="button-login"
+                                                            value="{{ __('Register') }}">
+                                                 
+                                                       
 
                                                     </div>
                                                 </div>
@@ -355,14 +364,52 @@
                                 </div>
                             </div>
                         </div>
-                    @endif
-                    @if (Auth::User()->bank_num)
+                        <div class="modal fade" id="login_register" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h2 class="modal-title" id="exampleModalLabel" style="margin-left:230px; color:black"; >{{ __('the conditions')}}</h2>
+
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                <!-- </div> -->
+                <div class="modal-header">
+                    <form  action="{{ route('aymen') }}" method="post" enctype="multipart/form-data">
+                        @csrf
+                        <br>
+                        @if(Auth::user()->recive== 1)
+                        <p style="color:black">
+                        {{ __('لفد تم خصم قيمة الفاتورة من حسابك المصرفي')}}
+                        {{ __('نحن في انتظارك لإستلام منتجاتك')}}
+                        <br>
+                        <br>
+                        @else 
+                        <p style="color:black">
+                        {{ __('لفد تم خصم قيمة الفاتورة من حسابك المصرفي')}}
+                        {{ __('سيتم توصيل الطلبية إليك')}}
+                        <br>
+</p>
+<br>
+<br>
+@endif
+ <input type="submit" class="btn" id="button-confirm"
+                                                    value="{{ __('Confirm Order') }}">
+</form>
+                    
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+
+                </div>
+                    <!-- @if (Auth::User()->bank_num) -->
                         <div class="panel panel-default " style="margin-left:3px;">
                             <div class="panel-heading">
                                 <h3> {{ __('Confirm Order') }} &nbsp; &nbsp; </h3>
                                 <h4 class="panel-title">
                                     <a data-toggle="collapse" data-parent="#accordion"
-                                        href="#collapsesix">{{ __('Step') }} 2 <i
+                                        href="#collapsesix"> <i
                                             class="fa fa-caret-down"></i></a>
                                 </h4>
                             </div>
@@ -410,17 +457,17 @@
                                             <form class="form-horizontal" action="{{ route('aymen') }}"
                                                 method="post" enctype="multipart/form-data">
                                                 @csrf
-
+                                                <a href="#login_register"class="btn" data-toggle="modal" data-whatever="@getbootstrap">
+                                                {{ __('Confirm Order') }}</a>
                                                 {{-- <input type="hidden" name='total' value="{{\Cart::priceTotal()}}"> --}}
-                                                <input type="submit" class="btn" id="button-confirm"
-                                                    value="{{ __('Confirm Order') }}">
+                                               
                                             </form>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    @endif
+                    <!-- @endif -->
                 </div>
             </div>
         </div>

@@ -289,9 +289,19 @@
                                 @if (Auth::user()->role == '3')
                 <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{__('previous orders')}} </a>
                   <ul class="dropdown-menu">
-                    <li> <a href="/old_Bills">طلبية 1 </a></li>
-                    <li> <a href="checkout_page.html">طلبية 2</a></li>
-                 
+                  @php
+                        $i=0;
+                    @endphp
+                  @foreach ($old_order as $order)
+                    <li> <a href="/old_Bills/{{$order->id}}">طلبية {{++$i}} </a></li>
+                    @endforeach
+                  {{-- @foreach ($old_order as $order) --}}
+                  @empty($old_order->count())
+                  <li style="text-align: center;" > لايوجد طلبيات</li>
+                  @endempty
+                    {{-- @endforeach --}}
+                    {{-- @if($old_order==[]) --}}
+
                   </ul>
                 </li>
                 @endif
@@ -333,6 +343,7 @@
                                 <div class="latest owl-carousel">
                                     @foreach ($products as $item)
                                         @if ($item->collection == $collect['M'])
+                                        @if($item->quantity>$item->quantity_price)
                                             <div class="product-grid">
                                                 <div class="item">
                                                     <div class="product-thumb">
@@ -400,6 +411,7 @@
                                                 </div>
                                             </div>
                                         @endif
+                                        @endif
                                     @endforeach
                                 </div>
                             </div>
@@ -420,6 +432,7 @@
                             <div class="latest owl-carousel">
                                 @foreach ($products as $item)
                                     @if ($item->collection == $collect['W'])
+                                    @if($item->quantity>$item->quantity_price)
                                         <div class="product-grid">
                                             <div class="item">
                                                 <div class="product-thumb">
@@ -485,7 +498,10 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div @endif
+        </div>
+         @endif
+         @endif
+
                                     @endforeach
                             </div>
                         </div>
@@ -502,6 +518,8 @@
                                 <div class="latest owl-carousel">
                                     @foreach ($products as $item)
                                         @if ($item->collection == $collect['C'])
+                                        @if($item->quantity>$item->quantity_price)
+
                                             <div class="product-grid">
                                                 <div class="item">
                                                     <div class="product-thumb">
@@ -568,6 +586,7 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                        @endif
                                         @endif
                                     @endforeach
                                 </div>

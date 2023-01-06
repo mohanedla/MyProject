@@ -90,8 +90,8 @@
                                 </li>
                             @endguest
 
-                        
-                        
+
+
                             <li class="language dropdown"> <span class="dropdown-toggle" id="dropdownMenu1"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                     role="button">{{ __('Language') }}&nbsp;  <span class="caret"></span> </span>
@@ -106,7 +106,7 @@
                                     @endforeach
                                 </ul>
                             </li>
-<!-- 
+<!--
                             @if (Auth::user())
                                 @if (Auth::user()->role == '3')
                             <li class="currency dropdown">
@@ -117,8 +117,8 @@
                                 <li><a href="admin">{{__ ('طلبية 1')}}</a></li>
                                 <li><a href="user">{{__ ('طلبية 2')}}</a></li>
                             </ul>
-                            
-                        
+
+
                         @endif
                         @endif -->
                             @if (Auth::user())
@@ -155,7 +155,7 @@
                                 class="fa fa-bars"></i></span></button>
                     <div class="collapse navbar-collapse js-navbar-collapse">
                         <ul id="menu" class="nav navbar-nav">
-                            <li> <a href="home">{{ __('Home') }}</a></li>
+                            <li> <a href="/home">{{ __('Home') }}</a></li>
                             <li class="dropdown mega-dropdown"> <a href="#" class="dropdown-toggle"
                                     data-toggle="dropdown">{{ __('Collection') }} </a>
 
@@ -209,8 +209,8 @@
                                     </li>
                                 </ul>
                             </li>
-                            
-                      
+
+
 
                             @if (Auth::User())
                                 <li> <a href="shop">{{ __('shop') }}</a></li>
@@ -221,7 +221,7 @@
                   <ul class="dropdown-menu">
                     <li> <a href="/old_Bills">طلبية 1 </a></li>
                     <li> <a href="checkout_page.html">طلبية 2</a></li>
-                 
+
                   </ul>
                 </li>
                 @endif
@@ -266,7 +266,7 @@
 
                                     <th scope="col">{{ __('#')}}</th>
                                     <th>{{ __('Product Name') }}</th>
-                                    <th scope="col">{{ __('photo')}}</th>
+                                    {{-- <th scope="col">{{ __('photo')}}</th> --}}
                                     <th>{{ __('Quantity') }}</th>
                                     <th>{{ __('Unit Price') }}</th>
                                     <th>{{ __('Total') }}</th>
@@ -276,38 +276,42 @@
                                     </tr>
                                   </thead>
                                   <tbody>
-                                    <tr>
-                                      <td>1</td>
-                                      <td>Sven Ottlieb</td>
-                                      <td>Sven Ottlieb</td>
-                                      <td>Sven Ottlieb</td>
-                                      <td>Drachenblut Delikatessen</td>
-                                      <td>Customers</td>
-                                      <td>Aachen</td>
-                                      <td>Aachen</td>
-                                      <!-- <td>
-                                        <a href=""><img src="{{ asset('images/icone/edit-solid-24.png') }}"></a>
-                                        <a href=""><img src="{{ asset('images/icone/x-square-solid-24.png') }}"></a>
-                                    </td> -->
-                                    </tr>
-                                    <tr>
-                                      <td>1</td>
-                                      <td>Sven Ottlieb</td>
-                                      <td>Sven Ottlieb</td>
-                                      <td>Sven Ottlieb</td>
+                                    @php
+                                        $id=0;
+                                    @endphp
+                                    @foreach ($old_bills as $bill)
 
-                                      <td>Drachenblut Delikatessen</td>
-                                      <td>Customers</td>
-                                      <td>Aachen</td>
-                                      <td>Aachen</td>
-                                      <!-- <td>
-                                        <a href=""><img src="{{ asset('images/icone/edit-solid-24.png') }}"></a>
-                                        <a href=""><img src="{{ asset('images/icone/x-square-solid-24.png') }}"></a>
-                                    </td> -->
+                                    <tr>
+                                        <td>{{++$id}}</td>
+                                        <td>{{$bill->name}}</td>
+                                        <td>{{$bill->quantity}}</td>
+                                        <td>{{$bill->price}}</td>
+                                        <td>{{$bill->total}}</td>
+                                        <td>{{$bill->price_dl}}</td>
+                                        <td>{{$bill->total_dl}}</td>
+
+                                        <!-- <td>
+                                            <a href=""><img src="{{ asset('images/icone/edit-solid-24.png') }}"></a>
+                                            <a href=""><img src="{{ asset('images/icone/x-square-solid-24.png') }}"></a>
+                                        </td> -->
                                     </tr>
-                                    
+
+                                    @endforeach
+
 
                                   </tbody>
+                                  <tfoot>
+                                    <tr>
+                                    <td ></td>
+                                    <td ></td>
+                                    <td ></td>
+                                    <td ></td>
+                                    <th >{{$total}}</th>
+                                    <td ></td>
+                                    <th ><b>:المجموع</b></th>
+
+                                    </tr>
+                                  </tfoot>
                                 </table>
                               </div>
 
@@ -334,5 +338,4 @@
                     </body>
 
                     </html>
-
 

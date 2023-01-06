@@ -249,6 +249,27 @@
                                 @if (Auth::User())
                                     <li> <a href="/shop">{{ __('shop') }}</a></li>
                                 @endif
+                                @if (Auth::user())
+                                @if (Auth::user()->role == '3')
+                                <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{__('previous orders')}} </a>
+                  <ul class="dropdown-menu">
+                  @php
+                        $i=0;
+                    @endphp
+                  @foreach ($old_order as $order)
+                    <li> <a href="/old_Bills/{{$order->id}}">طلبية {{++$i}} </a></li>
+                    @endforeach
+                  {{-- @foreach ($old_order as $order) --}}
+                  @empty($old_order->count())
+                  <li style="text-align: center;" > لايوجد طلبيات</li>
+                  @endempty
+                    {{-- @endforeach --}}
+                    {{-- @if($old_order==[]) --}}
+
+                  </ul>
+                </li>
+                @endif
+                @endif
                                 <li> <a href="/about">{{ __('About us') }}</a></li>
                                 @if (Auth::User())
                                     <li> <a href="/contact_us">{{ __('Contact us') }}</a></li>
@@ -322,19 +343,19 @@
 
 
                 @foreach ($products as $product)
-                    <div class="col-sm-8 col-lg-9 mtb_20">
-                        <div class="row mt_10 ">
+                    <div class="col-sm-8 col-lg-9 mtb_20" >
+                        <div class="row mt_10 " >
                             <div class="col-md-6">
-                                <div><a class="thumbnails"> <img data-name="product_image"
+                                <div ><a class="thumbnails"> <img data-name="product_image"
                                             src=" {{ asset(Storage::url($product->profile_image)) }}" /></a></div>
                                 <div id="product-thumbnail" class="owl-carousel">
                                     <div class="item">
                                     </div>
-
+   
                                     @foreach ($product->images as $image)
-                                        <div class="item">
+                                        <div class="item" >
 
-                                            <div class="image-additional"><a class="thumbnail"
+                                            <div class="image-additional" ><a class="thumbnail"
                                                     href="{{ asset(Storage::url($image->image)) }}"
                                                     data-fancybox="group1"> <img
                                                         src="{{ asset(Storage::url($image->image)) }}" /></a></div>
@@ -420,7 +441,7 @@
                                                     <label>
                                                         <h4>{{ __('Quantity') }}</h4>
                                                     </label>
-                                                    <input name="quantity" min="1" value="1"
+                                                    <input name="quantity" min="1" max="{{$product->quantity - $product->quantity_price}}" value="1"
                                                         type="number">
                                                     <input type="hidden" value="{{ $product->profile_image }}"  name="image">
                                                     <br>

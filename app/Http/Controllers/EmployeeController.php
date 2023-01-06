@@ -42,6 +42,7 @@ class EmployeeController extends Controller
     {
         request()->validate(
         [
+             //    يجب ان يدخل
             'name'  => "required|string",
             'email' => 'required|email|unique:users',
             'password' => 'required|min:8|confirmed',

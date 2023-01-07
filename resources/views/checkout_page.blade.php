@@ -190,7 +190,7 @@
                                 <li> <a href="shop">{{ __('shop') }}</a></li>
                                 @if (Auth::user())
                                 @if (Auth::user()->role == '3')
-                                <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{__('previous orders')}} </a>
+                            <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{__('previous orders')}} </a>
                   <ul class="dropdown-menu">
                   @php
                         $i=0;
@@ -403,13 +403,13 @@
                     </div>
 
                 </div>
-                    <!-- @if (Auth::User()->bank_num) -->
+                    @if (Auth::User()->bank_num)
                         <div class="panel panel-default " style="margin-left:3px;">
                             <div class="panel-heading">
                                 <h3> {{ __('Confirm Order') }} &nbsp; &nbsp; </h3>
                                 <h4 class="panel-title">
                                     <a data-toggle="collapse" data-parent="#accordion"
-                                        href="#collapsesix"> <i
+                                        href="#collapsesix">{{ __('Step') }} 2 <i
                                             class="fa fa-caret-down"></i></a>
                                 </h4>
                             </div>
@@ -467,7 +467,7 @@
                                 </div>
                             </div>
                         </div>
-                    <!-- @endif -->
+                    @endif
                 </div>
             </div>
         </div>

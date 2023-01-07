@@ -306,8 +306,8 @@
                                     <td ></td>
                                     <td ></td>
                                     <td ></td>
-                                    <th >{{$total}}</th>
                                     <td ></td>
+                                    <th >{{$total}}</th>
                                     <th ><b>:المجموع</b></th>
 
                                     </tr>

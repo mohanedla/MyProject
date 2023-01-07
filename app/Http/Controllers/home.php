@@ -23,19 +23,20 @@ use auth;
 class home extends Controller
 {
     public function index()
-        {
-            $collect = array('M'=>'Men','W'=>'Women','C'=>'Kids' );
-            $brand=brand::all();
-            $products=product::all();
-            $category_men=Men::all();
-            $category_women=Women::all();
-            $category_kids=Kids::all();
-            $old_order=0;
-            if(Auth::check()){
-            $old_order=Order::where('user_id',Auth::User()->id)->get();
-            // dd($old_order);
-            }
-            return View('index',compact('old_order','products','collect','brand','category_men','category_women','category_kids'));        }
+    {
+        $collect = array('M'=>'Men','W'=>'Women','C'=>'Kids' );
+        $brand=brand::all();
+        $products=product::all();
+        $category_men=Men::all();
+        $category_women=Women::all();
+        $category_kids=Kids::all();
+        $old_order=0;
+        if(Auth::check()){
+        $old_order=Order::where('user_id',Auth::User()->id)->get();
+        // dd($old_order);
+        }
+        return View('index',compact('old_order','products','collect','brand','category_men','category_women','category_kids'));
+    }
     public function category_page(Request $request)
         {
             $products = product::paginate($request->get('per_page', 5));
@@ -293,7 +294,7 @@ class home extends Controller
              return redirect('/');
 
             else{
-                
+
             $page = "R1";
             return View('report.R1',compact("page"));
         }

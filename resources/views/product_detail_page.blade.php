@@ -257,27 +257,8 @@
                                 @if (Auth::User())
                                     <li> <a href="/shop">{{ __('shop') }}</a></li>
                                 @endif
-                                @if (Auth::user())
-                                @if (Auth::user()->role == '3')
-                                <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{__('previous orders')}} </a>
-                  <ul class="dropdown-menu">
-                  @php
-                        $i=0;
-                    @endphp
-                  @foreach ($old_order as $order)
-                    <li> <a href="/old_Bills/{{$order->id}}">طلبية {{++$i}} </a></li>
-                    @endforeach
-                  {{-- @foreach ($old_order as $order) --}}
-                  @empty($old_order->count())
-                  <li style="text-align: center;" > لايوجد طلبيات</li>
-                  @endempty
-                    {{-- @endforeach --}}
-                    {{-- @if($old_order==[]) --}}
-
-                  </ul>
-                </li>
-                @endif
-                @endif
+                             
+                  
                                 <li> <a href="/about">{{ __('About us') }}</a></li>
                                 @if (Auth::User())
                                     <li> <a href="/contact_us">{{ __('Contact us') }}</a></li>

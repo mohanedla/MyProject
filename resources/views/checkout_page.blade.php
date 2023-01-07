@@ -417,7 +417,7 @@
                                 <h3> {{ __('Confirm Order') }} &nbsp; &nbsp; </h3>
                                 <h4 class="panel-title">
                                     <a data-toggle="collapse" data-parent="#accordion"
-                                        href="#collapsesix">{{ __('Step') }} 2 <i
+                                        href="#collapsesix"> <i
                                             class="fa fa-caret-down"></i></a>
                                 </h4>
                             </div>
@@ -451,8 +451,19 @@
                                             </tbody>
                                             <tbody>
                                                 <tr>
-                                                    <td class="text-right"colspan="4">${{ \Cart::priceTotal() }}
-                                                    </td>
+                                                @php
+                        $i=0;
+                    @endphp
+                  @foreach ($old_order as $order)
+                  <input type="hidden" {{++$i}}  >
+                    @endforeach
+                    @if($i>3)
+                                                    <td class="text-right"colspan="4">$   ({{  \Cart::priceTotal() - \Cart::priceTotal() *0.15 }})
+                                               @else
+                                               <td class="text-right"colspan="4">$   {{  \Cart::priceTotal()  }}
+
+                                                   </td>
+                                                   @endif   
                                                     <td></td>
                                                     <td class="text-right"colspan="4">$1,000.00</td>
                                                 </tr>
@@ -467,8 +478,20 @@
                                                 @csrf
                                                 <a href="#login_register"class="btn" data-toggle="modal" data-whatever="@getbootstrap">
                                                 {{ __('Confirm Order') }}</a>
-                                                {{-- <input type="hidden" name='total' value="{{\Cart::priceTotal()}}"> --}}
-                                               
+                                                
+                                                @php
+                
+                                                $i=0;
+                    @endphp
+                  @foreach ($old_order as $order)
+                  <input type="hidden" {{++$i}}  >
+                    @endforeach
+                    @if($i>3)
+                    {{-- <input type="hidden" name='total' value="{{  \Cart::priceTotal() - \Cart::priceTotal() *0.15 }}"> }}
+                    @else
+
+                     {{-- <input type="hidden" name='total' value="{{\Cart::priceTotal()}}"> --}}
+                     @endif   
                                             </form>
                                         </div>
                                     </div>

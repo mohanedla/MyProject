@@ -107,10 +107,10 @@
                                             <h5><strong>${{ $bill->total }}</strong></h5>
                                         </td>
                                         <td class="text-right">
-                                            <h5><strong>500DL </strong></h5>
+                                            <h5><strong> {{ $bill->price * 5.12 }} DL</strong></h5>
                                         </td>
                                         <td class="text-right">
-                                            <h5><strong>2000DL </strong></h5>
+                                            <h5><strong>{{ $bill->total *5.12 }}DL </strong></h5>
                                         </td>
 
                                     </tr>
@@ -128,6 +128,7 @@
                                         <td class="text-right">
                                             {{-- <h2><strong>${{ $bill->totals_dl }} </strong></h2> --}}
                                         </td>
+                                        
                                 <!-- <td class="text-left text-danger">
                                         <h2><strong><i class="fa fa-inr"></i>   120$</strong></h2></td>
                                     <td class="text-left text-danger">

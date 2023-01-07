@@ -57,9 +57,19 @@
                                     </li>
                                 @endif
                             @else
+                            @if( Auth::user()->profile_image)
+                            <img src="{{ asset(Storage::url( Auth::user()->profile_image)) }}" alt="Profile"
+                             style="  border-radius: 50%; 
+                                    -webkit-border-radius: 50%; 
+                                    -moz-border-radius: 50%;
+                                    width: 40px; 
+        height: 40px;">
+        @endif
+                        </a>
                                 <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                         role="button">{{ Auth::user()->name }} <span class="caret"></span> </span>
+                                        <a class="rounded-circle">
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
 
                                         <li><a class="dropdown-item" href="/home"

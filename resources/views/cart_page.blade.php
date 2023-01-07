@@ -325,7 +325,7 @@
                                         <td class="text-right"><a class="close-cart" href="{{ url('remove', $item->rowId ) }}"><i
                                             class="fa fa-times-circle"></i>
                                         </a></td>
-
+                                        <input type="hidden"> {{$item->profile_image}}
                                     </tr>
                                     @endforeach
                                     @endif

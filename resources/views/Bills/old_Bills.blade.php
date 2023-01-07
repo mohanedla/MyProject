@@ -274,7 +274,7 @@
 
                                     <th scope="col">{{ __('#')}}</th>
                                     <th>{{ __('Product Name') }}</th>
-                                    {{-- <th scope="col">{{ __('photo')}}</th> --}}
+                                    <th>{{ __('photo') }}</th>
                                     <th>{{ __('Quantity') }}</th>
                                     <th>{{ __('Unit Price') }}</th>
                                     <th>{{ __('Total') }}</th>
@@ -292,6 +292,7 @@
                                     <tr>
                                         <td>{{++$id}}</td>
                                         <td>{{$bill->name}}</td>
+                                        <td>{{$bill->profile_image}}</td>
                                         <td>{{$bill->quantity}}</td>
                                         <td>{{$bill->price}}</td>
                                         <td>{{$bill->total}}</td>

@@ -96,7 +96,7 @@ class home extends Controller
             if(Auth::check()){
             $old_order=Order::where('user_id',Auth::User()->id)->get();
             // dd($old_order);
-            }
+            }  
             return View('contact_us',compact('old_order','collect','brand','category_men','category_women','category_kids'));
         }
         public function contact_notice(Request $request)

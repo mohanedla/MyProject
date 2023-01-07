@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer('order_id')->references('id')->on('orders');
             $table->string('name');
             $table->integer('quantity');
+            $table->string('profile_image')->nullable();
             $table->float('price');
             $table->float('total');
             $table->float('price_dl');

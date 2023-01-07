@@ -60,6 +60,7 @@ public function update_user(){
         foreach($carts as $cart){
             $bills=new Bills;
             $bills->order_id=$order->id;
+            $bills->profile_image=$cart->profile_image;
             $bills->name=$cart->name;
             $bills->quantity=$cart->qty;
             $bills->price=$cart->price;

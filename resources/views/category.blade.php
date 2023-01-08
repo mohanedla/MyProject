@@ -302,13 +302,14 @@
 
     <!-- =====  BANNER END  ===== -->
     <!-- =====  CONTAINER START  ===== -->
-    <div class="container">
+    <div class="container" >
+        
         <!-- =====  SUB BANNER  STRAT ===== -->
-        <div class="row ">
-            <div id="column-left" class="col-sm-4 col-lg-3 hidden-xs">
-                <div id="category-menu" class="navbar collapse in mb_40">
-                    <div class="nav-responsive">
-                        <div class="heading-part">
+        <div class="row " >
+            <div id="column-left" class="col-sm-4 col-lg-3 hidden-xs" style="height: 200px; width: 250px;">
+                <div id="category-menu" class="navbar collapse in mb_40"  style="height: 200px; width: 250px;">
+                    <div class="nav-responsive" style="height: 200px; width: 250px;">
+                        <div class="heading-part" >
                             <h2 class="main_title">{{ __('Women') }}</h2>
                         </div>
                         <li class="nav navbar-nav">
@@ -316,7 +317,7 @@
                                 @foreach ($category_women as $women)
                                 <li><a href="/category/{{$women->id}}/Women">{{ __($women->name) }}</a></li>
                                 
-                            @endforeach
+                            @endforeach  
                             </ul>
                         </li>
                         <!-- </ul> -->
@@ -392,16 +393,17 @@
                         $i=0;
                     @endphp
                     @foreach ($product as $item)
+                    @if($item->quantity>$item->quantity_price)
 
                     <div class="product-layout product-grid col-md-4 col-xs-6 ">
                         <div class="item">
                             <div class="product-thumb clearfix mb_30">
-                                <div class="image product-imageblock" style="height: 418px;" >
+                                <div class="image product-imageblock" style="height: 200px; width: 250px;" >
                                         <a href="/product_detail_page/{{$item->id}}" style="height: -webkit-fill-available;">
-                                            <img style="height: -webkit-fill-available;" data-name="product_image"
+                                            <img style="height: 200px; width: 250px;" data-name="product_image"
                                             src="{{ asset(Storage::url($item->profile_image)) }}" alt="iPod Classic"
                                             title="iPod Classic" class="img-responsive" />
-                                            <img style="height: -webkit-fill-available;"
+                                            <img style="height: 200px; width: 250px;"
                                             src="{{ asset(Storage::url($item->profile_image)) }}" alt="iPod Classic"
                                             title="iPod Classic" class="img-responsive" /> </a>
                                    
@@ -431,9 +433,12 @@
                                             class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
                                                 class="fa fa-star fa-stack-x"></i></span> </div>
                                                 
-                                    <span class="price"><span class="amount"><span
-                                                class="currencySymbol">$</span>{{ $item->price }}.00</span>
-                            
+                                                <span class="price">
+                                                <h5 class="amount"><span
+                                                        class="currencySymbol">$</span>{{ $item->price }}&nbsp;
+                                                        {{ $item->brands->name}}</h5>
+                                                <h3 class="product-desc mt_20 mb_60">{{ __('Specifications') }}
+                                                    : {{ $item->specification }} </h3>
                                     </span>
                                     
                                 </div>
@@ -447,6 +452,7 @@
                     @php
                     $i++;
                 @endphp
+                @endif
                     @endforeach
 
                 </div>

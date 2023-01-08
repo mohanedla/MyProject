@@ -54,6 +54,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/delete_bills/{id}',[App\Http\Controllers\home::class,'delete_bill']);
     Route::get('/old_Bills/{id}',[App\Http\Controllers\home::class,'old_Bills']);
 
+
+    Route::get('/notifications',[App\Http\Controllers\home::class,'notifications']);
+
+
     Route::get('/dashboard_home',[App\Http\Controllers\home::class,'dashboard_home']);
 
     // end Controller home

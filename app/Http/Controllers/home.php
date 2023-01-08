@@ -349,8 +349,19 @@ class home extends Controller
             return View('report.R5',compact("page"));
         }
     }
+    public function notifications()
+    {
+        if(!Auth::check() )
+        return redirect('/');
+        if(Auth::user()->role != 1 && Auth::user()->role != 2)
+         return redirect('/');
 
+        else{
 
+        $page = "notifications";
+        return View('notifications',compact("page"));
+    }
+    }
      function footer()
         {
             return View('footer');

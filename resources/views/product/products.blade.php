@@ -151,9 +151,9 @@
 
                             </tr>
                             <div>
-                        <h1 class="modal-title fs-5"> {{ __('Purchasing price') }} : &nbsp; <span id="price1"> </span>
+                        <h1 class="modal-title fs-5"> {{ __('Purchasing price') }} : &nbsp; <span id="price2"> </span>
                         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                         {{ __('Selling price') }}  : &nbsp; <span id="price2"></span>
+                         {{ __('Selling price') }}  : &nbsp; <span id="price1"></span>
                     </h1>
                 </div>
                                 <th style="width: 50px;" scope="col">{{ __('Colors') }}</th>

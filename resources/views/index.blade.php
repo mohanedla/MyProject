@@ -355,7 +355,7 @@
                                     @foreach ($products as $item)
                                         @if ($item->collection == $collect['M'])
                                         @if($item->quantity>$item->quantity_price)
-                                            <div class="product-grid">
+                                            <div class="product-grid">   
                                                 <div class="item">
                                                     <div class="product-thumb">
                                                         <div class="image product-imageblock" style="height: 300px;">

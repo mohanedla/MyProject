@@ -23,6 +23,7 @@ return new class extends Migration
             $table->float('total');
             $table->float('price_dl');
             $table->float('total_dl');
+            $table->boolean('status')->nullable();
             $table->timestamps();
         });
     }

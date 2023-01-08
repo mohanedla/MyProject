@@ -58,7 +58,7 @@
                                         </li>
                                     @endif
                                 @else
-                                @if( Auth::user()->profile_image)
+                          @if( Auth::user()->profile_image)
                             <img src="{{ asset(Storage::url( Auth::user()->profile_image)) }}" alt="Profile"
                              style="  border-radius: 50%; 
                                     -webkit-border-radius: 50%; 
@@ -327,12 +327,14 @@
                     <div id="category-menu" class="navbar collapse in mb_40" aria-expanded="true" style=""
                         role="button"></div>
                     <!-- <div class="nav-responsive">
-                    </div> -->
+                    </div> --> 
                     <!-- </div> -->
                     <!-- <div id="column-left" class="col-sm-4 col-lg-3 hidden-xs"> -->
                     <div class="filter left-sidebar-widget mb_50">
                         <div id="category-menu" class="navbar collapse in mb_40">
                             <div class="nav-responsive">
+
+                            
                                 <div class="heading-part">
                                     <h2 class="main_title">{{ __('Women') }}</h2>
                                 </div>
@@ -376,7 +378,7 @@
                         </div>
 
                     </div>
-                    <div class="filter left-sidebar-widget mb_50">
+                    <!-- <div class="filter left-sidebar-widget mb_50">
                         <div class="heading-part mtb_20 ">
                             <h2 class="main_title">{{ __('Refine Search') }}</h2>
                         </div>
@@ -397,7 +399,7 @@
                                 <button type="button" class="btn">{{ __('Search') }}</button>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
 

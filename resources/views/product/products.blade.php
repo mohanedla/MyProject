@@ -73,7 +73,7 @@
                                     <td>{{$x->price}}$</td>
                                     <td>{{$x->user->name}}</td>
                                     <td>
-                                        
+
 
                                         <div class="avatar avatar-xl me-3">
                                             <img src="{{asset(Storage::url($x->profile_image))}}" alt="" srcset="">
@@ -119,7 +119,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                <!-- <h1 class="modal-title fs-5"> {{ __('Name') }} &nbsp; &nbsp; :  <span id="productName"></span> </h1> -->
+
 
                     <table class="table table-striped" id="table1">
                         <thead>
@@ -129,23 +129,14 @@
                                         <div class="carousel-item active">
                                             <img  class="d-block w-100" id="image"  style="height: 300px;">
                                         </div>
-                                        <p id="create_div_img">
-
-                                        </p>
 
 
-
-                                        <div class="carousel-item" >
-                                            <img  class="d-block w-100" id="imag" style="height: 300px;">
-                                        </div>
-
-
-                                    <a class="carousel-control-prev" href="#Gallerycarousel" role="button" type="button" data-bs-slide="prev">
+                                    {{-- <a class="carousel-control-prev" href="#Gallerycarousel" role="button" type="button" data-bs-slide="prev">
                                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                     </a>
                                     <a class="carousel-control-next" href="#Gallerycarousel" role="button" data-bs-slide="next">
                                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    </a>
+                                    </a> --}}
                                 </div>
 
 
@@ -216,25 +207,16 @@ function showDetails(pro,images,sizes,colors,img)
         let div;
         var img1;
         var img1 = document.getElementById("imag");
-                // div = document.createElement('div');
-                // div.className = 'carousel-item';
-                // img1 = document.createElement("img");
-                // img1.className = 'class="d-block w-100"';
-                // var create_div = document.getElementById("create_div_img");
-                // img1.style.height='300px';
-                // img1.style.width= '100%';
-                // img1.src="";
-            // create_div.appendChild(div);
-            // div.appendChild(img1);
+
         console.log(images.length);{{$i=0;}}
         // value(images.length);
 
-        for (let i = 0; i < images.length; i++) {
-            img1.src="/storage"+images[i]['image'].slice(6);
-                console.log(img1.src);
+    //     for (let i = 0; i < images.length; i++) {
+    //         img1.src="/storage"+images[i]['image'].slice(6);
+    //             console.log(img1.src);
 
-                change(img1.src);
-    }
+    //             change(img1.src);
+    // }
 }
 </script>
 @endsection

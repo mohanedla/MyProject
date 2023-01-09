@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="{{ URL::to('assets/vendors/perfect-scrollbar/perfect-scrollbar.css') }}">
     <link rel="stylesheet" href="{{ URL::to('assets/vendors/bootstrap-icons/bootstrap-icons.css') }}">
     <link rel="stylesheet" href="{{ URL::to('assets/css/app.css') }}">
+    <link rel="stylesheet" href="{{ URL::to('assets/css/style.css') }}">
     <link rel="shortcut icon" href="{{ URL::to('assets/images/favicon.svg') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ URL::to('assets/vendors/simple-datatables/style.css') }}">
 

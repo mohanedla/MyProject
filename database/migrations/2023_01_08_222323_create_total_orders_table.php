@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('orders', function (Blueprint $table) {
+        Schema::create('total_orders', function (Blueprint $table) {
             $table->id();
-            $table->integer('status')->default(0)->nullable();
-            $table->integer('user_id')->references('id')->on('users');
+            $table->float('total');
+            $table->integer('order_id')->references('id')->on('orders');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('orders');
+        Schema::dropIfExists('total_orders');
     }
 };

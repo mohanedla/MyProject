@@ -17,6 +17,7 @@ use App\Models\Notice;
 use App\Models\report;
 use App\Models\Bills;
 use App\Models\Order;
+use App\Models\TotalOrder;
 
 
 use auth;
@@ -96,7 +97,7 @@ class home extends Controller
             if(Auth::check()){
             $old_order=Order::where('user_id',Auth::User()->id)->get();
             // dd($old_order);
-            }  
+            }
             return View('contact_us',compact('old_order','collect','brand','category_men','category_women','category_kids'));
         }
         public function contact_notice(Request $request)
@@ -149,8 +150,8 @@ class home extends Controller
             $category_kids=Kids::all();
             $old_order=0;
             if(Auth::check()){
-            $old_order=Order::where('user_id',Auth::User()->id)->get();
-            // dd($old_order);
+            $old_order=Order::where('user_id',Auth::User()->id)->count();
+            //  dd($old_order);
             }
             return View('checkout_page',compact('old_order','collect','brand','category_men','category_women','category_kids'));
         }
@@ -235,6 +236,7 @@ class home extends Controller
             else{
             $page = "bills";
             $orders=Order::all();
+            // $order=Order::whereDate('created_at', date('Y-m-d'))->where('status',0)->get();
             $bills=Bills::all();
             return View('bills.d_bills',compact('page','orders'));
         }
@@ -251,12 +253,16 @@ class home extends Controller
             $page = "bills";
             $bills=Bills::where('order_id',$id)->get();
             $orders=Order::where('id',$id)->with('user')->get();
-            $totals=0;
-            foreach ($bills as $bill){
-                $totals+=$bill->total;
-            }
+            $totals=TotalOrder::where('order_id',$id)->get();
+
             return View('bills.Bills',compact('page','bills','orders','totals'));
         }
+    }
+    public function check($id){
+        $order=Order::find($id);
+        $order->status=1;
+        $order->update();
+        return redirect()->back();
     }
     public function delete_bill($id) {
         $delete=Bills::where('order_id',$id)->delete();

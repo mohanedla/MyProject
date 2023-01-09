@@ -9,6 +9,7 @@ use App\Models\brand;
 use App\Models\Category;
 use App\Models\Bills;
 use App\Models\Order;
+use App\Models\TotalOrder;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Auth;
 class users extends Controller
@@ -52,15 +53,20 @@ public function update_user(){
     }
 
     public function order_product(){
+        $count_order=Order::where('user_id',Auth::User()->id)->count();
+        $user=User::find(Auth::User()->id);
+        $user->count_order=$count_order+1;
+        $user->update();
         $carts=Cart::content();
+        // for order
         $order=new Order;
-        $order->user_id=Auth::user()->id;
+        $order->user_id=Auth::User()->id;
         $order->save();
         // dd($order->id);
         foreach($carts as $cart){
             $bills=new Bills;
             $bills->order_id=$order->id;
-            $bills->profile_image=$cart->profile_image;
+            $bills->profile_image=$cart->image;
             $bills->name=$cart->name;
             $bills->quantity=$cart->qty;
             $bills->price=$cart->price;
@@ -70,8 +76,18 @@ public function update_user(){
             $product = product::find($cart->id);
             $product->quantity_price = $product->quantity_price+$cart->qty;
             $product->save();
-        $bills->save();
+            $bills->save();
         }
+        $total=new TotalOrder;
+        $total->order_id=$order->id;
+        if(Auth::User()->count_order>=1){
+            $total->total=Cart::priceTotal()-(Cart::priceTotal()*0.15);
+        }
+        else{
+            $total->total=Cart::priceTotal();
+        }
+
+        $total->save();
         Cart::destroy();
         return redirect('/home');
     }

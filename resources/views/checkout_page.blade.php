@@ -68,10 +68,10 @@
                                 @else
                                 @if( Auth::user()->profile_image)
                             <img src="{{ asset(Storage::url( Auth::user()->profile_image)) }}" alt="Profile"
-                             style="  border-radius: 50%; 
-                                    -webkit-border-radius: 50%; 
+                             style="  border-radius: 50%;
+                                    -webkit-border-radius: 50%;
                                     -moz-border-radius: 50%;
-                                    width: 40px; 
+                                    width: 40px;
         height: 40px;">
         @endif
                                     <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"
@@ -356,12 +356,12 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <br>
-                                                        
-<input type="submit" class="btn"
+
+                                                    <input type="submit" class="btn"
                                                             data-loading-text="Loading..." id="button-login"
                                                             value="{{ __('Register') }}">
-                                                 
-                                                       
+
+
 
                                                     </div>
                                                 </div>
@@ -392,7 +392,7 @@
                         {{ __('نحن في انتظارك لإستلام منتجاتك')}}
                         <br>
                         <br>
-                        @else 
+                        @else
                         <p style="color:black">
                         {{ __('لفد تم خصم قيمة الفاتورة من حسابك المصرفي')}}
                         {{ __('سيتم توصيل الطلبية إليك')}}
@@ -401,10 +401,9 @@
 <br>
 <br>
 @endif
- <input type="submit" class="btn" id="button-confirm"
-                                                    value="{{ __('Confirm Order') }}">
+ <input type="submit" class="btn" id="button-confirm" value="{{ __('Confirm Order') }}">
 </form>
-                    
+
                     </div>
                     </div>
                     </div>
@@ -451,19 +450,13 @@
                                             </tbody>
                                             <tbody>
                                                 <tr>
-                                                @php
-                        $i=0;
-                    @endphp
-                  @foreach ($old_order as $order)
-                  <input type="hidden" {{++$i}}  >
-                    @endforeach
-                    @if($i>3)
-                                                    <td class="text-right"colspan="4">$   ({{  \Cart::priceTotal() - \Cart::priceTotal() *0.15 }})
+                    @if($old_order>=1)
+                                                <td class="text-right"colspan="4">$   ({{  \Cart::priceTotal() - \Cart::priceTotal() *0.15 }})
                                                @else
                                                <td class="text-right"colspan="4">$   {{  \Cart::priceTotal()  }}
 
                                                    </td>
-                                                   @endif   
+                    @endif
                                                     <td></td>
                                                     <td class="text-right"colspan="4">$1,000.00</td>
                                                 </tr>
@@ -478,20 +471,7 @@
                                                 @csrf
                                                 <a href="#login_register"class="btn" data-toggle="modal" data-whatever="@getbootstrap">
                                                 {{ __('Confirm Order') }}</a>
-                                                
-                                                @php
-                
-                                                $i=0;
-                    @endphp
-                  @foreach ($old_order as $order)
-                  <input type="hidden" {{++$i}}  >
-                    @endforeach
-                    @if($i>3)
-                    {{-- <input type="hidden" name='total' value="{{  \Cart::priceTotal() - \Cart::priceTotal() *0.15 }}"> }}
-                    @else
 
-                     {{-- <input type="hidden" name='total' value="{{\Cart::priceTotal()}}"> --}}
-                     @endif   
                                             </form>
                                         </div>
                                     </div>

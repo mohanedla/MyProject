@@ -121,14 +121,16 @@
                                         </td>
                                         <th></th>
                                         <th></th>
+                                        @foreach ($totals as $total)
                                         <td class="text-right">
-                                            <h2><strong>${{ $totals }} </strong></h2>
+                                            <h2><strong>${{ $total->total }} </strong></h2>
                                         </td>
+                                        @endforeach
                                         <th></th>
                                         <td class="text-right">
                                             {{-- <h2><strong>${{ $bill->totals_dl }} </strong></h2> --}}
                                         </td>
-                                        
+
                                 <!-- <td class="text-left text-danger">
                                         <h2><strong><i class="fa fa-inr"></i>   120$</strong></h2></td>
                                     <td class="text-left text-danger">

@@ -45,7 +45,7 @@
                             <div class="header-top-left">
                                 <div class="contact"><span class="hidden-xs hidden-sm hidden-md">
                                     </span></div>
-                            </div>
+                            </div>  
                         </div>
                         <div class="col-xs-12 col-sm-8">
                         <ul class="header-top-right text-right">
@@ -256,13 +256,26 @@
                                             @endif
                                             @if (Auth::user())
                                 @if (Auth::user()->role == '3')
+                                <table class="table table-striped">
+
                                             <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{__('previous orders')}} </a>
-                  <ul class="dropdown-menu">
+                  <ul class="dropdown-menu" style="z-index: 3" >
                   @php
                         $i=0;
                     @endphp
                   @foreach ($old_order as $order)
+                    <li > <a href="/old_Bills/{{$order->id}}">طلبية {{++$i}} </a></li>
                     <li> <a href="/old_Bills/{{$order->id}}">طلبية {{++$i}} </a></li>
+                    <li> <a href="/old_Bills/{{$order->id}}">طلبية {{++$i}} </a></li>
+                    <li> <a href="/old_Bills/{{$order->id}}">طلبية {{++$i}} </a></li>
+                    <li> <a href="/old_Bills/{{$order->id}}">طلبية {{++$i}} </a></li>
+                    <li> <a href="/old_Bills/{{$order->id}}">طلبية {{++$i}} </a></li>
+                    <li> <a href="/old_Bills/{{$order->id}}">طلبية {{++$i}} </a></li>
+                    <li> <a href="/old_Bills/{{$order->id}}">طلبية {{++$i}} </a></li>
+                    <li> <a href="/old_Bills/{{$order->id}}">طلبية {{++$i}} </a></li>
+                    <li> <a href="/old_Bills/{{$order->id}}">طلبية {{++$i}} </a></li>
+                    <li> <a href="/old_Bills/{{$order->id}}">طلبية {{++$i}} </a></li>
+
                     @endforeach
                   {{-- @foreach ($old_order as $order) --}}
                   @empty($old_order->count())
@@ -275,6 +288,8 @@
                 </li>
                 @endif
                 @endif
+</table>
+
                                         <li> <a href="about">{{ __('About us') }}</a></li>
                                         @if (Auth::User())
                                         <li> <a href="contact_us">{{ __('Contact us') }}</a></li>

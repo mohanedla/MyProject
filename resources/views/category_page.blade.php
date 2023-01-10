@@ -60,10 +60,10 @@
                                 @else
                           @if( Auth::user()->profile_image)
                             <img src="{{ asset(Storage::url( Auth::user()->profile_image)) }}" alt="Profile"
-                             style="  border-radius: 50%; 
-                                    -webkit-border-radius: 50%; 
+                             style="  border-radius: 50%;
+                                    -webkit-border-radius: 50%;
                                     -moz-border-radius: 50%;
-                                    width: 40px; 
+                                    width: 40px;
         height: 40px;">
         @endif
                                     <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"
@@ -144,7 +144,11 @@
                             <div id="cart-dropdown" class="cart-menu collapse">
                                 <ul>
                                     <li>
-                                        <div id="cart-dropdown1">
+                                        @if (Cart::content()->count() > 3)
+                                            <div id="cart-dropdown1">
+                                            @else
+                                                <div>
+                                        @endif
                                             <table class="table table-striped">
                                                 <tbody>
                                                     @if (Cart::count() > 0)
@@ -294,8 +298,8 @@
                 </li>
                 @endif
                 @endif
-                      
-                               
+
+
                                 <li> <a href="about">{{ __('About us') }}</a></li>
                                 @if (Auth::User())
                                     <li> <a href="contact_us">{{ __('Contact us') }}</a></li>
@@ -327,14 +331,14 @@
                     <div id="category-menu" class="navbar collapse in mb_40" aria-expanded="true" style=""
                         role="button"></div>
                     <!-- <div class="nav-responsive">
-                    </div> --> 
+                    </div> -->
                     <!-- </div> -->
                     <!-- <div id="column-left" class="col-sm-4 col-lg-3 hidden-xs"> -->
                     <div class="filter left-sidebar-widget mb_50">
                         <div id="category-menu" class="navbar collapse in mb_40">
                             <div class="nav-responsive">
 
-                            
+
                                 <div class="heading-part">
                                     <h2 class="main_title">{{ __('Women') }}</h2>
                                 </div>

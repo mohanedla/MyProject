@@ -301,7 +301,7 @@
                             <li> <a href="shop">{{ __('shop') }}</a></li>
                         @endif
                         @if (Auth::user())
-                            @if (Auth::user()->role == '1')
+                            @if (Auth::user()->role == '3')
                                 <li class="dropdown"> <a href="#" class="dropdown-toggle"
                                         data-toggle="dropdown">{{ __('previous orders') }} </a>
 

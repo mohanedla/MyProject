@@ -313,8 +313,10 @@
                                             @foreach ($old_order as $order)
                                                 <li> <a href="/old_Bills/{{ $order->id }}">طلبية
                                                         {{ ++$i }}
-                                                        
                                                     </a></li>
+                                                 
+                                                   
+                                                    
                                             @endforeach
                                             {{-- @foreach ($old_order as $order) --}}
                                         @empty($old_order->count())
@@ -329,6 +331,8 @@
                             </li>
                         @endif
                     @endif
+                                                    
+                                    
                     <li> <a href="about">{{ __('About us') }}</a></li>
                     <li> <a href="contact_us">{{ __('Contact us') }}</a></li>
                 </ul>

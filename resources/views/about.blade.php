@@ -255,40 +255,35 @@
                                             <li> <a href="shop">{{ __('shop') }}</a></li>
                                             @endif
                                             @if (Auth::user())
-                                @if (Auth::user()->role == '3')
-                                <table class="table table-striped">
+                            @if (Auth::user()->role == '3')
+                                <li class="dropdown"> <a href="#" class="dropdown-toggle"
+                                        data-toggle="dropdown">{{ __('previous orders') }} </a>
 
-                                            <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{__('previous orders')}} </a>
-                  <ul class="dropdown-menu" style="z-index: 3" >
-                  @php
-                        $i=0;
-                    @endphp
-                  @foreach ($old_order as $order)
-                    <li > <a href="/old_Bills/{{$order->id}}">طلبية {{++$i}} </a></li>
-                    <li> <a href="/old_Bills/{{$order->id}}">طلبية {{++$i}} </a></li>
-                    <li> <a href="/old_Bills/{{$order->id}}">طلبية {{++$i}} </a></li>
-                    <li> <a href="/old_Bills/{{$order->id}}">طلبية {{++$i}} </a></li>
-                    <li> <a href="/old_Bills/{{$order->id}}">طلبية {{++$i}} </a></li>
-                    <li> <a href="/old_Bills/{{$order->id}}">طلبية {{++$i}} </a></li>
-                    <li> <a href="/old_Bills/{{$order->id}}">طلبية {{++$i}} </a></li>
-                    <li> <a href="/old_Bills/{{$order->id}}">طلبية {{++$i}} </a></li>
-                    <li> <a href="/old_Bills/{{$order->id}}">طلبية {{++$i}} </a></li>
-                    <li> <a href="/old_Bills/{{$order->id}}">طلبية {{++$i}} </a></li>
-                    <li> <a href="/old_Bills/{{$order->id}}">طلبية {{++$i}} </a></li>
+                                    <ul class="dropdown-menu">
+                                        <div class="cart-dropdown2">
+                                            @php
+                                                $i = 0;
+                                            @endphp
+                                            @foreach ($old_order as $order)
+                                                <li> <a href="/old_Bills/{{ $order->id }}">طلبية
+                                                        {{ ++$i }}
+                                                    </a></li>
+                                                  
+                                                    
+                                            @endforeach
+                                            {{-- @foreach ($old_order as $order) --}}
+                                        @empty($old_order->count())
+                                            <li style="text-align: center;"> لايوجد طلبيات</li>
+                                        @endempty
+                                        {{-- @endforeach --}}
+                                        {{-- @if ($old_order == []) --}}
 
-                    @endforeach
-                  {{-- @foreach ($old_order as $order) --}}
-                  @empty($old_order->count())
-                  <li style="text-align: center;" > لايوجد طلبيات</li>
-                  @endempty
-                    {{-- @endforeach --}}
-                    {{-- @if($old_order==[]) --}}
 
-                  </ul>
-                </li>
-                @endif
-                @endif
-</table>
+                                    </div>
+                                </ul>
+                            </li>
+                        @endif
+                    @endif
 
                                         <li> <a href="about">{{ __('About us') }}</a></li>
                                         @if (Auth::User())

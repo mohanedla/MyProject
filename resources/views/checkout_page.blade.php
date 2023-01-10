@@ -141,7 +141,7 @@
                                     class="fa fa-bars"></i></span></button>
                         <div class="collapse navbar-collapse js-navbar-collapse">
                             <ul id="menu" class="nav navbar-nav">
-                                <li> <a href="home">{{ __('Home') }}</a></li>
+                                <li> <a href="/home">{{ __('Home') }}</a></li>
                                 <li class="dropdown mega-dropdown"> <a href="#" class="dropdown-toggle"
                                         data-toggle="dropdown">{{ __('Collection') }} </a>
 
@@ -195,7 +195,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li> <a href="shop">{{ __('shop') }}</a></li>
+                                <li> <a href="/shop">{{ __('shop') }}</a></li>
                                 @if (Auth::user())
                             @if (Auth::user()->role == '3')
                                 <li class="dropdown"> <a href="#" class="dropdown-toggle"
@@ -207,15 +207,16 @@
                                                 $i = 0;
                                             @endphp
                                             @foreach ($old_order as $order)
-                                                <li> <a href="/old_Bills/{{ $order->id }}">طلبية
+                                                <li> <a href="/old_Bills/{{ $order->id }}">{{ __('INVOICE') }}
                                                         {{ ++$i }}
                                                     </a></li>
-                                                  
+                                                 
+                                                   
                                                     
                                             @endforeach
                                             {{-- @foreach ($old_order as $order) --}}
                                         @empty($old_order->count())
-                                            <li style="text-align: center;"> لايوجد طلبيات</li>
+                                            <li style="text-align: center;"> {{ __('There are no orders') }}</li>
                                         @endempty
                                         {{-- @endforeach --}}
                                         {{-- @if ($old_order == []) --}}
@@ -226,8 +227,8 @@
                             </li>
                         @endif
                     @endif
-                                <li> <a href="about">{{ __('About us') }}</a></li>
-                                <li> <a href="contact_us">{{ __('Contact us') }}</a></li>
+                                <li> <a href="/about">{{ __('About us') }}</a></li>
+                                <li> <a href="/contact_us">{{ __('Contact us') }}</a></li>
                             </ul>
                         </div>
                         <!-- /.nav-collapse -->
@@ -244,7 +245,7 @@
                     <div class="breadcrumb ptb_20">
                         <h1>{{ __('Checkout') }}</h1>
                         <ul>
-                            <li><a href="index">{{ __('Home') }}</a></li>
+                            <li><a href="/home">{{ __('Home') }}</a></li>
                             <li class="active">{{ __('Checkout') }}</li>
                         </ul>
                     </div>
@@ -302,7 +303,7 @@
                         <div class="panel panel-default " style="margin-left:3px;">
                             <div class="panel-heading">
 
-                                <h3> {{ __('تعبئة البيانات') }} &nbsp; &nbsp; </h3>
+                                <h3> {{ __('data Entry') }} &nbsp; &nbsp; </h3>
                                 <h4 class="panel-title">
                                     <a data-toggle="collapse" data-parent="#accordion"
                                         href="#collapseTwo"> <i class="fa fa-caret-down"></i>
@@ -317,7 +318,7 @@
                                         @csrf
                                         <div class="col-sm-6">
                                             <div class="form-group">
-                                                <label class="control-label">{{ __('رقم الحساب المصرفي') }}</label>
+                                                <label class="control-label">{{ __('Bank account numbe') }}</label>
                                                 <input type="text" name="bank_num" value="{{Auth::user()->bank_num}}"
                                                     class="form-control">
                                             </div>
@@ -348,18 +349,18 @@
                                                 </label>
                                                 <div class="container">
                                                     <div class="radio-inline">
-                                                        <h3> طريقة الإستلام</h3>
+                                                        <h3>{{ __('Receipt method') }} </h3>
                                                         <label class="radio-inline">
                                                             <input type="radio" name="recive" value="0"
-                                                                checked> {{ __('توصيل') }}
+                                                                checked> {{ __('Delivery') }}
                                                         </label>
                                                         <label class="radio-inline">
                                                             @if(Auth::user()->recive== 1)
                                                              <input type="radio" name="recive" value="1"
-                                                                checked>{{ __('الإستلام في الشركة') }}
+                                                                checked>{{ __('Receipt in the company') }}
                                                                 @else
                                                                 <input type="radio" name="recive" value="1"
-                                                                >{{ __('الإستلام في الشركة') }}
+                                                                >{{ __('Receipt in the company') }}
                                                                 @endif
                                                         </label>
                                                     </div>
@@ -397,14 +398,14 @@
                         <br>
                         @if(Auth::user()->recive== 1)
                         <p style="color:black">
-                        {{ __('لفد تم خصم قيمة الفاتورة من حسابك المصرفي')}}
-                        {{ __('نحن في انتظارك لإستلام منتجاتك')}}
+                        {{ __('The order amount has been deducted from your bank account')}}
+                        {{ __('We are waiting for you to receive your order')}}
                         <br>
                         <br>
                         @else
                         <p style="color:black">
-                        {{ __('لفد تم خصم قيمة الفاتورة من حسابك المصرفي')}}
-                        {{ __('سيتم توصيل الطلبية إليك')}}
+                        {{ __('The order amount has been deducted from your bank account')}}
+                        {{ __('The order will be delivered to you as soon as possible')}}
                         <br>
 </p>
 <br>
@@ -459,7 +460,7 @@
                                             </tbody>
                                             <tbody>
                                                 <tr>
-                    @if($old_order>=1)
+                    @if($old_order->count()>=1)
                                                 <td class="text-right"colspan="4">$   ({{  \Cart::priceTotal() - \Cart::priceTotal() *0.15 }})
                                                @else
                                                <td class="text-right"colspan="4">$   {{  \Cart::priceTotal()  }}

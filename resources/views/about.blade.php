@@ -205,7 +205,7 @@
                                     class="fa fa-bars"></i></span></button>
                                     <div class="collapse navbar-collapse js-navbar-collapse">
                                         <ul id="menu" class="nav navbar-nav">
-                                            <li> <a href="home">{{ __('Home') }}</a></li>
+                                            <li> <a href="/home">{{ __('Home') }}</a></li>
                                             <li class="dropdown mega-dropdown"> <a href="#" class="dropdown-toggle"
                                                     data-toggle="dropdown">{{ __('Collection') }} </a>
                                                     <ul class="dropdown-menu mega-dropdown-menu row">
@@ -252,7 +252,7 @@
                                                     </ul>
                                             </li>
                                             @if (Auth::User())
-                                            <li> <a href="shop">{{ __('shop') }}</a></li>
+                                            <li> <a href="/shop">{{ __('shop') }}</a></li>
                                             @endif
                                             @if (Auth::user())
                             @if (Auth::user()->role == '3')
@@ -265,15 +265,16 @@
                                                 $i = 0;
                                             @endphp
                                             @foreach ($old_order as $order)
-                                                <li> <a href="/old_Bills/{{ $order->id }}">طلبية
+                                                <li> <a href="/old_Bills/{{ $order->id }}">{{ __('INVOICE') }}
                                                         {{ ++$i }}
                                                     </a></li>
-                                                  
+                                                 
+                                                   
                                                     
                                             @endforeach
                                             {{-- @foreach ($old_order as $order) --}}
                                         @empty($old_order->count())
-                                            <li style="text-align: center;"> لايوجد طلبيات</li>
+                                            <li style="text-align: center;"> {{ __('There are no orders') }}</li>
                                         @endempty
                                         {{-- @endforeach --}}
                                         {{-- @if ($old_order == []) --}}
@@ -285,9 +286,9 @@
                         @endif
                     @endif
 
-                                        <li> <a href="about">{{ __('About us') }}</a></li>
+                                        <li> <a href="/about">{{ __('About us') }}</a></li>
                                         @if (Auth::User())
-                                        <li> <a href="contact_us">{{ __('Contact us') }}</a></li>
+                                        <li> <a href="/contact_us">{{ __('Contact us') }}</a></li>
                                         @endif
                                         </ul>
                                     </div>
@@ -303,7 +304,7 @@
                     <div class="breadcrumb ptb_20">
                         <h1>{{ __('About us') }}</h1>
                         <ul>
-                            <li><a href="home">{{ __('Home') }}</a></li>
+                            <li><a href="/home">{{ __('Home') }}</a></li>
                             <li class="active">{{ __('About us') }}</li>
                         </ul>
                     </div>

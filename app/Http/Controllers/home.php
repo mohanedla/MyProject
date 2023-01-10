@@ -149,10 +149,10 @@ class home extends Controller
             $category_women=Women::all();
             $category_kids=Kids::all();
             $old_order=0;
-            if(Auth::check()){
-            $old_order=Order::where('user_id',Auth::User()->id)->count();
-            //  dd($old_order);
-            }
+        if(Auth::check()){
+        $old_order=Order::where('user_id',Auth::User()->id)->get();
+        // dd($old_order);
+        }
             return View('checkout_page',compact('old_order','collect','brand','category_men','category_women','category_kids'));
         }
 
@@ -206,7 +206,7 @@ class home extends Controller
             $counts6= product::where('collection','Women')->count();
             $counts7= product::where('collection','Kids')->count();
             $counts8= Notice::count();
-            $counts9= Bills::count();
+            $counts9= Order::count();
             $user=Auth::User()->notify(new NewUser);
             // $user->markAsRead();
             return View('dashboard.home',compact('Users','counts','counts1','counts2','counts3','counts4','counts5','counts6','counts7','counts8','counts9','page'));
@@ -236,9 +236,10 @@ class home extends Controller
             else{
             $page = "bills";
             $orders=Order::all();
+            $Total=TotalOrder::all();
             // $order=Order::whereDate('created_at', date('Y-m-d'))->where('status',0)->get();
             $bills=Bills::all();
-            return View('bills.d_bills',compact('page','orders'));
+            return View('bills.d_bills',compact('page','orders','Total'));
         }
  }
 
@@ -284,12 +285,17 @@ class home extends Controller
         $category_men=Men::all();
         $category_women=Women::all();
         $category_kids=Kids::all();
+        $old_order=0;
+        if(Auth::check()){
+        $old_order=Order::where('user_id',Auth::User()->id)->get();
+        // dd($old_order);
+        }
         $old_bills=Bills::where('order_id',$id)->with('orders')->get();
         $total=0;
         foreach ($old_bills as $bill){
             $total+=$bill->total;
         }
-        return View('bills.old_Bills',compact('total','old_bills','products','collect','brand','category_men','category_women','category_kids'));
+        return View('bills.old_Bills',compact('total','old_order','old_bills','products','collect','brand','category_men','category_women','category_kids'));
         // return View('bills.old_Bills',compact('page','brand'));
     }
         public function R1()

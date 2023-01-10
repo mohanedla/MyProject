@@ -127,7 +127,7 @@
                                 </span>
                             </div> -->
                         </div>
-                        <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="home"> <img
+                        <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="/home"> <img
                                     alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
 
                         <div class="col-xs-6 col-sm-4 shopcart">
@@ -275,7 +275,7 @@
                                     </ul>
                                 </li>
                                 @if (Auth::User())
-                                    <li> <a href="shop">{{ __('shop') }}</a></li>
+                                    <li> <a href="/shop">{{ __('shop') }}</a></li>
                                 @endif
                                 @if (Auth::user())
                             @if (Auth::user()->role == '3')
@@ -288,19 +288,16 @@
                                                 $i = 0;
                                             @endphp
                                             @foreach ($old_order as $order)
-                                                <li> <a href="/old_Bills/{{ $order->id }}">طلبية
+                                                <li> <a href="/old_Bills/{{ $order->id }}">{{ __('INVOICE') }}
                                                         {{ ++$i }}
                                                     </a></li>
-                                                    <li> <a href="/old_Bills/{{ $order->id }}">طلبية
-                                                        {{ ++$i }}
-                                                    </a></li>  <li> <a href="/old_Bills/{{ $order->id }}">طلبية
-                                                        {{ ++$i }}
-                                                    </a></li>
+                                                 
+                                                   
                                                     
                                             @endforeach
                                             {{-- @foreach ($old_order as $order) --}}
                                         @empty($old_order->count())
-                                            <li style="text-align: center;"> لايوجد طلبيات</li>
+                                            <li style="text-align: center;"> {{ __('There are no orders') }}</li>
                                         @endempty
                                         {{-- @endforeach --}}
                                         {{-- @if ($old_order == []) --}}
@@ -312,10 +309,9 @@
                         @endif
                     @endif
 
-
-                                <li> <a href="about">{{ __('About us') }}</a></li>
+                                <li> <a href="/about">{{ __('About us') }}</a></li>
                                 @if (Auth::User())
-                                    <li> <a href="contact_us">{{ __('Contact us') }}</a></li>
+                                    <li> <a href="/contact_us">{{ __('Contact us') }}</a></li>
                                 @endif
                             </ul>
                         </div>
@@ -333,7 +329,7 @@
                     <div class="breadcrumb ptb_20">
                         <h1>{{ __('Checkout') }}</h1>
                         <ul>
-                            <li><a href="home">{{ __('Home') }}</a></li>
+                            <li><a href="/home">{{ __('Home') }}</a></li>
                             <li class="active">{{ __('Checkout') }}</li>
                         </ul>
                     </div>

@@ -270,15 +270,16 @@
                                                 $i = 0;
                                             @endphp
                                             @foreach ($old_order as $order)
-                                                <li> <a href="/old_Bills/{{ $order->id }}">طلبية
+                                                <li> <a href="/old_Bills/{{ $order->id }}">{{ __('INVOICE') }}
                                                         {{ ++$i }}
                                                     </a></li>
-                                                  
+                                                 
+                                                   
                                                     
                                             @endforeach
                                             {{-- @foreach ($old_order as $order) --}}
                                         @empty($old_order->count())
-                                            <li style="text-align: center;"> لايوجد طلبيات</li>
+                                            <li style="text-align: center;"> {{ __('There are no orders') }}</li>
                                         @endempty
                                         {{-- @endforeach --}}
                                         {{-- @if ($old_order == []) --}}

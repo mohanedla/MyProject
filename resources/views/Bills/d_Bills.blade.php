@@ -41,7 +41,9 @@
                                     <th style="width: 50px;" scope="col">{{ __('User name') }}</th>
                                     <th style="width: 50px;" scope="col">{{ __('Email Address') }}</th>
                                     <th style="width: 50px;" scope="col">{{ __('Phone Number') }}</th>
-                                    <th style="width: 50px;" scope="col">{{ __('حالة الطلبية') }}</th>
+                                    <th style="width: 50px;" scope="col">{{ __('Total') }}</th>
+                                    <th style="width: 50px;" scope="col">{{ __('order status') }}</th>
+
 
                                     <th style="width: 50px;" scope="col"></th>
 
@@ -70,6 +72,9 @@
                                         <td>
                                             {{ $order->user->phone_number }}
                                         </td>
+                                        <td>
+                                        </td>
+
                                         <td>
                                             <label class="switch">
                                                 {{ Form::open(['route' => ['check', $order->id], 'method' => 'post']) }}

@@ -82,6 +82,7 @@
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
+                                    <th>{{ __('photo') }}</th>
                                     <th>{{ __('Product Name') }}</th>
                                     <th>{{ __('Quantity') }}</th>
                                     <th>{{ __('Unit Price') }}</th>
@@ -94,6 +95,14 @@
                             <tbody>
                                 @foreach ($bills as $bill)
                                     <tr>
+                                       <td class="text-right">
+                                          <img src="{{ asset(Storage::url($bill->profile_image)) }}" alt="Profile"
+                                              style="  border-radius: 50%;
+                                            -webkit-border-radius: 50%;
+                                            -moz-border-radius: 50%;
+                                            width: 50px;
+                                            height: 55px;">
+                                        </td>
                                         <td class="text-right">
                                             <h5><strong>{{ $bill->name }} </strong></h5>
                                         </td>
@@ -116,11 +125,14 @@
                                     </tr>
                                 @endforeach
                                     <tr>
+                                        
                                         <td class="text-right">
                                             <h2><strong>{{ __('Total') }} </strong></h2>
                                         </td>
                                         <th></th>
                                         <th></th>
+                                        <th></th>
+
                                         @foreach ($totals as $total)
                                         <td class="text-right">
                                             <h2><strong>${{ $total->total }} </strong></h2>
@@ -128,7 +140,9 @@
                                         @endforeach
                                         <th></th>
                                         <td class="text-right">
-                                            {{-- <h2><strong>${{ $bill->totals_dl }} </strong></h2> --}}
+                                        <h2><strong>8129 DL </strong></h2>
+
+                                            <!-- {{-- <h2><strong>${{ $bill->totals_dl }} </strong></h2> --}} -->
                                         </td>
 
                                 <!-- <td class="text-left text-danger">

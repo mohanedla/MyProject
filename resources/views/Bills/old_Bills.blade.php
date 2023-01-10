@@ -6,7 +6,7 @@
 <head>
     <!-- =====  BASIC PAGE NEEDS  ===== -->
     <meta charset="utf-8">
-    <title>{{ __('طلبية') }}</title>
+    <title>{{ __('INVOICE') }}</title>
     <!-- =====  SEO MATE  ===== -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="">
@@ -332,8 +332,12 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <th>{{ $total }}</th>
-                    <th><b>:المجموع</b></th>
+                    <th><h3>{{ $total }}</h3></th>
+                    <!-- <th>{{ $total }}</th> -->
+                    <td></td>
+                    <th><h3>{{ $total }}</h3></th>
+                    
+                    <!-- <th><b>:المجموع</b></th> -->
 
                 </tr>
             </tfoot>

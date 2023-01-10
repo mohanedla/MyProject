@@ -14,6 +14,9 @@ use App\Models\Color;
 use App\Models\Color_Product;
 use App\Models\Size_Product;
 use App\Models\Image_Product;
+use App\Models\Bills;
+use App\Models\Order;
+use App\Models\TotalOrder;
 use Auth;
 class products extends Controller
 {
@@ -110,7 +113,12 @@ class products extends Controller
             $category_women=Women::all();
             $category_kids=Kids::all();
             $size=Size::all();
-            return View('product_detail_page',compact('page','products','collect','brand','category_men','category_women','category_kids','size'));
+            $old_order=0;
+            if(Auth::check()){
+            $old_order=Order::where('user_id',Auth::User()->id)->get();
+            // dd($old_order);
+            }
+            return View('product_detail_page',compact('page','old_order','products','collect','brand','category_men','category_women','category_kids','size'));
     }
 
     public function add_category_men()

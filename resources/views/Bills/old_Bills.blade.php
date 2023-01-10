@@ -288,9 +288,9 @@
                     <th>{{ __('Product Name') }}</th>
                     <th>{{ __('Quantity') }}</th>
                     <th>{{ __('Unit Price') }}</th>
-                    <th>{{ __('Total') }}</th>
+                    <th>{{ __('Total in dollars') }}</th>
                     <th>{{ __('Unit Price') }}</th>
-                    <th>{{ __('Total') }}</th>
+                    <th>{{ __('Total in dinars') }}</th>
 
                 </tr>
             </thead>
@@ -311,10 +311,10 @@
                         </td>
                         <td>{{ $bill->name }}</td>
                         <td>{{ $bill->quantity }}</td>
-                        <td>{{ $bill->price }}</td>
-                        <td>{{ $bill->total }}</td>
-                        <td>{{ $bill->price_dl }}</td>
-                        <td>{{ $bill->total_dl }}</td>
+                        <td>{{ $bill->price }} $</td>
+                        <td>{{ $bill->total }} $</td>
+                        <td>{{ $bill->price_dl }} DL</td>
+                        <td>{{ $bill->total_dl }} DL </td>
 
                         <!-- <td>
                                             <a href=""><img src="{{ asset('images/icone/edit-solid-24.png') }}"></a>
@@ -332,10 +332,10 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <th><h3>{{ $total }}</h3></th>
+                    <th><h3>{{ $total }} $</h3></th>
                     <!-- <th>{{ $total }}</th> -->
                     <td></td>
-                    <th><h3>{{ $total }}</h3></th>
+                    <th><h3>{{ $total }} DL</h3></th>
                     
                     <!-- <th><b>:المجموع</b></th> -->
 

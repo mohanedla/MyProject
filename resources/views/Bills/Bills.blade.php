@@ -86,9 +86,9 @@
                                     <th>{{ __('Product Name') }}</th>
                                     <th>{{ __('Quantity') }}</th>
                                     <th>{{ __('Unit Price') }}</th>
-                                    <th>{{ __('Total') }}</th>
+                                    <th>{{ __('Total in dollars') }}</th>
                                     <th>{{ __('Unit Price') }}</th>
-                                    <th>{{ __('Total') }}</th>
+                                    <th>{{ __('Total in dinars') }}</th>
 
                                 </tr>
                             </thead>
@@ -110,10 +110,10 @@
                                             <h5><strong>{{ $bill->quantity }} </strong></h5>
                                         </td>
                                         <td class="text-right">
-                                            <h5><strong>${{ $bill->price }} </strong></h5>
+                                            <h5><strong>{{ $bill->price }} $</strong></h5>
                                         </td>
                                         <td class="text-right">
-                                            <h5><strong>${{ $bill->total }}</strong></h5>
+                                            <h5><strong>{{ $bill->total }}$</strong></h5>
                                         </td>
                                         <td class="text-right">
                                             <h5><strong> {{ $bill->price * 5.12 }} DL</strong></h5>
@@ -127,7 +127,7 @@
                                     <tr>
                                         
                                         <td class="text-right">
-                                            <h2><strong>{{ __('Total') }} </strong></h2>
+                                            <!-- <h2><strong>{{ __('Total') }} </strong></h2> -->
                                         </td>
                                         <th></th>
                                         <th></th>
@@ -135,7 +135,7 @@
 
                                         @foreach ($totals as $total)
                                         <td class="text-right">
-                                            <h2><strong>${{ $total->total }} </strong></h2>
+                                            <h2><strong>{{ $total->total }}$ </strong></h2>
                                         </td>
                                         @endforeach
                                         <th></th>

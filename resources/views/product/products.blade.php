@@ -48,8 +48,10 @@
                             <th style="width: 50px;" scope="col">{{ __('Gender')}}</th>
                             <th style="width: 50px;" scope="col">{{ __('Specifications')}}</th>
                             <th style="width: 50px;" scope="col">{{ __('Quantity')}}</th>
-                            <th style="width: 50px;" scope="col">{{ __('Purchasing price')}}</th>
-                            <th style="width: 50px;" scope="col">{{ __('Selling price')}}</th>
+                            <th style="width: 50px;" scope="col">{{ __('الكمية المباعة')}}</th>
+                            <th style="width: 50px;" scope="col">{{ __('الكمية المتبقية')}}</th>
+                            <!-- <th style="width: 50px;" scope="col">{{ __('Purchasing price')}}</th>
+                            <th style="width: 50px;" scope="col">{{ __('Selling price')}}</th> -->
                             <th style="width: 50px;" scope="col">{{ __('admin')}}</th>
                             <th style="width: 50px;" scope="col">{{ __('photo')}}</th>
                             <th style="width: 50px;" scope="col"></th>
@@ -67,10 +69,12 @@
                                     <td>{{$x->name}}</td>
                                     <td>{{$x->brands->name}}</td>
                                     <td>{{$x->collection}}</td>
-                                    <td>{{$x->specification}}</td>
-                                    <td>{{$x->quantity}}</td>
-                                    <td>{{$x->price_purchas}}$</td>
-                                    <td>{{$x->price}}$</td>
+                                    <td >{{$x->specification}}</td>
+                                    <td style="  text-align: center;">{{$x->quantity}}</td>
+                                    <td style="  text-align: center;">{{$x->quantity_price}}</td>
+                                    <td style=  "text-align: center">{{$x->quantity - $x->quantity_price}}</td>
+                                    <!-- <td>{{$x->price_purchas}}$</td>
+                                    <td>{{$x->price}}$</td> -->
                                     <td>{{$x->user->name}}</td>
                                     <td>
 

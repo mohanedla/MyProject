@@ -113,6 +113,7 @@
                                         <div class="col-md-8">
                                             <h7 class="text-muted font-semibold">{{ __('all  product') }}</h7>
                                             <h4>{{$counts4}}</h4>
+
                                         </div>
                                     </div>
                                 </div>

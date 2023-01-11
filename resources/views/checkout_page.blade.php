@@ -318,7 +318,7 @@
                                         @csrf
                                         <div class="col-sm-6">
                                             <div class="form-group">
-                                                <label class="control-label">{{ __('Bank account numbe') }}</label>
+                                                <label class="control-label">{{ __('Bank account number') }}</label>
                                                 <input type="text" name="bank_num" value="{{Auth::user()->bank_num}}"
                                                     class="form-control">
                                             </div>

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->integer('status')->default(0)->nullable();
             $table->integer('user_id')->references('id')->on('users');
+            $table->float('total')->default(0);
             $table->timestamps();
         });
     }

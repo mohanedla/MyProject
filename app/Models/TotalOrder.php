@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class TotalOrder extends Model
 {
-    public function orders(){
-        return $this->hasOne(orders::class, 'id', 'order_id');
-    }
+    // public function orders(){
+    //     return $this->hasOne(orders::class, 'id', 'order_id');
+    // }
 }

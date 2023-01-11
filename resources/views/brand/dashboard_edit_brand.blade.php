@@ -101,6 +101,7 @@
                                                 <input type="file" class="form-control" placeholder=""
                                                 value="{{$brand->profile_image}}" id="first-name-icon" name="profile_image" />
                                             </div>
+                                            
                                         </div>
                                     </div>
                                     <div class="col-12 d-flex justify-content-end">

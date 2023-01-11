@@ -73,6 +73,7 @@
                                             {{ $order->user->phone_number }}
                                         </td>
                                         <td>
+                                            {{ $order->total }}
                                         </td>
 
                                         <td>

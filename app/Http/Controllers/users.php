@@ -78,8 +78,9 @@ public function update_user(){
             $product->save();
             $bills->save();
         }
-        $total=new TotalOrder;
-        $total->order_id=$order->id;
+        // $total=new TotalOrder;
+        // $total->order_id=$order->id;
+        $total=find($order->id);
         if(Auth::User()->count_order>=1){
             $total->total=Cart::priceTotal()-(Cart::priceTotal()*0.15);
         }
@@ -87,7 +88,7 @@ public function update_user(){
             $total->total=Cart::priceTotal();
         }
 
-        $total->save();
+        $total->update();
         Cart::destroy();
         return redirect('/home');
     }

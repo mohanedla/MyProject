@@ -19,6 +19,7 @@ class AdminUserSeeder extends Seeder
             'name' => 'Aymen',
             'email' => 'Aymen@gmail.com',
             'password' => bcrypt('11111111'),
+            'profile_image' => 'public/13.jpg',
             'role' => 1,
         ]);
     }

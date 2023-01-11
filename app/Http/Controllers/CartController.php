@@ -16,7 +16,7 @@ class CartController extends Controller
             , 'qty' => request('quantity')
             , 'price' => request('price')
             , 'image' => request('image')
-            // , 'options' => ['image' => request('image')]
+            //  , 'options' => ['color' => request('color'),'size'=>request('size')]
         ]);
         return redirect('/shop');
     }

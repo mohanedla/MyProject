@@ -125,7 +125,7 @@
                                     </tr>
                                 @endforeach
                                     <tr>
-                                        
+
                                         <td class="text-right">
                                             <!-- <h2><strong>{{ __('Total') }} </strong></h2> -->
                                         </td>
@@ -133,7 +133,7 @@
                                         <th></th>
                                         <th></th>
 
-                                        @foreach ($totals as $total)
+                                        @foreach ($orders as $total)
                                         <td class="text-right">
                                             <h2><strong>{{ $total->total }}$ </strong></h2>
                                         </td>

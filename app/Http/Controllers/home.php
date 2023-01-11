@@ -228,16 +228,20 @@ class home extends Controller
 
         public function Bills()
         {
-            if(!Auth::check() ) 
+            if(!Auth::check() )
             return redirect('/');
             if(Auth::user()->role != 1 && Auth::user()->role != 2)
              return redirect('/');
 
             else{
+
+                $order=Order::where('id',1)->whereDate('created_at', '>', Carbon::today()->subDays( 1 ))
+                ->whereDate('created_at', '!=', Carbon::today());
+                if($order){
+                    $order->delete();
+                }
             $page = "bills";
-            $orders=Order::with('totals');
-            
-            $bills=Bills::all();
+            $orders=Order::all();
             return View('bills.d_bills',compact('page','orders'));
         }
  }

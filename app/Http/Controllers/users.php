@@ -80,7 +80,7 @@ public function update_user(){
         }
         // $total=new TotalOrder;
         // $total->order_id=$order->id;
-        $total=find($order->id);
+        $total=Order::find($order->id);
         if(Auth::User()->count_order>=1){
             $total->total=Cart::priceTotal()-(Cart::priceTotal()*0.15);
         }

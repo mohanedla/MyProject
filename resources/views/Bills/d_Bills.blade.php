@@ -113,7 +113,7 @@
 
 
                                             <a href="/delete_bills/{{ $order->id }}"
-                                                onclick="return confirm('Are you sure to want to delete it?')"><span
+                                                onclick="return confirm('{{ __('75% of the order value will be returned to the users account Are you sure you want to cancel it?') }}')"><span
                                                     class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
                                         </td>
 

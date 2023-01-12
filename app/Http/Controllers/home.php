@@ -243,7 +243,7 @@ class home extends Controller
                     
                 // }
                 $o = Carbon::now('Africa/Tripoli');
-                                            $page = "bills";
+              $page = "bills";
             $orders=Order::all();
             return View('bills.d_bills',compact('page','orders','o'));
         }

@@ -235,14 +235,17 @@ class home extends Controller
 
             else{
 
-                $order=Order::where('id',1)->whereDate('created_at', '>', Carbon::today()->subDays( 1 ))
-                ->whereDate('created_at', '!=', Carbon::today());
-                if($order){
-                    $order->delete();
-                }
-            $page = "bills";
+                // $order=Order::where('id',1)->whereDate('created_at','>', Carbon::today()->subDays( 1 ))
+                // ->whereDate('created_at', '!=', Carbon::today());
+                // if($order)
+                // {
+                //     $order->delete();
+                    
+                // }
+                $o = Carbon::now('Africa/Tripoli');
+                                            $page = "bills";
             $orders=Order::all();
-            return View('bills.d_bills',compact('page','orders'));
+            return View('bills.d_bills',compact('page','orders','o'));
         }
  }
 

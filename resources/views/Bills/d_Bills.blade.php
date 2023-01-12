@@ -3,6 +3,9 @@
     @extends('dashboard.sidebar.dashboard')
 @endsection
 @section('content')
+<style>
+
+    </style>
     <div id="main">
 
         <div class="page-heading">
@@ -41,11 +44,13 @@
                                     <th style="width: 50px;" scope="col">{{ __('User name') }}</th>
                                     <th style="width: 50px;" scope="col">{{ __('Email Address') }}</th>
                                     <th style="width: 50px;" scope="col">{{ __('Phone Number') }}</th>
-                                    <th style="width: 50px;" scope="col">{{ __('Total') }}</th>
-                                    <th style="width: 50px;" scope="col">{{ __('order status') }}</th>
+                                    <th  style="width: 50px;" scope="col" class="text-align:center">{{ __('Total') }}</th>
+                                    <th style="width: 50px;" scope="col" class="text-center">{{ __('تاريخ الإنشاء') }}</th>
+                                    <th style="width: 50px;" scope="col" class="text-center">{{ __('التاريخ الحالي') }}</th>
+                                    <th style="width: 45px margin-right:5px" scope="col"  class="text-center"> {{ __('order status') }}</th>
 
 
-                                    <th style="width: 50px;" scope="col"></th>
+                                    <th style="width: 70px;" scope="col"></th>
 
 
                                 </tr>
@@ -72,10 +77,16 @@
                                         <td>
                                             {{ $order->user->phone_number }}
                                         </td>
-                                        <td>
-                                            {{ $order->total }}
+                                        <td class="text-align:center">
+                                            {{ $order->total }}$&nbsp;&nbsp;&nbsp;
                                         </td>
-
+                                        <td class="text-center">
+                                            {{ $order->created_at->format('Y-m-d') }}&nbsp;
+                                        </td>
+                                        <td class="text-center">
+                                                 {{$o->format('Y-m-d')}} &nbsp; 
+                                                </td>
+                                       
                                         <td>
                                             <label class="switch">
                                                 {{ Form::open(['route' => ['check', $order->id], 'method' => 'post']) }}
@@ -89,9 +100,11 @@
                                                 @endif
                                                 {{-- <input type="hidden" name="id" value="{{ $order->id }}"> --}}
                                                 {{ Form::close() }}
+                                                
                                             </label>
                                         </td>
-
+                                        
+                     
                                         <td class="text-center">
                                             <a href="/Bills/{{ $order->id }}" data-bs-target="#type_men"
                                                 data-bs-whatever="@mdo">

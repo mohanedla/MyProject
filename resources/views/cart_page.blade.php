@@ -361,7 +361,7 @@
                             </table>
                             <div style="float: right;">
                                 <li style="float: right; display: -webkit-box; list-style-type: none;"><strong>:"{{ __('Total') }}"</strong></li>
-                                <li style="float: right; display: -webkit-box; list-style-type: none;  padding-right: 25px;">${{\Cart::priceTotal()}}</li>
+                                <li style="float: right; display: -webkit-box; list-style-type: none;  padding-right: 25px;">${{App\Models\Cart::GET_TOTAL_PRICE()}}</li>
                             </div>
                             <br>
 

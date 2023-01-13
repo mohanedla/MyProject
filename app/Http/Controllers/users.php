@@ -57,7 +57,7 @@ public function update_user(){
         $user=User::find(Auth::User()->id);
         $user->count_order=$count_order+1;
         $user->update();
-        $carts=Cart::content();
+        $carts=Cart::where('user_id',auth()->user()->id)->get();
         // for order
         $order=new Order;
         $order->user_id=Auth::User()->id;
@@ -69,6 +69,8 @@ public function update_user(){
             $bills->profile_image=$cart->image;
             $bills->product_id=$cart->id;
             $bills->name=$cart->name;
+            $bills->color_id=$cart->color_id;
+            $bills->size_id=$cart->size_id;
             $bills->quantity=$cart->qty;
             $bills->price=$cart->price;
             $bills->total=$cart->price*$cart->qty;

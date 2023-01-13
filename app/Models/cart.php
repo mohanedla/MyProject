@@ -30,4 +30,10 @@ class Cart extends Model
     {
         return $this->belongsTo(Size::class);
     }
+    static function GET_TOTAL_PRICE(){
+        $array_of_prices=self::where('user_id',auth()->user()->id)
+        ->get()
+        ->map(function ($cart){ return $cart->price*$cart->qty;})->toArray(); 
+        return array_sum($array_of_prices);
+    }
 }

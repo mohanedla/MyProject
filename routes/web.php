@@ -1,14 +1,15 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Models\Cart;
 
+use App\Http\Controllers\LockScreen;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FormController;
 use App\Http\Controllers\PhotosController;
 use App\Http\Controllers\Auth1\LoginController;
-use App\Http\Controllers\Auth1\RegisterController;
 use App\Http\Controllers\ResetPasswordController;
-use App\Http\Controllers\FormController;
+use App\Http\Controllers\Auth1\RegisterController;
 use App\Http\Controllers\UserManagementController;
-use App\Http\Controllers\LockScreen;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,9 @@ use App\Http\Controllers\LockScreen;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('test', function () {
+  
+});
 Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 {
 

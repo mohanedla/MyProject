@@ -210,7 +210,7 @@
 
                                     <tbody>
                                         <tr>
-                                            <th>${{ \Cart::priceTotal() }}</th>
+                                            <th>${{App\Models\Cart::GET_TOTAL_PRICE()}}</th>
                                             <th><strong>:"{{ __('Total') }}"</strong></th>
                                         </tr>
                                         <tr>

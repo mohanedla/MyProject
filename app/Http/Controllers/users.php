@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\User;
-use App\Models\product;
-use App\Models\brand;
-use App\Models\Category;
-use App\Models\Bills;
-use App\Models\Order;
-use App\Models\TotalOrder;
-use Gloudemans\Shoppingcart\Facades\Cart;
 use Auth;
+use App\Models\Cart;
+use App\Models\User;
+use App\Models\Bills;
+use App\Models\brand;
+use App\Models\Order;
+use App\Models\product;
+use App\Models\Category;
+use App\Models\TotalOrder;
+use Illuminate\Http\Request;
 class users extends Controller
 {
     public function user()

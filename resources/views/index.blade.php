@@ -157,7 +157,7 @@
                                         id="shippingcart">{{ __('Shopping cart') }}</span>
                                     {{-- @livewire('cart-counter') --}}
                                     <span id="cart-total">{{ __('items') }}
-                                        ({{ \Cart::content()->count() }})
+                                        ({{ App\Models\Cart::where('user_id',auth()->user()->id)->count() }})
                                     </span>
                                 </button>
                             </div>
@@ -165,32 +165,34 @@
                             <div id="cart-dropdown" class="cart-menu collapse">
                                 <ul>
                                     <li>
-                                        @if (Cart::content()->count() > 3)
+                                        @if (App\Models\Cart::count() > 3)
                                             <div id="cart-dropdown1">
                                             @else
                                                 <div>
                                         @endif
                                         <table class="table table-striped">
                                             <tbody>
-                                                @if (Cart::count() > 0)
+                                                @if (App\Models\Cart::where('user_id',auth()->user()->id)->count() > 0)
 
-                                                    @foreach (Cart::content() as $item)
+                                                    @foreach (App\Models\Cart::where('user_id',auth()->user()->id)->get() as $item)
                                                         <tr>
                                                             <td class="text-center"><a href="#"><img
                                                                         style="width: 80px"
                                                                         src="{{ asset(Storage::url($item->image)) }}"
                                                                         alt="iPod Classic" title="iPod Classic"></a>
                                                             </td>
-                                                            <td class="text-left product-name"><a
-                                                                    href="#">{{ $item->name }}</a> <span
-                                                                    class="text-left price">${{ $item->price }}</span>
+                                                            <td class="text-left product-name">
+                                                                <a href="#">{{ $item->name }}</a>
+                                                                 <span class="text-left price">{{ $item->color->name }}</span>
+                                                                 <span class="text-left price">{{ $item->size->name }}</span>
+                                                                 <span class="text-left price">${{ $item->price }}</span>
                                                                 <input class="cart-qty" name="product_quantity"
                                                                     min="1" value="{{ $item->qty }}"
                                                                     type="number">
                                                             </td>
                                                             <td class="text-center">
                                                                 <a class="close-cart"
-                                                                    href="{{ url('remove', $item->rowId) }}"><i
+                                                                    href="{{ url('remove', $item->id) }}"><i
                                                                         class="fa fa-times-circle"></i>
                                                                 </a>
                                                             </td>

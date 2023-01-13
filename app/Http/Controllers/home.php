@@ -1,26 +1,28 @@
 <?php
 
 namespace App\Http\Controllers;
-use Brian2694\Toastr\Facades\Toastr;
-use Illuminate\Http\Request;
+use auth;
+use Carbon\Carbon;
 // use Illuminate\Notifications\Notification;
-use App\Notifications\NewUser;
-
-use App\Models\brand;
-use App\Models\product;
-use App\Models\User;
-use App\Models\Category;
 use App\Models\Men;
-use App\Models\Women;
+
+use App\Models\Cart;
 use App\Models\Kids;
+use App\Models\User;
+use App\Models\Bills;
+use App\Models\brand;
+use App\Models\Order;
+use App\Models\Women;
 use App\Models\Notice;
 use App\Models\report;
-use App\Models\Bills;
-use App\Models\Order;
+use App\Models\product;
+use App\Models\Category;
 use App\Models\TotalOrder;
 
-use Carbon\Carbon;
-use auth;
+use Illuminate\Http\Request;
+use App\Notifications\NewUser;
+use Brian2694\Toastr\Facades\Toastr;
+
 class home extends Controller
 {
     public function index()
@@ -132,12 +134,13 @@ class home extends Controller
             $category_men=Men::all();
             $category_women=Women::all();
             $category_kids=Kids::all();
+            $carts=Cart::where('user_id',auth()->user()->id)->get();
             $old_order=0;
             if(Auth::check()){
             $old_order=Order::where('user_id',Auth::User()->id)->get();
             // dd($old_order);
             }
-            return View('cart_page',compact('old_order','collect','brand','category_men','category_women','category_kids'));
+            return View('cart_page',compact('carts','old_order','collect','brand','category_men','category_women','category_kids'));
 
         }
 

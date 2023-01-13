@@ -294,6 +294,8 @@
                                     <tr>
                                         <td class="text-center">{{ __('Image') }}</td>
                                         <td class="text-left">{{ __('Product Name') }}</td>
+                                        <td class="text-left">{{ __('Product Size') }}</td>
+                                        <td class="text-left">{{ __('Product Color') }}</td>
                                         <!-- <td class="text-left">{{ __('Model') }}</td> -->
                                         <td class="text-left">{{ __('Quantity') }}</td>
                                         <td class="text-right">{{ __('Unit Price') }}</td>
@@ -305,14 +307,22 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @if (Cart::count() > 0)
+                                    @if (count($carts) > 0)
 
-                                    @foreach (Cart::content() as $item)
+                                    @foreach ($carts as $item)
                                     <tr>
                                         <td class="text-center"><a href="#"><img style="width: 80px"
                                             src="{{ asset(Storage::url($item->image)) }}"
                                             alt="iPod Classic" title="iPod Classic"></a></td>
-                                        <td class="text-left"><a href="product"> {{ __($item->name) }} </a></td>
+                                        <td class="text-left">
+                                            <a href="product"> {{ __($item->name) }} </a>
+                                        </td>
+                                        <td class="text-left">
+                                            <a href="product"> {{ __($item->size->name) }} </a>
+                                        </td>
+                                        <td class="text-left">
+                                            <a href="product"> {{ __($item->color->name) }} </a>
+                                        </td>
                                         <td class="text-left">
                                             <div style="max-width: 200px;" class="input-group btn-block">
                                                 <form action="{{ url('/updatecart') }}" method="POST">

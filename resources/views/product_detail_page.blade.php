@@ -422,52 +422,52 @@
                                     <!-- <p class="product-desc mtb_30"> More room to move. With 80GB or 160GB of storage and up to 40 hours of battery life, the new iPod classic lets you enjoy up to 40,000 songs or up to 200 hours of video or any combination wherever you go. Cover Flow. Browse through your music collection by flipping..</p> -->
                                     <div id="product">
                                         <br>
-                                        <div class="form-group">
-                                            <div class="row">
-                                                <div class="Sort-by col-md-6">
-                                                    <label>
-                                                        <h4>{{ __('Size') }}</h4>
-                                                    </label>
-                                                    <select name="product_size" id="select-by-size"
-                                                        class="selectpicker form-control">
-                                                        @foreach ($product->sizes as $s)
-                                                            <option selected value="{{ $s->size_id }}">
-                                                                {{ __($s->size->name) }} </option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
-                                                <div class="Color col-md-6">
-                                                    <label>
-                                                        <h4>{{ __('Color') }}</h4>
-                                                    </label>
-                                                    <select name="product_color" id="select-by-color"
-                                                        class="selectpicker form-control">
-                                                        @foreach ($product->colors as $c)
-                                                            <option selected value="{{ $c->color_id }}">
-                                                                {{ __($c->color->name) }} </option>
-                                                        @endforeach
-                                                    </select>
+                                        <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
+                                        @csrf
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="Sort-by col-md-6">
+                                                        <label>
+                                                            <h4>{{ __('Size') }}</h4>
+                                                        </label>
+                                                        <select name="size" id="select-by-size"
+                                                            class="selectpicker form-control">
+                                                            @foreach ($product->sizes as $s)
+                                                                <option selected value="{{ $s->size_id }}">
+                                                                    {{ __($s->size->name) }} </option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+                                                    <div class="Color col-md-6">
+                                                        <label>
+                                                            <h4>{{ __('Color') }}</h4>
+                                                        </label>
+                                                        <select name="color" id="select-by-color"
+                                                            class="selectpicker form-control">
+                                                            @foreach ($product->colors as $c)
+                                                                <option selected value="{{ $c->color_id }}">
+                                                                    {{ __($c->color->name) }} </option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="qty mt_30 form-group2">
-
-                                                <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
-                                                    @csrf
-                                                    <input type="hidden" value="{{ $product->id }}" name="id">
-                                                    <input type="hidden" value="{{ $product->name }}" name="name">
-                                                    <input type="hidden" value="{{ $product->price }}" name="price">
-                                                    <label>
-                                                        <h4>{{ __('Quantity') }}</h4>
-                                                    </label>
-                                                    <input name="quantity" min="1" max="{{$product->quantity - $product->quantity_price}}" value="1"
-                                                        type="number">
-                                                    <input type="hidden" value="{{ $product->profile_image }}"  name="image">
-                                                    <br>
-                                                    <input class="btn pull-right mt_30" type="submit" value="{{ __('Add to cart') }}" />
-                                                </form>
+                                            <div class="qty mt_30 form-group2">
+                                            
+                                                        <input type="hidden" value="{{ $product->id }}" name="id">
+                                                        <input type="hidden" value="{{ $product->name }}" name="name">
+                                                        <input type="hidden" value="{{ $product->price }}" name="price">
+                                                        <label>
+                                                            <h4>{{ __('Quantity') }}</h4>
+                                                        </label>
+                                                        <input name="quantity" min="1" max="{{$product->quantity - $product->quantity_price}}" value="1"
+                                                            type="number">
+                                                        <input type="hidden" value="{{ $product->profile_image }}"  name="image">
+                                                        <br>
+                                                        <input class="btn pull-right mt_30" type="submit" value="{{ __('Add to cart') }}" />
+                                                </div>
                                             </div>
-                                        </div>
+                                        </form>
                                     </div>
                                 </div>
 

@@ -15,14 +15,18 @@ return new class extends Migration
     {
         Schema::create('carts', function (Blueprint $table) 
         {
-            // $table->id();
-            // $table->string('profile_image')->nullable();
-            // $table->string('name');
-            // $table->integer('quantity');
-            // $table->float('Unit_Price');
-            // $table->float('Total_$');
-            // $table->float('Unit_Price');
-            // $table->float('Total_DL');
+            $table->id();
+            $table->integer('product_id');
+            $table->integer('user_id');
+            $table->integer('color_id');
+            $table->integer('size_id');
+            $table->string('image')->nullable();
+            $table->string('name');
+            $table->integer('qty');
+            $table->float('price')->nullable();
+            $table->float('Total_$')->nullable();
+            $table->float('Unit_Price_DL')->nullable();
+            $table->float('Total_DL')->nullable();
 
 
             $table->timestamps();

@@ -14,9 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('notifications', function (Blueprint $table) {
-            $table->uuid('id')->primary();
+            $table->id();
             $table->string('type');
-            $table->morphs('notifiable');
+            $table->integer('user_id')->references('id')->on('users');
             $table->text('data');
             $table->timestamp('read_at')->nullable();
             $table->timestamps();

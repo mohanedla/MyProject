@@ -19,6 +19,7 @@ use App\Models\product;
 use App\Models\Category;
 use App\Models\TotalOrder;
 
+use App\Models\Notification;
 use Illuminate\Http\Request;
 use App\Notifications\NewUser;
 use Brian2694\Toastr\Facades\Toastr;
@@ -112,7 +113,12 @@ class home extends Controller
         $notice->role=request('role');
         $notice->save();
         // Toastr::success('Create new notice successfully :)','Success');
-
+        Notification::create([
+            'user_id'=>auth()->user()->id,
+            'type'=>'new_notice',
+            'data'=>"تم ارسال بلاغ جديد",
+            'created_at'=>Carbon::now('Africa/Tripoli'),
+        ]);
         return redirect('/home');
     }
     public function delete_notice($id)
@@ -210,7 +216,7 @@ class home extends Controller
             $counts7= product::where('collection','Kids')->count();
             $counts8= Notice::count();
             $counts9= Order::count();
-            $user=Auth::User()->notify(new NewUser);
+            // $user=Auth::User()->notify(new NewUser);
             // $user->markAsRead();
             return View('dashboard.home',compact('Users','counts','counts1','counts2','counts3','counts4','counts5','counts6','counts7','counts8','counts9','page'));
         }
@@ -400,9 +406,10 @@ class home extends Controller
          return redirect('/');
 
         else{
-
+        $notifications=Notification::with(['user'])->orderBy('id', 'desc')->get();
+        Notification::query()->update(['read_at' =>Carbon::now('Africa/Tripoli')]);
         $page = "notifications";
-        return View('notifications',compact("page"));
+        return View('notifications',compact("page",'notifications'));
     }
     }
      function footer()

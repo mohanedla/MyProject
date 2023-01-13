@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Auth;
+use Carbon\Carbon;
 use App\Models\Cart;
 use App\Models\User;
 use App\Models\Bills;
@@ -11,7 +12,9 @@ use App\Models\Order;
 use App\Models\product;
 use App\Models\Category;
 use App\Models\TotalOrder;
+use App\Models\Notification;
 use Illuminate\Http\Request;
+
 class users extends Controller
 {
     public function user()
@@ -85,14 +88,20 @@ public function update_user(){
         // $total->order_id=$order->id;
         $total=Order::find($order->id);
         if(Auth::User()->count_order>=1){
-            $total->total=Cart::priceTotal()-(Cart::priceTotal()*0.15);
+            $total->total=Cart::GET_TOTAL_PRICE()-(Cart::GET_TOTAL_PRICE()*0.15);
         }
         else{
-            $total->total=Cart::priceTotal();
+            $total->total=Cart::GET_TOTAL_PRICE();
         }
 
         $total->update();
-        Cart::destroy();
+        Cart::query()->where('user_id',auth()->user()->id)->delete();
+        Notification::create([
+            'user_id'=>auth()->user()->id,
+            'type'=>'new_order',
+            'data'=>"تم انشاء طلبية جديد",
+            'created_at'=>Carbon::now('Africa/Tripoli'),
+        ]);
         return redirect('/home');
     }
 

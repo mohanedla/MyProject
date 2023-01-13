@@ -60,7 +60,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/old_Bills/{id}',[App\Http\Controllers\home::class,'old_Bills']);
 
 
-    Route::get('/notifications',[App\Http\Controllers\home::class,'notifications']);
+    Route::get('/notifications',[App\Http\Controllers\home::class,'notifications'])->name('notifications.index');
+    Route::get('/notifications/api',[App\Http\Controllers\NotificationController::class,'getNotificationsApi'])->name('notifications.api');
 
 
     Route::get('/dashboard_home',[App\Http\Controllers\home::class,'dashboard_home']);
@@ -143,7 +144,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     Route::get('markAsRead',function ()
     {
-        Auth::User()->unreadNotifications->markAsRead();
+        // Auth::User()->unreadNotifications->markAsRead();
         return redirect()->back();
     })->name('MarkAsRead');
 

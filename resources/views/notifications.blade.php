@@ -28,57 +28,43 @@
         </div>
         {{-- message --}}
         {!! Toastr::message() !!}
-        <!-- <section class="section">
+        <section class="section">
             <div class="card">
                 <div class="card-header">
-                 <!-- <h4>{{ __('reports List') }}</h4> -->
-                
-<!--                  
+                <h4>{{ __('notifications List') }}</h4>
+
                 </div>
                 <div class="card-body">
-                    <table class="table table-striped" id="table1"> -->
-                        <!-- <thead>
+                    <table class="table table-striped" id="table1">
+                        <thead>
                             <tr>
                             <th style="width: 50px;" scope="col">{{ __('#')}}</th>
-                            <th style="width: 50px;" scope="col">{{ __('المنتج') }}</th>
-                            <th style="width: 50px;" scope="col">{{ __('العلامة التجارية') }}</th>
-                            <th style="width: 50px;" scope="col">{{ __('الكمية المباعة') }}</th>
-                            <th style="width: 50px;" scope="col">{{ __('الكمية المتبقية') }}</th>
-                            <th style="width: 50px;" scope="col">{{ __('الربح') }}</th>
-
-                            <th style="width: 50px;" scope="col"></th>
-
-                        
-                        </tr> -->
-                    <!-- </thead>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                    </td> 
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-
-
-                    <td class="text-center">
-                                    <a href="Bills"  data-bs-target="#type_men"
-                                    data-bs-whatever="@mdo" >
-                                        <span class="badge bg-info"><i class="bi bi-eye-fill"></i></span>
-                                    </a>
-
-                                 
-                                    <a href="#" onclick="return confirm('Are you sure to want to delete it?')"><span class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
-                                </td>
+                            <th style="width: 50px;" scope="col"> المستخدم</th>
+                            <th style="width: 50px;" scope="col">نوع الاشعار </th>
+                            <th style="width: 50px;" scope="col">الرساله</th>
+                            </tr>
+                        </thead>
                         <tbody>
 
-                           
+                            @php
+                                $i=1;
+                                $j=0;
+                            @endphp    
+                                @foreach ($notifications as $x)
+                                <tr>
+                                    <td>{{$i++}}</td>
+                                    <td>{{$x->user->name}}</td>
+                                    <td>{{$x->type}}</td>
+                                    <td>{{$x->data}}</td>
+
+                                </tr>
+                                @php
+                                    $j++;
+                                @endphp
+
+                                @endforeach
                         </tbody>
-                    </table> 
+                    </table>
                 </div>
                 <script>
                     $(document).ready(function () {
@@ -86,7 +72,9 @@
                     });
                   </script>
             </div>
-        </section> -->
+        </section>
+                
+
     </div>
 
     {{-- for categories --}}

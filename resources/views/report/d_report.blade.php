@@ -36,7 +36,6 @@
                         <a style="float: right; margin: 3px;" href="#" class="btn btn-secondary"> {{ __('المنتجات المباعة') }}</a>
                         <a style="float: right; margin: 3px;" href="#" class="btn btn-secondary"> {{ __('جرد مالي ') }}</a>
                         <a style="float: right; margin: 3px;" href="#" class="btn btn-secondary"> {{ __('أعلى منتج مبيعا') }}</a>
-                        <a style="float: right; margin: 3px;" href="#" class="btn btn-secondary"> {{ __('الأرباح') }}</a>
                         <a style="float: right; margin: 3px;" href="#" class="btn btn-secondary"> {{ __('جرد المنتجات') }}</a>
 
                   {{-- </div> --}}

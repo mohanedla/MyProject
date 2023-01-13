@@ -115,6 +115,9 @@
                                                 data-bs-whatever="@mdo">
                                                 <span class="badge bg-info"><i class="bi bi-eye-fill"></i></span>
                                             </a>
+                                            <a href="/delete_bills/{{ $order->id }}"
+                                               onclick="return confirm('{{ __(' Are you sure you want to cancel it?') }}')"><span
+                                                   class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
                                                 @else
                                                     <a href="/Bills/{{ $order->id }}" data-bs-target="#type_men"
                                                     data-bs-whatever="@mdo">
@@ -123,7 +126,7 @@
                                                 
                                            <a href="/delete_bills/{{ $order->id }}"
                                                onclick="return confirm('{{ __('75% of the order value will be returned to the users account Are you sure you want to cancel it?') }}')"><span
-                                                   class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
+                                                   class="badge bg-danger"><i class="bi bi-trash3-fill"></i></span></a>
                                                 @endif
 
                                         </td>

@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('bills', function (Blueprint $table) {
             $table->id();
             $table->integer('order_id')->references('id')->on('orders');
+            $table->integer('product_id')->references('id')->on('products');
             $table->string('name');
             $table->integer('quantity');
             $table->string('profile_image')->nullable();

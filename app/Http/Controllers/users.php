@@ -67,6 +67,7 @@ public function update_user(){
             $bills=new Bills;
             $bills->order_id=$order->id;
             $bills->profile_image=$cart->image;
+            $bills->product_id=$cart->id;
             $bills->name=$cart->name;
             $bills->quantity=$cart->qty;
             $bills->price=$cart->price;

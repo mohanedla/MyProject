@@ -272,6 +272,28 @@ class home extends Controller
         return redirect()->back();
     }
     public function delete_bill($id) {
+        $order=Order::find($id);
+        if ($order) {
+            if ($order->status==1) {
+                Bills::where('order_id',$order->id)->delete();
+                $order->delete();
+            }else {
+                // return quntity to table products
+                $bills=Bills::where('order_id',$order->id)->get();
+                foreach ($bills as $bill) {
+                    $product=Product::find($bill->product_id);
+                    $product->quantity_price -=$bill->quantity;
+                    $product->save();
+                }
+                // delete all bills wher has order id 
+                Bills::where('order_id',$order->id)->delete();
+                // delete order
+                $order->delete();
+            }
+        }
+        return redirect()->back();
+    }
+    public function delete_bill1($id) {
         $delete=Bills::where('order_id',$id)->delete();
         $del=Order::find($id)->delete();
         return redirect()->back();

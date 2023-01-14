@@ -29,7 +29,7 @@
             @forelse ($notifications as $notification)
                 <li class="notification-item">
                     @switch($notification->type)  
-                        @case('login')
+                        @case('login')   
                             <i class="bi bi-person-plus-fill  text-blue mr-3"></i>
                             @break
                         @case('new_order')
@@ -107,16 +107,16 @@ function createNotifications(notification) {
     var i="";
     switch (notification.type) {
         case 'login':
-            i='<i class="bi bi-box-arrow-in-right  text-success mr-3"></i>'
+            i='<i class="bi bi-person-plus-fill  text-blue mr-3"></i>'
         break;
         case 'new_order':
-            i='<i class="bi bi-file-earmark-plus-fill text-info"></i>'
+            i='<i class="bi bi-receipt text-purple mr-3"></i>'
         break;
         case 'new_report':
-            i='<i class="bi bi-flag text-primary"></i>'
+            i='<i class="bi bi-file-earmark-plus-fill text-primary mr-3"></i>'
         break;
         case 'new_notice':
-            i=' <i class="bi bi-app-indicator text-danger"></i>'
+            i=' <i class="bi bi-exclamation-triangle text-danger mr-3"></i>'
         break;
 
     }

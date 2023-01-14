@@ -46,14 +46,7 @@
                                     @endforeach
                                 </div>
                             </div>
-                            <!-- <div class="col-xs-6 col-sm-6 col-md-6 text-right">
-              <div class="receipt-right">
-               <h5>Company Name.</h5>
-               <p>+1 3649-6589 <i class="fa fa-phone"></i></p>
-               <p>company@gmail.com <i class="fa fa-envelope-o"></i></p>
-               <p>USA <i class="fa fa-location-arrow"></i></p>
-              </div>
-             </div> -->
+            
                         </div>
                     </div>
 
@@ -81,7 +74,7 @@
                     <div>
                         <table class="table table-bordered">
                             <thead>
-                                <tr>
+                                <tr>   
                                     <th>{{ __('photo') }}</th>
                                     <th>{{ __('Product Name') }}</th>
                                     <th>{{ __('Quantity') }}</th>
@@ -191,26 +184,26 @@
         </footer>
     </div>
     <script>
-        function showDetails(pro, sizes, colors) {
-            document.getElementById("productName").innerHTML = pro['name'];
-            var table = document.getElementById("bodyrow");
-            table.innerHTML = "";
-            var max = sizes.length;
-            if (max < colors.lenght) {
-                var max = colors.length;
-            }
-            for (var i = 0; i < max; i++) {
-                if (top) {
-                    var row = table.insertRow(-1);
-                } else {
-                    var row = table.insertRow();
-                }
-                // (B3) INSERT CELLS
-                var cell = row.insertCell();
-                cell.innerHTML = colors[i]['color']['name'];
-                cell = row.insertCell();
-                cell.innerHTML = sizes[i]['size']['name'];
-            }
-        }
+        // function showDetails(pro, sizes, colors) {
+        //     document.getElementById("productName").innerHTML = pro['name'];
+        //     var table = document.getElementById("bodyrow");
+        //     table.innerHTML = "";
+        //     var max = sizes.length;
+        //     if (max < colors.lenght) {
+        //         var max = colors.length;
+        //     }
+        //     for (var i = 0; i < max; i++) {
+        //         if (top) {
+        //             var row = table.insertRow(-1);
+        //         } else {
+        //             var row = table.insertRow();
+        //         }
+        //         // (B3) INSERT CELLS
+        //         var cell = row.insertCell();
+        //         cell.innerHTML = colors[i]['color']['name'];
+        //         cell = row.insertCell();
+        //         cell.innerHTML = sizes[i]['size']['name'];
+        //     }
+        // }
     </script>
 @endsection

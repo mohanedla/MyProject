@@ -36,14 +36,16 @@
                 </div>
                 <div class="card-body">
                     <table class="table table-striped" id="table1">
-                        <thead>
+                        {{-- <thead>
                             <tr>
                             <th style="width: 50px;" scope="col">{{ __('#')}}</th>
                             <th style="width: 50px;" scope="col"> المستخدم</th>
                             <th style="width: 50px;" scope="col">نوع الاشعار </th>
                             <th style="width: 50px;" scope="col">الرساله</th>
+                            <th></th>
+
                             </tr>
-                        </thead>
+                        </thead> --}}
                         <tbody>
 
                             @php
@@ -52,10 +54,38 @@
                             @endphp    
                                 @foreach ($notifications as $x)
                                 <tr>
-                                    <td>{{$i++}}</td>
-                                    <td>{{$x->user->name}}</td>
+                                    {{-- <td>{{$i++}}</td>
+                                    <td></td>
                                     <td>{{$x->type}}</td>
-                                    <td>{{$x->data}}</td>
+                                    <td>{{$x->data}}</td> --}}
+                                    <td>
+                                        @switch($x->type)
+                                            @case('login')
+                                           {{-- <h3> <i style="margin-left:290%" class="bi bi-box-arrow-in-right  text-success mr-3"></i></h3> --}}
+                                           <h2> <i style="margin-left:290%" class="bi bi-person-plus-fill  text-blue mr-3"></i></h2>
+
+                                           <td style="text-align: center" scope="col">  <h4>  بالدخول إلى الموقع  &nbsp; {{$x->user->name}} &nbsp; لقد قام المستخدم </h4></td>
+                                                @break
+                                            @case('new_order')
+                                                {{-- <i class="bi bi-file-earmark-plus-fill text-info"></i> --}}
+                                                <h3> <i style="margin-left:290%" class="bi bi-receipt text-purple mr-3"></i></h3>
+                                                <th style="text-align: center" scope="col">  <h4> بإنشاء طلبية جديدة &nbsp;  {{$x->user->name}}  &nbsp;    لقد قام المستخدم </h4></th>
+                                                @break
+                                            @case('new_report')
+                                                {{-- <i class="bi bi-flag text-primary"></i> --}}
+                                                <h3> <i style="margin-left:290%" class="bi bi-file-earmark-plus-fill text-primary mr-3"></i></h3>
+                                                <th style="text-align: center" scope="col">  <h4> بإنشاء تقرير جديد &nbsp;  {{$x->user->name}}&nbsp;  لقد قام المستخدم </h4></th>
+                                                @break
+                                            @case('new_notice')
+                                                {{-- <i class="bi bi-app-indicator text-danger"></i>
+                                                @break --}}
+
+                                                <h3> <i style="margin-left:290%" class="bi bi-exclamation-triangle text-danger mr-3"></i></h3>
+                                                <th style="text-align: center" scope="col">  <h4> بإرسال بلاغ جديد &nbsp; {{$x->user->name}}&nbsp;  لقد قام المستخدم </h4></th>
+                                                @break
+                                        @endswitch
+                                    </td>
+
 
                                 </tr>
                                 @php

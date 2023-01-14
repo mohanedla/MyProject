@@ -10,11 +10,12 @@
             @if ($notifications->count()>0)
                 <li class="dropdown-header">
                     لديك  <span id="count_Notification">{{$notifications->count()}}</span> اشعارات جديدة
-                    <a href="{{route('notifications.index')}}"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                     <a href="{{route('notifications.index')}}"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
                 </li>
             @else
                 <li class="dropdown-header">
-                    ليس لديك اشعارات جديدة &nbsp;&nbsp;&nbsp;&nbsp;
+                     {{ __('You have no new notifications') }} &nbsp;&nbsp;&nbsp;&nbsp;
                 </li>
 
             @endif
@@ -27,18 +28,18 @@
         <div id="div-notification">
             @forelse ($notifications as $notification)
                 <li class="notification-item">
-                    @switch($notification->type)
+                    @switch($notification->type)  
                         @case('login')
-                            <i class="bi bi-box-arrow-in-right  text-success mr-3"></i>
+                            <i class="bi bi-person-plus-fill  text-blue mr-3"></i>
                             @break
                         @case('new_order')
-                            <i class="bi bi-file-earmark-plus-fill text-info"></i>
+                            <i class="bi bi-receipt text-purple mr-3"></i>
                             @break
                         @case('new_report')
-                            <i class="bi bi-flag text-primary"></i>
+                            <i class="bi bi-file-earmark-plus-fill text-primary mr-3"></i>
                             @break
                         @case('new_notice')
-                            <i class="bi bi-app-indicator text-danger"></i>
+                            <i class="bi bi-exclamation-triangle text-danger mr-3"></i>
                             @break
     
                     @endswitch
@@ -55,7 +56,7 @@
             @empty
                 <li class="notification-item">
                     <div>
-                        <h4>لا يوجد إشعارات</h4>
+                        <h4>  {{ __('There are no notifications') }}</h4>
 
                     </div>
                 </li>

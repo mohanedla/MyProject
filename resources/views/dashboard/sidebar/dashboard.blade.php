@@ -175,20 +175,21 @@
                 </li>
 
 
-            </ul>
+            
             @if($page == "notifications")
-                <!-- <li class="sidebar-item active"> -->
+                 <li class="sidebar-item active">
                 <title>{{__ ('notifications')}}</title>
 
                 @else
-                <!-- <li class="sidebar-item"> -->
+                 <li class="sidebar-item"> 
                 @endif
-                    <!-- <a href="/d_report" class='sidebar-link'> -->
-                        <!-- <i class="bi bi-file-earmark-text-fill"></i> -->
+                     <a href="/notifications" class='sidebar-link'> 
+                         <i class="bi bi-bell-fill"></i> 
 
-                        <!-- <span>{{ __('notifications') }}</span> -->
+                         <span>{{ __('notifications') }}</span> 
                     </a>
                 </li>
+            </ul>
         </div>
         <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
     </div>

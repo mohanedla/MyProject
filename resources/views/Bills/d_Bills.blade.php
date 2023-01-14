@@ -46,7 +46,6 @@
                                     <th style="width: 50px;" scope="col">{{ __('Phone Number') }}</th>
                                     <th  style="width: 50px;" scope="col" class="text-align:center">{{ __('Total') }}</th>
                                     <th style="width: 50px;" scope="col" class="text-center">{{ __('تاريخ الإنشاء') }}</th>
-                                    <th style="width: 50px;" scope="col" class="text-center">{{ __('التاريخ الحالي') }}</th>
                                     <th style="width: 45px margin-right:5px" scope="col"  class="text-center"> {{ __('order status') }} &nbsp;&nbsp;&nbsp;</th>
 
 
@@ -81,13 +80,9 @@
                                             {{ $order->total }}$&nbsp;&nbsp;&nbsp;
                                         </td>
                                         <td class="text-center">
-                                            {{ $order->created_at->format('Y-m-d') }}&nbsp;<br>
-                                            {{$order->created_at->format('H:i')}}
+                                            {{ $order->created_at->diffForHumans() }}
                                         </td>
-                                        <td class="text-center">
-                                                 {{$o->format('Y-m-d')}} &nbsp;<br> 
-                                                 {{$o->format('H:i')}}
-                                                </td>
+                                        
                                        
                                         
                                        

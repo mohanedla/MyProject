@@ -1,8 +1,10 @@
 @extends('dashboard.layouts.master')
 @section('menu')
-@extends('dashboard.sidebar.dashboard')
+{{-- @extends('dashboard.sidebar.dashboard') --}}
 @endsection
 @section('content')
+
+<link rel="stylesheet" href="{{ URL::to('assets/css/style.css') }}">
 
 <!-- End Header -->
 
@@ -16,7 +18,7 @@
                 <br>
                 <br>
                 </div>
-                <div class="col-12 col-md-6 order-md-2 order-first">
+                 <div class="col-12 col-md-6 order-md-2 order-first">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                         <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="dashboard_home">{{ __('Dashboard') }}</a></li>
@@ -28,101 +30,167 @@
         </div>
         {{-- message --}}
         {!! Toastr::message() !!}
-        <section class="section">
-            <div class="card">
-                <div class="card-header">
-                 <h4>{{ __('reports List') }}</h4>
-                
-                 
-                </div>
-                <div class="card-body">
-                    <table class="table table-striped" id="table1">
-                        <thead>
-                            <tr>
-                            <th style="width: 50px;" scope="col">{{ __('#')}}</th>
-                            <th style="width: 50px;" scope="col">{{ __('المنتج') }}</th>
-                            <th style="width: 50px;" scope="col">{{ __('العلامة التجارية') }}</th>
-                            <th style="width: 50px;" scope="col">{{ __('الكمية المباعة') }}</th>
-                            <th style="width: 50px;" scope="col">{{ __('الكمية المتبقية') }}</th>
-                            <th style="width: 50px;" scope="col">{{ __('الربح') }}</th>
+        <div class="col-md-12" >
+            <div class="row" >
 
-                            <th style="width: 50px;" scope="col"></th>
+                <div class="receipt-main col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3" >
+                    <div class="row">
+                        <div class="receipt-header">
+                            <div class="col-xs-6 col-sm-6 col-md-6">
 
-                        
-                        </tr>
-                    <!-- </thead>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                    </td> 
-                    <td>
-                    </td>
-                    <td>
-                    </td>
+                                <div class="receipt-left">
+                                        <img class="img-responsive" alt="iamgurdeeposahan"
+                                            style="width: 71px; border-radius: 43px;">
+                                </div>
+                            </div>
+            
+                        </div>
+                    </div>
 
+                    <div class="row">
+                            <div class="receipt-header receipt-header-mid">
+                                <div class="col-xs-8 col-sm-8 col-md-8 text-left">
+                                    <div class="receipt-right">
+                                        <p><b>{{ __('Name') }}:</b> </p>
+                                        <p><b>{{ __('Phone Number') }}:</b> </p>
+                                        <p><b> {{ __('Email') }}:</b></p>
+                                        <p><b> {{ __('Address') }}:</b>  </p>
 
-                    <td class="text-center">
-                                    <a href="Bills"  data-bs-target="#type_men"
-                                    data-bs-whatever="@mdo" >
-                                        <span class="badge bg-info"><i class="bi bi-eye-fill"></i></span>
-                                    </a>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                    </div>
 
+                    <div>
+                        <table class="table table-bordered">
+                            <thead>
+                                {{-- R1  أعلى 5 منجات مبيعا--}}
+                                {{-- R2 المنتجات المباعة --}}
+                                {{-- R3 جرد مالي --}}
+                                {{-- R4  أعلىى منتج مبييعا--}}
+                                {{-- <tr>   
+
+                                    <th >{{ __('#')}}</th>
+                                    <th>{{ __('المنتج') }}</th>
+                                    <th >{{ __('العلامة التجارية') }}</th> 
+                                    <th >{{ __('الكمية المباعة') }}</th>
+                                    <th >{{ __('الكمية المتبقية') }}</th>
+                                    <th >{{ __('الربح') }}</th>
                                  
-                                    <a href="#" onclick="return confirm('Are you sure to want to delete it?')"><span class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
-                                </td>
-                        <tbody>
 
-                           
-                        </tbody>
-                    </table> -->
+                                </tr>
+                                <tr>   
+                                    <th >{{ __('#')}}</th>
+                                    <th>{{ __('المنتج') }}</th>
+                                    <th >{{ __('الكمية المباعة') }}</th>
+                                    <th >{{ __('الكمية المتبقية') }}</th>
+                                    <th >{{ __('سعر الشراء') }}</th>
+                                    <th >{{ __('سعر البيع') }}</th>
+                                    <th >{{ __('الربح') }}</th>
+
+                                </tr>
+                                <tr>   
+
+                                    <th >{{ __('#')}}</th>
+                                    <th>{{ __('المنتج') }}</th>
+                                    <th >{{ __('العلامة التجارية') }}</th> 
+                                    <th >{{ __('الكمية المباعة') }}</th>
+                                    <th >{{ __('الكمية المتبقية') }}</th>
+                                    <th >{{ __('الربح') }}</th>
+                                    
+                                </tr>
+                                <tr>   
+
+                                   <th >{{ __('#')}}</th>
+                                   <th>{{ __('المنتج') }}</th>
+                                   <th >{{ __('العلامة التجارية') }}</th> 
+                                   <th >{{ __('الكمية المباعة') }}</th>
+                                   <th >{{ __('الكمية المتبقية') }}</th>
+                                   <th >{{ __('الربح') }}</th>
+
+                                </tr> --}}
+                                <tr>   
+                                   {{-- R5 جرد المنتجات --}}
+
+                                    <th >{{ __('#')}}</th>
+                                    <th>{{ __('المنتج') }}</th>
+                                    <th >{{ __('العلامة التجارية') }}</th> 
+                                    <th >{{ __('الكمية المباعة') }}</th>
+                                    <th >{{ __('الكمية المتبقية') }}</th>
+                                    <th >{{ __('سعر الشراء') }}</th>
+                                    <th >{{ __('سعر البيع') }}</th>
+                                    <th >{{ __('الربح') }}</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{-- @foreach ($bills as $bill) --}}
+                                    <tr>
+                                       {{-- <td class="text-right">
+                                          <img src="{{ asset(Storage::url($bill->profile_image)) }}" alt="Profile"
+                                              style="  border-radius: 50%;
+                                            -webkit-border-radius: 50%;
+                                            -moz-border-radius: 50%;
+                                            width: 50px;
+                                            height: 55px;">
+                                        </td> --}}
+                                        <td class="text-right">
+                                            <h5><strong>  </strong></h5>
+                                        </td>
+                                        <td class="text-right">
+                                            <h5><strong>  </strong></h5>
+                                        </td>
+                                        <td class="text-right">
+                                            <h5><strong>  </strong></h5>
+                                        </td>
+                                        <td class="text-right">
+                                            <h5><strong> </strong></h5>
+                                        </td>
+                                        <td class="text-right">
+                                            <h5><strong></strong></h5>
+                                        </td>
+                                        <td class="text-right">
+                                            <h5><strong></strong></h5>
+                                        </td>
+                                        <td class="text-right">
+                                            <h5><strong></strong></h5>
+                                        </td>
+                                        <td class="text-right">
+                                            <h5><strong></strong></h5>
+                                        </td>
+
+                                    </tr>
+                                {{-- @endforeach --}}
+                                   
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="row">
+                        <div class="receipt-header receipt-header-mid receipt-footer">
+                            {{-- <div class="col-xs-8 col-sm-8 col-md-8 text-left">
+                                <div class="receipt-right">
+                                    <h5>{{ __('Thanks for shopping') }}</h5>
+                                </div>
+                            </div> --}}
+                            <div>
+                                <div>
+                                    <div> <a>
+                                            <img style="width:10%; height:40%;" alt="themini"
+                                                src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
+                                               <br>
+                                                <h6> 13/1/2023</h6>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
                 </div>
-                <script>
-                    $(document).ready(function () {
-                      $("#tblCustomer").DataTable();
-                    });
-                  </script>
-            </div>
-        </section>
-    </div>
-
-    {{-- for categories --}}
-    <!-- <div class="modal fade" id="type_men" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel"> بيانات المنتج </h1><br>
-                    <h1 class="modal-title fs-5" id="productName"></h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-
-                    <table class="table table-striped" id="table1">
-                        <thead>
-                            <tr>
-                                <th style="width: 50px;" scope="col">الالوان</th>
-                                <th style="width: 50px;" scope="col">المقاسات</th>
-                            </tr>
-                        </thead>
-                        <tbody id="bodyrow">
-
-
-
-                        </tbody>
-                    </table>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary"
-                        data-bs-dismiss="modal">{{ __('Close') }}</button>
-                    <button type="submit" class="btn btn-primary">{{ __('Save') }}</button>
-                </div>
-                </form>
             </div>
         </div>
-    </div> -->
 
     <footer>
         <div class="footer clearfix mb-0 text-muted ">

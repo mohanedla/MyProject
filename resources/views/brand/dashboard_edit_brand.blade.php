@@ -104,6 +104,14 @@
                                             
                                         </div>
                                     </div>
+                                    <div class="col-md-6 col-12">
+                                        
+                                    </div>
+                                    <div class="col-md-3 col-6">
+                                        <div class="form-group">
+                                            <img style="width: 50%;" src="{{asset(Storage::url($brand->profile_image))}}" alt="">
+                                        </div>
+                                    </div>
                                     <div class="col-12 d-flex justify-content-end">
                                         <button type="submit" class="btn btn-primary me-1 mb-1">{{ __('Save') }}</button>
                                         <button type="reset" class="btn btn-light-secondary me-1 mb-1">{{ __('Reset') }}</button>

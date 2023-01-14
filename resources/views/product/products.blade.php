@@ -87,7 +87,7 @@
                                     <td class="text-center">
                                         <a data-bs-toggle="modal" data-bs-target="#type_men"
                                         data-bs-whatever="@mdo"
-                                        onclick="showDetails({{json_encode($x)}},{{json_encode($x->images)}},{{json_encode($x->sizes)}},{{json_encode($x->colors)}},{{ json_encode(asset(Storage::url($x->profile_image))) }})">
+                                        onclick="showDetails({{json_encode($x)}},{{json_encode($x->profile_image)}},{{json_encode($x->sizes)}},{{json_encode($x->colors)}},{{ json_encode(asset(Storage::url($x->profile_image))) }})">
                                             <span class="badge bg-info"><i class="bi bi-eye-fill"></i></span> </a>
 
                                         <a href="/edit_product/{{$x->id}}/{{$id}}">
@@ -187,7 +187,7 @@
 function showDetails(pro,images,sizes,colors,img)
 {
     // document.getElementById("productName").innerHTML = pro['name'];
-    var myImage = document.getElementById("image");
+    var myImage = document.getElementById("image").src=img;
     document.getElementById("price1").innerHTML = pro['price'];
     document.getElementById("price2").innerHTML = pro['price_purchas'];
     var table = document.getElementById("bodyrow");
@@ -206,21 +206,7 @@ function showDetails(pro,images,sizes,colors,img)
         cell = row.insertCell();
         cell.innerHTML = sizes[i]['size']['name'];
     }
-        myImage.src = img;
-        myImage.alt = 'alt';
-        let div;
-        var img1;
-        var img1 = document.getElementById("imag");
-
-        console.log(images.length);{{$i=0;}}
-        // value(images.length);
-
-    //     for (let i = 0; i < images.length; i++) {
-    //         img1.src="/storage"+images[i]['image'].slice(6);
-    //             console.log(img1.src);
-
-    //             change(img1.src);
-    // }
+    
 }
 </script>
 @endsection

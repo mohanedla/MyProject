@@ -3,6 +3,9 @@
     @extends('dashboard.sidebar.dashboard')
 @endsection
 @section('content')
+<style>
+
+    </style>
     <div id="main">
 
         <div class="page-heading">
@@ -41,11 +44,13 @@
                                     <th style="width: 50px;" scope="col">{{ __('User name') }}</th>
                                     <th style="width: 50px;" scope="col">{{ __('Email Address') }}</th>
                                     <th style="width: 50px;" scope="col">{{ __('Phone Number') }}</th>
-                                    <th style="width: 50px;" scope="col">{{ __('Total') }}</th>
-                                    <th style="width: 50px;" scope="col">{{ __('order status') }}</th>
+                                    <th  style="width: 50px;" scope="col" class="text-align:center">{{ __('Total') }}</th>
+                                    <th style="width: 50px;" scope="col" class="text-center">{{ __('تاريخ الإنشاء') }}</th>
+                                    <th style="width: 50px;" scope="col" class="text-center">{{ __('التاريخ الحالي') }}</th>
+                                    <th style="width: 45px margin-right:5px" scope="col"  class="text-center"> {{ __('order status') }} &nbsp;&nbsp;&nbsp;</th>
 
 
-                                    <th style="width: 50px;" scope="col"></th>
+                                    <th style="width: 70px;" scope="col"></th>
 
 
                                 </tr>
@@ -72,10 +77,20 @@
                                         <td>
                                             {{ $order->user->phone_number }}
                                         </td>
-                                        <td>
-                                            {{ $order->total }}
+                                        <td class="text-align:center">
+                                            {{ $order->total }}$&nbsp;&nbsp;&nbsp;
                                         </td>
-
+                                        <td class="text-center">
+                                            {{ $order->created_at->format('Y-m-d') }}&nbsp;<br>
+                                            {{$order->created_at->format('H:i')}}
+                                        </td>
+                                        <td class="text-center">
+                                                 {{$o->format('Y-m-d')}} &nbsp;<br> 
+                                                 {{$o->format('H:i')}}
+                                                </td>
+                                       
+                                        
+                                       
                                         <td>
                                             <label class="switch">
                                                 {{ Form::open(['route' => ['check', $order->id], 'method' => 'post']) }}
@@ -89,19 +104,28 @@
                                                 @endif
                                                 {{-- <input type="hidden" name="id" value="{{ $order->id }}"> --}}
                                                 {{ Form::close() }}
+                                                
                                             </label>
                                         </td>
-
+                                        
+                     
                                         <td class="text-center">
+                                            @if ($order->status == 1)
                                             <a href="/Bills/{{ $order->id }}" data-bs-target="#type_men"
                                                 data-bs-whatever="@mdo">
                                                 <span class="badge bg-info"><i class="bi bi-eye-fill"></i></span>
                                             </a>
+                                                @else
+                                                    <a href="/Bills/{{ $order->id }}" data-bs-target="#type_men"
+                                                    data-bs-whatever="@mdo">
+                                                    <span class="badge bg-info"><i class="bi bi-eye-fill"></i></span>
+                                                </a>
+                                                
+                                           <a href="/delete_bills/{{ $order->id }}"
+                                               onclick="return confirm('{{ __('75% of the order value will be returned to the users account Are you sure you want to cancel it?') }}')"><span
+                                                   class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
+                                                @endif
 
-
-                                            <a href="/delete_bills/{{ $order->id }}"
-                                                onclick="return confirm('Are you sure to want to delete it?')"><span
-                                                    class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
                                         </td>
 
                                     </tr>

@@ -21,8 +21,9 @@
                  <div class="col-12 col-md-6 order-md-2 order-first">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                         <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="dashboard_home">{{ __('Dashboard') }}</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">{{ __('Reports') }}</li>
+                        <li class="breadcrumb-item"><a href="/dashboard_home">{{ __('Dashboard') }}</a></li>
+                        <li class="breadcrumb-item"><a href="/d_report">{{ __('Reports') }}</a></li>
+                                {{-- <li class="breadcrumb-item active" aria-current="page">{{ __('Reports') }}</li> --}}
                         </ol>
                     </nav>
                 </div>
@@ -30,6 +31,7 @@
         </div>
         {{-- message --}}
         {!! Toastr::message() !!}
+        <div id="print">
         <div class="col-md-12" >
             <div class="row" >
 
@@ -185,12 +187,19 @@
                             </div>
 
                         </div>
-
+                        
                     </div>
+
+                    <h2 > 
+                        <a href="#" onclick="printPageArea()"> 
+                        <i class="bi bi-printer-fill text-dark grey" ></i>
+                        </a></h2>
 
                 </div>
             </div>
         </div>
+    </div>
+
 
     <footer>
         <div class="footer clearfix mb-0 text-muted ">
@@ -203,26 +212,12 @@
 </div>
 <script>
 
-// function showDetails(pro,sizes,colors)
-{
-//     document.getElementById("productName").innerHTML = pro['name'];
-//     var table = document.getElementById("bodyrow");
-//     table.innerHTML = "";
-//     var max = sizes.length;
-//     if(max < colors.lenght){
-//         var max = colors.length;
-//     }
-//     for(var i=0; i<max;i++){
-//         if (top) { var row = table.insertRow(-1); }
-//         else { var row = table.insertRow(); }
-
-//         // (B3) INSERT CELLS
-//         var cell = row.insertCell();
-//         cell.innerHTML = colors[i]['color']['name'];
-//         cell = row.insertCell();
-//         cell.innerHTML = sizes[i]['size']['name'];
-//     }
-// }
-
-</script>
+        function printPageArea(){
+    var printContent = document.getElementById("print").innerHTML;
+    var originalContent = document.body.innerHTML;
+    document.body.innerHTML = printContent;
+    window.print();
+    document.body.innerHTML = originalContent;
+}
+    </script>
 @endsection

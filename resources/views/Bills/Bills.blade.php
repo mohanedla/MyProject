@@ -1,6 +1,6 @@
 @extends('dashboard.layouts.master')
 @section('menu')
-    @extends('dashboard.sidebar.dashboard')
+ {{-- @extends('dashboard.sidebar.dashboard') --}}
 @endsection
 @section('content')
     <link rel="stylesheet" href="{{ URL::to('assets/css/style.css') }}">
@@ -19,8 +19,9 @@
                     <div class="col-12 col-md-6 order-md-2 order-first">
                         <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="dashboard_home">{{ __('Dashboard') }}</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">{{ __('Bills') }}</li>
+                                <li class="breadcrumb-item"><a href="/dashboard_home">{{ __('Dashboard') }}</a></li>
+                                <li class="breadcrumb-item"><a href="/d_Bills">{{__ ('Bills')}}</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">{{ __('order') }}</li>
                             </ol>
                         </nav>
                     </div>
@@ -30,8 +31,9 @@
             {!! Toastr::message() !!}
 
         </div>
-        <div class="col-md-12">
-            <div class="row">
+        <div id="print">
+        <div class="col-md-12" >
+            <div class="row" >
 
                 <div class="receipt-main col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
                     <div class="row">
@@ -50,7 +52,7 @@
                         </div>
                     </div>
 
-                    <div class="row">
+                    <div class="row" >
                         @foreach ($orders as $order)
                             <div class="receipt-header receipt-header-mid">
                                 <div class="col-xs-8 col-sm-8 col-md-8 text-left">
@@ -168,10 +170,15 @@
                         @endforeach
 
                     </div>
-
+                    <h2 > 
+                         <a href="#" onclick="printPageArea()"> 
+                         <i class="bi bi-printer-fill text-dark grey" ></i>
+                         </a></h2>
                 </div>
             </div>
         </div>
+    </div>
+
 
 
         <footer>
@@ -184,26 +191,12 @@
         </footer>
     </div>
     <script>
-        // function showDetails(pro, sizes, colors) {
-        //     document.getElementById("productName").innerHTML = pro['name'];
-        //     var table = document.getElementById("bodyrow");
-        //     table.innerHTML = "";
-        //     var max = sizes.length;
-        //     if (max < colors.lenght) {
-        //         var max = colors.length;
-        //     }
-        //     for (var i = 0; i < max; i++) {
-        //         if (top) {
-        //             var row = table.insertRow(-1);
-        //         } else {
-        //             var row = table.insertRow();
-        //         }
-        //         // (B3) INSERT CELLS
-        //         var cell = row.insertCell();
-        //         cell.innerHTML = colors[i]['color']['name'];
-        //         cell = row.insertCell();
-        //         cell.innerHTML = sizes[i]['size']['name'];
-        //     }
-        // }
+        function printPageArea(){
+    var printContent = document.getElementById("print").innerHTML;
+    var originalContent = document.body.innerHTML;
+    document.body.innerHTML = printContent;
+    window.print();
+    document.body.innerHTML = originalContent;
+}
     </script>
 @endsection

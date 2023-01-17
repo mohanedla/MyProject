@@ -13,7 +13,7 @@
     <div id="cart-dropdown" class="cart-menu collapse">
         <ul>
             <li>
-                @if (App\Models\Cart::count() > 3)
+                @if (App\Models\Cart::count() >2)
                     <div id="cart-dropdown1">
                     @else
                         <div>

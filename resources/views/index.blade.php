@@ -233,6 +233,9 @@
                                                 <li> <a href="/old_Bills/{{ $order->id }}">{{ __('INVOICE') }}
                                                         {{ ++$i }}
                                                     </a></li>
+                                                 
+                                                   
+                                                    
                                             @endforeach
                                             {{-- @foreach ($old_order as $order) --}}
                                         @empty($old_order->count())
@@ -247,8 +250,8 @@
                             </li>
                         @endif
                     @endif
-
-
+                                                    
+                                    
                     <li> <a href="/about">{{ __('About us') }}</a></li>
                     <li> <a href="/contact_us">{{ __('Contact us') }}</a></li>
                 </ul>
@@ -305,16 +308,16 @@
                                                                     class="img-responsive"> </a>
                                                             <div class="button-group text-center">
                                                                 <!-- <div class="wishlist"><a
-                                                            href="#"><span>wishlist</span></a>
-                                                    </div>
-                                                    <div class="quickview"><a href="#"><span>Quick
-                                                                View</span></a></div>
-                                                    <div class="compare"><a
-                                                            href="#"><span>Compare</span></a>
-                                                    </div>
-                                                    <div class="add-to-cart"><a href="#"><span>Add
-                                                                to
-                                                                cart</span></a></div> -->
+                                                                href="#"><span>wishlist</span></a>
+                                                        </div>
+                                                        <div class="quickview"><a href="#"><span>Quick
+                                                                    View</span></a></div>
+                                                        <div class="compare"><a
+                                                                href="#"><span>Compare</span></a>
+                                                        </div>
+                                                        <div class="add-to-cart"><a href="#"><span>Add
+                                                                    to
+                                                                    cart</span></a></div> -->
                                                             </div>
                                                         </div>
 
@@ -346,9 +349,9 @@
                                                                     </span>
                                                                     <!-- <form action="/">
 
- <input class="btn pull-right mt_30" type="submit" value="{{ __('Add to cart') }}" />
+     <input class="btn pull-right mt_30" type="submit" value="{{ __('Add to cart') }}" />
 
-</form> -->
+ </form> -->
                                                                 </span>
                                                             @endif
                                                         </div>
@@ -398,15 +401,15 @@
                                                         </a>
                                                         <div class="button-group text-center">
                                                             <!-- <div class="wishlist"><a
-                                                        href="#"><span>wishlist</span></a>
-                                                </div>
-                                                <div class="quickview"><a href="#"><span>Quick
-                                                            View</span></a></div>
-                                                <div class="compare"><a
-                                                        href="#"><span>Compare</span></a>
-                                                </div>
-                                                <div class="add-to-cart"><a href="#"><span>Add to
-                                                            cart</span></a></div> -->
+                                                            href="#"><span>wishlist</span></a>
+                                                    </div>
+                                                    <div class="quickview"><a href="#"><span>Quick
+                                                                View</span></a></div>
+                                                    <div class="compare"><a
+                                                            href="#"><span>Compare</span></a>
+                                                    </div>
+                                                    <div class="add-to-cart"><a href="#"><span>Add to
+                                                                cart</span></a></div> -->
                                                         </div>
                                                     </div>
                                                     <div class="caption product-detail text-center">
@@ -436,9 +439,9 @@
                                                                         class="currencySymbol">$</span>{{ $item->price }}.00</span>
                                                                 <!-- <form action="/">
 
- <input class="btn pull-right mt_30" type="submit" value="{{ __('Add to cart') }}" />
+     <input class="btn pull-right mt_30" type="submit" value="{{ __('Add to cart') }}" />
 
-</form> -->
+ </form> -->
 
 
                                                             </span>
@@ -486,16 +489,16 @@
                                                                     class="img-responsive"> </a>
                                                             <div class="button-group text-center">
                                                                 <!-- <div class="wishlist"><a
-                                                            href="#"><span>wishlist</span></a>
-                                                    </div>
-                                                    <div class="quickview"><a href="#"><span>Quick
-                                                                View</span></a></div>
-                                                    <div class="compare"><a
-                                                            href="#"><span>{{ __('Compare') }}</span></a>
-                                                    </div>
-                                                    <div class="add-to-cart"><a href="#"><span>Add
-                                                                to
-                                                                cart</span></a></div> -->
+                                                                href="#"><span>wishlist</span></a>
+                                                        </div>
+                                                        <div class="quickview"><a href="#"><span>Quick
+                                                                    View</span></a></div>
+                                                        <div class="compare"><a
+                                                                href="#"><span>{{ __('Compare') }}</span></a>
+                                                        </div>
+                                                        <div class="add-to-cart"><a href="#"><span>Add
+                                                                    to
+                                                                    cart</span></a></div> -->
                                                             </div>
                                                         </div>
                                                         <div class="caption product-detail text-center">
@@ -525,9 +528,9 @@
                                                                             class="currencySymbol">$</span>{{ $item->price }}.00</span>
                                                                     <!-- <form action="/">
 
- <input class="btn pull-right mt_30" type="submit" value="{{ __('Add to cart') }}" />
+     <input class="btn pull-right mt_30" type="submit" value="{{ __('Add to cart') }}" />
 
-</form> -->
+ </form> -->
 
                                                                 </span>
                                                             @endif

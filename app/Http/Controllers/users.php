@@ -80,7 +80,7 @@ public function update_user(){
             $bills->price_dl=10000;
             $bills->total_dl=10000;
             $product = product::find($cart->id);
-            $product->quantity_price = $product->quantity_price+$cart->qty;
+            $product->quantity_price = $product->quantity_price+ $cart->qty;
             $product->save();
             $bills->save();
         }

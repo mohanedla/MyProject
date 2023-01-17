@@ -60,7 +60,7 @@
                                     <td>{{$x->data}}</td> --}}
                                     <td>
                                         @switch($x->type)
-                                            @case('login')
+                                            @case('login')  
                                            {{-- <h3> <i style="margin-left:290%" class="bi bi-box-arrow-in-right  text-success mr-3"></i></h3> --}}
                                            <h2> <i style="margin-left:290%" class="bi bi-person-plus-fill  text-blue mr-3"></i></h2>
 

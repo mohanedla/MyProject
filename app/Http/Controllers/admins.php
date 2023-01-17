@@ -60,7 +60,7 @@ class admins extends Controller
         $admin->password = Hash::make(request('password'));
         $admin->role=request('role');
 
-        $admin->save();
+        $admin->save();  
         return redirect('/admin')->with('success','Thank You!');
 
     }
@@ -73,6 +73,7 @@ class admins extends Controller
         $admin->role=request('role');
 
         $admin->save();
+    
         return redirect('/admin_login')->with('success','Thank You!');
 
     }

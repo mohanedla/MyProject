@@ -455,18 +455,18 @@
                                                         <td class="text-right">$1,000.00</td>
 
 
-                                                    </tr>
+                                                    </tr> 
                                                 @endforeach
                                             </tbody>
                                             <tbody>
                                                 <tr>
-                    @if($old_order->count()>=3)
-                                                <td class="text-right"colspan="4">$   ({{  \Cart::priceTotal() - \Cart::priceTotal() *0.15 }})
+                                                 @if($old_order->count()>=3)
+                                                <td class="text-right"colspan="4">$   ( {{App\Models\Cart::GET_TOTAL_PRICE()}} - {{ App\Models\Cart::GET_TOTAL_PRICE() *0.15 }})
                                                @else
-                                               <td class="text-right"colspan="4">$   {{  \Cart::priceTotal()  }}
+                                               <td class="text-right"colspan="4">$ {{App\Models\Cart::GET_TOTAL_PRICE()}}
 
                                                    </td>
-                    @endif
+                                                      @endif
                                                     <td></td>
                                                     <td class="text-right"colspan="4">$1,000.00</td>
                                                 </tr>

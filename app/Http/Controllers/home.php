@@ -159,7 +159,8 @@ class home extends Controller
             $category_kids=Kids::all();
             $old_order=0;
             $Cart=Cart::where('user_id',auth()->user()->id)->get();
-        if(Auth::check()){
+        if(Auth::check()) 
+        {
         $old_order=Order::where('user_id',Auth::User()->id)->get();
         // dd($old_order);
         }
@@ -174,7 +175,8 @@ class home extends Controller
             $brand=brand::all();
             $product=product::where('category_id',$id)->where('collection',$name)->get();
             $old_order=0;
-            if(Auth::check()){
+            if(Auth::check())
+            {
             $old_order=Order::where('user_id',Auth::User()->id)->get();
             // dd($old_order);
             }

@@ -28,7 +28,7 @@ class CartController extends Controller
            $cart->save();
            # code...
        }else {
-       //else create new one 
+       //else create new one
            Cart::create([
                'product_id' => request('id')
                , 'user_id' =>  auth()->user()->id

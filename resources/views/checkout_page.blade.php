@@ -210,9 +210,9 @@
                                                 <li> <a href="/old_Bills/{{ $order->id }}">{{ __('INVOICE') }}
                                                         {{ ++$i }}
                                                     </a></li>
-                                                 
-                                                   
-                                                    
+
+
+
                                             @endforeach
                                             {{-- @foreach ($old_order as $order) --}}
                                         @empty($old_order->count())
@@ -445,7 +445,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody style="background-color:#424242; font-color:#wihte;">
-                                                @foreach (Cart::content() as $item)
+                                                @foreach ($Cart as $item)
                                                     <tr>
                                                         <td>{{ __($item->name) }}</td>
                                                         <td class="text-right">{{ $item->qty }}</td>
@@ -460,7 +460,7 @@
                                             </tbody>
                                             <tbody>
                                                 <tr>
-                    @if($old_order->count()>=1)
+                    @if($old_order->count()>=3)
                                                 <td class="text-right"colspan="4">$   ({{  \Cart::priceTotal() - \Cart::priceTotal() *0.15 }})
                                                @else
                                                <td class="text-right"colspan="4">$   {{  \Cart::priceTotal()  }}

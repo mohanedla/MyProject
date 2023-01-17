@@ -63,7 +63,7 @@
                                     -webkit-border-radius: 50%;
                                     -moz-border-radius: 50%;
                                     width: 40px;
-        height: 40px;">
+                                    height: 40px;">
                                 @endif
                                 </a>
                                 <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"

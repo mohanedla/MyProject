@@ -158,11 +158,12 @@ class home extends Controller
             $category_women=Women::all();
             $category_kids=Kids::all();
             $old_order=0;
+            $Cart=Cart::where('user_id',auth()->user()->id)->get();
         if(Auth::check()){
         $old_order=Order::where('user_id',Auth::User()->id)->get();
         // dd($old_order);
         }
-            return View('checkout_page',compact('old_order','collect','brand','category_men','category_women','category_kids'));
+            return View('checkout_page',compact('Cart','old_order','collect','brand','category_men','category_women','category_kids'));
         }
 
         public function category (string $id, string $name)
@@ -292,7 +293,7 @@ class home extends Controller
                     $product->quantity_price -=$bill->quantity;
                     $product->save();
                 }
-                // delete all bills wher has order id 
+                // delete all bills wher has order id
                 Bills::where('order_id',$order->id)->delete();
                 // delete order
                 $order->delete();

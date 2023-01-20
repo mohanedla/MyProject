@@ -1,0 +1,733 @@
+-- MySQL dump 10.13  Distrib 8.0.18, for Win64 (x86_64)
+--
+-- Host: 127.0.0.1    Database: myproject
+-- ------------------------------------------------------
+-- Server version	8.0.30
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `admins`
+--
+
+DROP TABLE IF EXISTS `admins`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `admins` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `fname` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `lname` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `confirm_password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `adjective` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone_number` int NOT NULL,
+  `age` int NOT NULL,
+  `gender` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `profile_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `admins_email_unique` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `admins`
+--
+
+LOCK TABLES `admins` WRITE;
+/*!40000 ALTER TABLE `admins` DISABLE KEYS */;
+/*!40000 ALTER TABLE `admins` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `bills`
+--
+
+DROP TABLE IF EXISTS `bills`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `bills` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `order_id` int NOT NULL,
+  `product_id` int NOT NULL,
+  `color_id` int NOT NULL,
+  `size_id` int NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `quantity` int NOT NULL,
+  `profile_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `price` double(8,2) NOT NULL,
+  `total` double(8,2) NOT NULL,
+  `price_dl` double(8,2) NOT NULL,
+  `total_dl` double(8,2) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `bills`
+--
+
+LOCK TABLES `bills` WRITE;
+/*!40000 ALTER TABLE `bills` DISABLE KEYS */;
+INSERT INTO `bills` VALUES (1,2,1,2,6,'حذاء',6,'public/CChhdjHWBMB9o8LVXDTQeVjQbkZgz6kdP08Fg88J.jpg',50.00,300.00,10000.00,10000.00,'2023-01-18 17:18:47','2023-01-18 17:18:47'),(2,2,2,2,3,'قميص',1,'public/vSBvgq6thT8d64ny48KVVoPDx9iMSAbIkuMODXZP.jpg',45.00,45.00,10000.00,10000.00,'2023-01-18 17:18:47','2023-01-18 17:18:47'),(3,3,3,2,6,'حذاء',3,'public/kH47h4yFK1CQAJ4gyVbaVkuCUvgigd9MMnTvrn7G.jpg',60.00,180.00,10000.00,10000.00,'2023-01-18 17:19:08','2023-01-18 17:19:08'),(4,4,4,3,3,'قميص',4,'public/hZjAXSpz3vwW8C4t2isTa2dT6848mHKkIqzWxOo0.jpg',65.00,260.00,10000.00,10000.00,'2023-01-18 17:19:49','2023-01-18 17:19:49'),(5,4,5,2,6,'حذاء',4,'public/CChhdjHWBMB9o8LVXDTQeVjQbkZgz6kdP08Fg88J.jpg',50.00,200.00,10000.00,10000.00,'2023-01-18 17:19:49','2023-01-18 17:19:49'),(6,4,6,3,3,'قميص',5,'public/NAV56u5EOafL3DKTfgzWg0HDrTuefcmmg9QZVsVh.jpg',35.00,175.00,10000.00,10000.00,'2023-01-18 17:19:49','2023-01-18 17:19:49'),(7,5,7,2,6,'حذاء',1,'public/CChhdjHWBMB9o8LVXDTQeVjQbkZgz6kdP08Fg88J.jpg',50.00,50.00,10000.00,10000.00,'2023-01-18 17:21:20','2023-01-18 17:21:20'),(8,5,8,3,6,'حذاء',2,'public/LgQfLXidrY8VJ882GTTLdixfkLumzMDgRpN4Oqua.jpg',40.00,80.00,10000.00,10000.00,'2023-01-18 17:21:21','2023-01-18 17:21:21'),(9,6,9,2,4,'كبوط',2,'public/xxlSwdzLfFhd3JcvEU79xiOAWeCwsGScerEBGT5S.jpg',175.00,350.00,10000.00,10000.00,'2023-01-18 17:22:40','2023-01-18 17:22:40'),(10,6,10,3,3,'قميص',3,'public/hZjAXSpz3vwW8C4t2isTa2dT6848mHKkIqzWxOo0.jpg',65.00,195.00,10000.00,10000.00,'2023-01-18 17:22:40','2023-01-18 17:22:40'),(11,7,11,3,3,'قميص',3,'public/NAV56u5EOafL3DKTfgzWg0HDrTuefcmmg9QZVsVh.jpg',35.00,105.00,10000.00,10000.00,'2023-01-18 17:23:07','2023-01-18 17:23:07'),(12,12,23,4,4,'توب',2,'public/slMmvcOodAiIQEiwREpnvoGIPT9oXlbOvwPBggtu.jpg',66.00,132.00,10000.00,10000.00,'2023-01-20 13:12:14','2023-01-20 13:12:14'),(13,12,24,2,6,'بنطلون',1,'public/9js7lM0IrqyL43sTCdO9GYFXZymd0crVVMucUoNA.jpg',50.00,50.00,10000.00,10000.00,'2023-01-20 13:12:14','2023-01-20 13:12:14'),(14,13,25,3,3,'قميص',1,'public/NAV56u5EOafL3DKTfgzWg0HDrTuefcmmg9QZVsVh.jpg',35.00,35.00,10000.00,10000.00,'2023-01-20 13:13:56','2023-01-20 13:13:56'),(15,13,26,2,6,'حذاء',1,'public/CChhdjHWBMB9o8LVXDTQeVjQbkZgz6kdP08Fg88J.jpg',50.00,50.00,10000.00,10000.00,'2023-01-20 13:13:56','2023-01-20 13:13:56'),(16,13,27,1,4,'جمبسوت',1,'public/OjuWMRv0rF6QWfTSY2l1WJjyT9LhxPbVtPo8BEpZ.jpg',87.00,87.00,10000.00,10000.00,'2023-01-20 13:13:56','2023-01-20 13:13:56'),(17,14,5,1,4,'جمبسوت',2,'public/OjuWMRv0rF6QWfTSY2l1WJjyT9LhxPbVtPo8BEpZ.jpg',87.00,174.00,10000.00,10000.00,'2023-01-20 13:15:40','2023-01-20 13:15:40');
+/*!40000 ALTER TABLE `bills` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `brands`
+--
+
+DROP TABLE IF EXISTS `brands`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `brands` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `model` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone_number` int NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `country` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `profile_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `brands_email_unique` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `brands`
+--
+
+LOCK TABLES `brands` WRITE;
+/*!40000 ALTER TABLE `brands` DISABLE KEYS */;
+INSERT INTO `brands` VALUES (1,'LACOSTE','Clothes',947667149,'LACOSTE@gmail.com','إسبانيا','طرابلس','public/PNw93C0Cpjy9KEhoRhQxHbjQCou38gPshQm9NOJ8.jpg','2023-01-18 14:10:57','2023-01-18 14:10:57'),(2,'MANGO','Clothes',912121211,'MANGO@gmail.com','إسبانيا','طرابلس','public/4obkVEBAgZOE198x90DIyOGgQmGe0OlJFAJkoaRW.jpg','2023-01-18 16:34:05','2023-01-18 16:34:05'),(3,'ALDO','Clothes',912121212,'ALDO@gmail.com','إيطاليا','طرابلس','public/z1EoFBjoS1M1aD5brpA60pefUXsxQoAFrCZUrr9r.jpg','2023-01-18 16:34:33','2023-01-18 16:34:33');
+/*!40000 ALTER TABLE `brands` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `carts`
+--
+
+DROP TABLE IF EXISTS `carts`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `carts` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `product_id` int NOT NULL,
+  `user_id` int NOT NULL,
+  `color_id` int NOT NULL,
+  `size_id` int NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `qty` int NOT NULL,
+  `price` double(8,2) DEFAULT NULL,
+  `Total_$` double(8,2) DEFAULT NULL,
+  `Unit_Price_DL` double(8,2) DEFAULT NULL,
+  `Total_DL` double(8,2) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `carts`
+--
+
+LOCK TABLES `carts` WRITE;
+/*!40000 ALTER TABLE `carts` DISABLE KEYS */;
+INSERT INTO `carts` VALUES (29,9,1,2,1,'public/vpMbFgG9GURPpksxs6xYEEbEmvM0S5AEfFPfMREo.png','ساعة',5,200.00,NULL,NULL,NULL,'2023-01-20 13:16:31','2023-01-20 13:21:26');
+/*!40000 ALTER TABLE `carts` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `categories`
+--
+
+DROP TABLE IF EXISTS `categories`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `categories` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `categories`
+--
+
+LOCK TABLES `categories` WRITE;
+/*!40000 ALTER TABLE `categories` DISABLE KEYS */;
+INSERT INTO `categories` VALUES (1,'Tshirt',NULL,NULL),(3,'Shoes',NULL,NULL),(4,'Trouser',NULL,NULL);
+/*!40000 ALTER TABLE `categories` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `color__products`
+--
+
+DROP TABLE IF EXISTS `color__products`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `color__products` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `color_id` int NOT NULL,
+  `product_id` int NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `color__products`
+--
+
+LOCK TABLES `color__products` WRITE;
+/*!40000 ALTER TABLE `color__products` DISABLE KEYS */;
+INSERT INTO `color__products` VALUES (1,2,1,'2023-01-18 14:13:41','2023-01-18 14:13:41'),(2,3,1,'2023-01-18 14:13:42','2023-01-18 14:13:42'),(3,2,2,'2023-01-18 16:46:47','2023-01-18 16:46:47'),(5,3,4,'2023-01-18 16:50:32','2023-01-18 16:50:32'),(6,1,5,'2023-01-18 16:51:40','2023-01-18 16:51:40'),(7,2,6,'2023-01-18 16:53:23','2023-01-18 16:53:23'),(8,3,7,'2023-01-18 16:55:00','2023-01-18 16:55:00'),(9,2,8,'2023-01-18 16:57:21','2023-01-18 16:57:21'),(11,2,9,'2023-01-19 18:04:59','2023-01-19 18:04:59'),(12,2,10,'2023-01-19 18:07:31','2023-01-19 18:07:31'),(13,2,15,'2023-01-19 18:13:49','2023-01-19 18:13:49'),(14,4,14,'2023-01-19 18:15:24','2023-01-19 18:15:24'),(15,3,13,'2023-01-19 18:16:26','2023-01-19 18:16:26'),(16,5,16,'2023-01-19 18:39:15','2023-01-19 18:39:15'),(18,3,3,'2023-01-19 18:41:53','2023-01-19 18:41:53');
+/*!40000 ALTER TABLE `color__products` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `colors`
+--
+
+DROP TABLE IF EXISTS `colors`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `colors` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `colors`
+--
+
+LOCK TABLES `colors` WRITE;
+/*!40000 ALTER TABLE `colors` DISABLE KEYS */;
+INSERT INTO `colors` VALUES (1,'Red',NULL,NULL),(2,'black',NULL,NULL),(3,'white',NULL,NULL),(4,'blue','2023-01-19 18:15:07','2023-01-19 18:15:07'),(5,'قهوي','2023-01-19 18:38:48','2023-01-19 18:38:48');
+/*!40000 ALTER TABLE `colors` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `failed_jobs`
+--
+
+DROP TABLE IF EXISTS `failed_jobs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `failed_jobs` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `failed_jobs`
+--
+
+LOCK TABLES `failed_jobs` WRITE;
+/*!40000 ALTER TABLE `failed_jobs` DISABLE KEYS */;
+/*!40000 ALTER TABLE `failed_jobs` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `image__products`
+--
+
+DROP TABLE IF EXISTS `image__products`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `image__products` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `product_id` int NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `image__products`
+--
+
+LOCK TABLES `image__products` WRITE;
+/*!40000 ALTER TABLE `image__products` DISABLE KEYS */;
+INSERT INTO `image__products` VALUES (1,'public/sKAIXrfTprIGanf68tC5WVyiP5R42cv9V00N0AvO.jpg',1,'2023-01-18 14:13:41','2023-01-18 14:13:41');
+/*!40000 ALTER TABLE `image__products` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `kids`
+--
+
+DROP TABLE IF EXISTS `kids`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `kids` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `kids`
+--
+
+LOCK TABLES `kids` WRITE;
+/*!40000 ALTER TABLE `kids` DISABLE KEYS */;
+INSERT INTO `kids` VALUES (1,'shoes','2023-01-18 16:53:42','2023-01-18 16:53:42'),(2,'Shirt','2023-01-18 16:53:53','2023-01-18 16:53:53');
+/*!40000 ALTER TABLE `kids` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `mens`
+--
+
+DROP TABLE IF EXISTS `mens`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `mens` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `mens`
+--
+
+LOCK TABLES `mens` WRITE;
+/*!40000 ALTER TABLE `mens` DISABLE KEYS */;
+INSERT INTO `mens` VALUES (1,'Shirt','2023-01-18 14:12:42','2023-01-18 14:12:42'),(2,'shoes','2023-01-18 16:45:43','2023-01-18 16:45:43'),(3,'ساعة','2023-01-19 17:58:38','2023-01-19 17:58:38'),(4,'بالطو','2023-01-19 18:05:55','2023-01-19 18:05:55'),(5,'Shirt','2023-01-19 18:42:51','2023-01-19 18:42:51'),(6,'Shirt','2023-01-19 18:43:42','2023-01-19 18:43:42');
+/*!40000 ALTER TABLE `mens` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `migrations`
+--
+
+DROP TABLE IF EXISTS `migrations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `migrations` (
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `migrations`
+--
+
+LOCK TABLES `migrations` WRITE;
+/*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
+INSERT INTO `migrations` VALUES (1,'2014_10_12_000000_create_users_table',1),(2,'2014_10_12_100000_create_password_resets_table',1),(3,'2019_08_19_000000_create_failed_jobs_table',1),(4,'2019_12_14_000001_create_personal_access_tokens_table',1),(5,'2022_10_16_183843_create_brands_table',1),(6,'2022_10_18_172527_create_products_table',1),(7,'2022_10_18_232215_create_admins_table',1),(8,'2022_10_25_012050_create_categories_table',1),(9,'2022_11_07_014912_create_colors_table',1),(10,'2022_11_07_015221_create_sizes_table',1),(11,'2022_11_16_113720_create_color__products_table',1),(12,'2022_11_16_114039_create_size__products_table',1),(13,'2022_11_16_114212_create_image__products_table',1),(14,'2022_11_16_114421_create_mens_table',1),(15,'2022_11_16_114439_create_womens_table',1),(16,'2022_11_16_114503_create_kids_table',1),(17,'2022_12_12_210857_create_notices_table',1),(18,'2022_12_13_222058_create_reports_table',1),(19,'2022_12_13_222444_create_bills_table',1),(20,'2022_12_21_173026_create_carts_table',1),(21,'2022_12_31_222631_create_orders_table',1),(22,'2023_01_04_220007_create_notifications_table',1),(23,'2023_01_08_222323_create_total_orders_table',1);
+/*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `notices`
+--
+
+DROP TABLE IF EXISTS `notices`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `notices` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone1` int NOT NULL,
+  `subject` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `role` int NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `notices`
+--
+
+LOCK TABLES `notices` WRITE;
+/*!40000 ALTER TABLE `notices` DISABLE KEYS */;
+INSERT INTO `notices` VALUES (1,'Aymen','Aymen@gmail.com',912222222,'السلام عليكم',1,'2023-01-18 15:50:26','2023-01-18 15:50:26'),(2,'aymen','aymen33@gmail.com',912222239,'السلام عليكم',2,'2023-01-18 16:14:38','2023-01-18 16:14:38'),(3,'aymen','aymen33@gmail.com',912222239,'السلام عليكم1',2,'2023-01-18 16:14:49','2023-01-18 16:14:49'),(4,'aymen','aymen11@gmail.com',912222231,'السلام عليكم',3,'2023-01-18 16:16:00','2023-01-18 16:16:00'),(5,'aymen','aymen11@gmail.com',912222231,'السلام عليكم1',3,'2023-01-18 16:16:15','2023-01-18 16:16:15'),(6,'osama','osama@gmail.com',912222235,'السلام عليكم',3,'2023-01-18 16:18:03','2023-01-18 16:18:03');
+/*!40000 ALTER TABLE `notices` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `notifications`
+--
+
+DROP TABLE IF EXISTS `notifications`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `notifications` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_id` int NOT NULL,
+  `data` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `read_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `notifications`
+--
+
+LOCK TABLES `notifications` WRITE;
+/*!40000 ALTER TABLE `notifications` DISABLE KEYS */;
+INSERT INTO `notifications` VALUES (1,'new_notice',3,'تم ارسال بلاغ جديد',NULL,'2023-01-18 15:50:26','2023-01-19 20:13:45'),(2,'login',2,'تم دخول مستخدم جديد',NULL,'2023-01-18 15:51:26','2023-01-19 20:13:45'),(3,'new_report',2,'تم ارسال بلاغ جديد',NULL,'2023-01-18 15:49:26','2023-01-19 20:13:45'),(4,'new_order',3,'تم إنشاء طلبية جديدة',NULL,'2023-01-18 15:50:26','2023-01-19 20:13:45'),(6,'new_notice',3,'تم ارسال بلاغ جديد','2023-01-19 22:13:45','2023-01-18 16:14:38','2023-01-19 20:13:45'),(7,'new_notice',4,'تم ارسال بلاغ جديد','2023-01-19 22:13:45','2023-01-18 16:14:38','2023-01-19 20:13:45'),(17,'new_order',1,'تم انشاء طلبية جديد',NULL,'2023-01-20 13:12:14','2023-01-20 13:12:14'),(18,'new_order',1,'تم انشاء طلبية جديد',NULL,'2023-01-20 13:13:56','2023-01-20 13:13:56'),(19,'new_order',1,'تم انشاء طلبية جديد',NULL,'2023-01-20 13:15:40','2023-01-20 13:15:40'),(20,'login',13,'تم انشاء حساب جديد',NULL,'2023-01-20 13:42:43','2023-01-20 13:42:43');
+/*!40000 ALTER TABLE `notifications` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `orders`
+--
+
+DROP TABLE IF EXISTS `orders`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `orders` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `status` int DEFAULT '0',
+  `user_id` int NOT NULL,
+  `total` double(8,2) NOT NULL DEFAULT '0.00',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `orders`
+--
+
+LOCK TABLES `orders` WRITE;
+/*!40000 ALTER TABLE `orders` DISABLE KEYS */;
+INSERT INTO `orders` VALUES (2,1,4,293.25,'2023-01-12 10:18:47','2023-01-18 17:24:16'),(3,1,4,153.00,'2023-01-15 14:19:08','2023-01-18 17:24:08'),(4,1,4,539.75,'2023-01-16 14:19:48','2023-01-18 17:24:05'),(5,0,7,130.00,'2023-01-01 16:21:20','2023-01-18 17:21:21'),(6,1,7,463.25,'2023-01-17 17:22:40','2023-01-18 17:24:13'),(7,0,7,89.25,'2023-01-18 17:23:06','2023-01-18 17:23:07'),(8,0,1,0.00,'2023-01-20 13:06:43','2023-01-20 13:06:43'),(9,0,1,0.00,'2023-01-20 13:10:20','2023-01-20 13:10:20'),(10,0,1,0.00,'2023-01-20 13:10:56','2023-01-20 13:10:56'),(11,0,1,0.00,'2023-01-20 13:11:22','2023-01-20 13:11:22'),(12,0,1,154.70,'2023-01-20 13:12:14','2023-01-20 13:12:14'),(13,0,1,146.20,'2023-01-20 13:13:56','2023-01-20 13:13:56'),(14,0,1,147.90,'2023-01-20 13:15:40','2023-01-20 13:15:40');
+/*!40000 ALTER TABLE `orders` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `password_resets`
+--
+
+DROP TABLE IF EXISTS `password_resets`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `password_resets` (
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  KEY `password_resets_email_index` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `password_resets`
+--
+
+LOCK TABLES `password_resets` WRITE;
+/*!40000 ALTER TABLE `password_resets` DISABLE KEYS */;
+/*!40000 ALTER TABLE `password_resets` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `personal_access_tokens`
+--
+
+DROP TABLE IF EXISTS `personal_access_tokens`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `personal_access_tokens` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `tokenable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tokenable_id` bigint unsigned NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `abilities` text COLLATE utf8mb4_unicode_ci,
+  `last_used_at` timestamp NULL DEFAULT NULL,
+  `expires_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `personal_access_tokens_token_unique` (`token`),
+  KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `personal_access_tokens`
+--
+
+LOCK TABLES `personal_access_tokens` WRITE;
+/*!40000 ALTER TABLE `personal_access_tokens` DISABLE KEYS */;
+/*!40000 ALTER TABLE `personal_access_tokens` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `products`
+--
+
+DROP TABLE IF EXISTS `products`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `products` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `model` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `specification` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `collection` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `admin_id` int NOT NULL,
+  `brand_id` int NOT NULL,
+  `category_id` int NOT NULL,
+  `quantity` int NOT NULL,
+  `quantity_price` int DEFAULT NULL,
+  `price` double(8,2) NOT NULL,
+  `price_purchas` double(8,2) NOT NULL,
+  `profile_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `all_images` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `products`
+--
+
+LOCK TABLES `products` WRITE;
+/*!40000 ALTER TABLE `products` DISABLE KEYS */;
+INSERT INTO `products` VALUES (1,'قميص',NULL,'شتوي','Men',1,1,1,15,7,35.00,15.00,'public/NAV56u5EOafL3DKTfgzWg0HDrTuefcmmg9QZVsVh.jpg',NULL,'2023-01-18 14:13:41','2023-01-20 13:13:56'),(2,'حذاء',NULL,'صيفي','Men',4,3,2,15,12,50.00,20.00,'public/CChhdjHWBMB9o8LVXDTQeVjQbkZgz6kdP08Fg88J.jpg',NULL,'2023-01-18 16:46:47','2023-01-20 13:13:56'),(3,'تيشرت',NULL,'صيفي','Men',4,2,2,10,8,55.00,21.00,'public/JtSchcRq5xGBVemuLkIWIin2Vm1HiqbcjztJbmmt.jpg',NULL,'2023-01-18 16:47:26','2023-01-19 18:41:53'),(4,'حذاء',NULL,'صيفي','Women',4,2,2,12,1,40.00,19.00,'public/LgQfLXidrY8VJ882GTTLdixfkLumzMDgRpN4Oqua.jpg',NULL,'2023-01-18 16:50:32','2023-01-18 16:50:32'),(5,'جمبسوت',NULL,'صيفي','Women',4,2,1,20,3,87.00,53.00,'public/OjuWMRv0rF6QWfTSY2l1WJjyT9LhxPbVtPo8BEpZ.jpg',NULL,'2023-01-18 16:51:40','2023-01-20 13:15:40'),(6,'كبوط',NULL,'شتوي','Women',4,2,4,12,2,175.00,90.00,'public/xxlSwdzLfFhd3JcvEU79xiOAWeCwsGScerEBGT5S.jpg',NULL,'2023-01-18 16:53:23','2023-01-18 16:53:23'),(7,'قميص',NULL,'كم طويل','Kids',4,2,2,30,NULL,65.00,30.00,'public/hZjAXSpz3vwW8C4t2isTa2dT6848mHKkIqzWxOo0.jpg',NULL,'2023-01-18 16:55:00','2023-01-18 16:55:00'),(8,'حذاء',NULL,'كم طويل','Kids',4,2,1,15,3,60.00,36.00,'public/kH47h4yFK1CQAJ4gyVbaVkuCUvgigd9MMnTvrn7G.jpg',NULL,'2023-01-18 16:57:21','2023-01-18 16:57:21'),(9,'ساعة',NULL,'جلد','Men',2,3,3,4,3,200.00,55.00,'public/vpMbFgG9GURPpksxs6xYEEbEmvM0S5AEfFPfMREo.png',NULL,'2023-01-19 18:00:54','2023-01-19 18:04:59'),(10,'بالطو',NULL,'شتوي','Men',2,2,4,18,5,195.00,115.00,'public/liTWZ6fZCwLUc5SHoPBPrRUXf1hQlalyFdhxa6BY.jpg',NULL,'2023-01-19 18:07:31','2023-01-19 18:07:31'),(11,'بالطو',NULL,'شتوي','Women',2,2,4,18,0,195.00,115.00,'public/liTWZ6fZCwLUc5SHoPBPrRUXf1hQlalyFdhxa6BY.jpg',NULL,'2023-01-19 18:07:31','2023-01-19 18:07:31'),(12,'حذاء',NULL,'صيفي','Women',4,2,1,15,3,60.00,36.00,'public/kH47h4yFK1CQAJ4gyVbaVkuCUvgigd9MMnTvrn7G.jpg',NULL,'2023-01-18 16:57:21','2023-01-18 16:57:21'),(13,'جيبوطي',NULL,'شتوي','Kids',4,2,1,15,8,90.00,36.00,'public/mpUIzlg93JMEsXq4WH4PY2yFYr4uShzEqpOGF74B.jpg',NULL,'2023-01-18 16:57:21','2023-01-19 18:16:26'),(14,'توب',NULL,'شتوي','Kids',4,2,1,15,2,66.00,36.00,'public/slMmvcOodAiIQEiwREpnvoGIPT9oXlbOvwPBggtu.jpg',NULL,'2023-01-18 16:57:21','2023-01-20 13:12:14'),(15,'بنطلون',NULL,'شتوي','Kids',4,2,1,15,1,50.00,36.00,'public/9js7lM0IrqyL43sTCdO9GYFXZymd0crVVMucUoNA.jpg',NULL,'2023-01-18 16:57:21','2023-01-20 13:12:14'),(16,'قميص',NULL,'صيفي','Men',4,2,1,10,8,65.00,21.00,'public/jWhdYStKEmY3BHZT6oIe4uisMv9qS2ZErxezV9PG.jpg',NULL,'2023-01-18 16:47:26','2023-01-19 18:39:15'),(17,'قميص',NULL,'صيفي','Men',4,2,1,10,8,65.00,21.00,'public/JtSchcRq5xGBVemuLkIWIin2Vm1HiqbcjztJbmmt.jpg',NULL,'2023-01-18 16:47:26','2023-01-19 18:39:15');
+/*!40000 ALTER TABLE `products` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `reports`
+--
+
+DROP TABLE IF EXISTS `reports`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `reports` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `reports`
+--
+
+LOCK TABLES `reports` WRITE;
+/*!40000 ALTER TABLE `reports` DISABLE KEYS */;
+/*!40000 ALTER TABLE `reports` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `size__products`
+--
+
+DROP TABLE IF EXISTS `size__products`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `size__products` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `size_id` int NOT NULL,
+  `product_id` int NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `size__products`
+--
+
+LOCK TABLES `size__products` WRITE;
+/*!40000 ALTER TABLE `size__products` DISABLE KEYS */;
+INSERT INTO `size__products` VALUES (1,2,1,'2023-01-18 14:13:42','2023-01-18 14:13:42'),(2,3,1,'2023-01-18 14:13:42','2023-01-18 14:13:42'),(3,6,2,'2023-01-18 16:46:47','2023-01-18 16:46:47'),(6,6,4,'2023-01-18 16:50:32','2023-01-18 16:50:32'),(7,2,5,'2023-01-18 16:51:40','2023-01-18 16:51:40'),(8,3,5,'2023-01-18 16:51:40','2023-01-18 16:51:40'),(9,4,5,'2023-01-18 16:51:40','2023-01-18 16:51:40'),(10,2,6,'2023-01-18 16:53:23','2023-01-18 16:53:23'),(11,4,6,'2023-01-18 16:53:23','2023-01-18 16:53:23'),(12,2,7,'2023-01-18 16:55:00','2023-01-18 16:55:00'),(13,3,7,'2023-01-18 16:55:00','2023-01-18 16:55:00'),(14,6,8,'2023-01-18 16:57:21','2023-01-18 16:57:21'),(16,1,9,'2023-01-19 18:04:59','2023-01-19 18:04:59'),(17,3,10,'2023-01-19 18:07:31','2023-01-19 18:07:31'),(18,4,10,'2023-01-19 18:07:31','2023-01-19 18:07:31'),(19,6,15,'2023-01-19 18:13:49','2023-01-19 18:13:49'),(20,3,14,'2023-01-19 18:15:24','2023-01-19 18:15:24'),(21,4,14,'2023-01-19 18:15:24','2023-01-19 18:15:24'),(22,4,13,'2023-01-19 18:16:26','2023-01-19 18:16:26'),(23,2,16,'2023-01-19 18:39:15','2023-01-19 18:39:15'),(24,3,16,'2023-01-19 18:39:15','2023-01-19 18:39:15'),(27,2,3,'2023-01-19 18:41:53','2023-01-19 18:41:53'),(28,3,3,'2023-01-19 18:41:53','2023-01-19 18:41:53');
+/*!40000 ALTER TABLE `size__products` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `sizes`
+--
+
+DROP TABLE IF EXISTS `sizes`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `sizes` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sizes`
+--
+
+LOCK TABLES `sizes` WRITE;
+/*!40000 ALTER TABLE `sizes` DISABLE KEYS */;
+INSERT INTO `sizes` VALUES (1,'S',NULL,NULL),(2,'M',NULL,NULL),(3,'L',NULL,NULL),(4,'XL',NULL,NULL),(5,'XXLL',NULL,NULL),(6,'39','2023-01-18 16:46:07','2023-01-18 16:46:07');
+/*!40000 ALTER TABLE `sizes` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `total_orders`
+--
+
+DROP TABLE IF EXISTS `total_orders`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `total_orders` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `total` double(8,2) NOT NULL,
+  `order_id` int NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `total_orders`
+--
+
+LOCK TABLES `total_orders` WRITE;
+/*!40000 ALTER TABLE `total_orders` DISABLE KEYS */;
+/*!40000 ALTER TABLE `total_orders` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `users` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `profile_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `bank_num` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone_number` int DEFAULT NULL,
+  `count_order` int DEFAULT NULL,
+  `role` int NOT NULL DEFAULT '3',
+  `recive` int DEFAULT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `users_email_unique` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'Aymen','Aymen@gmail.com','public/13.jpg',NULL,'$2y$10$y7Ng9V4eFZJ4/bbjksHjKexGrDneHZPW3oeFqAwb7cGBcwiT4KCZa','111112aa','طرابلس',918206370,7,1,0,NULL,'2023-01-18 14:07:54','2023-01-20 13:15:40'),(2,'aymen99','aymen99@gmail.com','public/duFRrJYpbiV8OKAKlljNqFUbTQhbDCKbqjf6ChX0.jpg',NULL,'$2y$10$Mlkcivtg5XvxQi/8VglLXeesGUyqIKz2uyGBiDCiqdrYNtqI2lTb.','111112a','طرابلس',947667149,NULL,3,0,NULL,'2023-01-18 14:11:57','2023-01-19 15:42:30'),(3,'Ahmed','Ahmed@gmail.com','public/qZyMvvRlhKSvhAlBhkP83AEkeRU2fyPE9jDcSKyx.jpg',NULL,'$2y$10$aFu4vYIJeeYlWvUz7DDw0eGrKpRhVjjxZGmzb6rSwYsYaycbdBWCK',NULL,NULL,NULL,NULL,2,NULL,NULL,'2023-01-18 15:45:16','2023-01-18 15:45:16'),(4,'aymen','aymen33@gmail.com','public/nr1P9u2nrBkucFYBpvtc53gKbhZv5YpacWMHusmr.jpg',NULL,'$2y$10$.tUVwpXnmDemuxnAfnObkO8Dh77pGOJY1nTd2SUnPljQWnKvpO3Ui','111112aa','طرابلس',918206370,3,2,0,NULL,'2023-01-18 15:46:48','2023-01-18 17:44:33'),(5,'aymen','aymen11@gmail.com','public/YS2V4cpdl9Nw5XCaq2svzWEHICdxvOZrg2wfYnKI.jpg',NULL,'$2y$10$m.TDw6DX9JYzpJxeMbrNS.eV5zk8pQdkU1fO2uT9IHh7Ybg5DIJrq','111112aa','طرابلس',947667149,NULL,3,0,NULL,'2023-01-18 16:15:36','2023-01-18 16:19:24'),(6,'wwww','WWW@gmail.com',NULL,NULL,'$2y$10$fgbENgtGtlIR7MzpPfrK9uK74Bai9Lj./m4UO.uUmZAz582ueJ87G',NULL,NULL,NULL,NULL,3,NULL,NULL,'2023-01-18 16:16:44','2023-01-18 16:16:44'),(7,'osama','osama@gmail.com','public/lNztuPEkO9cosKrzNITCGhWbNHuV1E0PQ32M2YmY.jpg',NULL,'$2y$10$EeOM/K0PesA6j6N7/DlEKu1n6DG.OijgakOfb8e5qsuF2e2UJ23Eq','111112a','السياحية',918206370,3,3,1,NULL,'2023-01-18 16:17:45','2023-01-18 17:23:06'),(8,'aymen1111','aymenbenghali@gmail.com','public/vewmrqd0HQkVE3FEmD2rYsmxcT9Y31TlTCNs1VdK.jpg',NULL,'$2y$10$dub.8QDylfD/VCigtim.HuSMCpEDsW7HupGnaBi.7Y6kRraRhjRVW',NULL,NULL,NULL,NULL,2,NULL,NULL,'2023-01-19 19:41:22','2023-01-19 19:41:22'),(9,'aymen1','aym@gmail.com',NULL,NULL,'$2y$10$AQixfbrdxScSE721geBxQObJK3xZFk5ECceo.xpVoRxML0oNYdWvO',NULL,NULL,NULL,NULL,3,NULL,NULL,'2023-01-20 13:26:01','2023-01-20 13:26:01'),(10,'jhfjfj','ayhhh@gmail.com',NULL,NULL,'$2y$10$0lUDydzoHbYinHPKrxTVNO7PbIRI7/GzSuNDJEBWq7O1BRQuT3GuG',NULL,NULL,NULL,NULL,3,NULL,NULL,'2023-01-20 13:28:55','2023-01-20 13:28:55'),(11,'aymen','ay6666@gmail.com',NULL,NULL,'$2y$10$AZ4My0/d3U0xeYh5KRSRD.dcoWzsXBwQzqcTz7H0PfIMG7YtDXHAG',NULL,NULL,NULL,NULL,3,NULL,NULL,'2023-01-20 13:37:34','2023-01-20 13:37:34'),(12,'aymen','alaa@gmail.com',NULL,NULL,'$2y$10$FQd/LnLNM8oPtBREZXHyqOe/3hkfk0NtmN0XoIU9uOmDzS8Ri0p8K',NULL,NULL,NULL,NULL,3,NULL,NULL,'2023-01-20 13:39:10','2023-01-20 13:39:10'),(13,'aymen','alaa564646849@gmail.com',NULL,NULL,'$2y$10$4Hyg2szs0cdz34h5cwCTXe2yuocgp5tQ3n/5BXUGOQz6M/NFCzBAm',NULL,NULL,NULL,NULL,3,NULL,NULL,'2023-01-20 13:42:43','2023-01-20 13:42:43');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `womens`
+--
+
+DROP TABLE IF EXISTS `womens`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `womens` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `womens`
+--
+
+LOCK TABLES `womens` WRITE;
+/*!40000 ALTER TABLE `womens` DISABLE KEYS */;
+INSERT INTO `womens` VALUES (1,'Jumpsuit','2023-01-18 16:48:36','2023-01-18 16:48:36'),(2,'shoes','2023-01-18 16:48:43','2023-01-18 16:48:43'),(3,'Jackets','2023-01-18 16:48:59','2023-01-18 16:48:59'),(4,'كبوط','2023-01-18 16:51:58','2023-01-18 16:51:58');
+/*!40000 ALTER TABLE `womens` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping routines for database 'myproject'
+--
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2023-01-20 18:04:00

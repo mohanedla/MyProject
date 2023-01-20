@@ -32,11 +32,11 @@
                 <div class="card-header">
                  <h4>{{ __('reports List') }}</h4> 
                     {{-- <div class="buttons"> --}}
-                        <a style="float: right; margin: 3px; " href="#" class="btn btn-secondary"> {{ __('اكثر 5 منتجات مبيعا') }}</a>
-                        <a style="float: right; margin: 3px;" href="#" class="btn btn-secondary"> {{ __('المنتجات المباعة') }}</a>
-                        <a style="float: right; margin: 3px;" href="#" class="btn btn-secondary"> {{ __('جرد مالي ') }}</a>
-                        <a style="float: right; margin: 3px;" href="#" class="btn btn-secondary"> {{ __('أعلى منتج مبيعا') }}</a>
-                        <a style="float: right; margin: 3px;" href="#" class="btn btn-secondary"> {{ __('جرد المنتجات') }}</a>
+                        <a style="float: right; margin: 3px; " href="{{route("R2",["type"=>1])}}" class="btn btn-secondary"> {{ __('اكثر 5 منتجات مبيعا') }}</a>
+                        <a style="float: right; margin: 3px;" href="{{route("R2",["type"=>2])}}" class="btn btn-secondary"> {{ __('المنتجات المباعة') }}</a>
+                        <a style="float: right; margin: 3px;" href="{{route("R2",["type"=>3])}}" class="btn btn-secondary"> {{ __('جرد مالي ') }}</a>
+                        <a style="float: right; margin: 3px;" href="{{route("R2",["type"=>4])}}" class="btn btn-secondary"> {{ __('المنتجات الغير مباعة ') }}</a>
+                        <a style="float: right; margin: 3px;"  href="{{route("R2",["type"=>5])}}" class="btn btn-secondary"> {{ __('جرد المنتجات') }}</a>
 
                   {{-- </div> --}}
 

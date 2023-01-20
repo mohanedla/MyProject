@@ -34,8 +34,8 @@ class product extends Model
         return $this->hasOne(User::class, 'id', 'admin_id');
     }
 
-    public function brands(){
-        return $this->hasOne(brand::class, 'id', 'brand_id');
+    public function brand(){
+        return $this->belongsTo(brand::class);
     }
 
     public function category(){

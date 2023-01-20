@@ -48,7 +48,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     Route::get('/d_report',[App\Http\Controllers\home::class,'report']);
     Route::get('/R1',[App\Http\Controllers\home::class,'R1']);
-    Route::get('/R2',[App\Http\Controllers\home::class,'R2']);
+    Route::get('/R2',[App\Http\Controllers\ReportController::class,'index'])->name("R2");
     Route::get('/R3',[App\Http\Controllers\home::class,'R3']);
     Route::get('/R4',[App\Http\Controllers\home::class,'R4']);
     Route::get('/R5',[App\Http\Controllers\home::class,'R5']);

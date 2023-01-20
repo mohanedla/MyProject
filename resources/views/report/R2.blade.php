@@ -41,7 +41,9 @@
                             <div class="col-xs-6 col-sm-6 col-md-6">
 
                                 <div class="receipt-left">
-                                        <img class="img-responsive" alt="iamgurdeeposahan"
+                                        <img class="img-responsive" 
+                                        src="{{ asset(Storage::url(auth()->user()->profile_image)) }}"
+                                        alt="iamgurdeeposahan"
                                             style="width: 71px; border-radius: 43px;">
                                 </div>
                             </div>
@@ -53,10 +55,8 @@
                             <div class="receipt-header receipt-header-mid">
                                 <div class="col-xs-8 col-sm-8 col-md-8 text-left">
                                     <div class="receipt-right">
-                                        <p><b>{{ __('Name') }}:</b> </p>
-                                        <p><b>{{ __('Phone Number') }}:</b> </p>
-                                        <p><b> {{ __('Email') }}:</b></p>
-                                        <p><b> {{ __('Address') }}:</b>  </p>
+                                        <p><b>{{ __('Name') }}:{{auth()->user()->name}}</b> </p>
+                                        <p><b> {{ __('Email') }}: {{auth()->user()->email}}</b></p>
 
                                     </div>
                                 </div>
@@ -65,108 +65,8 @@
                     </div>
 
                     <div>
-                        <table class="table table-bordered">
-                            <thead>
-                                {{-- R1  أعلى 5 منجات مبيعا--}}
-                                {{-- R2 المنتجات المباعة --}}
-                                {{-- R3 جرد مالي --}}
-                                {{-- R4  أعلىى منتج مبييعا--}}
-                                {{-- <tr>   
-
-                                    <th >{{ __('#')}}</th>
-                                    <th>{{ __('المنتج') }}</th>
-                                    <th >{{ __('العلامة التجارية') }}</th> 
-                                    <th >{{ __('الكمية المباعة') }}</th>
-                                    <th >{{ __('الكمية المتبقية') }}</th>
-                                    <th >{{ __('الربح') }}</th>
-                                 
-
-                                </tr>
-                                <tr>   
-                                    <th >{{ __('#')}}</th>
-                                    <th>{{ __('المنتج') }}</th>
-                                    <th >{{ __('الكمية المباعة') }}</th>
-                                    <th >{{ __('الكمية المتبقية') }}</th>
-                                    <th >{{ __('سعر الشراء') }}</th>
-                                    <th >{{ __('سعر البيع') }}</th>
-                                    <th >{{ __('الربح') }}</th>
-
-                                </tr>
-                                <tr>   
-
-                                    <th >{{ __('#')}}</th>
-                                    <th>{{ __('المنتج') }}</th>
-                                    <th >{{ __('العلامة التجارية') }}</th> 
-                                    <th >{{ __('الكمية المباعة') }}</th>
-                                    <th >{{ __('الكمية المتبقية') }}</th>
-                                    <th >{{ __('الربح') }}</th>
-                                    
-                                </tr>
-                                <tr>   
-
-                                   <th >{{ __('#')}}</th>
-                                   <th>{{ __('المنتج') }}</th>
-                                   <th >{{ __('العلامة التجارية') }}</th> 
-                                   <th >{{ __('الكمية المباعة') }}</th>
-                                   <th >{{ __('الكمية المتبقية') }}</th>
-                                   <th >{{ __('الربح') }}</th>
-
-                                </tr> --}}
-                                <tr>   
-                                   {{-- R5 جرد المنتجات --}}
-
-                                    <th >{{ __('#')}}</th>
-                                    <th>{{ __('المنتج') }}</th>
-                                    <th >{{ __('العلامة التجارية') }}</th> 
-                                    <th >{{ __('الكمية المباعة') }}</th>
-                                    <th >{{ __('الكمية المتبقية') }}</th>
-                                    <th >{{ __('سعر الشراء') }}</th>
-                                    <th >{{ __('سعر البيع') }}</th>
-                                    <th >{{ __('الربح') }}</th>
-
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {{-- @foreach ($bills as $bill) --}}
-                                    <tr>
-                                       {{-- <td class="text-right">
-                                          <img src="{{ asset(Storage::url($bill->profile_image)) }}" alt="Profile"
-                                              style="  border-radius: 50%;
-                                            -webkit-border-radius: 50%;
-                                            -moz-border-radius: 50%;
-                                            width: 50px;
-                                            height: 55px;">
-                                        </td> --}}
-                                        <td class="text-right">
-                                            <h5><strong>  </strong></h5>
-                                        </td>
-                                        <td class="text-right">
-                                            <h5><strong>  </strong></h5>
-                                        </td>
-                                        <td class="text-right">
-                                            <h5><strong>  </strong></h5>
-                                        </td>
-                                        <td class="text-right">
-                                            <h5><strong> </strong></h5>
-                                        </td>
-                                        <td class="text-right">
-                                            <h5><strong></strong></h5>
-                                        </td>
-                                        <td class="text-right">
-                                            <h5><strong></strong></h5>
-                                        </td>
-                                        <td class="text-right">
-                                            <h5><strong></strong></h5>
-                                        </td>
-                                        <td class="text-right">
-                                            <h5><strong></strong></h5>
-                                        </td>
-
-                                    </tr>
-                                {{-- @endforeach --}}
-                                   
-                            </tbody>
-                        </table>
+                        <x-share.report :columns="$data['columns']" :collections="$data['data']" ></x-share.report>
+                        
                     </div>
 
                     <div class="row">

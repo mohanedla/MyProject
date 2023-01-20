@@ -1,5 +1,6 @@
 <?php
 
+use App\Helpers\Helper;
 use Illuminate\Support\Facades\Facade;
 
 return [
@@ -213,6 +214,7 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
+        'Helper'   => Helper::class
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
 

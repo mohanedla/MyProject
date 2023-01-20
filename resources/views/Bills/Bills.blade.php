@@ -135,7 +135,7 @@
                                         @endforeach
                                         <th></th>
                                         <td class="text-right">
-                                        <h2><strong>8129 DL </strong></h2>
+                                        <h2><strong>2,371.84 DL </strong></h2>
 
                                             <!-- {{-- <h2><strong>${{ $bill->totals_dl }} </strong></h2> --}} -->
                                         </td>

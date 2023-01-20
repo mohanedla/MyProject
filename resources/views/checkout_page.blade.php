@@ -461,7 +461,7 @@
                                             <tbody>
                                                 <tr>
                                                  @if($old_order->count()>=3)
-                                                <td class="text-right"colspan="4">$   ( {{App\Models\Cart::GET_TOTAL_PRICE()}} - {{ App\Models\Cart::GET_TOTAL_PRICE() *0.15 }})
+                                                <td class="text-right"colspan="4">$   ( {{App\Models\Cart::GET_TOTAL_PRICE() -  App\Models\Cart::GET_TOTAL_PRICE() *0.15 }})
                                                @else
                                                <td class="text-right"colspan="4">$ {{App\Models\Cart::GET_TOTAL_PRICE()}}
 

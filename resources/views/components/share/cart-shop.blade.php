@@ -13,7 +13,7 @@
     <div id="cart-dropdown" class="cart-menu collapse">
         <ul>
             <li>
-                @if (App\Models\Cart::count() >2)
+                @if (App\Models\Cart::where('user_id',auth()->user()->id)->count() >2)
                     <div id="cart-dropdown1">
                     @else
                         <div>

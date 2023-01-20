@@ -7,7 +7,7 @@
 
     <!-- =====  BASIC PAGE NEEDS  ===== -->
     <meta charset="utf-8">
-    <title>{{ __('checkout') }}</title>
+    <title>{{ __('product_detail') }}</title>
 
     <!-- =====  SEO MATE  ===== -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -399,7 +399,7 @@
                                 </div>
                                 <span class="price mb_20"><span class="amount"><span
                                             class="currencySymbol">{{ $product->price }}</span>$</span>
-                                    <span><span class="amount"><span class="currencySymbol">125</span>DL</span>
+                                    <span><span class="amount"><span class="currencySymbol">180</span>DL</span>
 
                                     </span>
                                     <hr>

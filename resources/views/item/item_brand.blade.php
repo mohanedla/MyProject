@@ -58,26 +58,39 @@
                                     </li>
                                 @endif
                             @else
+                                @if (Auth::user()->profile_image)
+                                    <img src="{{ asset(Storage::url(Auth::user()->profile_image)) }}" alt="Profile"
+                                        style="  border-radius: 50%;
+                                    -webkit-border-radius: 50%;
+                                    -moz-border-radius: 50%;
+                                    width: 40px;
+                                    height: 40px;">
+                                @endif
+                                </a>
                                 <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                         role="button">{{ Auth::user()->name }} <span class="caret"></span> </span>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
+                                    <a class="rounded-circle">
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
 
-                                        <li><a class="dropdown-item" href="/"
-                                                onclick="event.preventDefault();
+                                            <li><a class="dropdown-item" href="/home"
+                                                    onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
-                                                {{ __('Logout') }}</a>
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                                class="d-none">
-                                                @csrf
-                                            </form>
-                                        </li>
-                                    </ul>
+                                                    {{ __('Logout') }}</a>
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                    class="d-none">
+                                                    @csrf
+                                                </form>
+                                            </li>
+                                        </ul>
                                 </li>
                             @endguest
+
+
+
                             <li class="language dropdown"> <span class="dropdown-toggle" id="dropdownMenu1"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                    role="button">{{ __('Language') }} <span class="caret"></span> </span>
+                                    role="button">{{ __('Language') }}&nbsp; <span class="caret"></span> </span>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                     @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                                         <li>
@@ -89,6 +102,19 @@
                                     @endforeach
                                 </ul>
                             </li>
+                            <!--
+                            @if (Auth::user())
+@if (Auth::user()->role == '3')
+<li class="currency dropdown">
+                                 <span class="dropdown-toggle" id="dropdownMenu12"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                role="button">{{ __('previous orders') }}&nbsp; <span class="caret"></span> </span>
+                              <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
+                                <li><a href="admin">{{ __('طلبية 1') }}</a></li>
+                                <li><a href="user">{{ __('طلبية 2') }}</a></li>
+                            </ul>
+@endif
+@endif -->
                             @if (Auth::user())
                                 @if (Auth::user()->role == '1' || Auth::user()->role == '2')
                                     {{-- @if ((Auth::User()->role = '1') or (Auth::User()->role = '2')) --}}
@@ -98,17 +124,16 @@
                                 @endif
                                 {{-- @endif --}}
                             @endif
-
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-        @if (session('status'))
+        {{-- @if (session('status'))
             <div class="alert alert-success" role="alert">
                 {{ session('status') }}
             </div>
-        @endif
+        @endif --}}
         <div class="header">
             <div class="container">
                 <div class="row">
@@ -123,139 +148,120 @@
                             </span>
                         </div> -->
                     </div>
-                    <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="/home"> <img
-                                alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
-                    <div class="col-xs-6 col-sm-4 shopcart">
-                        <div id="cart" class="btn-group btn-block mtb_40">
-                            <button type="button" class="btn" data-target="#cart-dropdown"
-                                data-toggle="collapse" aria-expanded="true"><span
-                                    id="shippingcart">{{ __('Shopping cart') }}</span><span
-                                    id="cart-total">{{ __('items') }} (0)</span> </button>
-                        </div>
-                        <div id="cart-dropdown" class="cart-menu collapse" >
-                            <ul>
-                                <li>
-                                    <div id="cart-dropdown1">
-                                    <table class="table table-striped" >
-                                        <tbody >
-                                            @if (Cart::count() > 0)
+                    <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="/home">
+                            <img alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
+                    @if (Auth::User())
+                        <x-share.cart-shop></x-share.cart-shop>
+                    @endif
+            </div>
+            <nav class="navbar">
+                <p>menu</p>
+                <button class="navbar-toggle" type="button" data-toggle="collapse"
+                    data-target=".js-navbar-collapse"> <span class="i-bar"><i
+                            class="fa fa-bars"></i></span></button>
+                <div class="collapse navbar-collapse js-navbar-collapse">
+                    <ul id="menu" class="nav navbar-nav">
+                        <li> <a href="home">{{ __('Home') }}</a></li>
+                        <li class="dropdown mega-dropdown"> <a href="#" class="dropdown-toggle"
+                                data-toggle="dropdown">{{ __('Collection') }} </a>
 
-                                            @foreach (Cart::content() as $item)
-
-                                            <tr>
-                                                <td class="text-center"><a href="#"><img style="width: 80px"
-                                                            src="{{ asset(Storage::url($item->image)) }}"
-                                                            alt="iPod Classic" title="iPod Classic"></a></td>
-                                                <td class="text-left product-name"><a href="#">{{$item->name}}</a> <span class="text-left price">${{$item->price}}</span>
-                                                    <input class="cart-qty" name="product_quantity"
-                                                        min="1" value="{{$item->qty}}" type="number">
-                                                </td>
-                                                <td class="text-center">
-                                                    <a class="close-cart" href="{{ url('remove', $item->rowId ) }}"><i
-                                                            class="fa fa-times-circle"></i>
-                                                        </a>
-                                                    </td>
-                                            </tr>
-                                            @endforeach
-
-                                            @endif
-                                        </tbody>
-
-                                    </table>
-                                </div>
-                            </li>
-                            <li>
-                                <table class="table">
-
-                                        <tbody>
-                                            <tr>
-                                                <th>${{\Cart::priceTotal()}}</th>
-                                                <th><strong>:"{{ __('Total') }}"</strong></th>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                <form action="cart_page">
-                                                    <input class="btn pull-left mt_10"
-                                                        value="{{ __('View cart') }}" type="submit">
-                                                </form>
-                                            </td>
-                                            <td>
-                                                <form action="checkout_page">
-                                                    <input class="btn pull-right mt_10"
-                                                        value="{{ __('Checkout') }}" type="submit">
-                                                </form>
-                                            </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                            <ul class="dropdown-menu mega-dropdown-menu row">
+                                <li class="col-md-3">
+                                    <ul>
+                                        <li class="dropdown-header">{{ __('Women') }}</li>
+                                        @foreach ($category_women as $women)
+                                            <li><a
+                                                    href="/category/{{ $women->id }}/Women">{{ __($women->name) }}</a>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </li>
+                                <li class="col-md-3">
+                                    <ul>
+                                        <li class="dropdown-header">{{ __('Men') }}</li>
+                                        @foreach ($category_men as $men)
+                                            <li><a href="/category/{{ $men->id }}/Men">{{ __($men->name) }}</a>
+                                            </li>
+                                        @endforeach
+                                    </ul>
                                 </li>
 
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <nav class="navbar">
-                    <p>menu</p>
-                    <button class="navbar-toggle" type="button" data-toggle="collapse"
-                        data-target=".js-navbar-collapse"> <span class="i-bar"><i
-                                class="fa fa-bars"></i></span></button>
-                                <div class="collapse navbar-collapse js-navbar-collapse">
-                                    <ul id="menu" class="nav navbar-nav">
-                                        <li> <a href="\home">{{ __('Home') }}</a></li>
-                                        <li class="dropdown mega-dropdown"> <a href="#" class="dropdown-toggle"
-                                                data-toggle="dropdown">{{ __('Collection') }} </a>
-                                                <ul class="dropdown-menu mega-dropdown-menu row">
-                                                    <li class="col-md-3">
-                                                        <ul>
-                                                            <li class="dropdown-header">{{ __('Women') }}</li>
-                                                            @foreach ($category_women as $women)
-                                                                <li><a href="#">{{ __($women->name) }}</a></li>
-                                                            @endforeach
-                                                        </ul>
-                                                    </li>
-                                                    <li class="col-md-3">
-                                                        <ul>
-                                                            <li class="dropdown-header">{{ __('Men') }}</li>
-                                                            @foreach ($category_men as $men)
-                                                                <li><a href="#">{{ __($men->name) }}</a></li>
-                                                            @endforeach
-                                                        </ul>
-                                                    </li>
-
-                                                    <li class="col-md-3">
-                                                        <ul>
-                                                            <li class="dropdown-header">{{ __('Children') }}</li>
-                                                            @foreach ($category_kids as $kids)
-                                                                <li><a href="#">{{ __($kids->name) }}</a></li>
-                                                            @endforeach
-                                                        </ul>
-                                                    </li>
-                                                    <li class="col-md-3">
-                                                        <ul>
-                                                            <li id="myCarousel" class="carousel slide" data-ride="carousel">
-                                                                <div class="carousel-inner">
-                                                                    <div class="item active"><a href=""> <img
-                                                                                src="{{ asset('images/menu-banner1.jpg') }}"
-                                                                                class="img-responsive" alt="Banner1"></a></div>
-                                                                </div>
-                                                                <!-- End Carousel Inner -->
-                                                            </li>
-                                                            <!-- /.carousel -->
-                                                        </ul>
-                                                    <li class="col-md-3">
-                                                    </li>
-                                                </ul>
-                                    </li>
-                                    <li> <a href="\shop">{{ __('shop') }}</a></li>
-                                    <li> <a href="\about">{{ __('About us') }}</a></li>
-                                    <li> <a href="\contact_us">{{ __('Contact us') }}</a></li>
+                                <li class="col-md-3">
+                                    <ul>
+                                        <li class="dropdown-header">{{ __('Children') }}</li>
+                                        @foreach ($category_kids as $kids)
+                                            <li><a
+                                                    href="/category/{{ $kids->id }}/Kids">{{ __($kids->name) }}</a>
+                                            </li>
+                                        @endforeach
                                     </ul>
-                                </div>
-                    <!-- /.nav-collapse -->
-                </nav>
+                                </li>
+                                <li class="col-md-3">
+                                    <ul>
+                                        <li id="myCarousel" class="carousel slide" data-ride="carousel">
+                                            <div class="carousel-inner">
+                                                <div class="item active">
+                                                    <a href=""> <img
+                                                            src="{{ asset('images\uploads\shof_1d433f3c8569e7d-removebg-preview.png') }}"
+                                                            class="img-responsive" alt="Banner1"></a>
+                                                </div>
+                                            </div>
+                                            <!-- End Carousel Inner -->
+                                        </li>
+                                        <!-- /.carousel -->
+                                    </ul>
+                                <li class="col-md-3">
+                                </li>
+                            </ul>
+                        </li>
+
+
+
+                        @if (Auth::User())
+                            <li> <a href="shop">{{ __('shop') }}</a></li>
+                        @endif
+                        @if (Auth::user())
+                            @if (Auth::user()->role == '3')
+                                <li class="dropdown"> <a href="#" class="dropdown-toggle"
+                                        data-toggle="dropdown">{{ __('previous orders') }} </a>
+
+                                    <ul class="dropdown-menu">
+                                        <div class="cart-dropdown2">
+                                            @php
+                                                $i = 0;
+                                            @endphp
+                                            @foreach ($old_order as $order)
+                                                <li> <a href="/old_Bills/{{ $order->id }}">{{ __('INVOICE') }}
+                                                        {{ ++$i }}
+                                                    </a></li>
+                                                 
+                                                   
+                                                    
+                                            @endforeach
+                                            {{-- @foreach ($old_order as $order) --}}
+                                        @empty($old_order->count())
+                                            <li style="text-align: center;"> {{ __('There are no orders') }}</li>
+                                        @endempty
+                                        {{-- @endforeach --}}
+                                        {{-- @if ($old_order == []) --}}
+
+
+                                    </div>
+                                </ul>
+                            </li>
+                        @endif
+                    @endif
+                                                    
+                                    
+                    <li> <a href="/about">{{ __('About us') }}</a></li>
+                    <li> <a href="/contact_us">{{ __('Contact us') }}</a></li>
+                </ul>
             </div>
-        </div>
-    </header>
+            <!-- /.nav-collapse -->
+        </nav>
+    </div>
+    </div>
+</header>
     <!-- =====  HEADER END  ===== -->
     <!-- =====  BANNER STRAT  ===== -->
     <div class="banner">

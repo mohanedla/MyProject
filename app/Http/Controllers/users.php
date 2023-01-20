@@ -66,25 +66,32 @@ public function update_user(){
         $order->user_id=Auth::User()->id;
         $order->save();
         // dd($order->id);
-        foreach($carts as $cart){
-            $bills=new Bills;
-            $bills->order_id=$order->id;
-            $bills->profile_image=$cart->image;
-            $bills->product_id=$cart->id;
-            $bills->name=$cart->name;
-            $bills->color_id=$cart->color_id;
-            $bills->size_id=$cart->size_id;
-            $bills->quantity=$cart->qty;
-            $bills->price=$cart->price;
-            $bills->total=$cart->price*$cart->qty;
-            $bills->price_dl=10000;
-            $bills->total_dl=10000;
-            $product = product::find($cart->id);
-            $product->quantity_price += ( $cart->qty);
-
-            $product->save();
-            $bills->save();
-        }
+       
+            foreach($carts as $cart){
+                $bills=new Bills;
+                $bills->order_id=$order->id;
+                $bills->profile_image=$cart->image;
+                $bills->product_id=$cart->product_id;
+                $bills->name=$cart->name;
+                $bills->color_id=$cart->color_id;
+                $bills->size_id=$cart->size_id;
+                $bills->quantity=$cart->qty;
+                $bills->price=$cart->price;
+                $bills->total=$cart->price*$cart->qty;
+                $bills->price_dl=10000;
+                $bills->total_dl=10000;
+                   
+                $product = product::find($cart->product_id);
+               
+                    $product->quantity_price =  $product->quantity_price + $cart->qty;
+                    $product->save();
+                
+    
+    
+                $bills->save();
+            }
+     
+        
         // $total=new TotalOrder;
         // $total->order_id=$order->id;
         $total=Order::find($order->id);

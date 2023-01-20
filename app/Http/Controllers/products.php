@@ -81,7 +81,12 @@ class products extends Controller
         $brand=brand::all();
         $title=brand::where('id','=',$id)->get('name');
         $page = "product";
-        return View('item.item_brand',compact('products','page','brand','title','collect','categories','category_men','category_women','category_kids'));
+        $old_order=0;
+        if(Auth::check()){
+        $old_order=Order::where('user_id',Auth::User()->id)->get();
+        // dd($old_order);
+        }
+        return View('item.item_brand',compact('products','old_order','page','brand','title','collect','categories','category_men','category_women','category_kids'));
 
     }
 

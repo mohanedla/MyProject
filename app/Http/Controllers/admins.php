@@ -71,7 +71,6 @@ class admins extends Controller
         $admin->email=request('email');
         $admin->password = Hash::make(request('password'));
         $admin->role=request('role');
-
         $admin->save();
     
         return redirect('/admin_login')->with('success','Thank You!');

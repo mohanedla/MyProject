@@ -43,7 +43,7 @@ class CartController extends Controller
     }
     public function updateCart(Request $request)
     {
-        Cart::update($request->id, ['qty' => $request->quantity]);
+        Cart::find($request->id)->update(['qty' => $request->quantity]);
 
         session()->flash('success', 'Item Cart is Updated Successfully !');
 

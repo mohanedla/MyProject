@@ -32,7 +32,6 @@
                                         </div>
                                         <div class="col-md-8">
                                             <h6 class="text-muted font-semibold">{{ __('all admin') }}</h6>
-
                                             <h4>{{$counts}}</h4>
 
 
@@ -59,6 +58,7 @@
                                         <div class="col-md-8">
                                             <h6 class="text-muted font-semibold">{{ __('Users') }}</h6>
                                             <h4>{{$counts1}}</h4>
+
                                         </div>
                                     </div>
                                 </div>
@@ -76,6 +76,7 @@
                                         <div class="col-md-8">
                                             <h6 class="text-muted font-semibold">{{ __('Brands') }}</h6>
                                             <h4>{{$counts2}}</h4>
+
                                         </div>
                                     </div>
                                 </div>
@@ -113,6 +114,7 @@
                                         <div class="col-md-8">
                                             <h7 class="text-muted font-semibold">{{ __('all  product') }}</h7>
                                             <h4>{{$counts4}}</h4>
+
 
                                         </div>
                                     </div>

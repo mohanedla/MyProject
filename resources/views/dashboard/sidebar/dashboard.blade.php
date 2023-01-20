@@ -190,6 +190,8 @@
                     </a>
                 </li>
             </ul>
+              
+            </li>
         </div>
         <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
     </div>

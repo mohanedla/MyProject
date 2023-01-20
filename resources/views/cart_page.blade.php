@@ -327,7 +327,7 @@
                                             <div style="max-width: 200px;" class="input-group btn-block">
                                                 <form action="{{ url('/updatecart') }}" method="POST">
                                                     @csrf
-                                                    <input type="hidden" name="id" value="{{ $item->rowId}}" >
+                                                    <input type="hidden" name="id" value="{{ $item->id}}" >
                                                     <input style="width: 100px" type="number" class="form-control quantity" size="1"
                                                     min="0" max="" value="{{$item->qty}}" name="quantity">
                                                 <span class="input-group-btn">

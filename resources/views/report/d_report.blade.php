@@ -30,7 +30,7 @@
         <section class="section">
             <div class="card">
                 <div class="card-header">
-                 <h4>{{ __('reports List') }}</h4>
+                 <h4>{{ __('reports List') }}</h4> 
                     {{-- <div class="buttons"> --}}
                         <a style="float: right; margin: 3px; " href="#" class="btn btn-secondary"> {{ __('اكثر 5 منتجات مبيعا') }}</a>
                         <a style="float: right; margin: 3px;" href="#" class="btn btn-secondary"> {{ __('المنتجات المباعة') }}</a>

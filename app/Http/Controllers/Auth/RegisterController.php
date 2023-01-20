@@ -71,12 +71,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
-        Notification::create([
-            'user_id'=>$user->id,
-            'type'=>'login',
-            'data'=>"تم انشاء حساب جديد",
-            'created_at'=>Carbon::now('Africa/Tripoli'),
-        ]);
+
         return $user;
     }
 }

@@ -254,8 +254,8 @@ class home extends Controller
                 //     $order->delete();
                     
                 // }
-                $o = Carbon::now('Africa/Tripoli');
-              $page = "bills";
+            $o = Carbon::now('Africa/Tripoli');
+            $page = "bills";
             $orders=Order::all();
             return View('bills.d_bills',compact('page','orders','o'));
         }
@@ -362,7 +362,7 @@ class home extends Controller
             $page = "R2";
             return View('report.R2',compact("page"));
         }
-    }
+        }
         public function R3()
         {
             if(!Auth::check() )
@@ -400,7 +400,7 @@ class home extends Controller
 
             return View('report.R5',compact("page"));
         }
-    }
+    }   
     public function notifications()
     {
         if(!Auth::check() )

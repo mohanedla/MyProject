@@ -71,7 +71,11 @@
                                     <td>{{$x->collection}}</td>
                                     <td >{{$x->specification}}</td>
                                     <td style="text-align: center;">{{$x->quantity}}</td>
+                                    @if($x->quantity_price==0)
+                                    <td style="text-align: center;">0</td>
+                                    @else
                                     <td style="text-align: center;">{{$x->quantity_price}}</td>
+                                    @endif
                                     <td style="text-align: center;">{{$x->quantity - $x->quantity_price}}</td>
                                     <!-- <td>{{$x->price_purchas}}$</td>
                                     <td>{{$x->price}}$</td> -->

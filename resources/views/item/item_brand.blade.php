@@ -343,11 +343,14 @@
                                                             <h6 data-name="product_name" class="product-name"><a
                                                                     href="#"
                                                                     title="Casual Shirt With Ruffle Hem">
-                                                                    {{ $item->name }} &nbsp; {{ $item->brands->name }} </a></h6>
+                                                                    {{ $item->name }} &nbsp; {{ $item->brand->name }} </a></h6>
                                                             @if (Auth::User())
                                                                 <span class="price"><span class="amount"><span
                                                                             class="currencySymbol">$</span>{{ $item->price }}.00
                                                                         </span>
+                                                                       <br>
+                                                                        <span class="price"><span class="amount"><span class="currencySymbol">LYD </span>{{ round( $item->price  * Session::get('LYD') , 2) }}</span>
+
                                                                         <!-- <form action="/">
 
              <input class="btn pull-right mt_30" type="submit" value="{{ __('Add to cart') }}" />
@@ -427,10 +430,13 @@
                                                                 class="fa fa-star fa-stack-x"></i></span> </div>
                                                     <h6 data-name="product_name" class="product-name"><a
                                                             href="#" title="Casual Shirt With Ruffle Hem">
-                                                            {{ $item->name }} &nbsp; {{ $item->brands->name }}</a></h6>
+                                                            {{ $item->name }} &nbsp; {{ $item->brand->name }}</a></h6>
                                                     @if (Auth::User())
                                                         <span class="price"><span class="amount"><span
                                                                     class="currencySymbol">$</span>{{ $item->price }}.00</span>
+                                                                   <br>
+                                                                    <span class="price"><span class="amount"><span class="currencySymbol">LYD </span>{{ round( $item->price  * Session::get('LYD') , 2) }}</span>
+
                                                                     <!-- <form action="/">
 
                                                     <input class="btn pull-right mt_30" type="submit" value="{{ __('Add to cart') }}" />
@@ -510,10 +516,13 @@
                                                             <h6 data-name="product_name" class="product-name"><a
                                                                     href="#"
                                                                     title="Casual Shirt With Ruffle Hem">
-                                                                    {{ $item->name }} &nbsp; {{ $item->brands->name }}</a></h6>
+                                                                    {{ $item->name }} &nbsp; {{ $item->brand->name }}</a></h6>
                                                             @if (Auth::User())
                                                                 <span class="price"><span class="amount"><span
                                                                             class="currencySymbol">$</span>{{ $item->price }}.00</span>
+                                                                           <br>
+                                                                            <span class="price"><span class="amount"><span class="currencySymbol">LYD </span>{{ round( $item->price  * Session::get('LYD') , 2) }}</span>
+
                                                                             <!-- <form action="/">
 
              <input class="btn pull-right mt_30" type="submit" value="{{ __('Add to cart') }}" />

@@ -340,9 +340,11 @@
                                         </td>
                                         <td class="text-right">${{$item->price}}</td>
                                         <td class="text-right">${{$item->price*$item->qty}}</td>
-                                        <td class="text-right">254.00 DL</td>
-                                        <td class="text-right">254.00 DL</td>
-                                        <td class="text-right"><a class="close-cart" href="{{ url('remove', $item->rowId ) }}"><i
+                                        <td class="text-right">LYD :{{ round( $item->price  * Session::get('LYD') , 2) }}</td>
+                                        {{-- <span class="price"><span class="amount"><span class="currencySymbol">LYD </span></span> --}}
+
+                                        <td class="text-right">LYD : {{ round( $item->price  * Session::get('LYD') , 2) * $item->qty }}</td>
+                                        <td class="text-right"><a class="close-cart" href="{{ url('remove', $item->id ) }}"><i
                                             class="fa fa-times-circle"></i>
                                         </a></td>
                                         <input type="hidden"> {{$item->profile_image}}

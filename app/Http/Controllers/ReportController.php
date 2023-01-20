@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
+use App\Models\report;
 use App\Models\product;
+use App\Models\Notification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -23,6 +26,7 @@ class ReportController extends Controller
     {
         switch ($numberOfReports) {
             case 1:
+                $report_name='اكثر 5 منتجات مبيعا';
                 $data["columns"]=[
                     ["code"=>'name',"name"=>"المنتج"],
                     ["code"=>'brand->name',"name"=>"العلامة التجارية"],
@@ -37,6 +41,7 @@ class ReportController extends Controller
                 
             break;
             case 2:
+                $report_name='المنتجات المباعة';
                 $data["columns"]=[
                     ["code"=>'name',"name"=>"المنتج"],
                     ["code"=>'brand->name',"name"=>"العلامة التجارية"],
@@ -50,6 +55,7 @@ class ReportController extends Controller
                 ->with(['brand'])->where('quantity_price','!=',0)->orderBy('quantity_price','desc')->get();
             break;
             case 3:
+                $report_name='جرد مالي ';
                 $data["columns"]=[
                     ["code"=>'name',"name"=>"المنتج"],
                     ["code"=>'brand->name',"name"=>"العلامة التجارية"],
@@ -64,6 +70,7 @@ class ReportController extends Controller
                 
             break; 
             case 4:
+                $report_name='المنتجات الغير مباعة ';
                 $data["columns"]=[
                     ["code"=>'name',"name"=>"المنتج"],
                     ["code"=>'brand->name',"name"=>"العلامة التجارية"],
@@ -74,6 +81,7 @@ class ReportController extends Controller
                 ->with(['brand'])->where('quantity_price','==',0)->orderBy('quantity_price','desc')->get();
             break;
             case 5:
+                $report_name='جرد المنتجات';
                 $data["columns"]=[
                     ["code"=>'name',"name"=>"المنتج"],
                     ["code"=>'brand->name',"name"=>"العلامة التجارية"],
@@ -89,6 +97,16 @@ class ReportController extends Controller
                 ->with(['brand'])->orderBy('quantity_price','desc')->get();
             break;           
         }
+        report::create([
+            "user_id"=>auth()->user()->id,
+            'name'=>$report_name
+        ]);
+        Notification::create([
+            'user_id'=>auth()->user()->id,
+            'type'=>'new_report',
+            'data'=>$report_name,
+            'created_at'=>Carbon::now('Africa/Tripoli'),
+        ]);
         return  $data;
     }
 }

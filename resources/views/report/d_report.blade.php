@@ -32,11 +32,11 @@
                 <div class="card-header">
                  <h4>{{ __('reports List') }}</h4> 
                     {{-- <div class="buttons"> --}}
-                        <a style="float: right; margin: 3px; " href="{{route("R2",["type"=>1])}}" class="btn btn-secondary"> {{ __('اكثر 5 منتجات مبيعا') }}</a>
-                        <a style="float: right; margin: 3px;" href="{{route("R2",["type"=>2])}}" class="btn btn-secondary"> {{ __('المنتجات المباعة') }}</a>
-                        <a style="float: right; margin: 3px;" href="{{route("R2",["type"=>3])}}" class="btn btn-secondary"> {{ __('جرد مالي ') }}</a>
-                        <a style="float: right; margin: 3px;" href="{{route("R2",["type"=>4])}}" class="btn btn-secondary"> {{ __('المنتجات الغير مباعة ') }}</a>
-                        <a style="float: right; margin: 3px;"  href="{{route("R2",["type"=>5])}}" class="btn btn-secondary"> {{ __('جرد المنتجات') }}</a>
+                        <a style="float: right; margin: 3px; " onclick="return confirm('{{ __(' Are you sure you want to cancel it?') }}')" href="{{route("R2",["type"=>1])}}" target="_blank"  class="btn btn-secondary"> {{ __('اكثر 5 منتجات مبيعا') }}</a>
+                        <a style="float: right; margin: 3px;"  href="{{route("R2",["type"=>2])}}" target="_blank" class="btn btn-secondary"> {{ __('المنتجات المباعة') }}</a>
+                        <a style="float: right; margin: 3px;" href="{{route("R2",["type"=>3])}}" target="_blank"class="btn btn-secondary"> {{ __('جرد مالي ') }}</a>
+                        <a style="float: right; margin: 3px;" href="{{route("R2",["type"=>4])}}" target="_blank" class="btn btn-secondary"> {{ __('المنتجات الغير مباعة ') }}</a>
+                        <a style="float: right; margin: 3px;"  href="{{route("R2",["type"=>5])}}" target="_blank" class="btn btn-secondary"> {{ __('جرد المنتجات') }}</a>
 
                   {{-- </div> --}}
 
@@ -48,37 +48,22 @@
                             <th style="width: 50px;" scope="col">{{ __('#')}}</th>
                             <th style="width: 50px;" scope="col">{{ __('name admin') }}</th>
                             <th style="width: 50px;" scope="col">{{ __('نوع التقرير') }}</th>
-                                <th style="width: 50px;" scope="col"></th>
+                            <th style="width: 50px;" scope="col">{{ __('تاريخ ') }}</th>
 
                         </tr>
                     </thead>
-                    <td>
-                    </td>
+                   <tbody>
+                    @foreach ($reports as $key => $report)
+                        <tr>
+                            <td>{{$key+1}}</td>
+                            <td>{{$report->user->name}}</td>
+                            <td>{{$report->name}}</td>
+                            <td>{{$report->created_at->diffForHumans()}}</td>
+                        </tr>
+                    @endforeach
+                   
+                   </tbody>
 
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-
-
-                    <td class="text-center">
-                    @if (Auth::user()->role == '1')
-
-                                    <a data-bs-toggle="modal" data-bs-target="#type_men"
-                                    data-bs-whatever="@mdo" >
-                                        <span class="badge bg-info"><i class="bi bi-eye-fill"></i></span>
-                                    </a>
-
-
-
-
-                                    <a href="#" onclick="return confirm('Are you sure to want to delete it?')"><span class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
-                                    @endif
-                                </td>
-                        <tbody>
-
-
-                        </tbody>
                     </table>
                 </div>
                 <script>

@@ -14,6 +14,7 @@ use App\Models\Category;
 use App\Models\TotalOrder;
 use App\Models\Notification;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class users extends Controller
 {
@@ -78,8 +79,8 @@ public function update_user(){
                 $bills->quantity=$cart->qty;
                 $bills->price=$cart->price;
                 $bills->total=$cart->price*$cart->qty;
-                $bills->price_dl=10000;
-                $bills->total_dl=10000;
+                $bills->price_dl=Session::get('LYD') * $cart->price ;
+                $bills->total_dl=Session::get('LYD') * ($cart->price*$cart->qty) ;
                    
                 $product = product::find($cart->product_id);
                

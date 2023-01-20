@@ -446,7 +446,10 @@
                                                 <span class="price">
                                                 <h5 class="amount"><span
                                                         class="currencySymbol">$</span>{{ $item->price }}&nbsp;
-                                                        {{ $item->brands->name}}</h5>
+                                                        {{ $item->brand->name}}</h5>
+                                                        <br>
+                                                        <span class="price"><span class="amount"><span class="currencySymbol">LYD </span>{{ round( $item->price  * Session::get('LYD') , 2) }}</span>
+
                                                 <h3 class="product-desc mt_20 mb_60">{{ __('Specifications') }}
                                                     : {{ $item->specification }} </h3>
                                     </span>

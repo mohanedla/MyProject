@@ -29,7 +29,7 @@ class products extends Controller
     //     $product_name_women=product::with('categories')->where('collection','=','Women')->get();
     //     $product_name_children=product::with('categories')->where('collection','=','Children')->get();
     //     $admin=product::with('admins')->get();
-    //     $brand=product::with('brands')->get();
+    //     $brand=product::with('brand')->get();
     //     $category=product::with('categories')->get();
     //     //  dd($brand);yy
     //     $page = "product";
@@ -45,13 +45,13 @@ class products extends Controller
 
         else{
         if($id == 0){
-            $admin=product::with('brands','sizes.size','colors.color','images')->get();
+            $admin=product::with('brand','sizes.size','colors.color','images')->get();
         }elseif($id == 1){
-            $admin=product::where('collection','Men')->with('brands','sizes.size','colors.color','images')->get();
+            $admin=product::where('collection','Men')->with('brand','sizes.size','colors.color','images')->get();
         }elseif($id ==2){
-            $admin=product::where('collection','Women')->with('brands','sizes.size','colors.color','images')->get();
+            $admin=product::where('collection','Women')->with('brand','sizes.size','colors.color','images')->get();
         }else{
-            $admin=product::where('collection','kids')->with('brands','sizes.size','colors.color','images')->get();
+            $admin=product::where('collection','kids')->with('brand','sizes.size','colors.color','images')->get();
         }
         //  dd($brand);
         $page = "product";
@@ -113,7 +113,7 @@ class products extends Controller
             $page = "product";
             $collect = array('M'=>'Men','W'=>'Women','C'=>'Kids' );
             $brand=brand::all();
-            $products=product::with('brands','colors.color','sizes.size','images')->where('id',$id)->get();
+            $products=product::with('brand','colors.color','sizes.size','images')->where('id',$id)->get();
             $category_men=Men::all();
             $category_women=Women::all();
             $category_kids=Kids::all();
@@ -170,7 +170,7 @@ class products extends Controller
         }else{
             $categories=Kids::all();
         }
-        $get=product::with('brands')->get()->find($id);
+        $get=product::with('brand')->get()->find($id);
         $color=Color::all();
         $size=Size::all();
         $get_color=Color_Product::with('products')->where('product_id','=',$id)->get();

@@ -399,7 +399,10 @@
                                 </div>
                                 <span class="price mb_20"><span class="amount"><span
                                             class="currencySymbol">{{ $product->price }}</span>$</span>
-                                    <span><span class="amount"><span class="currencySymbol">180</span>DL</span>
+                                            <br>    
+                                            <span class="price"><span class="amount"><span class="currencySymbol">LYD </span>{{ round( $product->price  * Session::get('LYD') , 2) }}</span>
+
+                                    {{-- <span><span class="amount"><span class="currencySymbol">180</span>DL</span> --}}
 
                                     </span>
                                     <hr>
@@ -412,7 +415,7 @@
                                         </li>
                                         <br>
                                         <li>
-                                            <h4>{{ __('Brand') }} : {{ $product->brands->name }} </h4>
+                                            <h4>{{ __('Brand') }} : {{ $product->brand->name }} </h4>
 
                                             <!-- <span><h5> Shirt </h5></span> -->
                                         </li>

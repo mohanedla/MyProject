@@ -34,6 +34,9 @@
                                          <span class="text-left price">{{ $item->color->name }}</span>
                                          <span class="text-left price">{{ $item->size->name }}</span>
                                          <span class="text-left price">${{ $item->price }}</span>
+                                         <span class="text-left price">LYD :{{ round( $item->price  * Session::get('LYD') , 2) }}</span>
+                                         {{-- <span class="price"><span class="amount"><span class="currencySymbol">LYD </span>{{ round( $product->price  * Session::get('LYD') , 2) }}</span> --}}
+
                                         <input class="cart-qty" name="product_quantity"
                                             min="1" value="{{ $item->qty }}"
                                             type="number">

@@ -67,7 +67,7 @@
                                 <tr>
                                     <td>{{$i++}}</td>
                                     <td>{{$x->name}}</td>
-                                    <td>{{$x->brands->name}}</td>
+                                    <td>{{$x->brand->name}}</td>
                                     <td>{{$x->collection}}</td>
                                     <td >{{$x->specification}}</td>
                                     <td style="text-align: center;">{{$x->quantity}}</td>
@@ -79,7 +79,7 @@
                                     <td style="text-align: center;">{{$x->quantity - $x->quantity_price}}</td>
                                     <!-- <td>{{$x->price_purchas}}$</td>
                                     <td>{{$x->price}}$</td> -->
-                                    <td>{{$x->user->name}}</td>
+                                    {{-- <td>{{$x->user->name}}</td> --}}
                                     <td>
 
 

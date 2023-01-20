@@ -335,7 +335,9 @@
                     <th><h3>{{ $total }} $</h3></th>
                     <!-- <th>{{ $total }}</th> -->
                     <td></td>
-                    <th><h3>{{ $total }} DL</h3></th>
+                    {{-- <h2><strong>{{ $total->total * Session::get('LYD') }} DL </strong></h2> --}}
+
+                    <th><h3>{{ $total  * Session::get('LYD')}} DL</h3></th>
                     
                     <!-- <th><b>:المجموع</b></th> -->
 

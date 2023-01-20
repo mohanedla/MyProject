@@ -4,15 +4,15 @@ namespace App\Helpers;
 
 class Helper
 {
-    static public function  get_property($n, $value)
+    static public function  get_property($code, $item)
     {
-        foreach (explode('->',$n) as $property) {
-            $value  = self::get_nested_property($property, $value);
+        foreach (explode('->',$code) as $property) {
+            $item  = self::get_nested_property($property, $item);
         }
-        return $value;
+        return $item;
     }
-    static private function  get_nested_property($property, $object)
+    static private function  get_nested_property($property, $item)
     {
-        return $object->{$property};
+        return $item->{$property};
     }
 }

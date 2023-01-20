@@ -105,7 +105,7 @@
                                             <fieldset class="form-group">
                                                 <select class="form-select @error('role_name') is-invalid @enderror" required
                                                     name="product_brand" id="role_name">
-                                                    <option selected value="{{$product->brand_id}}">{{$product->brands->name}} </option>
+                                                    <option selected value="{{$product->brand_id}}">{{$product->brand->name}} </option>
                                                     @foreach ($brands as $brand)
                                                     @if($product->brand_id != $brand->id)
                                                         <option value="{{ $brand->id }}">{{ __($brand->name) }}

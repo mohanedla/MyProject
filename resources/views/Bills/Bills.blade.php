@@ -111,10 +111,10 @@
                                             <h5><strong>{{ $bill->total }}$</strong></h5>
                                         </td>
                                         <td class="text-right">
-                                            <h5><strong> {{ $bill->price * 5.12 }} DL</strong></h5>
+                                            <h5><strong> {{ $bill->price_dl }} DL</strong></h5>
                                         </td>
                                         <td class="text-right">
-                                            <h5><strong>{{ $bill->total *5.12 }}DL </strong></h5>
+                                            <h5><strong>{{ $bill->total_dl }}DL </strong></h5>
                                         </td>
 
                                     </tr>
@@ -132,13 +132,14 @@
                                         <td class="text-right">
                                             <h2><strong>{{ $total->total }}$ </strong></h2>
                                         </td>
-                                        @endforeach
                                         <th></th>
                                         <td class="text-right">
-                                        <h2><strong>2,371.84 DL </strong></h2>
+                                        <h2><strong>{{ $total->total * Session::get('LYD') }} DL </strong></h2>
 
-                                            <!-- {{-- <h2><strong>${{ $bill->totals_dl }} </strong></h2> --}} -->
+                                            <!-- {{-- <h2><strong>${{ $bill->totals_dl }} </strong></h2> --}} Session::get('LYD') -->
                                         </td>
+                                        @endforeach
+
 
                                 <!-- <td class="text-left text-danger">
                                         <h2><strong><i class="fa fa-inr"></i>   120$</strong></h2></td>

@@ -15,14 +15,16 @@ use App\Models\Order;
 use App\Models\Women;
 use App\Models\Notice;
 use App\Models\report;
+use GuzzleHttp\Client;
 use App\Models\product;
 use App\Models\Category;
-use App\Models\TotalOrder;
 
+use App\Models\TotalOrder;
 use App\Models\Notification;
 use Illuminate\Http\Request;
 use App\Notifications\NewUser;
 use Brian2694\Toastr\Facades\Toastr;
+use Illuminate\Support\Facades\Session;
 
 class home extends Controller
 {
@@ -39,8 +41,11 @@ class home extends Controller
         $old_order=Order::where('user_id',Auth::User()->id)->get();
         // dd($old_order);
         }
+       
+       
         return View('index',compact('old_order','products','collect','brand','category_men','category_women','category_kids'));
     }
+
     public function category_page(Request $request)
         {
             $products = product::paginate($request->get('per_page', 5));
@@ -59,15 +64,43 @@ class home extends Controller
         }
 
     public function login_register()
-        {
-            // $categories=Category::all();
-            // $collect = array('M'=>'Men','W'=>'Women','C'=>'Children' );
-            // $product_name_men=product::with('categories')->where('collection','=','Men')->get();
-            // $product_name_women=product::with('categories')->where('collection','=','Women')->get();
-            // $product_name_children=product::with('categories')->where('collection','=','Children')->get();
-            return View('/login');
-        }
+    {
+        // $categories=Category::all();
+        // $collect = array('M'=>'Men','W'=>'Women','C'=>'Children' );
+        // $product_name_men=product::with('categories')->where('collection','=','Men')->get();
+        // $product_name_women=product::with('categories')->where('collection','=','Women')->get();
+        // $product_name_children=product::with('categories')->where('collection','=','Children')->get();
+        $lyd=$this->getLYDCurrency();
+        Session::put('LYD',$lyd);
+        return View('/login');
+    }
 
+    // api الخاص بالعملات 
+    public function getLYDCurrency()
+    {
+        $curl = curl_init();
+
+            curl_setopt_array($curl, array(
+            CURLOPT_URL => "https://api.apilayer.com/currency_data/convert?to=LYD&from=USD&amount=1",
+            CURLOPT_HTTPHEADER => array(
+                "Content-Type: text/plain",
+                "apikey: mbtsmF6otYEIFxsYXLggxwU9YOyLfGFL"
+            ),
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET"
+            ));
+            //المتغير الدي يحمل قيمة الدينار مقابل الدولار
+            $response = curl_exec($curl);
+            curl_close($curl);
+            // يتم تغير نوع البيانات من صيغة string to json 
+       $currency=json_decode($response);
+       return $currency->result;
+    }
     public function layout_empty()
     {
         return View('layout.empty');
@@ -234,7 +267,8 @@ class home extends Controller
 
             else{
             $page = "report";
-            return View('report.d_report',compact("page"));
+            $reports=report::all();
+            return View('report.d_report',compact("page",'reports'));
         }
     }
 

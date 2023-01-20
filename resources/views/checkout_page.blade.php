@@ -451,8 +451,11 @@
                                                         <td class="text-right">{{ $item->qty }}</td>
                                                         <td class="text-right">${{ $item->price }}</td>
                                                         <td class="text-right">${{ $item->price * $item->qty }}</td>
-                                                        <td class="text-right">$1,000.00</td>
-                                                        <td class="text-right">$1,000.00</td>
+                                                        <td class="text-right">LYD :{{ round( $item->price  * Session::get('LYD') , 2) }}</td>
+
+                                                        <td class="text-right">LYD : {{ round( $item->price  * Session::get('LYD') , 2) * $item->qty }}</td>
+                
+
 
 
                                                     </tr> 

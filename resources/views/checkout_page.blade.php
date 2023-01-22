@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <!--[if (gte IE 9)|!(IE)]><!-->
+
 <html lang="en">
+    <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <!--<![endif]-->
 
 <head>
@@ -18,6 +21,10 @@
     <meta name="rating" content="8 YEARS">
     <meta name="Language" content="en-us">
     <meta name="GOOGLEBOT" content="NOARCHIVE">
+
+
+
+    
     <!-- =====  MOBILE SPECIFICATION  ===== -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="viewport" content="width=device-width">
@@ -29,6 +36,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/owl.carousel.css') }}">
     <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
 
+    
     <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}">
     <link rel="apple-touch-icon" href="{{ asset('images/apple-touch-icon.png') }}">
     <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('images/apple-touch-icon-72x72.png') }}">
@@ -40,7 +48,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
     <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet" />
 
-    <link href="{{ asset('css/design4.css') }}" rel="stylesheet" />
+    {{-- <link href="{{ asset('css/design4.css') }}" rel="stylesheet" /> --}}
+</head>
 
 <body>
     <!-- =====  LODER  ===== -->
@@ -129,11 +138,14 @@
                     <div class="row">
                         <div class="col-xs-12 col-sm-4">
                         </div>
-                        <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="index.html"> <img
-                                    alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
-                        <div class="col-xs-6 col-sm-4 shopcart">
-                        </div>
-                    </div>
+                        <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="/home">
+                            <img alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
+                    @if (Auth::User())
+                        <x-share.cart-shop></x-share.cart-shop>
+                    @endif
+                    </div> 
+              
+ 
                     <nav class="navbar">
                         <p>menu</p>
                         <button class="navbar-toggle" type="button" data-toggle="collapse"
@@ -197,7 +209,6 @@
                                 </li>
                                 <li> <a href="/shop">{{ __('shop') }}</a></li>
                                 @if (Auth::user())
-                            @if (Auth::user()->role == '3')
                                 <li class="dropdown"> <a href="#" class="dropdown-toggle"
                                         data-toggle="dropdown">{{ __('previous orders') }} </a>
 
@@ -214,18 +225,15 @@
 
 
                                             @endforeach
-                                            {{-- @foreach ($old_order as $order) --}}
                                         @empty($old_order->count())
                                             <li style="text-align: center;"> {{ __('There are no orders') }}</li>
                                         @endempty
-                                        {{-- @endforeach --}}
-                                        {{-- @if ($old_order == []) --}}
+                                     
 
 
                                     </div>
                                 </ul>
                             </li>
-                        @endif
                     @endif
                                 <li> <a href="/about">{{ __('About us') }}</a></li>
                                 <li> <a href="/contact_us">{{ __('Contact us') }}</a></li>
@@ -434,8 +442,8 @@
                                 <div class="panel-body">
                                     <div class="table-responsive">
                                         <table class="table table-bordered table-hover" style=" font-color:#wihte;">
-                                            <thead style="background-color:#424242;">
-                                                <tr>
+                                            <thead style="background-color:#424242;"  >
+                                                <tr style=" font-size:18px">
                                                     <td class="text-left">{{ __('Product Name') }}</td>
                                                     <td class="text-right">{{ __('Quantity') }}</td>
                                                     <td class="text-right">{{ __('Unit Price') }}</td>
@@ -446,9 +454,9 @@
                                             </thead>
                                             <tbody style="background-color:#424242; font-color:#wihte;">
                                                 @foreach ($Cart as $item)
-                                                    <tr>
-                                                        <td>{{ __($item->name) }}</td>
-                                                        <td class="text-right">{{ $item->qty }}</td>
+                                                    <tr  style="color:black; font-size:18px" >
+                                                        <td >{{ __($item->name) }}</td>
+                                                        <td class="text-right" >{{ $item->qty }}</td>
                                                         <td class="text-right">{{ $item->price }} $</td>
                                                         <td class="text-right">{{ $item->price * $item->qty }} $</td>
                                                         <td class="text-right">{{ round( $item->price  * Session::get('LYD') , 2) }} LYD</td>
@@ -462,7 +470,7 @@
                                                 @endforeach
                                             </tbody>
                                             <tbody>
-                                                <tr>
+                                            <tr style="color:black; font-size:18px">
                                                  @if($old_order->count()>=3)
                                                 <td class="text-right"colspan="4">   ( {{App\Models\Cart::GET_TOTAL_PRICE() -  App\Models\Cart::GET_TOTAL_PRICE() *0.15 }})  $
                                                @else
@@ -473,7 +481,7 @@
                                                     <td></td>
                                                     <td class="text-right"colspan="4">
                                                         {{   round(   App\Models\Cart::GET_TOTAL_PRICE() * Session::get('LYD') , 2) }} LYD</td>
-                                                </tr>
+                                            </tr>
 
                                             </tbody>
                                         </table>

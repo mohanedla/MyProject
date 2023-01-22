@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->integer('status')->default(0)->nullable();
+             // مفتاح أجنبي من جدول المستخدم
             $table->integer('user_id')->references('id')->on('users');
             $table->float('total')->default(0);
             $table->timestamps();

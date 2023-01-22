@@ -101,51 +101,26 @@
                                     @endforeach
                                 </ul>
                             </li>
-                            <!--
-                            @if (Auth::user())
-@if (Auth::user()->role == '3')
-<li class="currency dropdown">
-                                 <span class="dropdown-toggle" id="dropdownMenu12"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                role="button">{{ __('previous orders') }}&nbsp; <span class="caret"></span> </span>
-                              <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
-                                <li><a href="admin">{{ __('طلبية 1') }}</a></li>
-                                <li><a href="user">{{ __('طلبية 2') }}</a></li>
-                            </ul>
-@endif
-@endif -->
+                         
+        
                             @if (Auth::user())
                                 @if (Auth::user()->role == '1' || Auth::user()->role == '2')
-                                    {{-- @if ((Auth::User()->role = '1') or (Auth::User()->role = '2')) --}}
                                     <li class="nav-item">
                                         <a class="account" href="/dashboard_home">{{ __('System management') }}</a>
                                     </li>
                                 @endif
-                                {{-- @endif --}}
                             @endif
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-        {{-- @if (session('status'))
-            <div class="alert alert-success" role="alert">
-                {{ session('status') }}
-            </div>
-        @endif --}}
+        
         <div class="header">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 col-sm-4">
-                        <!-- <div class="main-search mt_40">
-                            <input id="search-input" name="search" value=""
-                                placeholder="{{ __('Search') }}" class="form-control input-lg" autocomplete="off"
-                                type="text">
-                            <span class="input-group-btn">
-                                <button type="button" class="btn btn-default btn-lg"><i
-                                        class="fa fa-search"></i></button>
-                            </span>
-                        </div> -->
+                       
                     </div>
                     <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="/home">
                             <img alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
@@ -160,7 +135,7 @@
                             class="fa fa-bars"></i></span></button>
                 <div class="collapse navbar-collapse js-navbar-collapse">
                     <ul id="menu" class="nav navbar-nav">
-                        <li> <a href="home">{{ __('Home') }}</a></li>
+                        <li> <a href="/home">{{ __('Home') }}</a></li>
                         <li class="dropdown mega-dropdown"> <a href="#" class="dropdown-toggle"
                                 data-toggle="dropdown">{{ __('Collection') }} </a>
 
@@ -169,8 +144,7 @@
                                     <ul>
                                         <li class="dropdown-header">{{ __('Women') }}</li>
                                         @foreach ($category_women as $women)
-                                            <li><a
-                                                    href="/category/{{ $women->id }}/Women">{{ __($women->name) }}</a>
+                                            <li><a href="/category/{{ $women->id }}/Women">{{ __($women->name) }}</a>
                                             </li>
                                         @endforeach
                                     </ul>
@@ -217,10 +191,9 @@
 
 
                         @if (Auth::User())
-                            <li> <a href="shop">{{ __('shop') }}</a></li>
+                            <li> <a href="/shop">{{ __('shop') }}</a></li>
                         @endif
                         @if (Auth::user())
-                            {{-- @if (Auth::user()->role == '1') --}}
                                 <li class="dropdown"> <a href="#" class="dropdown-toggle"
                                         data-toggle="dropdown">{{ __('previous orders') }} </a>
 
@@ -248,7 +221,6 @@
                                     </div>
                                 </ul>
                             </li>
-                        {{-- @endif --}}
                     @endif
                                                     
                                     
@@ -307,17 +279,7 @@
                                                                     alt="iPod Classic" title="iPod Classic"
                                                                     class="img-responsive"> </a>
                                                             <div class="button-group text-center">
-                                                                <!-- <div class="wishlist"><a
-                                                                href="#"><span>wishlist</span></a>
-                                                        </div>
-                                                        <div class="quickview"><a href="#"><span>Quick
-                                                                    View</span></a></div>
-                                                        <div class="compare"><a
-                                                                href="#"><span>Compare</span></a>
-                                                        </div>
-                                                        <div class="add-to-cart"><a href="#"><span>Add
-                                                                    to
-                                                                    cart</span></a></div> -->
+                                                              
                                                             </div>
                                                         </div>
 
@@ -351,11 +313,7 @@
                                                                     <span class="price"><span class="amount"><span class="currencySymbol">
                                                                      </span>{{ round( $item->price  * Session::get('LYD') , 2) }} LYD</span>
 
-                                                                    <!-- <form action="/">
-
-     <input class="btn pull-right mt_30" type="submit" value="{{ __('Add to cart') }}" />
-
- </form> -->
+             
                                                                 </span>
                                                             @endif
                                                         </div>

@@ -18,7 +18,7 @@
                 <div class="col-12 col-md-6 order-md-2 order-first">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                         <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="dashboard_home">{{ __('Dashboard') }}</a></li>
+                        <li class="breadcrumb-item"><a href="/dashboard_home">{{ __('Dashboard') }}</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">{{ __('Product Management') }}</li>
                         </ol>
                     </nav>
@@ -43,14 +43,12 @@
                             <tr>
                             <th style="width: 50px;" scope="col">{{ __('#')}}</th>
                             <th style="width: 50px;" scope="col">{{ __('Name')}}</th>
-                            <!-- <th style="width: 50px;" scope="col"> {{ __('Product type')}}</th> -->
                             <th style="width: 50px;" scope="col">{{ __('brand')}}</th>
                             <th style="width: 50px;" scope="col">{{ __('Gender')}}</th>
                             <th style="width: 50px;" scope="col">{{ __('Specifications')}}</th>
                             <th style="width: 50px;" scope="col">{{ __('Quantity')}}</th>
                             <th style="width: 50px;" scope="col">{{ __('الكمية المباعة')}}</th>
                             <th style="width: 50px;" scope="col">{{ __('الكمية المتبقية')}}</th>
-                            <!-- <th style="width: 50px;" scope="col">{{ __('Purchasing price')}}</th>
                             <th style="width: 50px;" scope="col">{{ __('Selling price')}}</th> -->
                             <th style="width: 50px;" scope="col">{{ __('admin')}}</th>
                             <th style="width: 50px;" scope="col">{{ __('photo')}}</th>
@@ -77,9 +75,11 @@
                                     <td style="text-align: center;">{{$x->quantity_price}}</td>
                                     @endif
                                     <td style="text-align: center;">{{$x->quantity - $x->quantity_price}}</td>
-                                    <!-- <td>{{$x->price_purchas}}$</td>
-                                    <td>{{$x->price}}$</td> -->
+                                    @if($x->user)
                                     <td>{{$x->user->name}}</td>
+                                    @else
+                                    <td>/</td>
+                                    @endif
                                     <td>
 
 

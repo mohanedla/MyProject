@@ -108,28 +108,14 @@
                                         @endforeach
                                     </ul>
                                 </li>
-                                <!--
-                            @if (Auth::user())
-                                @if (Auth::user()->role == '3')
-<li class="currency dropdown">
-                                 <span class="dropdown-toggle" id="dropdownMenu12"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                role="button">{{ __('previous orders') }}&nbsp; <span class="caret"></span> </span>
-                              <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
-                                <li><a href="admin">{{ __('طلبية 1') }}</a></li>
-                                <li><a href="user">{{ __('طلبية 2') }}</a></li>
-                            </ul>
-@endif
-                        @endif -->
+                           
                                 @if (Auth::user())
                                     @if (Auth::user()->role == '1' || Auth::user()->role == '2')
-                                        {{-- @if ((Auth::User()->role = '1') or (Auth::User()->role = '2')) --}}
                                         <li class="nav-item">
                                             <a class="account"
                                                 href="/dashboard_home">{{ __('System management') }}</a>
                                         </li>
                                     @endif
-                                    {{-- @endif --}}
                                 @endif
                             </ul>
                         </div>
@@ -213,10 +199,9 @@
 
 
                         @if (Auth::User())
-                            <li> <a href="shop">{{ __('shop') }}</a></li>
+                            <li> <a href="/shop">{{ __('shop') }}</a></li>
                         @endif
                         @if (Auth::user())
-                            @if (Auth::user()->role == '3')
                                 <li class="dropdown"> <a href="#" class="dropdown-toggle"
                                         data-toggle="dropdown">{{ __('previous orders') }} </a>
 
@@ -243,10 +228,9 @@
                                     </div>
                                 </ul>
                             </li>
-                        @endif
                     @endif
-                        <li> <a href="about">{{ __('About us') }}</a></li>
-                        <li> <a href="contact_us">{{ __('Contact us') }}</a></li>
+                        <li> <a href="/about">{{ __('About us') }}</a></li>
+                        <li> <a href="/contact_us">{{ __('Contact us') }}</a></li>
                     </ul>
                 </div>
                 <!-- /.nav-collapse -->
@@ -263,7 +247,7 @@
                 <div class="breadcrumb ptb_20">
                     <h1>{{ __('previous orders') }}</h1>
                     <ul>
-                        <li><a href="home">{{ __('Home') }}</a></li>
+                        <li><a href="/home">{{ __('Home') }}</a></li>
                         <li class="active">{{ __('previous orders') }}</li>
                     </ul>
                 </div>

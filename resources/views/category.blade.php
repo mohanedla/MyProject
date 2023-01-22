@@ -65,8 +65,8 @@
                                     -webkit-border-radius: 50%; 
                                     -moz-border-radius: 50%;
                                     width: 40px; 
-        height: 40px;">
-        @endif
+                                    height: 40px;">
+                                    @endif
                                 <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                         role="button">{{ Auth::user()->name }} <span class="caret"></span> </span>
@@ -133,76 +133,7 @@
                     </div>
                     <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="/home"> <img
                                 alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
-                    <div class="col-xs-6 col-sm-4 shopcart">
-                        <div id="cart" class="btn-group btn-block mtb_40">
-                            <button type="button" class="btn" data-target="#cart-dropdown"
-                                data-toggle="collapse" aria-expanded="true"><span
-                                    id="shippingcart">{{ __('Shopping cart') }}</span><span
-                                    id="cart-total">{{ __('items') }} (0)</span> </button>
-                        </div>
-                        <div id="cart-dropdown" class="cart-menu collapse">
-                            <ul>
-                                <li>
-                                    <table class="table table-striped">
-                                        <tbody>
-                                            <tr>
-                                                <td class="text-center"><a href="#"><img
-                                                            src="{{ asset('images/product/70x84.jpg') }}"
-                                                            alt="iPod Classic" title="iPod Classic"></a></td>
-                                                <td class="text-left product-name"><a href="#">MacBook
-                                                        Pro</a> <span class="text-left price">$20.00</span>
-                                                    <input class="cart-qty" name="product_quantity" min="1"
-                                                        value="1" type="number">
-                                                </td>
-                                                <td class="text-center"><a class="close-cart"><i
-                                                            class="fa fa-times-circle"></i></a></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center"><a href="#"><img
-                                                            src="{{ asset('images/product/70x84.jpg') }}"
-                                                            alt="iPod Classic" title="iPod Classic"></a></td>
-                                                <td class="text-left product-name"><a href="#">MacBook
-                                                        Pro</a> <span class="text-left price">$20.00</span>
-                                                    <input class="cart-qty" name="product_quantity" min="1"
-                                                        value="1" type="number">
-                                                </td>
-                                                <td class="text-center"><a class="close-cart"><i
-                                                            class="fa fa-times-circle"></i></a></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </li>
-                                <li>
-                                    <table class="table">
-                                        <tbody>
-                                            <tr>
-                                                <td class="text-right"><strong>{{ __('Sub-Total') }} </strong></td>
-                                                <td class="text-right">$2,100.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-right"><strong>{{ __('VAT') }} (20%)</strong></td>
-                                                <td class="text-right">$20.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-right"><strong>"{{ __('Total') }}"</strong></td>
-                                                <td class="text-right">$2,122.00</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </li>
-                                <li>
-                                    <form action="cart_page">
-                                        <input class="btn pull-left mt_10" value="{{ __('View cart') }}"
-                                            type="submit">
-                                    </form>
-                                    <form action="checkout_page">
-                                        <input class="btn pull-right mt_10" value="{{ __('Checkout') }}"
-                                            type="submit">
-                                    </form>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                    
                 </div>
                 <nav class="navbar">
                     <p>{{ __('menu')}}</p>
@@ -240,7 +171,7 @@
                                                 <li><a href="/category/{{$kids->id}}/Women">{{ __($kids->name) }}</a></li>
                                             @endforeach
                                         </ul>
-                                    </li>
+                                    
                                     <li class="col-md-3">
                                         <ul>
                                             <li id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -260,7 +191,6 @@
                             </li>
                             <li> <a href="/shop">{{ __('shop') }}</a></li>
                             @if (Auth::user())
-                            @if (Auth::user()->role == '3')
                                 <li class="dropdown"> <a href="#" class="dropdown-toggle"
                                         data-toggle="dropdown">{{ __('previous orders') }} </a>
 
@@ -288,7 +218,7 @@
                                     </div>
                                 </ul>
                             </li>
-                        @endif
+                        
                     @endif
                         <li> <a href="/about">{{ __('About us') }}</a></li>
                         <li> <a href="/contact_us">{{ __('Contact us') }}</a></li>
@@ -301,6 +231,8 @@
         </div>
 
     </header>
+    
+
     <!-- =====  HEADER END  ===== -->
     <!-- =====  BANNER STRAT  ===== -->
     <div class="banner">
@@ -317,33 +249,42 @@
         <!-- =====  SUB BANNER  STRAT ===== -->
         <div class="row " >
             <div id="column-left" class="col-sm-4 col-lg-3 hidden-xs" style="height: 200px; width: 250px;">
-                <div id="category-menu" class="navbar collapse in mb_40"  style="height: 200px; width: 250px;">
-                    <div class="nav-responsive" style="height: 200px; width: 250px;">
-                        <div class="heading-part" >
+                <div id="category-menu" class="navbar collapse in mb_40">
+                    <div class="nav-responsive" >
+                        @if($product->count()==0)
+                            <style>
+                                .mtb_20 {
+                                    height: 400px;
+                                }
+                            </style>
+                        @endif
+                      <div class="heading-part">
                             <h2 class="main_title">{{ __('Women') }}</h2>
                         </div>
                         <li class="nav navbar-nav">
                             <ul>
+                                <div class="cart-dropdown3" >
                                 @foreach ($category_women as $women)
-                                <li><a href="/category/{{$women->id}}/Women">{{ __($women->name) }}</a></li>
-                                
-                            @endforeach  
+                                    <li><a
+                                            href="/category/{{ $women->id }}/Women">{{ __($women->name) }}</a>
+                                    </li>
+                                @endforeach
+                            </div>
                             </ul>
                         </li>
-                        <!-- </ul> -->
-
-
-
-                        <!-- </div> -->
+    
                         <div class="heading-part">
                             <h2 class="main_title">{{ __('Men') }}</h2>
                         </div>
                         <li class="nav navbar-nav">
+                            <div class="cart-dropdown3" >
                             <ul>
                                 @foreach ($category_men as $men)
-                                    <li><a href="/category/{{$men->id}}/Men">{{ __($men->name) }}</a></li>
+                                    <li><a href="/category/{{ $men->id }}/Men">{{ __($men->name) }}</a>
+                                    </li>
                                 @endforeach
                             </ul>
+                        </div>
                         </li>
                     </div>
                     <div class="heading-part">
@@ -351,12 +292,16 @@
                     </div>
                     <li class="nav navbar-nav">
                         <ul>
+                            <div class="cart-dropdown3">
                             @foreach ($category_kids as $kids)
-                                <li><a href="/category/{{$kids->id}}/Kids">{{ __($kids->name) }}</a></li>
+                                <li><a href="/category/{{ $kids->id }}/Kids">{{ __($kids->name) }}</a>
+                                </li>
                             @endforeach
+                            </div>
                         </ul>
                     </li>
                 </div>
+
             </div>
             <div class="col-sm-8 col-lg-9 mtb_20">
                 <div class="category-page-wrapper mb_30">
@@ -380,23 +325,7 @@
                         </div>
                         <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
                     </div>
-                    <!-- <div class="sort-wrapper pull-right">
-                        <label class="control-label" for="input-sort">{{ __('Sort By') }} :</label>
-                        <!-- <div class="sort-inner">
-                            <select id="input-sort" class="form-control">
-                                <option value="ASC" selected="selected">{{ __('Default') }}</option>
-                                <option value="ASC">{{ __('Name') }} (A - Z)</option>
-                                <option value="DESC">{{ __('Name') }} (Z - A)</option>
-                                <option value="ASC"> {{ __('Price') }}(Low &gt; High)</option>
-                                <option value="DESC">{{ __('Price') }}(High &gt; Low)</option>
-                                <option value="DESC">{{ __('Rating') }} (Highest)</option>
-                                <option value="ASC"> {{ __('Rating') }} (Lowest)</option>
-                                <option value="ASC"> {{ __('Model') }}(A - Z)</option>
-                                <option value="DESC">{{ __('Model') }}(Z - A)</option>
-                            </select>
-                        </div> 
-                        <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
-                    </div> -->
+                   
                 </div>
                 <div class="row">
                     @php
@@ -419,41 +348,37 @@
                                    
                                 </div>
                                 <div class="caption product-detail text-center">&nbsp;&nbsp;&nbsp;
-                                    
-                                    <h6 data-name="product_name" class="product-name mt_20"><a href="#"
-                                            title="Casual Shirt With Ruffle Hem">&nbsp;&nbsp;
-
-                                            {{ __($item->name)}}</a></h6>
-                                            <!-- <div class="button-group text-center">
-                                 
-                                        <div class="add-to-cart"><a href="#"><span>Add to cart</span></a>
-                                        </div>
-                                    </div> -->
-                                    <div class="rating"> <span class="fa fa-stack">
-                                        
-                                        <i
+                                    {{-- <h3 data-name="product_name" class="product-name mt_20"><a href="#"
+                                            title="Casual Shirt With Ruffle Hem"></a></h3> --}}
+                                            
+                                            
+                                            {{-- شكل النجوم فقط --}}
+                                            <div class="rating"> <span class="fa fa-stack"><i
                                                 class="fa fa-star-o fa-stack-1x"></i><i
                                                 class="fa fa-star fa-stack-1x"></i></span> <span
-                                            class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
+                                                class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
                                                 class="fa fa-star fa-stack-1x"></i></span> <span
-                                            class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
+                                                class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
                                                 class="fa fa-star fa-stack-1x"></i></span> <span
-                                            class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
+                                                class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
                                                 class="fa fa-star fa-stack-1x"></i></span> <span
-                                            class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
+                                                class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
                                                 class="fa fa-star fa-stack-x"></i></span> </div>
                                                 
-                                                <span class="price">
-                                                <h5 class="amount"><span
-                                                        class="currencySymbol">$</span>{{ $item->price }}&nbsp;
-                                                        {{ $item->brand->name}}</h5>
-                                                        <br>
-                                                        <span class="price"><span class="amount"><span class="currencySymbol">LYD </span>{{ round( $item->price  * Session::get('LYD') , 2) }}</span>
+                                                <h5> {{ $item->name }} &nbsp;&nbsp;{{ $item->brand->name}}</h5>
+                                    <span class="price">
+                                       
+                                                <span class="price"><span class="amount"><span class="currencySymbol"></span> {{ $item->price }} $</span>
 
-                                                <h3 class="product-desc mt_20 mb_60">{{ __('Specifications') }}
-                                                    : {{ $item->specification }} </h3>
+                                               <br>
+                                           
+                                                <span class="price"><span class="amount"><span class="currencySymbol"></span>{{ round( $item->price  * Session::get('LYD') , 2) }} LYD </span>
+
+                                        <h3 class="product-desc mt_20 mb_60">{{ __('Specifications') }}
+                                            : {{ $item->specification }} </h3>
+             
                                     </span>
-                                    
+
                                 </div>
                                 
                             </div>

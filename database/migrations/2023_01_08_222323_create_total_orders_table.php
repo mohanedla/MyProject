@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('total_orders', function (Blueprint $table) {
             $table->id();
             $table->float('total');
+            // مفتاح أجنبي من جدول الطلبيات
             $table->integer('order_id')->references('id')->on('orders');
             $table->timestamps();
         });

@@ -117,15 +117,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-12 col-sm-4">
-                            <!-- <div class="main-search mt_40">
-                                <input id="search-input" name="search" value=""
-                                    placeholder="{{ __('Search') }}" class="form-control input-lg" autocomplete="off"
-                                    type="text">
-                                <span class="input-group-btn">
-                                    <button type="button" class="btn btn-default btn-lg"><i
-                                            class="fa fa-search"></i></button>
-                                </span>
-                            </div> -->
+                      
                         </div>
                         <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="/home"> <img
                                     alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
@@ -197,7 +189,6 @@
                                     <li> <a href="/shop">{{ __('shop') }}</a></li>
                                 @endif
                                 @if (Auth::user())
-                            @if (Auth::user()->role == '1')
                                 <li class="dropdown"> <a href="#" class="dropdown-toggle"
                                         data-toggle="dropdown">{{ __('previous orders') }} </a>
 
@@ -218,14 +209,12 @@
                                         @empty($old_order->count())
                                             <li style="text-align: center;"> {{ __('There are no orders') }}</li>
                                         @endempty
-                                        {{-- @endforeach --}}
-                                        {{-- @if ($old_order == []) --}}
+                                     
 
 
                                     </div>
                                 </ul>
                             </li>
-                        @endif
                     @endif
 
                                 <li> <a href="/about">{{ __('About us') }}</a></li>
@@ -262,21 +251,22 @@
                     </div> -->
                     <!-- </div> -->
                     <!-- <div id="column-left" class="col-sm-4 col-lg-3 hidden-xs"> -->
-                    <div class="filter left-sidebar-widget mb_50">
+                    <div class="filter left-sidebar-widget mb_50" class="cart-dropdown2">
                         <div id="category-menu" class="navbar collapse in mb_40">
-                            <div class="nav-responsive">
+                            <div class="nav-responsive" >
 
-
-                                <div class="heading-part">
+                              <div class="heading-part">
                                     <h2 class="main_title">{{ __('Women') }}</h2>
                                 </div>
                                 <li class="nav navbar-nav">
                                     <ul>
+                                        <div class="cart-dropdown3">
                                         @foreach ($category_women as $women)
                                             <li><a
                                                     href="/category/{{ $women->id }}/Women">{{ __($women->name) }}</a>
                                             </li>
                                         @endforeach
+                                    </div>
                                     </ul>
                                 </li>
                                 <!-- </ul> -->
@@ -289,10 +279,12 @@
                                 </div>
                                 <li class="nav navbar-nav">
                                     <ul>
+                                        <div class="cart-dropdown3">
                                         @foreach ($category_men as $men)
                                             <li><a href="/category/{{ $men->id }}/Men">{{ __($men->name) }}</a>
                                             </li>
                                         @endforeach
+                                        </div>
                                     </ul>
                                 </li>
                             </div>
@@ -301,37 +293,18 @@
                             </div>
                             <li class="nav navbar-nav">
                                 <ul>
+                                    <div class="cart-dropdown3">
                                     @foreach ($category_kids as $kids)
                                         <li><a href="/category/{{ $kids->id }}/Kids">{{ __($kids->name) }}</a>
                                         </li>
                                     @endforeach
+                                    </div>
                                 </ul>
                             </li>
                         </div>
 
                     </div>
-                    <!-- <div class="filter left-sidebar-widget mb_50">
-                        <div class="heading-part mtb_20 ">
-                            <h2 class="main_title">{{ __('Refine Search') }}</h2>
-                        </div>
-                        <div class="filter-block">
-                            <p>
-                                <label for="amount">{{ __('Price range') }}:</label>
-                                <input type="text" id="amount" readonly>
-                            </p>
-                            <div id="slider-range" class="mtb_20"></div>
-                            <div class="list-group">
-                                <div class="list-group-item mb_10">
-
-                                </div>
-                                <div class="list-group-item mb_10">
-
-                                </div>
-                                <br>
-                                <button type="button" class="btn">{{ __('Search') }}</button>
-                            </div>
-                        </div>
-                    </div> -->
+                  
 
                 </div>
 
@@ -355,30 +328,14 @@
                                 {!! Form::select(
                                     'per_page',
                                     ['Select', '9' => '9', '18' => '18', '32' => '32', '50' => '50', '75' => '75', '100' => '100'],
-                                    '5',
+                                    '6',
                                     ['onchange' => 'submit()', 'class' => 'form-control'],
                                 ) !!}
                                 {!! Form::close() !!}
                             </div>
                             <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
                         </div>
-                        <!-- <div class="sort-wrapper pull-right">
-                            <label class="control-label" for="input-sort">{{ __('Sort By') }} :</label>
-                            <div class="sort-inner">
-                                <select id="input-sort" class="form-control">
-                                    <option value="ASC" selected="selected">{{ __('Default') }}</option>
-                                    <option value="ASC">{{ __('Name') }} (A - Z)</option>
-                                    <option value="DESC">{{ __('Name') }} (Z - A)</option>
-                                    <option value="ASC"> {{ __('Price') }}(Low &gt; High)</option>
-                                    <option value="DESC">{{ __('Price') }}(High &gt; Low)</option>
-                                    <option value="DESC">{{ __('Rating') }} (Highest)</option>
-                                    <option value="ASC"> {{ __('Rating') }} (Lowest)</option>
-                                    <option value="ASC"> {{ __('Model') }}(A - Z)</option>
-                                    <option value="DESC">{{ __('Model') }}(Z - A)</option>
-                                </select>
-                            </div>
-                            <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
-                        </div> -->
+                      
                     </div>
                     <div class="row">
                         @foreach ($products as $product)
@@ -402,38 +359,33 @@
                                         <div class="caption product-detail text-center">&nbsp;&nbsp;&nbsp;
                                             {{-- <h3 data-name="product_name" class="product-name mt_20"><a href="#"
                                                     title="Casual Shirt With Ruffle Hem"></a></h3> --}}
-                                                    <h5> {{ $product->name }} &nbsp;&nbsp;{{ $product->brand->name}}</h5>
                                                     
-                                            <!-- <div class="button-group text-center">
-                                                        <div class="add-to-cart"><a href="#"><span>Add to cart</span></a>
-                                                        </div>
-                                                    </div> -->
-
-                                            {{-- <div class="rating"> <span class="fa fa-stack"><i
-                                                    class="fa fa-star-o fa-stack-1x"></i><i
-                                                    class="fa fa-star fa-stack-1x"></i></span> <span
-                                                class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
-                                                    class="fa fa-star fa-stack-1x"></i></span> <span
-                                                class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
-                                                    class="fa fa-star fa-stack-1x"></i></span> <span
-                                                class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
-                                                    class="fa fa-star fa-stack-1x"></i></span> <span
-                                                class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
-                                                    class="fa fa-star fa-stack-x"></i></span> </div> --}}
-
+                                                    
+                                                    {{-- شكل النجوم فقط --}}
+                                                    <div class="rating"> <span class="fa fa-stack"><i
+                                                        class="fa fa-star-o fa-stack-1x"></i><i
+                                                        class="fa fa-star fa-stack-1x"></i></span> <span
+                                                        class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
+                                                        class="fa fa-star fa-stack-1x"></i></span> <span
+                                                        class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
+                                                        class="fa fa-star fa-stack-1x"></i></span> <span
+                                                        class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
+                                                        class="fa fa-star fa-stack-1x"></i></span> <span
+                                                        class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
+                                                        class="fa fa-star fa-stack-x"></i></span> </div>
+                                                        
+                                                        <h5> {{ $product->name }} &nbsp;&nbsp;{{ $product->brand->name}}</h5>
                                             <span class="price">
-                                                <h5 class="amount"><span
-                                                        class="currencySymbol"></span>
-                                                      
-                                                        {{ $product->price }} $
-                                                    </h5>
+                                               
+                                                        <span class="price"><span class="amount"><span class="currencySymbol"></span> {{ $product->price }} $</span>
+
+                                                       <br>
+                                                   
                                                         <span class="price"><span class="amount"><span class="currencySymbol"></span>{{ round( $product->price  * Session::get('LYD') , 2) }} LYD </span>
 
                                                 <h3 class="product-desc mt_20 mb_60">{{ __('Specifications') }}
                                                     : {{ $product->specification }} </h3>
-                                                <!-- <form action="/">
-             <input class="btn pull-right mt_30" type="submit" value="{{ __('Add to cart') }}" />
-         </form> -->
+                                
                                             </span>
 
                                         </div>
@@ -446,13 +398,6 @@
 
                 </div>
                 <div class="pagination-nav text-center mt_50">
-                    {{-- <ul>
-                      <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
-                      <li class="active"><a href="#">1</a></li>
-                      <li><a href="#">2</a></li>
-                      <li><a href="#">3</a></li>
-                      <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
-                    </ul> --}}
                     {!! $products->links() !!}
                 </div>
 

@@ -40,7 +40,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
     <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet" />
 
-    <link href="{{ asset('css/design4.css') }}" rel="stylesheet" />
+    {{-- <link href="{{ asset('css/design4.css') }}" rel="stylesheet" /> --}}
 
 <body>
     <!-- =====  LODER  ===== -->
@@ -126,8 +126,9 @@
                         </div>
                         <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="index.html"> <img
                                     alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
-                        <div class="col-xs-6 col-sm-4 shopcart">
-                        </div>
+                                    @if (Auth::User())
+                                    <x-share.cart-shop></x-share.cart-shop>
+                                @endif
                     </div>
                     <nav class="navbar">
                         <p>menu</p>
@@ -185,7 +186,6 @@
                             </li>
                             <li> <a href="/shop">{{ __('shop') }}</a></li>
                             @if (Auth::user())
-                            @if (Auth::user()->role == '3')
                                 <li class="dropdown"> <a href="#" class="dropdown-toggle"
                                         data-toggle="dropdown">{{ __('previous orders') }} </a>
 
@@ -213,7 +213,6 @@
                                     </div>
                                 </ul>
                             </li>
-                        @endif
                     @endif
                                 <li> <a href="/about">{{ __('About us') }}</a></li>
                                 <li> <a href="/contact_us">{{ __('Contact us') }}</a></li>
@@ -233,7 +232,7 @@
                     <div class="breadcrumb ptb_20">
                         <h1>{{ __('Shopping Cart') }}</h1>
                         <ul>
-                            <li><a href="index.html">{{ __('Home') }}</a></li>
+                            <li><a href="/home">{{ __('Home') }}</a></li>
                             <li class="active">{{ __('Shopping Cart') }}</li>
                         </ul>
                     </div>
@@ -249,9 +248,11 @@
                 </div>
                 <li class="nav navbar-nav">
                     <ul>
+                        <div class="cart-dropdown3" >
                         @foreach ($category_women as $women)
                         <li><a href="/category/{{$women->id}}/Women">{{ __($women->name) }}</a></li>
                     @endforeach
+                        </div>
                     </ul>
                 </li>
                 <!-- </ul> -->
@@ -264,9 +265,11 @@
                 </div>
                 <li class="nav navbar-nav">
                     <ul>
+                        <div class="cart-dropdown3" >
                         @foreach ($category_men as $men)
                             <li><a href="/category/{{$men->id}}/Men">{{ __($men->name) }}</a></li>
                         @endforeach
+                        </div>
                     </ul>
                 </li>
             </div>
@@ -275,9 +278,11 @@
             </div>
             <li class="nav navbar-nav">
                 <ul>
+                    <div class="cart-dropdown3" >
                     @foreach ($category_kids as $kids)
                         <li><a href="/category/{{$kids->id}}/Kids">{{ __($kids->name) }}</a></li>
                     @endforeach
+                    </div>
                 </ul>
             </li>
         </div>
@@ -293,14 +298,13 @@
                                 <thead>
                                     <tr>
                                         <td class="text-center">{{ __('Image') }}</td>
-                                        <td class="text-left">{{ __('Product Name') }}</td>
-                                        <td class="text-left">{{ __('Product Size') }}</td>
-                                        <td class="text-left">{{ __('Product Color') }}</td>
-                                        <!-- <td class="text-left">{{ __('Model') }}</td> -->
-                                        <td class="text-left">{{ __('Quantity') }}</td>
-                                        <td class="text-right">{{ __('Unit Price') }}</td>
+                                        <td class="text-left">{{ __('Name') }}</td>
+                                        <td class="text-left">{{ __('Size') }}</td>
+                                        <td class="text-left">{{ __('Color') }}</td>
+                                        <td class="text-center">{{ __('Quantity') }}</td>
+                                        <td class="text-center">{{ __('Unit Price') }}</td>
                                         <td class="text-right">{{ __('Total') }}</td>
-                                        <td class="text-right">{{ __('Unit Price') }}</td>
+                                        <td class="text-center">{{ __('Unit Price') }}</td>
                                         <td class="text-right">{{ __('Total') }}</td>
 
 
@@ -364,29 +368,26 @@
 
                                     </td>
                                     <td class="text-left"></td>
+                                    <td class="text-hight"></td>
+                                    <td class="text-hight"></td>
+                                    <td class="text-hight"></td>
+                                    <td class="text-hight"></td>
+                                    <td class="text-center" style=" font-size:18px">
+                                        {{App\Models\Cart::GET_TOTAL_PRICE()}} $
 
-                                    <tr class="text-hight"></tr>
-
+                                    </td>
+                                    <td class="text-hight"></td>
+                                    <td class="text-center" style=" font-size:18px">
+                                     {{   round(   App\Models\Cart::GET_TOTAL_PRICE() * Session::get('LYD') , 2) }} LYD
+                                    </td>
                                 </tbody>
                             </table>
-                            <div style="float: right;">
-                                <li style="float: right; display: -webkit-box; list-style-type: none;"><strong>:"{{ __('Total') }}"</strong></li>
-                                <li style="float: right; display: -webkit-box; list-style-type: none;  padding-right: 25px;">{{App\Models\Cart::GET_TOTAL_PRICE()}} $</li>
-                                <br>
-                                <li style="float: right; display: -webkit-box; list-style-type: none;"><strong>:"{{ __('Total') }}"</strong></li>
-                                <li style="float: right; display: -webkit-box; list-style-type: none;  padding-right: 25px;">
-                                    {{   round(   App\Models\Cart::GET_TOTAL_PRICE() * Session::get('LYD') , 2) }} LYD
-                                </li>
-
-                            </div>
-                            <br>
-
-                            {{-- </form> --}}
+                          
 
                     <form action="\shop">
                         <input class="btn pull-left mt_30" type="submit" value="{{ __('Continue Shopping') }}" />
-                    </form>
-                    <form action="checkout_page">
+                    </form> 
+                    <form action="checkout_page" style="margin-right: 78%">
                         <input class="btn pull-right mt_30" type="submit" value="{{ __('Checkout') }}" />
                         </form>
 

@@ -48,7 +48,7 @@ class home extends Controller
 
     public function category_page(Request $request)
         {
-            $products = product::paginate($request->get('per_page', 5));
+            $products = product::paginate($request->get('per_page', 6));
             // dd($products);
             $brand=brand::all();
             $collect = array('M'=>'Men','W'=>'Women','C'=>'Kids' );
@@ -198,10 +198,12 @@ class home extends Controller
 
         public function category (string $id, string $name)
         {
+            
             $category_men=Men::all();
             $category_women=Women::all();
             $category_kids=Kids::all();
             $brand=brand::all();
+            // $product = product::paginate($request->get('per_page', 6))->where('category_id',$id)->where('collection',$name);
             $product=product::where('category_id',$id)->where('collection',$name)->get();
             $old_order=0;
             if(Auth::check())

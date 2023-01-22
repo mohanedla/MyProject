@@ -15,9 +15,13 @@ return new class extends Migration
     {
         Schema::create('bills', function (Blueprint $table) {
             $table->id();
+                        // مفتاح أجنبي من جدول الطلبيات
             $table->integer('order_id')->references('id')->on('orders');
+                        // مفتاح أجنبي من جدول المنتجات
             $table->integer('product_id')->references('id')->on('products');
+                        // مفتاح أجنبي من جدول الألوان
             $table->integer('color_id')->references('id')->on('colors');
+                        // مفتاح أجنبي من جدول الحجم
             $table->integer('size_id')->references('id')->on('sizes')->nullable();
             $table->string('name');
             $table->integer('quantity');

@@ -17,7 +17,7 @@
                     <div class="col-12 col-md-6 order-md-2 order-first">
                         <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="dashboard_home">{{ __('Dashboard') }}</a></li>
+                                <li class="breadcrumb-item"><a href="/dashboard_home">{{ __('Dashboard') }}</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">{{ __('Brand') }}</li>
                             </ol>
                         </nav>
@@ -55,75 +55,6 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {{-- @foreach ($data as $key => $item)
-                                <tr>
-                                    <td class="id">{{ ++$key }}</td>
-                                    <td class="name">{{ $item->name }}</td>
-                                    <td class="name">
-                                        <div class="avatar avatar-xl">
-                                            <img src="{{ URL::to('/images/'. $item->avatar) }}" alt="{{ $item->avatar }}">
-                                        </div>
-                                    </td>
-                                    <td class="email">{{ $item->email }}</td>
-                                    <td class="phone_number">{{ $item->phone_number }}</td>
-                                    @if ($item->status == 'Active')
-                                    <td class="status"><span class="badge bg-success">{{ $item->status }}</span></td>
-                                    @endif
-                                    @if ($item->status == 'Disable')
-                                    <td class="status"><span class="badge bg-danger">{{ $item->status }}</span></td>
-                                    @endif
-                                    @if ($item->status == null)
-                                    <td class="status"><span class="badge bg-danger">{{ $item->status }}</span></td>
-                                    @endif
-                                    @if ($item->role_name == 'Admin')
-                                    <td class="role_name"><span  class="badge bg-success">{{ $item->role_name }}</span></td>
-                                    @endif
-                                    @if ($item->role_name == 'Super Admin')
-                                    <td class="role_name"><span  class="badge bg-info">{{ $item->role_name }}</span></td>
-                                    @endif
-                                    @if ($item->role_name == 'Normal User')
-                                    <td class="role_name"><span  class=" badge bg-warning">{{ $item->role_name }}</span></td>
-                                    @endif
-                                    <td class="text-center">
-                                        <a href="{{ route('user/add/new') }}">
-                                            <span class="badge bg-info"><i class="bi bi-person-plus-fill"></i></span>
-                                        </a>
-                                        <a href="{{ url('view/detail/'.$item->id) }}">
-                                            <span class="badge bg-success"><i class="bi bi-pencil-square"></i></span>
-                                        </a>
-                                        <a href="{{ url('delete_user/'.$item->id) }}" onclick="return confirm('Are you sure to want to delete it?')"><span class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
-                                    </td>
-                                </tr>
-                            @endforeach --}}
-
-                            <!-- @php
-                            $i=1;
-                        @endphp
-                        @foreach($brand as $x)
-                        <tr>
-                          <td>{{$i++}}</td>
-                          <td>{{$x->name}}</td>
-                          <td>{{$x->id}}</td>
-                          <td>{{$x->country}}</td>
-                          <td>{{$x->address}}</td>
-                          <td>{{$x->email}}</td>
-                          <td>{{$x->phone_number}}</td>
-                          <td><img style="width: 50%; height:50%;" src="{{asset(Storage::url($x->profile_image))}}" alt=""></td>
-                          <td class="text-center">
-                          <a data-bs-toggle="modal" data-bs-target="#type_men"
-                                        data-bs-whatever="@mdo" onclick="showDetails({{json_encode($x)}},{{json_encode($x->name)}}">
-                                            <span class="badge bg-info"><i class="bi bi-eye-fill"></i></span>
-                                        </a>
-                            <a href="/dashboard_edit_brand/{{$x->id}}">
-                                <span class="badge bg-success"><i class="bi bi-pencil-square"></i></span>
-                            </a>
-                            <a href="/delete_brand/{{$x->id}}"
-                                onclick="return confirm('Are you sure to want to delete it?')"><span
-                                    class="badge bg-danger"><i class="bi bi-trash"></i></span></a>
-                        </td>
-                    </tr>
-                        </tr>
-                        @endforeach -->
                         @php
                                     $i = 1;
                                 @endphp
@@ -166,21 +97,8 @@
         </div>
         <div class="modal fade" id="type_men" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
-        <!-- <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" > {{ __('Brand') }}</h1><br>
-                    <h1 class="modal-title fs-5"></h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-
-                    <table class="table table-striped" id="table1">
-                        <thead>
-                            <tr>
-
-                                <td>-->
-                                    <div class="modal-dialog">
+        
+              <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h1 class="modal-title fs-5"> {{ __('Brand') }}</h1><br>

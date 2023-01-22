@@ -174,6 +174,7 @@ class products extends Controller
         $color=Color::all();
         $size=Size::all();
         $get_color=Color_Product::with('products')->where('product_id','=',$id)->get();
+        
         $get_size=Size_Product::with('products')->where('product_id','=',$id)->get();
 
         $page = "product";
@@ -316,7 +317,8 @@ class products extends Controller
         $color=request('product_color');
         $size=request('product_size');
         // dd($color);
-        if(count($color) > 0){
+        if(count($color) >0)
+        {
             Color_Product::where('product_id', $id)->delete();
             for($i=0;$i<count($color);$i++){
             $color_product= new Color_Product;
@@ -325,16 +327,17 @@ class products extends Controller
             $color_product->save();
             }
         }
+        Size_Product::where('product_id', $id)->delete();
+        if($size){
         if(count($size) > 0){
-            Size_Product::where('product_id', $id)->delete();
             for($i=0;$i<count($size);$i++){
             $size_product= new Size_Product;
             $size_product->size_id=$size[$i];
             $size_product->product_id=$product->id;
             $size_product->save();
-            }
         }
-
+        }
+        }
         $product->update();
 
         Toastr::success('Update Product successfully :)','Success');
@@ -348,7 +351,7 @@ class products extends Controller
             return redirect()->route('all_product',['id'=>3]);
         }
     }
-
+    
     public function delete_product($id)
     {
         $del=product::find($id);

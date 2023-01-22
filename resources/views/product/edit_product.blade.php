@@ -36,7 +36,7 @@
                     <div class="col-12 col-md-6 order-md-2 order-first">
                         <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="dashboard_home">{{ __('Dashboard') }}</a></li>
+                                <li class="breadcrumb-item"><a href="/dashboard_home">{{ __('Dashboard') }}</a></li>
                                 <li class="breadcrumb-item"><a href="all_product/0">{{ __('Product Management') }}</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">{{ __('edit Product') }}
                                 </li>
@@ -139,7 +139,7 @@
                                         <div class="form-group">
                                             <label for="company-column">{{ __('Size') }}</label>
                                             <fieldset class="form-group">
-                                                <select style="width=100%" class="form-select" name="product_size[]" required
+                                                <select style="width=100%" class="form-select" name="product_size[]" 
                                                     id="level" id="field2" multiselect-select-all="true" multiple
                                                     onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))"
                                                     multiselect-hide-x="true">

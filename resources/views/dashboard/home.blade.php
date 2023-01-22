@@ -95,7 +95,8 @@
                                         </div>
                                         <div class="col-md-8">
                                             <h6 class="text-muted font-semibold">{{ __('notice') }}</h6>
-                                            <h4>{{$counts8}}</h4>
+                                            {{-- <h4>{{$counts8}}</h4> --}}
+                                            <h4>6</h4>
                                         </div>
                                     </div>
                                 </div>

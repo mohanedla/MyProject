@@ -17,7 +17,7 @@
                 <div class="col-12 col-md-6 order-md-2 order-first">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                         <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="dashboard_home">{{ __('Dashboard') }}</a></li>
+                        <li class="breadcrumb-item"><a href="/dashboard_home">{{ __('Dashboard') }}</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">{{ __('Reports') }}</li>
                         </ol>
                     </nav>
@@ -32,11 +32,11 @@
                 <div class="card-header">
                  <h4>{{ __('reports List') }}</h4> 
                     {{-- <div class="buttons"> --}}
-                        <a style="float: right; margin: 3px; " target="_blank" href="{{route("R2",["type"=>1])}}" target="_blank"  class="btn btn-secondary"> {{ __('اكثر 5 منتجات مبيعا') }}</a>
-                        <a style="float: right; margin: 3px;"target="_blank" href="{{route("R2",["type"=>2])}}" target="_blank" class="btn btn-secondary"> {{ __('المنتجات المباعة') }}</a>
-                        <a style="float: right; margin: 3px;"target="_blank" href="{{route("R2",["type"=>3])}}" target="_blank"class="btn btn-secondary"> {{ __('جرد مالي ') }}</a>
-                        <a style="float: right; margin: 3px;"target="_blank" href="{{route("R2",["type"=>4])}}" target="_blank" class="btn btn-secondary"> {{ __('المنتجات الغير مباعة ') }}</a>
-                        <a style="float: right; margin: 3px;"  target="_blank" href="{{route("R2",["type"=>5])}}" target="_blank" class="btn btn-secondary"> {{ __('جرد المنتجات') }}</a>
+                        <a style="float: right; margin: 3px; " target="_blank" href="{{route("R2",["type"=>1])}}" onClick="openWindowReload(this)" class="btn btn-secondary"> {{ __('اكثر 5 منتجات مبيعا') }}</a>
+                        <a style="float: right; margin: 3px;"target="_blank" href="{{route("R2",["type"=>2])}}" onClick="openWindowReload(this)" class="btn btn-secondary"> {{ __('المنتجات المباعة') }}</a>
+                        <a style="float: right; margin: 3px;"target="_blank" href="{{route("R2",["type"=>3])}}" onClick="openWindowReload(this)" class="btn btn-secondary"> {{ __('جرد مالي ') }}</a>
+                        <a style="float: right; margin: 3px;"target="_blank" href="{{route("R2",["type"=>4])}}" onClick="openWindowReload(this)" class="btn btn-secondary"> {{ __('المنتجات الغير مباعة ') }}</a>
+                        <a style="float: right; margin: 3px;"  target="_blank" href="{{route("R2",["type"=>5])}}" onClick="openWindowReload(this)" class="btn btn-secondary"> {{ __('جرد المنتجات') }}</a>
 
                   {{-- </div> --}}
 
@@ -120,26 +120,10 @@
     </footer>
 </div>
 <script>
-
-function showDetails(pro,sizes,colors){
-    document.getElementById("productName").innerHTML = pro['name'];
-    var table = document.getElementById("bodyrow");
-    table.innerHTML = "";
-    var max = sizes.length;
-    if(max < colors.lenght){
-        var max = colors.length;
+    function openWindowReload(link) {
+        var href = link.href;
+        window.open(href,'_blank');
+        document.location.reload(true)
     }
-    for(var i=0; i<max;i++){
-        if (top) { var row = table.insertRow(-1); }
-        else { var row = table.insertRow(); }
-
-        // (B3) INSERT CELLS
-        var cell = row.insertCell();
-        cell.innerHTML = colors[i]['color']['name'];
-        cell = row.insertCell();
-        cell.innerHTML = sizes[i]['size']['name'];
-    }
-}
-
 </script>
 @endsection

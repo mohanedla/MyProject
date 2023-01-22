@@ -19,7 +19,9 @@ return new class extends Migration
             $table->string('model')->nullable();
             $table->string('specification')->nullable();
             $table->string('collection');
+            // مفتاح أجنبي من جدول المستخدم
             $table->integer('admin_id')->references('id')->on('users');
+              // مفتاح أجنبي من جدول العلامات التجارية
             $table->integer('brand_id')->references('id')->on('brands');
             $table->integer('category_id');
             $table->integer('quantity');

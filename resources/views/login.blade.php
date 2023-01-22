@@ -114,82 +114,10 @@
                                     class="fa fa-bars"></i></span></button>
                                     <div class="collapse navbar-collapse js-navbar-collapse">
                                         <ul id="menu" class="nav navbar-nav">
-                                            <li> <a href="home">{{ __('Home') }}</a></li>
-                                            <!-- <li class="dropdown mega-dropdown"> <a href="#" class="dropdown-toggle"
-                                                    data-toggle="dropdown">{{ __('Collection') }} </a>
-                                                <ul class="dropdown-menu mega-dropdown-menu row">
-                                                    <li class="col-md-3">
-                                                        <ul>
-                                                            <li class="dropdown-header">{{ __('Women') }}</li>
-
-                                                        </ul>
-                                                    </li>
-                                                    <li class="col-md-3">
-                                                        <ul>
-                                                            <li class="dropdown-header">{{ __('Men') }}</li>
-                                                            
-
-                                                        </ul>
-                                                    </li>
-
-                                                    <li class="col-md-3">
-                                                        <ul>
-                                                            <li class="dropdown-header">{{ __('Children') }}</li>
-                                                            <li><a href="#"><select name="dropdown" class="dropdown_ch"></a>
-                                                            <li>
-                                                                <option class="option_ch"><a href="#">{{ __('Born') }}</a>
-                                                                </option>
-                                                            </li>
-                                                            <li>
-                                                                <option class="option_ch"><a href="#">{{ __('Boys') }}</a>
-                                                                </option>
-                                                            </li>
-                                                            <li>
-                                                                <option class="option_ch"><a href="#">{{ __('Girls') }}</a>
-                                                                </option>
-                                                            </li>
-                                                            </select>
-                                                    </li>
-                                                    <li><a href="#"><select name="dropdown" class="dropdown_ch"></a>
-                                                    <li>
-                                                        <option class="option_ch"><a href="#">{{ __('Childrens') }}</a>
-                                                        </option>
-                                                    </li>
-                                                    <li>
-                                                        <option class="option_ch"><a href="#">{{ __('Boys') }}</a>
-                                                        </option>
-                                                    </li>
-                                                    <li>
-                                                        <option class="option_ch"><a href="#">{{ __('Girls') }}</a>
-                                                        </option>
-                                                    </li>
-                                                    </select>
-                                            </li>
-
-
-                                        </ul>
-                                        </li>
-                                        <li class="col-md-3">
-                                            <ul>
-                                                <li id="myCarousel" class="carousel slide" data-ride="carousel">
-                                                    <div class="carousel-inner">
-                                                        <div class="item active"><a href=""> <img
-                                                                    src="{{asset('images/menu-banner1.jpg')}}"
-                                                                    class="img-responsive" alt="Banner1"></a></div>
-
-                                                    </div>
-                                                    <!-- End Carousel Inner -->
-                                                <!-- </li> -->
-                                                <!-- /.carousel -->
-                                            <!-- </ul>
-                                        <li class="col-md-3">
-                                        </li>
-                                        </ul>
-                                        </li> --> 
-                                        <!-- <li> <a href="shop">{{ __('shop') }}</a></li> -->
-                                        <li> <a href="about">{{ __('About us') }}</a></li>
+                                            <li> <a href="/home">{{ __('Home') }}</a></li>
+                                         <li> <a href="/about">{{ __('About us') }}</a></li>
                                         @if (Auth::User())   
-                                        <li> <a href="contact_us">{{ __('Contact us') }}</a></li>
+                                        <li> <a href="/contact_us">{{ __('Contact us') }}</a></li>
                                         @endif
                                         </ul>
                                     </div>

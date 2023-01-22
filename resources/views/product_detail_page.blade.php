@@ -41,7 +41,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
     <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet" />
 
-    <link href="{{ asset('css/design4.css') }}" rel="stylesheet" />
+    {{-- <link href="{{ asset('css/design4.css') }}" rel="stylesheet" /> --}}
     @livewireStyles
 </head>
 <body>
@@ -129,78 +129,16 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-12 col-sm-4">
-
+                      
                         </div>
-                        <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="/home"> <img
-                                    alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
-                        <div class="col-xs-6 col-sm-4 shopcart">
+                        <div class="navbar-header col-xs-6 col-sm-4">
+                             <a class="navbar-brand" href="/home">
+                                 <img alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> 
+                                </div>
 
-                            <div id="cart-dropdown" class="cart-menu collapse">
-                                <ul>
-                                    <li>
-                                        <table class="table table-striped">
-                                            <tbody>
-                                                <tr>
-                                                    <td class="text-center"><a href="#"><img
-                                                                src="{{ asset('images/product/70x84.jpg') }}"
-                                                                alt="iPod Classic" title="iPod Classic"></a></td>
-                                                    <td class="text-left product-name"><a href="#">MacBook
-                                                            Pro</a> <span class="text-left price">$20.00</span>
-                                                        <input class="cart-qty" name="product_quantity"
-                                                            min="1" value="1" type="number">
-                                                    </td>
-                                                    <td class="text-center"><a class="close-cart"><i
-                                                                class="fa fa-times-circle"></i></a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center"><a href="#"><img
-                                                                src="{{ asset('images/product/70x84.jpg') }}"
-                                                                alt="iPod Classic" title="iPod Classic"></a></td>
-                                                    <td class="text-left product-name"><a href="#">MacBook
-                                                            Pro</a> <span class="text-left price">$20.00</span>
-                                                        <input class="cart-qty" name="product_quantity"
-                                                            min="1" value="1" type="number">
-                                                    </td>
-                                                    <td class="text-center"><a class="close-cart"><i
-                                                                class="fa fa-times-circle"></i></a></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </li>
-                                    <li>
-                                        <table class="table">
-                                            <tbody>
-                                                <tr>
-                                                    <td class="text-right"><strong>Sub-Total</strong></td>
-                                                    <td class="text-right">$2,100.00</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-right"><strong>Eco Tax (-2.00)</strong></td>
-                                                    <td class="text-right">$2.00</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-right"><strong>VAT (20%)</strong></td>
-                                                    <td class="text-right">$20.00</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-right"><strong>Total</strong></td>
-                                                    <td class="text-right">$2,122.00</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </li>
-                                    <li>
-                                        <form action="cart_page">
-                                            <input class="btn pull-left mt_10" value="View cart" type="submit">
-                                        </form>
-                                        <form action="checkout_page">
-                                            <input class="btn pull-right mt_10" value="Checkout" type="submit">
-                                        </form>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                        <x-share.cart-shop> </x-share.cart-shop>
+
+                    </div>         
                     <nav class="navbar">
                         <p>menu</p>
                         <button class="navbar-toggle" type="button" data-toggle="collapse"
@@ -258,7 +196,6 @@
                                     <li> <a href="/shop">{{ __('shop') }}</a></li>
                                 @endif
                                 @if (Auth::user())
-                            @if (Auth::user()->role == '3')
                                 <li class="dropdown"> <a href="#" class="dropdown-toggle"
                                         data-toggle="dropdown">{{ __('previous orders') }} </a>
 
@@ -286,7 +223,6 @@
                                     </div>
                                 </ul>
                             </li>
-                        @endif
                     @endif
                   
                                 <li> <a href="/about">{{ __('About us') }}</a></li>
@@ -312,7 +248,7 @@
                         <h1> {{ __('product_detail_page') }} </h1>
                         <ul>
                             <li><a href="/home">{{ __('Home') }}</a></li>
-                            <li class="active"><a href="/category_page">{{ __('shop') }}</a></li>
+                            <li class="active"><a href="/shop">{{ __('shop') }}</a></li>
                             <li class="active">{{ __('product_detail') }}</li>
                         </ul>
                     </div>
@@ -326,9 +262,11 @@
                             </div>
                             <li class="nav navbar-nav">
                                 <ul>
+                                    <div class="cart-dropdown3">
                                     @foreach ($category_women as $women)
                                     <li><a href="/category/{{$women->id}}/Women">{{ __($women->name) }}</a></li>
                                 @endforeach
+                                    </div>
                                 </ul>
                             </li>
                             <!-- </ul> -->
@@ -341,9 +279,11 @@
                             </div>
                             <li class="nav navbar-nav">
                                 <ul>
+                                    <div class="cart-dropdown3">
                                     @foreach ($category_men as $men)
                                         <li><a href="/category/{{$men->id}}/Men">{{ __($men->name) }}</a></li>
                                     @endforeach
+                                </div>
                                 </ul>
                             </li>
                         </div>
@@ -352,10 +292,13 @@
                         </div>
                         <li class="nav navbar-nav">
                             <ul>
+                                <div class="cart-dropdown3">
                                 @foreach ($category_kids as $kids)
                                     <li><a href="/category/{{$kids->id}}/Kids">{{ __($kids->name) }}</a></li>
                                 @endforeach
+                                </div>
                             </ul>
+
                         </li>
                     </div>
                 </div>

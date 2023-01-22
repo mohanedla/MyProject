@@ -99,25 +99,12 @@
                                 </li>
                             @if (Auth::user())
                                 @if (Auth::user()->role == '1' || Auth::user()->role == '2')
-                                    {{-- @if ((Auth::User()->role = '1') or (Auth::User()->role = '2')) --}}
                                     <li class="nav-item">
                                         <a class="account" href="/dashboard_home">{{ __('System management') }}</a>
                                     </li>
                                 @endif
-                                {{-- @endif --}}
                             @endif
-                            <!-- <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                role="button">{{__('Properties')}} <span class="caret"></span> </span>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
-
-                                    <li><a href="admin">{{__ ('admin management')}}</a></li>
-                                    <li><a href="user">{{__ ('user management')}}</a></li>
-                                    <li><a href="product">{{__ ('Product Management')}}</a></li>
-                                    <li><a href="brand">{{__ ('Brands')}}</a></li>
-                                    <li><a href="reports">{{__ ('Reports')}}</a></li>
-                                </ul>
-                            </li> -->
+                            
                         </ul>
                     </div>
                 </div>
@@ -254,7 +241,6 @@
                             <li> <a href="/shop">{{ __('shop') }}</a></li>
                             @endif
                             @if (Auth::user())
-                            @if (Auth::user()->role == '3')
                                 <li class="dropdown"> <a href="#" class="dropdown-toggle"
                                         data-toggle="dropdown">{{ __('previous orders') }} </a>
 
@@ -282,7 +268,6 @@
                                     </div>
                                 </ul>
                             </li>
-                        @endif
                     @endif
                                     <li> <a href="/about">{{ __('About us') }}</a></li>
                                     @if (Auth::User())
@@ -303,7 +288,6 @@
                     <h1>{{ __('Contact us') }}</h1>
                     <ul>
                         <li><a href="/home">{{ __('Home') }}</a></li>
-                        {{-- <li><a href="/brand">{{ __('Brands') }}</a></li> --}}
                         <li class="active">{{ __('Contact us') }}</li>
                     </ul>
                 </div>

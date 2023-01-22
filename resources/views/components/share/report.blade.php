@@ -21,7 +21,7 @@
         @foreach ($collections as $key => $item)
             <tr>
                 <td class="text-right">
-                    <h5><strong>
+                    <h5><strong> 
                         {{  $key+1 }}
                         </strong>
                     </h5>

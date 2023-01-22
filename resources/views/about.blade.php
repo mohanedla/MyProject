@@ -98,25 +98,12 @@
                             </li>
                             @if (Auth::user())
                                 @if (Auth::user()->role == '1' || Auth::user()->role == '2')
-                                    {{-- @if ((Auth::User()->role = '1') or (Auth::User()->role = '2')) --}}
                                     <li class="nav-item">
                                         <a class="account" href="/dashboard_home">{{ __('System management') }}</a>
                                     </li>
                                 @endif
-                                {{-- @endif --}}
                             @endif
-                            <!-- <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                role="button">{{__('Properties')}} <span class="caret"></span> </span>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
-
-                                    <li><a href="admin">{{__ ('admin management')}}</a></li>
-                                    <li><a href="user">{{__ ('user management')}}</a></li>
-                                    <li><a href="product">{{__ ('Product Management')}}</a></li>
-                                    <li><a href="brand">{{__ ('Brands')}}</a></li>
-                                    <li><a href="reports">{{__ ('Reports')}}</a></li>
-                                </ul>
-                            </li> -->
+                          
                         </ul>
                     </div>
                     </div>
@@ -124,80 +111,16 @@
             </div>
             <div class="header">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-4">
-
-                        </div>
-                        <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="home"> <img
-                                    alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
-                        <div class="col-xs-6 col-sm-4 shopcart">
-
-                            <div id="cart-dropdown" class="cart-menu collapse">
-                                <ul>
-                                    <li>
-                                        <table class="table table-striped">
-                                            <tbody>
-                                                <tr>
-                                                    <td class="text-center"><a href="#"><img
-                                                                src="{{ asset('images/product/70x84.jpg') }}"
-                                                                alt="iPod Classic" title="iPod Classic"></a></td>
-                                                    <td class="text-left product-name"><a href="#">MacBook
-                                                            Pro</a> <span class="text-left price">$20.00</span>
-                                                        <input class="cart-qty" name="product_quantity" min="1"
-                                                            value="1" type="number">
-                                                    </td>
-                                                    <td class="text-center"><a class="close-cart"><i
-                                                                class="fa fa-times-circle"></i></a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center"><a href="#"><img
-                                                                src="{{ asset('images/product/70x84.jpg') }}"
-                                                                alt="iPod Classic" title="iPod Classic"></a></td>
-                                                    <td class="text-left product-name"><a href="#">MacBook
-                                                            Pro</a> <span class="text-left price">$20.00</span>
-                                                        <input class="cart-qty" name="product_quantity" min="1"
-                                                            value="1" type="number">
-                                                    </td>
-                                                    <td class="text-center"><a class="close-cart"><i
-                                                                class="fa fa-times-circle"></i></a></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </li>
-                                    <li>
-                                        <table class="table">
-                                            <tbody>
-                                                <tr>
-                                                    <td class="text-right"><strong>Sub-Total</strong></td>
-                                                    <td class="text-right">$2,100.00</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-right"><strong>Eco Tax (-2.00)</strong></td>
-                                                    <td class="text-right">$2.00</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-right"><strong>VAT (20%)</strong></td>
-                                                    <td class="text-right">$20.00</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-right"><strong>Total</strong></td>
-                                                    <td class="text-right">$2,122.00</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </li>
-                                    <li>
-                                        <form action="cart_page">
-                                            <input class="btn pull-left mt_10" value="View cart" type="submit">
-                                        </form>
-                                        <form action="checkout_page">
-                                            <input class="btn pull-right mt_10" value="Checkout" type="submit">
-                                        </form>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                  
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-4">
+                                </div>
+                                <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="/home">
+                                    <img alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
+                            @if (Auth::User())
+                                <x-share.cart-shop></x-share.cart-shop>
+                            @endif
+                            </div> 
                     <nav class="navbar">
                         <p>menu</p>
                         <button class="navbar-toggle" type="button" data-toggle="collapse"
@@ -255,7 +178,6 @@
                                             <li> <a href="/shop">{{ __('shop') }}</a></li>
                                             @endif
                                             @if (Auth::user())
-                            @if (Auth::user()->role == '3')
                                 <li class="dropdown"> <a href="#" class="dropdown-toggle"
                                         data-toggle="dropdown">{{ __('previous orders') }} </a>
 
@@ -283,7 +205,6 @@
                                     </div>
                                 </ul>
                             </li>
-                        @endif
                     @endif
 
                                         <li> <a href="/about">{{ __('About us') }}</a></li>

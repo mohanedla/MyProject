@@ -161,7 +161,7 @@
                             class="fa fa-bars"></i></span></button>
                 <div class="collapse navbar-collapse js-navbar-collapse">
                     <ul id="menu" class="nav navbar-nav">
-                        <li> <a href="home">{{ __('Home') }}</a></li>
+                        <li> <a href="/home">{{ __('Home') }}</a></li>
                         <li class="dropdown mega-dropdown"> <a href="#" class="dropdown-toggle"
                                 data-toggle="dropdown">{{ __('Collection') }} </a>
 
@@ -218,10 +218,9 @@
 
 
                         @if (Auth::User())
-                            <li> <a href="shop">{{ __('shop') }}</a></li>
+                            <li> <a href="/shop">{{ __('shop') }}</a></li>
                         @endif
                         @if (Auth::user())
-                            @if (Auth::user()->role == '3')
                                 <li class="dropdown"> <a href="#" class="dropdown-toggle"
                                         data-toggle="dropdown">{{ __('previous orders') }} </a>
 
@@ -249,7 +248,6 @@
                                     </div>
                                 </ul>
                             </li>
-                        @endif
                     @endif
                                                     
                                     
@@ -310,17 +308,7 @@
                                                                     alt="iPod Classic" title="iPod Classic"
                                                                     class="img-responsive"> </a>
                                                             <div class="button-group text-center">
-                                                                <!-- <div class="wishlist"><a
-                                                                        href="#"><span>wishlist</span></a>
-                                                                </div>
-                                                                <div class="quickview"><a href="#"><span>Quick
-                                                                            View</span></a></div>
-                                                                <div class="compare"><a
-                                                                        href="#"><span>Compare</span></a>
-                                                                </div>
-                                                                <div class="add-to-cart"><a href="#"><span>Add
-                                                                            to
-                                                                            cart</span></a></div> -->
+                                                           
                                                             </div>
                                                         </div>
                                                         <div class="caption product-detail text-center">
@@ -400,16 +388,7 @@
 
                                                     </a>
                                                     <div class="button-group text-center">
-                                                        <!-- <div class="wishlist"><a
-                                                                href="#"><span>wishlist</span></a>
-                                                        </div>
-                                                        <div class="quickview"><a href="#"><span>Quick
-                                                                    View</span></a></div>
-                                                        <div class="compare"><a
-                                                                href="#"><span>Compare</span></a>
-                                                        </div>
-                                                        <div class="add-to-cart"><a href="#"><span>Add to
-                                                                    cart</span></a></div> -->
+                                                    
                                                     </div>
                                                     </div>
                                                     <div class="caption product-detail text-center">
@@ -483,17 +462,7 @@
                                                                     alt="iPod Classic" title="iPod Classic"
                                                                     class="img-responsive"> </a>
                                                             <div class="button-group text-center">
-                                                                <!-- <div class="wishlist"><a
-                                                                        href="#"><span>wishlist</span></a>
-                                                                </div>
-                                                                <div class="quickview"><a href="#"><span>Quick
-                                                                            View</span></a></div>
-                                                                <div class="compare"><a
-                                                                        href="#"><span>{{ __('Compare') }}</span></a>
-                                                                </div>
-                                                                <div class="add-to-cart"><a href="#"><span>Add
-                                                                            to
-                                                                            cart</span></a></div> -->
+                                                            
                                                             </div>
                                                         </div>
                                                         <div class="caption product-detail text-center">

@@ -170,12 +170,9 @@
 
                         </div>
                         @foreach ($orders as $order)
-                        {{Carbon\Carbon::now('Africa/Tripoli')->format("Y-m-d") }}
                         <br>
-                        {{Carbon\Carbon::now('Africa/Tripoli')->format("h-i-A") }}
-                            {{-- <h6> {{ $order->created_at->format("Y-m-d") }} </h6>
-                            <h6> {{ $order->created_at->format("h-i-SA") }}</h6> --}}
-
+                            <h6> {{ $order->created_at->format("Y-m-d") }} </h6>
+                            <h6> {{ $order->created_at->format("h-i-SA") }}</h6> 
                         @endforeach
 
                     </div>

@@ -38,7 +38,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/cart_page',[App\Http\Controllers\home::class,'cart_page']);
     Route::get('/checkout_page',[App\Http\Controllers\home::class,'checkout_page']);
     Route::get('/foot',[App\Http\Controllers\home::class,'footer']);
-    Route::get('/category/{id}/{name}',[App\Http\Controllers\home::class,'category']);
+    Route::get('/category/{id}/{name}',[App\Http\Controllers\home::class,'category'])->name('category');
     // البلاغات
     Route::get('/contact_us',[App\Http\Controllers\home::class,'contact_us']);
     Route::get('/contact_notice',[App\Http\Controllers\home::class,'contact_notice'])->name('contact_notice');

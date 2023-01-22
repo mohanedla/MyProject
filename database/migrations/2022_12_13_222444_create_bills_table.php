@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('order_id')->references('id')->on('orders');
             $table->integer('product_id')->references('id')->on('products');
             $table->integer('color_id')->references('id')->on('colors');
-            $table->integer('size_id')->references('id')->on('sizes');
+            $table->integer('size_id')->references('id')->on('sizes')->nullable();
             $table->string('name');
             $table->integer('quantity');
             $table->string('profile_image')->nullable();

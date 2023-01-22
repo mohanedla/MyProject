@@ -313,8 +313,8 @@
                         <td>{{ $bill->quantity }}</td>
                         <td>{{ $bill->price }} $</td>
                         <td>{{ $bill->total }} $</td>
-                        <td>{{ $bill->price_dl }} DL</td>
-                        <td>{{ $bill->total_dl }} DL </td>
+                        <td>{{ $bill->price_dl }} LYD</td>
+                        <td>{{ $bill->total_dl }} LYD </td>
 
                         <!-- <td>
                                             <a href=""><img src="{{ asset('images/icone/edit-solid-24.png') }}"></a>
@@ -337,7 +337,9 @@
                     <td></td>
                     {{-- <h2><strong>{{ $total->total * Session::get('LYD') }} DL </strong></h2> --}}
 
-                    <th><h3>{{ $total  * Session::get('LYD')}} DL</h3></th>
+                    <th><h3>
+                        {{   round(  $total * Session::get('LYD') , 2) }} LYD
+                    </h3></th>
                     
                     <!-- <th><b>:المجموع</b></th> -->
 

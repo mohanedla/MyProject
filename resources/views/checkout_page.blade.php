@@ -449,11 +449,11 @@
                                                     <tr>
                                                         <td>{{ __($item->name) }}</td>
                                                         <td class="text-right">{{ $item->qty }}</td>
-                                                        <td class="text-right">${{ $item->price }}</td>
-                                                        <td class="text-right">${{ $item->price * $item->qty }}</td>
-                                                        <td class="text-right">LYD :{{ round( $item->price  * Session::get('LYD') , 2) }}</td>
+                                                        <td class="text-right">{{ $item->price }} $</td>
+                                                        <td class="text-right">{{ $item->price * $item->qty }} $</td>
+                                                        <td class="text-right">{{ round( $item->price  * Session::get('LYD') , 2) }} LYD</td>
 
-                                                        <td class="text-right">LYD : {{ round( $item->price  * Session::get('LYD') , 2) * $item->qty }}</td>
+                                                        <td class="text-right">{{ round( $item->price  * Session::get('LYD') , 2) * $item->qty }} LYD</td>
                 
 
 
@@ -464,14 +464,15 @@
                                             <tbody>
                                                 <tr>
                                                  @if($old_order->count()>=3)
-                                                <td class="text-right"colspan="4">$   ( {{App\Models\Cart::GET_TOTAL_PRICE() -  App\Models\Cart::GET_TOTAL_PRICE() *0.15 }})
+                                                <td class="text-right"colspan="4">   ( {{App\Models\Cart::GET_TOTAL_PRICE() -  App\Models\Cart::GET_TOTAL_PRICE() *0.15 }})  $
                                                @else
-                                               <td class="text-right"colspan="4">$ {{App\Models\Cart::GET_TOTAL_PRICE()}}
+                                               <td class="text-right"colspan="4">{{App\Models\Cart::GET_TOTAL_PRICE()}} $
 
                                                    </td>
                                                       @endif
                                                     <td></td>
-                                                    <td class="text-right"colspan="4">$1,000.00</td>
+                                                    <td class="text-right"colspan="4">
+                                                        {{   round(   App\Models\Cart::GET_TOTAL_PRICE() * Session::get('LYD') , 2) }} LYD</td>
                                                 </tr>
 
                                             </tbody>

@@ -36,10 +36,10 @@
                 @endforeach
                 
             </tr>
-        @endforeach
-               {{-- <td class="text-right">
-            </tr>
-        {{-- @endforeach --}}
-           
-    </tbody>
-</table>
+            @endforeach
+        </tbody>
+    </table>
+    {{Carbon\Carbon::now('Africa/Tripoli')->format("Y-m-d") }}
+    <br>
+    {{Carbon\Carbon::now('Africa/Tripoli')->format("h-i-A") }}
+              

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('product_id');
             $table->integer('user_id');
             $table->integer('color_id');
-            $table->integer('size_id');
+            $table->integer('size_id')->nullable();
             $table->string('image')->nullable();
             $table->string('name');
             $table->integer('qty');

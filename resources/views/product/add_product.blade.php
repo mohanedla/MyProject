@@ -149,7 +149,7 @@
                                             <label for="company-column">{{ __('Size') }}</label>
                                             <fieldset class="form-group">
                                                 <select style="width=100%" class="form-select" name="product_size[]"
-                                                    required id="level" id="field2" multiselect-select-all="true"
+                                                     id="level" id="field2" multiselect-select-all="true"
                                                     multiple
                                                     onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))"
                                                     multiselect-hide-x="true">

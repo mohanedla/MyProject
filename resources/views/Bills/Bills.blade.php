@@ -31,8 +31,8 @@
             {!! Toastr::message() !!}
 
         </div>
-        <div id="print">
-        <div class="col-md-12" >
+        <div id="print" style="margin-right:20%">
+        <div class="col-md-12"  >
             <div class="row" >
 
                 <div class="receipt-main col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
@@ -108,13 +108,13 @@
                                             <h5><strong>{{ $bill->price }} $</strong></h5>
                                         </td>
                                         <td class="text-right">
-                                            <h5><strong>{{ $bill->total }}$</strong></h5>
+                                            <h5><strong>{{ $bill->total }} $</strong></h5>
                                         </td>
                                         <td class="text-right">
-                                            <h5><strong> {{ $bill->price_dl }} DL</strong></h5>
+                                            <h5><strong> {{ $bill->price_dl }} LYD</strong></h5>
                                         </td>
                                         <td class="text-right">
-                                            <h5><strong>{{ $bill->total_dl }}DL </strong></h5>
+                                            <h5><strong>{{ $bill->total_dl }} LYD </strong></h5>
                                         </td>
 
                                     </tr>
@@ -134,7 +134,10 @@
                                         </td>
                                         <th></th>
                                         <td class="text-right">
-                                        <h2><strong>{{ $total->total * Session::get('LYD') }} DL </strong></h2>
+                                        <h2><strong>
+                                            {{   round(  $total->total * Session::get('LYD') , 2) }} LYD
+                                        
+                                        </strong></h2>
 
                                             <!-- {{-- <h2><strong>${{ $bill->totals_dl }} </strong></h2> --}} Session::get('LYD') -->
                                         </td>
@@ -167,7 +170,12 @@
 
                         </div>
                         @foreach ($orders as $order)
-                            <h6> {{ $order->created_at }}</h6>
+                        {{Carbon\Carbon::now('Africa/Tripoli')->format("Y-m-d") }}
+                        <br>
+                        {{Carbon\Carbon::now('Africa/Tripoli')->format("h-i-A") }}
+                            {{-- <h6> {{ $order->created_at->format("Y-m-d") }} </h6>
+                            <h6> {{ $order->created_at->format("h-i-SA") }}</h6> --}}
+
                         @endforeach
 
                     </div>

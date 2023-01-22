@@ -220,7 +220,7 @@
                             <li> <a href="shop">{{ __('shop') }}</a></li>
                         @endif
                         @if (Auth::user())
-                            @if (Auth::user()->role == '3')
+                            {{-- @if (Auth::user()->role == '1') --}}
                                 <li class="dropdown"> <a href="#" class="dropdown-toggle"
                                         data-toggle="dropdown">{{ __('previous orders') }} </a>
 
@@ -248,7 +248,7 @@
                                     </div>
                                 </ul>
                             </li>
-                        @endif
+                        {{-- @endif --}}
                     @endif
                                                     
                                     
@@ -345,10 +345,11 @@
                                                                     {{ $item->brand->name }} </a></h6>
                                                             @if (Auth::User())
                                                                 <span class="price"><span class="amount"><span
-                                                                            class="currencySymbol">$</span>{{ $item->price }}.00
-                                                                    </span>
+                                                                            class="currencySymbol"></span>{{ $item->price }}.00
+                                                                    $</span>
                                                                     <br>
-                                                                    <span class="price"><span class="amount"><span class="currencySymbol">LYD </span>{{ round( $item->price  * Session::get('LYD') , 2) }}</span>
+                                                                    <span class="price"><span class="amount"><span class="currencySymbol">
+                                                                     </span>{{ round( $item->price  * Session::get('LYD') , 2) }} LYD</span>
 
                                                                     <!-- <form action="/">
 
@@ -439,9 +440,10 @@
                                                                 {{ $item->brand->name }}</a></h6>
                                                         @if (Auth::User())
                                                             <span class="price"><span class="amount"><span
-                                                                        class="currencySymbol">$</span>{{ $item->price }}.00</span>
+                                                                        class="currencySymbol"> </span>{{ $item->price }}.00 $</span>
                                                                         <br>
-                                                                        <span class="price"><span class="amount"><span class="currencySymbol">LYD </span>{{ round( $item->price  * Session::get('LYD') , 2) }}</span>
+                                                                        <span class="price"><span class="amount"><span class="currencySymbol">
+                                                                             </span>{{ round( $item->price  * Session::get('LYD') , 2) }} LYD</span>
 
                                                                 <!-- <form action="/">
 
@@ -530,9 +532,9 @@
                                                                     {{ $item->name }} &nbsp;
                                                                     {{ $item->brand->name }}</a></h6>
                                                             @if (Auth::User())
-                                                                <span class="price"><span class="amount"><span class="currencySymbol">$</span>{{ $item->price }}.00</span>
+                                                                <span class="price"><span class="amount"><span class="currencySymbol"></span>{{ $item->price }}.00 $</span>
                                                                 <br>
-                                                                <span class="price"><span class="amount"><span class="currencySymbol">LYD </span>{{ round( $item->price  * Session::get('LYD') , 2) }}</span>
+                                                                <span class="price"><span class="amount"><span class="currencySymbol"></span>{{ round( $item->price  * Session::get('LYD') , 2) }} LYD</span>
                                                                     <!-- <form action="/">
 
      <input class="btn pull-right mt_30" type="submit" value="{{ __('Add to cart') }}" /> Session::put('LYD',$lyd);

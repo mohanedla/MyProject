@@ -65,11 +65,7 @@ class home extends Controller
 
     public function login_register()
     {
-        // $categories=Category::all();
-        // $collect = array('M'=>'Men','W'=>'Women','C'=>'Children' );
-        // $product_name_men=product::with('categories')->where('collection','=','Men')->get();
-        // $product_name_women=product::with('categories')->where('collection','=','Women')->get();
-        // $product_name_children=product::with('categories')->where('collection','=','Children')->get();
+        
         $lyd=$this->getLYDCurrency();
         Session::put('LYD',$lyd);
         return View('/login');
@@ -393,9 +389,12 @@ class home extends Controller
              return redirect('/');
 
             else{
+            $reports=report::all();
+            dd($reports);
             $page = "R2";
-            return View('report.R2',compact("page"));
+            return View('report.R2',compact('page','reports'));
         }
+
         }
         public function R3()
         {

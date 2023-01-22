@@ -400,8 +400,10 @@
 
                                         </div>
                                         <div class="caption product-detail text-center">&nbsp;&nbsp;&nbsp;
-                                            <h3 data-name="product_name" class="product-name mt_20"><a href="#"
-                                                    title="Casual Shirt With Ruffle Hem">{{ $product->name }}</a></h3>
+                                            {{-- <h3 data-name="product_name" class="product-name mt_20"><a href="#"
+                                                    title="Casual Shirt With Ruffle Hem"></a></h3> --}}
+                                                    <h5> {{ $product->name }} &nbsp;&nbsp;{{ $product->brand->name}}</h5>
+                                                    
                                             <!-- <div class="button-group text-center">
                                                         <div class="add-to-cart"><a href="#"><span>Add to cart</span></a>
                                                         </div>
@@ -421,9 +423,11 @@
 
                                             <span class="price">
                                                 <h5 class="amount"><span
-                                                        class="currencySymbol">$</span>{{ $product->price }}&nbsp;
-                                                        {{ $product->brand->name}}</h5>
-                                                        <span class="price"><span class="amount"><span class="currencySymbol">LYD </span>{{ round( $product->price  * Session::get('LYD') , 2) }}</span>
+                                                        class="currencySymbol"></span>
+                                                      
+                                                        {{ $product->price }} $
+                                                    </h5>
+                                                        <span class="price"><span class="amount"><span class="currencySymbol"></span>{{ round( $product->price  * Session::get('LYD') , 2) }} LYD </span>
 
                                                 <h3 class="product-desc mt_20 mb_60">{{ __('Specifications') }}
                                                     : {{ $product->specification }} </h3>

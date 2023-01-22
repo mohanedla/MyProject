@@ -28,7 +28,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 {
 
     // Route::get('url اسم ',[App\Http\Controllers\اسم الكترولر::class,'اسم الفانكشن']);
-    Route::get('/home',[App\Http\Controllers\home::class,'index']);
+    Route::get('/home',[App\Http\Controllers\home::class,'index'])->name('home');
     Route::get('/',[App\Http\Controllers\home::class,'index']);
     // Route::get('/',[App\Http\Controllers\home::class,'index'])->name('home');
     Route::get('/shop',[App\Http\Controllers\home::class,'category_page'])->name('shop');

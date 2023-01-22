@@ -62,7 +62,7 @@
                             @php
                                 $i=1;
                                 $j=0;
-                            @endphp
+                            @endphp 
                                 @foreach ($admin as $x)
                                 <tr>
                                     <td>{{$i++}}</td>
@@ -79,7 +79,7 @@
                                     <td style="text-align: center;">{{$x->quantity - $x->quantity_price}}</td>
                                     <!-- <td>{{$x->price_purchas}}$</td>
                                     <td>{{$x->price}}$</td> -->
-                                    {{-- <td>{{$x->user->name}}</td> --}}
+                                    <td>{{$x->user->name}}</td>
                                     <td>
 
 
@@ -185,14 +185,14 @@
 <script>
 function showDetails(pro,images,sizes,colors,img)
 {
-    // document.getElementById("productName").innerHTML = pro['name'];
     var myImage = document.getElementById("image").src=img;
     document.getElementById("price1").innerHTML = pro['price'];
     document.getElementById("price2").innerHTML = pro['price_purchas'];
     var table = document.getElementById("bodyrow");
     table.innerHTML = "";
     var max = sizes.length;
-    if(max < colors.lenght){
+
+    if(max < colors.length){
         var max = colors.length;
     }
     for(var i=0; i<max;i++){
@@ -200,12 +200,22 @@ function showDetails(pro,images,sizes,colors,img)
         else
          { var row = table.insertRow(); }
         // (B3) INSERT CELLS
-        var cell = row.insertCell();
-        cell.innerHTML = colors[i]['color']['name'];
-        cell = row.insertCell();
-        cell.innerHTML = sizes[i]['size']['name'];
-    }
-    
+        if(colors[i]){
+            var cell = row.insertCell();
+            cell.innerHTML = colors[i]['color']['name'];
+        }else{
+            var cell = row.insertCell();
+            cell.innerHTML = "";
+        }
+        if(sizes[i]){
+            cell = row.insertCell();
+            cell.innerHTML = sizes[i]['size']['name'];
+        }else{
+            var cell = row.insertCell();
+            cell.innerHTML = "";
+        }
+
+    }  
 }
 </script>
 @endsection

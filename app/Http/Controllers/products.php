@@ -214,10 +214,10 @@ class products extends Controller
                 'product_name'  => "required",
                 'product_brand'  => "required",
                 'product_quantity'  => "required",
-                'product_size'  => "required",
+                // 'product_size'  => "required",
                 'product_color'  => "required",
                 'product_price'  => "required",
-                'product_image'  => "required",
+                'product_image'  => "required",   
         ]);
 
         $product= new product;
@@ -256,11 +256,13 @@ class products extends Controller
         $color_product->product_id=$product->id;
         $color_product->save();
         }
-        for($i=0;$i<count($size);$i++){
-        $size_product= new Size_Product;
-        $size_product->size_id=$size[$i];
-        $size_product->product_id=$product->id;
-        $size_product->save();
+        if(request('product_size')){
+            for($i=0;$i<count($size);$i++){
+                $size_product= new Size_Product;
+                $size_product->size_id=$size[$i];
+                $size_product->product_id=$product->id;
+                $size_product->save();
+            }
         }
 
         Toastr::success('Create new Product successfully :)','Success');

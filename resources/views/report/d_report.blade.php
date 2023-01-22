@@ -32,11 +32,11 @@
                 <div class="card-header">
                  <h4>{{ __('reports List') }}</h4> 
                     {{-- <div class="buttons"> --}}
-                        <a style="float: right; margin: 3px; " onclick="return confirm('{{ __(' Are you sure you want to cancel it?') }}')" href="{{route("R2",["type"=>1])}}" target="_blank"  class="btn btn-secondary"> {{ __('اكثر 5 منتجات مبيعا') }}</a>
-                        <a style="float: right; margin: 3px;"  href="{{route("R2",["type"=>2])}}" target="_blank" class="btn btn-secondary"> {{ __('المنتجات المباعة') }}</a>
-                        <a style="float: right; margin: 3px;" href="{{route("R2",["type"=>3])}}" target="_blank"class="btn btn-secondary"> {{ __('جرد مالي ') }}</a>
-                        <a style="float: right; margin: 3px;" href="{{route("R2",["type"=>4])}}" target="_blank" class="btn btn-secondary"> {{ __('المنتجات الغير مباعة ') }}</a>
-                        <a style="float: right; margin: 3px;"  href="{{route("R2",["type"=>5])}}" target="_blank" class="btn btn-secondary"> {{ __('جرد المنتجات') }}</a>
+                        <a style="float: right; margin: 3px; " target="_blank" href="{{route("R2",["type"=>1])}}" target="_blank"  class="btn btn-secondary"> {{ __('اكثر 5 منتجات مبيعا') }}</a>
+                        <a style="float: right; margin: 3px;"target="_blank" href="{{route("R2",["type"=>2])}}" target="_blank" class="btn btn-secondary"> {{ __('المنتجات المباعة') }}</a>
+                        <a style="float: right; margin: 3px;"target="_blank" href="{{route("R2",["type"=>3])}}" target="_blank"class="btn btn-secondary"> {{ __('جرد مالي ') }}</a>
+                        <a style="float: right; margin: 3px;"target="_blank" href="{{route("R2",["type"=>4])}}" target="_blank" class="btn btn-secondary"> {{ __('المنتجات الغير مباعة ') }}</a>
+                        <a style="float: right; margin: 3px;"  target="_blank" href="{{route("R2",["type"=>5])}}" target="_blank" class="btn btn-secondary"> {{ __('جرد المنتجات') }}</a>
 
                   {{-- </div> --}}
 

@@ -400,7 +400,7 @@
                                 <span class="price mb_20"><span class="amount"><span
                                             class="currencySymbol">{{ $product->price }}</span>$</span>
                                             <br>    
-                                            <span class="price"><span class="amount"><span class="currencySymbol">LYD </span>{{ round( $product->price  * Session::get('LYD') , 2) }}</span>
+                                            <span class="price"><span class="amount"><span class="currencySymbol"> </span>{{ round( $product->price  * Session::get('LYD') , 2) }} LYD</span>
 
                                     {{-- <span><span class="amount"><span class="currencySymbol">180</span>DL</span> --}}
 
@@ -434,11 +434,13 @@
                                                             <h4>{{ __('Size') }}</h4>
                                                         </label>
                                                         <select name="size" id="select-by-size"
-                                                            class="selectpicker form-control">
+                                                        class="selectpicker form-control">
+                                                        @if($product->sizes->count()>0) 
                                                             @foreach ($product->sizes as $s)
                                                                 <option selected value="{{ $s->size_id }}">
                                                                     {{ __($s->size->name) }} </option>
                                                             @endforeach
+                                                            @endif
                                                         </select>
                                                     </div>
                                                     <div class="Color col-md-6">

@@ -31,7 +31,7 @@
         </div>
         {{-- message --}}
         {!! Toastr::message() !!}
-        <div id="print">
+        <div id="print"  style="margin-right:20%">
         <div class="col-md-12" >
             <div class="row" >
 
@@ -63,7 +63,7 @@
                                
                             </div>
                     </div>
-
+                                {{-- استدعاء اي تقرير من هنا  --}}
                     <div>
                         <x-share.report :columns="$data['columns']" :collections="$data['data']" ></x-share.report>
                         
@@ -71,18 +71,15 @@
 
                     <div class="row">
                         <div class="receipt-header receipt-header-mid receipt-footer">
-                            {{-- <div class="col-xs-8 col-sm-8 col-md-8 text-left">
-                                <div class="receipt-right">
-                                    <h5>{{ __('Thanks for shopping') }}</h5>
-                                </div>
-                            </div> --}}
                             <div>
                                 <div>
                                     <div> <a>
                                             <img style="width:10%; height:40%;" alt="themini"
                                                 src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
                                                <br>
-                                                <h6> 13/1/2023</h6>
+                                                <h6> 
+                                                 
+                                                </h6>
                                 </div>
                             </div>
 

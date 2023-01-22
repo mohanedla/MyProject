@@ -317,9 +317,17 @@
                                         <td class="text-left">
                                             <a href="product"> {{ __($item->name) }} </a>
                                         </td>
+                                        @if($item->size )
+
                                         <td class="text-left">
                                             <a href="product"> {{ __($item->size->name) }} </a>
                                         </td>
+                                        
+                                        @else
+                                        <td class="text-left">
+                                            /
+                                        </td>
+                                        @endif
                                         <td class="text-left">
                                             <a href="product"> {{ __($item->color->name) }} </a>
                                         </td>
@@ -338,12 +346,12 @@
                                                   </form>
                                             </div>
                                         </td>
-                                        <td class="text-right">${{$item->price}}</td>
-                                        <td class="text-right">${{$item->price*$item->qty}}</td>
-                                        <td class="text-right">LYD :{{ round( $item->price  * Session::get('LYD') , 2) }}</td>
+                                        <td class="text-right">{{$item->price}}$</td>
+                                        <td class="text-right">{{$item->price*$item->qty}}$</td>
+                                        <td class="text-right">{{ round( $item->price  * Session::get('LYD') , 2) }} LYD</td>
                                         {{-- <span class="price"><span class="amount"><span class="currencySymbol">LYD </span></span> --}}
 
-                                        <td class="text-right">LYD : {{ round( $item->price  * Session::get('LYD') , 2) * $item->qty }}</td>
+                                        <td class="text-right">  {{ round( $item->price  * Session::get('LYD') , 2) * $item->qty }} LYD</td>
                                         <td class="text-right"><a class="close-cart" href="{{ url('remove', $item->id ) }}"><i
                                             class="fa fa-times-circle"></i>
                                         </a></td>
@@ -363,7 +371,13 @@
                             </table>
                             <div style="float: right;">
                                 <li style="float: right; display: -webkit-box; list-style-type: none;"><strong>:"{{ __('Total') }}"</strong></li>
-                                <li style="float: right; display: -webkit-box; list-style-type: none;  padding-right: 25px;">${{App\Models\Cart::GET_TOTAL_PRICE()}}</li>
+                                <li style="float: right; display: -webkit-box; list-style-type: none;  padding-right: 25px;">{{App\Models\Cart::GET_TOTAL_PRICE()}} $</li>
+                                <br>
+                                <li style="float: right; display: -webkit-box; list-style-type: none;"><strong>:"{{ __('Total') }}"</strong></li>
+                                <li style="float: right; display: -webkit-box; list-style-type: none;  padding-right: 25px;">
+                                    {{   round(   App\Models\Cart::GET_TOTAL_PRICE() * Session::get('LYD') , 2) }} LYD
+                                </li>
+
                             </div>
                             <br>
 

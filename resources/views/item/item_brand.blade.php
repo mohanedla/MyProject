@@ -105,24 +105,14 @@
                             <!--
                             @if (Auth::user())
 @if (Auth::user()->role == '3')
-<li class="currency dropdown">
-                                 <span class="dropdown-toggle" id="dropdownMenu12"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                role="button">{{ __('previous orders') }}&nbsp; <span class="caret"></span> </span>
-                              <ul class="dropdown-menu" aria-labelledby="dropdownMenu12">
-                                <li><a href="admin">{{ __('طلبية 1') }}</a></li>
-                                <li><a href="user">{{ __('طلبية 2') }}</a></li>
-                            </ul>
 @endif
 @endif -->
                             @if (Auth::user())
                                 @if (Auth::user()->role == '1' || Auth::user()->role == '2')
-                                    {{-- @if ((Auth::User()->role = '1') or (Auth::User()->role = '2')) --}}
                                     <li class="nav-item">
                                         <a class="account" href="/dashboard_home">{{ __('System management') }}</a>
                                     </li>
                                 @endif
-                                {{-- @endif --}}
                             @endif
                         </ul>
                     </div>
@@ -138,15 +128,6 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 col-sm-4">
-                        <!-- <div class="main-search mt_40">
-                            <input id="search-input" name="search" value=""
-                                placeholder="{{ __('Search') }}" class="form-control input-lg" autocomplete="off"
-                                type="text">
-                            <span class="input-group-btn">
-                                <button type="button" class="btn btn-default btn-lg"><i
-                                        class="fa fa-search"></i></button>
-                            </span>
-                        </div> -->
                     </div>
                     <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="/home">
                             <img alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
@@ -233,24 +214,21 @@
                                                 <li> <a href="/old_Bills/{{ $order->id }}">{{ __('INVOICE') }}
                                                         {{ ++$i }}
                                                     </a></li>
-                                                 
-                                                   
-                                                    
+
+
+
                                             @endforeach
-                                            {{-- @foreach ($old_order as $order) --}}
-                                        @empty($old_order->count())
+
+                                            @empty($old_order->count())
                                             <li style="text-align: center;"> {{ __('There are no orders') }}</li>
                                         @endempty
-                                        {{-- @endforeach --}}
-                                        {{-- @if ($old_order == []) --}}
-
 
                                     </div>
                                 </ul>
                             </li>
                     @endif
-                                                    
-                                    
+
+
                     <li> <a href="/about">{{ __('About us') }}</a></li>
                     <li> <a href="/contact_us">{{ __('Contact us') }}</a></li>
                 </ul>
@@ -308,7 +286,7 @@
                                                                     alt="iPod Classic" title="iPod Classic"
                                                                     class="img-responsive"> </a>
                                                             <div class="button-group text-center">
-                                                           
+
                                                             </div>
                                                         </div>
                                                         <div class="caption product-detail text-center">
@@ -339,11 +317,6 @@
                                                                        <br>
                                                                         <span class="price"><span class="amount"><span class="currencySymbol">LYD </span>{{ round( $item->price  * Session::get('LYD') , 2) }}</span>
 
-                                                                        <!-- <form action="/">
-
-             <input class="btn pull-right mt_30" type="submit" value="{{ __('Add to cart') }}" />
-
-         </form> -->
                                                                 </span>
                                                             @endif
                                                         </div>
@@ -388,7 +361,7 @@
 
                                                     </a>
                                                     <div class="button-group text-center">
-                                                    
+
                                                     </div>
                                                     </div>
                                                     <div class="caption product-detail text-center">
@@ -415,13 +388,6 @@
                                                                     class="currencySymbol">$</span>{{ $item->price }}.00</span>
                                                                    <br>
                                                                     <span class="price"><span class="amount"><span class="currencySymbol">LYD </span>{{ round( $item->price  * Session::get('LYD') , 2) }}</span>
-
-                                                                    <!-- <form action="/">
-
-                                                    <input class="btn pull-right mt_30" type="submit" value="{{ __('Add to cart') }}" />
-
-                                                    </form> -->
-
 
                                                                 </span>
                                                     @endif
@@ -462,7 +428,7 @@
                                                                     alt="iPod Classic" title="iPod Classic"
                                                                     class="img-responsive"> </a>
                                                             <div class="button-group text-center">
-                                                            
+
                                                             </div>
                                                         </div>
                                                         <div class="caption product-detail text-center">

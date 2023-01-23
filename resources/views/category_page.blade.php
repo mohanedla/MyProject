@@ -117,7 +117,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-12 col-sm-4">
-                      
+
                         </div>
                         <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="/home"> <img
                                     alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
@@ -201,15 +201,15 @@
                                                 <li> <a href="/old_Bills/{{ $order->id }}">{{ __('INVOICE') }}
                                                         {{ ++$i }}
                                                     </a></li>
-                                                 
-                                                   
-                                                    
+
+
+
                                             @endforeach
                                             {{-- @foreach ($old_order as $order) --}}
                                         @empty($old_order->count())
                                             <li style="text-align: center;"> {{ __('There are no orders') }}</li>
                                         @endempty
-                                     
+
 
 
                                     </div>
@@ -304,7 +304,7 @@
                         </div>
 
                     </div>
-                  
+
 
                 </div>
 
@@ -335,7 +335,7 @@
                             </div>
                             <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
                         </div>
-                      
+                    
                     </div>
                     <div class="row">
                         @foreach ($products as $product)
@@ -359,8 +359,8 @@
                                         <div class="caption product-detail text-center">&nbsp;&nbsp;&nbsp;
                                             {{-- <h3 data-name="product_name" class="product-name mt_20"><a href="#"
                                                     title="Casual Shirt With Ruffle Hem"></a></h3> --}}
-                                                    
-                                                    
+
+
                                                     {{-- شكل النجوم فقط --}}
                                                     <div class="rating"> <span class="fa fa-stack"><i
                                                         class="fa fa-star-o fa-stack-1x"></i><i
@@ -373,19 +373,19 @@
                                                         class="fa fa-star fa-stack-1x"></i></span> <span
                                                         class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
                                                         class="fa fa-star fa-stack-x"></i></span> </div>
-                                                        
+
                                                         <h5> {{ $product->name }} &nbsp;&nbsp;{{ $product->brand->name}}</h5>
                                             <span class="price">
-                                               
+
                                                         <span class="price"><span class="amount"><span class="currencySymbol"></span> {{ $product->price }} $</span>
 
                                                        <br>
-                                                   
+
                                                         <span class="price"><span class="amount"><span class="currencySymbol"></span>{{ round( $product->price  * Session::get('LYD') , 2) }} LYD </span>
 
                                                 <h3 class="product-desc mt_20 mb_60">{{ __('Specifications') }}
                                                     : {{ $product->specification }} </h3>
-                                
+
                                             </span>
 
                                         </div>

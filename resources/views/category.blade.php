@@ -61,10 +61,10 @@
                             @else
                             @if( Auth::user()->profile_image)
                             <img src="{{ asset(Storage::url( Auth::user()->profile_image)) }}" alt="Profile"
-                             style="  border-radius: 50%; 
-                                    -webkit-border-radius: 50%; 
+                             style="  border-radius: 50%;
+                                    -webkit-border-radius: 50%;
                                     -moz-border-radius: 50%;
-                                    width: 40px; 
+                                    width: 40px;
                                     height: 40px;">
                                     @endif
                                 <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"
@@ -105,35 +105,23 @@
                                         <a class="account" href="/dashboard_home">{{ __('System management') }}</a>
                                     </li>
                                 @endif
-                                {{-- @endif --}}
+
                             @endif
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-        {{-- @if (session('status'))
-            <div class="alert alert-success" role="alert">
-                {{ session('status') }}
-            </div>
-        @endif --}}
+
         <div class="header">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 col-sm-4">
-                        <!-- <div class="main-search mt_40">
-                            <input id="search-input" name="search" value=""
-                                placeholder="{{ __('Search') }}" class="form-control input-lg" autocomplete="off"
-                                type="text">
-                            <span class="input-group-btn">
-                                <button type="button" class="btn btn-default btn-lg"><i
-                                        class="fa fa-search"></i></button>
-                            </span>
-                        </div> -->
+
                     </div>
                     <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="/home"> <img
                                 alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
-                    
+
                 </div>
                 <nav class="navbar">
                     <p>{{ __('menu')}}</p>
@@ -171,7 +159,7 @@
                                                 <li><a href="/category/{{$kids->id}}/Women">{{ __($kids->name) }}</a></li>
                                             @endforeach
                                         </ul>
-                                    
+
                                     <li class="col-md-3">
                                         <ul>
                                             <li id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -203,9 +191,9 @@
                                                 <li> <a href="/old_Bills/{{ $order->id }}">{{ __('INVOICE') }}
                                                         {{ ++$i }}
                                                     </a></li>
-                                                 
-                                                   
-                                                    
+
+
+
                                             @endforeach
                                             {{-- @foreach ($old_order as $order) --}}
                                         @empty($old_order->count())
@@ -218,7 +206,7 @@
                                     </div>
                                 </ul>
                             </li>
-                        
+
                     @endif
                         <li> <a href="/about">{{ __('About us') }}</a></li>
                         <li> <a href="/contact_us">{{ __('Contact us') }}</a></li>
@@ -231,7 +219,7 @@
         </div>
 
     </header>
-    
+
 
     <!-- =====  HEADER END  ===== -->
     <!-- =====  BANNER STRAT  ===== -->
@@ -245,7 +233,7 @@
     <!-- =====  BANNER END  ===== -->
     <!-- =====  CONTAINER START  ===== -->
     <div class="container" >
-        
+
         <!-- =====  SUB BANNER  STRAT ===== -->
         <div class="row " >
             <div id="column-left" class="col-sm-4 col-lg-3 hidden-xs" style="height: 200px; width: 250px;">
@@ -272,7 +260,7 @@
                             </div>
                             </ul>
                         </li>
-    
+
                         <div class="heading-part">
                             <h2 class="main_title">{{ __('Men') }}</h2>
                         </div>
@@ -315,6 +303,21 @@
                     <div class="page-wrapper pull-right">
                         <label class="control-label" for="input-limit">{{ __('Show') }} :</label>
                         <div class="limit">
+
+                            {!! Form::open(['url' => route('category',['id' => $id,'name'=> $name]), 'method' => 'get']) !!}
+                            {!! Form::select(
+                                'per_page',
+                                ['Select', '9' => '9', '18' => '18', '32' => '32', '50' => '50', '75' => '75', '100' => '100'],
+                                '6',
+                                ['onchange' => 'submit()', 'class' => 'form-control'],
+                            ) !!}
+                            {!! Form::close() !!}
+                        </div>
+                        <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+                    </div>
+                    {{-- <div class="page-wrapper pull-right">
+                        <label class="control-label" for="input-limit">{{ __('Show') }} :</label>
+                        <div class="limit">
                             <select id="input-limit" class="form-control">
                                 <option value="8" selected="selected">08</option>
                                 <option value="25">25</option>
@@ -324,8 +327,8 @@
                             </select>
                         </div>
                         <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
-                    </div>
-                   
+                    </div> --}}
+
                 </div>
                 <div class="row">
                     @php
@@ -345,13 +348,13 @@
                                             <img style="height: 200px; width: 250px;"
                                             src="{{ asset(Storage::url($item->profile_image)) }}" alt="iPod Classic"
                                             title="iPod Classic" class="img-responsive" /> </a>
-                                   
+
                                 </div>
                                 <div class="caption product-detail text-center">&nbsp;&nbsp;&nbsp;
                                     {{-- <h3 data-name="product_name" class="product-name mt_20"><a href="#"
                                             title="Casual Shirt With Ruffle Hem"></a></h3> --}}
-                                            
-                                            
+
+
                                             {{-- شكل النجوم فقط --}}
                                             <div class="rating"> <span class="fa fa-stack"><i
                                                 class="fa fa-star-o fa-stack-1x"></i><i
@@ -364,29 +367,29 @@
                                                 class="fa fa-star fa-stack-1x"></i></span> <span
                                                 class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i
                                                 class="fa fa-star fa-stack-x"></i></span> </div>
-                                                
+
                                                 <h5> {{ $item->name }} &nbsp;&nbsp;{{ $item->brand->name}}</h5>
                                     <span class="price">
-                                       
+
                                                 <span class="price"><span class="amount"><span class="currencySymbol"></span> {{ $item->price }} $</span>
 
                                                <br>
-                                           
+
                                                 <span class="price"><span class="amount"><span class="currencySymbol"></span>{{ round( $item->price  * Session::get('LYD') , 2) }} LYD </span>
 
                                         <h3 class="product-desc mt_20 mb_60">{{ __('Specifications') }}
                                             : {{ $item->specification }} </h3>
-             
+
                                     </span>
 
                                 </div>
-                                
+
                             </div>
-                    
+
                         </div>
-                    
+
                     </div>
-                    
+
                     @php
                     $i++;
                 @endphp
@@ -395,13 +398,7 @@
 
                 </div>
                 <div class="pagination-nav text-center mt_50">
-                    <ul>
-                        <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
-                    </ul>
+                    {!! $product->links() !!}
                 </div>
             </div>
             <div class="row">

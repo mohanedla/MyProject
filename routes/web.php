@@ -22,7 +22,7 @@ use App\Http\Controllers\UserManagementController;
 |
 */
 Route::get('test', function () {
-  
+
 });
 Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 {
@@ -45,7 +45,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/d_notic',[App\Http\Controllers\home::class,'notic']);
     Route::get('/delete_notice/{id}',[App\Http\Controllers\home::class,'delete_notice'])->name('delete_notice');
 
-
+ 
     Route::get('/d_report',[App\Http\Controllers\home::class,'report']);
     Route::get('/R1',[App\Http\Controllers\home::class,'R1']);
     Route::get('/R2',[App\Http\Controllers\ReportController::class,'index'])->name("R2");

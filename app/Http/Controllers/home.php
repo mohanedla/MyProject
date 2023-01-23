@@ -41,8 +41,8 @@ class home extends Controller
         $old_order=Order::where('user_id',Auth::User()->id)->get();
         // dd($old_order);
         }
-       
-       
+
+
         return View('index',compact('old_order','products','collect','brand','category_men','category_women','category_kids'));
     }
 
@@ -65,13 +65,13 @@ class home extends Controller
 
     public function login_register()
     {
-        
+
         $lyd=$this->getLYDCurrency();
         Session::put('LYD',$lyd);
         return View('/login');
     }
 
-    // api الخاص بالعملات 
+    // api الخاص بالعملات
     public function getLYDCurrency()
     {
         $curl = curl_init();
@@ -93,7 +93,7 @@ class home extends Controller
             //المتغير الدي يحمل قيمة الدينار مقابل الدولار
             $response = curl_exec($curl);
             curl_close($curl);
-            // يتم تغير نوع البيانات من صيغة string to json 
+            // يتم تغير نوع البيانات من صيغة string to json
        $currency=json_decode($response);
        return $currency->result;
     }
@@ -188,7 +188,7 @@ class home extends Controller
             $category_kids=Kids::all();
             $old_order=0;
             $Cart=Cart::where('user_id',auth()->user()->id)->get();
-        if(Auth::check()) 
+        if(Auth::check())
         {
         $old_order=Order::where('user_id',Auth::User()->id)->get();
         // dd($old_order);
@@ -196,22 +196,20 @@ class home extends Controller
             return View('checkout_page',compact('Cart','old_order','collect','brand','category_men','category_women','category_kids'));
         }
 
-        public function category (string $id, string $name)
+        public function category (Request $request, string $id, string $name)
         {
-            
+
             $category_men=Men::all();
             $category_women=Women::all();
             $category_kids=Kids::all();
             $brand=brand::all();
-            // $product = product::paginate($request->get('per_page', 6))->where('category_id',$id)->where('collection',$name);
-            $product=product::where('category_id',$id)->where('collection',$name)->get();
+            $product = product::where('category_id',$id)->where('collection',$name)->paginate($request->get('per_page', 6));
             $old_order=0;
             if(Auth::check())
             {
             $old_order=Order::where('user_id',Auth::User()->id)->get();
-            // dd($old_order);
             }
-            return View('category',compact('old_order','brand','product','category_men','category_women','category_kids','name'));
+            return View('category',compact('old_order','brand','product','category_men','category_women','category_kids','name','id'));
 
         }
 
@@ -284,7 +282,7 @@ class home extends Controller
                 // if($order)
                 // {
                 //     $order->delete();
-                    
+
                 // }
             $o = Carbon::now('Africa/Tripoli');
             $page = "bills";
@@ -435,7 +433,7 @@ class home extends Controller
 
             return View('report.R5',compact("page"));
         }
-    }   
+    }
     public function notifications()
     {
         if(!Auth::check() )

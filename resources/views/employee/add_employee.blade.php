@@ -118,7 +118,7 @@
         </div>
     </div>
     {{-- for categories --}}
-    <div class="modal fade" id="type_men" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    {{-- <div class="modal fade" id="type_men" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -143,10 +143,10 @@
                 </form>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     {{-- color --}}
-    <div class="modal fade" id="color" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    {{-- <div class="modal fade" id="color" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -172,9 +172,9 @@
                 </form>
             </div>
         </div>
-    </div>
+    </div> --}}
     {{-- size --}}
-    <div class="modal fade" id="size" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    {{-- <div class="modal fade" id="size" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -199,7 +199,7 @@
                 </form>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <footer>
         <div class="footer clearfix mb-0 text-muted ">

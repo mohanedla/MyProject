@@ -46,6 +46,13 @@
                     <div class="card-header">
                         <h4 class="card-title">{{ __('Edit Brand') }}</h4>
                     </div>
+                    {{-- @if($errors->any())
+                    <h4>
+              
+                      <div style="text-align: center !important; color: red;">{{ implode('', $errors->all(':message')) }} </div>
+                      
+                    </h4>
+                      @endif --}}
                     <div class="card-content">
                         <div class="card-body">
 
@@ -57,13 +64,19 @@
                                             <label for="first-name-column">{{ __('Brand Name') }}</label>
                                             <input type="text" id="first-name-column" class="form-control"
                                             value="{{$brand->name}}" placeholder="{{ __('enter Brand Name') }}" name="brand_name">
+                                            @error('brand_name')
+                                           <h5> <div class="error"  style=" !important; color: red ;"> {{ $message }}</div></h5>
+                                        @enderror
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
                                     <div class="form-group">
                                             <label for="email-id-column">{{ __('Email') }}</label>
                                             <input type="email" id="email-id-column" class="form-control"
-                                            value="{{$brand->email}}" name="brand_email" placeholder="{{ __('enter your email') }}">
+                                            value="{{$brand->email}}" name="email" placeholder="{{ __('enter your email') }}">
+                                            {{-- @error('email')
+                                            <h5> <div class="error"  style=" !important; color: red ;"> {{ $message }}</div></h5>
+                                         @enderror --}}
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
@@ -71,6 +84,9 @@
                                             <label for="city-column">{{ __('model') }} </label>
                                             <input type="text" id="city-column" class="form-control"
                                             value="{{$brand->model}}" placeholder="{{ __('enter model') }}" name="brand_model">
+                                            @error('brand_model')
+                                            <h5> <div class="error"  style=" !important; color: red ;"> {{ $message }}</div></h5>
+                                         @enderror
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
@@ -78,6 +94,9 @@
                                             <label for="country-floating">{{ __('Phone Number') }}</label>
                                             <input type="text" id="country-floating" class="form-control"
                                             value="{{$brand->phone_number}}" name="brand_phone" placeholder="{{ __('Enter your phone number') }}">
+                                            @error('brand_phone')
+                                            <h5> <div class="error"  style=" !important; color: red ;"> {{ $message }}</div></h5>
+                                         @enderror
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
@@ -85,6 +104,9 @@
                                             <label for="company-column">{{ __('Country') }}</label>
                                             <input type="text" id="company-column" class="form-control"
                                             value="{{$brand->country}}" name="brand_country" placeholder="{{ __('enter country name') }}">
+                                            @error('brand_country')
+                                            <h5> <div class="error"  style=" !important; color: red ;"> {{ $message }}</div></h5>
+                                         @enderror
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
@@ -92,6 +114,9 @@
                                             <label for="email-id-column">{{ __('Address') }} </label>
                                             <input type="text" id="email-id-column" class="form-control"
                                             value="{{$brand->address}}" name="brand_address" placeholder="{{ __('enter your address') }}">
+                                            @error('brand_address')
+                                            <h5> <div class="error"  style=" !important; color: red ;"> {{ $message }}</div></h5>
+                                         @enderror
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">

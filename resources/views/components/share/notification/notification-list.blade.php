@@ -97,9 +97,6 @@ function getNotifications() {
 
             });
         }
-  
-        
-
         // alert('Successfully not posted.');
     }); 
 }

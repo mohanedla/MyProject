@@ -32,13 +32,14 @@ class product extends Model
 
     public function user(){
         return $this->hasOne(User::class, 'id', 'admin_id');
-    }
+    } 
 
     public function brand(){
         return $this->belongsTo(brand::class);
     }
 
-    public function category(){
+    public function category()
+    {
         return $this->hasOne(Category::class, 'id', 'category_id');
     }
 

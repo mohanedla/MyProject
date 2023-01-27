@@ -102,9 +102,6 @@
                         </div>
                         <div class="navbar-header col-xs-6 col-sm-4"> <a  style="margin-top=20px width=300px height=100px" href="index"> <img
                                     alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
-                        <!-- <div class="col-xs-6 col-sm-4 shopcart">
-
-                        </div> -->
                     </div>
                     <br>
                     <nav class="navbar">
@@ -316,21 +313,23 @@
                 <div class="modal-header">
                     <form  action="{{ route('ValidationdAmin') }}" method="post" enctype="multipart/form-data">
                         <br>
-                        <p style="color:black">
-                        {{ __('• When booking, the bill value is completely deducted from the bank account.')}}
+                        <p style="color:black;text-align: center">
+                      <  {{ __('• When booking, the bill value is completely deducted from the bank account.')}}>
                         <br>
 </p>
-                      <p style="color:black">
+                      <p style="color:black;text-align: center">
                         
-                        <!-- <h3> -->
-                        {{ __('• When booking, the customer can decide to receive it at the company, or the order will be delivered to him.')}}
-                        <!-- </> -->
+                     <   {{ __('• When booking, the customer can decide to receive it at the company, or the order will be delivered to him.')}}>
 </p>
-                         <p style="color:black" > 
-                         {{ __('• Upon confirmation of receipt from the supervisor, in the event of non-receipt for a maximum period of 10 days, 3/4 of the invoice value will be returned to the user, and the remainder will be taken as a delay fine.')}}
+                         <p style="color:black;text-align: center" > 
+                         {{ __('•Upon confirmation of receipt from the supervisor, in the event of non-receipt for a maximum period of 10 days, 75% of the order value will be returned to the user, and the rest will be taken as a delay fine.')}} 
 </p>
-<p style="color:black" > 
-                         {{ __('You must be logged in to confirm the exchange rate')}}
+<p style="color:black ;text-align: center" > 
+    <  {{ __('When purchasing more than 20 orders, 15% of the total order will be deducted')}} >
+</p>
+<p style="color:black; text-align: center"> 
+    <   {{ __('You must be logged in to confirm the exchange rate')}}>
+ 
 </p>
                     
                     </div>
@@ -338,8 +337,7 @@
 
                 </div>
                 <div class="modal-footer">
-                  <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('Close')}}</button>
-                  <button type="submit" class="btn">{{ __('Save') }}</button> -->
+                
                 </form>
                 </div>
               </div>

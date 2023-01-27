@@ -95,6 +95,7 @@ class home extends Controller
             curl_close($curl);
             // يتم تغير نوع البيانات من صيغة string to json
        $currency=json_decode($response);
+    //    النتيجة التي تحمل قيمة الدولار
        return $currency->result;
     }
     public function layout_empty()
@@ -277,13 +278,7 @@ class home extends Controller
 
             else{
 
-                // $order=Order::where('id',1)->whereDate('created_at','>', Carbon::today()->subDays( 1 ))
-                // ->whereDate('created_at', '!=', Carbon::today());
-                // if($order)
-                // {
-                //     $order->delete();
-
-                // }
+              
             $o = Carbon::now('Africa/Tripoli');
             $page = "bills";
             $orders=Order::all();
@@ -342,12 +337,7 @@ class home extends Controller
     }
     public function old_Bills($id)
     {
-        // if(!Auth::check() )
-        // return redirect('/');
-        // if(Auth::user()->role != 1 && Auth::user()->role != 2)
-        //  return redirect('/');
-
-        // else{
+       
         $page = "old_Bills";
         $brand=brand::all();
         $collect = array('M'=>'Men','W'=>'Women','C'=>'Kids' );
@@ -358,7 +348,6 @@ class home extends Controller
         $old_order=0;
         if(Auth::check()){
         $old_order=Order::where('user_id',Auth::User()->id)->get();
-        // dd($old_order);
         }
         $old_bills=Bills::where('order_id',$id)->with('orders')->get();
         $total=0;
@@ -366,21 +355,9 @@ class home extends Controller
             $total+=$bill->total;
         }
         return View('bills.old_Bills',compact('total','old_order','old_bills','products','collect','brand','category_men','category_women','category_kids'));
-        // return View('bills.old_Bills',compact('page','brand'));
     }
-        public function R1()
-        {
-            if(!Auth::check() )
-            return redirect('/');
-            if(Auth::user()->role != 1 && Auth::user()->role != 2)
-             return redirect('/');
-
-            else{
-
-            $page = "R1";
-            return View('report.R1',compact("page"));
-        }
-    }
+       
+    
         public function R2()
         {
             if(!Auth::check() )
@@ -396,44 +373,7 @@ class home extends Controller
         }
 
         }
-        public function R3()
-        {
-            if(!Auth::check() )
-            return redirect('/');
-            if(Auth::user()->role != 1 && Auth::user()->role != 2)
-             return redirect('/');
-
-            else{
-            $page = "R3";
-
-            return View('report.R3',compact("page"));
-        }
-    }
-        public function R4()
-        { if(!Auth::check() )
-            return redirect('/');
-            if(Auth::user()->role != 1 && Auth::user()->role != 2)
-             return redirect('/');
-
-            else{
-            $page = "R4";
-
-            return View('report.R4',compact("page"));
-        }
-    }
-        public function R5()
-        {
-            if(!Auth::check() )
-            return redirect('/');
-            if(Auth::user()->role != 1 && Auth::user()->role != 2)
-             return redirect('/');
-
-            else{
-            $page = "R5";
-
-            return View('report.R5',compact("page"));
-        }
-    }
+     
     public function notifications()
     {
         if(!Auth::check() )
@@ -441,8 +381,12 @@ class home extends Controller
         if(Auth::user()->role != 1 && Auth::user()->role != 2)
          return redirect('/');
 
-        else{
+        else
+        {
+            // with=مع
+    //   جدول الاشعارات مع جدول المستخدم
         $notifications=Notification::with(['user'])->orderBy('id', 'desc')->get();
+        
         Notification::query()->update(['read_at' =>Carbon::now('Africa/Tripoli')]);
         $page = "notifications";
         return View('notifications',compact("page",'notifications'));

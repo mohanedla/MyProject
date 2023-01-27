@@ -315,19 +315,7 @@
                         </div>
                         <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
                     </div>
-                    {{-- <div class="page-wrapper pull-right">
-                        <label class="control-label" for="input-limit">{{ __('Show') }} :</label>
-                        <div class="limit">
-                            <select id="input-limit" class="form-control">
-                                <option value="8" selected="selected">08</option>
-                                <option value="25">25</option>
-                                <option value="50">50</option>
-                                <option value="75">75</option>
-                                <option value="100">100</option>
-                            </select>
-                        </div>
-                        <span><i class="fa fa-angle-down" aria-hidden="true"></i></span>
-                    </div> --}}
+                  
 
                 </div>
                 <div class="row">

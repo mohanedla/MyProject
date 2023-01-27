@@ -76,8 +76,8 @@
                                     -webkit-border-radius: 50%; 
                                     -moz-border-radius: 50%;
                                     width: 40px; 
-        height: 40px;">
-        @endif
+                                   height: 40px;">
+                                   @endif
                                     <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                             role="button">{{ Auth::user()->name }} <span class="caret"></span> </span>

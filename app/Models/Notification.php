@@ -21,6 +21,7 @@ class Notification extends Model
     {
         return $this->belongsTo(User::class);
     }
+    
     public function getCreatedAtAttribute($created_at)
     {
         return Carbon::parse($created_at)->diffForHumans();

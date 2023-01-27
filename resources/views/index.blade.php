@@ -362,16 +362,7 @@
 
                                                         </a>
                                                         <div class="button-group text-center">
-                                                            <!-- <div class="wishlist"><a
-                                                            href="#"><span>wishlist</span></a>
-                                                    </div>
-                                                    <div class="quickview"><a href="#"><span>Quick
-                                                                View</span></a></div>
-                                                    <div class="compare"><a
-                                                            href="#"><span>Compare</span></a>
-                                                    </div>
-                                                    <div class="add-to-cart"><a href="#"><span>Add to
-                                                                cart</span></a></div> -->
+                                                      
                                                         </div>
                                                     </div>
                                                     <div class="caption product-detail text-center">
@@ -403,11 +394,7 @@
                                                                         <span class="price"><span class="amount"><span class="currencySymbol">
                                                                              </span>{{ round( $item->price  * Session::get('LYD') , 2) }} LYD</span>
 
-                                                                <!-- <form action="/">
-
-     <input class="btn pull-right mt_30" type="submit" value="{{ __('Add to cart') }}" />
-
- </form> -->
+              
 
 
                                                             </span>
@@ -454,17 +441,7 @@
                                                                     alt="iPod Classic" title="iPod Classic"
                                                                     class="img-responsive"> </a>
                                                             <div class="button-group text-center">
-                                                                <!-- <div class="wishlist"><a
-                                                                href="#"><span>wishlist</span></a>
-                                                        </div>
-                                                        <div class="quickview"><a href="#"><span>Quick
-                                                                    View</span></a></div>
-                                                        <div class="compare"><a
-                                                                href="#"><span>{{ __('Compare') }}</span></a>
-                                                        </div>
-                                                        <div class="add-to-cart"><a href="#"><span>Add
-                                                                    to
-                                                                    cart</span></a></div> -->
+                                                          
                                                             </div>
                                                         </div>
                                                         <div class="caption product-detail text-center">
@@ -493,11 +470,7 @@
                                                                 <span class="price"><span class="amount"><span class="currencySymbol"></span>{{ $item->price }}.00 $</span>
                                                                 <br>
                                                                 <span class="price"><span class="amount"><span class="currencySymbol"></span>{{ round( $item->price  * Session::get('LYD') , 2) }} LYD</span>
-                                                                    <!-- <form action="/">
-
-     <input class="btn pull-right mt_30" type="submit" value="{{ __('Add to cart') }}" /> Session::put('LYD',$lyd);
-
- </form> -->
+     
 
                                                                 </span>
                                                             @endif

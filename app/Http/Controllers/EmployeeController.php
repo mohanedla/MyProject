@@ -15,14 +15,12 @@ class EmployeeController extends Controller
             if(Auth::user()->role != 1 && Auth::user()->role != 2)
             return redirect('/');
 
-            else{
-        $users = User::where('role', 2)->get();
-        $page = "employees";
-        return View('employee.index',compact('users','page'));
-        
-
-          }
-
+            else
+              {
+              $users = User::where('role', 2)->get();
+              $page = "employees";
+              return View('employee.index',compact('users','page'));
+              }
     }
 
     public function add_employee()
@@ -95,7 +93,7 @@ class EmployeeController extends Controller
             'new_password' => ['required'],
             'new_confirm_password' => ['same:new_password'],
         ]);
-
+// Hash هادي تشفر الباسوورد
         User::find(auth()->user()->id)->update(['password'=> Hash::make($request->new_password)]);
         Toastr::success('User change successfully :)','Success');
         return redirect('dashboard_home');

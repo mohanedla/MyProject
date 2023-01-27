@@ -49,11 +49,14 @@ class ReportController extends Controller
                     ["code"=>'remaining',"name"=>"الكمية المتبقية"],
                     ["code"=>'x',"name"=>"الربح"],
                     
+                    
                 ];
+              
                 $data["data"]=product::
                 select('*', \DB::raw('quantity - quantity_price as remaining'),
-                 \DB::raw('((price - price_purchas) - ((price - price_purchas) * 0.15)) * quantity_price  as x')) 
+                \DB::raw('((price - price_purchas) - ((price - price_purchas) * 0.15)) * quantity_price  as x')) 
                 ->with(['brand'])->where('quantity_price','!=',0)->orderBy('quantity_price','desc')->get();
+              
             break;
             case 3:
                 $report_name='جرد مالي ';

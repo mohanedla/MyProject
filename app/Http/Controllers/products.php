@@ -21,21 +21,7 @@ use Auth;
 class products extends Controller
 {
 
-    // public function product_product()
-    // {
-    //     $categoriez=Category::all();
-    //     $collect = array('M'=>'Men','W'=>'Women','C'=>'Children' );
-    //     $product_name_men=product::with('categories')->where('collection','=','Men')->get();
-    //     $product_name_women=product::with('categories')->where('collection','=','Women')->get();
-    //     $product_name_children=product::with('categories')->where('collection','=','Children')->get();
-    //     $admin=product::with('admins')->get();
-    //     $brand=product::with('brand')->get();
-    //     $category=product::with('categories')->get();
-    //     //  dd($brand);yy
-    //     $page = "product";
-    //     return View('product.product',compact('admin','page','category','brand','collect','categoriez','product_name_men','product_name_women','product_name_children'));
-
-    // }
+  
     public function all_product($id)
     {
         if(!Auth::check() )
@@ -60,13 +46,6 @@ class products extends Controller
     }
 
     }
-
-    // public function profile()
-    // {
-    //     $page= "product";
-
-    //     return view ('product.profile',compact('page'));
-    // }
 
 
     public function item_brand($id)
@@ -174,7 +153,7 @@ class products extends Controller
         $color=Color::all();
         $size=Size::all();
         $get_color=Color_Product::with('products')->where('product_id','=',$id)->get();
-        
+                             //  with('اسم الغانكشن الي في العلاقة ')
         $get_size=Size_Product::with('products')->where('product_id','=',$id)->get();
 
         $page = "product";

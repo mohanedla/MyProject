@@ -7,7 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Bills extends Model
 {
-    public function orders(){
+    // orders
+    //  with هذا الاسم الي بنستعمله في الكنترولر بعد كلمة 
+    public function orders()
+    {
+            //  id ف جدول المستخدم
+            // order_id ف جدول الطلبيات
         return $this->hasOne(User::class, 'id', 'order_id');
     }
 }

@@ -24,7 +24,6 @@
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="stats-icon purple">
-                                                <!-- <i class="iconly-boldProfile"></i> -->
                                                 <i class="bi bi-people-fill"></i>
 
 
@@ -33,11 +32,6 @@
                                         <div class="col-md-8">
                                             <h6 class="text-muted font-semibold">{{ __('all admin') }}</h6>
                                             <h4>{{$counts}}</h4>
-
-
-
-
-                                            <!-- {{-- <h6 class="font-extrabold mb-0">{{ $activity_logs }}</h6> --}} -->
                                         </div>
                                     </div>
                                 </div>
@@ -95,8 +89,7 @@
                                         </div>
                                         <div class="col-md-8">
                                             <h6 class="text-muted font-semibold">{{ __('notice') }}</h6>
-                                            {{-- <h4>{{$counts8}}</h4> --}}
-                                            <h4>6</h4>
+                                            <h4>{{$counts8}}</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -117,6 +110,7 @@
                                             <h4>{{$counts4}}</h4>
 
 
+
                                         </div>
                                     </div>
                                 </div>
@@ -134,6 +128,7 @@
                                         <div class="col-md-8">
                                             <h6 class="text-muted font-semibold">{{ __('Men Products') }}</h6>
                                             <h4>{{$counts5}}</h4>
+
                                         </div>
                                     </div>
                                 </div>

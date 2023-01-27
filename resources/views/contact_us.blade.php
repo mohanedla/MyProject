@@ -65,8 +65,8 @@
                                     -webkit-border-radius: 50%; 
                                     -moz-border-radius: 50%;
                                     width: 40px; 
-        height: 40px;">
-        @endif
+                                    height: 40px;">
+                                    @endif
                                 <li class="currency dropdown"> <span class="dropdown-toggle" id="dropdownMenu12"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                     role="button">{{ Auth::user()->name }} <span class="caret"></span> </span>
@@ -119,69 +119,7 @@
                     </div>
                     <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="/home"> <img
                         alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
-            <div class="col-xs-6 col-sm-4 shopcart">
-
-                <div id="cart-dropdown" class="cart-menu collapse">
-                    <ul>
-                        <li>
-                            <table class="table table-striped">
-                                <tbody>
-                                    <tr>
-                                        <td class="text-center"><a href="#"><img
-                                                    src="{{ asset('images/product/70x84.jpg') }}"
-                                                    alt="iPod Classic" title="iPod Classic"></a></td>
-                                        <td class="text-left product-name"><a href="#">MacBook
-                                                Pro</a> <span class="text-left price">$20.00</span>
-                                            <input class="cart-qty" name="product_quantity" min="1"
-                                                value="1" type="number">
-                                        </td>
-                                        <td class="text-center"><a class="close-cart"><i
-                                                    class="fa fa-times-circle"></i></a></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center"><a href="#"><img
-                                                    src="{{ asset('images/product/70x84.jpg') }}"
-                                                    alt="iPod Classic" title="iPod Classic"></a></td>
-                                        <td class="text-left product-name"><a href="#">MacBook
-                                                Pro</a> <span class="text-left price">$20.00</span>
-                                            <input class="cart-qty" name="product_quantity" min="1"
-                                                value="1" type="number">
-                                        </td>
-                                        <td class="text-center"><a class="close-cart"><i
-                                                    class="fa fa-times-circle"></i></a></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </li>
-                        <li>
-                            <table class="table">
-                                <tbody>
-                                    <tr>
-                                        <td class="text-right"><strong>{{__ ('Sub-Total')}} </strong></td>
-                                        <td class="text-right">$2,100.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-right"><strong>{{__ ('VAT')}} (20%)</strong></td>
-                                        <td class="text-right">$20.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-right"><strong>"{{__ ('Total')}}"</strong></td>
-                                        <td class="text-right">$2,122.00</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </li>
-                        <li>
-                            <form action="cart_page">
-                                <input class="btn pull-left mt_10" value="{{__ ('View cart')}}" type="submit">
-                            </form>
-                            <form action="checkout_page">
-                                <input class="btn pull-right mt_10" value="{{__ ('Checkout')}}" type="submit">
-                            </form>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+           
                 </div>
                 <nav class="navbar">
                     <p>menu</p>
@@ -294,17 +232,13 @@
             </div>
               </div>
         </div>
-    <!-- <div class="col-sm-8 col-lg-9 mtb_20"> -->
-      <!-- about  -->
-      <!-- <div class="row"> -->
-        <!-- <div class="col-md-12">
-          <figure> <img src="{{ asset('images\about-page11-gaando.jpg')}}" alt="#"> </figure>
-        </div> -->
         <div class="banner">
         <div class="main-banner owl-carousel">
-            <div class="item"><a href="#"><img src="{{ asset('images\about-page11-gaando.jpg')}}"
-                        style="height: 350px; Width: 5000px;" alt="Main Banner" class="img-responsive" /></a></div>
-        </div>
+            {{-- <div class="item"><a href="#"><img src="{{ asset('images\about-page11-gaando.jpg')}}"
+                        style="height: 350px; Width: 5000px;" alt="Main Banner" class="img-responsive" /></a></div> --}}
+                        <div class="item"><a href="#"><img src="{{ asset('images/logo/logo1.jpg')}}"
+                            style="height: 320px;" alt="Main Banner" class="img-responsive" /></a></div>
+                    </div>
     <!-- </div> -->
       <!-- </div> -->
     <!-- =====  HEADER END  ===== -->

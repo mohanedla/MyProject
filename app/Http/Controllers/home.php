@@ -171,12 +171,13 @@ class home extends Controller
             $category_women=Women::all();
             $category_kids=Kids::all();
             $carts=Cart::where('user_id',auth()->user()->id)->get();
+            $products = product::all();
             $old_order=0;
             if(Auth::check()){
             $old_order=Order::where('user_id',Auth::User()->id)->get();
             // dd($old_order);
             }
-            return View('cart_page',compact('carts','old_order','collect','brand','category_men','category_women','category_kids'));
+            return View('cart_page',compact('carts','products','old_order','collect','brand','category_men','category_women','category_kids'));
 
         }
 

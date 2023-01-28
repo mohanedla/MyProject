@@ -409,7 +409,7 @@
                                                             <h4>{{ __('Quantity') }}</h4>
                                                         </label>
                                                         <input name="quantity" min="1" max="{{$product->quantity - $product->quantity_price}}" value="1"
-                                                            type="number">
+                                                            type="number" required>
                                                         <input type="hidden" value="{{ $product->profile_image }}"  name="image">
                                                         <br>
                                                         <input class="btn pull-right mt_30" type="submit" value="{{ __('Add to cart') }}" />

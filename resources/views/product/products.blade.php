@@ -91,7 +91,8 @@
                                     <td class="text-center">
                                         <a data-bs-toggle="modal" data-bs-target="#type_men"
                                         data-bs-whatever="@mdo"
-                                        onclick="showDetails({{json_encode($x)}},{{json_encode($x->profile_image)}},{{json_encode($x->sizes)}},{{json_encode($x->colors)}},{{ json_encode(asset(Storage::url($x->profile_image))) }})">
+                                        onclick="showDetails({{json_encode($x)}},{{json_encode($x->profile_image)}},{{json_encode($x->sizes)}}
+                                        ,{{json_encode($x->colors)}},{{ json_encode(asset(Storage::url($x->profile_image))) }})">
                                             <span class="badge bg-info"><i class="bi bi-eye-fill"></i></span> </a>
 
                                         <a href="/edit_product/{{$x->id}}/{{$id}}">

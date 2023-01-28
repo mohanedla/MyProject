@@ -475,13 +475,18 @@
                                                 <td class="text-right"colspan="4">   ( {{App\Models\Cart::GET_TOTAL_PRICE() -  App\Models\Cart::GET_TOTAL_PRICE() *0.15 }})  $
                                                @else
                                                <td class="text-right"colspan="4">{{App\Models\Cart::GET_TOTAL_PRICE()}} $
+                                                {{-- <td class="text-right"colspan="4">   ( {{App\Models\Cart::GET_TOTAL_PRICE() -  App\Models\Cart::GET_TOTAL_PRICE() *0.15 }})  $ --}}
 
                                                    </td>
                                                       @endif
                                                     <td></td>
                                                     <td class="text-right"colspan="4">
+                                                        @if($old_order->count()>=3)
+                                                        {{   round(  ( App\Models\Cart::GET_TOTAL_PRICE() -  App\Models\Cart::GET_TOTAL_PRICE() *0.15 ) * Session::get('LYD') , 2) }} LYD</td>
+                                               @else
                                                         {{   round(   App\Models\Cart::GET_TOTAL_PRICE() * Session::get('LYD') , 2) }} LYD</td>
-                                            </tr>
+                                            @endif
+                                                    </tr>
 
                                             </tbody>
                                         </table>

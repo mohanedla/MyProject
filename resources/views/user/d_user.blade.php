@@ -17,7 +17,7 @@
                 <div class="col-12 col-md-6 order-md-2 order-first">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                         <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="dashboard_home">{{ __('Dashboard') }}</a></li>
+                        <li class="breadcrumb-item"><a href="/dashboard_home">{{ __('Dashboard') }}</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">{{ __('Users') }}</li>
                         </ol>
                     </nav>
@@ -96,25 +96,26 @@
                             <tr>
 
                                 <td>
+
                                     <img id="image" style="width: 66%; margin-left: 30px;">
+                                    
                                 </td>
                                 <td class="text-center">
-                            </tr>
-
-
-                        </thead>
-
-
-                        <tbody id="bodyrow" style=" word-spacing: 50px; ">
-                        </tbody>
-                    </table>
+                                </tr>
+                                
+                                
+                            </thead>
+                            
+                            
+                            <tbody id="bodyrow" style=" word-spacing: 50px; ">
+                            </tbody>
+                        </table>
                     <h1 class="modal-title fs-5"> {{ __('Name') }} : &nbsp; <span id="user_name"></span> </h1>
                     <h1 class="modal-title fs-5"> {{ __('Email Address') }} : &nbsp <span id="user_email"></span>
                 </h1>
                 </div>
                 <div class="modal-footer">
-                    <!-- <button type="button" class="btn btn-secondary"
-                        data-bs-dismiss="modal">{{ __('Close') }}</button> -->
+                  
 
                 </div>
                 </form>
@@ -132,6 +133,7 @@
         </div>
     </footer>
 </div>
+
 <script>
     function showDetails(user, img) {
         document.getElementById("user_name").innerHTML = user['name'];
@@ -139,6 +141,6 @@
         var myImage = document.getElementById("image");
         myImage.src = img;
         console.log(img);
-        myImage.alt = 'alt';
+        myImage.alt = 'لا توجد صورة';
     }
 </script>

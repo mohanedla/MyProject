@@ -2,6 +2,21 @@
 
 namespace App\Http\Controllers;
 use App\Models\Cart;
+use App\Models\User;
+use App\Models\Order;
+
+
+use App\Models\Kids;
+use App\Models\Bills;
+use App\Models\brand;
+use App\Models\Women;
+use App\Models\Notice;
+use App\Models\report;
+use GuzzleHttp\Client;
+use App\Models\product;
+use App\Models\Category;
+
+
 use Illuminate\Http\Request;
 
 class CartController extends Controller
@@ -39,14 +54,15 @@ class CartController extends Controller
                , 'size_id'=>request('size')
            ]);
        }
-        return redirect('/shop');
+     
+        // return redirect('/shop');
     }
     public function updateCart(Request $request)
     {
         Cart::find($request->id)->update(['qty' => $request->quantity]);
 
         session()->flash('success', 'Item Cart is Updated Successfully !');
-
+      
         return redirect()->back();
     }
 

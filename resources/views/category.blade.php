@@ -357,6 +357,8 @@
                                                 class="fa fa-star fa-stack-x"></i></span> </div>
 
                                                 <h5> {{ $item->name }} &nbsp;&nbsp;{{ $item->brand->name}}</h5>
+                                                @if (Auth::User())
+
                                     <span class="price">
 
                                                 <span class="price"><span class="amount"><span class="currencySymbol"></span> {{ $item->price }} $</span>
@@ -364,7 +366,7 @@
                                                <br>
 
                                                 <span class="price"><span class="amount"><span class="currencySymbol"></span>{{ round( $item->price  * Session::get('LYD') , 2) }} LYD </span>
-
+@endif
                                         <h3 class="product-desc mt_20 mb_60">{{ __('Specifications') }}
                                             : {{ $item->specification }} </h3>
 

@@ -169,7 +169,7 @@
                                                 <div class="form-group">
                                                     <input id="username" type="text"
                                                         class="form-control @error('email') is-invalid @enderror"
-                                                        name="email" placeholder="{{ __('Username') }}"
+                                                        name="email"  placeholder="{{ __('Username') }}"
                                                         value="{{ old('email') }}" required autocomplete="email"
                                                         autofocus>
 

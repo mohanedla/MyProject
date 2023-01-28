@@ -341,7 +341,7 @@
                                                     @csrf
                                                     <input type="hidden" name="id" value="{{ $item->id}}" >
                                                     <input style="width: 100px" type="number" class="form-control quantity" size="1"
-                                                    min="0" max="" value="{{$item->qty}}" name="quantity">
+                                                    min="1" max="{{$products->where('id',$item->product_id)->first()->quantity - $products->where('id',$item->product_id)->first()->quantity_price }}" value="{{$item->qty}}" name="quantity">
                                                 <span class="input-group-btn">
                                                     <button class="btn" title="" data-toggle="tooltip"
                                                     type="submit" data-original-title="Update"><i
@@ -353,7 +353,6 @@
                                         <td class="text-right">{{$item->price}}$</td>
                                         <td class="text-right">{{$item->price*$item->qty}}$</td>
                                         <td class="text-right">{{ round( $item->price  * Session::get('LYD') , 2) }} LYD</td>
-                                        {{-- <span class="price"><span class="amount"><span class="currencySymbol">LYD </span></span> --}}
 
                                         <td class="text-right">  {{ round( $item->price  * Session::get('LYD') , 2) * $item->qty }} LYD</td>
                                         <td class="text-right"><a class="close-cart" href="{{ url('remove', $item->id ) }}"><i
@@ -372,14 +371,25 @@
                                     <td class="text-hight"></td>
                                     <td class="text-hight"></td>
                                     <td class="text-hight"></td>
-                                    <td class="text-center" style=" font-size:18px">
-                                        {{App\Models\Cart::GET_TOTAL_PRICE()}} $
+                                    @if($old_order->count()>=3)
 
-                                    </td>
-                                    <td class="text-hight"></td>
                                     <td class="text-center" style=" font-size:18px">
-                                     {{   round(   App\Models\Cart::GET_TOTAL_PRICE() * Session::get('LYD') , 2) }} LYD
+                                        {{App\Models\Cart::GET_TOTAL_PRICE() -App\Models\Cart::GET_TOTAL_PRICE()*0.15 }} $
+@else
+<td class="text-center" style=" font-size:18px">
+    {{App\Models\Cart::GET_TOTAL_PRICE()}} $
                                     </td>
+                                    @endif
+                                    <td class="text-hight"></td>
+                                    @if($old_order->count()>=3)
+                                    <td class="text-center" style=" font-size:18px">
+                                        {{   round(  ( App\Models\Cart::GET_TOTAL_PRICE() -  App\Models\Cart::GET_TOTAL_PRICE() *0.15 ) * Session::get('LYD') , 2) }} LYD</td>
+
+                                    @else
+                                    <td class="text-center" style=" font-size:18px">
+                                        {{   round(   App\Models\Cart::GET_TOTAL_PRICE() * Session::get('LYD') , 2) }} LYD
+                                       </td>
+                                    @endif
                                 </tbody>
                             </table>
                           

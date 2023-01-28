@@ -52,6 +52,7 @@
 
                             @php
                                 $i=1;
+                                
                                 $j=0;
                             @endphp
                                 @foreach ($users as $x)

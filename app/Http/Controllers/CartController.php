@@ -55,7 +55,7 @@ class CartController extends Controller
            ]);
        }
      
-        // return redirect('/shop');
+        return redirect('/shop');
     }
     public function updateCart(Request $request)
     {

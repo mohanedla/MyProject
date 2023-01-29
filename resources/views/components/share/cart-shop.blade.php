@@ -13,7 +13,7 @@
     <div id="cart-dropdown" class="cart-menu collapse">
         <ul>
             <li>
-                @if (App\Models\Cart::where('user_id',auth()->user()->id)->count() >2)
+                @if (App\Models\Cart::where('user_id',auth()->user()->id)->count() >1)
                     <div id="cart-dropdown1">
                     @else
                         <div>
@@ -38,6 +38,7 @@
                                          <span class="text-left price">
                                             {{ $item->size->name }}</span>
                                          @endif
+
 
                                          <span class="text-left price">{{ $item->price }}$</span>
                                          <span class="text-left price">{{ round( $item->price  * Session::get('LYD') , 2) }}LYD</span>
@@ -66,8 +67,18 @@
 
             <tbody>
                 <tr>
-                    <th>${{App\Models\Cart::GET_TOTAL_PRICE()}}</th>
+                    @if(auth()->user()->count_order > 3)
+                    <th>${{App\Models\Cart::GET_TOTAL_PRICE() - ( App\Models\Cart::GET_TOTAL_PRICE()*0.15)}}
+                    <br>
+                {{   round(  ( App\Models\Cart::GET_TOTAL_PRICE() -  App\Models\Cart::GET_TOTAL_PRICE() *0.15 ) * Session::get('LYD') , 2) }} LYD</th>
+                    @else
+                    <th>${{App\Models\Cart::GET_TOTAL_PRICE()}}
+                        <br>
+                    {{   round(   App\Models\Cart::GET_TOTAL_PRICE() * Session::get('LYD') , 2) }} LYD </th>
+
+                    @endif
                     <th><strong>:"{{ __('Total') }}"</strong></th>
+                    
                 </tr>
                 <tr>
                     <td>

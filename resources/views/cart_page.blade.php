@@ -125,7 +125,7 @@
                         <div class="col-xs-12 col-sm-4">
                         </div>
                         <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="index.html"> <img
-                                    alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
+                                    alt="themini" src="{{ asset('images\brand\logoooo.jpg') }}"> </a> </div>
                                     @if (Auth::User())
                                     <x-share.cart-shop></x-share.cart-shop>
                                 @endif

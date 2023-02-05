@@ -139,7 +139,7 @@
                         <div class="col-xs-12 col-sm-4">
                         </div>
                         <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="/home">
-                            <img alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
+                            <img alt="themini" src="{{ asset('images\brand\logoooo.jpg') }}"> </a> </div>
                     @if (Auth::User())
                         <x-share.cart-shop></x-share.cart-shop>
                     @endif
@@ -325,32 +325,32 @@
                                         enctype="multipart/form-data">
                                         @csrf
                                         <div class="col-sm-6">
-                                            <div class="form-group">
+                                            <div class="form-group" style="border-color:black; color:black;">
                                                 <label class="control-label">{{ __('Bank account number') }}</label>
-                                                <input type="text" name="bank_num" value="{{Auth::user()->bank_num}}"
+                                                <input type="text" style="border-color:black; color:black;" name="bank_num" value="{{Auth::user()->bank_num}}"
                                                     class="form-control">
                                             </div>
-                                            <div class="form-group">
+                                            <div class="form-group" style=" color:black;">
                                                 <label for="input-password"
                                                     class="control-label">{{ __('Address') }}</label>
-                                                <input type="text" class="form-control" name="address"
+                                                <input type="text" class="form-control" name="address" style="border-color:black; color:black;"
                                                     placeholder="{{ __('') }} " value="{{Auth::user()->address}}">
 
 
                                             </div>
-                                            <div class="form-group">
+                                            <div class="form-group" style=" color:black;">
                                                 <label for="input-password"
                                                 class="control-label">{{ __('Phone Number') }}</label>
-                                                <input type="integer" class="form-control" name="phone_number"
+                                                <input type="integer" class="form-control" name="phone_number" style="border-color:black; color:black;"
                                                 value="{{Auth::user()->phone_number}}"
                                                 placeholder="{{ __('') }}">
                                             </div>
-                                            <div class="form-group">
+                                            <div class="form-group" style=" color:black;">
 
                                                 <label for="input-password"
                                                     class="control-label">{{ __('Upload Picture') }}</label>
 
-                                                <input type="file" name="profile_image" id="file"
+                                                <input type="file" name="profile_image" id="file" style="border-color:black; color:black;"
                                                     class="form-control"  value="{{Auth::user()->profile_image}}" name="profile_image">
                                                 <label for="file">
                                                     <p class="file-name"></p>
@@ -359,15 +359,15 @@
                                                     <div class="radio-inline">
                                                         <h3>{{ __('Receipt method') }} </h3>
                                                         <label class="radio-inline">
-                                                            <input type="radio" name="recive" value="0"
+                                                            <input type="radio" name="recive" value="0" style="border-color:black; color:black;"
                                                                 checked> {{ __('Delivery') }}
                                                         </label>
                                                         <label class="radio-inline">
                                                             @if(Auth::user()->recive== 1)
-                                                             <input type="radio" name="recive" value="1"
+                                                             <input type="radio" name="recive" value="1" style="border-color:black; color:black;"
                                                                 checked>{{ __('Receipt in the company') }}
                                                                 @else
-                                                                <input type="radio" name="recive" value="1"
+                                                                <input type="radio" name="recive" value="1" style="border-color:black; color:black;"
                                                                 >{{ __('Receipt in the company') }}
                                                                 @endif
                                                         </label>

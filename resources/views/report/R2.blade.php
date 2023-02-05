@@ -75,7 +75,7 @@
                                 <div>
                                     <div> <a>
                                             <img style="width:10%; height:40%;" alt="themini"
-                                                src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
+                                                src="{{ asset('images\product\smss.png') }}"> </a> </div>
                                                <br>
                                                 <h6> 
                                                  

@@ -122,8 +122,8 @@
                     <div class="col-xs-12 col-sm-4">
                        
                     </div>
-                    <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="/home">
-                            <img alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
+                    <div class="navbar-header col-xs-6 col-sm-4" > <a class="navbar-brand" href="/home">
+                            <img alt="themini" src="{{ asset('images\brand\logoooo.jpg') }}"> </a> </div>
                     @if (Auth::User())
                         <x-share.cart-shop></x-share.cart-shop>
                     @endif
@@ -225,7 +225,9 @@
                                                     
                                     
                     <li> <a href="/about">{{ __('About us') }}</a></li>
+                    @if (Auth::user())
                     <li> <a href="/contact_us">{{ __('Contact us') }}</a></li>
+                @endif
                 </ul>
             </div>
             <!-- /.nav-collapse -->
@@ -267,8 +269,14 @@
                                                     <div class="product-thumb">
                                                         <div class="image product-imageblock"
                                                             style="height: 300px;">
+                                                            @if (Auth::user())
+                                                                
                                                             <a href="/product_detail_page/{{ $item->id }}"
                                                                 style="height: -webkit-fill-available;">
+                                                               @else
+                                                               <a
+                                                                style="height: -webkit-fill-available;">
+                                                                @endif
                                                                 <img data-name="product_image"
                                                                     style="height: -webkit-fill-available;"
                                                                     src="{{ asset(Storage::url($item->profile_image)) }}"
@@ -348,8 +356,15 @@
                                                 <div class="product-thumb">
                                                     <div class="image product-imageblock" style="height: 300px;">
 
-                                                        <a href="/product_detail_page/{{ $item->id }}"
-                                                            style="height: -webkit-fill-available;">
+                                                       
+                                                            @if (Auth::user())
+                                                                
+                                                            <a href="/product_detail_page/{{ $item->id }}"
+                                                                style="height: -webkit-fill-available;">
+                                                               @else
+                                                               <a
+                                                                style="height: -webkit-fill-available;">
+                                                                @endif
                                                             <img data-name="product_image"
                                                                 style="height: -webkit-fill-available;"
                                                                 src="{{ asset(Storage::url($item->profile_image)) }}"
@@ -428,9 +443,16 @@
                                                     <div class="product-thumb">
                                                         <div class="image product-imageblock"
                                                             style="height: 300px;">
-                                                            <a href="/product_detail_page/{{ $item->id }}"
-                                                                style="height: -webkit-fill-available;"
-                                                                sstyle="height: -webkit-fill-available;">
+
+
+                                                                @if (Auth::user())
+                                                                
+                                                                <a href="/product_detail_page/{{ $item->id }}"
+                                                                    style="height: -webkit-fill-available;">
+                                                                   @else
+                                                                   <a
+                                                                    style="height: -webkit-fill-available;">
+                                                                    @endif
                                                                 <img data-name="product_image"
                                                                     style="height: -webkit-fill-available;"
                                                                     src="{{ asset(Storage::url($item->profile_image)) }}"

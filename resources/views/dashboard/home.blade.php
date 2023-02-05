@@ -29,7 +29,7 @@
 
                                             </div>
                                         </div>
-                                        <div class="col-md-8">
+                                        <div class="col-md-8"  >
                                             <h6 class="text-muted font-semibold">{{ __('all admin') }}</h6>
                                             <h4>{{$counts}}</h4>
                                         </div>
@@ -39,18 +39,18 @@
                         </div>
                         @endif
 
-                        <div class="col-6 col-lg-3 col-md-6">
-                            <div class="card">
+                        <div class="col-6 col-lg-3 col-md-6" >
+                            <div class="card" >
                                 <div class="card-body px-3 py-4-5">
                                     <div class="row">
-                                        <div class="col-md-4">
-                                        <div class="stats-icon purple">
+                                        <div class="col-md-4" >
+                                        <div class="stats-icon purple" >
 
                                                 <i class="bi bi-people-fill"></i>
                                             </div>
                                         </div>
                                         <div class="col-md-8">
-                                            <h6 class="text-muted font-semibold">{{ __('Users') }}</h6>
+                                            <h6 class="text-muted font-semibold"  >{{ __('Users') }}</h6>
                                             <h4>{{$counts1}}</h4>
 
                                         </div>

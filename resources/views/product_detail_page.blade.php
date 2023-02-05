@@ -133,7 +133,7 @@
                         </div>
                         <div class="navbar-header col-xs-6 col-sm-4">
                              <a class="navbar-brand" href="/home">
-                                 <img alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> 
+                                 <img alt="themini" src="{{ asset('images\brand\logoooo.jpg') }}"> </a> 
                                 </div>
 
                         <x-share.cart-shop> </x-share.cart-shop>
@@ -376,11 +376,11 @@
                                                         <label>
                                                             <h4>{{ __('Size') }}</h4>
                                                         </label>
-                                                        <select name="size" id="select-by-size"
-                                                        class="selectpicker form-control">
+                                                        <select name="size" id="select-by-size" 
+                                                        class="selectpicker form-control" style="border-color:black; color:black;">
                                                         @if($product->sizes->count()>0) 
                                                             @foreach ($product->sizes as $s)
-                                                                <option selected value="{{ $s->size_id }}">
+                                                                <option selected value="{{ $s->size_id }}" >
                                                                     {{ __($s->size->name) }} </option>
                                                             @endforeach
                                                             @endif
@@ -391,7 +391,7 @@
                                                             <h4>{{ __('Color') }}</h4>
                                                         </label>
                                                         <select name="color" id="select-by-color"
-                                                            class="selectpicker form-control">
+                                                            class="selectpicker form-control" style="border-color:black; color:black;">
                                                             @foreach ($product->colors as $c)
                                                                 <option selected value="{{ $c->color_id }}">
                                                                     {{ __($c->color->name) }} </option>
@@ -402,13 +402,13 @@
                                             </div>
                                             <div class="qty mt_30 form-group2">
                                             
-                                                        <input type="hidden" value="{{ $product->id }}" name="id">
+                                                        <input type="hidden"  value="{{ $product->id }}" name="id">
                                                         <input type="hidden" value="{{ $product->name }}" name="name">
                                                         <input type="hidden" value="{{ $product->price }}" name="price">
                                                         <label>
                                                             <h4>{{ __('Quantity') }}</h4>
                                                         </label>
-                                                        <input name="quantity" min="1" max="{{$product->quantity - $product->quantity_price}}" value="1"
+                                                        <input name="quantity" style="border-color:black; color:black;" min="1" max="{{$product->quantity - $product->quantity_price}}" value="1"
                                                             type="number" required>
                                                         <input type="hidden" value="{{ $product->profile_image }}"  name="image">
                                                         <br>

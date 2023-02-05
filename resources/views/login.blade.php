@@ -101,7 +101,7 @@
                         <div class="col-xs-12 col-sm-4">
                         </div>
                         <div class="navbar-header col-xs-6 col-sm-4"> <a  style="margin-top=20px width=300px height=100px" href="index"> <img
-                                    alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
+                                    alt="themini" src="{{ asset('images\brand\logoooo.jpg') }}"> </a> </div>
                     </div>
                     <br>
                     <nav class="navbar">
@@ -166,21 +166,21 @@
                                             {{-- Form For Login --}}
                                             <form id="login-form" method="POST" action="{{ route('login') }}">
                                                 @csrf
-                                                <div class="form-group">
-                                                    <input id="username" type="text"
+                                                <div class="form-group" >
+                                                    <input id="username" type="text" style="border-color:black; "
                                                         class="form-control @error('email') is-invalid @enderror"
-                                                        name="email"  placeholder="{{ __('Username') }}"
-                                                        value="{{ old('email') }}" required autocomplete="email"
+                                                        name="email"   placeholder="{{ __('Username') }}"
+                                                        value="{{ old('email') }}"  required autocomplete="email"
                                                         autofocus>
 
                                                     @error('email')
-                                                        <span class="invalid-feedback" role="alert">
+                                                        <span class="invalid-feedback"  role="alert">
                                                             <strong>{{ $message }}</strong>
                                                         </span>
                                                     @enderror
                                                 </div>
-                                                <div class="form-group">
-                                                    <input type="password" name="password" id="password"
+                                                <div class="form-group" >
+                                                    <input type="password" name="password" id="password" style="border-color:black; "
                                                         tabindex="2" class="form-control"
                                                         class="form-control @error('password') is-invalid @enderror"
                                                         placeholder="{{ __('Password') }}" required
@@ -231,7 +231,7 @@
                                                 @csrf
                                                 <div class="form-group">
 
-                                                    <input id="username" type="text"
+                                                    <input id="username" type="text" style="border-color:black; color:black;"
                                                         class="form-control @error('name') is-invalid @enderror"
                                                         name="name" placeholder="{{ __('Username') }}"
                                                         value="{{ old('name') }}" required autocomplete="name"
@@ -244,7 +244,7 @@
                                                     @enderror
                                                 </div>
                                                 <div class="form-group">
-                                                    <input id="email" type="email"
+                                                    <input id="email" type="email" style="border-color:black; color:black;"
                                                         class="form-control @error('email') is-invalid @enderror"
                                                         name="email" placeholder="{{ __('Email Address') }}"
                                                         tabindex="1" class="form-control"
@@ -258,7 +258,7 @@
                                                 </div>
                                                 <div class="form-group">
 
-                                                    <input id="password2" type="password"
+                                                    <input id="password2" type="password" style="border-color:black; color:black;"
                                                         class="form-control @error('password') is-invalid @enderror"
                                                         name="password" tabindex="2" class="form-control"
                                                         placeholder="{{ __('Password') }}" required
@@ -272,7 +272,7 @@
                                                 </div>
                                                 <div class="form-group">
 
-                                                    <input id="confirm-password" type="password" class="form-control"
+                                                    <input id="confirm-password" type="password" class="form-control" style="border-color:black; color:black;"
                                                         name="password_confirmation" tabindex="2"
                                                         class="form-control"
                                                         placeholder="{{ __('Confirm Password') }}" required

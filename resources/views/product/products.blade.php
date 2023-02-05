@@ -31,11 +31,9 @@
             <div class="card">
                 <div class="card-header">
                 <h4>{{ __('Products List') }}</h4>
-                    {{-- <div class="buttons"> --}}
                         @if($id!=0)
                         <a style="float: right;" href="{{route('add_product',['id'=>$id])}}" class="btn btn-secondary">{{ __('add Product') }}</a>
                         @endif
-                  {{-- </div> --}}
                 </div>
                 <div class="card-body">
                     <table class="table table-striped" id="table1">
@@ -49,7 +47,6 @@
                             <th style="width: 50px;" scope="col">{{ __('Quantity')}}</th>
                             <th style="width: 50px;" scope="col">{{ __('الكمية المباعة')}}</th>
                             <th style="width: 50px;" scope="col">{{ __('الكمية المتبقية')}}</th>
-                            <th style="width: 50px;" scope="col">{{ __('Selling price')}}</th> -->
                             <th style="width: 50px;" scope="col">{{ __('admin')}}</th>
                             <th style="width: 50px;" scope="col">{{ __('photo')}}</th>
                             <th style="width: 50px;" scope="col"></th>

@@ -164,7 +164,7 @@
                                 <div>
                                     <div> <a>
                                             <img style="width:10%; height:40%;" alt="themini"
-                                                src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
+                                                src="{{ asset('images\product\smss.png') }}"> </a> </div>
                                 </div>
                             </div>
 
@@ -172,7 +172,7 @@
                         @foreach ($orders as $order)
                         <br>
                             <h6> {{ $order->created_at->format("Y-m-d") }} </h6>
-                            <h6> {{ $order->created_at->format("h-i-SA") }}</h6> 
+                            <h6> {{ $order->created_at->format("h-i") }}</h6> 
                         @endforeach
 
                     </div>

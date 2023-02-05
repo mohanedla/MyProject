@@ -120,7 +120,7 @@
 
                     </div>
                     <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="/home"> <img
-                                alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
+                                alt="themini" src="{{ asset('images\brand\logoooo.jpg') }}"> </a> </div>
 
                 </div>
                 <nav class="navbar">

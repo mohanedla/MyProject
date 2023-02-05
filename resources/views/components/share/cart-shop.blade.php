@@ -10,16 +10,16 @@
         </button>
     </div>
 
-    <div id="cart-dropdown" class="cart-menu collapse">
-        <ul>
-            <li>
-                @if (App\Models\Cart::where('user_id',auth()->user()->id)->count() >1)
-                    <div id="cart-dropdown1">
+    <div id="cart-dropdown" class="cart-menu collapse" >
+        <ul style=" color:black;">
+            <li >
+                @if (App\Models\Cart::where('user_id',auth()->user()->id)->count() >2)
+                    <div id="cart-dropdown1" >
                     @else
                         <div>
                 @endif
-                <table class="table table-striped">
-                    <tbody>
+                <table class="table table-striped" >
+                    <tbody style=" color:black;">
                         @if (App\Models\Cart::where('user_id',auth()->user()->id)->count() > 0)
 
                             @foreach (App\Models\Cart::where('user_id',auth()->user()->id)->get() as $item)
@@ -30,7 +30,7 @@
                                                 alt="iPod Classic" title="iPod Classic"></a>
                                     </td>
                                     <td class="text-left product-name">
-                                        <a href="#">{{ $item->name }}</a>
+                                        <span>{{ $item->name }}</span>
                                          <span class="text-left price">{{ $item->color->name }}</span>
 
                                          
@@ -43,7 +43,7 @@
                                          <span class="text-left price">{{ $item->price }}$</span>
                                          <span class="text-left price">{{ round( $item->price  * Session::get('LYD') , 2) }}LYD</span>
 
-                                        <input class="cart-qty" name="product_quantity"
+                                        <input class="cart-qty" name="product_quantity" style="border-color:black; color:black;"
                                             min="1" value="{{ $item->qty }}"
                                             type="number">
                                     </td>
@@ -65,7 +65,7 @@
     <li>
         <table class="table">
 
-            <tbody>
+            <tbody style=" color:black;">
                 <tr>
                     @if(auth()->user()->count_order > 3)
                     <th>${{App\Models\Cart::GET_TOTAL_PRICE() - ( App\Models\Cart::GET_TOTAL_PRICE()*0.15)}}

@@ -118,7 +118,7 @@
 
                     </div>
                     <div class="navbar-header col-xs-6 col-sm-4"> <a class="navbar-brand" href="/home"> <img
-                        alt="themini" src="{{ asset('images/logo/logo4.jpg') }}"> </a> </div>
+                        alt="themini" src="{{ asset('images\brand\logoooo.jpg') }}"> </a> </div>
            
                 </div>
                 <nav class="navbar">
@@ -283,19 +283,19 @@
 <input class="full-with-form  mt_30" type="hidden" name="role" value="{{ Auth()->user()->role}}" />
 
                  @if(auth()->user())
-                  <input class="full-with-form " type="text" name="name"  value="{{ Auth()->user()->name }}" placeholder="{{__ ('Name')}}"  required="required" data-required="true" />
+                  <input class="full-with-form " style="border-color:black; color:black;" type="text" name="name"  value="{{ Auth()->user()->name }}" placeholder="{{__ ('Name')}}"  required="required" data-required="true" />
                   @else
-                  <input class="full-with-form " type="text" name="name"  placeholder="{{__ ('Name')}}"  required="required" data-required="true" />
+                  <input class="full-with-form "  type="text" name="name"  placeholder="{{__ ('Name')}}"  required="required" data-required="true" />
 @endif
 @if(auth()->user())
-<input class="full-with-form  mt_30" type="email" name="email"   value="{{ Auth()->user()->email}}" placeholder="{{__('Email Address')}}"  required="required" data-required="true" />
+<input class="full-with-form  mt_30" type="email" style="border-color:black; color:black;" name="email"   value="{{ Auth()->user()->email}}" placeholder="{{__('Email Address')}}"  required="required" data-required="true" />
                   @else
                   <input class="full-with-form  mt_30" type="email" name="email"   placeholder="{{__('Email Address')}}"  required="required" data-required="true" />
 @endif
-                <input class="full-with-form  mt_30" type="text" name="phone1" placeholder="{{__ ('Phone Number')}}" maxlength="15"  required="required" data-required="true" />
+                <input class="full-with-form  mt_30" style="border-color:black; color:black;" type="text" name="phone1" placeholder="{{__ ('Phone Number')}}" maxlength="15"  required="required" data-required="true" />
                   <!--                <label class="full-with-form" ><span>Subject</span></label>
 -->
-                  <input class="full-with-form  mt_30" type="text" name="subject" placeholder="{{__('Subject')}}" data-required="true"  required="required">
+                  <input class="full-with-form  mt_30" type="text" style="border-color:black; color:black;" name="subject" placeholder="{{__('Subject')}}" data-required="true"  required="required">
                   <!--                                <label class="full-with-form" ><span>Attachment</span></label>
 --> 
                   <!--                                <label class="full-with-form" ><span>Message</span></label>

@@ -29,7 +29,8 @@
             <section class="section">
                 <div class="card">
                     <div class="card-header">
-                        {{ __('Brand List') }}
+                        <h4>{{ __('Brand List') }}</h4>
+                        
                         {{-- <div class="buttons"> --}}
 
 

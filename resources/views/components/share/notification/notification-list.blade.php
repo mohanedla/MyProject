@@ -11,7 +11,7 @@
                 <li class="dropdown-header">
                     لديك  <span id="count_Notification">{{$notifications->count()}}</span> اشعارات جديدة
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                     <a href="{{route('notifications.index')}}"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+                     <a href="{{route('notifications.index')}}"><span class="badge rounded-pill bg-primary p-2 ms-2">{{__ ('View all')}}</span></a>
                 </li>
             @else
                 <li class="dropdown-header">
